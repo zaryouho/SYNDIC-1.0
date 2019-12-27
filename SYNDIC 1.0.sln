@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYNDIC 1.0", "SYNDIC 1.0\SYNDIC 1.0.csproj", "{C5202C63-038B-4194-AB03-0ABCDF3D2ECB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5202C63-038B-4194-AB03-0ABCDF3D2ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5202C63-038B-4194-AB03-0ABCDF3D2ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5202C63-038B-4194-AB03-0ABCDF3D2ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5202C63-038B-4194-AB03-0ABCDF3D2ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3725725-9DAB-40C6-BB93-06DE22F2593C}
+	EndGlobalSection
+EndGlobal
