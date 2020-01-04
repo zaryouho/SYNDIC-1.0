@@ -24,10 +24,10 @@ namespace SYNDIC_1._0
 
         private void btnSlideBar_Click(object sender, EventArgs e)
         {
-            if (MenuVertical.Width == 250)
+            if (MenuVertical.Width == 265)
                 MenuVertical.Width = 70;
             else
-                MenuVertical.Width = 250;
+                MenuVertical.Width = 265;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -65,6 +65,49 @@ namespace SYNDIC_1._0
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void OpenFormInPannel(object formChild)
+        {
+            if (this.panelContainer.Controls.Count > 0)
+                this.panelContainer.Controls.RemoveAt(0);
+
+            Form frmchild = formChild as Form;
+            frmchild.TopLevel = false;
+            frmchild.Dock = DockStyle.Fill;
+            this.panelContainer.Controls.Add(frmchild);
+            this.panelContainer.Tag = frmchild;
+            frmchild.Show();            
+        }
+
+        private void buttonBiens_Click(object sender, EventArgs e)
+        {
+            OpenFormInPannel(new frmBiens());
+        }
+
+        private void buttonProprietaires_Click(object sender, EventArgs e)
+        {
+            OpenFormInPannel(new frmProprietaires());
+        }
+
+        private void buttonFinances_Click(object sender, EventArgs e)
+        {
+            OpenFormInPannel(new frmFinances());
+        }
+
+        private void buttonDocuments_Click(object sender, EventArgs e)
+        {
+            OpenFormInPannel(new frmDocuments());
+        }
+
+        private void buttonHistoriques_Click(object sender, EventArgs e)
+        {
+            OpenFormInPannel(new frmHistoriques());
+        }
+
+        private void buttonRapportsStatistiques_Click(object sender, EventArgs e)
+        {
+            OpenFormInPannel(new frmRapportsStatistiques());
         }
     }
 }
