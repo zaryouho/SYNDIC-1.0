@@ -37,6 +37,8 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnSlideBar = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.MenuVertical.SuspendLayout();
             this.BarreTitulaire.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximized)).BeginInit();
@@ -48,6 +50,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
@@ -142,6 +145,15 @@
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 55);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmMenuOfficiel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +166,7 @@
             this.Name = "frmMenuOfficiel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuOfficiel";
+            this.MenuVertical.ResumeLayout(false);
             this.BarreTitulaire.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximized)).EndInit();
@@ -174,6 +187,7 @@
         private System.Windows.Forms.PictureBox btnMaximized;
         private System.Windows.Forms.PictureBox btnRestaure;
         private System.Windows.Forms.PictureBox btnClose;
+        private System.Windows.Forms.Button button1;
     }
 }
 
