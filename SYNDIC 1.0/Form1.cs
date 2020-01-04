@@ -25,7 +25,7 @@ namespace SYNDIC_1._0
         private void btnSlideBar_Click(object sender, EventArgs e)
         {
             if (MenuVertical.Width == 265)
-                MenuVertical.Width = 70;
+                MenuVertical.Width = 65;
             else
                 MenuVertical.Width = 265;
         }
@@ -109,5 +109,7 @@ namespace SYNDIC_1._0
         {
             OpenFormInPannel(new frmRapportsStatistiques());
         }
+
+        
     }
 }
