@@ -73,6 +73,7 @@
             // buttonRapportsStatistiques
             // 
             this.buttonRapportsStatistiques.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonRapportsStatistiques.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRapportsStatistiques.FlatAppearance.BorderSize = 0;
             this.buttonRapportsStatistiques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.buttonRapportsStatistiques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,6 +92,7 @@
             // buttonDocuments
             // 
             this.buttonDocuments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonDocuments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDocuments.FlatAppearance.BorderSize = 0;
             this.buttonDocuments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.buttonDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -109,6 +111,7 @@
             // buttonHistoriques
             // 
             this.buttonHistoriques.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonHistoriques.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHistoriques.FlatAppearance.BorderSize = 0;
             this.buttonHistoriques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.buttonHistoriques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,6 +130,7 @@
             // buttonFinances
             // 
             this.buttonFinances.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonFinances.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFinances.FlatAppearance.BorderSize = 0;
             this.buttonFinances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.buttonFinances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,6 +149,7 @@
             // buttonProprietaires
             // 
             this.buttonProprietaires.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProprietaires.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonProprietaires.FlatAppearance.BorderSize = 0;
             this.buttonProprietaires.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.buttonProprietaires.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,6 +178,7 @@
             // buttonBiens
             // 
             this.buttonBiens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonBiens.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonBiens.FlatAppearance.BorderSize = 0;
             this.buttonBiens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.buttonBiens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
