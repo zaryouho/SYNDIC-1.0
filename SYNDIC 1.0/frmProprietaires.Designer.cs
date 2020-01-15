@@ -30,6 +30,7 @@
         {
             this.labelProprietaires = new System.Windows.Forms.Label();
             this.labelCloseProprietaires = new System.Windows.Forms.Label();
+            this.btnCRUDType = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelProprietaires
@@ -55,11 +56,22 @@
             this.labelCloseProprietaires.Text = "X";
             this.labelCloseProprietaires.Click += new System.EventHandler(this.labelCloseProprietaires_Click);
             // 
+            // btnCRUDType
+            // 
+            this.btnCRUDType.Location = new System.Drawing.Point(96, 374);
+            this.btnCRUDType.Name = "btnCRUDType";
+            this.btnCRUDType.Size = new System.Drawing.Size(75, 23);
+            this.btnCRUDType.TabIndex = 4;
+            this.btnCRUDType.Text = "Type";
+            this.btnCRUDType.UseVisualStyleBackColor = true;
+            this.btnCRUDType.Click += new System.EventHandler(this.btnCRUDType_Click);
+            // 
             // frmProprietaires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCRUDType);
             this.Controls.Add(this.labelCloseProprietaires);
             this.Controls.Add(this.labelProprietaires);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.Label labelProprietaires;
         private System.Windows.Forms.Label labelCloseProprietaires;
+        private System.Windows.Forms.Button btnCRUDType;
     }
 }
