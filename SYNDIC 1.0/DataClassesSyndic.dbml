@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="syndic2" Class="DataClassesSyndicDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=syndic2;User ID=sa" SettingsObjectName="SYNDIC_1._0.Properties.Settings" SettingsPropertyName="syndic2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bien" Member="bien">
+    <Type Name="bien">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="etage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="superficie" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="charges" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="typeBien" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_immeuble" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_proprietaire" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="titre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="dateAchat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="bien_documentBien" Member="documentBien" ThisKey="id" OtherKey="id_bien" Type="documentBien" />
+      <Association Name="bien_echeance" Member="echeance" ThisKey="id" OtherKey="id_bien" Type="echeance" />
+      <Association Name="bien_remarqueBien" Member="remarqueBien" ThisKey="id" OtherKey="id_Bien" Type="remarqueBien" />
+      <Association Name="immeuble_bien" Member="immeuble" ThisKey="id_immeuble" OtherKey="id" Type="immeuble" IsForeignKey="true" />
+      <Association Name="proprietaire_bien" Member="proprietaire" ThisKey="id_proprietaire" OtherKey="id" Type="proprietaire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ville" Member="ville">
+    <Type Name="ville">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="ville_employe" Member="employe" ThisKey="id" OtherKey="id_ville" Type="employe" />
+      <Association Name="ville_proprietaire" Member="proprietaire" ThisKey="id" OtherKey="id_ville" Type="proprietaire" />
+      <Association Name="ville_residence" Member="residence" ThisKey="id" OtherKey="id_ville" Type="residence" />
+      <Association Name="ville_societe" Member="societe" ThisKey="id" OtherKey="id_ville" Type="societe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bloc" Member="bloc">
+    <Type Name="bloc">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomBloc" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_Residence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="bloc_immeuble" Member="immeuble" ThisKey="id" OtherKey="id_bloc" Type="immeuble" />
+      <Association Name="residence_bloc" Member="residence" ThisKey="id_Residence" OtherKey="id" Type="residence" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.connexion" Member="connexion">
+    <Type Name="connexion">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_connexion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_utilisateur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="utilisateur_connexion" Member="utilisateur" ThisKey="id_utilisateur" OtherKey="id" Type="utilisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cotisation" Member="cotisation">
+    <Type Name="cotisation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_recette" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="montant" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="documante" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="typeRecette" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_propietaire" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numRecu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cotisation_cotisation_echeance" Member="cotisation_echeance" ThisKey="id" OtherKey="id_recette" Type="cotisation_echeance" />
+      <Association Name="cotisation_documentCotisation" Member="documentCotisation" ThisKey="id" OtherKey="idRecette" Type="documentCotisation" />
+      <Association Name="proprietaire_cotisation" Member="proprietaire" ThisKey="id_propietaire" OtherKey="id" Type="proprietaire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cotisation_echeance" Member="cotisation_echeance">
+    <Type Name="cotisation_echeance">
+      <Column Name="id_recette" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_echeance" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="cotisation_cotisation_echeance" Member="cotisation" ThisKey="id_recette" OtherKey="id" Type="cotisation" IsForeignKey="true" />
+      <Association Name="echeance_cotisation_echeance" Member="echeance" ThisKey="id_echeance" OtherKey="id" Type="echeance" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.depense" Member="depense">
+    <Type Name="depense">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="designation" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="date_depense" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="montant" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="id_employe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typeDepense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="numDocument" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typeDocument" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="depense_documentDepense" Member="documentDepense" ThisKey="id" OtherKey="id_Depense" Type="documentDepense" />
+      <Association Name="depense_intervention" Member="intervention" ThisKey="id" OtherKey="id_depense" Type="intervention" />
+      <Association Name="depense_ligne" Member="ligne" ThisKey="id" OtherKey="id_depense" Type="ligne" />
+      <Association Name="depense_remarqueDepnse" Member="remarqueDepnse" ThisKey="id" OtherKey="id_Depense" Type="remarqueDepnse" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documentBien" Member="documentBien">
+    <Type Name="documentBien">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_bien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="bien_documentBien" Member="bien" ThisKey="id_bien" OtherKey="id" Type="bien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documentCotisation" Member="documentCotisation">
+    <Type Name="documentCotisation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idRecette" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="cotisation_documentCotisation" Member="cotisation" ThisKey="idRecette" OtherKey="id" Type="cotisation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documentDepense" Member="documentDepense">
+    <Type Name="documentDepense">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_Depense" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="depense_documentDepense" Member="depense" ThisKey="id_Depense" OtherKey="id" Type="depense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documentEmploye" Member="documentEmploye">
+    <Type Name="documentEmploye">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_employe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="employe_documentEmploye" Member="employe" ThisKey="id_employe" OtherKey="id" Type="employe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documentProprietaire" Member="documentProprietaire">
+    <Type Name="documentProprietaire">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_Proprietaire" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="proprietaire_documentProprietaire" Member="proprietaire" ThisKey="id_Proprietaire" OtherKey="id" Type="proprietaire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documentResidence" Member="documentResidence">
+    <Type Name="documentResidence">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_Residence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="residence_documentResidence" Member="residence" ThisKey="id_Residence" OtherKey="id" Type="residence" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.echeance" Member="echeance">
+    <Type Name="echeance">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mois" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="annee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="montant" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="montant_reçu" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="id_bien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typeEchea" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="echeance_cotisation_echeance" Member="cotisation_echeance" ThisKey="id" OtherKey="id_echeance" Type="cotisation_echeance" />
+      <Association Name="bien_echeance" Member="bien" ThisKey="id_bien" OtherKey="id" Type="bien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employe" Member="employe">
+    <Type Name="employe">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="date_recrutement" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="actif" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="date_depart" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="typeEmploye" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_ville" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="employe_documentEmploye" Member="documentEmploye" ThisKey="id" OtherKey="id_employe" Type="documentEmploye" />
+      <Association Name="employe_remarqueEmploye" Member="remarqueEmploye" ThisKey="id" OtherKey="id_employe" Type="remarqueEmploye" />
+      <Association Name="employe_Travail" Member="Travail" ThisKey="id" OtherKey="IdEmp" Type="Travail" />
+      <Association Name="ville_employe" Member="ville" ThisKey="id_ville" OtherKey="id" Type="ville" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.immeuble" Member="immeuble">
+    <Type Name="immeuble">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nbrEtage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_bloc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="immeuble_bien" Member="bien" ThisKey="id" OtherKey="id_immeuble" Type="bien" />
+      <Association Name="bloc_immeuble" Member="bloc" ThisKey="id_bloc" OtherKey="id" Type="bloc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.intervention" Member="intervention">
+    <Type Name="intervention">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="libelle" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="dateDebut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dateFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="montant" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="id_depense" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="depense_intervention" Member="depense" ThisKey="id_depense" OtherKey="id" Type="depense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.journal" Member="journal">
+    <Type Name="journal">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_utilisateur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_action" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="table_action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="anciennes_valeurs" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nouvelles_valeurs" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="utilisateur_journal" Member="utilisateur" ThisKey="id_utilisateur" OtherKey="id" Type="utilisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ligne" Member="ligne">
+    <Type Name="ligne">
+      <Column Name="id_produit" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_depense" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="qte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prix" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="depense_ligne" Member="depense" ThisKey="id_depense" OtherKey="id" Type="depense" IsForeignKey="true" />
+      <Association Name="produit_ligne" Member="produit" ThisKey="id_produit" OtherKey="id" Type="produit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.message" Member="message">
+    <Type Name="message">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="objet" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="message" Member="message1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fichier" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date_message" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="de" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="message_message_utilisateurs" Member="message_utilisateurs" ThisKey="id" OtherKey="id_message" Type="message_utilisateurs" />
+      <Association Name="utilisateur_message" Member="utilisateur" ThisKey="de" OtherKey="id" Type="utilisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.message_utilisateurs" Member="message_utilisateurs">
+    <Type Name="message_utilisateurs">
+      <Column Name="id_message" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="a" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="message_message_utilisateurs" Member="message" ThisKey="id_message" OtherKey="id" Type="message" IsForeignKey="true" />
+      <Association Name="utilisateur_message_utilisateurs" Member="utilisateur" ThisKey="a" OtherKey="id" Type="utilisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.produit" Member="produit">
+    <Type Name="produit">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="designation" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="qteStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categorie" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="produit_ligne" Member="ligne" ThisKey="id" OtherKey="id_produit" Type="ligne" />
+    </Type>
+  </Table>
+  <Table Name="dbo.proprietaire" Member="proprietaire">
+    <Type Name="proprietaire">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_ville" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Titre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CIN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="proprietaire_bien" Member="bien" ThisKey="id" OtherKey="id_proprietaire" Type="bien" />
+      <Association Name="proprietaire_cotisation" Member="cotisation" ThisKey="id" OtherKey="id_propietaire" Type="cotisation" />
+      <Association Name="proprietaire_documentProprietaire" Member="documentProprietaire" ThisKey="id" OtherKey="id_Proprietaire" Type="documentProprietaire" />
+      <Association Name="ville_proprietaire" Member="ville" ThisKey="id_ville" OtherKey="id" Type="ville" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.remarqueBien" Member="remarqueBien">
+    <Type Name="remarqueBien">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="remarque" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="id_Bien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="bien_remarqueBien" Member="bien" ThisKey="id_Bien" OtherKey="id" Type="bien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.remarqueDepnse" Member="remarqueDepnse">
+    <Type Name="remarqueDepnse">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="remarque" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="id_Depense" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="depense_remarqueDepnse" Member="depense" ThisKey="id_Depense" OtherKey="id" Type="depense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.remarqueEmploye" Member="remarqueEmploye">
+    <Type Name="remarqueEmploye">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="remarque" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="id_employe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="employe_remarqueEmploye" Member="employe" ThisKey="id_employe" OtherKey="id" Type="employe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.residence" Member="residence">
+    <Type Name="residence">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codepostale" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_ville" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="residence_bloc" Member="bloc" ThisKey="id" OtherKey="id_Residence" Type="bloc" />
+      <Association Name="residence_documentResidence" Member="documentResidence" ThisKey="id" OtherKey="id_Residence" Type="documentResidence" />
+      <Association Name="residence_Travail" Member="Travail" ThisKey="id" OtherKey="IdRes" Type="Travail" />
+      <Association Name="ville_residence" Member="ville" ThisKey="id_ville" OtherKey="id" Type="ville" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.societe" Member="societe">
+    <Type Name="societe">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="raison_sociale" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_ville" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ville_societe" Member="ville" ThisKey="id_ville" OtherKey="id" Type="ville" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableType" Member="TableType">
+    <Type Name="TableType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="libelle" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="TableType_Type" Member="Type" ThisKey="id" OtherKey="idTableType" Type="Type" />
+    </Type>
+  </Table>
+  <Table Name="dbo.temp" Member="temp">
+    <Type Name="temp">
+      <Column Name="nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.temp1" Member="temp1">
+    <Type Name="temp1">
+      <Column Name="mois" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="annee" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Travail" Member="Travail">
+    <Type Name="Travail">
+      <Column Name="IdEmp" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdRes" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="datedebut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="datefin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="employe_Travail" Member="employe" ThisKey="IdEmp" OtherKey="id" Type="employe" IsForeignKey="true" />
+      <Association Name="residence_Travail" Member="residence" ThisKey="IdRes" OtherKey="id" Type="residence" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Type" Member="Type">
+    <Type Name="Type">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTableType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="libelleType" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="TableType_Type" Member="TableType" ThisKey="idTableType" OtherKey="id" Type="TableType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.utilisateur" Member="utilisateur">
+    <Type Name="utilisateur">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="typeUtilisateur" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mot_de_passe" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="salt" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="id_table" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="utilisateur_connexion" Member="connexion" ThisKey="id" OtherKey="id_utilisateur" Type="connexion" />
+      <Association Name="utilisateur_journal" Member="journal" ThisKey="id" OtherKey="id_utilisateur" Type="journal" />
+      <Association Name="utilisateur_message" Member="message" ThisKey="id" OtherKey="de" Type="message" />
+      <Association Name="utilisateur_message_utilisateurs" Member="message_utilisateurs" ThisKey="id" OtherKey="a" Type="message_utilisateurs" />
+    </Type>
+  </Table>
+</Database>

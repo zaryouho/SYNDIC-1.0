@@ -205,7 +205,7 @@
             this.BarreTitulaire.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarreTitulaire.Location = new System.Drawing.Point(265, 0);
             this.BarreTitulaire.Name = "BarreTitulaire";
-            this.BarreTitulaire.Size = new System.Drawing.Size(1035, 50);
+            this.BarreTitulaire.Size = new System.Drawing.Size(759, 50);
             this.BarreTitulaire.TabIndex = 1;
             this.BarreTitulaire.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarreTitulaire_MouseDown);
             // 
@@ -214,7 +214,7 @@
             this.btnMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimized.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimized.Image")));
-            this.btnMinimized.Location = new System.Drawing.Point(953, 8);
+            this.btnMinimized.Location = new System.Drawing.Point(677, 8);
             this.btnMinimized.Name = "btnMinimized";
             this.btnMinimized.Size = new System.Drawing.Size(18, 18);
             this.btnMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,7 +227,7 @@
             this.btnMaximized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximized.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximized.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximized.Image")));
-            this.btnMaximized.Location = new System.Drawing.Point(977, 8);
+            this.btnMaximized.Location = new System.Drawing.Point(701, 8);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(20, 20);
             this.btnMaximized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -240,7 +240,7 @@
             this.btnRestaure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaure.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaure.Image")));
-            this.btnRestaure.Location = new System.Drawing.Point(977, 8);
+            this.btnRestaure.Location = new System.Drawing.Point(701, 8);
             this.btnRestaure.Name = "btnRestaure";
             this.btnRestaure.Size = new System.Drawing.Size(18, 18);
             this.btnRestaure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -254,7 +254,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1003, 8);
+            this.btnClose.Location = new System.Drawing.Point(727, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(18, 18);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,7 +279,7 @@
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(265, 50);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1035, 600);
+            this.panelContainer.Size = new System.Drawing.Size(759, 600);
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1024, 650);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.BarreTitulaire);
             this.Controls.Add(this.MenuVertical);

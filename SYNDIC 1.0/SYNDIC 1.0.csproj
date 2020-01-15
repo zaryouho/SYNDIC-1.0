@@ -33,7 +33,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,11 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClassesSyndic.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionTypes.Designer.cs">
+      <DependentUpon>FormGestionTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifierBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifierBien.Designer.cs">
+      <DependentUpon>FormModifierBien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBiens.cs">
       <SubType>Form</SubType>
@@ -86,10 +105,24 @@
     <Compile Include="frmRapportsStatistiques.Designer.cs">
       <DependentUpon>frmRapportsStatistiques.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DBHelper.cs" />
+    <Compile Include="Helper\InitializeControls.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="syndic2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>syndic2DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionTypes.resx">
+      <DependentUpon>FormGestionTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifierBien.resx">
+      <DependentUpon>FormModifierBien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBiens.resx">
       <DependentUpon>frmBiens.cs</DependentUpon>
@@ -118,6 +151,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
+    <None Include="DataClassesSyndic.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesSyndic.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataClassesSyndic.dbml.layout">
+      <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +169,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="syndic2DataSet.xsc">
+      <DependentUpon>syndic2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="syndic2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>syndic2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="syndic2DataSet.xss">
+      <DependentUpon>syndic2DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,5 +20,10 @@ namespace SYNDIC_1._0
         {
             this.Close();
         }
+
+        private void btnCRUDType_Click(object sender, EventArgs e)
+        {
+            new FormGestionTypes("bien").ShowDialog();
+        }
     }
 }
