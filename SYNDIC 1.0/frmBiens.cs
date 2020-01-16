@@ -41,7 +41,7 @@ namespace SYNDIC_1._0
 
         private void frmBiens_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionString");
+            DBHelper.ouvrirConnection("SyndicConnectionString1");
 
             DBHelper.remplir_dataset("select * from bloc", "bloc");
             DBHelper.remplir_dataset("select * from immeuble ", "immeuble");
@@ -146,6 +146,16 @@ namespace SYNDIC_1._0
                 buttonChercher.Enabled = false;
             else
                 buttonChercher.Enabled = true;
+        }
+
+        private void panelHead_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainerBiens_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
