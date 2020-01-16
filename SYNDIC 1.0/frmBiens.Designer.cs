@@ -85,6 +85,7 @@
             this.panelHead.Name = "panelHead";
             this.panelHead.Size = new System.Drawing.Size(759, 60);
             this.panelHead.TabIndex = 2;
+            this.panelHead.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHead_Paint);
             // 
             // splitContainerBiens
             // 
@@ -107,6 +108,7 @@
             this.splitContainerBiens.Panel1.Controls.Add(this.buttonChercher);
             this.splitContainerBiens.Panel1.Controls.Add(this.labelRechercher);
             this.splitContainerBiens.Panel1.Controls.Add(this.textBoxRechercher);
+            this.splitContainerBiens.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainerBiens_Panel1_Paint);
             // 
             // splitContainerBiens.Panel2
             // 
@@ -232,6 +234,7 @@
             // 
             // dataGridViewBien
             // 
+            this.dataGridViewBien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewBien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBien.Location = new System.Drawing.Point(0, 0);

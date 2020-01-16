@@ -45,7 +45,7 @@
             this.labelImmeuble = new System.Windows.Forms.Label();
             this.labelProprietaire = new System.Windows.Forms.Label();
             this.textBoxTitre = new System.Windows.Forms.TextBox();
-            this.labelTitre = new System.Windows.Forms.Label();
+            this.labelid = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddNewProprietaire = new System.Windows.Forms.Button();
             this.dateTimePickerDateAchat = new System.Windows.Forms.DateTimePicker();
@@ -211,14 +211,14 @@
             this.textBoxTitre.Size = new System.Drawing.Size(206, 20);
             this.textBoxTitre.TabIndex = 19;
             // 
-            // labelTitre
+            // labelid
             // 
-            this.labelTitre.AutoSize = true;
-            this.labelTitre.Location = new System.Drawing.Point(41, 89);
-            this.labelTitre.Name = "labelTitre";
-            this.labelTitre.Size = new System.Drawing.Size(73, 13);
-            this.labelTitre.TabIndex = 18;
-            this.labelTitre.Text = "Titre de Bien :";
+            this.labelid.AutoSize = true;
+            this.labelid.Location = new System.Drawing.Point(41, 89);
+            this.labelid.Name = "labelid";
+            this.labelid.Size = new System.Drawing.Size(73, 13);
+            this.labelid.TabIndex = 18;
+            this.labelid.Text = "Titre de Bien :";
             // 
             // label1
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.buttonAddNewProprietaire);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxTitre);
-            this.Controls.Add(this.labelTitre);
+            this.Controls.Add(this.labelid);
             this.Controls.Add(this.labelProprietaire);
             this.Controls.Add(this.textBoxIdImmeuble);
             this.Controls.Add(this.labelImmeuble);
@@ -358,7 +358,7 @@
         private System.Windows.Forms.Label labelImmeuble;
         private System.Windows.Forms.Label labelProprietaire;
         private System.Windows.Forms.TextBox textBoxTitre;
-        private System.Windows.Forms.Label labelTitre;
+        private System.Windows.Forms.Label labelid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAddNewProprietaire;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateAchat;
