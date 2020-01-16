@@ -206,6 +206,7 @@
             // 
             // buttonChercher
             // 
+            this.buttonChercher.Enabled = false;
             this.buttonChercher.Location = new System.Drawing.Point(205, 31);
             this.buttonChercher.Name = "buttonChercher";
             this.buttonChercher.Size = new System.Drawing.Size(64, 20);
@@ -229,6 +230,8 @@
             this.textBoxRechercher.Name = "textBoxRechercher";
             this.textBoxRechercher.Size = new System.Drawing.Size(165, 20);
             this.textBoxRechercher.TabIndex = 0;
+            this.textBoxRechercher.TextChanged += new System.EventHandler(this.textBoxRechercher_TextChanged);
+            this.textBoxRechercher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRechercher_KeyPress);
             // 
             // dataGridViewBien
             // 
@@ -237,6 +240,7 @@
             this.dataGridViewBien.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewBien.Name = "dataGridViewBien";
             this.dataGridViewBien.ReadOnly = true;
+            this.dataGridViewBien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBien.Size = new System.Drawing.Size(759, 436);
             this.dataGridViewBien.TabIndex = 2;
             this.dataGridViewBien.DoubleClick += new System.EventHandler(this.buttonModifier_Click);
