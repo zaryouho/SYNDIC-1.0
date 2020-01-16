@@ -274,7 +274,7 @@
             this.buttonSsProprietairesArchive.Name = "buttonSsProprietairesArchive";
             this.buttonSsProprietairesArchive.Size = new System.Drawing.Size(183, 37);
             this.buttonSsProprietairesArchive.TabIndex = 10;
-            this.buttonSsProprietairesArchive.Text = "Propriétaires archivées";
+            this.buttonSsProprietairesArchive.Text = "Propriétaires arch.";
             this.buttonSsProprietairesArchive.UseVisualStyleBackColor = false;
             // 
             // buttonSsAjouterProprietaires
