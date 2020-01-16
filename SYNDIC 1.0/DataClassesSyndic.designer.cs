@@ -126,7 +126,7 @@ namespace SYNDIC_1._0
     #endregion
 		
 		public DataClassesSyndicDataContext() : 
-				base(global::SYNDIC_1._0.Properties.Settings.Default.syndic2ConnectionString1, mappingSource)
+				base(global::SYNDIC_1._0.Properties.Settings.Default.syndic2ConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}

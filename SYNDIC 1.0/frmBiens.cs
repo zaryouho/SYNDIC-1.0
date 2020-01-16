@@ -41,7 +41,7 @@ namespace SYNDIC_1._0
 
         private void frmBiens_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionString1");
+            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
 
             DBHelper.remplir_dataset("select * from bloc", "bloc");
             DBHelper.remplir_dataset("select * from immeuble ", "immeuble");
@@ -56,6 +56,8 @@ namespace SYNDIC_1._0
             DBHelper.remplir_ListControl(comboBoxImmeuble, bsImmeuble, "nom", "id");
 
             RemplirDataGridViewBiens();
+            buttonSsBiensListe.BackColor = Color.Navy;
+
 
         }
 
@@ -156,6 +158,29 @@ namespace SYNDIC_1._0
         private void splitContainerBiens_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void buttonSsBiensListe_Click(object sender, EventArgs e)
+        {
+            tabControlBiens.SelectedTab = tabPageBiensListe;
+            buttonSsBiensListe.BackColor = Color.Navy;
+            buttonSsBiensEcheances.BackColor = Color.Blue;
+            buttonSsBiensEchangeProprietaire.BackColor = Color.Blue;
+        }
+
+        private void buttonSsBiensEchangeProprietaire_Click(object sender, EventArgs e)
+        {
+            tabControlBiens.SelectedTab = tabPageBiensEchangeProprietaire;
+            buttonSsBiensListe.BackColor = Color.Blue;
+            buttonSsBiensEcheances.BackColor = Color.Blue;
+            buttonSsBiensEchangeProprietaire.BackColor = Color.Navy;
+        }
+
+        private void buttonSsBiensEcheances_Click(object sender, EventArgs e)
+        {
+            tabControlBiens.SelectedTab = tabPageBiensEcheances;
+            buttonSsBiensListe.BackColor = Color.Blue;
+            buttonSsBiensEcheances.BackColor = Color.Navy;
+            buttonSsBiensEchangeProprietaire.BackColor = Color.Blue;
         }
     }
 }

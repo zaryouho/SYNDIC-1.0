@@ -304,21 +304,21 @@
         <classShapeMoniker Id="ddb2cdc1-ee9d-4fa0-b7af-018a0bf4bc09" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 17.0392976888021); (12.2187475 : 17.0392976888021); (12.2187475 : 14.3574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 17.0392976888021); (5.79166666666667 : 17.0392976888021 : JumpStart); (5.95833333333333 : 17.0392976888021 : JumpEnd); (12.2187475 : 17.0392976888021); (12.2187475 : 14.3574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesSyndicDataContext/proprietaire/proprietaire_bien" />
       <nodes>
         <classShapeMoniker Id="608f1433-403a-45ee-95ee-d346d90f1a85" />
         <classShapeMoniker Id="b5100491-99b5-458b-8744-489bd8e59014" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 18.0873527018229); (6.25 : 18.0873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 18.0873527018229); (5.79166666666667 : 18.0873527018229 : JumpStart); (5.95833333333333 : 18.0873527018229 : JumpEnd); (6.25 : 18.0873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesSyndicDataContext/proprietaire/proprietaire_cotisation" />
       <nodes>
         <classShapeMoniker Id="608f1433-403a-45ee-95ee-d346d90f1a85" />
         <classShapeMoniker Id="5985e8b2-17d3-4492-b0ab-abefc6888f20" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 16.2892976888021); (6.25 : 16.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 16.2892976888021); (5.79166666666667 : 16.2892976888021 : JumpStart); (5.95833333333333 : 16.2892976888021 : JumpEnd); (6.25 : 16.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesSyndicDataContext/proprietaire/proprietaire_documentProprietaire" />
       <nodes>
         <classShapeMoniker Id="608f1433-403a-45ee-95ee-d346d90f1a85" />

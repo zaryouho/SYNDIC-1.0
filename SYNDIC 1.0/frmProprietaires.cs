@@ -35,7 +35,7 @@ namespace SYNDIC_1._0
 
         private void frmProprietaires_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionString1");
+            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
             var src = from p in syndicDataContext.proprietaire
                       select p;
 
@@ -181,5 +181,7 @@ namespace SYNDIC_1._0
            //    DBHelper.fermerConnection();
             
         }
+
+        
     }
 }

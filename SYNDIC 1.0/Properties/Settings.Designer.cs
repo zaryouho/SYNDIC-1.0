@@ -36,11 +36,20 @@ namespace SYNDIC_1._0.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=syndic2;Persist Security Info=True;User ID=sa;Passw" +
-            "ord=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=syndic2;Persist Security Info=True;User ID=sa")]
         public string syndic2ConnectionString1 {
             get {
                 return ((string)(this["syndic2ConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=syndic2;Integrated Security=True")]
+        public string syndic2ConnectionString2 {
+            get {
+                return ((string)(this["syndic2ConnectionString2"]));
             }
         }
     }
