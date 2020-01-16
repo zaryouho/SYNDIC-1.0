@@ -16,6 +16,7 @@ namespace SYNDIC_1._0
         private BindingSource bsBien;
         private BindingSource bsBloc;
         private BindingSource bsImmeuble;
+        private DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
 
 
         public frmBiens()
@@ -27,7 +28,7 @@ namespace SYNDIC_1._0
         {
             this.Close();
         }
-        
+
         public void RemplirDataGridViewBiens()
         {
             bsBien = DBHelper.remplir_bindingsource("immeuble", "id", "bien", "id_Immeuble", bsImmeuble);
@@ -43,16 +44,16 @@ namespace SYNDIC_1._0
             DBHelper.ouvrirConnection("SyndicConnectionString");
 
             DBHelper.remplir_dataset("select * from bloc", "bloc");
-            DBHelper.remplir_dataset("select * from immeuble ","immeuble");
+            DBHelper.remplir_dataset("select * from immeuble ", "immeuble");
             DBHelper.remplir_dataset("select * from bien", "bien");
 
-         
-            bsBloc = DBHelper.remplir_bindingsource("bloc");
-            bsImmeuble = DBHelper.remplir_bindingsource("bloc","id", "immeuble","id_bloc",bsBloc);
-         
 
-            DBHelper.remplir_ListControl(comboBoxBloc, bsBloc,"nomBloc", "id");
-            DBHelper.remplir_ListControl(comboBoxImmeuble, bsImmeuble,"nom", "id");
+            bsBloc = DBHelper.remplir_bindingsource("bloc");
+            bsImmeuble = DBHelper.remplir_bindingsource("bloc", "id", "immeuble", "id_bloc", bsBloc);
+
+
+            DBHelper.remplir_ListControl(comboBoxBloc, bsBloc, "nomBloc", "id");
+            DBHelper.remplir_ListControl(comboBoxImmeuble, bsImmeuble, "nom", "id");
 
             RemplirDataGridViewBiens();
 
@@ -80,19 +81,71 @@ namespace SYNDIC_1._0
 
         private void buttonChercher_Click(object sender, EventArgs e)
         {
+            string text = textBoxRechercher.Text;
+            bool flag = true;
+            foreach (DataGridViewRow row in dataGridViewBien.Rows)
+            {
+                for (int i = 0; i < row.Cells.Count - 1; i++)
+                {
+                    if (row.Cells[i].Value == null || i == 7 || i == 6)
+                        continue;
+                    if (row.Cells[i].Value.ToString().ToUpper().Contains(text.ToUpper()))
+                    {
+                        flag = false;
+                        dataGridViewBien.CurrentCell = dataGridViewBien[1, row.Index];
+                        
+                        int columnIndex = dataGridViewBien.CurrentCell.ColumnIndex;
+                        string columnName = dataGridViewBien.Columns[columnIndex].Name;
+                        string found = dataGridViewBien.CurrentCell.Value.ToString();
+                        
+                        if (MessageBox.Show("is it ?\n"+ columnName +" Bien est "+found , "question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            return;
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+              
+            }
+            if (!flag)
+            {
+                MessageBox.Show("this is the last one");
+                return;
+            }
+
+            MessageBox.Show("there is nothing");
             
+
+           
         }
 
         private void buttonModifier_Click(object sender, EventArgs e)
         {
+            if (dataGridViewBien.Rows.Count > 0)
+                new FormModifierBien(Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[7].Value.ToString()), Convert.ToDateTime(dataGridViewBien.CurrentRow.Cells[9].Value.ToString()), bsBien).ShowDialog();
 
-            new FormModifierBien(Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[7].Value.ToString()),Convert.ToDateTime(dataGridViewBien.CurrentRow.Cells[9].Value.ToString()),bsBien).ShowDialog();
-            
-        
 
-            
-       
 
+
+
+
+        }
+
+        private void textBoxRechercher_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                buttonChercher.PerformClick();
+            }
+        }
+
+        private void textBoxRechercher_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxRechercher.Text == "")
+                buttonChercher.Enabled = false;
+            else
+                buttonChercher.Enabled = true;
         }
     }
 }
