@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxId = new System.Windows.Forms.TextBox();
             this.textBoxCin = new System.Windows.Forms.TextBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.textBoxPrenom = new System.Windows.Forms.TextBox();
@@ -36,10 +35,8 @@
             this.textBoxCodePostal = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxTele = new System.Windows.Forms.TextBox();
-            this.textBoxTitre = new System.Windows.Forms.TextBox();
             this.comboBoxVille = new System.Windows.Forms.ComboBox();
             this.labelSexe = new System.Windows.Forms.Label();
-            this.labelId = new System.Windows.Forms.Label();
             this.labelVille = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelTele = new System.Windows.Forms.Label();
@@ -55,20 +52,12 @@
             this.labelCloseProprietaires = new System.Windows.Forms.Label();
             this.labelProprietaires = new System.Windows.Forms.Label();
             this.comboBoxIdVille = new System.Windows.Forms.ComboBox();
+            this.comboBoxTitre = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBoxId
-            // 
-            this.textBoxId.Enabled = false;
-            this.textBoxId.Location = new System.Drawing.Point(203, 60);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(201, 20);
-            this.textBoxId.TabIndex = 0;
-            this.textBoxId.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxCin
             // 
-            this.textBoxCin.Location = new System.Drawing.Point(203, 89);
+            this.textBoxCin.Location = new System.Drawing.Point(203, 73);
             this.textBoxCin.Name = "textBoxCin";
             this.textBoxCin.Size = new System.Drawing.Size(201, 20);
             this.textBoxCin.TabIndex = 1;
@@ -76,7 +65,7 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(203, 118);
+            this.textBoxNom.Location = new System.Drawing.Point(203, 102);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(201, 20);
             this.textBoxNom.TabIndex = 2;
@@ -84,7 +73,7 @@
             // 
             // textBoxPrenom
             // 
-            this.textBoxPrenom.Location = new System.Drawing.Point(203, 147);
+            this.textBoxPrenom.Location = new System.Drawing.Point(203, 131);
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(201, 20);
             this.textBoxPrenom.TabIndex = 3;
@@ -92,7 +81,7 @@
             // 
             // textBoxAdresse
             // 
-            this.textBoxAdresse.Location = new System.Drawing.Point(203, 206);
+            this.textBoxAdresse.Location = new System.Drawing.Point(203, 190);
             this.textBoxAdresse.Name = "textBoxAdresse";
             this.textBoxAdresse.Size = new System.Drawing.Size(201, 20);
             this.textBoxAdresse.TabIndex = 5;
@@ -100,7 +89,7 @@
             // 
             // textBoxCodePostal
             // 
-            this.textBoxCodePostal.Location = new System.Drawing.Point(203, 235);
+            this.textBoxCodePostal.Location = new System.Drawing.Point(203, 219);
             this.textBoxCodePostal.Name = "textBoxCodePostal";
             this.textBoxCodePostal.Size = new System.Drawing.Size(201, 20);
             this.textBoxCodePostal.TabIndex = 6;
@@ -108,7 +97,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(203, 293);
+            this.textBoxEmail.Location = new System.Drawing.Point(203, 277);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(201, 20);
             this.textBoxEmail.TabIndex = 7;
@@ -116,24 +105,16 @@
             // 
             // textBoxTele
             // 
-            this.textBoxTele.Location = new System.Drawing.Point(203, 264);
+            this.textBoxTele.Location = new System.Drawing.Point(203, 248);
             this.textBoxTele.Name = "textBoxTele";
             this.textBoxTele.Size = new System.Drawing.Size(201, 20);
             this.textBoxTele.TabIndex = 8;
             this.textBoxTele.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
-            // textBoxTitre
-            // 
-            this.textBoxTitre.Location = new System.Drawing.Point(203, 352);
-            this.textBoxTitre.Name = "textBoxTitre";
-            this.textBoxTitre.Size = new System.Drawing.Size(201, 20);
-            this.textBoxTitre.TabIndex = 9;
-            this.textBoxTitre.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
-            // 
             // comboBoxVille
             // 
             this.comboBoxVille.FormattingEnabled = true;
-            this.comboBoxVille.Location = new System.Drawing.Point(203, 322);
+            this.comboBoxVille.Location = new System.Drawing.Point(203, 305);
             this.comboBoxVille.Name = "comboBoxVille";
             this.comboBoxVille.Size = new System.Drawing.Size(201, 21);
             this.comboBoxVille.TabIndex = 10;
@@ -143,26 +124,16 @@
             // labelSexe
             // 
             this.labelSexe.AutoSize = true;
-            this.labelSexe.Location = new System.Drawing.Point(51, 179);
+            this.labelSexe.Location = new System.Drawing.Point(51, 163);
             this.labelSexe.Name = "labelSexe";
             this.labelSexe.Size = new System.Drawing.Size(37, 13);
             this.labelSexe.TabIndex = 29;
             this.labelSexe.Text = "Sexe :";
             // 
-            // labelId
-            // 
-            this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(51, 63);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(22, 13);
-            this.labelId.TabIndex = 28;
-            this.labelId.Text = "Id :";
-            this.labelId.Click += new System.EventHandler(this.labelTitre_Click);
-            // 
             // labelVille
             // 
             this.labelVille.AutoSize = true;
-            this.labelVille.Location = new System.Drawing.Point(50, 324);
+            this.labelVille.Location = new System.Drawing.Point(50, 308);
             this.labelVille.Name = "labelVille";
             this.labelVille.Size = new System.Drawing.Size(32, 13);
             this.labelVille.TabIndex = 27;
@@ -171,7 +142,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(50, 295);
+            this.labelEmail.Location = new System.Drawing.Point(50, 279);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(38, 13);
             this.labelEmail.TabIndex = 26;
@@ -180,7 +151,7 @@
             // labelTele
             // 
             this.labelTele.AutoSize = true;
-            this.labelTele.Location = new System.Drawing.Point(50, 266);
+            this.labelTele.Location = new System.Drawing.Point(50, 250);
             this.labelTele.Name = "labelTele";
             this.labelTele.Size = new System.Drawing.Size(34, 13);
             this.labelTele.TabIndex = 25;
@@ -189,7 +160,7 @@
             // labelCharge
             // 
             this.labelCharge.AutoSize = true;
-            this.labelCharge.Location = new System.Drawing.Point(50, 237);
+            this.labelCharge.Location = new System.Drawing.Point(50, 221);
             this.labelCharge.Name = "labelCharge";
             this.labelCharge.Size = new System.Drawing.Size(70, 13);
             this.labelCharge.TabIndex = 24;
@@ -198,7 +169,7 @@
             // labelAdresse
             // 
             this.labelAdresse.AutoSize = true;
-            this.labelAdresse.Location = new System.Drawing.Point(50, 208);
+            this.labelAdresse.Location = new System.Drawing.Point(50, 192);
             this.labelAdresse.Name = "labelAdresse";
             this.labelAdresse.Size = new System.Drawing.Size(51, 13);
             this.labelAdresse.TabIndex = 23;
@@ -207,7 +178,7 @@
             // labelPrenom
             // 
             this.labelPrenom.AutoSize = true;
-            this.labelPrenom.Location = new System.Drawing.Point(50, 150);
+            this.labelPrenom.Location = new System.Drawing.Point(50, 134);
             this.labelPrenom.Name = "labelPrenom";
             this.labelPrenom.Size = new System.Drawing.Size(49, 13);
             this.labelPrenom.TabIndex = 22;
@@ -216,7 +187,7 @@
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(50, 121);
+            this.labelNom.Location = new System.Drawing.Point(50, 105);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(38, 13);
             this.labelNom.TabIndex = 21;
@@ -225,7 +196,7 @@
             // labelTitre
             // 
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Location = new System.Drawing.Point(48, 353);
+            this.labelTitre.Location = new System.Drawing.Point(48, 337);
             this.labelTitre.Name = "labelTitre";
             this.labelTitre.Size = new System.Drawing.Size(34, 13);
             this.labelTitre.TabIndex = 30;
@@ -234,7 +205,7 @@
             // labelCin
             // 
             this.labelCin.AutoSize = true;
-            this.labelCin.Location = new System.Drawing.Point(51, 92);
+            this.labelCin.Location = new System.Drawing.Point(51, 76);
             this.labelCin.Name = "labelCin";
             this.labelCin.Size = new System.Drawing.Size(25, 13);
             this.labelCin.TabIndex = 31;
@@ -243,7 +214,7 @@
             // comboBoxSexe
             // 
             this.comboBoxSexe.FormattingEnabled = true;
-            this.comboBoxSexe.Location = new System.Drawing.Point(203, 176);
+            this.comboBoxSexe.Location = new System.Drawing.Point(203, 160);
             this.comboBoxSexe.Name = "comboBoxSexe";
             this.comboBoxSexe.Size = new System.Drawing.Size(201, 21);
             this.comboBoxSexe.TabIndex = 32;
@@ -251,7 +222,6 @@
             // 
             // buttonValider
             // 
-            this.buttonValider.Enabled = false;
             this.buttonValider.Location = new System.Drawing.Point(88, 399);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(88, 39);
@@ -296,18 +266,27 @@
             // comboBoxIdVille
             // 
             this.comboBoxIdVille.FormattingEnabled = true;
-            this.comboBoxIdVille.Location = new System.Drawing.Point(203, 322);
+            this.comboBoxIdVille.Location = new System.Drawing.Point(203, 305);
             this.comboBoxIdVille.Name = "comboBoxIdVille";
             this.comboBoxIdVille.Size = new System.Drawing.Size(201, 21);
             this.comboBoxIdVille.TabIndex = 37;
             this.comboBoxIdVille.SelectedIndexChanged += new System.EventHandler(this.comboBoxIdVille_SelectedIndexChanged);
             this.comboBoxIdVille.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
+            // comboBoxTitre
+            // 
+            this.comboBoxTitre.FormattingEnabled = true;
+            this.comboBoxTitre.Location = new System.Drawing.Point(203, 337);
+            this.comboBoxTitre.Name = "comboBoxTitre";
+            this.comboBoxTitre.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxTitre.TabIndex = 38;
+            // 
             // FormAjouterModifierProp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 450);
+            this.Controls.Add(this.comboBoxTitre);
             this.Controls.Add(this.labelCloseProprietaires);
             this.Controls.Add(this.labelProprietaires);
             this.Controls.Add(this.buttonAnnuler);
@@ -316,7 +295,6 @@
             this.Controls.Add(this.labelCin);
             this.Controls.Add(this.labelTitre);
             this.Controls.Add(this.labelSexe);
-            this.Controls.Add(this.labelId);
             this.Controls.Add(this.labelVille);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelTele);
@@ -325,7 +303,6 @@
             this.Controls.Add(this.labelPrenom);
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.comboBoxVille);
-            this.Controls.Add(this.textBoxTitre);
             this.Controls.Add(this.textBoxTele);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxCodePostal);
@@ -333,7 +310,6 @@
             this.Controls.Add(this.textBoxPrenom);
             this.Controls.Add(this.textBoxNom);
             this.Controls.Add(this.textBoxCin);
-            this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.comboBoxIdVille);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierProp";
@@ -345,8 +321,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.TextBox textBoxCin;
         private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.TextBox textBoxPrenom;
@@ -354,10 +328,8 @@
         private System.Windows.Forms.TextBox textBoxCodePostal;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxTele;
-        private System.Windows.Forms.TextBox textBoxTitre;
         private System.Windows.Forms.ComboBox comboBoxVille;
         private System.Windows.Forms.Label labelSexe;
-        private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.Label labelVille;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelTele;
@@ -373,5 +345,6 @@
         private System.Windows.Forms.Label labelCloseProprietaires;
         private System.Windows.Forms.Label labelProprietaires;
         private System.Windows.Forms.ComboBox comboBoxIdVille;
+        private System.Windows.Forms.ComboBox comboBoxTitre;
     }
 }

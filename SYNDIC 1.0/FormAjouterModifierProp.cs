@@ -31,6 +31,10 @@ namespace SYNDIC_1._0
             comboBoxSexe.Items.Add("Homme");
             comboBoxSexe.Items.Add("Femme");
 
+            comboBoxTitre.Items.Add("Mlle.");
+            comboBoxTitre.Items.Add("Mme.");
+            comboBoxTitre.Items.Add("Mr.");
+
             var src = from v in syndicDataContext.ville
                       select v;
 
@@ -44,12 +48,7 @@ namespace SYNDIC_1._0
 
             if (op == 'M')
             {
-               
 
-              
-
-
-                textBoxId.Text = p.id.ToString();
                 textBoxCin.Text = p.CIN.ToString();
                 textBoxNom.Text = p.nom.ToString();
                 textBoxPrenom.Text = p.prenom.ToString();
@@ -58,17 +57,13 @@ namespace SYNDIC_1._0
                 textBoxCodePostal.Text = p.code_postal.ToString();
                 textBoxEmail.Text = p.email.ToString();
                 textBoxTele.Text = p.tel.ToString();
-                textBoxTitre.Text = p.Titre.ToString();
+                comboBoxTitre.SelectedItem = p.Titre.ToString();
                 comboBoxIdVille.SelectedItem = p.id_ville ;
                 comboBoxVille.SelectedValue = p.id_ville;
 
-
-
-
             }
 
-            else
-                textBoxId.Text = (syndicDataContext.proprietaire.Max(p => p.id) + 1).ToString();
+            
         }
 
         private void buttonValider_Click(object sender, EventArgs e)
@@ -80,26 +75,26 @@ namespace SYNDIC_1._0
                 var prop = (from pro in syndicDataContext.proprietaire
                            where pro.id == p.id
                            select pro).Single();
-
                     
                 prop.CIN= textBoxCin.Text ;
-                prop.nom=    textBoxNom.Text ;
+                prop.nom= textBoxNom.Text ;
                 prop.prenom= textBoxPrenom.Text ;
                 prop.Sexe = comboBoxSexe.SelectedItem.ToString() ;
                 prop.adresse = textBoxAdresse.Text ;
                 prop.code_postal= int.Parse(textBoxCodePostal.Text) ;
                 prop.email= textBoxEmail.Text ;
                 prop.tel= textBoxTele.Text ;
-                prop.Titre= textBoxTitre.Text;
+                prop.Titre= comboBoxTitre.Text;
                 prop.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
+
+                
+                
 
             }
 
             else
             {
-                
-            
-                p.id = int.Parse(textBoxId.Text);
+
                 p.CIN = textBoxCin.Text;
                 p.nom = textBoxNom.Text;
                 p.prenom = textBoxPrenom.Text;
@@ -108,13 +103,13 @@ namespace SYNDIC_1._0
                 p.code_postal = int.Parse(textBoxCodePostal.Text);
                 p.email = textBoxEmail.Text;
                 p.tel = textBoxTele.Text;
-                p.Titre = textBoxTitre.Text;
-                p.id_ville = comboBoxVille.SelectedIndex;
+                p.Titre = comboBoxTitre.Text;
+                p.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
 
                 syndicDataContext.proprietaire.InsertOnSubmit(p);
 
             }
-
+            
             syndicDataContext.SubmitChanges();
             syndicDataContext.Dispose();
             this.Close();
@@ -131,7 +126,7 @@ namespace SYNDIC_1._0
                 textBoxCin.Clear();
                 textBoxCodePostal.Clear();
                 textBoxTele.Clear();
-                textBoxTitre.Clear();
+                comboBoxTitre.SelectedIndex=0;
                 textBoxEmail.Clear();
                 comboBoxSexe.SelectedIndex = 0;
                 comboBoxSexe.SelectedIndex = 0;
@@ -153,11 +148,11 @@ namespace SYNDIC_1._0
 
         private void comboBoxSexe_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxCin.Text != "" && textBoxNom.Text != "" && textBoxPrenom.Text != "" 
-                && textBoxCodePostal.Text != "" && textBoxEmail.Text != "" && textBoxTele.Text != "" && textBoxTitre.Text != "")
-                buttonValider.Enabled = true;
-            else
-                buttonValider.Enabled = false;
+            //if (textBoxCin.Text != "" && textBoxNom.Text != "" && textBoxPrenom.Text != "" 
+            //    && comboBoxSexe.Text != "" && textBoxEmail.Text != "" && textBoxTele.Text != "" && comboBoxTitre.Text != "")
+            //    buttonValider.Enabled = true;
+            //else
+            //    buttonValider.Enabled = false;
         }
 
         private void comboBoxVille_SelectedIndexChanged(object sender, EventArgs e)
