@@ -46,8 +46,7 @@ namespace SYNDIC_1._0
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
-            //dataGridViewProprietaires.ClearSelection();
-            //dataGridViewProprietaires.Rows[0].Selected = true;
+            
 
             dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0,0];
             
@@ -143,45 +142,29 @@ namespace SYNDIC_1._0
 
         private void buttonRechercher_Click(object sender, EventArgs e)
         {
-           
-            
-           // DBHelper.ouvrirConnection("SyndicConnectionString1");
-           // var sql = "SELECT * from PROPRIETAIRE ";
+            string[] vs = textBoxrechercher.Text.Split(' ');
+            for(int i=0;i<vs.Length;i++)
+            {
+                vs[i].Trim();
+                if (vs[i].Equals(string.Empty))
+                    vs.SetValue("gOgLgXgPgIg9", i);
+            }
+            var src = from p in syndicDataContext.proprietaire
+                      where vs.Contains(p.CIN) || vs.Contains(p.nom) || vs.Contains(p.prenom)
+                      || vs.Contains(p.tel) || vs.Contains(p.email) || vs.Contains(p.Titre)
+                      || vs.Contains(p.adresse) || vs.Contains(p.Sexe)
+                      select p;
 
-           //string filter = " where ";
-           //string[] t = textBoxrechercher.Text.Split(' ');
-           //for (int i = 0; i < t.Length; i++)
-           // {
-
-           //     filter += "  CIN like '%" + t[i].Replace("'", "''") + "%' or NOM like '%" + t[i].Replace("'", "''") + "%' or ADRESSE like '%" + t[i].Replace("'", "''") + "%' or TITRE like '%" + t[i].Replace("'", "''") + "%' or SEXE like '%" + t[i].Replace("'", "''") + "%' or EMAIL like '%" + t[i].Replace("'", "''") + "%' or TEL like '%" + t[i].Replace("'", "''") + "%' or CODE_POSTAL like '%" + t[i].Replace("'", "''") + "%' or PRENOM like '%" + t[i].Replace("'", "''") + "%' ";
-
-           //    if (i < t.Length - 1) filter += " or ";
-
-           // }
-
-           // dataGridViewProprietaires.Rows.Clear();
-
-           // using (SqlCommand com = new SqlCommand(sql,DBHelper.cn))
-           // {
-           //     SqlDataReader dr = com.ExecuteReader();
-           //     dataGridViewProprietaires.DataBindings.Clear();
-                
-
-           //     while (dr.Read())
-           //     {
-           //         dataGridViewProprietaires.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
+            dataGridViewProprietaires.DataSource = src;
 
 
 
-           //     }
 
-           //     dr.Close();
-
-
-           //    DBHelper.fermerConnection();
-            
         }
 
-        
+        private void textBoxrechercher_TextChanged(object sender, EventArgs e)
+        {
+            buttonRechercher.PerformClick();
+        }
     }
 }
