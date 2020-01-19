@@ -47,6 +47,7 @@
             // dataGridGestionType
             // 
             this.dataGridGestionType.AllowUserToAddRows = false;
+            this.dataGridGestionType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridGestionType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridGestionType.Location = new System.Drawing.Point(12, 33);
             this.dataGridGestionType.Name = "dataGridGestionType";
