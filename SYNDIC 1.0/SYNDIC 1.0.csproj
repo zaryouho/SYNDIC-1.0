@@ -57,17 +57,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAjouterModifierEcheance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjouterModifierEcheance.Designer.cs">
+      <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAjouterModifierProp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAjouterModifierProp.Designer.cs">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBienEcheance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBienEcheance.Designer.cs">
+      <DependentUpon>FormBienEcheance.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionTypes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGestionTypes.Designer.cs">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListeBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListeBien.Designer.cs">
+      <DependentUpon>FormListeBien.cs</DependentUpon>
     </Compile>
     <Compile Include="FormModifierBien.cs">
       <SubType>Form</SubType>
@@ -124,11 +142,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAjouterModifierEcheance.resx">
+      <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjouterModifierProp.resx">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBienEcheance.resx">
+      <DependentUpon>FormBienEcheance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGestionTypes.resx">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListeBien.resx">
+      <DependentUpon>FormListeBien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormModifierBien.resx">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
