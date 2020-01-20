@@ -80,34 +80,60 @@ namespace SYNDIC_1._0
             frmchild.Show();            
         }
 
+        int flag = 0;
+
         private void buttonBiens_Click(object sender, EventArgs e)
         {
-            OpenFormInPannel(new frmBiens());
+            if (flag!=1)
+                OpenFormInPannel(new frmBiens());
+
+
+            flag = 1;
+
         }
 
         private void buttonProprietaires_Click(object sender, EventArgs e)
         {
-            OpenFormInPannel(new frmProprietaires());
+            if(flag!=2)
+                OpenFormInPannel(new frmProprietaires());
+
+            flag = 2;
+
         }
 
         private void buttonFinances_Click(object sender, EventArgs e)
         {
-            OpenFormInPannel(new frmFinances());
+            if (flag != 3)
+                OpenFormInPannel(new frmFinances());
+
+            flag = 3;
+
         }
 
         private void buttonDocuments_Click(object sender, EventArgs e)
         {
-            OpenFormInPannel(new frmDocuments());
+            if (flag != 4)
+                OpenFormInPannel(new frmDocuments());
+
+            flag = 4;
+
         }
 
         private void buttonHistoriques_Click(object sender, EventArgs e)
         {
-            OpenFormInPannel(new frmHistoriques());
+            if (flag != 5)
+                OpenFormInPannel(new frmHistoriques());
+
+            flag = 5;
         }
 
         private void buttonRapportsStatistiques_Click(object sender, EventArgs e)
         {
-            OpenFormInPannel(new frmRapportsStatistiques());
+            if (flag != 6)
+                OpenFormInPannel(new frmRapportsStatistiques());
+
+
+            flag = 6;
         }
 
         

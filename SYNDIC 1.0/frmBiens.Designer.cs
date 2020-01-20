@@ -47,7 +47,7 @@
             // 
             this.labelBiens.AutoSize = true;
             this.labelBiens.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBiens.Location = new System.Drawing.Point(368, 15);
+            this.labelBiens.Location = new System.Drawing.Point(340, 15);
             this.labelBiens.Name = "labelBiens";
             this.labelBiens.Size = new System.Drawing.Size(76, 30);
             this.labelBiens.TabIndex = 0;

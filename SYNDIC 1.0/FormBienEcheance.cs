@@ -19,7 +19,7 @@ namespace SYNDIC_1._0
         private BindingSource bsImmeuble;
         private BindingSource bsEcheance;
         private BindingSource bsTypeEcheance;
-        private DataClassesSyndicDataContext syndicDataContext;
+        //private DataClassesSyndicDataContext syndicDataContext;
 
         public FormBienEcheance()
         {
@@ -29,6 +29,10 @@ namespace SYNDIC_1._0
         private void FormBienEcheance_Load(object sender, EventArgs e)
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
+
+            DBHelper.remplir_dataset("select * from bloc", "bloc");
+            DBHelper.remplir_dataset("select * from immeuble ", "immeuble");
+
 
             DBHelper.remplir_dataset("select id, nom +" + "' - '" + "+titre as [Nom Bien et Titre],id_Immeuble from bien", "bien_Echeance");
             DBHelper.remplir_dataset("select * from Echeance order by id_bien,annee,mois", "Echeance");
