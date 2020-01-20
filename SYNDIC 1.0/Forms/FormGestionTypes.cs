@@ -38,8 +38,8 @@ namespace SYNDIC_1._0
             DBHelper.ouvrirConnection("SyndicConnectionString");
     
             // Querry 
-            string querry = "select * from type where idTableType in (select id from tabletype where libelle like '" + type + "')";
-            DBHelper.remplir_dataset(querry, "Type");
+            string query = "select * from type where idTableType in (select id from tabletype where libelle like '" + type + "')";
+            DBHelper.remplir_dataset(query, "Type");
 
             // Remplissage de Binding source
             bsType = DBHelper.remplir_bindingsource("Type");

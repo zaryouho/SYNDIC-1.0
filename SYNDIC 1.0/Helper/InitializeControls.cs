@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SYNDIC_1._0.Helpers
+namespace SYNDIC_1._0
 {
     public static class InitializeControls
     {
@@ -27,7 +27,7 @@ namespace SYNDIC_1._0.Helpers
         /// Does not retrn
         /// </summary>
         /// <param name="form">The active from</param>
-        public static void cleatText(Form form)
+        public static void clearText(Form form)
         {
             var textBoxes = form.GetChildControls<TextBox>();
             foreach (TextBox textBox in textBoxes)

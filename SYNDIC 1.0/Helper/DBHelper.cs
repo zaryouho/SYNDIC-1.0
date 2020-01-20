@@ -13,8 +13,8 @@ namespace SYNDIC_1._0
 {
     public static class DBHelper
     {
-       public  static SqlConnection cn = new SqlConnection();
-        static DataSet ds = new DataSet();
+       public  static SqlConnection connection = new SqlConnection();
+        static DataSet dataSet = new DataSet();
 
 
         static public void ouvrirConnection(string name)
@@ -24,18 +24,18 @@ namespace SYNDIC_1._0
                 throw new ArgumentException("message", nameof(name));
             }
 
-            if (cn.State != ConnectionState.Open)
+            if (connection.State != ConnectionState.Open)
             {
-                cn.ConnectionString = ConfigurationManager.ConnectionStrings[name].ToString();
-                cn.Open();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings[name].ToString();
+                connection.Open();
             }
         }
 
 
         static public void fermerConnection()
         {
-            if (cn.State == ConnectionState.Open)
-                cn.Close();
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
         }
 
         static public void creerRelation(string tpk, string tfk, string pk, string fk)
@@ -61,13 +61,13 @@ namespace SYNDIC_1._0
             }
 
             string nomRel = "rel_" + tpk + "_" + tfk;
-            DataColumn c1 = ds.Tables[tpk].Columns[pk];
-            DataColumn c2 = ds.Tables[tfk].Columns[fk];
+            DataColumn c1 = dataSet.Tables[tpk].Columns[pk];
+            DataColumn c2 = dataSet.Tables[tfk].Columns[fk];
 
             DataRelation r = new DataRelation(nomRel, c1, c2);
 
-            if (!ds.Relations.Contains(nomRel))
-                ds.Relations.Add(r);
+            if (!dataSet.Relations.Contains(nomRel))
+                dataSet.Relations.Add(r);
 
         }
 
@@ -84,10 +84,10 @@ namespace SYNDIC_1._0
             }
 
 
-            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
-            if (!ds.Tables.Contains(table))
-                da.Fill(ds, table);
-            da = null;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, connection);
+            if (!dataSet.Tables.Contains(table))
+                dataAdapter.Fill(dataSet, table);
+            dataAdapter = null;
 
         }
 
@@ -98,14 +98,14 @@ namespace SYNDIC_1._0
                 throw new ArgumentException("message", nameof(table));
             }
 
-            BindingSource bs = new BindingSource();
+            BindingSource bindingSource = new BindingSource();
 
 
 
-            bs.DataSource = ds;
-            bs.DataMember = table;
+            bindingSource.DataSource = dataSet;
+            bindingSource.DataMember = table;
 
-            return bs;
+            return bindingSource;
 
         }
         static public BindingSource remplir_bindingsource(string tpk, string pk, string tfk, string fk, BindingSource bsPk)
@@ -135,26 +135,26 @@ namespace SYNDIC_1._0
                 throw new ArgumentNullException(nameof(bsPk));
             }
 
-            BindingSource bs = new BindingSource();
+            BindingSource bindingSource = new BindingSource();
 
 
 
             creerRelation(tpk, tfk, pk, fk);
 
-            bs.DataSource = bsPk;
-            bs.DataMember = "rel_" + tpk + "_" + tfk;
+            bindingSource.DataSource = bsPk;
+            bindingSource.DataMember = "rel_" + tpk + "_" + tfk;
 
-            return bs;
+            return bindingSource;
 
         }
 
-        static public void remplir_ListControl(ListControl l, BindingSource bs, string displaymember, string valuemember)
+        static public void remplir_ListControl(ListControl listControl, BindingSource bindingSource, string displaymember, string valuemember)
         {
 
 
-            if (bs is null)
+            if (bindingSource is null)
             {
-                throw new ArgumentNullException(nameof(bs));
+                throw new ArgumentNullException(nameof(bindingSource));
             }
 
             if (string.IsNullOrEmpty(displaymember))
@@ -167,21 +167,21 @@ namespace SYNDIC_1._0
                 throw new ArgumentException("message", nameof(valuemember));
             }
 
-            l.DataSource = bs;
-            l.DisplayMember = displaymember;
-            l.ValueMember = valuemember;
+            listControl.DataSource = bindingSource;
+            listControl.DisplayMember = displaymember;
+            listControl.ValueMember = valuemember;
 
 
         }
 
-        static public void remplir_Grille(DataGridView v, BindingSource bs)
+        static public void remplir_Grille(DataGridView dataGridView, BindingSource bindingSource)
         {
-            if (bs is null)
+            if (bindingSource is null)
             {
-                throw new ArgumentNullException(nameof(bs));
+                throw new ArgumentNullException(nameof(bindingSource));
             }
 
-            v.DataSource = bs;
+            dataGridView.DataSource = bindingSource;
 
 
         }
@@ -194,11 +194,11 @@ namespace SYNDIC_1._0
                 throw new ArgumentException("message", nameof(table));
             }
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from " + table, cn);
-            SqlCommandBuilder cb = new SqlCommandBuilder(da);
-            da.Update(ds.Tables[table]);
-            da = null;
-            cb = null;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from " + table, connection);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.Update(dataSet.Tables[table]);
+            dataAdapter = null;
+            commandBuilder = null;
 
 
         }
