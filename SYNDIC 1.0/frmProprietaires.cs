@@ -12,10 +12,19 @@ namespace SYNDIC_1._0
 {
     public partial class frmProprietaires : Form
     {
-        DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
-        char op = 'A';
-        static int i = 0;
-        proprietaire p = new proprietaire();
+        private void OpenFormInPannel(object formChild)
+        {
+            if (this.splitContainerProprietaire.Panel2.Controls.Count > 0)
+                this.splitContainerProprietaire.Panel2.Controls.RemoveAt(0);
+
+            Form frmchild = formChild as Form;
+            frmchild.TopLevel = false;
+            frmchild.Dock = DockStyle.Fill;
+            this.splitContainerProprietaire.Panel2.Controls.Add(frmchild);
+            this.splitContainerProprietaire.Panel2.Tag = frmchild;
+            frmchild.Show();
+        }
+
         public frmProprietaires()
         {
             InitializeComponent();
@@ -28,143 +37,48 @@ namespace SYNDIC_1._0
 
        
 
-        private void dataGridViewProprietaires_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void frmProprietaires_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
-            var src = from p in syndicDataContext.proprietaire
-                      select p;
-
-            
-
-            dataGridViewProprietaires.DataSource = src;
-        }
-
-        private void buttonFirst_Click(object sender, EventArgs e)
-        {
-            
-
-            dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0,0];
-            
-        }
-
-       
-
-        private void buttonAjouter_Click(object sender, EventArgs e)
-        {
-            op = 'A';
-            using (var formAjouterModifierProp = new FormAjouterModifierProp(new proprietaire(), op))
-            {
-                formAjouterModifierProp.ShowDialog();
-            }
-            frmProprietaires_Load(sender, e);
-        }
-
-        private void buttonModifier_Click(object sender, EventArgs e)
-        {
-
-            op = 'M';
-
-            p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[0].Value.ToString());
-            p.nom = dataGridViewProprietaires.CurrentRow.Cells[1].Value.ToString();
-            p.prenom = dataGridViewProprietaires.CurrentRow.Cells[2].Value.ToString();
-            p.adresse = dataGridViewProprietaires.CurrentRow.Cells[3].Value.ToString();
-            p.code_postal =int.Parse( dataGridViewProprietaires.CurrentRow.Cells[4].Value.ToString());
-            p.tel = dataGridViewProprietaires.CurrentRow.Cells[5].Value.ToString();
-            p.email = dataGridViewProprietaires.CurrentRow.Cells[6].Value.ToString();
-            p.id_ville = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[7].Value.ToString());
-            p.Sexe= dataGridViewProprietaires.CurrentRow.Cells[8].Value.ToString();
-            p.Titre = dataGridViewProprietaires.CurrentRow.Cells[9].Value.ToString();
-            p.CIN = dataGridViewProprietaires.CurrentRow.Cells[10].Value.ToString();
-
-            
-            using (var formAjouterModifierProp = new FormAjouterModifierProp(p, op))
-            {
-                formAjouterModifierProp.ShowDialog();
-              
-            }
-            frmProprietaires_Load(sender, e);
-            dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
-
-          
-        }
-
-        private void buttonprevious_Click(object sender, EventArgs e)
-        {
-            if (i > 0)
-            {
-                
-                i--;
-                dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
-
-            }
-        }
-
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            if (i < dataGridViewProprietaires.RowCount - 1)
-            {
-                i++;
-                dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
-            }
-        }
-
-        private void buttonLast_Click(object sender, EventArgs e)
-        {
-            
-            i=dataGridViewProprietaires.RowCount-1;
-            dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0,i] ;
-        }
-
-        private void buttonSupprimer_Click(object sender, EventArgs e)
-        {
-            var question = MessageBox.Show("Voullez vous supprimer cet proprietaire ?", "Information", MessageBoxButtons.YesNo);
-            if (question == DialogResult.No)
-                return;
-            if (question == DialogResult.Yes)
-            {
-                p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[0].Value.ToString());
-              
-                var prop = (from pr in syndicDataContext.proprietaire
-                            where pr.id.Equals(p.id)
-                            select pr).Single();
-
-                syndicDataContext.proprietaire.DeleteOnSubmit(prop);
-                syndicDataContext.SubmitChanges();
-
-                this.frmProprietaires_Load(sender , e);
-            }
-        }
-
-        private void buttonRechercher_Click(object sender, EventArgs e)
-        {
-            string[] vs = textBoxrechercher.Text.Split(' ');
-            for(int i=0;i<vs.Length;i++)
-            {
-                vs[i].Trim();
-                if (vs[i].Equals(string.Empty))
-                    vs.SetValue("gOgLgXgPgIg9", i);
-            }
-            var src = from p in syndicDataContext.proprietaire
-                      where vs.Contains(p.CIN) || vs.Contains(p.nom) || vs.Contains(p.prenom)
-                      || vs.Contains(p.tel) || vs.Contains(p.email) || vs.Contains(p.Titre)
-                      || vs.Contains(p.adresse) || vs.Contains(p.Sexe)
-                      select p;
-
-            dataGridViewProprietaires.DataSource = src;
-
-
-
+            buttonSsProprietaires.BackColor = Color.Navy;
+            buttonSsProprietaires_Click(sender, e);
 
         }
 
-        private void textBoxrechercher_TextChanged(object sender, EventArgs e)
+        private void buttonSsProprietaires_Click(object sender, EventArgs e)
         {
-            buttonRechercher.PerformClick();
+            buttonSsProprietaires.BackColor = Color.Navy;
+            buttonSsProprietairesArchive.BackColor = Color.Blue;
+            buttonSsAjouterProprietaires.BackColor = Color.Blue;
+            buttonSsProprietairesRecettes.BackColor = Color.Blue;
+            OpenFormInPannel(new FormListeProprietaire());
+
+        }
+
+        private void buttonSsAjouterProprietaires_Click(object sender, EventArgs e)
+        {
+            buttonSsProprietaires.BackColor = Color.Blue;
+            buttonSsProprietairesArchive.BackColor = Color.Blue;
+            buttonSsAjouterProprietaires.BackColor = Color.Navy;
+            buttonSsProprietairesRecettes.BackColor = Color.Blue;
+
+        }
+
+        private void buttonSsProprietairesArchive_Click(object sender, EventArgs e)
+        {
+            buttonSsProprietaires.BackColor = Color.Blue;
+            buttonSsProprietairesArchive.BackColor = Color.Navy;
+            buttonSsAjouterProprietaires.BackColor = Color.Blue;
+            buttonSsProprietairesRecettes.BackColor = Color.Blue;
+        }
+
+        private void buttonSsProprietairesRecettes_Click(object sender, EventArgs e)
+        {
+            buttonSsProprietaires.BackColor = Color.Blue;
+            buttonSsProprietairesArchive.BackColor = Color.Blue;
+            buttonSsAjouterProprietaires.BackColor = Color.Blue;
+            buttonSsProprietairesRecettes.BackColor = Color.Navy;
         }
     }
 }

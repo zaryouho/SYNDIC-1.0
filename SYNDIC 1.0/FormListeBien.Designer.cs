@@ -37,13 +37,13 @@
             this.labelImmeuble = new System.Windows.Forms.Label();
             this.labelBloc = new System.Windows.Forms.Label();
             this.splitContainerBody = new System.Windows.Forms.SplitContainer();
-            this.dataGridViewBien = new System.Windows.Forms.DataGridView();
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.buttonModifierBien = new System.Windows.Forms.Button();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
+            this.dataGridViewBien = new System.Windows.Forms.DataGridView();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.buttonModifierBien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeBien)).BeginInit();
             this.splitContainerListeBien.Panel1.SuspendLayout();
             this.splitContainerListeBien.Panel2.SuspendLayout();
@@ -169,6 +169,46 @@
             this.splitContainerBody.SplitterDistance = 70;
             this.splitContainerBody.TabIndex = 1;
             // 
+            // buttonLast
+            // 
+            this.buttonLast.Location = new System.Drawing.Point(17, 230);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
+            this.buttonLast.TabIndex = 17;
+            this.buttonLast.Text = ">>";
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonPrevious
+            // 
+            this.buttonPrevious.Location = new System.Drawing.Point(14, 88);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
+            this.buttonPrevious.TabIndex = 15;
+            this.buttonPrevious.Text = "<";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Location = new System.Drawing.Point(17, 159);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
+            this.buttonNext.TabIndex = 16;
+            this.buttonNext.Text = ">";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.Location = new System.Drawing.Point(14, 17);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+            this.buttonFirst.TabIndex = 14;
+            this.buttonFirst.Text = "<<";
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
             // dataGridViewBien
             // 
             this.dataGridViewBien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -210,42 +250,6 @@
             this.buttonModifierBien.Text = "Modifier le bien";
             this.buttonModifierBien.UseVisualStyleBackColor = false;
             this.buttonModifierBien.Click += new System.EventHandler(this.buttonModifierBien_Click);
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.Location = new System.Drawing.Point(17, 230);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 17;
-            this.buttonLast.Text = ">>";
-            this.buttonLast.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Location = new System.Drawing.Point(14, 88);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonPrevious.TabIndex = 15;
-            this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(17, 159);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 16;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.Location = new System.Drawing.Point(14, 17);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 14;
-            this.buttonFirst.Text = "<<";
-            this.buttonFirst.UseVisualStyleBackColor = true;
             // 
             // FormListeBien
             // 
