@@ -115,11 +115,13 @@ namespace SYNDIC_1._0
             this.Close();
         }
 
-        private void buttonAnnuler_Click(object sender, EventArgs e)
+        public void buttonAnnuler_Click(object sender, EventArgs e)
         {
             if (op == 'A')
             {
-
+                // Allah ya khay  3lach 7na 3melna had fonction 
+                // InitializeControls.clearText();
+                //
                 textBoxNom.Clear();
                 textBoxPrenom.Clear();
                 textBoxAdresse.Clear();

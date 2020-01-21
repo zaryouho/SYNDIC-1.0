@@ -45,8 +45,8 @@
             this.comboBoxTypeEcheance = new System.Windows.Forms.ComboBox();
             this.buttonAddNewTypeEcheance = new System.Windows.Forms.Button();
             this.panelValid = new System.Windows.Forms.Panel();
-            this.buttonValider = new System.Windows.Forms.Button();
             this.buttonAnnuler = new System.Windows.Forms.Button();
+            this.buttonValider = new System.Windows.Forms.Button();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -202,15 +202,6 @@
             this.panelValid.Size = new System.Drawing.Size(447, 41);
             this.panelValid.TabIndex = 19;
             // 
-            // buttonValider
-            // 
-            this.buttonValider.Location = new System.Drawing.Point(38, 3);
-            this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
-            this.buttonValider.Text = "Valider";
-            this.buttonValider.UseVisualStyleBackColor = true;
-            // 
             // buttonAnnuler
             // 
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
@@ -219,6 +210,17 @@
             this.buttonAnnuler.TabIndex = 1;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Location = new System.Drawing.Point(38, 3);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(139, 35);
+            this.buttonValider.TabIndex = 0;
+            this.buttonValider.Text = "Valider";
+            this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // FormAjouterModifierEcheance
             // 

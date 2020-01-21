@@ -51,94 +51,94 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAjouterModifierEcheance.cs">
+    <Compile Include="Forms\FormAjouterModifierEcheance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAjouterModifierEcheance.Designer.cs">
+    <Compile Include="Forms\FormAjouterModifierEcheance.Designer.cs">
       <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAjouterModifierProp.cs">
+    <Compile Include="Forms\FormAjouterModifierProp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAjouterModifierProp.Designer.cs">
+    <Compile Include="Forms\FormAjouterModifierProp.Designer.cs">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBienEcheance.cs">
+    <Compile Include="Forms\FormBienEcheance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBienEcheance.Designer.cs">
+    <Compile Include="Forms\FormBienEcheance.Designer.cs">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDepenses.cs">
+    <Compile Include="Forms\FormDepenses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDepenses.Designer.cs">
+    <Compile Include="Forms\FormDepenses.Designer.cs">
       <DependentUpon>FormDepenses.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGestionTypes.cs">
+    <Compile Include="Forms\FormGestionTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGestionTypes.Designer.cs">
+    <Compile Include="Forms\FormGestionTypes.Designer.cs">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListeBien.cs">
+    <Compile Include="Forms\FormListeBien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListeBien.Designer.cs">
+    <Compile Include="Forms\FormListeBien.Designer.cs">
       <DependentUpon>FormListeBien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListeProprietaire.cs">
+    <Compile Include="Forms\FormListeProprietaire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListeProprietaire.Designer.cs">
+    <Compile Include="Forms\FormListeProprietaire.Designer.cs">
       <DependentUpon>FormListeProprietaire.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormModifierBien.cs">
+    <Compile Include="Forms\FormModifierBien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormModifierBien.Designer.cs">
+    <Compile Include="Forms\FormModifierBien.Designer.cs">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBiens.cs">
+    <Compile Include="Forms\frmBiens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBiens.Designer.cs">
+    <Compile Include="Forms\frmBiens.Designer.cs">
       <DependentUpon>frmBiens.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDocuments.cs">
+    <Compile Include="Forms\frmDocuments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDocuments.Designer.cs">
+    <Compile Include="Forms\frmDocuments.Designer.cs">
       <DependentUpon>frmDocuments.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFinances.cs">
+    <Compile Include="Forms\frmFinances.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFinances.Designer.cs">
+    <Compile Include="Forms\frmFinances.Designer.cs">
       <DependentUpon>frmFinances.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHistoriques.cs">
+    <Compile Include="Forms\frmHistoriques.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHistoriques.Designer.cs">
+    <Compile Include="Forms\frmHistoriques.Designer.cs">
       <DependentUpon>frmHistoriques.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProprietaires.cs">
+    <Compile Include="Forms\frmProprietaires.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProprietaires.Designer.cs">
+    <Compile Include="Forms\frmProprietaires.Designer.cs">
       <DependentUpon>frmProprietaires.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRapportsStatistiques.cs">
+    <Compile Include="Forms\frmRapportsStatistiques.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRapportsStatistiques.Designer.cs">
+    <Compile Include="Forms\frmRapportsStatistiques.Designer.cs">
       <DependentUpon>frmRapportsStatistiques.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\DBHelper.cs" />
@@ -151,46 +151,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAjouterModifierEcheance.resx">
+    <EmbeddedResource Include="Forms\FormAjouterModifierEcheance.resx">
       <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAjouterModifierProp.resx">
+    <EmbeddedResource Include="Forms\FormAjouterModifierProp.resx">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBienEcheance.resx">
+    <EmbeddedResource Include="Forms\FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGestionTypes.resx">
+    <EmbeddedResource Include="Forms\FormGestionTypes.resx">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListeBien.resx">
+    <EmbeddedResource Include="Forms\FormListeBien.resx">
       <DependentUpon>FormListeBien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListeProprietaire.resx">
+    <EmbeddedResource Include="Forms\FormListeProprietaire.resx">
       <DependentUpon>FormListeProprietaire.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormModifierBien.resx">
+    <EmbeddedResource Include="Forms\FormModifierBien.resx">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBiens.resx">
+    <EmbeddedResource Include="Forms\frmBiens.resx">
       <DependentUpon>frmBiens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDocuments.resx">
+    <EmbeddedResource Include="Forms\frmDocuments.resx">
       <DependentUpon>frmDocuments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFinances.resx">
+    <EmbeddedResource Include="Forms\frmFinances.resx">
       <DependentUpon>frmFinances.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHistoriques.resx">
+    <EmbeddedResource Include="Forms\frmHistoriques.resx">
       <DependentUpon>frmHistoriques.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProprietaires.resx">
+    <EmbeddedResource Include="Forms\frmProprietaires.resx">
       <DependentUpon>frmProprietaires.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRapportsStatistiques.resx">
+    <EmbeddedResource Include="Forms\frmRapportsStatistiques.resx">
       <DependentUpon>frmRapportsStatistiques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -202,6 +202,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="app.config" />
     <None Include="DataClassesSyndic.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

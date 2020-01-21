@@ -15,7 +15,7 @@ namespace SYNDIC_1._0
         char op = 'A';
         static int i = 0;
         proprietaire p = new proprietaire();
-
+        public static List<proprietaire> proprietairesSupprimes = new List<proprietaire>();
         public FormListeProprietaire()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace SYNDIC_1._0
 
         private void buttonSupprimerProprietaire_Click(object sender, EventArgs e)
         {
-            var question = MessageBox.Show("Voullez vous supprimer cet proprietaire ?", "Information", MessageBoxButtons.YesNo);
+            var question = MessageBox.Show("Voullez vous supprimer cet proprietaire ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
             if (question == DialogResult.No)
                 return;
             if (question == DialogResult.Yes)
@@ -81,7 +81,9 @@ namespace SYNDIC_1._0
                 var prop = (from pr in syndicDataContext.proprietaire
                             where pr.id.Equals(p.id)
                             select pr).Single();
-
+                // Add the deleted to the list to be archived
+                proprietairesSupprimes.Add(prop);
+                //----------
                 syndicDataContext.proprietaire.DeleteOnSubmit(prop);
                 syndicDataContext.SubmitChanges();
 

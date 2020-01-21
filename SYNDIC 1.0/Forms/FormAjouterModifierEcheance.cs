@@ -21,5 +21,15 @@ namespace SYNDIC_1._0
             this.Close();
 
         }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAnnuler_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

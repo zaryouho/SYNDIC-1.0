@@ -145,7 +145,7 @@ namespace SYNDIC_1._0
         {
             double montantTotal = 0, montantRecu = 0;
 
-            SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionString"].ConnectionString);
+            SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString);
             if (sqlConnection.State != ConnectionState.Open)
                 sqlConnection.Open();
            
