@@ -181,7 +181,8 @@ namespace SYNDIC_1._0
 
         private void buttonRechercher_Click(object sender, EventArgs e)
         {
-
+          
+          
             string[] vs = textBoxRechercher.Text.Split(' ');
             for (int i = 0; i < vs.Length; i++)
             {
@@ -207,9 +208,10 @@ namespace SYNDIC_1._0
             var res = (from em in syndicDataContext.employe
                        join vil in syndicDataContext.ville on em.id_ville equals vil.id
                        where em.date_depart != null 
-                       select new { em.id, em.nom, em.prenom, em.adresse, em.code_postal, em.tel, em.email, em.date_recrutement,em.typeEmploye, idville = vil.id, ville = vil.nom , em.date_depart});
+                       select new { em.id, em.nom, em.prenom, em.adresse, em.code_postal, em.tel, em.email, 
+                           em.date_recrutement,em.typeEmploye, idville = vil.id, ville = vil.nom , em.date_depart});
            
-            buttonModifierEmploye.Enabled = false;
+         
             dataGridViewEmploye.DataSource = res;
             dataGridViewEmploye.Columns[9].Visible = false;
 
@@ -224,6 +226,11 @@ namespace SYNDIC_1._0
             buttonEmployeArchive.BackColor = Color.Blue;
             buttonAjouterEmploye.BackColor = Color.Navy;
           
+        }
+
+        private void panelIN_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

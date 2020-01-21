@@ -50,13 +50,13 @@
             this.labelBiens = new System.Windows.Forms.Label();
             this.labeladress = new System.Windows.Forms.Label();
             this.panelHead = new System.Windows.Forms.Panel();
+            this.comboBoxidville = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panelHead.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxcode_Postal
             // 
-            this.textBoxcode_Postal.Enabled = false;
             this.textBoxcode_Postal.Location = new System.Drawing.Point(157, 239);
             this.textBoxcode_Postal.Name = "textBoxcode_Postal";
             this.textBoxcode_Postal.Size = new System.Drawing.Size(206, 20);
@@ -84,7 +84,6 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(157, 303);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(206, 20);
@@ -102,14 +101,13 @@
             // comboBoxVille
             // 
             this.comboBoxVille.FormattingEnabled = true;
-            this.comboBoxVille.Location = new System.Drawing.Point(157, 339);
+            this.comboBoxVille.Location = new System.Drawing.Point(157, 334);
             this.comboBoxVille.Name = "comboBoxVille";
             this.comboBoxVille.Size = new System.Drawing.Size(206, 21);
             this.comboBoxVille.TabIndex = 61;
             // 
             // textBoxRaison_Social
             // 
-            this.textBoxRaison_Social.Enabled = false;
             this.textBoxRaison_Social.Location = new System.Drawing.Point(157, 115);
             this.textBoxRaison_Social.Name = "textBoxRaison_Social";
             this.textBoxRaison_Social.Size = new System.Drawing.Size(206, 20);
@@ -144,7 +142,6 @@
             // 
             // textBoxTelephone
             // 
-            this.textBoxTelephone.Enabled = false;
             this.textBoxTelephone.Location = new System.Drawing.Point(157, 275);
             this.textBoxTelephone.Name = "textBoxTelephone";
             this.textBoxTelephone.Size = new System.Drawing.Size(206, 20);
@@ -170,7 +167,6 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Enabled = false;
             this.textBoxAddress.Location = new System.Drawing.Point(157, 211);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(206, 20);
@@ -178,7 +174,6 @@
             // 
             // textBoxPrenom
             // 
-            this.textBoxPrenom.Enabled = false;
             this.textBoxPrenom.Location = new System.Drawing.Point(157, 179);
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(206, 20);
@@ -195,7 +190,6 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Enabled = false;
             this.textBoxNom.Location = new System.Drawing.Point(157, 147);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(206, 20);
@@ -251,15 +245,24 @@
             this.panelHead.Size = new System.Drawing.Size(380, 60);
             this.panelHead.TabIndex = 47;
             // 
+            // comboBoxidville
+            // 
+            this.comboBoxidville.FormattingEnabled = true;
+            this.comboBoxidville.Location = new System.Drawing.Point(157, 334);
+            this.comboBoxidville.Name = "comboBoxidville";
+            this.comboBoxidville.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxidville.TabIndex = 65;
+            // 
             // FormAjouterModifierSociete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 450);
+            this.Controls.Add(this.comboBoxVille);
+            this.Controls.Add(this.comboBoxidville);
             this.Controls.Add(this.textBoxcode_Postal);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBoxVille);
             this.Controls.Add(this.textBoxRaison_Social);
             this.Controls.Add(this.labelraison_sociale);
             this.Controls.Add(this.labelVille);
@@ -309,5 +312,6 @@
         private System.Windows.Forms.Label labelBiens;
         private System.Windows.Forms.Label labeladress;
         private System.Windows.Forms.Panel panelHead;
+        private System.Windows.Forms.ComboBox comboBoxidville;
     }
 }

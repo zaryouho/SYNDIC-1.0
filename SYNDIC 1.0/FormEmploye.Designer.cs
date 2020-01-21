@@ -195,6 +195,7 @@
             this.panelIN.Name = "panelIN";
             this.panelIN.Size = new System.Drawing.Size(800, 358);
             this.panelIN.TabIndex = 26;
+            this.panelIN.Paint += new System.Windows.Forms.PaintEventHandler(this.panelIN_Paint);
             // 
             // tableLayoutPanelEmployeBottom
             // 

@@ -30,6 +30,9 @@ namespace SYNDIC_1._0
             comboBoxVille.DisplayMember = "nom";
             comboBoxVille.ValueMember = "id";
 
+            comboBoxidville.DataSource = src;
+            comboBoxidville.DisplayMember = "id";
+            comboBoxidville.ValueMember = "id";
 
 
 
@@ -77,7 +80,7 @@ namespace SYNDIC_1._0
                 s.code_postal = int.Parse(textBoxcode_Postal.Text);
                 s.tel = textBoxTelephone.Text;
                 s.email = textBoxEmail.Text;
-                s.id_ville = int.Parse(comboBoxVille.Text.ToString()); ;
+                s.id_ville = int.Parse(comboBoxidville.Text.ToString()); ;
                 syndicDataContext.societe.InsertOnSubmit(s);
 
             }

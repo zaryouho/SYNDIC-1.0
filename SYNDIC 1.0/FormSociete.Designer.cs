@@ -136,6 +136,7 @@
             this.buttonSociete.TabIndex = 8;
             this.buttonSociete.Text = "Societe";
             this.buttonSociete.UseVisualStyleBackColor = false;
+            this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
             // 
             // buttonSocieteArchive
             // 
@@ -156,6 +157,7 @@
             this.buttonSocieteArchive.TabIndex = 10;
             this.buttonSocieteArchive.Text = "Societe arch.";
             this.buttonSocieteArchive.UseVisualStyleBackColor = false;
+            this.buttonSocieteArchive.Click += new System.EventHandler(this.buttonSocieteArchive_Click);
             // 
             // buttonAjouterSociete
             // 
@@ -176,6 +178,7 @@
             this.buttonAjouterSociete.TabIndex = 9;
             this.buttonAjouterSociete.Text = "Ajouter Societe";
             this.buttonAjouterSociete.UseVisualStyleBackColor = false;
+            this.buttonAjouterSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
             // panelIN
             // 
@@ -192,6 +195,7 @@
             this.panelIN.Name = "panelIN";
             this.panelIN.Size = new System.Drawing.Size(800, 358);
             this.panelIN.TabIndex = 28;
+            this.panelIN.Paint += new System.Windows.Forms.PaintEventHandler(this.panelIN_Paint_1);
             // 
             // tableLayoutPanelSocieteBottom
             // 
@@ -286,8 +290,9 @@
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 31);
             this.buttonLast.TabIndex = 11;
-            this.buttonLast.Text = "<<";
+            this.buttonLast.Text = ">>";
             this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click_1);
             // 
             // buttonNext
             // 
@@ -297,6 +302,7 @@
             this.buttonNext.TabIndex = 10;
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click_1);
             // 
             // buttonprevious
             // 
@@ -306,6 +312,7 @@
             this.buttonprevious.TabIndex = 9;
             this.buttonprevious.Text = "<";
             this.buttonprevious.UseVisualStyleBackColor = true;
+            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click_1);
             // 
             // buttonFirst
             // 
@@ -313,8 +320,9 @@
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 31);
             this.buttonFirst.TabIndex = 8;
-            this.buttonFirst.Text = ">>";
+            this.buttonFirst.Text = "<<";
             this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click_1);
             // 
             // buttonRechercher
             // 
@@ -324,6 +332,7 @@
             this.buttonRechercher.TabIndex = 7;
             this.buttonRechercher.Text = "Rechercher";
             this.buttonRechercher.UseVisualStyleBackColor = true;
+            this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click_1);
             // 
             // textBoxRechercher
             // 

@@ -93,9 +93,21 @@ namespace SYNDIC_1._0
         private void FormSociete_Load(object sender, EventArgs e)
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringSliman");
-            var src = from soc in syndicDataContext.societe
-                      select soc;
-            dataGridViewSociete.DataSource = src;
+
+            var res = (from so in syndicDataContext.societe
+                       join vil in syndicDataContext.ville on so.id_ville equals vil.id
+                      
+                       select new
+                       { so.id, so.raison_sociale, so.nom,
+                           so.prenom,
+                           so.adresse,
+                           so.code_postal,
+                           so.tel, so.email,idville = vil.id,ville = vil.nom,
+                          
+                       });
+            dataGridViewSociete.DataSource = res;
+            dataGridViewSociete.Columns[8].Visible = false;
+
         }
 
         private void buttonModifierSociete_Click(object sender, EventArgs e)
@@ -155,6 +167,89 @@ namespace SYNDIC_1._0
                 formAjouterModifiersociete.ShowDialog();
             }
             FormSociete_Load(sender, e);
+        }
+
+        private void buttonSociete_Click(object sender, EventArgs e)
+        {
+            buttonSociete.BackColor = Color.Navy;
+            buttonSocieteArchive.BackColor = Color.Blue;
+            buttonAjouterSociete.BackColor = Color.Blue;
+      
+            var src = from soc in syndicDataContext.societe
+                      select soc;
+            dataGridViewSociete.DataSource = src;
+
+        }
+
+        private void panelIN_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonSocieteArchive_Click(object sender, EventArgs e)
+        {
+            buttonSociete.BackColor = Color.Blue;
+            buttonSocieteArchive.BackColor = Color.Navy;
+            buttonAjouterSociete.BackColor = Color.Blue;
+
+        }
+
+        private void buttonAjouterSociete_Click(object sender, EventArgs e)
+        {
+            buttonSociete.BackColor = Color.Blue;
+            buttonSocieteArchive.BackColor = Color.Blue;
+            buttonAjouterSociete.BackColor = Color.Navy;
+        }
+
+        private void buttonRechercher_Click_1(object sender, EventArgs e)
+        {
+
+            string[] vs = textBoxRechercher.Text.Split(' ');
+            for (int i = 0; i < vs.Length; i++)
+            {
+                vs[i].Trim();
+                if (vs[i].Equals(string.Empty))
+                    vs.SetValue("gOgLgXgPgIg9", i);
+            }
+
+            var src = from so in syndicDataContext.employe
+                      where vs.Contains(so.nom) || vs.Contains(so.prenom)
+                      || vs.Contains(so.tel) || vs.Contains(so.email) || vs.Contains(so.adresse)
+                      select so;
+
+            dataGridViewSociete.DataSource = src;
+
+        }
+
+        private void buttonFirst_Click_1(object sender, EventArgs e)
+        {
+            dataGridViewSociete.CurrentCell = dataGridViewSociete[0, 0];
+        }
+
+        private void buttonprevious_Click_1(object sender, EventArgs e)
+        {
+            if (i > 0)
+            {
+
+                i--;
+                dataGridViewSociete.CurrentCell = dataGridViewSociete[0, i];
+
+            }
+        }
+
+        private void buttonNext_Click_1(object sender, EventArgs e)
+        {
+            if (i < dataGridViewSociete.RowCount - 1)
+            {
+                i++;
+                dataGridViewSociete.CurrentCell = dataGridViewSociete[0, i];
+            }
+        }
+
+        private void buttonLast_Click_1(object sender, EventArgs e)
+        {
+            i = dataGridViewSociete.RowCount - 1;
+            dataGridViewSociete.CurrentCell = dataGridViewSociete[0, i];
         }
     }
 }
