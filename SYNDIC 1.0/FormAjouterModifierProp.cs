@@ -104,7 +104,7 @@ namespace SYNDIC_1._0
                 p.email = textBoxEmail.Text;
                 p.tel = textBoxTele.Text;
                 p.Titre = comboBoxTitre.Text;
-                p.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
+                p.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); 
 
                 syndicDataContext.proprietaire.InsertOnSubmit(p);
 

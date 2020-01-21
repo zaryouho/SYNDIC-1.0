@@ -136,6 +136,23 @@ namespace SYNDIC_1._0
             flag = 6;
         }
 
-        
+        private void buttonSociete_Click(object sender, EventArgs e)
+        {
+            if (flag != 7)
+                OpenFormInPannel(new FormSociete());
+
+
+            flag = 7;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (flag != 8)
+                OpenFormInPannel(new FormEmploye());
+
+
+            flag = 8;
+        }
     }
-}
+    }
+

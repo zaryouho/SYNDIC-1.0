@@ -63,11 +63,23 @@
     <Compile Include="FormAjouterModifierEcheance.Designer.cs">
       <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAjouterModifierEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjouterModifierEmp.Designer.cs">
+      <DependentUpon>FormAjouterModifierEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAjouterModifierProp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAjouterModifierProp.Designer.cs">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAjouterModifierSociete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjouterModifierSociete.Designer.cs">
+      <DependentUpon>FormAjouterModifierSociete.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBienEcheance.cs">
       <SubType>Form</SubType>
@@ -80,6 +92,12 @@
     </Compile>
     <Compile Include="FormDepenses.Designer.cs">
       <DependentUpon>FormDepenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmploye.Designer.cs">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGestionTypes.cs">
       <SubType>Form</SubType>
@@ -104,6 +122,12 @@
     </Compile>
     <Compile Include="FormModifierBien.Designer.cs">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSociete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSociete.Designer.cs">
+      <DependentUpon>FormSociete.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBiens.cs">
       <SubType>Form</SubType>
@@ -157,11 +181,20 @@
     <EmbeddedResource Include="FormAjouterModifierEcheance.resx">
       <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAjouterModifierEmp.resx">
+      <DependentUpon>FormAjouterModifierEmp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjouterModifierProp.resx">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAjouterModifierSociete.resx">
+      <DependentUpon>FormAjouterModifierSociete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmploye.resx">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionTypes.resx">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
@@ -174,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModifierBien.resx">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSociete.resx">
+      <DependentUpon>FormSociete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBiens.resx">
       <DependentUpon>frmBiens.cs</DependentUpon>
