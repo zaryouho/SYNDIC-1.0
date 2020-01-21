@@ -96,15 +96,15 @@ namespace SYNDIC_1._0
 
             var res = (from so in syndicDataContext.societe
                        join vil in syndicDataContext.ville on so.id_ville equals vil.id
-                      
+
                        select new
                        { so.id, so.raison_sociale, so.nom,
                            so.prenom,
                            so.adresse,
                            so.code_postal,
-                           so.tel, so.email,idville = vil.id,ville = vil.nom,
-                          
-                       });
+                           so.tel, so.email, idville = vil.id, ville = vil.nom,
+
+                       }) ;
             dataGridViewSociete.DataSource = res;
             dataGridViewSociete.Columns[8].Visible = false;
 
