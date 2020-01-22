@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace SYNDIC_1._0.Helpers
+namespace SYNDIC_1._0
 {
     public static class StringHelper
     {
@@ -11,7 +11,7 @@ namespace SYNDIC_1._0.Helpers
         /// Checks if the TextBox has text and returns true else returns false
         /// </summary>
 
-        public static bool IsEmpty(this TextBox textBoxName)
+        public static bool hasText(this TextBox textBoxName)
         {
             return String.IsNullOrWhiteSpace(textBoxName.Text);
         }
@@ -80,42 +80,7 @@ namespace SYNDIC_1._0.Helpers
             }
 
         }
-
-        /// <summary>
-        /// Allow only numeric variables to be typed in input fields 
-        /// To be used <em>only</em> in the <em>KeyPress</em> event of the control
-        /// </summary>
-
-        public static void NumericOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        /// <summary>
-        /// Allow only text (varchar) to be typed in input fields, does not return anything .
-        /// To be used <em>only</em> in the <em>KeyPress</em> event of the control
-        /// </summary>
-
-        public static void TextOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        /// <summary>
-        /// Determines if the <em>Pressed Key</em> is the <em>Enter</em> key and returns true, else returns false
-        /// </summary>
-
-        public static bool EnterIsPressed(KeyEventArgs e)
-        {
-            return (e.KeyCode.Equals(Keys.Enter));
-        }
-
+        
         /// <summary>
         /// Straight out of Microsoft docs a regular expression to validate emails
         /// Returns true if the sring is a valide email adress, else retruns false
