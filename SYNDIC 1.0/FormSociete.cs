@@ -81,7 +81,7 @@ namespace SYNDIC_1._0
         }
 
         private void buttonAjouterSSociete_Click(object sender, EventArgs e)
-        {
+        { 
             k = 'A';
             using (var formAjouterModifiersociete = new FormAjouterModifierSoc(new societe(), k))
             {
