@@ -16,6 +16,7 @@ namespace SYNDIC_1._0
         {
             if (this.splitContainerProprietaire.Panel2.Controls.Count > 0)
                 this.splitContainerProprietaire.Panel2.Controls.RemoveAt(0);
+            
 
             Form frmchild = formChild as Form;
             frmchild.TopLevel = false;
@@ -79,6 +80,8 @@ namespace SYNDIC_1._0
             buttonSsProprietairesArchive.BackColor = Color.Blue;
             buttonSsAjouterProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesRecettes.BackColor = Color.Navy;
+            OpenFormInPannel(new FormRecetteProprietaire());
+
         }
     }
 }

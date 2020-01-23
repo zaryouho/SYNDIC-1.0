@@ -69,6 +69,12 @@
     <Compile Include="FormAjouterModifierProp.Designer.cs">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAjouterModifierRecette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjouterModifierRecette.Designer.cs">
+      <DependentUpon>FormAjouterModifierRecette.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBienEcheance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="FormModifierBien.Designer.cs">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecetteProprietaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecetteProprietaire.Designer.cs">
+      <DependentUpon>FormRecetteProprietaire.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBiens.cs">
       <SubType>Form</SubType>
@@ -160,6 +172,9 @@
     <EmbeddedResource Include="FormAjouterModifierProp.resx">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAjouterModifierRecette.resx">
+      <DependentUpon>FormAjouterModifierRecette.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModifierBien.resx">
       <DependentUpon>FormModifierBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecetteProprietaire.resx">
+      <DependentUpon>FormRecetteProprietaire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBiens.resx">
       <DependentUpon>frmBiens.cs</DependentUpon>

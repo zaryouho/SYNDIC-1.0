@@ -133,5 +133,10 @@ namespace SYNDIC_1._0
             else
                 buttonChercher.Enabled = true;
         }
+
+        private void dataGridViewBien_DoubleClick(object sender, EventArgs e)
+        {
+            buttonModifierBien_Click(sender, e);
+        }
     }
 }

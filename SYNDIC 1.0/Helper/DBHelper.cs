@@ -13,8 +13,8 @@ namespace SYNDIC_1._0
 {
     public static class DBHelper
     {
-       public  static SqlConnection cn = new SqlConnection();
-        static DataSet ds = new DataSet();
+        public static SqlConnection cn = new SqlConnection();
+        public static DataSet ds = new DataSet();
 
 
         static public void ouvrirConnection(string name)
@@ -203,15 +203,6 @@ namespace SYNDIC_1._0
 
         }
 
-        
-
-
-
-
-
     }
-
-
-
 }
 

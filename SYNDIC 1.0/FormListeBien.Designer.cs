@@ -220,6 +220,7 @@
             this.dataGridViewBien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBien.Size = new System.Drawing.Size(726, 286);
             this.dataGridViewBien.TabIndex = 15;
+            this.dataGridViewBien.DoubleClick += new System.EventHandler(this.dataGridViewBien_DoubleClick);
             // 
             // panelFooter
             // 

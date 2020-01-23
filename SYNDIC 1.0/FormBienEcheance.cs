@@ -143,29 +143,34 @@ namespace SYNDIC_1._0
 
         private void comboBoxBienEcheance_SelectedIndexChanged(object sender, EventArgs e)
         {
-            double montantTotal = 0, montantRecu = 0;
+            try
+            {
+                double montantTotal = 0, montantRecu = 0;
 
-            SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionString"].ConnectionString);
-            if (sqlConnection.State != ConnectionState.Open)
-                sqlConnection.Open();
-           
-            string sql = "select sum(montant_reçu) as total_Recu , sum(montant) as total from echeance where id_bien = " + comboBoxBienEcheance.SelectedValue.ToString() + " group by id_bien";
-            
-            SqlCommand com = new SqlCommand(sql, sqlConnection);
-            SqlDataReader dr = com.ExecuteReader();
-            
-            dr.Read();
-            montantRecu = Convert.ToDouble(dr["total_Recu"].ToString());
-            montantTotal = Convert.ToDouble(dr["total"].ToString());
-            dr.Close();
-            
-            dr = null;
-            com = null;
+                SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionString"].ConnectionString);
+                if (sqlConnection.State != ConnectionState.Open)
+                    sqlConnection.Open();
+
+                string sql = "select sum(montant_reçu) as total_Recu , sum(montant) as total from echeance where id_bien = " + comboBoxBienEcheance.SelectedValue.ToString() + " group by id_bien";
+
+                SqlCommand com = new SqlCommand(sql, sqlConnection);
+                SqlDataReader dr = com.ExecuteReader();
+
+                dr.Read();
+                montantRecu = Convert.ToDouble(dr["total_Recu"].ToString());
+                montantTotal = Convert.ToDouble(dr["total"].ToString());
+                dr.Close();
+
+                dr = null;
+                com = null;
 
 
-            textBoxMontantTotal.Text = montantTotal.ToString();
-            textBoxMontantRecu.Text = montantRecu.ToString();
-            textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
+                textBoxMontantTotal.Text = montantTotal.ToString();
+                textBoxMontantRecu.Text = montantRecu.ToString();
+                textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
+
+            }
+            catch(Exception ee) { }
  
         }
     }
