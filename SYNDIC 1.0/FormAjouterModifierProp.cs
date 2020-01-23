@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,11 +85,8 @@ namespace SYNDIC_1._0
                 prop.email= textBoxEmail.Text ;
                 prop.tel= textBoxTele.Text ;
                 prop.Titre= comboBoxTitre.Text;
-                prop.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
-
+                prop.id_ville = int.Parse(comboBoxIdVille.Text.ToString());              
                 
-                
-
             }
 
             else
@@ -104,10 +101,9 @@ namespace SYNDIC_1._0
                 p.email = textBoxEmail.Text;
                 p.tel = textBoxTele.Text;
                 p.Titre = comboBoxTitre.Text;
-                p.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); 
-
+                p.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
+                
                 syndicDataContext.proprietaire.InsertOnSubmit(p);
-
             }
             
             syndicDataContext.SubmitChanges();
