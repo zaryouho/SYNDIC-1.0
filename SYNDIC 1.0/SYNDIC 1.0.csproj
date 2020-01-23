@@ -75,11 +75,11 @@
     <Compile Include="FormAjouterModifierProp.Designer.cs">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAjouterModifierSociete.cs">
+    <Compile Include="FormAjouterModifierSoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAjouterModifierSociete.Designer.cs">
-      <DependentUpon>FormAjouterModifierSociete.cs</DependentUpon>
+    <Compile Include="FormAjouterModifierSoc.Designer.cs">
+      <DependentUpon>FormAjouterModifierSoc.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBienEcheance.cs">
       <SubType>Form</SubType>
@@ -187,8 +187,8 @@
     <EmbeddedResource Include="FormAjouterModifierProp.resx">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAjouterModifierSociete.resx">
-      <DependentUpon>FormAjouterModifierSociete.cs</DependentUpon>
+    <EmbeddedResource Include="FormAjouterModifierSoc.resx">
+      <DependentUpon>FormAjouterModifierSoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>

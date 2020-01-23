@@ -83,7 +83,7 @@ namespace SYNDIC_1._0
         private void buttonAjouterSSociete_Click(object sender, EventArgs e)
         {
             k = 'A';
-            using (var formAjouterModifiersociete = new FormAjouterModifierSociete(new societe(), k))
+            using (var formAjouterModifiersociete = new FormAjouterModifierSoc(new societe(), k))
             {
                 formAjouterModifiersociete.ShowDialog();
             }
@@ -124,9 +124,9 @@ namespace SYNDIC_1._0
             so.email = dataGridViewSociete.CurrentRow.Cells[7].Value.ToString();
             so.id_ville = int.Parse(dataGridViewSociete.CurrentRow.Cells[8].Value.ToString());
 
-            using (var FormAjouterModifierSociete = new FormAjouterModifierSociete(so, k))
+            using (var FormAjouterModifierSoc = new FormAjouterModifierSoc(so, k))
             {
-                FormAjouterModifierSociete.ShowDialog();
+                FormAjouterModifierSoc.ShowDialog();
             }
             FormSociete_Load(sender, e);
             dataGridViewSociete.CurrentCell = dataGridViewSociete[0, 1];
@@ -162,9 +162,9 @@ namespace SYNDIC_1._0
         private void buttonAjouterSSociete_Click_1(object sender, EventArgs e)
         {
             k = 'A';
-            using (var formAjouterModifiersociete = new FormAjouterModifierSociete(new societe(), k))
+            using (var FormAjouterModifierSoc = new FormAjouterModifierSoc(new societe(), k))
             {
-                formAjouterModifiersociete.ShowDialog();
+                FormAjouterModifierSoc.ShowDialog();
             }
             FormSociete_Load(sender, e);
         }

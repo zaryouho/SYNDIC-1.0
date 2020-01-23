@@ -9,19 +9,27 @@ using System.Windows.Forms;
 
 namespace SYNDIC_1._0
 {
-    public partial class FormAjouterModifierSociete : Form
+    public partial class FormAjouterModifierSoc : Form
     {
         DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
         societe s = new societe();
         char k;
-        public FormAjouterModifierSociete(societe _s, char _k)
+        public FormAjouterModifierSoc(societe _s, char _k)
         {
+
             InitializeComponent();
             k = _k;
             s = _s;
         }
 
-        private void FormAjouterModifierSociete_Load(object sender, EventArgs e)
+       
+
+        private void labelCloseBiens_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormAjouterModifierSoc_Load(object sender, EventArgs e)
         {
             var src = from v in syndicDataContext.ville
                       select v;
@@ -80,7 +88,8 @@ namespace SYNDIC_1._0
                 s.code_postal = int.Parse(textBoxcode_Postal.Text);
                 s.tel = textBoxTelephone.Text;
                 s.email = textBoxEmail.Text;
-                s.id_ville = int.Parse(comboBoxidville.Text.ToString()); ;
+                s.id_ville = int.Parse(comboBoxidville.Text.ToString());
+                textBoxRaison_Social.Focus();
                 syndicDataContext.societe.InsertOnSubmit(s);
 
             }
@@ -106,6 +115,11 @@ namespace SYNDIC_1._0
             }
             else
                 this.Close();
+        }
+
+        private void labelCloseBiens_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
