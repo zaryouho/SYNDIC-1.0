@@ -9,22 +9,31 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Security.Cryptography;
-
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace SYNDIC_1._0.Forms
 {
-    public partial class Login : Form
+    public partial class LoginToBeDeleted : Form
     {
         private SqlConnection connection;
         private string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
         private SqlDataAdapter dataAdapter;
         private DataTable dataTable;
         private string typeUtilisateur = string.Empty;
-        
-        public Login()
+        public LoginToBeDeleted()
         {
+            Thread thread = new Thread(new ThreadStart(startForm));
+            thread.Start();
+            Thread.Sleep(4000); // duration in ms => 4 seconds
             InitializeComponent();
+            thread.Abort();
         }
+        public void startForm()
+        {
+            Application.Run(new FormSplachScreen());
+        }
+        #region Authentification and Cryptography
         public class HashandSalt
         {
             public string hash { get; set; }
@@ -50,6 +59,7 @@ namespace SYNDIC_1._0.Forms
             Rfc2898DeriveBytes deriveBytes = new Rfc2898DeriveBytes(enteredPassword, saltBytes);
             return Convert.ToBase64String(deriveBytes.GetBytes(256)).Equals(storedHash);
         }
+        #endregion
 
         //private string generateSalt(int size)
         //{

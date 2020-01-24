@@ -1,6 +1,6 @@
 ﻿namespace SYNDIC_1._0.Forms
 {
-    partial class Login
+    partial class LoginToBeDeleted
     {
         /// <summary>
         /// Required designer variable.
