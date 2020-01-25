@@ -37,6 +37,19 @@ namespace SYNDIC_1._0
         }
 
         /// <summary>
+        /// Allow only numeric variables to be typed in input fields 
+        /// To be used <em>only</em> in the <em>KeyPress</em> event of the control
+        /// </summary>
+
+        public static void NumericOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
         /// Checks if a number is phone number and returns true else returns false
         /// </summary>
 
@@ -49,6 +62,28 @@ namespace SYNDIC_1._0
             return false;
         }
 
+        /// <summary>
+        /// Allow only text (varchar) to be typed in input fields, does not return anything .
+        /// To be used <em>only</em> in the <em>KeyPress</em> event of the control
+        /// </summary>
+
+        public static void TextOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the <em>Pressed Key</em> is the <em>Enter</em> key and returns true, else returns false
+        /// </summary>
+
+        public static bool EnterIsPressed(KeyEventArgs e)
+        {
+            return (e.KeyCode.Equals(Keys.Enter));
+        }
+        
         /// <summary>
         /// Sets the state of the control to the one passed in parameters 
         /// </summary>
@@ -166,37 +201,42 @@ namespace SYNDIC_1._0
             }
             return false;
         }
-
-        static public void Clear(Form f)
+        
+        /// <summary>
+        /// Clear all the controls in the active form 
+        /// Does not returns
+        /// </summary>
+        /// <param name="from">the specified from to be cleared</param>
+        public static void Clear(Form from)
         {
-            if (f is null)
+            if (from is null)
             {
-                throw new ArgumentNullException(nameof(f));
+                throw new ArgumentNullException(nameof(from));
             }
 
-            foreach (ListBox c in f.Controls)
+            foreach (ListBox listbox in from.Controls)
             {
-                c.Items.Clear();
+                listbox.Items.Clear();
             }
 
-            foreach (ComboBox c in f.Controls)
+            foreach (ComboBox comboBox in from.Controls)
             {
-                c.Items.Clear();
+                comboBox.Items.Clear();
             }
 
-            foreach (DataGridView c in f.Controls)
+            foreach (DataGridView dataGridView in from.Controls)
             {
-                c.Rows.Clear();
+                dataGridView.Rows.Clear();
             }
 
-            foreach (TextBox c in f.Controls)
+            foreach (TextBox textBox in from.Controls)
             {
-                c.Clear();
+                textBox.Clear();
             }
 
-            foreach (ListView c in f.Controls)
+            foreach (ListView listView in from.Controls)
             {
-                c.Items.Clear();
+                listView.Items.Clear();
             }
 
         }
