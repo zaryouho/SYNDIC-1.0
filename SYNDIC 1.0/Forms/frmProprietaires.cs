@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYNDIC_1._0.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -79,6 +80,8 @@ namespace SYNDIC_1._0
             buttonSsProprietairesArchive.BackColor = Color.Blue;
             buttonSsAjouterProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesRecettes.BackColor = Color.Navy;
+            OpenFormInPannel(new FormRecetteProprietaire());
+
         }
     }
 }
