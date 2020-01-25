@@ -96,6 +96,16 @@ namespace SYNDIC_1._0.Forms
             if (!textBoxUsername.hasText() || !textBoxPassword.hasText())
             {
                 MessageBox.Show("type something");
+                if (textBoxUsername.hasText())
+                {
+                    textBoxPassword.Select();
+                    textBoxPassword.Focus();
+                }
+                if (textBoxPassword.hasText())
+                {
+                    textBoxUsername.Select();
+                    textBoxUsername.Focus();
+                }
                 return;
             }
 
@@ -107,9 +117,12 @@ namespace SYNDIC_1._0.Forms
             dataTable = new DataTable();
             dataAdapter.Fill(dataTable);
             connection.Close();
+
             if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("majebroxi");
+                dataAdapter.Dispose();
+                connection.Dispose();
                 return;
             }
             if (dataTable.Rows.Count == 1)
@@ -128,6 +141,8 @@ namespace SYNDIC_1._0.Forms
                                 this.Hide();
                                 // Show the main menu
                                 MessageBox.Show("Login was succesful. " + username + " !");
+                                dataAdapter = null;
+                                connection = null;
                                 break;
                             }
                         case "Utilisateur":
@@ -136,6 +151,8 @@ namespace SYNDIC_1._0.Forms
                                 this.Hide();
                                 // Show the main menu
                                 MessageBox.Show("Login was succesful. " + username + " !");
+                                dataAdapter = null;
+                                connection = null;
                                 break;
                             }
                     }
@@ -143,11 +160,12 @@ namespace SYNDIC_1._0.Forms
                 if (!authenticat)
                 {
                     MessageBox.Show("jrijri");
+                    dataAdapter = null;
+                    connection = null;
                     return;
                 }
             }
-            dataAdapter.Dispose();
-
+            
         }
 
         private void FormLogin_KeyPress(object sender, KeyPressEventArgs e)
@@ -168,12 +186,44 @@ namespace SYNDIC_1._0.Forms
 
         private void checkBoxRememberMe_CheckedChanged(object sender, EventArgs e)
         {
-
-            //    Properties.Settings.Default.UserName = textBoxUsername.Text;
-            //    Properties.Settings.Default.Password = textBoxPassword.Text;
-            //    Properties.Settings.Default.Save();
+            if (!textBoxUsername.hasText() || !textBoxPassword.hasText())
+            {
+                MessageBox.Show("plz fill the login and pass then chech this box again","missing information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+            DialogResult dialogResult = 
+                MessageBox.Show("if you check this box you won't have to type your password next time","Remember your password",MessageBoxButtons.YesNo);
+            if (dialogResult.Equals(DialogResult.Yes))
+            {
+                Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
+                Properties.Settings.Default.TextBoxLogin = textBoxUsername.Text;
+                Properties.Settings.Default.TextBoxPass = textBoxPassword.Text;
+                Properties.Settings.Default.Save();
+            }
             
         }
 
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.CheckBox)
+            {
+                textBoxUsername.Text = Properties.Settings.Default.TextBoxLogin;
+                textBoxPassword.Text = Properties.Settings.Default.TextBoxPass;
+                checkBoxRememberMe.Checked = Properties.Settings.Default.CheckBox;
+            }
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            FormForgotPassword formForgotPassword = new FormForgotPassword();
+            formForgotPassword.Show();
+        }
     }
 }

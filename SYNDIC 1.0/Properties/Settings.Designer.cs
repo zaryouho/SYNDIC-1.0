@@ -52,5 +52,41 @@ namespace SYNDIC_1._0.Properties {
                 return ((string)(this["syndic2ConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CheckBox {
+            get {
+                return ((bool)(this["CheckBox"]));
+            }
+            set {
+                this["CheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TextBoxLogin {
+            get {
+                return ((string)(this["TextBoxLogin"]));
+            }
+            set {
+                this["TextBoxLogin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TextBoxPass {
+            get {
+                return ((string)(this["TextBoxPass"]));
+            }
+            set {
+                this["TextBoxPass"] = value;
+            }
+        }
     }
 }

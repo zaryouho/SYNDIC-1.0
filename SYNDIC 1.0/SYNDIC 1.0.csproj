@@ -87,6 +87,12 @@
     <Compile Include="Forms\FormDepenses.Designer.cs">
       <DependentUpon>FormDepenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormForgotPassword.Designer.cs">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGestionTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,7 @@
     </Compile>
     <Compile Include="Helper\DBHelper.cs" />
     <Compile Include="Helper\InitializeControls.cs" />
+    <Compile Include="Helper\Log.cs" />
     <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormForgotPassword.resx">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGestionTypes.resx">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
