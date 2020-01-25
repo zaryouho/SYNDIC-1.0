@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -136,6 +137,22 @@ namespace SYNDIC_1._0
             flag = 6;
         }
 
-        
+        private void buttonSociete_Click(object sender, EventArgs e)
+        {
+            if (flag != 7 || this.panelContainer.Controls.Count == 0)
+                OpenFormInPannel(new FormSociete());
+
+
+            flag = 7;
+        }
+
+        private void buttonEmploye_Click(object sender, EventArgs e)
+        {
+            if (flag != 8 || this.panelContainer.Controls.Count == 0)
+                OpenFormInPannel(new FormEmploye());
+
+
+            flag = 8;
+        }
     }
 }
