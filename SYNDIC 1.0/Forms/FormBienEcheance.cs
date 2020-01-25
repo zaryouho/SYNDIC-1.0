@@ -63,6 +63,9 @@ namespace SYNDIC_1._0
             comboBoxBienEcheance.DisplayMember = "id";
             comboBoxBienEcheance.ValueMember = "id";
             comboBoxBienEcheance.DataSource = bsBien;
+
+
+            comboBoxTypeEcheance.SelectedValue = "Frais biens";
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)
@@ -91,9 +94,21 @@ namespace SYNDIC_1._0
 
             if (filter.Equals("Touts"))
                 filter = "";
-
+            
             bsEcheance.Filter = "TypeEchea like '%" + filter.Replace("'", "''") + "%'";
-
+            if (filter.Equals("Frais biens"))
+            {
+                buttonSupprimerEcheance.Enabled = false;
+                filter = null;
+                panelMontantEcheance.Visible = true;
+                dataGridViewBienEcheance.Columns[1].Visible = true;
+                dataGridViewBienEcheance.Columns[2].Visible = true;
+                return;
+            }
+            buttonSupprimerEcheance.Enabled = true;
+            panelMontantEcheance.Visible = false ;
+            dataGridViewBienEcheance.Columns[1].Visible = false;
+            dataGridViewBienEcheance.Columns[2].Visible = false;
             filter = null;
         }
 
@@ -143,30 +158,66 @@ namespace SYNDIC_1._0
 
         private void comboBoxBienEcheance_SelectedIndexChanged(object sender, EventArgs e)
         {
-            double montantTotal = 0, montantRecu = 0;
+            try
+            {
+                double montantTotal = 0, montantRecu = 0;
 
-            SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString);
-            if (sqlConnection.State != ConnectionState.Open)
-                sqlConnection.Open();
-           
-            string sql = "select sum(montant_reçu) as total_Recu , sum(montant) as total from echeance where id_bien = " + comboBoxBienEcheance.SelectedValue.ToString() + " group by id_bien";
-            
-            SqlCommand com = new SqlCommand(sql, sqlConnection);
-            SqlDataReader dr = com.ExecuteReader();
-            
-            dr.Read();
-            montantRecu = Convert.ToDouble(dr["total_Recu"].ToString());
-            montantTotal = Convert.ToDouble(dr["total"].ToString());
-            dr.Close();
-            
-            dr = null;
-            com = null;
+                SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString);
+                if (sqlConnection.State != ConnectionState.Open)
+                    sqlConnection.Open();
+
+                string sql = "select sum(montant_reçu) as total_Recu , sum(montant) as total from echeance where id_bien = " + comboBoxBienEcheance.SelectedValue.ToString() + " group by id_bien";
+
+                SqlCommand com = new SqlCommand(sql, sqlConnection);
+                SqlDataReader dr = com.ExecuteReader();
+
+                dr.Read();
+                montantRecu = Convert.ToDouble(dr["total_Recu"].ToString());
+                montantTotal = Convert.ToDouble(dr["total"].ToString());
+                dr.Close();
+
+                dr = null;
+                com = null;
 
 
-            textBoxMontantTotal.Text = montantTotal.ToString();
-            textBoxMontantRecu.Text = montantRecu.ToString();
-            textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
- 
+                textBoxMontantTotal.Text = montantTotal.ToString();
+                textBoxMontantRecu.Text = montantRecu.ToString();
+                textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
+            }
+            catch(Exception ee) { }
+        }
+
+        private void buttonAjouterEcheance_Click(object sender, EventArgs e)
+        {
+            new FormAjouterModifierEcheance(bsBien).ShowDialog();
+            DBHelper.dataSet.Reset();
+
+            FormBienEcheance_Load(sender, e);
+            
+        }
+
+        private void buttonSupprimerEcheance_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?"+
+                "Montant : " + dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString() +
+                "\nMontant Reçu :" + dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString() +
+                "\nNom Bien : " + dataGridViewListeBien.CurrentRow.Cells[1].Value.ToString() +
+                "\nType de Echeance :" + dataGridViewBienEcheance.CurrentRow.Cells[5].Value.ToString(),
+                "Warning",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2
+                );
+            if (result == DialogResult.Yes)
+            {
+                bsEcheance.RemoveCurrent();
+                DBHelper.syncroniser("Echeance");
+            }
+        }
+
+        private void FormBienEcheance_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

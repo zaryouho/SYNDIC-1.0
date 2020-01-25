@@ -36,13 +36,14 @@
             this.labelBloc = new System.Windows.Forms.Label();
             this.comboBoxBloc = new System.Windows.Forms.ComboBox();
             this.splitContainerBienEcheanceBody = new System.Windows.Forms.SplitContainer();
+            this.comboBoxBienEcheance = new System.Windows.Forms.ComboBox();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridViewBienEcheance = new System.Windows.Forms.DataGridView();
             this.dataGridViewListeBien = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMontantEcheance = new System.Windows.Forms.Panel();
             this.textBoxMontantReste = new System.Windows.Forms.TextBox();
             this.labelMontantReste = new System.Windows.Forms.Label();
             this.textBoxMontantRecu = new System.Windows.Forms.TextBox();
@@ -52,7 +53,7 @@
             this.panelBienEcheanceFooter = new System.Windows.Forms.Panel();
             this.buttonModifierEcheance = new System.Windows.Forms.Button();
             this.buttonAjouterEcheance = new System.Windows.Forms.Button();
-            this.comboBoxBienEcheance = new System.Windows.Forms.ComboBox();
+            this.buttonSupprimerEcheance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBienEcheance)).BeginInit();
             this.splitContainerBienEcheance.Panel1.SuspendLayout();
             this.splitContainerBienEcheance.Panel2.SuspendLayout();
@@ -63,7 +64,7 @@
             this.splitContainerBienEcheanceBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBienEcheance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListeBien)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelMontantEcheance.SuspendLayout();
             this.panelBienEcheanceFooter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,10 +167,20 @@
             // 
             this.splitContainerBienEcheanceBody.Panel2.Controls.Add(this.dataGridViewBienEcheance);
             this.splitContainerBienEcheanceBody.Panel2.Controls.Add(this.dataGridViewListeBien);
-            this.splitContainerBienEcheanceBody.Panel2.Controls.Add(this.panel1);
+            this.splitContainerBienEcheanceBody.Panel2.Controls.Add(this.panelMontantEcheance);
             this.splitContainerBienEcheanceBody.Size = new System.Drawing.Size(800, 310);
             this.splitContainerBienEcheanceBody.SplitterDistance = 79;
             this.splitContainerBienEcheanceBody.TabIndex = 1;
+            // 
+            // comboBoxBienEcheance
+            // 
+            this.comboBoxBienEcheance.FormattingEnabled = true;
+            this.comboBoxBienEcheance.Location = new System.Drawing.Point(3, 283);
+            this.comboBoxBienEcheance.Name = "comboBoxBienEcheance";
+            this.comboBoxBienEcheance.Size = new System.Drawing.Size(10, 21);
+            this.comboBoxBienEcheance.TabIndex = 15;
+            this.comboBoxBienEcheance.Visible = false;
+            this.comboBoxBienEcheance.SelectedIndexChanged += new System.EventHandler(this.comboBoxBienEcheance_SelectedIndexChanged);
             // 
             // buttonLast
             // 
@@ -236,19 +247,19 @@
             this.dataGridViewListeBien.Size = new System.Drawing.Size(151, 262);
             this.dataGridViewListeBien.TabIndex = 3;
             // 
-            // panel1
+            // panelMontantEcheance
             // 
-            this.panel1.Controls.Add(this.textBoxMontantReste);
-            this.panel1.Controls.Add(this.labelMontantReste);
-            this.panel1.Controls.Add(this.textBoxMontantRecu);
-            this.panel1.Controls.Add(this.labelMontantRecu);
-            this.panel1.Controls.Add(this.textBoxMontantTotal);
-            this.panel1.Controls.Add(this.labelMontantTotal);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 262);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(717, 48);
-            this.panel1.TabIndex = 2;
+            this.panelMontantEcheance.Controls.Add(this.textBoxMontantReste);
+            this.panelMontantEcheance.Controls.Add(this.labelMontantReste);
+            this.panelMontantEcheance.Controls.Add(this.textBoxMontantRecu);
+            this.panelMontantEcheance.Controls.Add(this.labelMontantRecu);
+            this.panelMontantEcheance.Controls.Add(this.textBoxMontantTotal);
+            this.panelMontantEcheance.Controls.Add(this.labelMontantTotal);
+            this.panelMontantEcheance.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMontantEcheance.Location = new System.Drawing.Point(0, 262);
+            this.panelMontantEcheance.Name = "panelMontantEcheance";
+            this.panelMontantEcheance.Size = new System.Drawing.Size(717, 48);
+            this.panelMontantEcheance.TabIndex = 2;
             // 
             // textBoxMontantReste
             // 
@@ -308,6 +319,7 @@
             // 
             // panelBienEcheanceFooter
             // 
+            this.panelBienEcheanceFooter.Controls.Add(this.buttonSupprimerEcheance);
             this.panelBienEcheanceFooter.Controls.Add(this.buttonModifierEcheance);
             this.panelBienEcheanceFooter.Controls.Add(this.buttonAjouterEcheance);
             this.panelBienEcheanceFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -355,16 +367,29 @@
             this.buttonAjouterEcheance.TabIndex = 13;
             this.buttonAjouterEcheance.Text = "Ajouter Une Echéance";
             this.buttonAjouterEcheance.UseVisualStyleBackColor = false;
+            this.buttonAjouterEcheance.Click += new System.EventHandler(this.buttonAjouterEcheance_Click);
             // 
-            // comboBoxBienEcheance
+            // buttonSupprimerEcheance
             // 
-            this.comboBoxBienEcheance.FormattingEnabled = true;
-            this.comboBoxBienEcheance.Location = new System.Drawing.Point(3, 283);
-            this.comboBoxBienEcheance.Name = "comboBoxBienEcheance";
-            this.comboBoxBienEcheance.Size = new System.Drawing.Size(10, 21);
-            this.comboBoxBienEcheance.TabIndex = 15;
-            this.comboBoxBienEcheance.Visible = false;
-            this.comboBoxBienEcheance.SelectedIndexChanged += new System.EventHandler(this.comboBoxBienEcheance_SelectedIndexChanged);
+            this.buttonSupprimerEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSupprimerEcheance.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSupprimerEcheance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSupprimerEcheance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSupprimerEcheance.Enabled = false;
+            this.buttonSupprimerEcheance.FlatAppearance.BorderSize = 0;
+            this.buttonSupprimerEcheance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonSupprimerEcheance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonSupprimerEcheance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSupprimerEcheance.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.buttonSupprimerEcheance.ForeColor = System.Drawing.Color.White;
+            this.buttonSupprimerEcheance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSupprimerEcheance.Location = new System.Drawing.Point(146, 11);
+            this.buttonSupprimerEcheance.Name = "buttonSupprimerEcheance";
+            this.buttonSupprimerEcheance.Size = new System.Drawing.Size(195, 42);
+            this.buttonSupprimerEcheance.TabIndex = 15;
+            this.buttonSupprimerEcheance.Text = "Supprimer Une Echéance";
+            this.buttonSupprimerEcheance.UseVisualStyleBackColor = false;
+            this.buttonSupprimerEcheance.Click += new System.EventHandler(this.buttonSupprimerEcheance_Click);
             // 
             // FormBienEcheance
             // 
@@ -375,6 +400,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBienEcheance";
             this.Text = "FormBienEcheance";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormBienEcheance_FormClosing);
             this.Load += new System.EventHandler(this.FormBienEcheance_Load);
             this.splitContainerBienEcheance.Panel1.ResumeLayout(false);
             this.splitContainerBienEcheance.Panel1.PerformLayout();
@@ -387,8 +413,8 @@
             this.splitContainerBienEcheanceBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBienEcheance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListeBien)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelMontantEcheance.ResumeLayout(false);
+            this.panelMontantEcheance.PerformLayout();
             this.panelBienEcheanceFooter.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -413,7 +439,7 @@
         private System.Windows.Forms.Button buttonFirst;
         private System.Windows.Forms.DataGridView dataGridViewBienEcheance;
         private System.Windows.Forms.DataGridView dataGridViewListeBien;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelMontantEcheance;
         private System.Windows.Forms.TextBox textBoxMontantReste;
         private System.Windows.Forms.Label labelMontantReste;
         private System.Windows.Forms.TextBox textBoxMontantRecu;
@@ -421,5 +447,6 @@
         private System.Windows.Forms.TextBox textBoxMontantTotal;
         private System.Windows.Forms.Label labelMontantTotal;
         private System.Windows.Forms.ComboBox comboBoxBienEcheance;
+        private System.Windows.Forms.Button buttonSupprimerEcheance;
     }
 }
