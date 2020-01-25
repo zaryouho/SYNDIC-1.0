@@ -84,7 +84,7 @@ namespace SYNDIC_1._0
 
         private void buttonBiens_Click(object sender, EventArgs e)
         {
-            if (flag!=1)
+            if (flag!=1 || this.panelContainer.Controls.Count == 0)
                 OpenFormInPannel(new frmBiens());
 
 
@@ -94,7 +94,7 @@ namespace SYNDIC_1._0
 
         private void buttonProprietaires_Click(object sender, EventArgs e)
         {
-            if(flag!=2)
+            if(flag!=2 || this.panelContainer.Controls.Count == 0)
                 OpenFormInPannel(new frmProprietaires());
 
             flag = 2;
@@ -103,7 +103,7 @@ namespace SYNDIC_1._0
 
         private void buttonFinances_Click(object sender, EventArgs e)
         {
-            if (flag != 3)
+            if (flag != 3 || this.panelContainer.Controls.Count == 0)
                 OpenFormInPannel(new frmFinances());
 
             flag = 3;
@@ -112,7 +112,7 @@ namespace SYNDIC_1._0
 
         private void buttonDocuments_Click(object sender, EventArgs e)
         {
-            if (flag != 4)
+            if (flag != 4 || this.panelContainer.Controls.Count == 0)
                 OpenFormInPannel(new frmDocuments());
 
             flag = 4;
@@ -121,7 +121,7 @@ namespace SYNDIC_1._0
 
         private void buttonHistoriques_Click(object sender, EventArgs e)
         {
-            if (flag != 5)
+            if (flag != 5 || this.panelContainer.Controls.Count == 0)
                 OpenFormInPannel(new frmHistoriques());
 
             flag = 5;
@@ -129,7 +129,7 @@ namespace SYNDIC_1._0
 
         private void buttonRapportsStatistiques_Click(object sender, EventArgs e)
         {
-            if (flag != 6)
+            if (flag != 6 || this.panelContainer.Controls.Count == 0)
                 OpenFormInPannel(new frmRapportsStatistiques());
 
 
