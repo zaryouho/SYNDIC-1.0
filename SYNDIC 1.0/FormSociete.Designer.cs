@@ -315,6 +315,7 @@
             this.buttonFirst.TabIndex = 8;
             this.buttonFirst.Text = ">>";
             this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
             // buttonRechercher
             // 
