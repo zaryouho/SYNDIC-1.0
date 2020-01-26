@@ -63,6 +63,12 @@
     <Compile Include="Forms\FormAjouterModifierEcheance.Designer.cs">
       <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAjouterModifierEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierEmploye.Designer.cs">
+      <DependentUpon>FormAjouterModifierEmploye.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAjouterModifierProp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="Forms\FormAjouterModifierRecette.Designer.cs">
       <DependentUpon>FormAjouterModifierRecette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierSociete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierSociete.Designer.cs">
+      <DependentUpon>FormAjouterModifierSociete.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormBienEcheance.cs">
       <SubType>Form</SubType>
@@ -87,11 +99,13 @@
     <Compile Include="Forms\FormDepenses.Designer.cs">
       <DependentUpon>FormDepenses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormForgotPassword.cs">
+
+    <Compile Include="Forms\FormEmploye.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormForgotPassword.Designer.cs">
-      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    <Compile Include="Forms\FormEmploye.Designer.cs">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\FormGestionTypes.cs">
       <SubType>Form</SubType>
@@ -128,6 +142,12 @@
     </Compile>
     <Compile Include="Forms\FormRecetteProprietaire.Designer.cs">
       <DependentUpon>FormRecetteProprietaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSociete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSociete.Designer.cs">
+      <DependentUpon>FormSociete.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSplachScreen.cs">
       <SubType>Form</SubType>
@@ -194,17 +214,25 @@
     <EmbeddedResource Include="Forms\FormAjouterModifierEcheance.resx">
       <DependentUpon>FormAjouterModifierEcheance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAjouterModifierEmploye.resx">
+      <DependentUpon>FormAjouterModifierEmploye.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAjouterModifierProp.resx">
       <DependentUpon>FormAjouterModifierProp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAjouterModifierRecette.resx">
       <DependentUpon>FormAjouterModifierRecette.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAjouterModifierSociete.resx">
+      <DependentUpon>FormAjouterModifierSociete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormForgotPassword.resx">
-      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+
+    <EmbeddedResource Include="Forms\FormEmploye.resx">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGestionTypes.resx">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>
@@ -223,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRecetteProprietaire.resx">
       <DependentUpon>FormRecetteProprietaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSociete.resx">
+      <DependentUpon>FormSociete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSplachScreen.resx">
       <DependentUpon>FormSplachScreen.cs</DependentUpon>

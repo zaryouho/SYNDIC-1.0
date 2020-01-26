@@ -44,6 +44,8 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnSlideBar = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.buttonSociete = new System.Windows.Forms.Button();
+            this.buttonEmploye = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarreTitulaire.SuspendLayout();
@@ -57,6 +59,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.buttonEmploye);
+            this.MenuVertical.Controls.Add(this.buttonSociete);
             this.MenuVertical.Controls.Add(this.buttonRapportsStatistiques);
             this.MenuVertical.Controls.Add(this.buttonDocuments);
             this.MenuVertical.Controls.Add(this.buttonHistoriques);
@@ -283,6 +287,44 @@
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
+            // buttonSociete
+            // 
+            this.buttonSociete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSociete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSociete.FlatAppearance.BorderSize = 0;
+            this.buttonSociete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonSociete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSociete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSociete.ForeColor = System.Drawing.Color.White;
+            this.buttonSociete.Image = ((System.Drawing.Image)(resources.GetObject("buttonSociete.Image")));
+            this.buttonSociete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSociete.Location = new System.Drawing.Point(0, 424);
+            this.buttonSociete.Name = "buttonSociete";
+            this.buttonSociete.Size = new System.Drawing.Size(265, 45);
+            this.buttonSociete.TabIndex = 6;
+            this.buttonSociete.Text = "Societe .";
+            this.buttonSociete.UseVisualStyleBackColor = true;
+            this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
+            // 
+            // buttonEmploye
+            // 
+            this.buttonEmploye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEmploye.FlatAppearance.BorderSize = 0;
+            this.buttonEmploye.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonEmploye.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEmploye.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmploye.ForeColor = System.Drawing.Color.White;
+            this.buttonEmploye.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmploye.Image")));
+            this.buttonEmploye.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmploye.Location = new System.Drawing.Point(0, 475);
+            this.buttonEmploye.Name = "buttonEmploye";
+            this.buttonEmploye.Size = new System.Drawing.Size(265, 45);
+            this.buttonEmploye.TabIndex = 7;
+            this.buttonEmploye.Text = "Employe .";
+            this.buttonEmploye.UseVisualStyleBackColor = true;
+            this.buttonEmploye.Click += new System.EventHandler(this.buttonEmploye_Click);
+            // 
             // frmMenuOfficiel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +366,8 @@
         private System.Windows.Forms.Button buttonHistoriques;
         private System.Windows.Forms.Button buttonFinances;
         private System.Windows.Forms.Button buttonProprietaires;
+        private System.Windows.Forms.Button buttonSociete;
+        private System.Windows.Forms.Button buttonEmploye;
     }
 }
 

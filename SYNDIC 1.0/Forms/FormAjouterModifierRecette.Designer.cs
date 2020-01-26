@@ -30,6 +30,14 @@
         {
             this.splitContainerRecetteInfo = new System.Windows.Forms.SplitContainer();
             this.labelHead = new System.Windows.Forms.Label();
+            this.comboBoxTypeEcheance = new System.Windows.Forms.ComboBox();
+            this.comboBoxNomBien = new System.Windows.Forms.ComboBox();
+            this.labelInfoBien = new System.Windows.Forms.Label();
+            this.labelTypeEcheance = new System.Windows.Forms.Label();
+            this.labelNomBien = new System.Windows.Forms.Label();
+            this.panelValider = new System.Windows.Forms.Panel();
+            this.buttonAnnuler = new System.Windows.Forms.Button();
+            this.buttonValider = new System.Windows.Forms.Button();
             this.panelRecetteInfo = new System.Windows.Forms.Panel();
             this.comboBoxNomProprietaire = new System.Windows.Forms.ComboBox();
             this.comboBoxTypeRecette = new System.Windows.Forms.ComboBox();
@@ -43,20 +51,17 @@
             this.labelTypeRecette = new System.Windows.Forms.Label();
             this.labelMontant = new System.Windows.Forms.Label();
             this.labelDateRecette = new System.Windows.Forms.Label();
-            this.panelValider = new System.Windows.Forms.Panel();
-            this.buttonAnnuler = new System.Windows.Forms.Button();
-            this.buttonValider = new System.Windows.Forms.Button();
-            this.comboBoxTypeEcheance = new System.Windows.Forms.ComboBox();
-            this.comboBoxNomBien = new System.Windows.Forms.ComboBox();
-            this.labelInfoBien = new System.Windows.Forms.Label();
-            this.labelTypeEcheance = new System.Windows.Forms.Label();
-            this.labelNomBien = new System.Windows.Forms.Label();
+            this.panelIdEcheance = new System.Windows.Forms.Panel();
+            this.dataGridViewListEcheance = new System.Windows.Forms.DataGridView();
+            this.buttonAddNewTypeEcheance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteInfo)).BeginInit();
             this.splitContainerRecetteInfo.Panel1.SuspendLayout();
             this.splitContainerRecetteInfo.Panel2.SuspendLayout();
             this.splitContainerRecetteInfo.SuspendLayout();
-            this.panelRecetteInfo.SuspendLayout();
             this.panelValider.SuspendLayout();
+            this.panelRecetteInfo.SuspendLayout();
+            this.panelIdEcheance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEcheance)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerRecetteInfo
@@ -72,6 +77,8 @@
             // 
             // splitContainerRecetteInfo.Panel2
             // 
+            this.splitContainerRecetteInfo.Panel2.Controls.Add(this.buttonAddNewTypeEcheance);
+            this.splitContainerRecetteInfo.Panel2.Controls.Add(this.panelIdEcheance);
             this.splitContainerRecetteInfo.Panel2.Controls.Add(this.comboBoxTypeEcheance);
             this.splitContainerRecetteInfo.Panel2.Controls.Add(this.comboBoxNomBien);
             this.splitContainerRecetteInfo.Panel2.Controls.Add(this.labelInfoBien);
@@ -92,6 +99,107 @@
             this.labelHead.Size = new System.Drawing.Size(77, 30);
             this.labelHead.TabIndex = 5;
             this.labelHead.Text = "HEAD";
+            // 
+            // comboBoxTypeEcheance
+            // 
+            this.comboBoxTypeEcheance.FormattingEnabled = true;
+            this.comboBoxTypeEcheance.Location = new System.Drawing.Point(533, 96);
+            this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
+            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(176, 21);
+            this.comboBoxTypeEcheance.TabIndex = 21;
+            this.comboBoxTypeEcheance.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeEcheance_SelectedIndexChanged);
+            // 
+            // comboBoxNomBien
+            // 
+            this.comboBoxNomBien.FormattingEnabled = true;
+            this.comboBoxNomBien.Location = new System.Drawing.Point(533, 61);
+            this.comboBoxNomBien.Name = "comboBoxNomBien";
+            this.comboBoxNomBien.Size = new System.Drawing.Size(214, 21);
+            this.comboBoxNomBien.TabIndex = 20;
+            this.comboBoxNomBien.SelectedIndexChanged += new System.EventHandler(this.comboBoxNomBien_SelectedIndexChanged);
+            // 
+            // labelInfoBien
+            // 
+            this.labelInfoBien.AutoSize = true;
+            this.labelInfoBien.Location = new System.Drawing.Point(545, 17);
+            this.labelInfoBien.Name = "labelInfoBien";
+            this.labelInfoBien.Size = new System.Drawing.Size(98, 13);
+            this.labelInfoBien.TabIndex = 19;
+            this.labelInfoBien.Text = "Information de Bien";
+            // 
+            // labelTypeEcheance
+            // 
+            this.labelTypeEcheance.AutoSize = true;
+            this.labelTypeEcheance.Location = new System.Drawing.Point(423, 99);
+            this.labelTypeEcheance.Name = "labelTypeEcheance";
+            this.labelTypeEcheance.Size = new System.Drawing.Size(97, 13);
+            this.labelTypeEcheance.TabIndex = 18;
+            this.labelTypeEcheance.Text = "Type d\'Echeance :";
+            // 
+            // labelNomBien
+            // 
+            this.labelNomBien.AutoSize = true;
+            this.labelNomBien.Location = new System.Drawing.Point(423, 66);
+            this.labelNomBien.Name = "labelNomBien";
+            this.labelNomBien.Size = new System.Drawing.Size(59, 13);
+            this.labelNomBien.TabIndex = 17;
+            this.labelNomBien.Text = "Nom Bien :";
+            // 
+            // panelValider
+            // 
+            this.panelValider.Controls.Add(this.buttonAnnuler);
+            this.panelValider.Controls.Add(this.buttonValider);
+            this.panelValider.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelValider.Location = new System.Drawing.Point(378, 222);
+            this.panelValider.Name = "panelValider";
+            this.panelValider.Size = new System.Drawing.Size(422, 54);
+            this.panelValider.TabIndex = 16;
+            // 
+            // buttonAnnuler
+            // 
+            this.buttonAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAnnuler.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAnnuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAnnuler.FlatAppearance.BorderSize = 0;
+            this.buttonAnnuler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonAnnuler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.ForeColor = System.Drawing.Color.White;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnnuler.Location = new System.Drawing.Point(229, 8);
+            this.buttonAnnuler.Name = "buttonAnnuler";
+            this.buttonAnnuler.Size = new System.Drawing.Size(165, 34);
+            this.buttonAnnuler.TabIndex = 13;
+            this.buttonAnnuler.Text = "Annuler";
+            this.buttonAnnuler.UseVisualStyleBackColor = false;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonValider.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonValider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonValider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonValider.FlatAppearance.BorderSize = 0;
+            this.buttonValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.ForeColor = System.Drawing.Color.White;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValider.Location = new System.Drawing.Point(24, 8);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(165, 34);
+            this.buttonValider.TabIndex = 12;
+            this.buttonValider.Text = "Valider";
+            this.buttonValider.UseVisualStyleBackColor = false;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // panelRecetteInfo
             // 
@@ -227,104 +335,36 @@
             this.labelDateRecette.TabIndex = 0;
             this.labelDateRecette.Text = "Date de Recette :";
             // 
-            // panelValider
+            // panelIdEcheance
             // 
-            this.panelValider.Controls.Add(this.buttonAnnuler);
-            this.panelValider.Controls.Add(this.buttonValider);
-            this.panelValider.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelValider.Location = new System.Drawing.Point(378, 222);
-            this.panelValider.Name = "panelValider";
-            this.panelValider.Size = new System.Drawing.Size(422, 54);
-            this.panelValider.TabIndex = 16;
+            this.panelIdEcheance.Controls.Add(this.dataGridViewListEcheance);
+            this.panelIdEcheance.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelIdEcheance.Location = new System.Drawing.Point(378, 146);
+            this.panelIdEcheance.Name = "panelIdEcheance";
+            this.panelIdEcheance.Size = new System.Drawing.Size(422, 76);
+            this.panelIdEcheance.TabIndex = 22;
             // 
-            // buttonAnnuler
+            // dataGridViewListEcheance
             // 
-            this.buttonAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnnuler.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAnnuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAnnuler.FlatAppearance.BorderSize = 0;
-            this.buttonAnnuler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAnnuler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnnuler.ForeColor = System.Drawing.Color.White;
-            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAnnuler.Location = new System.Drawing.Point(229, 8);
-            this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(165, 34);
-            this.buttonAnnuler.TabIndex = 13;
-            this.buttonAnnuler.Text = "Annuler";
-            this.buttonAnnuler.UseVisualStyleBackColor = false;
-            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            this.dataGridViewListEcheance.AllowUserToAddRows = false;
+            this.dataGridViewListEcheance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListEcheance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListEcheance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewListEcheance.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewListEcheance.Name = "dataGridViewListEcheance";
+            this.dataGridViewListEcheance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListEcheance.Size = new System.Drawing.Size(422, 76);
+            this.dataGridViewListEcheance.TabIndex = 0;
             // 
-            // buttonValider
+            // buttonAddNewTypeEcheance
             // 
-            this.buttonValider.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonValider.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonValider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonValider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonValider.FlatAppearance.BorderSize = 0;
-            this.buttonValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonValider.ForeColor = System.Drawing.Color.White;
-            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValider.Location = new System.Drawing.Point(24, 8);
-            this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(165, 34);
-            this.buttonValider.TabIndex = 12;
-            this.buttonValider.Text = "Valider";
-            this.buttonValider.UseVisualStyleBackColor = false;
-            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
-            // 
-            // comboBoxTypeEcheance
-            // 
-            this.comboBoxTypeEcheance.FormattingEnabled = true;
-            this.comboBoxTypeEcheance.Location = new System.Drawing.Point(541, 118);
-            this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
-            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(214, 21);
-            this.comboBoxTypeEcheance.TabIndex = 21;
-            // 
-            // comboBoxNomBien
-            // 
-            this.comboBoxNomBien.FormattingEnabled = true;
-            this.comboBoxNomBien.Location = new System.Drawing.Point(541, 83);
-            this.comboBoxNomBien.Name = "comboBoxNomBien";
-            this.comboBoxNomBien.Size = new System.Drawing.Size(214, 21);
-            this.comboBoxNomBien.TabIndex = 20;
-            // 
-            // labelInfoBien
-            // 
-            this.labelInfoBien.AutoSize = true;
-            this.labelInfoBien.Location = new System.Drawing.Point(545, 17);
-            this.labelInfoBien.Name = "labelInfoBien";
-            this.labelInfoBien.Size = new System.Drawing.Size(98, 13);
-            this.labelInfoBien.TabIndex = 19;
-            this.labelInfoBien.Text = "Information de Bien";
-            // 
-            // labelTypeEcheance
-            // 
-            this.labelTypeEcheance.AutoSize = true;
-            this.labelTypeEcheance.Location = new System.Drawing.Point(431, 121);
-            this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(97, 13);
-            this.labelTypeEcheance.TabIndex = 18;
-            this.labelTypeEcheance.Text = "Type d\'Echeance :";
-            // 
-            // labelNomBien
-            // 
-            this.labelNomBien.AutoSize = true;
-            this.labelNomBien.Location = new System.Drawing.Point(431, 88);
-            this.labelNomBien.Name = "labelNomBien";
-            this.labelNomBien.Size = new System.Drawing.Size(59, 13);
-            this.labelNomBien.TabIndex = 17;
-            this.labelNomBien.Text = "Nom Bien :";
+            this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(715, 96);
+            this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
+            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 21);
+            this.buttonAddNewTypeEcheance.TabIndex = 23;
+            this.buttonAddNewTypeEcheance.Text = "...";
+            this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
+            this.buttonAddNewTypeEcheance.Click += new System.EventHandler(this.buttonAddNewTypeEcheance_Click);
             // 
             // FormAjouterModifierRecette
             // 
@@ -342,9 +382,11 @@
             this.splitContainerRecetteInfo.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteInfo)).EndInit();
             this.splitContainerRecetteInfo.ResumeLayout(false);
+            this.panelValider.ResumeLayout(false);
             this.panelRecetteInfo.ResumeLayout(false);
             this.panelRecetteInfo.PerformLayout();
-            this.panelValider.ResumeLayout(false);
+            this.panelIdEcheance.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEcheance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +416,8 @@
         private System.Windows.Forms.Label labelTypeRecette;
         private System.Windows.Forms.Label labelMontant;
         private System.Windows.Forms.Label labelDateRecette;
+        private System.Windows.Forms.Panel panelIdEcheance;
+        private System.Windows.Forms.DataGridView dataGridViewListEcheance;
+        private System.Windows.Forms.Button buttonAddNewTypeEcheance;
     }
 }

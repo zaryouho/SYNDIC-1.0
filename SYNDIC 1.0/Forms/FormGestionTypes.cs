@@ -14,15 +14,18 @@ namespace SYNDIC_1._0
     public partial class FormGestionTypes : Form
     {
         string type;
+        BindingSource bsType;
+        bool flag = false;
+        int idType;
+
         public FormGestionTypes(string _type)
         {
             InitializeComponent();
             type = _type;
+ //           bsType = _bsType;
         }
 
-        BindingSource bsType;
-        bool flag = false;
-        int idType;
+
         private void valider(bool v)
         {
             panelCrud.Enabled = v;
@@ -43,11 +46,11 @@ namespace SYNDIC_1._0
 
             // Remplissage de Binding source
             bsType = DBHelper.remplir_bindingsource("Type");
-
+            
             // Remplissage DataGrid
             DBHelper.remplir_Grille(dataGridGestionType, bsType);
             valider(true);
-
+            
             dataGridGestionType.Columns[0].Visible = false;
             dataGridGestionType.Columns[1].Visible = false;
             idType = Convert.ToInt32(dataGridGestionType.Rows[0].Cells[1].Value.ToString());
@@ -100,8 +103,9 @@ namespace SYNDIC_1._0
 
         private void FormGestionTypes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(flag)
-                DBHelper.syncroniser("Type");
+            if (flag)
+                DBHelper.syncroniser("type");
+             
         }
     }
 }

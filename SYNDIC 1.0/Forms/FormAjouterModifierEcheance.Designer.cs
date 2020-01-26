@@ -31,22 +31,18 @@
             this.panelHead = new System.Windows.Forms.Panel();
             this.labelCloseBiens = new System.Windows.Forms.Label();
             this.labelEcheance = new System.Windows.Forms.Label();
-            this.labelMois = new System.Windows.Forms.Label();
-            this.labelAnnee = new System.Windows.Forms.Label();
             this.labelMontant = new System.Windows.Forms.Label();
             this.labelMontantRecu = new System.Windows.Forms.Label();
             this.labelNomBien = new System.Windows.Forms.Label();
             this.labelTypeEcheance = new System.Windows.Forms.Label();
             this.textBoxMontant = new System.Windows.Forms.TextBox();
             this.textBoxMontantRecu = new System.Windows.Forms.TextBox();
-            this.textBoxNomBien = new System.Windows.Forms.TextBox();
-            this.comboBoxAnnee = new System.Windows.Forms.ComboBox();
-            this.comboBoxMois = new System.Windows.Forms.ComboBox();
             this.comboBoxTypeEcheance = new System.Windows.Forms.ComboBox();
             this.buttonAddNewTypeEcheance = new System.Windows.Forms.Button();
             this.panelValid = new System.Windows.Forms.Panel();
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
+            this.comboBoxBien = new System.Windows.Forms.ComboBox();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -84,28 +80,10 @@
             this.labelEcheance.TabIndex = 0;
             this.labelEcheance.Text = "Echeance";
             // 
-            // labelMois
-            // 
-            this.labelMois.AutoSize = true;
-            this.labelMois.Location = new System.Drawing.Point(57, 80);
-            this.labelMois.Name = "labelMois";
-            this.labelMois.Size = new System.Drawing.Size(35, 13);
-            this.labelMois.TabIndex = 5;
-            this.labelMois.Text = "Mois :";
-            // 
-            // labelAnnee
-            // 
-            this.labelAnnee.AutoSize = true;
-            this.labelAnnee.Location = new System.Drawing.Point(220, 80);
-            this.labelAnnee.Name = "labelAnnee";
-            this.labelAnnee.Size = new System.Drawing.Size(44, 13);
-            this.labelAnnee.TabIndex = 6;
-            this.labelAnnee.Text = "Année :";
-            // 
             // labelMontant
             // 
             this.labelMontant.AutoSize = true;
-            this.labelMontant.Location = new System.Drawing.Point(57, 116);
+            this.labelMontant.Location = new System.Drawing.Point(57, 80);
             this.labelMontant.Name = "labelMontant";
             this.labelMontant.Size = new System.Drawing.Size(52, 13);
             this.labelMontant.TabIndex = 7;
@@ -114,7 +92,7 @@
             // labelMontantRecu
             // 
             this.labelMontantRecu.AutoSize = true;
-            this.labelMontantRecu.Location = new System.Drawing.Point(57, 152);
+            this.labelMontantRecu.Location = new System.Drawing.Point(57, 116);
             this.labelMontantRecu.Name = "labelMontantRecu";
             this.labelMontantRecu.Size = new System.Drawing.Size(81, 13);
             this.labelMontantRecu.TabIndex = 8;
@@ -123,7 +101,7 @@
             // labelNomBien
             // 
             this.labelNomBien.AutoSize = true;
-            this.labelNomBien.Location = new System.Drawing.Point(57, 188);
+            this.labelNomBien.Location = new System.Drawing.Point(57, 152);
             this.labelNomBien.Name = "labelNomBien";
             this.labelNomBien.Size = new System.Drawing.Size(59, 13);
             this.labelNomBien.TabIndex = 9;
@@ -132,7 +110,7 @@
             // labelTypeEcheance
             // 
             this.labelTypeEcheance.AutoSize = true;
-            this.labelTypeEcheance.Location = new System.Drawing.Point(57, 224);
+            this.labelTypeEcheance.Location = new System.Drawing.Point(57, 188);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
             this.labelTypeEcheance.Size = new System.Drawing.Size(89, 13);
             this.labelTypeEcheance.TabIndex = 10;
@@ -140,64 +118,42 @@
             // 
             // textBoxMontant
             // 
-            this.textBoxMontant.Location = new System.Drawing.Point(155, 113);
+            this.textBoxMontant.Location = new System.Drawing.Point(155, 77);
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 20);
             this.textBoxMontant.TabIndex = 11;
             // 
             // textBoxMontantRecu
             // 
-            this.textBoxMontantRecu.Location = new System.Drawing.Point(155, 149);
+            this.textBoxMontantRecu.Location = new System.Drawing.Point(155, 113);
             this.textBoxMontantRecu.Name = "textBoxMontantRecu";
             this.textBoxMontantRecu.Size = new System.Drawing.Size(231, 20);
             this.textBoxMontantRecu.TabIndex = 12;
             // 
-            // textBoxNomBien
-            // 
-            this.textBoxNomBien.Location = new System.Drawing.Point(155, 185);
-            this.textBoxNomBien.Name = "textBoxNomBien";
-            this.textBoxNomBien.Size = new System.Drawing.Size(231, 20);
-            this.textBoxNomBien.TabIndex = 13;
-            // 
-            // comboBoxAnnee
-            // 
-            this.comboBoxAnnee.FormattingEnabled = true;
-            this.comboBoxAnnee.Location = new System.Drawing.Point(270, 77);
-            this.comboBoxAnnee.Name = "comboBoxAnnee";
-            this.comboBoxAnnee.Size = new System.Drawing.Size(116, 21);
-            this.comboBoxAnnee.TabIndex = 15;
-            // 
-            // comboBoxMois
-            // 
-            this.comboBoxMois.FormattingEnabled = true;
-            this.comboBoxMois.Location = new System.Drawing.Point(98, 77);
-            this.comboBoxMois.Name = "comboBoxMois";
-            this.comboBoxMois.Size = new System.Drawing.Size(116, 21);
-            this.comboBoxMois.TabIndex = 16;
-            // 
             // comboBoxTypeEcheance
             // 
             this.comboBoxTypeEcheance.FormattingEnabled = true;
-            this.comboBoxTypeEcheance.Location = new System.Drawing.Point(155, 221);
+            this.comboBoxTypeEcheance.Location = new System.Drawing.Point(155, 185);
             this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
             this.comboBoxTypeEcheance.Size = new System.Drawing.Size(187, 21);
             this.comboBoxTypeEcheance.TabIndex = 17;
             // 
             // buttonAddNewTypeEcheance
             // 
-            this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(348, 221);
+            this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(348, 185);
             this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
             this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 21);
             this.buttonAddNewTypeEcheance.TabIndex = 18;
             this.buttonAddNewTypeEcheance.Text = "...";
             this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
+            this.buttonAddNewTypeEcheance.Click += new System.EventHandler(this.buttonAddNewTypeEcheance_Click);
             // 
             // panelValid
             // 
             this.panelValid.Controls.Add(this.buttonAnnuler);
             this.panelValid.Controls.Add(this.buttonValider);
             this.panelValid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelValid.Location = new System.Drawing.Point(0, 258);
+            this.panelValid.Location = new System.Drawing.Point(0, 232);
             this.panelValid.Name = "panelValid";
             this.panelValid.Size = new System.Drawing.Size(447, 41);
             this.panelValid.TabIndex = 19;
@@ -222,30 +178,36 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
+            // comboBoxBien
+            // 
+            this.comboBoxBien.FormattingEnabled = true;
+            this.comboBoxBien.Location = new System.Drawing.Point(155, 149);
+            this.comboBoxBien.Name = "comboBoxBien";
+            this.comboBoxBien.Size = new System.Drawing.Size(231, 21);
+            this.comboBoxBien.TabIndex = 20;
+            // 
             // FormAjouterModifierEcheance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 299);
+            this.ClientSize = new System.Drawing.Size(447, 273);
+            this.Controls.Add(this.comboBoxBien);
             this.Controls.Add(this.panelValid);
             this.Controls.Add(this.buttonAddNewTypeEcheance);
             this.Controls.Add(this.comboBoxTypeEcheance);
-            this.Controls.Add(this.comboBoxMois);
-            this.Controls.Add(this.comboBoxAnnee);
-            this.Controls.Add(this.textBoxNomBien);
             this.Controls.Add(this.textBoxMontantRecu);
             this.Controls.Add(this.textBoxMontant);
             this.Controls.Add(this.labelTypeEcheance);
             this.Controls.Add(this.labelNomBien);
             this.Controls.Add(this.labelMontantRecu);
             this.Controls.Add(this.labelMontant);
-            this.Controls.Add(this.labelAnnee);
-            this.Controls.Add(this.labelMois);
             this.Controls.Add(this.panelHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierEcheance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAjouterEcheance";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAjouterModifierEcheance_FormClosing);
+            this.Load += new System.EventHandler(this.FormAjouterModifierEcheance_Load);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.panelValid.ResumeLayout(false);
@@ -259,21 +221,17 @@
         private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.Label labelCloseBiens;
         private System.Windows.Forms.Label labelEcheance;
-        private System.Windows.Forms.Label labelMois;
-        private System.Windows.Forms.Label labelAnnee;
         private System.Windows.Forms.Label labelMontant;
         private System.Windows.Forms.Label labelMontantRecu;
         private System.Windows.Forms.Label labelNomBien;
         private System.Windows.Forms.Label labelTypeEcheance;
         private System.Windows.Forms.TextBox textBoxMontant;
         private System.Windows.Forms.TextBox textBoxMontantRecu;
-        private System.Windows.Forms.TextBox textBoxNomBien;
-        private System.Windows.Forms.ComboBox comboBoxAnnee;
-        private System.Windows.Forms.ComboBox comboBoxMois;
         private System.Windows.Forms.ComboBox comboBoxTypeEcheance;
         private System.Windows.Forms.Button buttonAddNewTypeEcheance;
         private System.Windows.Forms.Panel panelValid;
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonValider;
+        private System.Windows.Forms.ComboBox comboBoxBien;
     }
 }

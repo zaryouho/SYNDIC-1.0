@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +23,7 @@ namespace SYNDIC_1._0.Forms
             InitializeComponent();
         }
 
-       
+
         private void FormRecetteProprietaire_Load(object sender, EventArgs e)
         {
             DBHelper.remplir_dataset("select nom + ' ' + prenom as Nom_Complet,id from proprietaire where id in (select distinct id_proprietaire from bien)", "Proprietaire_Recette");
@@ -72,20 +74,71 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonSupprimerRecette_Click(object sender, EventArgs e)
         {
-            var echeances = from echeance in SyndicDataContext.echeance
-                            join cotisation_echeance in SyndicDataContext.cotisation_echeance
-                            on echeance.id equals cotisation_echeance.id_echeance
-                            where cotisation_echeance.id_recette.Equals(Convert.ToInt32(dataGridViewRecette.CurrentRow.Cells[0].Value.ToString()))
-                            select echeance;
 
-
-
-            foreach (echeance ech in echeances)
+            DialogResult result = MessageBox.Show("Are you sure want to Remove this Recette ?"
+                + "\nNumero de Recette : " + dataGridViewRecette.CurrentRow.Cells[6].Value.ToString()
+                + "\nDate de Recette : " + dataGridViewRecette.CurrentRow.Cells[1].Value.ToString()
+                + "\nMontant de Recette : " + dataGridViewRecette.CurrentRow.Cells[2].Value.ToString()
+                + "\nType de Recette : " + dataGridViewRecette.CurrentRow.Cells[4].Value.ToString()
+                + "\nNom de Propriétaire : " + comboBoxProprietaire.Text.ToString(),
+                "Verification",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button3
+             );
+            if (result == DialogResult.Yes)
             {
+                var echeances = from echeance in SyndicDataContext.echeance
+                                join cotisation_echeance in SyndicDataContext.cotisation_echeance
+                                on echeance.id equals cotisation_echeance.id_echeance
+                                where cotisation_echeance.id_recette.Equals(Convert.ToInt32(dataGridViewRecette.CurrentRow.Cells[0].Value.ToString()))
+                                select echeance;
 
+                decimal montant_recette = Convert.ToDecimal(dataGridViewRecette.CurrentRow.Cells[2].Value);
+                int id_Recette = Convert.ToInt32(dataGridViewRecette.CurrentRow.Cells[0].Value);
+                
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString);
+                
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
 
+                string sql;
+                SqlCommand com;
 
+                foreach (echeance ech in echeances)
+                {
+                    if (ech.montant_reçu - montant_recette >= 0)
+                    {
+                        ech.montant_reçu -= montant_recette;
+                        montant_recette = 0;
 
+                    }
+                    else if (ech.montant_reçu - montant_recette < 0)
+                    {
+                        montant_recette -= Convert.ToDecimal(ech.montant_reçu);
+                        ech.montant_reçu = 0;
+
+                    }
+
+                    SyndicDataContext.SubmitChanges();
+                    
+                    if (montant_recette == 0)
+                        break;
+                
+                }
+
+                sql = "delete from cotisation_echeance where id_recette = " + id_Recette.ToString();
+                com = new SqlCommand(sql, conn);
+                com.ExecuteNonQuery();
+                com = null;
+
+                bsRecette.RemoveCurrent();
+                sql = "delete from cotisation where id = " + id_Recette.ToString();
+                com = new SqlCommand(sql, conn);
+                com.ExecuteNonQuery();
+
+                com = null;
+                conn.Close();
 
             }
         }
