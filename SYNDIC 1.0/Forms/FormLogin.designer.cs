@@ -140,7 +140,7 @@
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(178, 37);
-            this.buttonLogin.TabIndex = 3;
+            this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -152,7 +152,7 @@
             this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRememberMe.Name = "checkBoxRememberMe";
             this.checkBoxRememberMe.Size = new System.Drawing.Size(94, 17);
-            this.checkBoxRememberMe.TabIndex = 7;
+            this.checkBoxRememberMe.TabIndex = 3;
             this.checkBoxRememberMe.Text = "Remombre me";
             this.checkBoxRememberMe.UseVisualStyleBackColor = true;
             this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
@@ -171,14 +171,16 @@
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(122, 435);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(94, 13);
-            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot password ?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // checkBoxShowHidePassword
             // 
@@ -186,7 +188,7 @@
             this.checkBoxShowHidePassword.Location = new System.Drawing.Point(172, 275);
             this.checkBoxShowHidePassword.Name = "checkBoxShowHidePassword";
             this.checkBoxShowHidePassword.Size = new System.Drawing.Size(101, 17);
-            this.checkBoxShowHidePassword.TabIndex = 9;
+            this.checkBoxShowHidePassword.TabIndex = 4;
             this.checkBoxShowHidePassword.Text = "Show password";
             this.checkBoxShowHidePassword.UseVisualStyleBackColor = true;
             this.checkBoxShowHidePassword.CheckedChanged += new System.EventHandler(this.checkBoxShowHidePassword_CheckedChanged);
@@ -212,8 +214,11 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.Opacity = 0.95D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Black;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

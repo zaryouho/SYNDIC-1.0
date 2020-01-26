@@ -98,8 +98,6 @@ namespace SYNDIC_1._0
                 prop.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
 
 
-
-
             }
 
             else
