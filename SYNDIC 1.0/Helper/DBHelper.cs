@@ -14,6 +14,8 @@ namespace SYNDIC_1._0
 	public static class DBHelper
 	{
 		public static SqlConnection connection = new SqlConnection();
+		public static SqlDataAdapter dataAdapter;
+		public static SqlCommandBuilder commandBuilder;
 		public static DataSet dataSet = new DataSet();
 
 
@@ -26,16 +28,36 @@ namespace SYNDIC_1._0
 
 			if (connection.State != ConnectionState.Open)
 			{
-				connection.ConnectionString = ConfigurationManager.ConnectionStrings[name].ToString();
-				connection.Open();
+				try
+				{
+					connection.ConnectionString = ConfigurationManager.ConnectionStrings[name].ToString();
+					connection.Open();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				finally
+				{
+					connection = null;
+				}
 			}
 		}
 
-
 		static public void fermerConnection()
 		{
-			if (connection.State == ConnectionState.Open)
-				connection.Close();
+			try
+			{
+				if (connection.State == ConnectionState.Open)
+				{
+					connection.Close();
+					connection = null;
+				}
+			}
+			finally
+			{
+				connection.Dispose();
+			}
 		}
 
 		static public void creerRelation(string tpk, string tfk, string pk, string fk)
@@ -84,10 +106,20 @@ namespace SYNDIC_1._0
 			}
 
 
-			SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, connection);
-			if (!dataSet.Tables.Contains(table))
-				dataAdapter.Fill(dataSet, table);
-			dataAdapter = null;
+			try
+			{
+				SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, connection);
+				if (!dataSet.Tables.Contains(table))
+					dataAdapter.Fill(dataSet, table);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				dataAdapter = null;
+			}
 
 		}
 
@@ -106,6 +138,7 @@ namespace SYNDIC_1._0
 			return bindingSource;
 
 		}
+		
 		static public BindingSource remplir_bindingsource(string tpk, string pk, string tfk, string fk, BindingSource bsPk)
 		{
 			if (tfk is null)
@@ -176,8 +209,6 @@ namespace SYNDIC_1._0
 			}
 
 			dataGridView.DataSource = bindingSource;
-
-
 		}
 
 		static public void syncroniser(string table)
@@ -187,11 +218,21 @@ namespace SYNDIC_1._0
 				throw new ArgumentException("message", nameof(table));
 			}
 
-			SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from " + table, connection);
-			SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-			dataAdapter.Update(dataSet.Tables[table]);
-			dataAdapter = null;
-			commandBuilder = null;
+			try
+			{
+				dataAdapter = new SqlDataAdapter("select * from " + table, connection);
+				commandBuilder = new SqlCommandBuilder(dataAdapter);
+				dataAdapter.Update(dataSet.Tables[table]);
+			}
+			catch (Exception ex )
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				dataAdapter = null;
+				commandBuilder = null;
+			}
 
 		}
 
