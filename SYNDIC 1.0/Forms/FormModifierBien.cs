@@ -16,8 +16,8 @@ namespace SYNDIC_1._0
         private DateTime dateAchat;
         private BindingSource bsProprietaire;
         private BindingSource bsBien;
-        private DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
-
+        DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
+        string[] np;
         public FormModifierBien(int _id_current, DateTime _dateAchat_current,BindingSource _bsBien=null)
         {
             InitializeComponent();
@@ -83,7 +83,7 @@ namespace SYNDIC_1._0
                 dateTimePickerDateAchat.DataBindings.Add("text", bsBien, "dateAchat");
 
 
-            
+             np = comboBoxProprietaire.Text.Split(' ');
 
 
         }
@@ -111,10 +111,38 @@ namespace SYNDIC_1._0
 
                     syndicDataContext.SubmitChanges();
                     */
-                    
+
+                   
+                    var src = (from p in syndicDataContext.proprietaires
+                               where p.prenom.Equals(np[1]) && p.nom.Equals(np[0])
+                               select p).Single();
+
+                    ProprietaireArchive pa = new ProprietaireArchive();
+
+                    pa.cin = src.CIN;
+                    pa.titre = src.Titre;
+                    pa.sexe = src.Sexe;
+                    pa.id_ville = src.id_ville;
+                    pa.email = src.email;
+                    pa.tele = src.tel;
+                    pa.code_postal = src.code_postal;
+                    pa.adresse = src.adresse;
+                    pa.prenom = src.prenom;
+                    pa.nom = src.nom;
+                    pa.bien = int.Parse(textBoxNom.Text);
+                    pa.immeuble = int.Parse(textBoxIdImmeuble.Text);
+                    pa.dateVente = dateTimePickerDateAchat.Value;
+
+                    syndicDataContext.ProprietaireArchives.InsertOnSubmit(pa);
+                    syndicDataContext.SubmitChanges();
+
+
                     bsBien.EndEdit();
                     DBHelper.syncroniser("bien");
-                 
+
+
+
+
                 }
 
             }
@@ -123,5 +151,12 @@ namespace SYNDIC_1._0
             this.Close();
         }
 
+        private void buttonAddNewProprietaire_Click(object sender, EventArgs e)
+        {
+            using (var formAjouterModifierProp = new FormAjouterModifierProp(new proprietaire(), 'A'))
+            {
+                formAjouterModifierProp.ShowDialog();
+            }
+        }
     }
 }

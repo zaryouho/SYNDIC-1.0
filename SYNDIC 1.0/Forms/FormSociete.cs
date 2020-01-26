@@ -23,7 +23,7 @@ namespace SYNDIC_1._0.Forms
         private void FormSociete_Load(object sender, EventArgs e)
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringSliman");
-            var src = from soc in syndicDataContext.societe
+            var src = from soc in syndicDataContext.societes
                       select soc;
             dataGridViewSociete.DataSource = src;
         }
@@ -34,7 +34,7 @@ namespace SYNDIC_1._0.Forms
             buttonSociete.BackColor = Color.Navy;
             buttonSocieteArchive.BackColor = Color.Blue;
             buttonAjouterSociete.BackColor = Color.Blue;
-            var src = from soc in syndicDataContext.societe
+            var src = from soc in syndicDataContext.societes
                       select soc;
             dataGridViewSociete.DataSource = src;
         }
@@ -60,7 +60,7 @@ namespace SYNDIC_1._0.Forms
             buttonSociete.BackColor = Color.Blue;
             buttonSocieteArchive.BackColor = Color.Navy;
             buttonAjouterSociete.BackColor = Color.Blue;
-            var src = from soc in syndicDataContext.societe
+            var src = from soc in syndicDataContext.societes
                       select soc;
             dataGridViewSociete.DataSource = src;
         }
@@ -75,7 +75,7 @@ namespace SYNDIC_1._0.Forms
                     vs.SetValue("gOgLgXgPgIg9", i);
             }
 
-            var src = from em in syndicDataContext.societe
+            var src = from em in syndicDataContext.societes
                       where vs.Contains(em.nom) || vs.Contains(em.prenom)
                       || vs.Contains(em.tel) || vs.Contains(em.email) || vs.Contains(em.adresse)
                       select em;
@@ -168,11 +168,11 @@ namespace SYNDIC_1._0.Forms
             {
                 so.id = int.Parse(dataGridViewSociete.CurrentRow.Cells[0].Value.ToString());
 
-                var soci = (from soc in syndicDataContext.societe
+                var soci = (from soc in syndicDataContext.societes
                             where soc.id.Equals(so.id)
                             select soc).Single();
 
-                syndicDataContext.societe.DeleteOnSubmit(soci);
+                syndicDataContext.societes.DeleteOnSubmit(soci);
                 syndicDataContext.SubmitChanges();
 
                 this.FormSociete_Load(sender, e);

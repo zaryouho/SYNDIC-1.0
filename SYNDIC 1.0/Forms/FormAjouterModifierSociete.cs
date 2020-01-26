@@ -42,7 +42,7 @@ namespace SYNDIC_1._0.Forms
 
             textBoxRaison_Social.Focus();
 
-            var src = from v in syndicDataContext.ville
+            var src = from v in syndicDataContext.villes
                       select v;
 
             comboBoxVille.DataSource = src;
@@ -55,7 +55,7 @@ namespace SYNDIC_1._0.Forms
 
 
           
-            var scr = from soci in syndicDataContext.societe
+            var scr = from soci in syndicDataContext.societes
                       select soci;
            
 
@@ -84,7 +84,7 @@ namespace SYNDIC_1._0.Forms
 
             if (k == 'M')
             {
-                var soci = (from soc in syndicDataContext.societe
+                var soci = (from soc in syndicDataContext.societes
                             where soc.id == so.id
                             select soc).Single();
 
@@ -114,7 +114,7 @@ namespace SYNDIC_1._0.Forms
 
 
                 so.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
-                syndicDataContext.societe.InsertOnSubmit(so);
+                syndicDataContext.societes.InsertOnSubmit(so);
 
             }
 

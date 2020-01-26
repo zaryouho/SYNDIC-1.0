@@ -30,7 +30,7 @@ namespace SYNDIC_1._0.Forms
             }
             else
                 dateTimePickerDateRecrutement.Enabled = true;
-            var src = from v in syndicDataContext.ville
+            var src = from v in syndicDataContext.villes
                       select v;
 
             comboBoxVille.DataSource = src;
@@ -46,7 +46,7 @@ namespace SYNDIC_1._0.Forms
             }
             radioButtonActifFalse.Checked = false;
 
-            var scr = from TEmp in syndicDataContext.employe
+            var scr = from TEmp in syndicDataContext.employes
                       select TEmp;
             comboBoxTypeEmploye.DataSource = scr;
             comboBoxTypeEmploye.DisplayMember = "typeEmploye";
@@ -112,7 +112,7 @@ namespace SYNDIC_1._0.Forms
 
             if (c == 'M')
             {
-                var empl = (from emp in syndicDataContext.employe
+                var empl = (from emp in syndicDataContext.employes
                             where emp.id == em.id
                             select emp).Single();
 
@@ -143,7 +143,7 @@ namespace SYNDIC_1._0.Forms
                 //  em.date_depart = dateTimePickerDateDepart.Value;
                 em.typeEmploye = comboBoxTypeEmploye.Text;
                 em.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
-                syndicDataContext.employe.InsertOnSubmit(em);
+                syndicDataContext.employes.InsertOnSubmit(em);
 
             }
 

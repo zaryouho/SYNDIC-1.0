@@ -111,7 +111,7 @@ namespace SYNDIC_1._0.Forms
                 if (comboBoxTypeEcheance.Text == "Frais biens")
                 {
                     var src = from echeance
-                              in SyndicDataContext.echeance
+                              in SyndicDataContext.echeances
                               where echeance.id_bien.Equals(Convert.ToInt32(comboBoxNomBien.SelectedValue))
                               select echeance;
 
@@ -124,7 +124,7 @@ namespace SYNDIC_1._0.Forms
                             MessageBox.Show(ech.montant_reçu.ToString() + "-----" + ech.mois);
 
                             var updateEcheance = (from echeance1
-                                                 in SyndicDataContext.echeance
+                                                 in SyndicDataContext.echeances
                                                   where echeance1.id.Equals(Convert.ToInt32(ech.id))
                                                   select echeance1).Single();
 
@@ -192,7 +192,7 @@ namespace SYNDIC_1._0.Forms
                     try
                     {
                         var echeance1 = (from echeance
-                                  in SyndicDataContext.echeance
+                                  in SyndicDataContext.echeances
                                          where echeance.id.Equals(Convert.ToInt32(dataGridViewListEcheance.CurrentRow.Cells[0].Value.ToString()))
                                          select echeance).Single();
 

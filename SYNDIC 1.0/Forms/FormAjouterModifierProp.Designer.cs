@@ -53,6 +53,7 @@
             this.labelProprietaires = new System.Windows.Forms.Label();
             this.comboBoxIdVille = new System.Windows.Forms.ComboBox();
             this.comboBoxTitre = new System.Windows.Forms.ComboBox();
+            this.buttonRAZ = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxCin
@@ -113,6 +114,7 @@
             // 
             // comboBoxVille
             // 
+            this.comboBoxVille.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVille.FormattingEnabled = true;
             this.comboBoxVille.Location = new System.Drawing.Point(203, 305);
             this.comboBoxVille.Name = "comboBoxVille";
@@ -213,6 +215,7 @@
             // 
             // comboBoxSexe
             // 
+            this.comboBoxSexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSexe.FormattingEnabled = true;
             this.comboBoxSexe.Location = new System.Drawing.Point(203, 160);
             this.comboBoxSexe.Name = "comboBoxSexe";
@@ -222,7 +225,7 @@
             // 
             // buttonValider
             // 
-            this.buttonValider.Location = new System.Drawing.Point(88, 399);
+            this.buttonValider.Location = new System.Drawing.Point(51, 399);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(88, 39);
             this.buttonValider.TabIndex = 33;
@@ -232,7 +235,7 @@
             // 
             // buttonAnnuler
             // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(248, 399);
+            this.buttonAnnuler.Location = new System.Drawing.Point(315, 399);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(88, 39);
             this.buttonAnnuler.TabIndex = 34;
@@ -275,17 +278,29 @@
             // 
             // comboBoxTitre
             // 
+            this.comboBoxTitre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTitre.FormattingEnabled = true;
             this.comboBoxTitre.Location = new System.Drawing.Point(203, 337);
             this.comboBoxTitre.Name = "comboBoxTitre";
             this.comboBoxTitre.Size = new System.Drawing.Size(201, 21);
             this.comboBoxTitre.TabIndex = 38;
             // 
+            // buttonRAZ
+            // 
+            this.buttonRAZ.Location = new System.Drawing.Point(183, 399);
+            this.buttonRAZ.Name = "buttonRAZ";
+            this.buttonRAZ.Size = new System.Drawing.Size(88, 39);
+            this.buttonRAZ.TabIndex = 39;
+            this.buttonRAZ.Text = "RAZ";
+            this.buttonRAZ.UseVisualStyleBackColor = true;
+            this.buttonRAZ.Click += new System.EventHandler(this.buttonRAZ_Click);
+            // 
             // FormAjouterModifierProp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 450);
+            this.Controls.Add(this.buttonRAZ);
             this.Controls.Add(this.comboBoxTitre);
             this.Controls.Add(this.labelCloseProprietaires);
             this.Controls.Add(this.labelProprietaires);
@@ -346,5 +361,6 @@
         private System.Windows.Forms.Label labelProprietaires;
         private System.Windows.Forms.ComboBox comboBoxIdVille;
         private System.Windows.Forms.ComboBox comboBoxTitre;
+        private System.Windows.Forms.Button buttonRAZ;
     }
 }

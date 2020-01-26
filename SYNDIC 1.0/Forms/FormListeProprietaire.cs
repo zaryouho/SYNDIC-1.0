@@ -15,7 +15,7 @@ namespace SYNDIC_1._0
         char op = 'A';
         static int i = 0;
         proprietaire p = new proprietaire();
-        public static List<proprietaire> proprietairesSupprimes = new List<proprietaire>();
+
         public FormListeProprietaire()
         {
             InitializeComponent();
@@ -24,10 +24,20 @@ namespace SYNDIC_1._0
         private void FormListeProprietaire_Load(object sender, EventArgs e)
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
-            var src = from p in syndicDataContext.proprietaire
-                      select p;
+            var src = from v in syndicDataContext.villes
+                      join p in syndicDataContext.proprietaires
+                        on v.id equals p.id_ville
+                      join b in syndicDataContext.biens
+                        on p.id equals b.id_proprietaire
+                      where b.id_proprietaire != null
+                      select new { CIN = p.CIN, Prénom = p.prenom, Nom = p.nom, Sexe = p.Sexe, p.Titre, Telephone = p.tel, Email = p.email, CodePostal = p.code_postal, Ville = v.nom, Adresse = p.adresse, Bien = String.Concat(b.id_immeuble, "-", b.nom), p.id };
 
             dataGridViewProprietaires.DataSource = src;
+            dataGridViewProprietaires.Columns[11].Visible = false;
+            dataGridViewProprietaires.AutoResizeColumns();
+
+            dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
+
         }
 
         private void buttonAjouterProprietaire_Click(object sender, EventArgs e)
@@ -40,51 +50,57 @@ namespace SYNDIC_1._0
 
             FormListeProprietaire_Load(sender, e);
             dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
-           
+
         }
 
         private void buttonModifierProprietaire_Click(object sender, EventArgs e)
         {
             op = 'M';
 
-            p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[0].Value.ToString());
-            p.nom = dataGridViewProprietaires.CurrentRow.Cells[1].Value.ToString();
-            p.prenom = dataGridViewProprietaires.CurrentRow.Cells[2].Value.ToString();
-            p.adresse = dataGridViewProprietaires.CurrentRow.Cells[3].Value.ToString();
-            p.code_postal = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[4].Value.ToString());
+            var s = (from v in syndicDataContext.villes
+                     where v.nom.Equals(dataGridViewProprietaires.CurrentRow.Cells[8].Value.ToString())
+                     select v).First();
+            p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[11].Value.ToString());
+            p.nom = dataGridViewProprietaires.CurrentRow.Cells[2].Value.ToString();
+            p.prenom = dataGridViewProprietaires.CurrentRow.Cells[1].Value.ToString();
+            p.adresse = dataGridViewProprietaires.CurrentRow.Cells[9].Value.ToString();
+            p.code_postal = Convert.ToInt32(dataGridViewProprietaires.CurrentRow.Cells[7].Value.ToString());
             p.tel = dataGridViewProprietaires.CurrentRow.Cells[5].Value.ToString();
             p.email = dataGridViewProprietaires.CurrentRow.Cells[6].Value.ToString();
-            p.id_ville = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[7].Value.ToString());
-            p.Sexe = dataGridViewProprietaires.CurrentRow.Cells[8].Value.ToString();
-            p.Titre = dataGridViewProprietaires.CurrentRow.Cells[9].Value.ToString();
-            p.CIN = dataGridViewProprietaires.CurrentRow.Cells[10].Value.ToString();
+            p.id_ville = s.id;
+            p.Sexe = dataGridViewProprietaires.CurrentRow.Cells[3].Value.ToString();
+            p.Titre = dataGridViewProprietaires.CurrentRow.Cells[4].Value.ToString();
+            p.CIN = dataGridViewProprietaires.CurrentRow.Cells[0].Value.ToString();
+
+
+
+
 
 
             using (var formAjouterModifierProp = new FormAjouterModifierProp(p, op))
             {
                 formAjouterModifierProp.ShowDialog();
+                dataGridViewProprietaires.DataSource = null;
+                FormListeProprietaire_Load(sender, e);
 
             }
-            FormListeProprietaire_Load(sender, e);
-            dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
+
         }
 
         private void buttonSupprimerProprietaire_Click(object sender, EventArgs e)
         {
-            var question = MessageBox.Show("Voullez vous supprimer cet proprietaire ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+            var question = MessageBox.Show("Voullez vous supprimer cet proprietaire ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (question == DialogResult.No)
                 return;
             if (question == DialogResult.Yes)
             {
                 p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[0].Value.ToString());
 
-                var prop = (from pr in syndicDataContext.proprietaire
+                var prop = (from pr in syndicDataContext.proprietaires
                             where pr.id.Equals(p.id)
                             select pr).Single();
-                // Add the deleted to the list to be archived
-                proprietairesSupprimes.Add(prop);
-                //----------
-                syndicDataContext.proprietaire.DeleteOnSubmit(prop);
+
+                syndicDataContext.proprietaires.DeleteOnSubmit(prop);
                 syndicDataContext.SubmitChanges();
 
                 this.FormListeProprietaire_Load(sender, e);
@@ -132,7 +148,7 @@ namespace SYNDIC_1._0
                 if (vs[i].Equals(string.Empty))
                     vs.SetValue("gOgLgXgPgIg9", i);
             }
-            var src = from p in syndicDataContext.proprietaire
+            var src = from p in syndicDataContext.proprietaires
                       where vs.Contains(p.CIN) || vs.Contains(p.nom) || vs.Contains(p.prenom)
                       || vs.Contains(p.tel) || vs.Contains(p.email) || vs.Contains(p.Titre)
                       || vs.Contains(p.adresse) || vs.Contains(p.Sexe)
