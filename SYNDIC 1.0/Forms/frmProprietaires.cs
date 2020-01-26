@@ -72,6 +72,7 @@ namespace SYNDIC_1._0
             buttonSsProprietairesArchive.BackColor = Color.Navy;
             buttonSsAjouterProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesRecettes.BackColor = Color.Blue;
+            OpenFormInPannel(new FormProprietairesArchive());
         }
 
         private void buttonSsProprietairesRecettes_Click(object sender, EventArgs e)

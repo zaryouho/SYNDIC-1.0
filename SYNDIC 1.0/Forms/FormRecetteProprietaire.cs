@@ -88,8 +88,8 @@ namespace SYNDIC_1._0.Forms
              );
             if (result == DialogResult.Yes)
             {
-                var echeances = from echeance in SyndicDataContext.echeance
-                                join cotisation_echeance in SyndicDataContext.cotisation_echeance
+                var echeances = from echeance in SyndicDataContext.echeances
+                                join cotisation_echeance in SyndicDataContext.cotisation_echeances
                                 on echeance.id equals cotisation_echeance.id_echeance
                                 where cotisation_echeance.id_recette.Equals(Convert.ToInt32(dataGridViewRecette.CurrentRow.Cells[0].Value.ToString()))
                                 select echeance;

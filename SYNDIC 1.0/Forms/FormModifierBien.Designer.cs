@@ -237,6 +237,7 @@
             this.buttonAddNewProprietaire.TabIndex = 21;
             this.buttonAddNewProprietaire.Text = "...";
             this.buttonAddNewProprietaire.UseVisualStyleBackColor = true;
+            this.buttonAddNewProprietaire.Click += new System.EventHandler(this.buttonAddNewProprietaire_Click);
             // 
             // dateTimePickerDateAchat
             // 

@@ -35,7 +35,9 @@ namespace SYNDIC_1._0
             comboBoxTitre.Items.Add("Mme.");
             comboBoxTitre.Items.Add("Mr.");
 
-            var src = from v in syndicDataContext.ville
+
+
+            var src = from v in syndicDataContext.villes
                       select v;
 
             comboBoxVille.DataSource = src;
@@ -58,34 +60,43 @@ namespace SYNDIC_1._0
                 textBoxEmail.Text = p.email.ToString();
                 textBoxTele.Text = p.tel.ToString();
                 comboBoxTitre.SelectedItem = p.Titre.ToString();
-                comboBoxIdVille.SelectedItem = p.id_ville ;
+                comboBoxIdVille.SelectedItem = p.id_ville;
                 comboBoxVille.SelectedValue = p.id_ville;
 
             }
 
-            
+            else
+            {
+                comboBoxTitre.SelectedIndex = 2;
+                comboBoxSexe.SelectedIndex = 0;
+                comboBoxIdVille.SelectedIndex = 0;
+                textBoxCin.Focus();
+            }
+
+
         }
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            
+
 
             if (op == 'M')
             {
-                var prop = (from pro in syndicDataContext.proprietaire
-                           where pro.id == p.id
-                           select pro).Single();
-                    
-                prop.CIN= textBoxCin.Text ;
-                prop.nom= textBoxNom.Text ;
-                prop.prenom= textBoxPrenom.Text ;
-                prop.Sexe = comboBoxSexe.SelectedItem.ToString() ;
-                prop.adresse = textBoxAdresse.Text ;
-                prop.code_postal= int.Parse(textBoxCodePostal.Text) ;
-                prop.email= textBoxEmail.Text ;
-                prop.tel= textBoxTele.Text ;
-                prop.Titre= comboBoxTitre.Text;
+                var prop = (from pro in syndicDataContext.proprietaires
+                            where pro.id == p.id
+                            select pro).Single();
+
+                prop.CIN = textBoxCin.Text;
+                prop.nom = textBoxNom.Text;
+                prop.prenom = textBoxPrenom.Text;
+                prop.Sexe = comboBoxSexe.SelectedItem.ToString();
+                prop.adresse = textBoxAdresse.Text;
+                prop.code_postal = int.Parse(textBoxCodePostal.Text);
+                prop.email = textBoxEmail.Text;
+                prop.tel = textBoxTele.Text;
+                prop.Titre = comboBoxTitre.Text;
                 prop.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
+
 
             }
 
@@ -103,10 +114,10 @@ namespace SYNDIC_1._0
                 p.Titre = comboBoxTitre.Text;
                 p.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
 
-                syndicDataContext.proprietaire.InsertOnSubmit(p);
+                syndicDataContext.proprietaires.InsertOnSubmit(p);
 
             }
-            
+
             syndicDataContext.SubmitChanges();
             syndicDataContext.Dispose();
             this.Close();
@@ -114,25 +125,7 @@ namespace SYNDIC_1._0
 
         public void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            if (op == 'A')
-            {
-                // Allah ya khay  3lach 7na 3melna had fonction 
-                // InitializeControls.clearText();
-                //
-                textBoxNom.Clear();
-                textBoxPrenom.Clear();
-                textBoxAdresse.Clear();
-                textBoxCin.Clear();
-                textBoxCodePostal.Clear();
-                textBoxTele.Clear();
-                comboBoxTitre.SelectedIndex=0;
-                textBoxEmail.Clear();
-                comboBoxSexe.SelectedIndex = 0;
-                comboBoxSexe.SelectedIndex = 0;
-                textBoxCin.Focus();
-
-            }
-            else
+         
                 this.Close();
         }
 
@@ -147,16 +140,25 @@ namespace SYNDIC_1._0
 
         private void comboBoxSexe_TextChanged(object sender, EventArgs e)
         {
-            //if (textBoxCin.Text != "" && textBoxNom.Text != "" && textBoxPrenom.Text != "" 
-            //    && comboBoxSexe.Text != "" && textBoxEmail.Text != "" && textBoxTele.Text != "" && comboBoxTitre.Text != "")
-            //    buttonValider.Enabled = true;
-            //else
-            //    buttonValider.Enabled = false;
+            if (textBoxCin.Text != "" && textBoxNom.Text != "" && textBoxPrenom.Text != ""
+                && textBoxEmail.Text != "" && textBoxTele.Text != "")
+                buttonValider.Enabled = true;
+            else
+                buttonValider.Enabled = false;
         }
 
         private void comboBoxVille_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxIdVille.SelectedItem = comboBoxVille.SelectedValue;
+        }
+
+        private void buttonRAZ_Click(object sender, EventArgs e)
+        {
+            InitializeControls.clearText(this);
+            comboBoxTitre.SelectedIndex = 2;
+            comboBoxSexe.SelectedIndex = 0;
+            comboBoxIdVille.SelectedIndex = 0;
+            textBoxCin.Focus();
         }
     }
 }

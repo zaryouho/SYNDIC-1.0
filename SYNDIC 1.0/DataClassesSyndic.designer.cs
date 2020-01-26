@@ -30,12 +30,12 @@ namespace SYNDIC_1._0
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertbien(bien instance);
-    partial void Updatebien(bien instance);
-    partial void Deletebien(bien instance);
     partial void Insertville(ville instance);
     partial void Updateville(ville instance);
     partial void Deleteville(ville instance);
+    partial void Insertbien(bien instance);
+    partial void Updatebien(bien instance);
+    partial void Deletebien(bien instance);
     partial void Insertbloc(bloc instance);
     partial void Updatebloc(bloc instance);
     partial void Deletebloc(bloc instance);
@@ -93,6 +93,9 @@ namespace SYNDIC_1._0
     partial void Insertproprietaire(proprietaire instance);
     partial void Updateproprietaire(proprietaire instance);
     partial void Deleteproprietaire(proprietaire instance);
+    partial void InsertProprietaireArchive(ProprietaireArchive instance);
+    partial void UpdateProprietaireArchive(ProprietaireArchive instance);
+    partial void DeleteProprietaireArchive(ProprietaireArchive instance);
     partial void InsertremarqueBien(remarqueBien instance);
     partial void UpdateremarqueBien(remarqueBien instance);
     partial void DeleteremarqueBien(remarqueBien instance);
@@ -111,9 +114,6 @@ namespace SYNDIC_1._0
     partial void InsertTableType(TableType instance);
     partial void UpdateTableType(TableType instance);
     partial void DeleteTableType(TableType instance);
-    partial void Inserttemp1(temp1 instance);
-    partial void Updatetemp1(temp1 instance);
-    partial void Deletetemp1(temp1 instance);
     partial void InsertTravail(Travail instance);
     partial void UpdateTravail(Travail instance);
     partial void DeleteTravail(Travail instance);
@@ -126,7 +126,7 @@ namespace SYNDIC_1._0
     #endregion
 		
 		public DataClassesSyndicDataContext() : 
-				base(global::SYNDIC_1._0.Properties.Settings.Default.syndic2ConnectionString2, mappingSource)
+				base(global::SYNDIC_1._0.Properties.Settings.Default.syndic2ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -155,15 +155,7 @@ namespace SYNDIC_1._0
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<bien> bien
-		{
-			get
-			{
-				return this.GetTable<bien>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ville> ville
+		public System.Data.Linq.Table<ville> villes
 		{
 			get
 			{
@@ -171,7 +163,15 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<bloc> bloc
+		public System.Data.Linq.Table<bien> biens
+		{
+			get
+			{
+				return this.GetTable<bien>();
+			}
+		}
+		
+		public System.Data.Linq.Table<bloc> blocs
 		{
 			get
 			{
@@ -179,7 +179,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<connexion> connexion
+		public System.Data.Linq.Table<connexion> connexions
 		{
 			get
 			{
@@ -187,7 +187,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<cotisation> cotisation
+		public System.Data.Linq.Table<cotisation> cotisations
 		{
 			get
 			{
@@ -195,7 +195,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<cotisation_echeance> cotisation_echeance
+		public System.Data.Linq.Table<cotisation_echeance> cotisation_echeances
 		{
 			get
 			{
@@ -203,7 +203,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<depense> depense
+		public System.Data.Linq.Table<depense> depenses
 		{
 			get
 			{
@@ -211,7 +211,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<documentBien> documentBien
+		public System.Data.Linq.Table<documentBien> documentBiens
 		{
 			get
 			{
@@ -219,7 +219,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<documentCotisation> documentCotisation
+		public System.Data.Linq.Table<documentCotisation> documentCotisations
 		{
 			get
 			{
@@ -227,7 +227,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<documentDepense> documentDepense
+		public System.Data.Linq.Table<documentDepense> documentDepenses
 		{
 			get
 			{
@@ -235,7 +235,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<documentEmploye> documentEmploye
+		public System.Data.Linq.Table<documentEmploye> documentEmployes
 		{
 			get
 			{
@@ -243,7 +243,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<documentProprietaire> documentProprietaire
+		public System.Data.Linq.Table<documentProprietaire> documentProprietaires
 		{
 			get
 			{
@@ -251,7 +251,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<documentResidence> documentResidence
+		public System.Data.Linq.Table<documentResidence> documentResidences
 		{
 			get
 			{
@@ -259,7 +259,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<echeance> echeance
+		public System.Data.Linq.Table<echeance> echeances
 		{
 			get
 			{
@@ -267,7 +267,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<employe> employe
+		public System.Data.Linq.Table<employe> employes
 		{
 			get
 			{
@@ -275,7 +275,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<immeuble> immeuble
+		public System.Data.Linq.Table<immeuble> immeubles
 		{
 			get
 			{
@@ -283,7 +283,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<intervention> intervention
+		public System.Data.Linq.Table<intervention> interventions
 		{
 			get
 			{
@@ -291,7 +291,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<journal> journal
+		public System.Data.Linq.Table<journal> journals
 		{
 			get
 			{
@@ -299,7 +299,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<ligne> ligne
+		public System.Data.Linq.Table<ligne> lignes
 		{
 			get
 			{
@@ -307,7 +307,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<message> message
+		public System.Data.Linq.Table<message> messages
 		{
 			get
 			{
@@ -315,15 +315,15 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<message_utilisateurs> message_utilisateurs
+		public System.Data.Linq.Table<message_utilisateur> message_utilisateurs
 		{
 			get
 			{
-				return this.GetTable<message_utilisateurs>();
+				return this.GetTable<message_utilisateur>();
 			}
 		}
 		
-		public System.Data.Linq.Table<produit> produit
+		public System.Data.Linq.Table<produit> produits
 		{
 			get
 			{
@@ -331,7 +331,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<proprietaire> proprietaire
+		public System.Data.Linq.Table<proprietaire> proprietaires
 		{
 			get
 			{
@@ -339,7 +339,15 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<remarqueBien> remarqueBien
+		public System.Data.Linq.Table<ProprietaireArchive> ProprietaireArchives
+		{
+			get
+			{
+				return this.GetTable<ProprietaireArchive>();
+			}
+		}
+		
+		public System.Data.Linq.Table<remarqueBien> remarqueBiens
 		{
 			get
 			{
@@ -347,7 +355,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<remarqueDepnse> remarqueDepnse
+		public System.Data.Linq.Table<remarqueDepnse> remarqueDepnses
 		{
 			get
 			{
@@ -355,7 +363,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<remarqueEmploye> remarqueEmploye
+		public System.Data.Linq.Table<remarqueEmploye> remarqueEmployes
 		{
 			get
 			{
@@ -363,7 +371,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<residence> residence
+		public System.Data.Linq.Table<residence> residences
 		{
 			get
 			{
@@ -371,7 +379,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<societe> societe
+		public System.Data.Linq.Table<societe> societes
 		{
 			get
 			{
@@ -379,7 +387,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<TableType> TableType
+		public System.Data.Linq.Table<TableType> TableTypes
 		{
 			get
 			{
@@ -387,23 +395,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<temp> temp
-		{
-			get
-			{
-				return this.GetTable<temp>();
-			}
-		}
-		
-		public System.Data.Linq.Table<temp1> temp1
-		{
-			get
-			{
-				return this.GetTable<temp1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Travail> Travail
+		public System.Data.Linq.Table<Travail> Travails
 		{
 			get
 			{
@@ -411,7 +403,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<Type> Type
+		public System.Data.Linq.Table<Type> Types
 		{
 			get
 			{
@@ -419,12 +411,210 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		public System.Data.Linq.Table<utilisateur> utilisateur
+		public System.Data.Linq.Table<utilisateur> utilisateurs
 		{
 			get
 			{
 				return this.GetTable<utilisateur>();
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ville")]
+	public partial class ville : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _nom;
+		
+		private EntitySet<employe> _employes;
+		
+		private EntitySet<proprietaire> _proprietaires;
+		
+		private EntitySet<residence> _residences;
+		
+		private EntitySet<societe> _societes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnomChanging(string value);
+    partial void OnnomChanged();
+    #endregion
+		
+		public ville()
+		{
+			this._employes = new EntitySet<employe>(new Action<employe>(this.attach_employes), new Action<employe>(this.detach_employes));
+			this._proprietaires = new EntitySet<proprietaire>(new Action<proprietaire>(this.attach_proprietaires), new Action<proprietaire>(this.detach_proprietaires));
+			this._residences = new EntitySet<residence>(new Action<residence>(this.attach_residences), new Action<residence>(this.detach_residences));
+			this._societes = new EntitySet<societe>(new Action<societe>(this.attach_societes), new Action<societe>(this.detach_societes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string nom
+		{
+			get
+			{
+				return this._nom;
+			}
+			set
+			{
+				if ((this._nom != value))
+				{
+					this.OnnomChanging(value);
+					this.SendPropertyChanging();
+					this._nom = value;
+					this.SendPropertyChanged("nom");
+					this.OnnomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_employe", Storage="_employes", ThisKey="id", OtherKey="id_ville")]
+		public EntitySet<employe> employes
+		{
+			get
+			{
+				return this._employes;
+			}
+			set
+			{
+				this._employes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_proprietaire", Storage="_proprietaires", ThisKey="id", OtherKey="id_ville")]
+		public EntitySet<proprietaire> proprietaires
+		{
+			get
+			{
+				return this._proprietaires;
+			}
+			set
+			{
+				this._proprietaires.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_residence", Storage="_residences", ThisKey="id", OtherKey="id_ville")]
+		public EntitySet<residence> residences
+		{
+			get
+			{
+				return this._residences;
+			}
+			set
+			{
+				this._residences.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_societe", Storage="_societes", ThisKey="id", OtherKey="id_ville")]
+		public EntitySet<societe> societes
+		{
+			get
+			{
+				return this._societes;
+			}
+			set
+			{
+				this._societes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_employes(employe entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = this;
+		}
+		
+		private void detach_employes(employe entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = null;
+		}
+		
+		private void attach_proprietaires(proprietaire entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = this;
+		}
+		
+		private void detach_proprietaires(proprietaire entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = null;
+		}
+		
+		private void attach_residences(residence entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = this;
+		}
+		
+		private void detach_residences(residence entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = null;
+		}
+		
+		private void attach_societes(societe entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = this;
+		}
+		
+		private void detach_societes(societe entity)
+		{
+			this.SendPropertyChanging();
+			entity.ville = null;
 		}
 	}
 	
@@ -454,11 +644,11 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<System.DateTime> _dateAchat;
 		
-		private EntitySet<documentBien> _documentBien;
+		private EntitySet<documentBien> _documentBiens;
 		
-		private EntitySet<echeance> _echeance;
+		private EntitySet<echeance> _echeances;
 		
-		private EntitySet<remarqueBien> _remarqueBien;
+		private EntitySet<remarqueBien> _remarqueBiens;
 		
 		private EntityRef<immeuble> _immeuble;
 		
@@ -492,9 +682,9 @@ namespace SYNDIC_1._0
 		
 		public bien()
 		{
-			this._documentBien = new EntitySet<documentBien>(new Action<documentBien>(this.attach_documentBien), new Action<documentBien>(this.detach_documentBien));
-			this._echeance = new EntitySet<echeance>(new Action<echeance>(this.attach_echeance), new Action<echeance>(this.detach_echeance));
-			this._remarqueBien = new EntitySet<remarqueBien>(new Action<remarqueBien>(this.attach_remarqueBien), new Action<remarqueBien>(this.detach_remarqueBien));
+			this._documentBiens = new EntitySet<documentBien>(new Action<documentBien>(this.attach_documentBiens), new Action<documentBien>(this.detach_documentBiens));
+			this._echeances = new EntitySet<echeance>(new Action<echeance>(this.attach_echeances), new Action<echeance>(this.detach_echeances));
+			this._remarqueBiens = new EntitySet<remarqueBien>(new Action<remarqueBien>(this.attach_remarqueBiens), new Action<remarqueBien>(this.detach_remarqueBiens));
 			this._immeuble = default(EntityRef<immeuble>);
 			this._proprietaire = default(EntityRef<proprietaire>);
 			OnCreated();
@@ -708,42 +898,42 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bien_documentBien", Storage="_documentBien", ThisKey="id", OtherKey="id_bien")]
-		public EntitySet<documentBien> documentBien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bien_documentBien", Storage="_documentBiens", ThisKey="id", OtherKey="id_bien")]
+		public EntitySet<documentBien> documentBiens
 		{
 			get
 			{
-				return this._documentBien;
+				return this._documentBiens;
 			}
 			set
 			{
-				this._documentBien.Assign(value);
+				this._documentBiens.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bien_echeance", Storage="_echeance", ThisKey="id", OtherKey="id_bien")]
-		public EntitySet<echeance> echeance
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bien_echeance", Storage="_echeances", ThisKey="id", OtherKey="id_bien")]
+		public EntitySet<echeance> echeances
 		{
 			get
 			{
-				return this._echeance;
+				return this._echeances;
 			}
 			set
 			{
-				this._echeance.Assign(value);
+				this._echeances.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bien_remarqueBien", Storage="_remarqueBien", ThisKey="id", OtherKey="id_Bien")]
-		public EntitySet<remarqueBien> remarqueBien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bien_remarqueBien", Storage="_remarqueBiens", ThisKey="id", OtherKey="id_Bien")]
+		public EntitySet<remarqueBien> remarqueBiens
 		{
 			get
 			{
-				return this._remarqueBien;
+				return this._remarqueBiens;
 			}
 			set
 			{
-				this._remarqueBien.Assign(value);
+				this._remarqueBiens.Assign(value);
 			}
 		}
 		
@@ -764,12 +954,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._immeuble.Entity = null;
-						previousValue.bien.Remove(this);
+						previousValue.biens.Remove(this);
 					}
 					this._immeuble.Entity = value;
 					if ((value != null))
 					{
-						value.bien.Add(this);
+						value.biens.Add(this);
 						this._id_immeuble = value.id;
 					}
 					else
@@ -781,7 +971,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_bien", Storage="_proprietaire", ThisKey="id_proprietaire", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_bien", Storage="_proprietaire", ThisKey="id_proprietaire", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public proprietaire proprietaire
 		{
 			get
@@ -798,12 +988,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._proprietaire.Entity = null;
-						previousValue.bien.Remove(this);
+						previousValue.biens.Remove(this);
 					}
 					this._proprietaire.Entity = value;
 					if ((value != null))
 					{
-						value.bien.Add(this);
+						value.biens.Add(this);
 						this._id_proprietaire = value.id;
 					}
 					else
@@ -835,238 +1025,40 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_documentBien(documentBien entity)
+		private void attach_documentBiens(documentBien entity)
 		{
 			this.SendPropertyChanging();
 			entity.bien = this;
 		}
 		
-		private void detach_documentBien(documentBien entity)
+		private void detach_documentBiens(documentBien entity)
 		{
 			this.SendPropertyChanging();
 			entity.bien = null;
 		}
 		
-		private void attach_echeance(echeance entity)
+		private void attach_echeances(echeance entity)
 		{
 			this.SendPropertyChanging();
 			entity.bien = this;
 		}
 		
-		private void detach_echeance(echeance entity)
+		private void detach_echeances(echeance entity)
 		{
 			this.SendPropertyChanging();
 			entity.bien = null;
 		}
 		
-		private void attach_remarqueBien(remarqueBien entity)
+		private void attach_remarqueBiens(remarqueBien entity)
 		{
 			this.SendPropertyChanging();
 			entity.bien = this;
 		}
 		
-		private void detach_remarqueBien(remarqueBien entity)
+		private void detach_remarqueBiens(remarqueBien entity)
 		{
 			this.SendPropertyChanging();
 			entity.bien = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ville")]
-	public partial class ville : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _nom;
-		
-		private EntitySet<employe> _employe;
-		
-		private EntitySet<proprietaire> _proprietaire;
-		
-		private EntitySet<residence> _residence;
-		
-		private EntitySet<societe> _societe;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnnomChanging(string value);
-    partial void OnnomChanged();
-    #endregion
-		
-		public ville()
-		{
-			this._employe = new EntitySet<employe>(new Action<employe>(this.attach_employe), new Action<employe>(this.detach_employe));
-			this._proprietaire = new EntitySet<proprietaire>(new Action<proprietaire>(this.attach_proprietaire), new Action<proprietaire>(this.detach_proprietaire));
-			this._residence = new EntitySet<residence>(new Action<residence>(this.attach_residence), new Action<residence>(this.detach_residence));
-			this._societe = new EntitySet<societe>(new Action<societe>(this.attach_societe), new Action<societe>(this.detach_societe));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string nom
-		{
-			get
-			{
-				return this._nom;
-			}
-			set
-			{
-				if ((this._nom != value))
-				{
-					this.OnnomChanging(value);
-					this.SendPropertyChanging();
-					this._nom = value;
-					this.SendPropertyChanged("nom");
-					this.OnnomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_employe", Storage="_employe", ThisKey="id", OtherKey="id_ville")]
-		public EntitySet<employe> employe
-		{
-			get
-			{
-				return this._employe;
-			}
-			set
-			{
-				this._employe.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_proprietaire", Storage="_proprietaire", ThisKey="id", OtherKey="id_ville")]
-		public EntitySet<proprietaire> proprietaire
-		{
-			get
-			{
-				return this._proprietaire;
-			}
-			set
-			{
-				this._proprietaire.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_residence", Storage="_residence", ThisKey="id", OtherKey="id_ville")]
-		public EntitySet<residence> residence
-		{
-			get
-			{
-				return this._residence;
-			}
-			set
-			{
-				this._residence.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_societe", Storage="_societe", ThisKey="id", OtherKey="id_ville")]
-		public EntitySet<societe> societe
-		{
-			get
-			{
-				return this._societe;
-			}
-			set
-			{
-				this._societe.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_employe(employe entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = this;
-		}
-		
-		private void detach_employe(employe entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = null;
-		}
-		
-		private void attach_proprietaire(proprietaire entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = this;
-		}
-		
-		private void detach_proprietaire(proprietaire entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = null;
-		}
-		
-		private void attach_residence(residence entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = this;
-		}
-		
-		private void detach_residence(residence entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = null;
-		}
-		
-		private void attach_societe(societe entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = this;
-		}
-		
-		private void detach_societe(societe entity)
-		{
-			this.SendPropertyChanging();
-			entity.ville = null;
 		}
 	}
 	
@@ -1082,7 +1074,7 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<int> _id_Residence;
 		
-		private EntitySet<immeuble> _immeuble;
+		private EntitySet<immeuble> _immeubles;
 		
 		private EntityRef<residence> _residence;
 		
@@ -1100,7 +1092,7 @@ namespace SYNDIC_1._0
 		
 		public bloc()
 		{
-			this._immeuble = new EntitySet<immeuble>(new Action<immeuble>(this.attach_immeuble), new Action<immeuble>(this.detach_immeuble));
+			this._immeubles = new EntitySet<immeuble>(new Action<immeuble>(this.attach_immeubles), new Action<immeuble>(this.detach_immeubles));
 			this._residence = default(EntityRef<residence>);
 			OnCreated();
 		}
@@ -1169,16 +1161,16 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bloc_immeuble", Storage="_immeuble", ThisKey="id", OtherKey="id_bloc")]
-		public EntitySet<immeuble> immeuble
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="bloc_immeuble", Storage="_immeubles", ThisKey="id", OtherKey="id_bloc")]
+		public EntitySet<immeuble> immeubles
 		{
 			get
 			{
-				return this._immeuble;
+				return this._immeubles;
 			}
 			set
 			{
-				this._immeuble.Assign(value);
+				this._immeubles.Assign(value);
 			}
 		}
 		
@@ -1199,12 +1191,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._residence.Entity = null;
-						previousValue.bloc.Remove(this);
+						previousValue.blocs.Remove(this);
 					}
 					this._residence.Entity = value;
 					if ((value != null))
 					{
-						value.bloc.Add(this);
+						value.blocs.Add(this);
 						this._id_Residence = value.id;
 					}
 					else
@@ -1236,13 +1228,13 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_immeuble(immeuble entity)
+		private void attach_immeubles(immeuble entity)
 		{
 			this.SendPropertyChanging();
 			entity.bloc = this;
 		}
 		
-		private void detach_immeuble(immeuble entity)
+		private void detach_immeubles(immeuble entity)
 		{
 			this.SendPropertyChanging();
 			entity.bloc = null;
@@ -1362,12 +1354,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._utilisateur.Entity = null;
-						previousValue.connexion.Remove(this);
+						previousValue.connexions.Remove(this);
 					}
 					this._utilisateur.Entity = value;
 					if ((value != null))
 					{
-						value.connexion.Add(this);
+						value.connexions.Add(this);
 						this._id_utilisateur = value.id;
 					}
 					else
@@ -1420,9 +1412,9 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<int> _numRecu;
 		
-		private EntitySet<cotisation_echeance> _cotisation_echeance;
+		private EntitySet<cotisation_echeance> _cotisation_echeances;
 		
-		private EntitySet<documentCotisation> _documentCotisation;
+		private EntitySet<documentCotisation> _documentCotisations;
 		
 		private EntityRef<proprietaire> _proprietaire;
 		
@@ -1448,8 +1440,8 @@ namespace SYNDIC_1._0
 		
 		public cotisation()
 		{
-			this._cotisation_echeance = new EntitySet<cotisation_echeance>(new Action<cotisation_echeance>(this.attach_cotisation_echeance), new Action<cotisation_echeance>(this.detach_cotisation_echeance));
-			this._documentCotisation = new EntitySet<documentCotisation>(new Action<documentCotisation>(this.attach_documentCotisation), new Action<documentCotisation>(this.detach_documentCotisation));
+			this._cotisation_echeances = new EntitySet<cotisation_echeance>(new Action<cotisation_echeance>(this.attach_cotisation_echeances), new Action<cotisation_echeance>(this.detach_cotisation_echeances));
+			this._documentCotisations = new EntitySet<documentCotisation>(new Action<documentCotisation>(this.attach_documentCotisations), new Action<documentCotisation>(this.detach_documentCotisations));
 			this._proprietaire = default(EntityRef<proprietaire>);
 			OnCreated();
 		}
@@ -1598,33 +1590,33 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cotisation_cotisation_echeance", Storage="_cotisation_echeance", ThisKey="id", OtherKey="id_recette")]
-		public EntitySet<cotisation_echeance> cotisation_echeance
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cotisation_cotisation_echeance", Storage="_cotisation_echeances", ThisKey="id", OtherKey="id_recette")]
+		public EntitySet<cotisation_echeance> cotisation_echeances
 		{
 			get
 			{
-				return this._cotisation_echeance;
+				return this._cotisation_echeances;
 			}
 			set
 			{
-				this._cotisation_echeance.Assign(value);
+				this._cotisation_echeances.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cotisation_documentCotisation", Storage="_documentCotisation", ThisKey="id", OtherKey="idRecette")]
-		public EntitySet<documentCotisation> documentCotisation
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cotisation_documentCotisation", Storage="_documentCotisations", ThisKey="id", OtherKey="idRecette")]
+		public EntitySet<documentCotisation> documentCotisations
 		{
 			get
 			{
-				return this._documentCotisation;
+				return this._documentCotisations;
 			}
 			set
 			{
-				this._documentCotisation.Assign(value);
+				this._documentCotisations.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_cotisation", Storage="_proprietaire", ThisKey="id_propietaire", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_cotisation", Storage="_proprietaire", ThisKey="id_propietaire", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public proprietaire proprietaire
 		{
 			get
@@ -1641,12 +1633,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._proprietaire.Entity = null;
-						previousValue.cotisation.Remove(this);
+						previousValue.cotisations.Remove(this);
 					}
 					this._proprietaire.Entity = value;
 					if ((value != null))
 					{
-						value.cotisation.Add(this);
+						value.cotisations.Add(this);
 						this._id_propietaire = value.id;
 					}
 					else
@@ -1678,25 +1670,25 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_cotisation_echeance(cotisation_echeance entity)
+		private void attach_cotisation_echeances(cotisation_echeance entity)
 		{
 			this.SendPropertyChanging();
 			entity.cotisation = this;
 		}
 		
-		private void detach_cotisation_echeance(cotisation_echeance entity)
+		private void detach_cotisation_echeances(cotisation_echeance entity)
 		{
 			this.SendPropertyChanging();
 			entity.cotisation = null;
 		}
 		
-		private void attach_documentCotisation(documentCotisation entity)
+		private void attach_documentCotisations(documentCotisation entity)
 		{
 			this.SendPropertyChanging();
 			entity.cotisation = this;
 		}
 		
-		private void detach_documentCotisation(documentCotisation entity)
+		private void detach_documentCotisations(documentCotisation entity)
 		{
 			this.SendPropertyChanging();
 			entity.cotisation = null;
@@ -1782,7 +1774,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cotisation_cotisation_echeance", Storage="_cotisation", ThisKey="id_recette", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cotisation_cotisation_echeance", Storage="_cotisation", ThisKey="id_recette", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public cotisation cotisation
 		{
 			get
@@ -1799,12 +1791,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._cotisation.Entity = null;
-						previousValue.cotisation_echeance.Remove(this);
+						previousValue.cotisation_echeances.Remove(this);
 					}
 					this._cotisation.Entity = value;
 					if ((value != null))
 					{
-						value.cotisation_echeance.Add(this);
+						value.cotisation_echeances.Add(this);
 						this._id_recette = value.id;
 					}
 					else
@@ -1816,7 +1808,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="echeance_cotisation_echeance", Storage="_echeance", ThisKey="id_echeance", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="echeance_cotisation_echeance", Storage="_echeance", ThisKey="id_echeance", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public echeance echeance
 		{
 			get
@@ -1833,12 +1825,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._echeance.Entity = null;
-						previousValue.cotisation_echeance.Remove(this);
+						previousValue.cotisation_echeances.Remove(this);
 					}
 					this._echeance.Entity = value;
 					if ((value != null))
 					{
-						value.cotisation_echeance.Add(this);
+						value.cotisation_echeances.Add(this);
 						this._id_echeance = value.id;
 					}
 					else
@@ -1895,13 +1887,13 @@ namespace SYNDIC_1._0
 		
 		private string _typeDocument;
 		
-		private EntitySet<documentDepense> _documentDepense;
+		private EntitySet<documentDepense> _documentDepenses;
 		
-		private EntitySet<intervention> _intervention;
+		private EntitySet<intervention> _interventions;
 		
-		private EntitySet<ligne> _ligne;
+		private EntitySet<ligne> _lignes;
 		
-		private EntitySet<remarqueDepnse> _remarqueDepnse;
+		private EntitySet<remarqueDepnse> _remarqueDepnses;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1929,10 +1921,10 @@ namespace SYNDIC_1._0
 		
 		public depense()
 		{
-			this._documentDepense = new EntitySet<documentDepense>(new Action<documentDepense>(this.attach_documentDepense), new Action<documentDepense>(this.detach_documentDepense));
-			this._intervention = new EntitySet<intervention>(new Action<intervention>(this.attach_intervention), new Action<intervention>(this.detach_intervention));
-			this._ligne = new EntitySet<ligne>(new Action<ligne>(this.attach_ligne), new Action<ligne>(this.detach_ligne));
-			this._remarqueDepnse = new EntitySet<remarqueDepnse>(new Action<remarqueDepnse>(this.attach_remarqueDepnse), new Action<remarqueDepnse>(this.detach_remarqueDepnse));
+			this._documentDepenses = new EntitySet<documentDepense>(new Action<documentDepense>(this.attach_documentDepenses), new Action<documentDepense>(this.detach_documentDepenses));
+			this._interventions = new EntitySet<intervention>(new Action<intervention>(this.attach_interventions), new Action<intervention>(this.detach_interventions));
+			this._lignes = new EntitySet<ligne>(new Action<ligne>(this.attach_lignes), new Action<ligne>(this.detach_lignes));
+			this._remarqueDepnses = new EntitySet<remarqueDepnse>(new Action<remarqueDepnse>(this.attach_remarqueDepnses), new Action<remarqueDepnse>(this.detach_remarqueDepnses));
 			OnCreated();
 		}
 		
@@ -2116,55 +2108,55 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_documentDepense", Storage="_documentDepense", ThisKey="id", OtherKey="id_Depense")]
-		public EntitySet<documentDepense> documentDepense
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_documentDepense", Storage="_documentDepenses", ThisKey="id", OtherKey="id_Depense")]
+		public EntitySet<documentDepense> documentDepenses
 		{
 			get
 			{
-				return this._documentDepense;
+				return this._documentDepenses;
 			}
 			set
 			{
-				this._documentDepense.Assign(value);
+				this._documentDepenses.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_intervention", Storage="_intervention", ThisKey="id", OtherKey="id_depense")]
-		public EntitySet<intervention> intervention
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_intervention", Storage="_interventions", ThisKey="id", OtherKey="id_depense")]
+		public EntitySet<intervention> interventions
 		{
 			get
 			{
-				return this._intervention;
+				return this._interventions;
 			}
 			set
 			{
-				this._intervention.Assign(value);
+				this._interventions.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_ligne", Storage="_ligne", ThisKey="id", OtherKey="id_depense")]
-		public EntitySet<ligne> ligne
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_ligne", Storage="_lignes", ThisKey="id", OtherKey="id_depense")]
+		public EntitySet<ligne> lignes
 		{
 			get
 			{
-				return this._ligne;
+				return this._lignes;
 			}
 			set
 			{
-				this._ligne.Assign(value);
+				this._lignes.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_remarqueDepnse", Storage="_remarqueDepnse", ThisKey="id", OtherKey="id_Depense")]
-		public EntitySet<remarqueDepnse> remarqueDepnse
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="depense_remarqueDepnse", Storage="_remarqueDepnses", ThisKey="id", OtherKey="id_Depense")]
+		public EntitySet<remarqueDepnse> remarqueDepnses
 		{
 			get
 			{
-				return this._remarqueDepnse;
+				return this._remarqueDepnses;
 			}
 			set
 			{
-				this._remarqueDepnse.Assign(value);
+				this._remarqueDepnses.Assign(value);
 			}
 		}
 		
@@ -2188,49 +2180,49 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_documentDepense(documentDepense entity)
+		private void attach_documentDepenses(documentDepense entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = this;
 		}
 		
-		private void detach_documentDepense(documentDepense entity)
+		private void detach_documentDepenses(documentDepense entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = null;
 		}
 		
-		private void attach_intervention(intervention entity)
+		private void attach_interventions(intervention entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = this;
 		}
 		
-		private void detach_intervention(intervention entity)
+		private void detach_interventions(intervention entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = null;
 		}
 		
-		private void attach_ligne(ligne entity)
+		private void attach_lignes(ligne entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = this;
 		}
 		
-		private void detach_ligne(ligne entity)
+		private void detach_lignes(ligne entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = null;
 		}
 		
-		private void attach_remarqueDepnse(remarqueDepnse entity)
+		private void attach_remarqueDepnses(remarqueDepnse entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = this;
 		}
 		
-		private void detach_remarqueDepnse(remarqueDepnse entity)
+		private void detach_remarqueDepnses(remarqueDepnse entity)
 		{
 			this.SendPropertyChanging();
 			entity.depense = null;
@@ -2374,12 +2366,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._bien.Entity = null;
-						previousValue.documentBien.Remove(this);
+						previousValue.documentBiens.Remove(this);
 					}
 					this._bien.Entity = value;
 					if ((value != null))
 					{
-						value.documentBien.Add(this);
+						value.documentBiens.Add(this);
 						this._id_bien = value.id;
 					}
 					else
@@ -2549,12 +2541,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._cotisation.Entity = null;
-						previousValue.documentCotisation.Remove(this);
+						previousValue.documentCotisations.Remove(this);
 					}
 					this._cotisation.Entity = value;
 					if ((value != null))
 					{
-						value.documentCotisation.Add(this);
+						value.documentCotisations.Add(this);
 						this._idRecette = value.id;
 					}
 					else
@@ -2724,12 +2716,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._depense.Entity = null;
-						previousValue.documentDepense.Remove(this);
+						previousValue.documentDepenses.Remove(this);
 					}
 					this._depense.Entity = value;
 					if ((value != null))
 					{
-						value.documentDepense.Add(this);
+						value.documentDepenses.Add(this);
 						this._id_Depense = value.id;
 					}
 					else
@@ -2899,12 +2891,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._employe.Entity = null;
-						previousValue.documentEmploye.Remove(this);
+						previousValue.documentEmployes.Remove(this);
 					}
 					this._employe.Entity = value;
 					if ((value != null))
 					{
-						value.documentEmploye.Add(this);
+						value.documentEmployes.Add(this);
 						this._id_employe = value.id;
 					}
 					else
@@ -3057,7 +3049,7 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_documentProprietaire", Storage="_proprietaire", ThisKey="id_Proprietaire", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_documentProprietaire", Storage="_proprietaire", ThisKey="id_Proprietaire", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public proprietaire proprietaire
 		{
 			get
@@ -3074,12 +3066,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._proprietaire.Entity = null;
-						previousValue.documentProprietaire.Remove(this);
+						previousValue.documentProprietaires.Remove(this);
 					}
 					this._proprietaire.Entity = value;
 					if ((value != null))
 					{
-						value.documentProprietaire.Add(this);
+						value.documentProprietaires.Add(this);
 						this._id_Proprietaire = value.id;
 					}
 					else
@@ -3213,7 +3205,7 @@ namespace SYNDIC_1._0
 		
 		private string _typeEchea;
 		
-		private EntitySet<cotisation_echeance> _cotisation_echeance;
+		private EntitySet<cotisation_echeance> _cotisation_echeances;
 		
 		private EntityRef<bien> _bien;
 		
@@ -3239,7 +3231,7 @@ namespace SYNDIC_1._0
 		
 		public echeance()
 		{
-			this._cotisation_echeance = new EntitySet<cotisation_echeance>(new Action<cotisation_echeance>(this.attach_cotisation_echeance), new Action<cotisation_echeance>(this.detach_cotisation_echeance));
+			this._cotisation_echeances = new EntitySet<cotisation_echeance>(new Action<cotisation_echeance>(this.attach_cotisation_echeances), new Action<cotisation_echeance>(this.detach_cotisation_echeances));
 			this._bien = default(EntityRef<bien>);
 			OnCreated();
 		}
@@ -3388,16 +3380,16 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="echeance_cotisation_echeance", Storage="_cotisation_echeance", ThisKey="id", OtherKey="id_echeance")]
-		public EntitySet<cotisation_echeance> cotisation_echeance
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="echeance_cotisation_echeance", Storage="_cotisation_echeances", ThisKey="id", OtherKey="id_echeance")]
+		public EntitySet<cotisation_echeance> cotisation_echeances
 		{
 			get
 			{
-				return this._cotisation_echeance;
+				return this._cotisation_echeances;
 			}
 			set
 			{
-				this._cotisation_echeance.Assign(value);
+				this._cotisation_echeances.Assign(value);
 			}
 		}
 		
@@ -3418,12 +3410,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._bien.Entity = null;
-						previousValue.echeance.Remove(this);
+						previousValue.echeances.Remove(this);
 					}
 					this._bien.Entity = value;
 					if ((value != null))
 					{
-						value.echeance.Add(this);
+						value.echeances.Add(this);
 						this._id_bien = value.id;
 					}
 					else
@@ -3455,13 +3447,13 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_cotisation_echeance(cotisation_echeance entity)
+		private void attach_cotisation_echeances(cotisation_echeance entity)
 		{
 			this.SendPropertyChanging();
 			entity.echeance = this;
 		}
 		
-		private void detach_cotisation_echeance(cotisation_echeance entity)
+		private void detach_cotisation_echeances(cotisation_echeance entity)
 		{
 			this.SendPropertyChanging();
 			entity.echeance = null;
@@ -3498,11 +3490,11 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<int> _id_ville;
 		
-		private EntitySet<documentEmploye> _documentEmploye;
+		private EntitySet<documentEmploye> _documentEmployes;
 		
-		private EntitySet<remarqueEmploye> _remarqueEmploye;
+		private EntitySet<remarqueEmploye> _remarqueEmployes;
 		
-		private EntitySet<Travail> _Travail;
+		private EntitySet<Travail> _Travails;
 		
 		private EntityRef<ville> _ville;
 		
@@ -3538,9 +3530,9 @@ namespace SYNDIC_1._0
 		
 		public employe()
 		{
-			this._documentEmploye = new EntitySet<documentEmploye>(new Action<documentEmploye>(this.attach_documentEmploye), new Action<documentEmploye>(this.detach_documentEmploye));
-			this._remarqueEmploye = new EntitySet<remarqueEmploye>(new Action<remarqueEmploye>(this.attach_remarqueEmploye), new Action<remarqueEmploye>(this.detach_remarqueEmploye));
-			this._Travail = new EntitySet<Travail>(new Action<Travail>(this.attach_Travail), new Action<Travail>(this.detach_Travail));
+			this._documentEmployes = new EntitySet<documentEmploye>(new Action<documentEmploye>(this.attach_documentEmployes), new Action<documentEmploye>(this.detach_documentEmployes));
+			this._remarqueEmployes = new EntitySet<remarqueEmploye>(new Action<remarqueEmploye>(this.attach_remarqueEmployes), new Action<remarqueEmploye>(this.detach_remarqueEmployes));
+			this._Travails = new EntitySet<Travail>(new Action<Travail>(this.attach_Travails), new Action<Travail>(this.detach_Travails));
 			this._ville = default(EntityRef<ville>);
 			OnCreated();
 		}
@@ -3789,42 +3781,42 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="employe_documentEmploye", Storage="_documentEmploye", ThisKey="id", OtherKey="id_employe")]
-		public EntitySet<documentEmploye> documentEmploye
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="employe_documentEmploye", Storage="_documentEmployes", ThisKey="id", OtherKey="id_employe")]
+		public EntitySet<documentEmploye> documentEmployes
 		{
 			get
 			{
-				return this._documentEmploye;
+				return this._documentEmployes;
 			}
 			set
 			{
-				this._documentEmploye.Assign(value);
+				this._documentEmployes.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="employe_remarqueEmploye", Storage="_remarqueEmploye", ThisKey="id", OtherKey="id_employe")]
-		public EntitySet<remarqueEmploye> remarqueEmploye
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="employe_remarqueEmploye", Storage="_remarqueEmployes", ThisKey="id", OtherKey="id_employe")]
+		public EntitySet<remarqueEmploye> remarqueEmployes
 		{
 			get
 			{
-				return this._remarqueEmploye;
+				return this._remarqueEmployes;
 			}
 			set
 			{
-				this._remarqueEmploye.Assign(value);
+				this._remarqueEmployes.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="employe_Travail", Storage="_Travail", ThisKey="id", OtherKey="IdEmp")]
-		public EntitySet<Travail> Travail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="employe_Travail", Storage="_Travails", ThisKey="id", OtherKey="IdEmp")]
+		public EntitySet<Travail> Travails
 		{
 			get
 			{
-				return this._Travail;
+				return this._Travails;
 			}
 			set
 			{
-				this._Travail.Assign(value);
+				this._Travails.Assign(value);
 			}
 		}
 		
@@ -3845,12 +3837,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._ville.Entity = null;
-						previousValue.employe.Remove(this);
+						previousValue.employes.Remove(this);
 					}
 					this._ville.Entity = value;
 					if ((value != null))
 					{
-						value.employe.Add(this);
+						value.employes.Add(this);
 						this._id_ville = value.id;
 					}
 					else
@@ -3882,37 +3874,37 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_documentEmploye(documentEmploye entity)
+		private void attach_documentEmployes(documentEmploye entity)
 		{
 			this.SendPropertyChanging();
 			entity.employe = this;
 		}
 		
-		private void detach_documentEmploye(documentEmploye entity)
+		private void detach_documentEmployes(documentEmploye entity)
 		{
 			this.SendPropertyChanging();
 			entity.employe = null;
 		}
 		
-		private void attach_remarqueEmploye(remarqueEmploye entity)
+		private void attach_remarqueEmployes(remarqueEmploye entity)
 		{
 			this.SendPropertyChanging();
 			entity.employe = this;
 		}
 		
-		private void detach_remarqueEmploye(remarqueEmploye entity)
+		private void detach_remarqueEmployes(remarqueEmploye entity)
 		{
 			this.SendPropertyChanging();
 			entity.employe = null;
 		}
 		
-		private void attach_Travail(Travail entity)
+		private void attach_Travails(Travail entity)
 		{
 			this.SendPropertyChanging();
 			entity.employe = this;
 		}
 		
-		private void detach_Travail(Travail entity)
+		private void detach_Travails(Travail entity)
 		{
 			this.SendPropertyChanging();
 			entity.employe = null;
@@ -3933,7 +3925,7 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<int> _id_bloc;
 		
-		private EntitySet<bien> _bien;
+		private EntitySet<bien> _biens;
 		
 		private EntityRef<bloc> _bloc;
 		
@@ -3953,7 +3945,7 @@ namespace SYNDIC_1._0
 		
 		public immeuble()
 		{
-			this._bien = new EntitySet<bien>(new Action<bien>(this.attach_bien), new Action<bien>(this.detach_bien));
+			this._biens = new EntitySet<bien>(new Action<bien>(this.attach_biens), new Action<bien>(this.detach_biens));
 			this._bloc = default(EntityRef<bloc>);
 			OnCreated();
 		}
@@ -4042,16 +4034,16 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="immeuble_bien", Storage="_bien", ThisKey="id", OtherKey="id_immeuble")]
-		public EntitySet<bien> bien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="immeuble_bien", Storage="_biens", ThisKey="id", OtherKey="id_immeuble")]
+		public EntitySet<bien> biens
 		{
 			get
 			{
-				return this._bien;
+				return this._biens;
 			}
 			set
 			{
-				this._bien.Assign(value);
+				this._biens.Assign(value);
 			}
 		}
 		
@@ -4072,12 +4064,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._bloc.Entity = null;
-						previousValue.immeuble.Remove(this);
+						previousValue.immeubles.Remove(this);
 					}
 					this._bloc.Entity = value;
 					if ((value != null))
 					{
-						value.immeuble.Add(this);
+						value.immeubles.Add(this);
 						this._id_bloc = value.id;
 					}
 					else
@@ -4109,13 +4101,13 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_bien(bien entity)
+		private void attach_biens(bien entity)
 		{
 			this.SendPropertyChanging();
 			entity.immeuble = this;
 		}
 		
-		private void detach_bien(bien entity)
+		private void detach_biens(bien entity)
 		{
 			this.SendPropertyChanging();
 			entity.immeuble = null;
@@ -4307,12 +4299,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._depense.Entity = null;
-						previousValue.intervention.Remove(this);
+						previousValue.interventions.Remove(this);
 					}
 					this._depense.Entity = value;
 					if ((value != null))
 					{
-						value.intervention.Add(this);
+						value.interventions.Add(this);
 						this._id_depense = value.id;
 					}
 					else
@@ -4554,12 +4546,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._utilisateur.Entity = null;
-						previousValue.journal.Remove(this);
+						previousValue.journals.Remove(this);
 					}
 					this._utilisateur.Entity = value;
 					if ((value != null))
 					{
-						value.journal.Add(this);
+						value.journals.Add(this);
 						this._id_utilisateur = value.id;
 					}
 					else
@@ -4736,12 +4728,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._depense.Entity = null;
-						previousValue.ligne.Remove(this);
+						previousValue.lignes.Remove(this);
 					}
 					this._depense.Entity = value;
 					if ((value != null))
 					{
-						value.ligne.Add(this);
+						value.lignes.Add(this);
 						this._id_depense = value.id;
 					}
 					else
@@ -4770,12 +4762,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._produit.Entity = null;
-						previousValue.ligne.Remove(this);
+						previousValue.lignes.Remove(this);
 					}
 					this._produit.Entity = value;
 					if ((value != null))
 					{
-						value.ligne.Add(this);
+						value.lignes.Add(this);
 						this._id_produit = value.id;
 					}
 					else
@@ -4993,12 +4985,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._utilisateur.Entity = null;
-						previousValue.message.Remove(this);
+						previousValue.messages.Remove(this);
 					}
 					this._utilisateur.Entity = value;
 					if ((value != null))
 					{
-						value.message.Add(this);
+						value.messages.Add(this);
 						this._de = value.id;
 					}
 					else
@@ -5032,14 +5024,14 @@ namespace SYNDIC_1._0
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.message_utilisateurs")]
-	public partial class message_utilisateurs
+	public partial class message_utilisateur
 	{
 		
 		private System.Nullable<int> _id_message;
 		
 		private System.Nullable<int> _a;
 		
-		public message_utilisateurs()
+		public message_utilisateur()
 		{
 		}
 		
@@ -5090,7 +5082,7 @@ namespace SYNDIC_1._0
 		
 		private string _categorie;
 		
-		private EntitySet<ligne> _ligne;
+		private EntitySet<ligne> _lignes;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5108,7 +5100,7 @@ namespace SYNDIC_1._0
 		
 		public produit()
 		{
-			this._ligne = new EntitySet<ligne>(new Action<ligne>(this.attach_ligne), new Action<ligne>(this.detach_ligne));
+			this._lignes = new EntitySet<ligne>(new Action<ligne>(this.attach_lignes), new Action<ligne>(this.detach_lignes));
 			OnCreated();
 		}
 		
@@ -5192,16 +5184,16 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="produit_ligne", Storage="_ligne", ThisKey="id", OtherKey="id_produit")]
-		public EntitySet<ligne> ligne
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="produit_ligne", Storage="_lignes", ThisKey="id", OtherKey="id_produit")]
+		public EntitySet<ligne> lignes
 		{
 			get
 			{
-				return this._ligne;
+				return this._lignes;
 			}
 			set
 			{
-				this._ligne.Assign(value);
+				this._lignes.Assign(value);
 			}
 		}
 		
@@ -5225,13 +5217,13 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_ligne(ligne entity)
+		private void attach_lignes(ligne entity)
 		{
 			this.SendPropertyChanging();
 			entity.produit = this;
 		}
 		
-		private void detach_ligne(ligne entity)
+		private void detach_lignes(ligne entity)
 		{
 			this.SendPropertyChanging();
 			entity.produit = null;
@@ -5266,11 +5258,11 @@ namespace SYNDIC_1._0
 		
 		private string _CIN;
 		
-		private EntitySet<bien> _bien;
+		private EntitySet<bien> _biens;
 		
-		private EntitySet<cotisation> _cotisation;
+		private EntitySet<cotisation> _cotisations;
 		
-		private EntitySet<documentProprietaire> _documentProprietaire;
+		private EntitySet<documentProprietaire> _documentProprietaires;
 		
 		private EntityRef<ville> _ville;
 		
@@ -5304,9 +5296,9 @@ namespace SYNDIC_1._0
 		
 		public proprietaire()
 		{
-			this._bien = new EntitySet<bien>(new Action<bien>(this.attach_bien), new Action<bien>(this.detach_bien));
-			this._cotisation = new EntitySet<cotisation>(new Action<cotisation>(this.attach_cotisation), new Action<cotisation>(this.detach_cotisation));
-			this._documentProprietaire = new EntitySet<documentProprietaire>(new Action<documentProprietaire>(this.attach_documentProprietaire), new Action<documentProprietaire>(this.detach_documentProprietaire));
+			this._biens = new EntitySet<bien>(new Action<bien>(this.attach_biens), new Action<bien>(this.detach_biens));
+			this._cotisations = new EntitySet<cotisation>(new Action<cotisation>(this.attach_cotisations), new Action<cotisation>(this.detach_cotisations));
+			this._documentProprietaires = new EntitySet<documentProprietaire>(new Action<documentProprietaire>(this.attach_documentProprietaires), new Action<documentProprietaire>(this.detach_documentProprietaires));
 			this._ville = default(EntityRef<ville>);
 			OnCreated();
 		}
@@ -5535,46 +5527,46 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_bien", Storage="_bien", ThisKey="id", OtherKey="id_proprietaire")]
-		public EntitySet<bien> bien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_bien", Storage="_biens", ThisKey="id", OtherKey="id_proprietaire")]
+		public EntitySet<bien> biens
 		{
 			get
 			{
-				return this._bien;
+				return this._biens;
 			}
 			set
 			{
-				this._bien.Assign(value);
+				this._biens.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_cotisation", Storage="_cotisation", ThisKey="id", OtherKey="id_propietaire")]
-		public EntitySet<cotisation> cotisation
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_cotisation", Storage="_cotisations", ThisKey="id", OtherKey="id_propietaire")]
+		public EntitySet<cotisation> cotisations
 		{
 			get
 			{
-				return this._cotisation;
+				return this._cotisations;
 			}
 			set
 			{
-				this._cotisation.Assign(value);
+				this._cotisations.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_documentProprietaire", Storage="_documentProprietaire", ThisKey="id", OtherKey="id_Proprietaire")]
-		public EntitySet<documentProprietaire> documentProprietaire
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietaire_documentProprietaire", Storage="_documentProprietaires", ThisKey="id", OtherKey="id_Proprietaire")]
+		public EntitySet<documentProprietaire> documentProprietaires
 		{
 			get
 			{
-				return this._documentProprietaire;
+				return this._documentProprietaires;
 			}
 			set
 			{
-				this._documentProprietaire.Assign(value);
+				this._documentProprietaires.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_proprietaire", Storage="_ville", ThisKey="id_ville", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ville_proprietaire", Storage="_ville", ThisKey="id_ville", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public ville ville
 		{
 			get
@@ -5591,12 +5583,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._ville.Entity = null;
-						previousValue.proprietaire.Remove(this);
+						previousValue.proprietaires.Remove(this);
 					}
 					this._ville.Entity = value;
 					if ((value != null))
 					{
-						value.proprietaire.Add(this);
+						value.proprietaires.Add(this);
 						this._id_ville = value.id;
 					}
 					else
@@ -5628,40 +5620,414 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_bien(bien entity)
+		private void attach_biens(bien entity)
 		{
 			this.SendPropertyChanging();
 			entity.proprietaire = this;
 		}
 		
-		private void detach_bien(bien entity)
+		private void detach_biens(bien entity)
 		{
 			this.SendPropertyChanging();
 			entity.proprietaire = null;
 		}
 		
-		private void attach_cotisation(cotisation entity)
+		private void attach_cotisations(cotisation entity)
 		{
 			this.SendPropertyChanging();
 			entity.proprietaire = this;
 		}
 		
-		private void detach_cotisation(cotisation entity)
+		private void detach_cotisations(cotisation entity)
 		{
 			this.SendPropertyChanging();
 			entity.proprietaire = null;
 		}
 		
-		private void attach_documentProprietaire(documentProprietaire entity)
+		private void attach_documentProprietaires(documentProprietaire entity)
 		{
 			this.SendPropertyChanging();
 			entity.proprietaire = this;
 		}
 		
-		private void detach_documentProprietaire(documentProprietaire entity)
+		private void detach_documentProprietaires(documentProprietaire entity)
 		{
 			this.SendPropertyChanging();
 			entity.proprietaire = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProprietaireArchive")]
+	public partial class ProprietaireArchive : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _nom;
+		
+		private string _prenom;
+		
+		private string _adresse;
+		
+		private System.Nullable<int> _code_postal;
+		
+		private string _tele;
+		
+		private string _email;
+		
+		private System.Nullable<int> _id_ville;
+		
+		private string _sexe;
+		
+		private string _titre;
+		
+		private string _cin;
+		
+		private System.Nullable<int> _bien;
+		
+		private System.Nullable<int> _immeuble;
+		
+		private System.Nullable<System.DateTime> _dateVente;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnomChanging(string value);
+    partial void OnnomChanged();
+    partial void OnprenomChanging(string value);
+    partial void OnprenomChanged();
+    partial void OnadresseChanging(string value);
+    partial void OnadresseChanged();
+    partial void Oncode_postalChanging(System.Nullable<int> value);
+    partial void Oncode_postalChanged();
+    partial void OnteleChanging(string value);
+    partial void OnteleChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void Onid_villeChanging(System.Nullable<int> value);
+    partial void Onid_villeChanged();
+    partial void OnsexeChanging(string value);
+    partial void OnsexeChanged();
+    partial void OntitreChanging(string value);
+    partial void OntitreChanged();
+    partial void OncinChanging(string value);
+    partial void OncinChanged();
+    partial void OnbienChanging(System.Nullable<int> value);
+    partial void OnbienChanged();
+    partial void OnimmeubleChanging(System.Nullable<int> value);
+    partial void OnimmeubleChanged();
+    partial void OndateVenteChanging(System.Nullable<System.DateTime> value);
+    partial void OndateVenteChanged();
+    #endregion
+		
+		public ProprietaireArchive()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="VarChar(30)")]
+		public string nom
+		{
+			get
+			{
+				return this._nom;
+			}
+			set
+			{
+				if ((this._nom != value))
+				{
+					this.OnnomChanging(value);
+					this.SendPropertyChanging();
+					this._nom = value;
+					this.SendPropertyChanged("nom");
+					this.OnnomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenom", DbType="VarChar(30)")]
+		public string prenom
+		{
+			get
+			{
+				return this._prenom;
+			}
+			set
+			{
+				if ((this._prenom != value))
+				{
+					this.OnprenomChanging(value);
+					this.SendPropertyChanging();
+					this._prenom = value;
+					this.SendPropertyChanged("prenom");
+					this.OnprenomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adresse", DbType="VarChar(50)")]
+		public string adresse
+		{
+			get
+			{
+				return this._adresse;
+			}
+			set
+			{
+				if ((this._adresse != value))
+				{
+					this.OnadresseChanging(value);
+					this.SendPropertyChanging();
+					this._adresse = value;
+					this.SendPropertyChanged("adresse");
+					this.OnadresseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code_postal", DbType="Int")]
+		public System.Nullable<int> code_postal
+		{
+			get
+			{
+				return this._code_postal;
+			}
+			set
+			{
+				if ((this._code_postal != value))
+				{
+					this.Oncode_postalChanging(value);
+					this.SendPropertyChanging();
+					this._code_postal = value;
+					this.SendPropertyChanged("code_postal");
+					this.Oncode_postalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tele", DbType="VarChar(30)")]
+		public string tele
+		{
+			get
+			{
+				return this._tele;
+			}
+			set
+			{
+				if ((this._tele != value))
+				{
+					this.OnteleChanging(value);
+					this.SendPropertyChanging();
+					this._tele = value;
+					this.SendPropertyChanged("tele");
+					this.OnteleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(40)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ville", DbType="Int")]
+		public System.Nullable<int> id_ville
+		{
+			get
+			{
+				return this._id_ville;
+			}
+			set
+			{
+				if ((this._id_ville != value))
+				{
+					this.Onid_villeChanging(value);
+					this.SendPropertyChanging();
+					this._id_ville = value;
+					this.SendPropertyChanged("id_ville");
+					this.Onid_villeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexe", DbType="VarChar(20)")]
+		public string sexe
+		{
+			get
+			{
+				return this._sexe;
+			}
+			set
+			{
+				if ((this._sexe != value))
+				{
+					this.OnsexeChanging(value);
+					this.SendPropertyChanging();
+					this._sexe = value;
+					this.SendPropertyChanged("sexe");
+					this.OnsexeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_titre", DbType="VarChar(20)")]
+		public string titre
+		{
+			get
+			{
+				return this._titre;
+			}
+			set
+			{
+				if ((this._titre != value))
+				{
+					this.OntitreChanging(value);
+					this.SendPropertyChanging();
+					this._titre = value;
+					this.SendPropertyChanged("titre");
+					this.OntitreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cin", DbType="VarChar(30)")]
+		public string cin
+		{
+			get
+			{
+				return this._cin;
+			}
+			set
+			{
+				if ((this._cin != value))
+				{
+					this.OncinChanging(value);
+					this.SendPropertyChanging();
+					this._cin = value;
+					this.SendPropertyChanged("cin");
+					this.OncinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bien", DbType="Int")]
+		public System.Nullable<int> bien
+		{
+			get
+			{
+				return this._bien;
+			}
+			set
+			{
+				if ((this._bien != value))
+				{
+					this.OnbienChanging(value);
+					this.SendPropertyChanging();
+					this._bien = value;
+					this.SendPropertyChanged("bien");
+					this.OnbienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_immeuble", DbType="Int")]
+		public System.Nullable<int> immeuble
+		{
+			get
+			{
+				return this._immeuble;
+			}
+			set
+			{
+				if ((this._immeuble != value))
+				{
+					this.OnimmeubleChanging(value);
+					this.SendPropertyChanging();
+					this._immeuble = value;
+					this.SendPropertyChanged("immeuble");
+					this.OnimmeubleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateVente", DbType="Date")]
+		public System.Nullable<System.DateTime> dateVente
+		{
+			get
+			{
+				return this._dateVente;
+			}
+			set
+			{
+				if ((this._dateVente != value))
+				{
+					this.OndateVenteChanging(value);
+					this.SendPropertyChanging();
+					this._dateVente = value;
+					this.SendPropertyChanged("dateVente");
+					this.OndateVenteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -5802,12 +6168,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._bien.Entity = null;
-						previousValue.remarqueBien.Remove(this);
+						previousValue.remarqueBiens.Remove(this);
 					}
 					this._bien.Entity = value;
 					if ((value != null))
 					{
-						value.remarqueBien.Add(this);
+						value.remarqueBiens.Add(this);
 						this._id_Bien = value.id;
 					}
 					else
@@ -5977,12 +6343,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._depense.Entity = null;
-						previousValue.remarqueDepnse.Remove(this);
+						previousValue.remarqueDepnses.Remove(this);
 					}
 					this._depense.Entity = value;
 					if ((value != null))
 					{
-						value.remarqueDepnse.Add(this);
+						value.remarqueDepnses.Add(this);
 						this._id_Depense = value.id;
 					}
 					else
@@ -6152,12 +6518,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._employe.Entity = null;
-						previousValue.remarqueEmploye.Remove(this);
+						previousValue.remarqueEmployes.Remove(this);
 					}
 					this._employe.Entity = value;
 					if ((value != null))
 					{
-						value.remarqueEmploye.Add(this);
+						value.remarqueEmployes.Add(this);
 						this._id_employe = value.id;
 					}
 					else
@@ -6206,9 +6572,9 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<int> _id_ville;
 		
-		private EntitySet<bloc> _bloc;
+		private EntitySet<bloc> _blocs;
 		
-		private EntitySet<Travail> _Travail;
+		private EntitySet<Travail> _Travails;
 		
 		private EntityRef<ville> _ville;
 		
@@ -6230,8 +6596,8 @@ namespace SYNDIC_1._0
 		
 		public residence()
 		{
-			this._bloc = new EntitySet<bloc>(new Action<bloc>(this.attach_bloc), new Action<bloc>(this.detach_bloc));
-			this._Travail = new EntitySet<Travail>(new Action<Travail>(this.attach_Travail), new Action<Travail>(this.detach_Travail));
+			this._blocs = new EntitySet<bloc>(new Action<bloc>(this.attach_blocs), new Action<bloc>(this.detach_blocs));
+			this._Travails = new EntitySet<Travail>(new Action<Travail>(this.attach_Travails), new Action<Travail>(this.detach_Travails));
 			this._ville = default(EntityRef<ville>);
 			OnCreated();
 		}
@@ -6340,29 +6706,29 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="residence_bloc", Storage="_bloc", ThisKey="id", OtherKey="id_Residence")]
-		public EntitySet<bloc> bloc
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="residence_bloc", Storage="_blocs", ThisKey="id", OtherKey="id_Residence")]
+		public EntitySet<bloc> blocs
 		{
 			get
 			{
-				return this._bloc;
+				return this._blocs;
 			}
 			set
 			{
-				this._bloc.Assign(value);
+				this._blocs.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="residence_Travail", Storage="_Travail", ThisKey="id", OtherKey="IdRes")]
-		public EntitySet<Travail> Travail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="residence_Travail", Storage="_Travails", ThisKey="id", OtherKey="IdRes")]
+		public EntitySet<Travail> Travails
 		{
 			get
 			{
-				return this._Travail;
+				return this._Travails;
 			}
 			set
 			{
-				this._Travail.Assign(value);
+				this._Travails.Assign(value);
 			}
 		}
 		
@@ -6383,12 +6749,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._ville.Entity = null;
-						previousValue.residence.Remove(this);
+						previousValue.residences.Remove(this);
 					}
 					this._ville.Entity = value;
 					if ((value != null))
 					{
-						value.residence.Add(this);
+						value.residences.Add(this);
 						this._id_ville = value.id;
 					}
 					else
@@ -6420,25 +6786,25 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_bloc(bloc entity)
+		private void attach_blocs(bloc entity)
 		{
 			this.SendPropertyChanging();
 			entity.residence = this;
 		}
 		
-		private void detach_bloc(bloc entity)
+		private void detach_blocs(bloc entity)
 		{
 			this.SendPropertyChanging();
 			entity.residence = null;
 		}
 		
-		private void attach_Travail(Travail entity)
+		private void attach_Travails(Travail entity)
 		{
 			this.SendPropertyChanging();
 			entity.residence = this;
 		}
 		
-		private void detach_Travail(Travail entity)
+		private void detach_Travails(Travail entity)
 		{
 			this.SendPropertyChanging();
 			entity.residence = null;
@@ -6702,12 +7068,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._ville.Entity = null;
-						previousValue.societe.Remove(this);
+						previousValue.societes.Remove(this);
 					}
 					this._ville.Entity = value;
 					if ((value != null))
 					{
-						value.societe.Add(this);
+						value.societes.Add(this);
 						this._id_ville = value.id;
 					}
 					else
@@ -6750,7 +7116,7 @@ namespace SYNDIC_1._0
 		
 		private string _libelle;
 		
-		private EntitySet<Type> _Type;
+		private EntitySet<Type> _Types;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6764,7 +7130,7 @@ namespace SYNDIC_1._0
 		
 		public TableType()
 		{
-			this._Type = new EntitySet<Type>(new Action<Type>(this.attach_Type), new Action<Type>(this.detach_Type));
+			this._Types = new EntitySet<Type>(new Action<Type>(this.attach_Types), new Action<Type>(this.detach_Types));
 			OnCreated();
 		}
 		
@@ -6808,16 +7174,16 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TableType_Type", Storage="_Type", ThisKey="id", OtherKey="idTableType")]
-		public EntitySet<Type> Type
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TableType_Type", Storage="_Types", ThisKey="id", OtherKey="idTableType")]
+		public EntitySet<Type> Types
 		{
 			get
 			{
-				return this._Type;
+				return this._Types;
 			}
 			set
 			{
-				this._Type.Assign(value);
+				this._Types.Assign(value);
 			}
 		}
 		
@@ -6841,129 +7207,16 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_Type(Type entity)
+		private void attach_Types(Type entity)
 		{
 			this.SendPropertyChanging();
 			entity.TableType = this;
 		}
 		
-		private void detach_Type(Type entity)
+		private void detach_Types(Type entity)
 		{
 			this.SendPropertyChanging();
 			entity.TableType = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.temp")]
-	public partial class temp
-	{
-		
-		private string _nom;
-		
-		public temp()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="VarChar(50)")]
-		public string nom
-		{
-			get
-			{
-				return this._nom;
-			}
-			set
-			{
-				if ((this._nom != value))
-				{
-					this._nom = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.temp1")]
-	public partial class temp1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _mois;
-		
-		private int _annee;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnmoisChanging(int value);
-    partial void OnmoisChanged();
-    partial void OnanneeChanging(int value);
-    partial void OnanneeChanged();
-    #endregion
-		
-		public temp1()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mois", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int mois
-		{
-			get
-			{
-				return this._mois;
-			}
-			set
-			{
-				if ((this._mois != value))
-				{
-					this.OnmoisChanging(value);
-					this.SendPropertyChanging();
-					this._mois = value;
-					this.SendPropertyChanged("mois");
-					this.OnmoisChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_annee", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int annee
-		{
-			get
-			{
-				return this._annee;
-			}
-			set
-			{
-				if ((this._annee != value))
-				{
-					this.OnanneeChanging(value);
-					this.SendPropertyChanging();
-					this._annee = value;
-					this.SendPropertyChanged("annee");
-					this.OnanneeChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -7111,12 +7364,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._employe.Entity = null;
-						previousValue.Travail.Remove(this);
+						previousValue.Travails.Remove(this);
 					}
 					this._employe.Entity = value;
 					if ((value != null))
 					{
-						value.Travail.Add(this);
+						value.Travails.Add(this);
 						this._IdEmp = value.id;
 					}
 					else
@@ -7145,12 +7398,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._residence.Entity = null;
-						previousValue.Travail.Remove(this);
+						previousValue.Travails.Remove(this);
 					}
 					this._residence.Entity = value;
 					if ((value != null))
 					{
-						value.Travail.Add(this);
+						value.Travails.Add(this);
 						this._IdRes = value.id;
 					}
 					else
@@ -7296,12 +7549,12 @@ namespace SYNDIC_1._0
 					if ((previousValue != null))
 					{
 						this._TableType.Entity = null;
-						previousValue.Type.Remove(this);
+						previousValue.Types.Remove(this);
 					}
 					this._TableType.Entity = value;
 					if ((value != null))
 					{
-						value.Type.Add(this);
+						value.Types.Add(this);
 						this._idTableType = value.id;
 					}
 					else
@@ -7352,11 +7605,11 @@ namespace SYNDIC_1._0
 		
 		private System.Nullable<int> _id_table;
 		
-		private EntitySet<connexion> _connexion;
+		private EntitySet<connexion> _connexions;
 		
-		private EntitySet<journal> _journal;
+		private EntitySet<journal> _journals;
 		
-		private EntitySet<message> _message;
+		private EntitySet<message> _messages;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -7378,9 +7631,9 @@ namespace SYNDIC_1._0
 		
 		public utilisateur()
 		{
-			this._connexion = new EntitySet<connexion>(new Action<connexion>(this.attach_connexion), new Action<connexion>(this.detach_connexion));
-			this._journal = new EntitySet<journal>(new Action<journal>(this.attach_journal), new Action<journal>(this.detach_journal));
-			this._message = new EntitySet<message>(new Action<message>(this.attach_message), new Action<message>(this.detach_message));
+			this._connexions = new EntitySet<connexion>(new Action<connexion>(this.attach_connexions), new Action<connexion>(this.detach_connexions));
+			this._journals = new EntitySet<journal>(new Action<journal>(this.attach_journals), new Action<journal>(this.detach_journals));
+			this._messages = new EntitySet<message>(new Action<message>(this.attach_messages), new Action<message>(this.detach_messages));
 			OnCreated();
 		}
 		
@@ -7504,42 +7757,42 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="utilisateur_connexion", Storage="_connexion", ThisKey="id", OtherKey="id_utilisateur")]
-		public EntitySet<connexion> connexion
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="utilisateur_connexion", Storage="_connexions", ThisKey="id", OtherKey="id_utilisateur")]
+		public EntitySet<connexion> connexions
 		{
 			get
 			{
-				return this._connexion;
+				return this._connexions;
 			}
 			set
 			{
-				this._connexion.Assign(value);
+				this._connexions.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="utilisateur_journal", Storage="_journal", ThisKey="id", OtherKey="id_utilisateur")]
-		public EntitySet<journal> journal
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="utilisateur_journal", Storage="_journals", ThisKey="id", OtherKey="id_utilisateur")]
+		public EntitySet<journal> journals
 		{
 			get
 			{
-				return this._journal;
+				return this._journals;
 			}
 			set
 			{
-				this._journal.Assign(value);
+				this._journals.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="utilisateur_message", Storage="_message", ThisKey="id", OtherKey="de")]
-		public EntitySet<message> message
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="utilisateur_message", Storage="_messages", ThisKey="id", OtherKey="de")]
+		public EntitySet<message> messages
 		{
 			get
 			{
-				return this._message;
+				return this._messages;
 			}
 			set
 			{
-				this._message.Assign(value);
+				this._messages.Assign(value);
 			}
 		}
 		
@@ -7563,37 +7816,37 @@ namespace SYNDIC_1._0
 			}
 		}
 		
-		private void attach_connexion(connexion entity)
+		private void attach_connexions(connexion entity)
 		{
 			this.SendPropertyChanging();
 			entity.utilisateur = this;
 		}
 		
-		private void detach_connexion(connexion entity)
+		private void detach_connexions(connexion entity)
 		{
 			this.SendPropertyChanging();
 			entity.utilisateur = null;
 		}
 		
-		private void attach_journal(journal entity)
+		private void attach_journals(journal entity)
 		{
 			this.SendPropertyChanging();
 			entity.utilisateur = this;
 		}
 		
-		private void detach_journal(journal entity)
+		private void detach_journals(journal entity)
 		{
 			this.SendPropertyChanging();
 			entity.utilisateur = null;
 		}
 		
-		private void attach_message(message entity)
+		private void attach_messages(message entity)
 		{
 			this.SendPropertyChanging();
 			entity.utilisateur = this;
 		}
 		
-		private void detach_message(message entity)
+		private void detach_messages(message entity)
 		{
 			this.SendPropertyChanging();
 			entity.utilisateur = null;

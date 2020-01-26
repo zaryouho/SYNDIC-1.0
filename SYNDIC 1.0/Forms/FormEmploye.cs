@@ -25,8 +25,8 @@ namespace SYNDIC_1._0.Forms
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringSliman");
 
-            var res = (from em in syndicDataContext.employe
-                       join vil in syndicDataContext.ville on em.id_ville equals vil.id
+            var res = (from em in syndicDataContext.employes
+                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
 
                        select new
                        {
@@ -53,8 +53,8 @@ namespace SYNDIC_1._0.Forms
             buttonEmploye.BackColor = Color.Navy;
             buttonEmployeArchive.BackColor = Color.Blue;
             buttonAjouterEmploye.BackColor = Color.Blue;
-            var res = (from em in syndicDataContext.employe
-                       join vil in syndicDataContext.ville on em.id_ville equals vil.id
+            var res = (from em in syndicDataContext.employes
+                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
 
                        select new { em.id, em.nom, em.prenom, em.adresse, em.code_postal, em.tel, em.email, em.date_recrutement, em.typeEmploye, idville = vil.id, ville = vil.nom });
 
@@ -75,8 +75,8 @@ namespace SYNDIC_1._0.Forms
             buttonEmployeArchive.BackColor = Color.Navy;
             buttonAjouterEmploye.BackColor = Color.Blue;
 
-            var res = (from em in syndicDataContext.employe
-                       join vil in syndicDataContext.ville on em.id_ville equals vil.id
+            var res = (from em in syndicDataContext.employes
+                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
                        where em.date_depart != null
                        select new { 
                            em.id,
@@ -178,11 +178,11 @@ namespace SYNDIC_1._0.Forms
             {
                 em.id = int.Parse(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
 
-                var empl = (from pr in syndicDataContext.employe
+                var empl = (from pr in syndicDataContext.employes
                             where pr.id.Equals(em.id)
                             select pr).Single();
 
-                syndicDataContext.employe.DeleteOnSubmit(empl);
+                syndicDataContext.employes.DeleteOnSubmit(empl);
                 syndicDataContext.SubmitChanges();
 
                 this.FormEmploye_Load(sender, e);
@@ -199,7 +199,7 @@ namespace SYNDIC_1._0.Forms
                     vs.SetValue("gOgLgXgPgIg9", i);
             }
 
-            var src = from em in syndicDataContext.employe
+            var src = from em in syndicDataContext.employes
                       where vs.Contains(em.nom) || vs.Contains(em.prenom)
                       || vs.Contains(em.tel) || vs.Contains(em.email) || vs.Contains(em.adresse)
                       select em;
