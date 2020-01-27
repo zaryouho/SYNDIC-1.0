@@ -37,27 +37,20 @@ namespace SYNDIC_1._0
 				{
 					MessageBox.Show(ex.Message);
 				}
-				finally
-				{
-					connection = null;
-				}
+				
 			}
 		}
 
 		static public void fermerConnection()
 		{
-			try
-			{
 				if (connection.State == ConnectionState.Open)
 				{
 					connection.Close();
 					connection = null;
 				}
-			}
-			finally
-			{
-				connection.Dispose();
-			}
+			
+
+			
 		}
 
 		static public void creerRelation(string tpk, string tfk, string pk, string fk)
@@ -116,10 +109,7 @@ namespace SYNDIC_1._0
 			{
 				MessageBox.Show(ex.Message);
 			}
-			finally
-			{
-				dataAdapter = null;
-			}
+		
 
 		}
 
@@ -228,11 +218,7 @@ namespace SYNDIC_1._0
 			{
 				MessageBox.Show(ex.Message);
 			}
-			finally
-			{
-				dataAdapter = null;
-				commandBuilder = null;
-			}
+		
 
 		}
 

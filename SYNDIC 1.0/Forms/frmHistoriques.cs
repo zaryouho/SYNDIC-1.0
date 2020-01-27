@@ -30,10 +30,10 @@ namespace SYNDIC_1._0
 
         private void frmHistoriques_Load(object sender, EventArgs e)
         {
-            var src = from log in dataContext.journal
-                      join user in dataContext.utilisateur
+            var src = from log in dataContext.journals
+                      join user in dataContext.utilisateurs
                       on log.id_utilisateur equals user.id
-                      join connnectionTable in dataContext.connexion
+                      join connnectionTable in dataContext.connexions
                       on user.id equals connnectionTable.id_utilisateur
                       select new
                       {

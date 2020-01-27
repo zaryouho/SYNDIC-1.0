@@ -93,19 +93,17 @@
     <Compile Include="Forms\FormBienEcheance.Designer.cs">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormDepenses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormDepenses.Designer.cs">
-      <DependentUpon>FormDepenses.cs</DependentUpon>
-    </Compile>
-
     <Compile Include="Forms\FormEmploye.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormEmploye.Designer.cs">
       <DependentUpon>FormEmploye.cs</DependentUpon>
-
+    </Compile>
+    <Compile Include="Forms\FormGestionDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGestionDocument.Designer.cs">
+      <DependentUpon>FormGestionDocument.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormGestionTypes.cs">
       <SubType>Form</SubType>
@@ -235,10 +233,11 @@
     <EmbeddedResource Include="Forms\FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\FormEmploye.resx">
       <DependentUpon>FormEmploye.cs</DependentUpon>
-
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGestionDocument.resx">
+      <DependentUpon>FormGestionDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGestionTypes.resx">
       <DependentUpon>FormGestionTypes.cs</DependentUpon>

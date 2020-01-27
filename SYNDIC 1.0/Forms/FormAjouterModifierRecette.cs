@@ -269,5 +269,18 @@ namespace SYNDIC_1._0.Forms
             new FormGestionTypes("echeance").ShowDialog();
             DBHelper.syncroniser("type");
         }
+
+        private void buttonAjouterDocument_Click(object sender, EventArgs e)
+        {
+            /*SaveFileDialog save = new SaveFileDialog();
+            save.Title = "Saving File";
+            save.Filter = "Pdf Files| *.pdf";
+            if(save.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = save.FileName;
+
+
+            }*/
+        }
     }
 }

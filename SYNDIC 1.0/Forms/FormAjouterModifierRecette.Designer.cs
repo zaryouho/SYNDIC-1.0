@@ -30,6 +30,9 @@
         {
             this.splitContainerRecetteInfo = new System.Windows.Forms.SplitContainer();
             this.labelHead = new System.Windows.Forms.Label();
+            this.buttonAddNewTypeEcheance = new System.Windows.Forms.Button();
+            this.panelIdEcheance = new System.Windows.Forms.Panel();
+            this.dataGridViewListEcheance = new System.Windows.Forms.DataGridView();
             this.comboBoxTypeEcheance = new System.Windows.Forms.ComboBox();
             this.comboBoxNomBien = new System.Windows.Forms.ComboBox();
             this.labelInfoBien = new System.Windows.Forms.Label();
@@ -51,17 +54,14 @@
             this.labelTypeRecette = new System.Windows.Forms.Label();
             this.labelMontant = new System.Windows.Forms.Label();
             this.labelDateRecette = new System.Windows.Forms.Label();
-            this.panelIdEcheance = new System.Windows.Forms.Panel();
-            this.dataGridViewListEcheance = new System.Windows.Forms.DataGridView();
-            this.buttonAddNewTypeEcheance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteInfo)).BeginInit();
             this.splitContainerRecetteInfo.Panel1.SuspendLayout();
             this.splitContainerRecetteInfo.Panel2.SuspendLayout();
             this.splitContainerRecetteInfo.SuspendLayout();
-            this.panelValider.SuspendLayout();
-            this.panelRecetteInfo.SuspendLayout();
             this.panelIdEcheance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEcheance)).BeginInit();
+            this.panelValider.SuspendLayout();
+            this.panelRecetteInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerRecetteInfo
@@ -99,6 +99,37 @@
             this.labelHead.Size = new System.Drawing.Size(77, 30);
             this.labelHead.TabIndex = 5;
             this.labelHead.Text = "HEAD";
+            // 
+            // buttonAddNewTypeEcheance
+            // 
+            this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(715, 96);
+            this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
+            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 21);
+            this.buttonAddNewTypeEcheance.TabIndex = 23;
+            this.buttonAddNewTypeEcheance.Text = "...";
+            this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
+            this.buttonAddNewTypeEcheance.Click += new System.EventHandler(this.buttonAddNewTypeEcheance_Click);
+            // 
+            // panelIdEcheance
+            // 
+            this.panelIdEcheance.Controls.Add(this.dataGridViewListEcheance);
+            this.panelIdEcheance.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelIdEcheance.Location = new System.Drawing.Point(378, 146);
+            this.panelIdEcheance.Name = "panelIdEcheance";
+            this.panelIdEcheance.Size = new System.Drawing.Size(422, 76);
+            this.panelIdEcheance.TabIndex = 22;
+            // 
+            // dataGridViewListEcheance
+            // 
+            this.dataGridViewListEcheance.AllowUserToAddRows = false;
+            this.dataGridViewListEcheance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListEcheance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListEcheance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewListEcheance.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewListEcheance.Name = "dataGridViewListEcheance";
+            this.dataGridViewListEcheance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListEcheance.Size = new System.Drawing.Size(422, 76);
+            this.dataGridViewListEcheance.TabIndex = 0;
             // 
             // comboBoxTypeEcheance
             // 
@@ -277,6 +308,7 @@
             this.buttonAjouterDocument.TabIndex = 10;
             this.buttonAjouterDocument.Text = "Ajouter Document";
             this.buttonAjouterDocument.UseVisualStyleBackColor = false;
+            this.buttonAjouterDocument.Click += new System.EventHandler(this.buttonAjouterDocument_Click);
             // 
             // textBoxNumRecu
             // 
@@ -335,37 +367,6 @@
             this.labelDateRecette.TabIndex = 0;
             this.labelDateRecette.Text = "Date de Recette :";
             // 
-            // panelIdEcheance
-            // 
-            this.panelIdEcheance.Controls.Add(this.dataGridViewListEcheance);
-            this.panelIdEcheance.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelIdEcheance.Location = new System.Drawing.Point(378, 146);
-            this.panelIdEcheance.Name = "panelIdEcheance";
-            this.panelIdEcheance.Size = new System.Drawing.Size(422, 76);
-            this.panelIdEcheance.TabIndex = 22;
-            // 
-            // dataGridViewListEcheance
-            // 
-            this.dataGridViewListEcheance.AllowUserToAddRows = false;
-            this.dataGridViewListEcheance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewListEcheance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListEcheance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewListEcheance.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewListEcheance.Name = "dataGridViewListEcheance";
-            this.dataGridViewListEcheance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewListEcheance.Size = new System.Drawing.Size(422, 76);
-            this.dataGridViewListEcheance.TabIndex = 0;
-            // 
-            // buttonAddNewTypeEcheance
-            // 
-            this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(715, 96);
-            this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
-            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 21);
-            this.buttonAddNewTypeEcheance.TabIndex = 23;
-            this.buttonAddNewTypeEcheance.Text = "...";
-            this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
-            this.buttonAddNewTypeEcheance.Click += new System.EventHandler(this.buttonAddNewTypeEcheance_Click);
-            // 
             // FormAjouterModifierRecette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,11 +383,11 @@
             this.splitContainerRecetteInfo.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteInfo)).EndInit();
             this.splitContainerRecetteInfo.ResumeLayout(false);
+            this.panelIdEcheance.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEcheance)).EndInit();
             this.panelValider.ResumeLayout(false);
             this.panelRecetteInfo.ResumeLayout(false);
             this.panelRecetteInfo.PerformLayout();
-            this.panelIdEcheance.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEcheance)).EndInit();
             this.ResumeLayout(false);
 
         }
