@@ -79,9 +79,9 @@ namespace SYNDIC_1._0
         /// Determines if the <em>Pressed Key</em> is the <em>Enter</em> key and returns true, else returns false
         /// </summary>
 
-        public static bool EnterIsPressed(KeyEventArgs e)
+        public static bool EnterIsPressed(KeyPressEventArgs e)
         {
-            return (e.KeyCode.Equals(Keys.Enter));
+            return (e.KeyChar.Equals(Keys.Enter));
         }
         
         /// <summary>
