@@ -211,5 +211,27 @@ namespace SYNDIC_1._0
         {
             
         }
+
+        private void dataGridViewHistorique_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int sortColumn = 1 ;
+            ListSortDirection direction = ListSortDirection.Ascending;
+            if (dataGridViewHistorique.Columns[e.ColumnIndex].SortMode != DataGridViewColumnSortMode.NotSortable)
+            {
+                if (e.ColumnIndex == sortColumn)
+                {
+                    direction = direction == ListSortDirection.Ascending ? ListSortDirection.Descending : ListSortDirection.Ascending;
+                }
+                switch (direction)
+                {
+                    case ListSortDirection.Ascending:
+                        dataGridViewHistorique.Sort(dataGridViewHistorique.Columns[e.ColumnIndex], ListSortDirection.Ascending);
+                        break;
+                    case ListSortDirection.Descending:
+                        dataGridViewHistorique.Sort(dataGridViewHistorique.Columns[e.ColumnIndex], ListSortDirection.Descending);
+                        break;
+                }
+            }
+        }
     }
 }
