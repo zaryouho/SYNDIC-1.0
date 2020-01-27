@@ -44,7 +44,7 @@ namespace SYNDIC_1._0
             buttonSsDepenses.BackColor = Color.Navy;
             buttonSsEcheances.BackColor = Color.Blue;
             buttonSsCotisations.BackColor = Color.Blue;
-            OpenFormInPannel(new FormDepenses());
+           // OpenFormInPannel(new FormDepenses());
         }
 
         private void buttonSsEcheances_Click(object sender, EventArgs e)

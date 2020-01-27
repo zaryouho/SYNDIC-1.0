@@ -222,8 +222,7 @@ namespace SYNDIC_1._0.Forms
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            FormForgotPassword formForgotPassword = new FormForgotPassword();
-            formForgotPassword.Show();
+         
         }
     }
 }
