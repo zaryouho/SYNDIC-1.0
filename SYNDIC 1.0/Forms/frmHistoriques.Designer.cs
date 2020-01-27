@@ -42,10 +42,10 @@
             this.labelWords = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelNavigationButtons = new System.Windows.Forms.Panel();
-            this.buttonMoveToFirst = new System.Windows.Forms.Button();
-            this.buttonMoveToPrev = new System.Windows.Forms.Button();
-            this.buttonMoveToNext = new System.Windows.Forms.Button();
             this.buttonMoveToLast = new System.Windows.Forms.Button();
+            this.buttonMoveToNext = new System.Windows.Forms.Button();
+            this.buttonMoveToPrev = new System.Windows.Forms.Button();
+            this.buttonMoveToFirst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorique)).BeginInit();
             this.groupBoxSearchDataGridView.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -85,6 +85,7 @@
             this.dataGridViewHistorique.Name = "dataGridViewHistorique";
             this.dataGridViewHistorique.Size = new System.Drawing.Size(694, 392);
             this.dataGridViewHistorique.TabIndex = 9;
+            this.dataGridViewHistorique.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewHistorique_ColumnHeaderMouseClick);
             // 
             // buttonDelete
             // 
@@ -122,7 +123,7 @@
             // 
             this.buttonSearchDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchDataGridView.Location = new System.Drawing.Point(658, 26);
+            this.buttonSearchDataGridView.Location = new System.Drawing.Point(677, 27);
             this.buttonSearchDataGridView.Name = "buttonSearchDataGridView";
             this.buttonSearchDataGridView.Size = new System.Drawing.Size(87, 21);
             this.buttonSearchDataGridView.TabIndex = 4;
@@ -133,7 +134,7 @@
             // dateTimePickerHistorique
             // 
             this.dateTimePickerHistorique.CustomFormat = "dd/mm/yyyy";
-            this.dateTimePickerHistorique.Location = new System.Drawing.Point(430, 27);
+            this.dateTimePickerHistorique.Location = new System.Drawing.Point(397, 27);
             this.dateTimePickerHistorique.Name = "dateTimePickerHistorique";
             this.dateTimePickerHistorique.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerHistorique.TabIndex = 3;
@@ -142,7 +143,7 @@
             // labelFilterByDateTimePicker
             // 
             this.labelFilterByDateTimePicker.AutoSize = true;
-            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(355, 29);
+            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(322, 29);
             this.labelFilterByDateTimePicker.Name = "labelFilterByDateTimePicker";
             this.labelFilterByDateTimePicker.Size = new System.Drawing.Size(69, 13);
             this.labelFilterByDateTimePicker.TabIndex = 4;
@@ -156,7 +157,7 @@
             "Nom_Utilisateur",
             "Action",
             "Valeur"});
-            this.comboBoxFilterItems.Location = new System.Drawing.Point(236, 26);
+            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 26);
             this.comboBoxFilterItems.Name = "comboBoxFilterItems";
             this.comboBoxFilterItems.Size = new System.Drawing.Size(101, 21);
             this.comboBoxFilterItems.TabIndex = 2;
@@ -164,7 +165,7 @@
             // labelFilter
             // 
             this.labelFilter.AutoSize = true;
-            this.labelFilter.Location = new System.Drawing.Point(174, 29);
+            this.labelFilter.Location = new System.Drawing.Point(146, 29);
             this.labelFilter.Name = "labelFilter";
             this.labelFilter.Size = new System.Drawing.Size(56, 13);
             this.labelFilter.TabIndex = 2;
@@ -172,9 +173,9 @@
             // 
             // textBoxStrings
             // 
-            this.textBoxStrings.Location = new System.Drawing.Point(51, 26);
+            this.textBoxStrings.Location = new System.Drawing.Point(42, 26);
             this.textBoxStrings.Name = "textBoxStrings";
-            this.textBoxStrings.Size = new System.Drawing.Size(105, 20);
+            this.textBoxStrings.Size = new System.Drawing.Size(98, 20);
             this.textBoxStrings.TabIndex = 1;
             // 
             // labelWords
@@ -182,7 +183,7 @@
             this.labelWords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelWords.AutoSize = true;
-            this.labelWords.Location = new System.Drawing.Point(9, 29);
+            this.labelWords.Location = new System.Drawing.Point(0, 29);
             this.labelWords.Name = "labelWords";
             this.labelWords.Size = new System.Drawing.Size(36, 13);
             this.labelWords.TabIndex = 0;
@@ -213,30 +214,17 @@
             this.panelNavigationButtons.Size = new System.Drawing.Size(67, 392);
             this.panelNavigationButtons.TabIndex = 12;
             // 
-            // buttonMoveToFirst
+            // buttonMoveToLast
             // 
-            this.buttonMoveToFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonMoveToLast.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToFirst.Location = new System.Drawing.Point(3, 53);
-            this.buttonMoveToFirst.Name = "buttonMoveToFirst";
-            this.buttonMoveToFirst.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToFirst.TabIndex = 5;
-            this.buttonMoveToFirst.Text = "<<";
-            this.buttonMoveToFirst.UseVisualStyleBackColor = true;
-            this.buttonMoveToFirst.Click += new System.EventHandler(this.buttonMoveToFirst_Click);
-            // 
-            // buttonMoveToPrev
-            // 
-            this.buttonMoveToPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToPrev.Location = new System.Drawing.Point(3, 114);
-            this.buttonMoveToPrev.Name = "buttonMoveToPrev";
-            this.buttonMoveToPrev.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToPrev.TabIndex = 6;
-            this.buttonMoveToPrev.Text = "<";
-            this.buttonMoveToPrev.UseVisualStyleBackColor = true;
+            this.buttonMoveToLast.Location = new System.Drawing.Point(3, 271);
+            this.buttonMoveToLast.Name = "buttonMoveToLast";
+            this.buttonMoveToLast.Size = new System.Drawing.Size(61, 55);
+            this.buttonMoveToLast.TabIndex = 8;
+            this.buttonMoveToLast.Text = ">>";
+            this.buttonMoveToLast.UseVisualStyleBackColor = true;
             // 
             // buttonMoveToNext
             // 
@@ -250,17 +238,30 @@
             this.buttonMoveToNext.Text = ">";
             this.buttonMoveToNext.UseVisualStyleBackColor = true;
             // 
-            // buttonMoveToLast
+            // buttonMoveToPrev
             // 
-            this.buttonMoveToLast.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonMoveToPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToLast.Location = new System.Drawing.Point(3, 271);
-            this.buttonMoveToLast.Name = "buttonMoveToLast";
-            this.buttonMoveToLast.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToLast.TabIndex = 8;
-            this.buttonMoveToLast.Text = ">>";
-            this.buttonMoveToLast.UseVisualStyleBackColor = true;
+            this.buttonMoveToPrev.Location = new System.Drawing.Point(3, 114);
+            this.buttonMoveToPrev.Name = "buttonMoveToPrev";
+            this.buttonMoveToPrev.Size = new System.Drawing.Size(61, 55);
+            this.buttonMoveToPrev.TabIndex = 6;
+            this.buttonMoveToPrev.Text = "<";
+            this.buttonMoveToPrev.UseVisualStyleBackColor = true;
+            // 
+            // buttonMoveToFirst
+            // 
+            this.buttonMoveToFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMoveToFirst.Location = new System.Drawing.Point(3, 53);
+            this.buttonMoveToFirst.Name = "buttonMoveToFirst";
+            this.buttonMoveToFirst.Size = new System.Drawing.Size(61, 55);
+            this.buttonMoveToFirst.TabIndex = 5;
+            this.buttonMoveToFirst.Text = "<<";
+            this.buttonMoveToFirst.UseVisualStyleBackColor = true;
+            this.buttonMoveToFirst.Click += new System.EventHandler(this.buttonMoveToFirst_Click);
             // 
             // frmHistoriques
             // 
