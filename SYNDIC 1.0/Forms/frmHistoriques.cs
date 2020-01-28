@@ -233,5 +233,15 @@ namespace SYNDIC_1._0
                 }
             }
         }
+
+        private void dataGridViewHistorique_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelAll_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

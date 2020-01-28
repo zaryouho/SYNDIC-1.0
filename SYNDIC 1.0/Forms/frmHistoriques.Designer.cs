@@ -40,23 +40,32 @@
             this.labelFilter = new System.Windows.Forms.Label();
             this.textBoxStrings = new System.Windows.Forms.TextBox();
             this.labelWords = new System.Windows.Forms.Label();
+            this.panelAll = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.panelNavigationButtons = new System.Windows.Forms.Panel();
-            this.buttonMoveToLast = new System.Windows.Forms.Button();
-            this.buttonMoveToNext = new System.Windows.Forms.Button();
-            this.buttonMoveToPrev = new System.Windows.Forms.Button();
-            this.buttonMoveToFirst = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.buttonTofirst = new System.Windows.Forms.Button();
+            this.buttonToPrev = new System.Windows.Forms.Button();
+            this.buttonToNext = new System.Windows.Forms.Button();
+            this.buttonToLast = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorique)).BeginInit();
             this.groupBoxSearchDataGridView.SuspendLayout();
+            this.panelAll.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            this.panelNavigationButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelHistoriques
             // 
             this.labelHistoriques.AutoSize = true;
             this.labelHistoriques.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistoriques.Location = new System.Drawing.Point(297, 21);
+            this.labelHistoriques.Location = new System.Drawing.Point(332, 9);
             this.labelHistoriques.Name = "labelHistoriques";
             this.labelHistoriques.Size = new System.Drawing.Size(139, 30);
             this.labelHistoriques.TabIndex = 4;
@@ -77,24 +86,21 @@
             // 
             // dataGridViewHistorique
             // 
-            this.dataGridViewHistorique.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewHistorique.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHistorique.Location = new System.Drawing.Point(94, 134);
+            this.dataGridViewHistorique.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewHistorique.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewHistorique.Name = "dataGridViewHistorique";
-            this.dataGridViewHistorique.Size = new System.Drawing.Size(694, 392);
+            this.dataGridViewHistorique.Size = new System.Drawing.Size(709, 567);
             this.dataGridViewHistorique.TabIndex = 9;
+            this.dataGridViewHistorique.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHistorique_CellContentClick);
             this.dataGridViewHistorique.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewHistorique_ColumnHeaderMouseClick);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDelete.Location = new System.Drawing.Point(713, 532);
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete.Location = new System.Drawing.Point(713, 13);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(75, 26);
             this.buttonDelete.TabIndex = 10;
             this.buttonDelete.Text = "Supprimer";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -102,9 +108,6 @@
             // 
             // groupBoxSearchDataGridView
             // 
-            this.groupBoxSearchDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSearchDataGridView.Controls.Add(this.buttonSearchDataGridView);
             this.groupBoxSearchDataGridView.Controls.Add(this.dateTimePickerHistorique);
             this.groupBoxSearchDataGridView.Controls.Add(this.labelFilterByDateTimePicker);
@@ -112,9 +115,10 @@
             this.groupBoxSearchDataGridView.Controls.Add(this.labelFilter);
             this.groupBoxSearchDataGridView.Controls.Add(this.textBoxStrings);
             this.groupBoxSearchDataGridView.Controls.Add(this.labelWords);
-            this.groupBoxSearchDataGridView.Location = new System.Drawing.Point(3, 8);
+            this.groupBoxSearchDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSearchDataGridView.Location = new System.Drawing.Point(0, 0);
             this.groupBoxSearchDataGridView.Name = "groupBoxSearchDataGridView";
-            this.groupBoxSearchDataGridView.Size = new System.Drawing.Size(770, 63);
+            this.groupBoxSearchDataGridView.Size = new System.Drawing.Size(800, 71);
             this.groupBoxSearchDataGridView.TabIndex = 10;
             this.groupBoxSearchDataGridView.TabStop = false;
             this.groupBoxSearchDataGridView.Text = "Chercher  ";
@@ -123,9 +127,9 @@
             // 
             this.buttonSearchDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchDataGridView.Location = new System.Drawing.Point(677, 27);
+            this.buttonSearchDataGridView.Location = new System.Drawing.Point(707, 27);
             this.buttonSearchDataGridView.Name = "buttonSearchDataGridView";
-            this.buttonSearchDataGridView.Size = new System.Drawing.Size(87, 21);
+            this.buttonSearchDataGridView.Size = new System.Drawing.Size(87, 29);
             this.buttonSearchDataGridView.TabIndex = 4;
             this.buttonSearchDataGridView.Text = "Chercher";
             this.buttonSearchDataGridView.UseVisualStyleBackColor = true;
@@ -189,91 +193,109 @@
             this.labelWords.TabIndex = 0;
             this.labelWords.Text = "Mots :";
             // 
+            // panelAll
+            // 
+            this.panelAll.Controls.Add(this.panelFooter);
+            this.panelAll.Controls.Add(this.panel2);
+            this.panelAll.Controls.Add(this.panelHeader);
+            this.panelAll.Controls.Add(this.splitContainer1);
+            this.panelAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAll.Location = new System.Drawing.Point(0, 0);
+            this.panelAll.Name = "panelAll";
+            this.panelAll.Size = new System.Drawing.Size(800, 567);
+            this.panelAll.TabIndex = 11;
+            this.panelAll.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAll_Paint);
+            // 
             // panelHeader
             // 
-            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHeader.Controls.Add(this.groupBoxSearchDataGridView);
-            this.panelHeader.Location = new System.Drawing.Point(12, 54);
+            this.panelHeader.Controls.Add(this.labelHistoriques);
+            this.panelHeader.Controls.Add(this.labelCloseHistoriques);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(776, 74);
-            this.panelHeader.TabIndex = 11;
+            this.panelHeader.Size = new System.Drawing.Size(800, 65);
+            this.panelHeader.TabIndex = 0;
             // 
-            // panelNavigationButtons
+            // splitContainer1
             // 
-            this.panelNavigationButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelNavigationButtons.Controls.Add(this.buttonMoveToLast);
-            this.panelNavigationButtons.Controls.Add(this.buttonMoveToNext);
-            this.panelNavigationButtons.Controls.Add(this.buttonMoveToPrev);
-            this.panelNavigationButtons.Controls.Add(this.buttonMoveToFirst);
-            this.panelNavigationButtons.Location = new System.Drawing.Point(15, 134);
-            this.panelNavigationButtons.Name = "panelNavigationButtons";
-            this.panelNavigationButtons.Size = new System.Drawing.Size(67, 392);
-            this.panelNavigationButtons.TabIndex = 12;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // buttonMoveToLast
+            // splitContainer1.Panel1
             // 
-            this.buttonMoveToLast.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToLast.Location = new System.Drawing.Point(3, 271);
-            this.buttonMoveToLast.Name = "buttonMoveToLast";
-            this.buttonMoveToLast.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToLast.TabIndex = 8;
-            this.buttonMoveToLast.Text = ">>";
-            this.buttonMoveToLast.UseVisualStyleBackColor = true;
+            this.splitContainer1.Panel1.Controls.Add(this.buttonToLast);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonToNext);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonToPrev);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonTofirst);
             // 
-            // buttonMoveToNext
+            // splitContainer1.Panel2
             // 
-            this.buttonMoveToNext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToNext.Location = new System.Drawing.Point(3, 210);
-            this.buttonMoveToNext.Name = "buttonMoveToNext";
-            this.buttonMoveToNext.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToNext.TabIndex = 7;
-            this.buttonMoveToNext.Text = ">";
-            this.buttonMoveToNext.UseVisualStyleBackColor = true;
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridViewHistorique);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 567);
+            this.splitContainer1.SplitterDistance = 87;
+            this.splitContainer1.TabIndex = 11;
             // 
-            // buttonMoveToPrev
+            // panel2
             // 
-            this.buttonMoveToPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToPrev.Location = new System.Drawing.Point(3, 114);
-            this.buttonMoveToPrev.Name = "buttonMoveToPrev";
-            this.buttonMoveToPrev.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToPrev.TabIndex = 6;
-            this.buttonMoveToPrev.Text = "<";
-            this.buttonMoveToPrev.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.groupBoxSearchDataGridView);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 71);
+            this.panel2.TabIndex = 6;
             // 
-            // buttonMoveToFirst
+            // panelFooter
             // 
-            this.buttonMoveToFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMoveToFirst.Location = new System.Drawing.Point(3, 53);
-            this.buttonMoveToFirst.Name = "buttonMoveToFirst";
-            this.buttonMoveToFirst.Size = new System.Drawing.Size(61, 55);
-            this.buttonMoveToFirst.TabIndex = 5;
-            this.buttonMoveToFirst.Text = "<<";
-            this.buttonMoveToFirst.UseVisualStyleBackColor = true;
-            this.buttonMoveToFirst.Click += new System.EventHandler(this.buttonMoveToFirst_Click);
+            this.panelFooter.Controls.Add(this.buttonDelete);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 516);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(800, 51);
+            this.panelFooter.TabIndex = 12;
+            // 
+            // buttonTofirst
+            // 
+            this.buttonTofirst.Location = new System.Drawing.Point(9, 204);
+            this.buttonTofirst.Name = "buttonTofirst";
+            this.buttonTofirst.Size = new System.Drawing.Size(75, 48);
+            this.buttonTofirst.TabIndex = 5;
+            this.buttonTofirst.Text = "button1";
+            this.buttonTofirst.UseVisualStyleBackColor = true;
+            // 
+            // buttonToPrev
+            // 
+            this.buttonToPrev.Location = new System.Drawing.Point(9, 258);
+            this.buttonToPrev.Name = "buttonToPrev";
+            this.buttonToPrev.Size = new System.Drawing.Size(75, 48);
+            this.buttonToPrev.TabIndex = 6;
+            this.buttonToPrev.Text = "button2";
+            this.buttonToPrev.UseVisualStyleBackColor = true;
+            // 
+            // buttonToNext
+            // 
+            this.buttonToNext.Location = new System.Drawing.Point(9, 312);
+            this.buttonToNext.Name = "buttonToNext";
+            this.buttonToNext.Size = new System.Drawing.Size(75, 48);
+            this.buttonToNext.TabIndex = 7;
+            this.buttonToNext.Text = "button3";
+            this.buttonToNext.UseVisualStyleBackColor = true;
+            // 
+            // buttonToLast
+            // 
+            this.buttonToLast.Location = new System.Drawing.Point(9, 366);
+            this.buttonToLast.Name = "buttonToLast";
+            this.buttonToLast.Size = new System.Drawing.Size(75, 48);
+            this.buttonToLast.TabIndex = 8;
+            this.buttonToLast.Text = "button4";
+            this.buttonToLast.UseVisualStyleBackColor = true;
             // 
             // frmHistoriques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 567);
-            this.Controls.Add(this.panelNavigationButtons);
-            this.Controls.Add(this.panelHeader);
-            this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.dataGridViewHistorique);
-            this.Controls.Add(this.labelCloseHistoriques);
-            this.Controls.Add(this.labelHistoriques);
+            this.Controls.Add(this.panelAll);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHistoriques";
             this.Text = "frmHistoriques";
@@ -282,10 +304,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorique)).EndInit();
             this.groupBoxSearchDataGridView.ResumeLayout(false);
             this.groupBoxSearchDataGridView.PerformLayout();
+            this.panelAll.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
-            this.panelNavigationButtons.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panelFooter.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -303,11 +331,14 @@
         private System.Windows.Forms.TextBox textBoxStrings;
         private System.Windows.Forms.Label labelWords;
         private System.Windows.Forms.Button buttonSearchDataGridView;
+        private System.Windows.Forms.Panel panelAll;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Panel panelNavigationButtons;
-        private System.Windows.Forms.Button buttonMoveToLast;
-        private System.Windows.Forms.Button buttonMoveToNext;
-        private System.Windows.Forms.Button buttonMoveToPrev;
-        private System.Windows.Forms.Button buttonMoveToFirst;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panelFooter;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonToLast;
+        private System.Windows.Forms.Button buttonToNext;
+        private System.Windows.Forms.Button buttonToPrev;
+        private System.Windows.Forms.Button buttonTofirst;
     }
 }
