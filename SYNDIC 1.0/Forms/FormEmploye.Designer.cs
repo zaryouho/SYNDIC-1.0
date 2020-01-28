@@ -47,6 +47,7 @@
             this.buttonRechercher = new System.Windows.Forms.Button();
             this.textBoxRechercher = new System.Windows.Forms.TextBox();
             this.dataGridViewEmploye = new System.Windows.Forms.DataGridView();
+            this.buttonListDocs = new System.Windows.Forms.Button();
             this.tableLayoutPEmploye.SuspendLayout();
             this.tableLayoutPanelEmploye.SuspendLayout();
             this.panelIN.SuspendLayout();
@@ -181,6 +182,7 @@
             // 
             // panelIN
             // 
+            this.panelIN.Controls.Add(this.buttonListDocs);
             this.panelIN.Controls.Add(this.tableLayoutPanelEmployeBottom);
             this.panelIN.Controls.Add(this.buttonLast);
             this.panelIN.Controls.Add(this.buttonNext);
@@ -351,6 +353,27 @@
             this.dataGridViewEmploye.Size = new System.Drawing.Size(668, 232);
             this.dataGridViewEmploye.TabIndex = 5;
             // 
+            // buttonListDocs
+            // 
+            this.buttonListDocs.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonListDocs.FlatAppearance.BorderSize = 0;
+            this.buttonListDocs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonListDocs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonListDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListDocs.ForeColor = System.Drawing.Color.White;
+            this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListDocs.Location = new System.Drawing.Point(593, 6);
+            this.buttonListDocs.Name = "buttonListDocs";
+            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+            this.buttonListDocs.TabIndex = 18;
+            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.UseVisualStyleBackColor = false;
+            this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
+            // 
             // FormEmploye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,5 +418,6 @@
         private System.Windows.Forms.Button buttonRechercher;
         private System.Windows.Forms.TextBox textBoxRechercher;
         private System.Windows.Forms.DataGridView dataGridViewEmploye;
+        private System.Windows.Forms.Button buttonListDocs;
     }
 }
