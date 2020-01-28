@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYNDIC_1._0.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -161,6 +162,13 @@ namespace SYNDIC_1._0
         {
             if (textBoxrechercher.Text.Equals(string.Empty))
                 FormListeProprietaire_Load(sender, e);
+        }
+
+        private void buttonListDocs_Click(object sender, EventArgs e)
+        {
+            int current_Id = Convert.ToInt32(dataGridViewProprietaires.CurrentRow.Cells[11].Value.ToString());
+            new FormGestionDocument("documentProprietaire", "where id_Proprietaire = " + current_Id.ToString(), current_Id).ShowDialog();
+
         }
     }
 }

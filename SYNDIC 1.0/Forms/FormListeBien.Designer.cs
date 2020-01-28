@@ -44,6 +44,7 @@
             this.dataGridViewBien = new System.Windows.Forms.DataGridView();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.buttonModifierBien = new System.Windows.Forms.Button();
+            this.buttonListDocs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeBien)).BeginInit();
             this.splitContainerListeBien.Panel1.SuspendLayout();
             this.splitContainerListeBien.Panel2.SuspendLayout();
@@ -223,6 +224,7 @@
             // 
             // panelFooter
             // 
+            this.panelFooter.Controls.Add(this.buttonListDocs);
             this.panelFooter.Controls.Add(this.buttonModifierBien);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelFooter.Location = new System.Drawing.Point(0, 286);
@@ -250,6 +252,29 @@
             this.buttonModifierBien.Text = "Modifier le bien";
             this.buttonModifierBien.UseVisualStyleBackColor = false;
             this.buttonModifierBien.Click += new System.EventHandler(this.buttonModifierBien_Click);
+            // 
+            // buttonListDocs
+            // 
+            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonListDocs.FlatAppearance.BorderSize = 0;
+            this.buttonListDocs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonListDocs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonListDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListDocs.ForeColor = System.Drawing.Color.White;
+            this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListDocs.Location = new System.Drawing.Point(17, 23);
+            this.buttonListDocs.Name = "buttonListDocs";
+            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+            this.buttonListDocs.TabIndex = 18;
+            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.UseVisualStyleBackColor = false;
+            this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
             // FormListeBien
             // 
@@ -293,5 +318,6 @@
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonFirst;
+        private System.Windows.Forms.Button buttonListDocs;
     }
 }

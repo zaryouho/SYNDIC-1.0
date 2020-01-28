@@ -211,5 +211,12 @@ namespace SYNDIC_1._0.Forms
         {
 
         }
+
+        private void buttonListDocs_Click(object sender, EventArgs e)
+        {
+            int current_Id = Convert.ToInt32(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
+            new FormGestionDocument("documentEmploye", "where id_employe = " + current_Id.ToString(), current_Id).ShowDialog();
+
+        }
     }
 }

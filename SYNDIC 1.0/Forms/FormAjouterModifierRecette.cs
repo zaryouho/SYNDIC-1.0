@@ -38,10 +38,10 @@ namespace SYNDIC_1._0.Forms
             {
                 MessageBox.Show(id_Proprietaire.ToString());
                 labelHead.Text = "Ajouter une Recette";
-                DBHelper.remplir_dataset("select b.id,b.nom + ' ' + b.titre as BienNom,im.nom as ImNom from bien b inner join immeuble im on im.id = b.id_immeuble where id_proprietaire = " + id_Proprietaire, "Bien_Prop");
+                DBHelper.remplir_dataset("select b.id,b.nom + ' ' + b.titre as BienNom,im.nom as ImNom from bien b inner join immeuble im on im.id = b.id_immeuble where id_proprietaire = " + id_Proprietaire.ToString(), "Bien_Prop");
                 DBHelper.remplir_dataset("select * from type where idTableType in (select id from tabletype where libelle like 'echeance')", "typeEcheance");
                 DBHelper.remplir_dataset("select * from type where idTableType in (select id from tabletype where libelle like 'recette')", "typeRecette");
-                DBHelper.remplir_dataset("select e.id,e.montant,e.typeEchea,e.montant - e.montant_reçu as reste, e.id_bien, e.annee from echeance e inner join bien b on b.id = e.id_bien where e.typeEchea not like 'Frais biens' and e.montant>e.montant_reçu","echeanceCotisation");
+                DBHelper.remplir_dataset("select e.id,e.montant,e.typeEchea,e.montant - e.montant_reçu as reste, e.id_bien, e.annee from echeance e inner join bien b on b.id = e.id_bien where b.id_proprietaire = "+id_Proprietaire.ToString() +" and e.typeEchea not like 'Frais biens' and e.montant>e.montant_reçu","echeanceCotisation");
 
 
                 bsProprietaire = DBHelper.remplir_bindingsource("Proprietaire_Recette");
@@ -191,8 +191,9 @@ namespace SYNDIC_1._0.Forms
                 {
                     try
                     {
+
                         var echeance1 = (from echeance
-                                  in SyndicDataContext.echeances
+                                         in SyndicDataContext.echeances
                                          where echeance.id.Equals(Convert.ToInt32(dataGridViewListEcheance.CurrentRow.Cells[0].Value.ToString()))
                                          select echeance).Single();
 

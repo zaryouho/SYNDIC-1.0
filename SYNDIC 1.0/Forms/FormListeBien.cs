@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYNDIC_1._0.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,6 +133,13 @@ namespace SYNDIC_1._0
                 buttonChercher.Enabled = false;
             else
                 buttonChercher.Enabled = true;
+        }
+
+        private void buttonListDocs_Click(object sender, EventArgs e)
+        {
+            int current_Id = Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[0].Value.ToString());
+            new FormGestionDocument("documentBien", "where id_bien = " + current_Id.ToString(), current_Id).ShowDialog();
+
         }
     }
 }

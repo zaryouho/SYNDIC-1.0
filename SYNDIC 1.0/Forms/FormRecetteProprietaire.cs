@@ -92,6 +92,7 @@ namespace SYNDIC_1._0.Forms
                                 join cotisation_echeance in SyndicDataContext.cotisation_echeances
                                 on echeance.id equals cotisation_echeance.id_echeance
                                 where cotisation_echeance.id_recette.Equals(Convert.ToInt32(dataGridViewRecette.CurrentRow.Cells[0].Value.ToString()))
+                                orderby echeance.id descending
                                 select echeance;
 
                 decimal montant_recette = Convert.ToDecimal(dataGridViewRecette.CurrentRow.Cells[2].Value);

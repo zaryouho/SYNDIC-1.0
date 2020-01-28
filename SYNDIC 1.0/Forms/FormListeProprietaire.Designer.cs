@@ -41,6 +41,7 @@
             this.buttonAjouterProprietaire = new System.Windows.Forms.Button();
             this.buttonSupprimerProprietaire = new System.Windows.Forms.Button();
             this.buttonModifierProprietaire = new System.Windows.Forms.Button();
+            this.buttonListDocs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeProprietaire)).BeginInit();
             this.splitContainerListeProprietaire.Panel1.SuspendLayout();
             this.splitContainerListeProprietaire.Panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // splitContainerListeProprietaire.Panel1
             // 
+            this.splitContainerListeProprietaire.Panel1.Controls.Add(this.buttonListDocs);
             this.splitContainerListeProprietaire.Panel1.Controls.Add(this.buttonRechercher);
             this.splitContainerListeProprietaire.Panel1.Controls.Add(this.textBoxrechercher);
             // 
@@ -246,6 +248,29 @@
             this.buttonModifierProprietaire.UseVisualStyleBackColor = false;
             this.buttonModifierProprietaire.Click += new System.EventHandler(this.buttonModifierProprietaire_Click);
             // 
+            // buttonListDocs
+            // 
+            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonListDocs.FlatAppearance.BorderSize = 0;
+            this.buttonListDocs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonListDocs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonListDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListDocs.ForeColor = System.Drawing.Color.White;
+            this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListDocs.Location = new System.Drawing.Point(593, 12);
+            this.buttonListDocs.Name = "buttonListDocs";
+            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+            this.buttonListDocs.TabIndex = 25;
+            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.UseVisualStyleBackColor = false;
+            this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
+            // 
             // FormListeProprietaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,5 +311,6 @@
         private System.Windows.Forms.Button buttonAjouterProprietaire;
         private System.Windows.Forms.Button buttonSupprimerProprietaire;
         private System.Windows.Forms.Button buttonModifierProprietaire;
+        private System.Windows.Forms.Button buttonListDocs;
     }
 }
