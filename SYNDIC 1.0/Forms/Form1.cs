@@ -154,5 +154,14 @@ namespace SYNDIC_1._0
 
             flag = 8;
         }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            if (flag != 9 || this.panelContainer.Controls.Count == 0)
+                OpenFormInPannel(new FormEmploye());
+
+
+            flag = 9;
+        }
     }
 }

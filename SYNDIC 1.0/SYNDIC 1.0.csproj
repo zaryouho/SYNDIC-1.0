@@ -159,6 +159,12 @@
     <Compile Include="Forms\FormSplachScreen.Designer.cs">
       <DependentUpon>FormSplachScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormUtilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUtilisateurs.Designer.cs">
+      <DependentUpon>FormUtilisateurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmBiens.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSplachScreen.resx">
       <DependentUpon>FormSplachScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUtilisateurs.resx">
+      <DependentUpon>FormUtilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBiens.resx">
       <DependentUpon>frmBiens.cs</DependentUpon>
