@@ -10,39 +10,55 @@ namespace SYNDIC_1._0.Helper
     public static class Log
     {
         static public int userId = 0 ;
-        static public DateTime dateAction = DateTime.Now;
-        static public string[] action = { "Ajouter", "Modifies", "Supprimmer" };
+        static public DateTime dateTimeAction = DateTime.Now;
+        static public string action = string.Empty;
         static public string actionTable = string.Empty;
-        static public string oldValue = string.Empty;
-        static public string newValue = string.Empty;
-        static string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].Name.ToString();
-        static SqlConnection connection = new SqlConnection(connectionString);
+        static public string oldValues = string.Empty;
+        static public string newValues = string.Empty;
+        static string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString;
+        
         /// <summary>
         /// Inserts values into database table <em>journal<em>
         /// Does not returns
         /// </summary>
         public static void createLog(int userId, DateTime dateTimeAction, string action, string actionTable, string oldValues,string newValues)
         {
-            try
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                string query = "insert into journal values ('" + userId + "','" + dateTimeAction + "','" + action + "','" + actionTable + "','" + oldValues + "','" + newValues + "')";
-                SqlCommand command = new SqlCommand(query, connection);
-                int exe = command.ExecuteNonQuery();
-                if (exe !=0)
+                try
                 {
-                    System.Windows.Forms.MessageBox.Show("Values inserted successfully");
+                    if (connection.State != System.Data.ConnectionState.Open)
+                    {
+                        connection.Open();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+
+                string query = " insert into journal values (@userId ,@dateTimeAction ,@action ,@actionTable,@oldValues ,@newValues )";
+                using (SqlCommand command = new SqlCommand(query,connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@dateAction", dateTimeAction);
+                    command.Parameters.AddWithValue("@action", action);
+                    command.Parameters.AddWithValue("@actionTable", actionTable);
+                    command.Parameters.AddWithValue("@oldValues", oldValues);
+                    command.Parameters.AddWithValue("@newValue", newValues);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        System.Windows.Forms.MessageBox.Show(e.Message);
+                    }
+                }
+
             }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            connection.Dispose();
+            
         }
     }
 }
