@@ -17,10 +17,7 @@ namespace SYNDIC_1._0.Forms
 {
     public partial class FormLogin : Form
     {
-        private SqlConnection connection;
         private string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
-        private SqlDataAdapter dataAdapter;
-        private DataTable dataTable;
         private string typeUtilisateur = string.Empty;
         public FormLogin()
         {
@@ -93,76 +90,75 @@ namespace SYNDIC_1._0.Forms
             string username = textBoxUsername.Text.Trim().ToLower().Replace("'", "''");
             string password = textBoxPassword.Text.Trim().ToLower().Replace("'", "''");
 
-            if (!textBoxUsername.hasText() || !textBoxPassword.hasText())
+            //if (!textBoxUsername.hasText() || !textBoxPassword.hasText())
+            //{
+            //    MessageBox.Show("type something");
+            //    if (textBoxUsername.hasText())
+            //    {
+            //        textBoxPassword.Select();
+            //        textBoxPassword.Focus();
+            //    }
+            //    if (textBoxPassword.hasText())
+            //    {
+            //        textBoxUsername.Select();
+            //        textBoxUsername.Focus();
+            //    }
+            //    return;
+            //}
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                MessageBox.Show("type something");
-                if (textBoxUsername.hasText())
+                if (connection.State != ConnectionState.Open)
                 {
-                    textBoxPassword.Select();
-                    textBoxPassword.Focus();
+                    connection.Open();
                 }
-                if (textBoxPassword.hasText())
+                string query = "select * from utilisateur where login ='" + username + "'and mot_de_passe = '" + password + "'";
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query,connection))
                 {
-                    textBoxUsername.Select();
-                    textBoxUsername.Focus();
-                }
-                return;
-            }
-
-            string query = "select * from utilisateur where login ='" + username + "'and mot_de_passe = '" + password + "'";
-            connection = new SqlConnection(connectionString);
-            connection.Open();
-
-            dataAdapter = new SqlDataAdapter(query, connection);
-            dataTable = new DataTable();
-            dataAdapter.Fill(dataTable);
-            connection.Close();
-
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("majebroxi");
-                dataAdapter.Dispose();
-                connection.Dispose();
-                return;
-            }
-            if (dataTable.Rows.Count == 1)
-            {
-                string mot_de_pass = dataTable.Rows[1]["mot_de_pass"] as string;
-                string salt = dataTable.Rows[1]["salt"] as string;
-                bool authenticat = VerifyPassword(password, mot_de_pass, salt);
-                if (authenticat)
-                {
-                    // login successful
-                    switch (dataTable.Rows[1]["typeUtilisateur"] as string)
+                    using (DataTable dataTable = new DataTable())
                     {
-                        case "Admin":
+                        dataAdapter.Fill(dataTable);
+                        if (dataTable.Rows.Count == 0)
+                        {
+                            MessageBox.Show("majebroxi");
+                            return;
+
+                        }
+                        if (dataTable.Rows.Count == 1)
+                        {
+                            string mot_de_pass = dataTable.Rows[1]["mot_de_pass"] as string;
+                            string salt = dataTable.Rows[1]["salt"] as string;
+                            bool authenticat = VerifyPassword(password, mot_de_pass, salt);
+                            if (authenticat)
                             {
-                                typeUtilisateur = "Admin";
-                                this.Hide();
-                                // Show the main menu
-                                MessageBox.Show("Login was succesful. " + username + " !");
-                                dataAdapter = null;
-                                connection = null;
-                                break;
+                                // login successful
+                                switch (dataTable.Rows[1]["typeUtilisateur"] as string)
+                                {
+                                    case "Admin":
+                                        {
+                                            typeUtilisateur = "Admin";
+                                            this.Hide();
+                                            // Show the main menu
+                                            MessageBox.Show("Login was succesful. " + username + " !");
+                                            break;
+                                        }
+                                    case "Utilisateur":
+                                        {
+                                            typeUtilisateur = "Utilisateur";
+                                            this.Hide();
+                                            // Show the main menu
+                                            MessageBox.Show("Login was succesful. " + username + " !");
+                                            break;
+                                        }
+                                }
                             }
-                        case "Utilisateur":
+                            if (!authenticat)
                             {
-                                typeUtilisateur = "Utilisateur";
-                                this.Hide();
-                                // Show the main menu
-                                MessageBox.Show("Login was succesful. " + username + " !");
-                                dataAdapter = null;
-                                connection = null;
-                                break;
+                                MessageBox.Show("jrijri");
+                                return;
                             }
+                        }
                     }
-                }
-                if (!authenticat)
-                {
-                    MessageBox.Show("jrijri");
-                    dataAdapter = null;
-                    connection = null;
-                    return;
+
                 }
             }
             
@@ -172,9 +168,12 @@ namespace SYNDIC_1._0.Forms
         {
             if (textBoxUsername.hasText() && textBoxPassword.hasText())
             {
-                if (e.KeyChar == 13)
+                if (textBoxPassword.Focused || textBoxUsername.Focused)
                 {
-                    buttonLogin.PerformClick();
+                    if (e.KeyChar == 13)
+                    {
+                        buttonLogin.PerformClick();
+                    }
                 }
             }
         }
@@ -215,8 +214,11 @@ namespace SYNDIC_1._0.Forms
 
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
-            Properties.Settings.Default.Save();
+            if(MessageBox.Show("Are you sure you want to store sensitive information").Equals(DialogResult.Yes))
+            {
+                Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -15,9 +15,7 @@ namespace SYNDIC_1._0
     {
         DataClassesSyndicDataContext dataContext = new DataClassesSyndicDataContext();
         string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].Name.ToString();
-        SqlConnection connection;
-        SqlCommand command;
-
+        
         public frmHistoriques()
         {
             InitializeComponent();
@@ -30,15 +28,15 @@ namespace SYNDIC_1._0
 
         private void frmHistoriques_Load(object sender, EventArgs e)
         {
-            var src = from log in dataContext.journals
+            var data = from log in dataContext.journals
                       join user in dataContext.utilisateurs
                       on log.id_utilisateur equals user.id
-                      join connnectionTable in dataContext.connexions
-                      on user.id equals connnectionTable.id_utilisateur
+                      join connectionTable in dataContext.connexions
+                      on user.id equals connectionTable.id_utilisateur
                       select new
                       {
                           log.id,
-                          connnectionTable.date_connexion,
+                          connectionTable.date_connexion,
                           user.typeUtilisateur,
                           log.date_action,
                           log.action,
@@ -46,12 +44,13 @@ namespace SYNDIC_1._0
                           log.anciennes_valeurs,
                           log.nouvelles_valeurs
                       };
-            dataGridViewHistorique.DataSource = src;
+            dataGridViewHistorique.DataSource = data;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            connection = new SqlConnection(connectionString);
+            
+            SqlConnection connection = new SqlConnection(connectionString);
             if (connection.State != ConnectionState.Open)
             {
                 connection.Open();
@@ -68,6 +67,7 @@ namespace SYNDIC_1._0
             int queryId = 0;
             string query = "delete j.*,c.* from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where id =@queryId";
 
+            SqlCommand command = new SqlCommand();
             command = connection.CreateCommand();
             command.CommandText = query;
             
@@ -140,11 +140,12 @@ namespace SYNDIC_1._0
                 #endregion
             }
             frmHistoriques_Load(sender, e);
+            connection.Close();
         }
 
         private void buttonSearchDataGridView_Click(object sender, EventArgs e)
         {
-            connection = new SqlConnection(connectionString);
+            SqlConnection connection = new SqlConnection(connectionString);
             if (connection.State != ConnectionState.Open)
             {
                 connection.Open(); 
@@ -163,6 +164,8 @@ namespace SYNDIC_1._0
             string searchedString = textBoxStrings.hasText() ? textBoxStrings.Text.Trim().Replace("'", "''") : dateTimePickerHistorique.Value.ToString();
 
             string query = "select (id,date_connexion,typeUtilisateur,date_action,action,table_action,anciennes_valeurs,nouvelles_valeurs) from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where @filter = @searchedString ";
+
+            SqlCommand command = new SqlCommand();
 
             if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now)
             {
@@ -199,7 +202,10 @@ namespace SYNDIC_1._0
         {
             if (dataGridViewHistorique.SelectedRows.Count != 0 && StringHelper.EnterIsPressed(e))
             {
-                buttonDelete_Click(sender,e);
+                if (dataGridViewHistorique.Focused)
+                {
+                    buttonDelete_Click(sender,e);
+                }
             }
             if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now && StringHelper.EnterIsPressed(e))
             {
