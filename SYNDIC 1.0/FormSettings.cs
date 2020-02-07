@@ -16,6 +16,8 @@ namespace SYNDIC_1._0
 {
     public partial class FormSettings : Form
     {
+        public static bool flag = false;
+        
         public FormSettings()
         {
             InitializeComponent();
@@ -94,6 +96,7 @@ namespace SYNDIC_1._0
             getDataBaseNames();
             getServerNames();
             this.Cursor = Cursors.Default;
+
         }
 
         private void buttonBackupDataBase_Click(object sender, EventArgs e)
@@ -106,7 +109,20 @@ namespace SYNDIC_1._0
             }
             
             string query = "back up database @databasename to disk = '@path'";
-            string folder = ConfigurationManager.AppSettings["BackupFolder"].ToString();
+            string folder = string.Empty;
+            if (flag)
+            {
+                folder = backupPath();
+                if (string.IsNullOrWhiteSpace(folder))
+                {
+                    MessageBox.Show("plz select a path to back up your database");
+                }
+                flag = !flag;
+            }
+            else
+            {
+                folder = ConfigurationManager.AppSettings["BackupFolder"].ToString();
+            }
             string databaseName = comboBoxDataBaseName.Text;
             string path = String.Format("{0}{1}{2}.bak", folder, databaseName,DateTime.Now.ToString("yyyy-MM-dd"));
 
@@ -145,6 +161,91 @@ namespace SYNDIC_1._0
             {
                 DialogResult path = browserDialog.ShowDialog();
                 return browserDialog.SelectedPath;
+            }
+        }
+
+        private void buttonBackuptoExternalDrive_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            buttonBackupDataBase.PerformClick();
+        }
+
+        private void buttonRestore_Click(object sender, EventArgs e)
+        {
+            string path = string.Empty;
+            string query = " use master restore database @databsename from disk ='@path'";
+            string databaseName = comboBoxDataBaseName.Text;
+            if (flag)
+            {
+                path = backupPath();
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    MessageBox.Show("plz select a path to restore your database");
+                }
+                flag = !flag;
+            }
+            path = ConfigurationManager.AppSettings["BackupFolder"].ToString();
+            string connection = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            using (SqlConnection myConnection = new SqlConnection(connection))
+            {
+                if (myConnection.State != ConnectionState.Open)
+                {
+                    myConnection.Open();
+                }
+                using (SqlCommand command = new SqlCommand(query, myConnection))
+                {
+                    command.Parameters.AddWithValue("@databsename", databaseName);
+                    command.Parameters.AddWithValue("@path", path);
+                    try
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+                        int result = command.ExecuteNonQuery();
+                        this.Cursor = Cursors.Default;
+                        if (result != -1)
+                        {
+                            MessageBox.Show("Backup successful");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void buttonRestoreFromExternalDrive_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            buttonRestore.PerformClick();
+        }
+
+        private void checkBoxAutoBackup_CheckedChanged(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Now;
+            int interval = 0;
+            
+            buttonRestore.Enabled = groupBoxBackup.Visible = checkBoxAutoBackup.Checked ? false : true;
+            buttonRestoreFromExternalDrive.Enabled = groupBoxBackup.Visible = checkBoxAutoBackup.Checked ? false : true;
+            buttonBackuptoExternalDrive.Enabled = groupBoxBackup.Visible = checkBoxAutoBackup.Checked ? false : true;
+
+            while (checkBoxAutoBackup.Checked)
+            {
+                interval = radioButtonDailyBackup.Checked ? 1 : 0;
+                interval = radioButtonWeeklyBackup.Checked ? 7 : 0;
+                interval = radioButtonMonthlyBackup.Checked ? 30 : 0;
+
+                while (interval != 0)
+                {
+                    Properties.Settings.Default.Interval = interval;
+                    Properties.Settings.Default.Today = today;
+                    Properties.Settings.Default.Save();
+
+                    if (Properties.Settings.Default.Today.AddDays(Properties.Settings.Default.Interval) == DateTime.Now)
+                    {
+                        buttonBackupDataBase.PerformClick();
+                    }
+                } 
             }
         }
     }
