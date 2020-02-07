@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuOfficiel));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonEmploye = new System.Windows.Forms.Button();
             this.buttonSociete = new System.Windows.Forms.Button();
             this.buttonRapportsStatistiques = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnSlideBar = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.buttonUsers = new System.Windows.Forms.Button();
+            this.buttonSettings = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarreTitulaire.SuspendLayout();
@@ -60,6 +61,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.buttonSettings);
             this.MenuVertical.Controls.Add(this.buttonUsers);
             this.MenuVertical.Controls.Add(this.buttonEmploye);
             this.MenuVertical.Controls.Add(this.buttonSociete);
@@ -76,6 +78,25 @@
             this.MenuVertical.Size = new System.Drawing.Size(265, 650);
             this.MenuVertical.TabIndex = 0;
             // 
+            // buttonUsers
+            // 
+            this.buttonUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUsers.FlatAppearance.BorderSize = 0;
+            this.buttonUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUsers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsers.ForeColor = System.Drawing.Color.White;
+            this.buttonUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsers.Image")));
+            this.buttonUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonUsers.Location = new System.Drawing.Point(0, 484);
+            this.buttonUsers.Name = "buttonUsers";
+            this.buttonUsers.Size = new System.Drawing.Size(265, 45);
+            this.buttonUsers.TabIndex = 8;
+            this.buttonUsers.Text = "Utilisateurs";
+            this.buttonUsers.UseVisualStyleBackColor = true;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
+            // 
             // buttonEmploye
             // 
             this.buttonEmploye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -87,7 +108,7 @@
             this.buttonEmploye.ForeColor = System.Drawing.Color.White;
             this.buttonEmploye.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmploye.Image")));
             this.buttonEmploye.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEmploye.Location = new System.Drawing.Point(0, 475);
+            this.buttonEmploye.Location = new System.Drawing.Point(0, 433);
             this.buttonEmploye.Name = "buttonEmploye";
             this.buttonEmploye.Size = new System.Drawing.Size(265, 45);
             this.buttonEmploye.TabIndex = 7;
@@ -106,7 +127,7 @@
             this.buttonSociete.ForeColor = System.Drawing.Color.White;
             this.buttonSociete.Image = ((System.Drawing.Image)(resources.GetObject("buttonSociete.Image")));
             this.buttonSociete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSociete.Location = new System.Drawing.Point(0, 424);
+            this.buttonSociete.Location = new System.Drawing.Point(0, 382);
             this.buttonSociete.Name = "buttonSociete";
             this.buttonSociete.Size = new System.Drawing.Size(265, 45);
             this.buttonSociete.TabIndex = 6;
@@ -125,7 +146,7 @@
             this.buttonRapportsStatistiques.ForeColor = System.Drawing.Color.White;
             this.buttonRapportsStatistiques.Image = ((System.Drawing.Image)(resources.GetObject("buttonRapportsStatistiques.Image")));
             this.buttonRapportsStatistiques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRapportsStatistiques.Location = new System.Drawing.Point(0, 373);
+            this.buttonRapportsStatistiques.Location = new System.Drawing.Point(0, 331);
             this.buttonRapportsStatistiques.Name = "buttonRapportsStatistiques";
             this.buttonRapportsStatistiques.Size = new System.Drawing.Size(265, 45);
             this.buttonRapportsStatistiques.TabIndex = 5;
@@ -144,7 +165,7 @@
             this.buttonDocuments.ForeColor = System.Drawing.Color.White;
             this.buttonDocuments.Image = ((System.Drawing.Image)(resources.GetObject("buttonDocuments.Image")));
             this.buttonDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDocuments.Location = new System.Drawing.Point(0, 271);
+            this.buttonDocuments.Location = new System.Drawing.Point(0, 229);
             this.buttonDocuments.Name = "buttonDocuments";
             this.buttonDocuments.Size = new System.Drawing.Size(265, 45);
             this.buttonDocuments.TabIndex = 4;
@@ -163,7 +184,7 @@
             this.buttonHistoriques.ForeColor = System.Drawing.Color.White;
             this.buttonHistoriques.Image = ((System.Drawing.Image)(resources.GetObject("buttonHistoriques.Image")));
             this.buttonHistoriques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHistoriques.Location = new System.Drawing.Point(0, 322);
+            this.buttonHistoriques.Location = new System.Drawing.Point(0, 280);
             this.buttonHistoriques.Name = "buttonHistoriques";
             this.buttonHistoriques.Size = new System.Drawing.Size(265, 45);
             this.buttonHistoriques.TabIndex = 3;
@@ -182,7 +203,7 @@
             this.buttonFinances.ForeColor = System.Drawing.Color.White;
             this.buttonFinances.Image = ((System.Drawing.Image)(resources.GetObject("buttonFinances.Image")));
             this.buttonFinances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFinances.Location = new System.Drawing.Point(0, 220);
+            this.buttonFinances.Location = new System.Drawing.Point(0, 178);
             this.buttonFinances.Name = "buttonFinances";
             this.buttonFinances.Size = new System.Drawing.Size(265, 45);
             this.buttonFinances.TabIndex = 2;
@@ -201,7 +222,7 @@
             this.buttonProprietaires.ForeColor = System.Drawing.Color.White;
             this.buttonProprietaires.Image = ((System.Drawing.Image)(resources.GetObject("buttonProprietaires.Image")));
             this.buttonProprietaires.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProprietaires.Location = new System.Drawing.Point(0, 169);
+            this.buttonProprietaires.Location = new System.Drawing.Point(0, 138);
             this.buttonProprietaires.Name = "buttonProprietaires";
             this.buttonProprietaires.Size = new System.Drawing.Size(265, 45);
             this.buttonProprietaires.TabIndex = 1;
@@ -230,7 +251,7 @@
             this.buttonBiens.ForeColor = System.Drawing.Color.White;
             this.buttonBiens.Image = ((System.Drawing.Image)(resources.GetObject("buttonBiens.Image")));
             this.buttonBiens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBiens.Location = new System.Drawing.Point(0, 118);
+            this.buttonBiens.Location = new System.Drawing.Point(0, 87);
             this.buttonBiens.Name = "buttonBiens";
             this.buttonBiens.Size = new System.Drawing.Size(265, 45);
             this.buttonBiens.TabIndex = 0;
@@ -327,24 +348,24 @@
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-            // buttonUsers
+            // buttonSettings
             // 
-            this.buttonUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonUsers.FlatAppearance.BorderSize = 0;
-            this.buttonUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsers.ForeColor = System.Drawing.Color.White;
-            this.buttonUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsers.Image")));
-            this.buttonUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUsers.Location = new System.Drawing.Point(0, 526);
-            this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(265, 45);
-            this.buttonUsers.TabIndex = 8;
-            this.buttonUsers.Text = "Utilisateurs";
-            this.buttonUsers.UseVisualStyleBackColor = true;
-            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSettings.FlatAppearance.BorderSize = 0;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSettings.ForeColor = System.Drawing.Color.White;
+            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
+            this.buttonSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSettings.Location = new System.Drawing.Point(0, 535);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(265, 45);
+            this.buttonSettings.TabIndex = 9;
+            this.buttonSettings.Text = "Settings";
+            this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // frmMenuOfficiel
             // 
@@ -390,6 +411,7 @@
         private System.Windows.Forms.Button buttonSociete;
         private System.Windows.Forms.Button buttonEmploye;
         private System.Windows.Forms.Button buttonUsers;
+        private System.Windows.Forms.Button buttonSettings;
     }
 }
 

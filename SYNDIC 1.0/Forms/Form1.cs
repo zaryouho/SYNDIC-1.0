@@ -163,5 +163,14 @@ namespace SYNDIC_1._0
 
             flag = 9;
         }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            if (flag != 10 || this.panelContainer.Controls.Count == 0)
+                OpenFormInPannel(new FormEmploye());// to be replaced wit the settings form
+
+
+            flag = 10;
+        }
     }
 }
