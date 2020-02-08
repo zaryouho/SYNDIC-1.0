@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.panelWrapper = new System.Windows.Forms.Panel();
+            this.groupBoxBackup = new System.Windows.Forms.GroupBox();
+            this.radioButtonMonthlyBackup = new System.Windows.Forms.RadioButton();
+            this.radioButtonWeeklyBackup = new System.Windows.Forms.RadioButton();
+            this.radioButtonDailyBackup = new System.Windows.Forms.RadioButton();
             this.buttonRestoreFromExternalDrive = new System.Windows.Forms.Button();
+            this.checkBoxAutoBackup = new System.Windows.Forms.CheckBox();
             this.buttonBackuptoExternalDrive = new System.Windows.Forms.Button();
             this.buttonRestore = new System.Windows.Forms.Button();
             this.buttonBackupDataBase = new System.Windows.Forms.Button();
@@ -37,17 +42,21 @@
             this.labelDataBaseName = new System.Windows.Forms.Label();
             this.comboBoxServerName = new System.Windows.Forms.ComboBox();
             this.labelServerName = new System.Windows.Forms.Label();
-            this.checkBoxAutoBackup = new System.Windows.Forms.CheckBox();
-            this.radioButtonDailyBackup = new System.Windows.Forms.RadioButton();
-            this.groupBoxBackup = new System.Windows.Forms.GroupBox();
-            this.radioButtonWeeklyBackup = new System.Windows.Forms.RadioButton();
-            this.radioButtonMonthlyBackup = new System.Windows.Forms.RadioButton();
+            this.panelBackgroundWorkerContainer = new System.Windows.Forms.Panel();
+            this.buttonStartBackgroundWorker = new System.Windows.Forms.Button();
+            this.buttonCancelBackgroundWorker = new System.Windows.Forms.Button();
+            this.progressBarBackgroundWorker = new System.Windows.Forms.ProgressBar();
+            this.labelResultPercentage = new System.Windows.Forms.Label();
+            this.backgroundWorkerBackup = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerRestore = new System.ComponentModel.BackgroundWorker();
             this.panelWrapper.SuspendLayout();
             this.groupBoxBackup.SuspendLayout();
+            this.panelBackgroundWorkerContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWrapper
             // 
+            this.panelWrapper.Controls.Add(this.panelBackgroundWorkerContainer);
             this.panelWrapper.Controls.Add(this.groupBoxBackup);
             this.panelWrapper.Controls.Add(this.buttonRestoreFromExternalDrive);
             this.panelWrapper.Controls.Add(this.checkBoxAutoBackup);
@@ -65,6 +74,50 @@
             this.panelWrapper.TabIndex = 0;
             this.panelWrapper.Paint += new System.Windows.Forms.PaintEventHandler(this.panelWrapper_Paint);
             // 
+            // groupBoxBackup
+            // 
+            this.groupBoxBackup.Controls.Add(this.radioButtonMonthlyBackup);
+            this.groupBoxBackup.Controls.Add(this.radioButtonWeeklyBackup);
+            this.groupBoxBackup.Controls.Add(this.radioButtonDailyBackup);
+            this.groupBoxBackup.Location = new System.Drawing.Point(188, 316);
+            this.groupBoxBackup.Name = "groupBoxBackup";
+            this.groupBoxBackup.Size = new System.Drawing.Size(156, 93);
+            this.groupBoxBackup.TabIndex = 10;
+            this.groupBoxBackup.TabStop = false;
+            // 
+            // radioButtonMonthlyBackup
+            // 
+            this.radioButtonMonthlyBackup.AutoSize = true;
+            this.radioButtonMonthlyBackup.Location = new System.Drawing.Point(6, 69);
+            this.radioButtonMonthlyBackup.Name = "radioButtonMonthlyBackup";
+            this.radioButtonMonthlyBackup.Size = new System.Drawing.Size(62, 17);
+            this.radioButtonMonthlyBackup.TabIndex = 11;
+            this.radioButtonMonthlyBackup.TabStop = true;
+            this.radioButtonMonthlyBackup.Text = "Monthly";
+            this.radioButtonMonthlyBackup.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWeeklyBackup
+            // 
+            this.radioButtonWeeklyBackup.AutoSize = true;
+            this.radioButtonWeeklyBackup.Location = new System.Drawing.Point(6, 46);
+            this.radioButtonWeeklyBackup.Name = "radioButtonWeeklyBackup";
+            this.radioButtonWeeklyBackup.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonWeeklyBackup.TabIndex = 10;
+            this.radioButtonWeeklyBackup.TabStop = true;
+            this.radioButtonWeeklyBackup.Text = "Weekly";
+            this.radioButtonWeeklyBackup.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonDailyBackup
+            // 
+            this.radioButtonDailyBackup.AutoSize = true;
+            this.radioButtonDailyBackup.Location = new System.Drawing.Point(6, 23);
+            this.radioButtonDailyBackup.Name = "radioButtonDailyBackup";
+            this.radioButtonDailyBackup.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonDailyBackup.TabIndex = 9;
+            this.radioButtonDailyBackup.TabStop = true;
+            this.radioButtonDailyBackup.Text = "Daily";
+            this.radioButtonDailyBackup.UseVisualStyleBackColor = true;
+            // 
             // buttonRestoreFromExternalDrive
             // 
             this.buttonRestoreFromExternalDrive.Location = new System.Drawing.Point(188, 264);
@@ -74,6 +127,17 @@
             this.buttonRestoreFromExternalDrive.Text = "Restore from external drive";
             this.buttonRestoreFromExternalDrive.UseVisualStyleBackColor = true;
             this.buttonRestoreFromExternalDrive.Click += new System.EventHandler(this.buttonRestoreFromExternalDrive_Click);
+            // 
+            // checkBoxAutoBackup
+            // 
+            this.checkBoxAutoBackup.AutoSize = true;
+            this.checkBoxAutoBackup.Location = new System.Drawing.Point(208, 301);
+            this.checkBoxAutoBackup.Name = "checkBoxAutoBackup";
+            this.checkBoxAutoBackup.Size = new System.Drawing.Size(86, 17);
+            this.checkBoxAutoBackup.TabIndex = 8;
+            this.checkBoxAutoBackup.Text = "auto backup";
+            this.checkBoxAutoBackup.UseVisualStyleBackColor = true;
+            this.checkBoxAutoBackup.CheckedChanged += new System.EventHandler(this.checkBoxAutoBackup_CheckedChanged);
             // 
             // buttonBackuptoExternalDrive
             // 
@@ -139,60 +203,61 @@
             this.labelServerName.TabIndex = 0;
             this.labelServerName.Text = "Nom de serveur : ";
             // 
-            // checkBoxAutoBackup
+            // panelBackgroundWorkerContainer
             // 
-            this.checkBoxAutoBackup.AutoSize = true;
-            this.checkBoxAutoBackup.Location = new System.Drawing.Point(208, 301);
-            this.checkBoxAutoBackup.Name = "checkBoxAutoBackup";
-            this.checkBoxAutoBackup.Size = new System.Drawing.Size(86, 17);
-            this.checkBoxAutoBackup.TabIndex = 8;
-            this.checkBoxAutoBackup.Text = "auto backup";
-            this.checkBoxAutoBackup.UseVisualStyleBackColor = true;
-            this.checkBoxAutoBackup.CheckedChanged += new System.EventHandler(this.checkBoxAutoBackup_CheckedChanged);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.labelResultPercentage);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.progressBarBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.buttonCancelBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.buttonStartBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Location = new System.Drawing.Point(376, 235);
+            this.panelBackgroundWorkerContainer.Name = "panelBackgroundWorkerContainer";
+            this.panelBackgroundWorkerContainer.Size = new System.Drawing.Size(194, 121);
+            this.panelBackgroundWorkerContainer.TabIndex = 11;
             // 
-            // radioButtonDailyBackup
+            // buttonStartBackgroundWorker
             // 
-            this.radioButtonDailyBackup.AutoSize = true;
-            this.radioButtonDailyBackup.Location = new System.Drawing.Point(6, 23);
-            this.radioButtonDailyBackup.Name = "radioButtonDailyBackup";
-            this.radioButtonDailyBackup.Size = new System.Drawing.Size(48, 17);
-            this.radioButtonDailyBackup.TabIndex = 9;
-            this.radioButtonDailyBackup.TabStop = true;
-            this.radioButtonDailyBackup.Text = "Daily";
-            this.radioButtonDailyBackup.UseVisualStyleBackColor = true;
+            this.buttonStartBackgroundWorker.Location = new System.Drawing.Point(12, 12);
+            this.buttonStartBackgroundWorker.Name = "buttonStartBackgroundWorker";
+            this.buttonStartBackgroundWorker.Size = new System.Drawing.Size(75, 23);
+            this.buttonStartBackgroundWorker.TabIndex = 0;
+            this.buttonStartBackgroundWorker.Text = "Start";
+            this.buttonStartBackgroundWorker.UseVisualStyleBackColor = true;
             // 
-            // groupBoxBackup
+            // buttonCancelBackgroundWorker
             // 
-            this.groupBoxBackup.Controls.Add(this.radioButtonMonthlyBackup);
-            this.groupBoxBackup.Controls.Add(this.radioButtonWeeklyBackup);
-            this.groupBoxBackup.Controls.Add(this.radioButtonDailyBackup);
-            this.groupBoxBackup.Location = new System.Drawing.Point(188, 316);
-            this.groupBoxBackup.Name = "groupBoxBackup";
-            this.groupBoxBackup.Size = new System.Drawing.Size(156, 93);
-            this.groupBoxBackup.TabIndex = 10;
-            this.groupBoxBackup.TabStop = false;
+            this.buttonCancelBackgroundWorker.Location = new System.Drawing.Point(106, 12);
+            this.buttonCancelBackgroundWorker.Name = "buttonCancelBackgroundWorker";
+            this.buttonCancelBackgroundWorker.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelBackgroundWorker.TabIndex = 1;
+            this.buttonCancelBackgroundWorker.Text = "Cancel";
+            this.buttonCancelBackgroundWorker.UseVisualStyleBackColor = true;
             // 
-            // radioButtonWeeklyBackup
+            // progressBarBackgroundWorker
             // 
-            this.radioButtonWeeklyBackup.AutoSize = true;
-            this.radioButtonWeeklyBackup.Location = new System.Drawing.Point(6, 46);
-            this.radioButtonWeeklyBackup.Name = "radioButtonWeeklyBackup";
-            this.radioButtonWeeklyBackup.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonWeeklyBackup.TabIndex = 10;
-            this.radioButtonWeeklyBackup.TabStop = true;
-            this.radioButtonWeeklyBackup.Text = "Weekly";
-            this.radioButtonWeeklyBackup.UseVisualStyleBackColor = true;
+            this.progressBarBackgroundWorker.Location = new System.Drawing.Point(12, 49);
+            this.progressBarBackgroundWorker.Name = "progressBarBackgroundWorker";
+            this.progressBarBackgroundWorker.Size = new System.Drawing.Size(169, 23);
+            this.progressBarBackgroundWorker.TabIndex = 2;
             // 
-            // radioButtonMonthlyBackup
+            // labelResultPercentage
             // 
-            this.radioButtonMonthlyBackup.AutoSize = true;
-            this.radioButtonMonthlyBackup.Location = new System.Drawing.Point(6, 69);
-            this.radioButtonMonthlyBackup.Name = "radioButtonMonthlyBackup";
-            this.radioButtonMonthlyBackup.Size = new System.Drawing.Size(62, 17);
-            this.radioButtonMonthlyBackup.TabIndex = 11;
-            this.radioButtonMonthlyBackup.TabStop = true;
-            this.radioButtonMonthlyBackup.Text = "Monthly";
-            this.radioButtonMonthlyBackup.UseVisualStyleBackColor = true;
+            this.labelResultPercentage.AutoSize = true;
+            this.labelResultPercentage.Location = new System.Drawing.Point(77, 87);
+            this.labelResultPercentage.Name = "labelResultPercentage";
+            this.labelResultPercentage.Size = new System.Drawing.Size(35, 13);
+            this.labelResultPercentage.TabIndex = 3;
+            this.labelResultPercentage.Text = "label1";
+            // 
+            // backgroundWorkerBackup
+            // 
+            this.backgroundWorkerBackup.WorkerReportsProgress = true;
+            this.backgroundWorkerBackup.WorkerSupportsCancellation = true;
+            this.backgroundWorkerBackup.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBackup_DoWork);
+            // 
+            // backgroundWorkerRestore
+            // 
+            this.backgroundWorkerRestore.WorkerReportsProgress = true;
+            this.backgroundWorkerRestore.WorkerSupportsCancellation = true;
             // 
             // FormSettings
             // 
@@ -208,6 +273,8 @@
             this.panelWrapper.PerformLayout();
             this.groupBoxBackup.ResumeLayout(false);
             this.groupBoxBackup.PerformLayout();
+            this.panelBackgroundWorkerContainer.ResumeLayout(false);
+            this.panelBackgroundWorkerContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +295,12 @@
         private System.Windows.Forms.RadioButton radioButtonWeeklyBackup;
         private System.Windows.Forms.RadioButton radioButtonDailyBackup;
         private System.Windows.Forms.CheckBox checkBoxAutoBackup;
+        private System.Windows.Forms.Panel panelBackgroundWorkerContainer;
+        private System.Windows.Forms.Label labelResultPercentage;
+        private System.Windows.Forms.ProgressBar progressBarBackgroundWorker;
+        private System.Windows.Forms.Button buttonCancelBackgroundWorker;
+        private System.Windows.Forms.Button buttonStartBackgroundWorker;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerBackup;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerRestore;
     }
 }

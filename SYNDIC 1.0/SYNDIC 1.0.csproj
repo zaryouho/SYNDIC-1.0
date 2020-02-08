@@ -56,10 +56,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
-    <Compile Include="FormSettings.cs">
+    <Compile Include="Forms\FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSettings.Designer.cs">
+    <Compile Include="Forms\FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
@@ -229,7 +229,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormSettings.resx">
+    <EmbeddedResource Include="Forms\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">

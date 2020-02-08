@@ -94,7 +94,6 @@
             this.splitContainerMain.Panel2.Controls.Add(this.buttonDeleteUser);
             this.splitContainerMain.Panel2.Controls.Add(this.buttonModifyUser);
             this.splitContainerMain.Panel2.Controls.Add(this.buttonAddUser);
-            this.splitContainerMain.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainerMain.Size = new System.Drawing.Size(800, 393);
             this.splitContainerMain.SplitterDistance = 197;
             this.splitContainerMain.TabIndex = 1;
@@ -107,7 +106,6 @@
             this.buttonAddUser.TabIndex = 0;
             this.buttonAddUser.Text = "Ajouter utilisateur";
             this.buttonAddUser.UseVisualStyleBackColor = true;
-            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // buttonModifyUser
             // 
@@ -220,7 +218,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUtilisateurs";
             this.Text = "FormUtilisateurs";
-            this.Load += new System.EventHandler(this.FormUtilisateurs_Load);
             this.panelWrapper.ResumeLayout(false);
             this.splitContainerMain.Panel1.ResumeLayout(false);
             this.splitContainerMain.Panel2.ResumeLayout(false);
