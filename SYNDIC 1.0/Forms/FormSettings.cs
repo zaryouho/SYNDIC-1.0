@@ -17,6 +17,7 @@ namespace SYNDIC_1._0
     public partial class FormSettings : Form
     {
         public string autoBackupDatabaseName = string.Empty;
+        public string button = string.Empty;
         
         public FormSettings()
         {
@@ -103,11 +104,6 @@ namespace SYNDIC_1._0
 
         }
 
-        private void panelWrapper_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void FormSettings_Load(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -137,13 +133,7 @@ namespace SYNDIC_1._0
                     break;
             }
         }
-
-        private void buttonBackupDataBase_Click(object sender, EventArgs e)
-        {
-            backupandRestore("backup", false, false);
-        }
-
-        public string backupPath()
+        private string backupPath()
         {
             using (FolderBrowserDialog browserDialog = new FolderBrowserDialog())
             {
@@ -152,19 +142,32 @@ namespace SYNDIC_1._0
             }
         }
 
+        private void buttonBackupDataBase_Click(object sender, EventArgs e)
+        {
+            panelBackgroundWorkerContainer.Visible = true;
+            button = "buttonBackupDataBase";
+            //backupandRestore("backup", false, false); moved to the Background Worker
+        }
+
         private void buttonBackuptoExternalDrive_Click(object sender, EventArgs e)
         {
-            backupandRestore("backup", false, true);
+            panelBackgroundWorkerContainer.Visible = true;
+            button = "buttonBackuptoExternalDrive";
+            //backupandRestore("backup", false, true); moved to the Background Worker
         }
 
         private void buttonRestore_Click(object sender, EventArgs e)
         {
-            backupandRestore("restore", false, false);
+            panelBackgroundWorkerContainer.Visible = true;
+            button = "buttonRestore";
+            //backupandRestore("restore", false, false); moved to the Background Worker
         }
 
         private void buttonRestoreFromExternalDrive_Click(object sender, EventArgs e)
         {
-            backupandRestore("restore", false, true);
+            panelBackgroundWorkerContainer.Visible = true;
+            button = "buttonRestoreFromExternalDrive";
+            //backupandRestore("restore", false, true); moved to the Background Worker
         }
 
         private void checkBoxAutoBackup_CheckedChanged(object sender, EventArgs e)
@@ -195,10 +198,6 @@ namespace SYNDIC_1._0
             }
         }
 
-        private void backgroundWorkerBackup_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
-        }
         /// <summary>
         /// Either backs up or restores the current database 
         /// </summary>
@@ -207,7 +206,7 @@ namespace SYNDIC_1._0
         /// </param>
         /// <param name="autoBackup"> <b>true<b> if checkBoxAutoBackup is checked else <b>false<b> </param>
         /// <param name="external"> <b>true<b> if the back up or restore location is an external drive else <b>false<b></param>
-        public void backupandRestore(string operation,bool autoBackup,bool external)
+        private void backupandRestore(string operation,bool autoBackup,bool external)
         {
             string query = string.Empty;
             switch (operation)
@@ -294,6 +293,133 @@ namespace SYNDIC_1._0
                     }
                 }
             }
+        }
+
+        private void backgroundWorkerBackup_DoWork(object sender, DoWorkEventArgs e)
+        {
+            backupandRestore("backup", false, false);
+        }
+
+        private void backgroundWorkerBackup_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBarBackgroundWorker.Value = e.ProgressPercentage;
+            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorkerBackup_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
+            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
+            panelBackgroundWorkerContainer.Visible = false;
+            button = string.Empty;
+        }
+
+        private void buttonStartBackgroundWorker_Click(object sender, EventArgs e)
+        {
+            switch (button)
+            {
+                case "buttonBackupDataBase":
+                    if (!backgroundWorkerBackup.IsBusy)
+                    {
+                        backgroundWorkerBackup.RunWorkerAsync(); 
+                    }
+                    break;
+                case "buttonBackuptoExternalDrive":
+                    if (!backgroundWorkerBackuptoExternal.IsBusy)
+                    {
+                        backgroundWorkerBackuptoExternal.RunWorkerAsync(); 
+                    }
+                    break;
+                case "buttonRestore":
+                    if (!backgroundWorkerRestore.IsBusy)
+                    {
+                        backgroundWorkerRestore.RunWorkerAsync(); 
+                    }
+                    break;
+                case "buttonRestoreFromExternalDrive":
+                    if (!backgroundWorkerRestoreExternal.IsBusy)
+                    {
+                        backgroundWorkerRestoreExternal.RunWorkerAsync(); 
+                    }
+                    break;
+            }
+        }
+
+        private void buttonCancelBackgroundWorker_Click(object sender, EventArgs e)
+        {
+            if (backgroundWorkerBackup.IsBusy)
+            {
+                backgroundWorkerBackup.CancelAsync();
+            }
+            if (backgroundWorkerBackuptoExternal.IsBusy)
+            {
+                backgroundWorkerBackuptoExternal.CancelAsync();
+            }
+            if (backgroundWorkerRestore.IsBusy)
+            {
+                backgroundWorkerRestore.CancelAsync();
+            }
+            if (backgroundWorkerRestoreExternal.IsBusy)
+            {
+                backgroundWorkerRestoreExternal.CancelAsync();
+            }
+        }
+
+        private void backgroundWorkerBackuptoExternal_DoWork(object sender, DoWorkEventArgs e)
+        {
+            backupandRestore("backup", false, true);
+        }
+
+        private void backgroundWorkerBackuptoExternal_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBarBackgroundWorker.Value = e.ProgressPercentage;
+            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorkerBackuptoExternal_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
+            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
+            panelBackgroundWorkerContainer.Visible = false;
+            button = string.Empty;
+        }
+
+        private void backgroundWorkerRestore_DoWork(object sender, DoWorkEventArgs e)
+        {
+            backupandRestore("restore", false, false);
+        }
+
+        private void backgroundWorkerRestore_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBarBackgroundWorker.Value = e.ProgressPercentage;
+            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorkerRestore_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
+            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
+            panelBackgroundWorkerContainer.Visible = false;
+            button = string.Empty;
+        }
+
+        private void backgroundWorkerRestoreExternal_DoWork(object sender, DoWorkEventArgs e)
+        {
+            backupandRestore("restore", false, true);
+        }
+
+        private void backgroundWorkerRestoreExternal_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBarBackgroundWorker.Value = e.ProgressPercentage;
+            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorkerRestoreExternal_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
+            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
+            panelBackgroundWorkerContainer.Visible = false;
+            button = string.Empty;
         }
     }
 }

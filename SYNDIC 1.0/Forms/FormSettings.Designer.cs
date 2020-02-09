@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panelWrapper = new System.Windows.Forms.Panel();
+            this.panelBackgroundWorkerContainer = new System.Windows.Forms.Panel();
+            this.labelResultPercentage = new System.Windows.Forms.Label();
+            this.progressBarBackgroundWorker = new System.Windows.Forms.ProgressBar();
+            this.buttonCancelBackgroundWorker = new System.Windows.Forms.Button();
+            this.buttonStartBackgroundWorker = new System.Windows.Forms.Button();
             this.groupBoxBackup = new System.Windows.Forms.GroupBox();
             this.radioButtonMonthlyBackup = new System.Windows.Forms.RadioButton();
             this.radioButtonWeeklyBackup = new System.Windows.Forms.RadioButton();
@@ -42,16 +47,13 @@
             this.labelDataBaseName = new System.Windows.Forms.Label();
             this.comboBoxServerName = new System.Windows.Forms.ComboBox();
             this.labelServerName = new System.Windows.Forms.Label();
-            this.panelBackgroundWorkerContainer = new System.Windows.Forms.Panel();
-            this.buttonStartBackgroundWorker = new System.Windows.Forms.Button();
-            this.buttonCancelBackgroundWorker = new System.Windows.Forms.Button();
-            this.progressBarBackgroundWorker = new System.Windows.Forms.ProgressBar();
-            this.labelResultPercentage = new System.Windows.Forms.Label();
             this.backgroundWorkerBackup = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerBackuptoExternal = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerRestore = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerRestoreExternal = new System.ComponentModel.BackgroundWorker();
             this.panelWrapper.SuspendLayout();
-            this.groupBoxBackup.SuspendLayout();
             this.panelBackgroundWorkerContainer.SuspendLayout();
+            this.groupBoxBackup.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWrapper
@@ -72,7 +74,52 @@
             this.panelWrapper.Name = "panelWrapper";
             this.panelWrapper.Size = new System.Drawing.Size(800, 450);
             this.panelWrapper.TabIndex = 0;
-            this.panelWrapper.Paint += new System.Windows.Forms.PaintEventHandler(this.panelWrapper_Paint);
+            // 
+            // panelBackgroundWorkerContainer
+            // 
+            this.panelBackgroundWorkerContainer.Controls.Add(this.labelResultPercentage);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.progressBarBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.buttonCancelBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Controls.Add(this.buttonStartBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Location = new System.Drawing.Point(376, 235);
+            this.panelBackgroundWorkerContainer.Name = "panelBackgroundWorkerContainer";
+            this.panelBackgroundWorkerContainer.Size = new System.Drawing.Size(194, 121);
+            this.panelBackgroundWorkerContainer.TabIndex = 11;
+            // 
+            // labelResultPercentage
+            // 
+            this.labelResultPercentage.AutoSize = true;
+            this.labelResultPercentage.Location = new System.Drawing.Point(77, 87);
+            this.labelResultPercentage.Name = "labelResultPercentage";
+            this.labelResultPercentage.Size = new System.Drawing.Size(0, 13);
+            this.labelResultPercentage.TabIndex = 3;
+            // 
+            // progressBarBackgroundWorker
+            // 
+            this.progressBarBackgroundWorker.Location = new System.Drawing.Point(12, 49);
+            this.progressBarBackgroundWorker.Name = "progressBarBackgroundWorker";
+            this.progressBarBackgroundWorker.Size = new System.Drawing.Size(169, 23);
+            this.progressBarBackgroundWorker.TabIndex = 2;
+            // 
+            // buttonCancelBackgroundWorker
+            // 
+            this.buttonCancelBackgroundWorker.Location = new System.Drawing.Point(106, 12);
+            this.buttonCancelBackgroundWorker.Name = "buttonCancelBackgroundWorker";
+            this.buttonCancelBackgroundWorker.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelBackgroundWorker.TabIndex = 1;
+            this.buttonCancelBackgroundWorker.Text = "Cancel";
+            this.buttonCancelBackgroundWorker.UseVisualStyleBackColor = true;
+            this.buttonCancelBackgroundWorker.Click += new System.EventHandler(this.buttonCancelBackgroundWorker_Click);
+            // 
+            // buttonStartBackgroundWorker
+            // 
+            this.buttonStartBackgroundWorker.Location = new System.Drawing.Point(12, 12);
+            this.buttonStartBackgroundWorker.Name = "buttonStartBackgroundWorker";
+            this.buttonStartBackgroundWorker.Size = new System.Drawing.Size(75, 23);
+            this.buttonStartBackgroundWorker.TabIndex = 0;
+            this.buttonStartBackgroundWorker.Text = "Start";
+            this.buttonStartBackgroundWorker.UseVisualStyleBackColor = true;
+            this.buttonStartBackgroundWorker.Click += new System.EventHandler(this.buttonStartBackgroundWorker_Click);
             // 
             // groupBoxBackup
             // 
@@ -203,61 +250,37 @@
             this.labelServerName.TabIndex = 0;
             this.labelServerName.Text = "Nom de serveur : ";
             // 
-            // panelBackgroundWorkerContainer
-            // 
-            this.panelBackgroundWorkerContainer.Controls.Add(this.labelResultPercentage);
-            this.panelBackgroundWorkerContainer.Controls.Add(this.progressBarBackgroundWorker);
-            this.panelBackgroundWorkerContainer.Controls.Add(this.buttonCancelBackgroundWorker);
-            this.panelBackgroundWorkerContainer.Controls.Add(this.buttonStartBackgroundWorker);
-            this.panelBackgroundWorkerContainer.Location = new System.Drawing.Point(376, 235);
-            this.panelBackgroundWorkerContainer.Name = "panelBackgroundWorkerContainer";
-            this.panelBackgroundWorkerContainer.Size = new System.Drawing.Size(194, 121);
-            this.panelBackgroundWorkerContainer.TabIndex = 11;
-            // 
-            // buttonStartBackgroundWorker
-            // 
-            this.buttonStartBackgroundWorker.Location = new System.Drawing.Point(12, 12);
-            this.buttonStartBackgroundWorker.Name = "buttonStartBackgroundWorker";
-            this.buttonStartBackgroundWorker.Size = new System.Drawing.Size(75, 23);
-            this.buttonStartBackgroundWorker.TabIndex = 0;
-            this.buttonStartBackgroundWorker.Text = "Start";
-            this.buttonStartBackgroundWorker.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancelBackgroundWorker
-            // 
-            this.buttonCancelBackgroundWorker.Location = new System.Drawing.Point(106, 12);
-            this.buttonCancelBackgroundWorker.Name = "buttonCancelBackgroundWorker";
-            this.buttonCancelBackgroundWorker.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelBackgroundWorker.TabIndex = 1;
-            this.buttonCancelBackgroundWorker.Text = "Cancel";
-            this.buttonCancelBackgroundWorker.UseVisualStyleBackColor = true;
-            // 
-            // progressBarBackgroundWorker
-            // 
-            this.progressBarBackgroundWorker.Location = new System.Drawing.Point(12, 49);
-            this.progressBarBackgroundWorker.Name = "progressBarBackgroundWorker";
-            this.progressBarBackgroundWorker.Size = new System.Drawing.Size(169, 23);
-            this.progressBarBackgroundWorker.TabIndex = 2;
-            // 
-            // labelResultPercentage
-            // 
-            this.labelResultPercentage.AutoSize = true;
-            this.labelResultPercentage.Location = new System.Drawing.Point(77, 87);
-            this.labelResultPercentage.Name = "labelResultPercentage";
-            this.labelResultPercentage.Size = new System.Drawing.Size(35, 13);
-            this.labelResultPercentage.TabIndex = 3;
-            this.labelResultPercentage.Text = "label1";
-            // 
             // backgroundWorkerBackup
             // 
             this.backgroundWorkerBackup.WorkerReportsProgress = true;
             this.backgroundWorkerBackup.WorkerSupportsCancellation = true;
             this.backgroundWorkerBackup.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBackup_DoWork);
+            this.backgroundWorkerBackup.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerBackup_ProgressChanged);
+            this.backgroundWorkerBackup.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerBackup_RunWorkerCompleted);
+            // 
+            // backgroundWorkerBackuptoExternal
+            // 
+            this.backgroundWorkerBackuptoExternal.WorkerReportsProgress = true;
+            this.backgroundWorkerBackuptoExternal.WorkerSupportsCancellation = true;
+            this.backgroundWorkerBackuptoExternal.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBackuptoExternal_DoWork);
+            this.backgroundWorkerBackuptoExternal.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerBackuptoExternal_ProgressChanged);
+            this.backgroundWorkerBackuptoExternal.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerBackuptoExternal_RunWorkerCompleted);
             // 
             // backgroundWorkerRestore
             // 
             this.backgroundWorkerRestore.WorkerReportsProgress = true;
             this.backgroundWorkerRestore.WorkerSupportsCancellation = true;
+            this.backgroundWorkerRestore.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerRestore_DoWork);
+            this.backgroundWorkerRestore.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerRestore_ProgressChanged);
+            this.backgroundWorkerRestore.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerRestore_RunWorkerCompleted);
+            // 
+            // backgroundWorkerRestoreExternal
+            // 
+            this.backgroundWorkerRestoreExternal.WorkerReportsProgress = true;
+            this.backgroundWorkerRestoreExternal.WorkerSupportsCancellation = true;
+            this.backgroundWorkerRestoreExternal.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerRestoreExternal_DoWork);
+            this.backgroundWorkerRestoreExternal.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerRestoreExternal_ProgressChanged);
+            this.backgroundWorkerRestoreExternal.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerRestoreExternal_RunWorkerCompleted);
             // 
             // FormSettings
             // 
@@ -271,10 +294,10 @@
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.panelWrapper.ResumeLayout(false);
             this.panelWrapper.PerformLayout();
-            this.groupBoxBackup.ResumeLayout(false);
-            this.groupBoxBackup.PerformLayout();
             this.panelBackgroundWorkerContainer.ResumeLayout(false);
             this.panelBackgroundWorkerContainer.PerformLayout();
+            this.groupBoxBackup.ResumeLayout(false);
+            this.groupBoxBackup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,6 +324,8 @@
         private System.Windows.Forms.Button buttonCancelBackgroundWorker;
         private System.Windows.Forms.Button buttonStartBackgroundWorker;
         private System.ComponentModel.BackgroundWorker backgroundWorkerBackup;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerBackuptoExternal;
         private System.ComponentModel.BackgroundWorker backgroundWorkerRestore;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerRestoreExternal;
     }
 }
