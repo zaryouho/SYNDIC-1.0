@@ -200,14 +200,14 @@ namespace SYNDIC_1._0
 
         private void frmHistoriques_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (dataGridViewHistorique.SelectedRows.Count != 0 && StringHelper.EnterIsPressed(e))
+            if (dataGridViewHistorique.SelectedRows.Count != 0 )
             {
                 if (dataGridViewHistorique.Focused)
                 {
-                    buttonDelete_Click(sender,e);
+                    buttonDelete.PerformClick();
                 }
             }
-            if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now && StringHelper.EnterIsPressed(e))
+            if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now )
             {
                 buttonSearchDataGridView_Click(sender, e);
             }

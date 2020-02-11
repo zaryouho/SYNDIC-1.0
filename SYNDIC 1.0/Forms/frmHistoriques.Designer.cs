@@ -41,24 +41,24 @@
             this.textBoxStrings = new System.Windows.Forms.TextBox();
             this.labelWords = new System.Windows.Forms.Label();
             this.panelAll = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.buttonTofirst = new System.Windows.Forms.Button();
-            this.buttonToPrev = new System.Windows.Forms.Button();
-            this.buttonToNext = new System.Windows.Forms.Button();
             this.buttonToLast = new System.Windows.Forms.Button();
+            this.buttonToNext = new System.Windows.Forms.Button();
+            this.buttonToPrev = new System.Windows.Forms.Button();
+            this.buttonTofirst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorique)).BeginInit();
             this.groupBoxSearchDataGridView.SuspendLayout();
             this.panelAll.SuspendLayout();
+            this.panelFooter.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panelFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelHistoriques
@@ -138,7 +138,7 @@
             // dateTimePickerHistorique
             // 
             this.dateTimePickerHistorique.CustomFormat = "dd/mm/yyyy";
-            this.dateTimePickerHistorique.Location = new System.Drawing.Point(397, 27);
+            this.dateTimePickerHistorique.Location = new System.Drawing.Point(390, 29);
             this.dateTimePickerHistorique.Name = "dateTimePickerHistorique";
             this.dateTimePickerHistorique.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerHistorique.TabIndex = 3;
@@ -147,7 +147,7 @@
             // labelFilterByDateTimePicker
             // 
             this.labelFilterByDateTimePicker.AutoSize = true;
-            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(322, 29);
+            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(315, 35);
             this.labelFilterByDateTimePicker.Name = "labelFilterByDateTimePicker";
             this.labelFilterByDateTimePicker.Size = new System.Drawing.Size(69, 13);
             this.labelFilterByDateTimePicker.TabIndex = 4;
@@ -161,7 +161,7 @@
             "Nom_Utilisateur",
             "Action",
             "Valeur"});
-            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 26);
+            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 32);
             this.comboBoxFilterItems.Name = "comboBoxFilterItems";
             this.comboBoxFilterItems.Size = new System.Drawing.Size(101, 21);
             this.comboBoxFilterItems.TabIndex = 2;
@@ -169,7 +169,7 @@
             // labelFilter
             // 
             this.labelFilter.AutoSize = true;
-            this.labelFilter.Location = new System.Drawing.Point(146, 29);
+            this.labelFilter.Location = new System.Drawing.Point(146, 35);
             this.labelFilter.Name = "labelFilter";
             this.labelFilter.Size = new System.Drawing.Size(56, 13);
             this.labelFilter.TabIndex = 2;
@@ -177,7 +177,7 @@
             // 
             // textBoxStrings
             // 
-            this.textBoxStrings.Location = new System.Drawing.Point(42, 26);
+            this.textBoxStrings.Location = new System.Drawing.Point(42, 32);
             this.textBoxStrings.Name = "textBoxStrings";
             this.textBoxStrings.Size = new System.Drawing.Size(98, 20);
             this.textBoxStrings.TabIndex = 1;
@@ -187,7 +187,7 @@
             this.labelWords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelWords.AutoSize = true;
-            this.labelWords.Location = new System.Drawing.Point(0, 29);
+            this.labelWords.Location = new System.Drawing.Point(0, 35);
             this.labelWords.Name = "labelWords";
             this.labelWords.Size = new System.Drawing.Size(36, 13);
             this.labelWords.TabIndex = 0;
@@ -205,6 +205,24 @@
             this.panelAll.Size = new System.Drawing.Size(800, 567);
             this.panelAll.TabIndex = 11;
             this.panelAll.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAll_Paint);
+            // 
+            // panelFooter
+            // 
+            this.panelFooter.Controls.Add(this.buttonDelete);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 516);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(800, 51);
+            this.panelFooter.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBoxSearchDataGridView);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 71);
+            this.panel2.TabIndex = 6;
             // 
             // panelHeader
             // 
@@ -236,59 +254,37 @@
             this.splitContainer1.SplitterDistance = 87;
             this.splitContainer1.TabIndex = 11;
             // 
-            // panel2
+            // buttonToLast
             // 
-            this.panel2.Controls.Add(this.groupBoxSearchDataGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 71);
-            this.panel2.TabIndex = 6;
-            // 
-            // panelFooter
-            // 
-            this.panelFooter.Controls.Add(this.buttonDelete);
-            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 516);
-            this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(800, 51);
-            this.panelFooter.TabIndex = 12;
-            // 
-            // buttonTofirst
-            // 
-            this.buttonTofirst.Location = new System.Drawing.Point(9, 204);
-            this.buttonTofirst.Name = "buttonTofirst";
-            this.buttonTofirst.Size = new System.Drawing.Size(75, 48);
-            this.buttonTofirst.TabIndex = 5;
-            this.buttonTofirst.Text = "button1";
-            this.buttonTofirst.UseVisualStyleBackColor = true;
-            // 
-            // buttonToPrev
-            // 
-            this.buttonToPrev.Location = new System.Drawing.Point(9, 258);
-            this.buttonToPrev.Name = "buttonToPrev";
-            this.buttonToPrev.Size = new System.Drawing.Size(75, 48);
-            this.buttonToPrev.TabIndex = 6;
-            this.buttonToPrev.Text = "button2";
-            this.buttonToPrev.UseVisualStyleBackColor = true;
+            this.buttonToLast.Location = new System.Drawing.Point(9, 366);
+            this.buttonToLast.Name = "buttonToLast";
+            this.buttonToLast.Size = new System.Drawing.Size(65, 48);
+            this.buttonToLast.TabIndex = 8;
+            this.buttonToLast.UseVisualStyleBackColor = true;
             // 
             // buttonToNext
             // 
             this.buttonToNext.Location = new System.Drawing.Point(9, 312);
             this.buttonToNext.Name = "buttonToNext";
-            this.buttonToNext.Size = new System.Drawing.Size(75, 48);
+            this.buttonToNext.Size = new System.Drawing.Size(65, 48);
             this.buttonToNext.TabIndex = 7;
-            this.buttonToNext.Text = "button3";
             this.buttonToNext.UseVisualStyleBackColor = true;
             // 
-            // buttonToLast
+            // buttonToPrev
             // 
-            this.buttonToLast.Location = new System.Drawing.Point(9, 366);
-            this.buttonToLast.Name = "buttonToLast";
-            this.buttonToLast.Size = new System.Drawing.Size(75, 48);
-            this.buttonToLast.TabIndex = 8;
-            this.buttonToLast.Text = "button4";
-            this.buttonToLast.UseVisualStyleBackColor = true;
+            this.buttonToPrev.Location = new System.Drawing.Point(9, 258);
+            this.buttonToPrev.Name = "buttonToPrev";
+            this.buttonToPrev.Size = new System.Drawing.Size(65, 48);
+            this.buttonToPrev.TabIndex = 6;
+            this.buttonToPrev.UseVisualStyleBackColor = true;
+            // 
+            // buttonTofirst
+            // 
+            this.buttonTofirst.Location = new System.Drawing.Point(9, 204);
+            this.buttonTofirst.Name = "buttonTofirst";
+            this.buttonTofirst.Size = new System.Drawing.Size(65, 48);
+            this.buttonTofirst.TabIndex = 5;
+            this.buttonTofirst.UseVisualStyleBackColor = true;
             // 
             // frmHistoriques
             // 
@@ -305,14 +301,14 @@
             this.groupBoxSearchDataGridView.ResumeLayout(false);
             this.groupBoxSearchDataGridView.PerformLayout();
             this.panelAll.ResumeLayout(false);
+            this.panelFooter.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panelFooter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

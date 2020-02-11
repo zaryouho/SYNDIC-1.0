@@ -298,7 +298,7 @@
         <classShapeMoniker Id="ce88100e-60f6-4ddf-b90a-d0ac87b0bd7c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 17.0392976888021); (5.79166666666667 : 17.0392976888021 : JumpStart); (5.95833333333333 : 17.0392976888021 : JumpEnd); (12.2187475 : 17.0392976888021); (12.2187475 : 14.3574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 17.0392976888021); (12.2187475 : 17.0392976888021); (12.2187475 : 14.3574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesSyndicDataContext/proprietaire/proprietaire_bien" />
       <nodes>
         <classShapeMoniker Id="f0efb1af-ae06-4a65-9566-ce5d9177b40b" />
@@ -312,7 +312,7 @@
         <classShapeMoniker Id="226c6a8a-4960-4590-9339-bd0eb3d41574" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 16.2892976888021); (5.79166666666667 : 16.2892976888021 : JumpStart); (5.95833333333333 : 16.2892976888021 : JumpEnd); (6.25 : 16.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 16.2892976888021); (6.25 : 16.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClassesSyndicDataContext/proprietaire/proprietaire_documentProprietaire" />
       <nodes>
         <classShapeMoniker Id="f0efb1af-ae06-4a65-9566-ce5d9177b40b" />

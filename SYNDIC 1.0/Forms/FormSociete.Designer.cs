@@ -234,7 +234,7 @@
             this.buttonAjouterSSociete.TabIndex = 8;
             this.buttonAjouterSSociete.Text = "Ajouter Societe";
             this.buttonAjouterSSociete.UseVisualStyleBackColor = false;
-            this.buttonAjouterSSociete.Click += new System.EventHandler(this.buttonAjouterSSociete_Click);
+            
             // 
             // buttonSupprimerSociete
             // 
@@ -257,7 +257,7 @@
             this.buttonSupprimerSociete.TabIndex = 10;
             this.buttonSupprimerSociete.Text = "Supprimer Societe";
             this.buttonSupprimerSociete.UseVisualStyleBackColor = false;
-            this.buttonSupprimerSociete.Click += new System.EventHandler(this.buttonSupprimerSociete_Click);
+            
             // 
             // buttonModifierSociete
             // 
@@ -280,7 +280,7 @@
             this.buttonModifierSociete.TabIndex = 9;
             this.buttonModifierSociete.Text = "Modifier Societe";
             this.buttonModifierSociete.UseVisualStyleBackColor = false;
-            this.buttonModifierSociete.Click += new System.EventHandler(this.buttonModifierSociete_Click);
+            
             // 
             // buttonLast
             // 
@@ -290,7 +290,7 @@
             this.buttonLast.TabIndex = 11;
             this.buttonLast.Text = ">>";
             this.buttonLast.UseVisualStyleBackColor = true;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            
             // 
             // buttonNext
             // 
@@ -300,7 +300,7 @@
             this.buttonNext.TabIndex = 10;
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            
             // 
             // buttonprevious
             // 
@@ -310,7 +310,7 @@
             this.buttonprevious.TabIndex = 9;
             this.buttonprevious.Text = "<";
             this.buttonprevious.UseVisualStyleBackColor = true;
-            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
+            
             // 
             // buttonFirst
             // 
@@ -320,7 +320,7 @@
             this.buttonFirst.TabIndex = 8;
             this.buttonFirst.Text = "<<";
             this.buttonFirst.UseVisualStyleBackColor = true;
-            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            
             // 
             // buttonRechercher
             // 

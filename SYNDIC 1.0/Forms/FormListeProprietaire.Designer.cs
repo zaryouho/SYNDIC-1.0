@@ -223,7 +223,7 @@
             this.buttonSupprimerProprietaire.TabIndex = 10;
             this.buttonSupprimerProprietaire.Text = "Supprimer Propriétaire";
             this.buttonSupprimerProprietaire.UseVisualStyleBackColor = false;
-            this.buttonSupprimerProprietaire.Click += new System.EventHandler(this.buttonSupprimerProprietaire_Click);
+            
             // 
             // buttonModifierProprietaire
             // 

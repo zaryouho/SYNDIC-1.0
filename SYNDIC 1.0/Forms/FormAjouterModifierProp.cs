@@ -11,10 +11,11 @@ namespace SYNDIC_1._0
 {
     public partial class FormAjouterModifierProp : Form
     {
+
         DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
         proprietaire p = new proprietaire();
         readonly char op;
-        public FormAjouterModifierProp( proprietaire _p,char _op )
+        public FormAjouterModifierProp(proprietaire _p, char _op)
         {
             InitializeComponent();
             p = _p;
@@ -125,8 +126,8 @@ namespace SYNDIC_1._0
 
         public void buttonAnnuler_Click(object sender, EventArgs e)
         {
-         
-                this.Close();
+
+            this.Close();
         }
 
         private void labelCloseProprietaires_Click(object sender, EventArgs e)
@@ -141,10 +142,12 @@ namespace SYNDIC_1._0
         private void comboBoxSexe_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCin.Text != "" && textBoxNom.Text != "" && textBoxPrenom.Text != ""
-                && textBoxEmail.Text != "" && textBoxTele.Text != "")
+             && StringHelper.IsValidEmailFormat(textBoxEmail.Text) && StringHelper.IsValidPhoneNumberFormat(textBoxTele.Text))
                 buttonValider.Enabled = true;
             else
                 buttonValider.Enabled = false;
+
+
         }
 
         private void comboBoxVille_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,6 +162,36 @@ namespace SYNDIC_1._0
             comboBoxSexe.SelectedIndex = 0;
             comboBoxIdVille.SelectedIndex = 0;
             textBoxCin.Focus();
+        }
+
+        private void textBoxTele_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '+')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    if (textBoxTele.Text.Length > 9)
+                    {
+                        e.Handled = true;
+
+                    }
+                }
+            }
+
+
+        }
+
+        private void textBoxCodePostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || textBoxCodePostal.TextLength > 4)
+                e.Handled = true;
         }
     }
 }

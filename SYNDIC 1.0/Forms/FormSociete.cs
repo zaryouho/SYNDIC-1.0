@@ -22,10 +22,14 @@ namespace SYNDIC_1._0.Forms
 
         private void FormSociete_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionStringSliman");
+
             var src = from soc in syndicDataContext.societes
-                      select soc;
+                      join v in syndicDataContext.villes on soc.id_ville equals v.id
+                      select new { soc.id, soc.nom, soc.prenom, soc.raison_sociale, soc.tel, soc.email, soc.code_postal, ville = v.nom };
             dataGridViewSociete.DataSource = src;
+            dataGridViewSociete.Columns[0].Visible = false;
+            dataGridViewSociete.AutoResizeColumns();
+            dataGridViewSociete.AutoResizeRows();
         }
 
         private void buttonSociete_Click(object sender, EventArgs e)
@@ -34,9 +38,7 @@ namespace SYNDIC_1._0.Forms
             buttonSociete.BackColor = Color.Navy;
             buttonSocieteArchive.BackColor = Color.Blue;
             buttonAjouterSociete.BackColor = Color.Blue;
-            var src = from soc in syndicDataContext.societes
-                      select soc;
-            dataGridViewSociete.DataSource = src;
+            FormSociete_Load(sender, e);
         }
 
         private void buttonAjouterSociete_Click(object sender, EventArgs e)
@@ -67,20 +69,27 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonRechercher_Click(object sender, EventArgs e)
         {
-            string[] vs = textBoxRechercher.Text.Split(' ');
-            for (int i = 0; i < vs.Length; i++)
+            if (!textBoxRechercher.Text.Equals(string.Empty))
             {
-                vs[i].Trim();
-                if (vs[i].Equals(string.Empty))
-                    vs.SetValue("gOgLgXgPgIg9", i);
+                string[] vs = textBoxRechercher.Text.Split(' ');
+                for (int i = 0; i < vs.Length; i++)
+                {
+                    vs[i].Trim();
+                    if (vs[i].Equals(string.Empty))
+                        vs.SetValue("gOgLgXgPgIg9", i);
+                }
+
+                var src = from soc in syndicDataContext.societes
+                          join v in syndicDataContext.villes on soc.id_ville equals v.id
+                          where vs.Contains(soc.nom) || vs.Contains(soc.prenom)
+                          || vs.Contains(soc.tel) || vs.Contains(soc.email) || vs.Contains(soc.adresse)
+                          || vs.Contains(soc.code_postal.ToString()) || vs.Contains(v.nom)
+                          select new { soc.id, soc.nom, soc.prenom, soc.raison_sociale, soc.tel, soc.email, soc.code_postal, ville = v.nom };
+                dataGridViewSociete.DataSource = src;
+                dataGridViewSociete.Columns[0].Visible = false;
+                dataGridViewSociete.AutoResizeColumns();
+                dataGridViewSociete.AutoResizeRows();
             }
-
-            var src = from em in syndicDataContext.societes
-                      where vs.Contains(em.nom) || vs.Contains(em.prenom)
-                      || vs.Contains(em.tel) || vs.Contains(em.email) || vs.Contains(em.adresse)
-                      select em;
-
-            dataGridViewSociete.DataSource = src;
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)
@@ -149,7 +158,7 @@ namespace SYNDIC_1._0.Forms
                 FormAjouterModifierSociete.ShowDialog();
             }
             FormSociete_Load(sender, e);
-            dataGridViewSociete.CurrentCell = dataGridViewSociete[0, 1];
+
             /*  using (var formAjouterModifierSociete = new formAjouterModifierSociete(so, c))
               {
                   formAjouterModifierSociete.ShowDialog();
