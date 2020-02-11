@@ -56,6 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEmploye.Designer.cs">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,12 +109,6 @@
     </Compile>
     <Compile Include="Forms\FormBienEcheance.Designer.cs">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormEmploye.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormEmploye.Designer.cs">
-      <DependentUpon>FormEmploye.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormGestionDocument.cs">
       <SubType>Form</SubType>
@@ -229,6 +229,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormEmploye.resx">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,9 +255,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBienEcheance.resx">
       <DependentUpon>FormBienEcheance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEmploye.resx">
-      <DependentUpon>FormEmploye.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGestionDocument.resx">
       <DependentUpon>FormGestionDocument.cs</DependentUpon>

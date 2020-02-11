@@ -36,6 +36,7 @@ namespace SYNDIC_1._0
             dataGridViewProprietaires.DataSource = src;
             dataGridViewProprietaires.Columns[11].Visible = false;
             dataGridViewProprietaires.AutoResizeColumns();
+            dataGridViewProprietaires.AutoResizeRows();
 
             dataGridViewProprietaires.CurrentCell = dataGridViewProprietaires[0, i];
 
@@ -46,6 +47,7 @@ namespace SYNDIC_1._0
             op = 'A';
             using (var formAjouterModifierProp = new FormAjouterModifierProp(new proprietaire(), op))
             {
+
                 formAjouterModifierProp.ShowDialog();
             }
 
@@ -88,25 +90,8 @@ namespace SYNDIC_1._0
 
         }
 
-        private void buttonSupprimerProprietaire_Click(object sender, EventArgs e)
-        {
-            var question = MessageBox.Show("Voullez vous supprimer cet proprietaire ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (question == DialogResult.No)
-                return;
-            if (question == DialogResult.Yes)
-            {
-                p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[0].Value.ToString());
 
-                var prop = (from pr in syndicDataContext.proprietaires
-                            where pr.id.Equals(p.id)
-                            select pr).Single();
 
-                syndicDataContext.proprietaires.DeleteOnSubmit(prop);
-                syndicDataContext.SubmitChanges();
-
-                this.FormListeProprietaire_Load(sender, e);
-            }
-        }
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
@@ -142,20 +127,31 @@ namespace SYNDIC_1._0
 
         private void buttonRechercher_Click(object sender, EventArgs e)
         {
-            string[] vs = textBoxrechercher.Text.Split(' ');
-            for (int i = 0; i < vs.Length; i++)
+            if (!textBoxrechercher.Text.Equals(string.Empty))
             {
-                vs[i].Trim();
-                if (vs[i].Equals(string.Empty))
-                    vs.SetValue("gOgLgXgPgIg9", i);
-            }
-            var src = from p in syndicDataContext.proprietaires
-                      where vs.Contains(p.CIN) || vs.Contains(p.nom) || vs.Contains(p.prenom)
-                      || vs.Contains(p.tel) || vs.Contains(p.email) || vs.Contains(p.Titre)
-                      || vs.Contains(p.adresse) || vs.Contains(p.Sexe)
-                      select p;
+                string[] vs = textBoxrechercher.Text.Split(' ');
+                for (int i = 0; i < vs.Length; i++)
+                {
+                    vs[i].Trim();
+                    if (vs[i].Equals(string.Empty))
+                        vs.SetValue("gOgLgXgPgIg9", i);
+                }
+                var src = from v in syndicDataContext.villes
+                          join p in syndicDataContext.proprietaires
+                            on v.id equals p.id_ville
+                          join b in syndicDataContext.biens
+                            on p.id equals b.id_proprietaire
+                          where vs.Contains(p.CIN) || vs.Contains(p.nom) || vs.Contains(p.prenom)
+                          || vs.Contains(p.tel) || vs.Contains(p.email) || vs.Contains(p.Titre)
+                          || vs.Contains(p.adresse) || vs.Contains(p.Sexe) || vs.Contains(p.code_postal.ToString())
+                          || vs.Contains(v.nom)
+                          select new { CIN = p.CIN, Prénom = p.prenom, Nom = p.nom, Sexe = p.Sexe, p.Titre, Telephone = p.tel, Email = p.email, CodePostal = p.code_postal, Ville = v.nom, Adresse = p.adresse, Bien = String.Concat(b.id_immeuble, "-", b.nom), p.id };
 
-            dataGridViewProprietaires.DataSource = src;
+                dataGridViewProprietaires.DataSource = src;
+                dataGridViewProprietaires.Columns[11].Visible = false;
+                dataGridViewProprietaires.AutoResizeColumns();
+                dataGridViewProprietaires.AutoResizeRows();
+            }
         }
 
         private void textBoxrechercher_TextChanged(object sender, EventArgs e)
@@ -163,8 +159,9 @@ namespace SYNDIC_1._0
             if (textBoxrechercher.Text.Equals(string.Empty))
                 FormListeProprietaire_Load(sender, e);
         }
+    
 
-        private void buttonListDocs_Click(object sender, EventArgs e)
+    private void buttonListDocs_Click(object sender, EventArgs e)
         {
             int current_Id = Convert.ToInt32(dataGridViewProprietaires.CurrentRow.Cells[11].Value.ToString());
             new FormGestionDocument("documentProprietaire", "where id_Proprietaire = " + current_Id.ToString(), current_Id).ShowDialog();

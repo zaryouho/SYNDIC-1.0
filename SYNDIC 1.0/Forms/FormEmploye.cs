@@ -23,9 +23,9 @@ namespace SYNDIC_1._0.Forms
 
         private void FormEmploye_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionStringSliman");
 
-            var res = (from em in syndicDataContext.employes
+
+            var res = from em in syndicDataContext.employes
                        join vil in syndicDataContext.villes on em.id_ville equals vil.id
 
                        select new
@@ -39,12 +39,14 @@ namespace SYNDIC_1._0.Forms
                            em.email,
                            em.date_recrutement,
                            em.typeEmploye,
-                           idville = vil.id,
                            ville = vil.nom
-                       });
+                       };
 
             dataGridViewEmploye.DataSource = res;
-            dataGridViewEmploye.Columns[9].Visible = false;
+            dataGridViewEmploye.Columns[0].Visible = false;
+            dataGridViewEmploye.AutoResizeColumns();
+            dataGridViewEmploye.AutoResizeRows();
+
 
         }
 
@@ -53,13 +55,7 @@ namespace SYNDIC_1._0.Forms
             buttonEmploye.BackColor = Color.Navy;
             buttonEmployeArchive.BackColor = Color.Blue;
             buttonAjouterEmploye.BackColor = Color.Blue;
-            var res = (from em in syndicDataContext.employes
-                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
-
-                       select new { em.id, em.nom, em.prenom, em.adresse, em.code_postal, em.tel, em.email, em.date_recrutement, em.typeEmploye, idville = vil.id, ville = vil.nom });
-
-            dataGridViewEmploye.DataSource = res;
-            dataGridViewEmploye.Columns[9].Visible = false;
+            FormEmploye_Load(sender, e);
         }
 
         private void buttonAjouterEmploye_Click(object sender, EventArgs e)
@@ -78,13 +74,15 @@ namespace SYNDIC_1._0.Forms
             var res = (from em in syndicDataContext.employes
                        join vil in syndicDataContext.villes on em.id_ville equals vil.id
                        where em.date_depart != null
-                       select new { 
+                       select new
+                       {
                            em.id,
                            em.nom,
                            em.prenom,
                            em.adresse,
                            em.code_postal,
-                           em.tel, em.email,
+                           em.tel,
+                           em.email,
                            em.date_recrutement,
                            em.typeEmploye,
                            idville = vil.id,
@@ -99,7 +97,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
-            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, 0];
+            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
         }
 
         private void buttonprevious_Click(object sender, EventArgs e)
@@ -132,7 +130,7 @@ namespace SYNDIC_1._0.Forms
         {
             c = 'M';
 
-         //   em.id = int.Parse(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
+            //   em.id = int.Parse(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
             em.nom = dataGridViewEmploye.CurrentRow.Cells[1].Value.ToString();
             em.prenom = dataGridViewEmploye.CurrentRow.Cells[2].Value.ToString();
             em.adresse = dataGridViewEmploye.CurrentRow.Cells[3].Value.ToString();
@@ -191,26 +189,46 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonRechercher_Click(object sender, EventArgs e)
         {
-            string[] vs = textBoxRechercher.Text.Split(' ');
-            for (int i = 0; i < vs.Length; i++)
+            if (!textBoxRechercher.Text.Equals(string.Empty))
             {
-                vs[i].Trim();
-                if (vs[i].Equals(string.Empty))
-                    vs.SetValue("gOgLgXgPgIg9", i);
+                string[] vs = textBoxRechercher.Text.Split(' ');
+                for (int i = 0; i < vs.Length; i++)
+                {
+                    vs[i].Trim();
+                    if (vs[i].Equals(string.Empty))
+                        vs.SetValue("gOgLgXgPgIg9", i);
+                }
+
+                var src = from em in syndicDataContext.employes
+                          join vil in syndicDataContext.villes on em.id_ville equals vil.id
+                          where vs.Contains(em.nom) || vs.Contains(em.prenom)
+                          || vs.Contains(em.tel) || vs.Contains(em.email) || vs.Contains(em.adresse)
+                          || vs.Contains(em.date_recrutement.ToString()) || vs.Contains(em.code_postal.ToString())
+                          || vs.Contains(vil.nom) || vs.Contains(em.typeEmploye)
+                          select new
+                          {
+                              em.id,
+                              em.nom,
+                              em.prenom,
+                              em.adresse,
+                              em.code_postal,
+                              em.tel,
+                              em.email,
+                              em.date_recrutement,
+                              em.typeEmploye,
+                              ville = vil.nom
+                          };
+
+                dataGridViewEmploye.DataSource = src;
+                dataGridViewEmploye.Columns[0].Visible = false;
+                dataGridViewEmploye.AutoResizeColumns();
+                dataGridViewEmploye.AutoResizeRows();
+
+
             }
-
-            var src = from em in syndicDataContext.employes
-                      where vs.Contains(em.nom) || vs.Contains(em.prenom)
-                      || vs.Contains(em.tel) || vs.Contains(em.email) || vs.Contains(em.adresse)
-                      select em;
-
-            dataGridViewEmploye.DataSource = src;
         }
 
-        private void panelIN_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void buttonListDocs_Click(object sender, EventArgs e)
         {
@@ -218,5 +236,6 @@ namespace SYNDIC_1._0.Forms
             new FormGestionDocument("documentEmploye", "where id_employe = " + current_Id.ToString(), current_Id).ShowDialog();
 
         }
+
     }
 }

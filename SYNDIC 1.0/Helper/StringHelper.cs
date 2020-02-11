@@ -7,6 +7,7 @@ namespace SYNDIC_1._0
 {
     public static class StringHelper
     {
+
         /// <summary>
         /// Checks if the TextBox has text and returns true else returns false
         /// </summary>
@@ -79,11 +80,11 @@ namespace SYNDIC_1._0
         /// Determines if the <em>Pressed Key</em> is the <em>Enter</em> key and returns true, else returns false
         /// </summary>
 
-        public static bool EnterIsPressed(KeyPressEventArgs e)
+        public static bool EnterIsPressed(KeyEventArgs e)
         {
-            return (e.KeyChar.Equals(Keys.Enter));
+            return (e.KeyCode.Equals(Keys.Enter));
         }
-        
+
         /// <summary>
         /// Sets the state of the control to the one passed in parameters 
         /// </summary>
@@ -115,61 +116,23 @@ namespace SYNDIC_1._0
             }
 
         }
-        
-        /// <summary>
-        /// Straight out of Microsoft docs a regular expression to validate emails
-        /// Returns true if the sring is a valide email adress, else retruns false
-        /// </summary>
-        /// <param name="email"></param>
-/*
-        public static bool IsValidEmail(this string email)
+
+
+
+
+        public static Regex regEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+
+        public static bool IsValidEmailFormat(string emailInput)
         {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-
-            try
-            {
-                // Normalize the domain
-                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
-                                        RegexOptions.None, TimeSpan.FromMilliseconds(200));
-
-                // Examines the domain part of the email and normalizes it.
-                string DomainMapper(Match match)
-                {
-                    // Use IdnMapping class to convert Unicode domain names.
-                    var idn = new IdnMapping();
-
-                    // Pull out and process domain name (throws ArgumentException on invalid)
-                    var domainName = idn.GetAscii(match.Groups[2].Value);
-
-                    return match.Groups[1].Value + domainName;
-                }
-            }
-            catch (RegexMatchTimeoutException e)
-            {
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                return false;
-            }
-
-            try
-            {
-                return Regex.IsMatch(email,
-                    @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
+            return regEmail.IsMatch(emailInput);
         }
-        */
-        /// <summary>
-        /// Checks if the specified string is in a valide datetime format and returns true, else returns false
-        /// </summary>
+
+        public static Regex regTele = new Regex(@"\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*(\d{1,2})$");
+
+        public static bool IsValidPhoneNumberFormat(string PhoneNumberInput)
+        {
+            return regTele.IsMatch(PhoneNumberInput);
+        }
 
         public static bool IsDateTime(this string date)
         {
@@ -201,44 +164,12 @@ namespace SYNDIC_1._0
             }
             return false;
         }
-        
+
         /// <summary>
         /// Clear all the controls in the active form 
         /// Does not returns
         /// </summary>
         /// <param name="from">the specified from to be cleared</param>
-        public static void Clear(Form from)
-        {
-            if (from is null)
-            {
-                throw new ArgumentNullException(nameof(from));
-            }
-
-            foreach (ListBox listbox in from.Controls)
-            {
-                listbox.Items.Clear();
-            }
-
-            foreach (ComboBox comboBox in from.Controls)
-            {
-                comboBox.Items.Clear();
-            }
-
-            foreach (DataGridView dataGridView in from.Controls)
-            {
-                dataGridView.Rows.Clear();
-            }
-
-            foreach (TextBox textBox in from.Controls)
-            {
-                textBox.Clear();
-            }
-
-            foreach (ListView listView in from.Controls)
-            {
-                listView.Items.Clear();
-            }
-
-        }
+        /// 
     }
 }
