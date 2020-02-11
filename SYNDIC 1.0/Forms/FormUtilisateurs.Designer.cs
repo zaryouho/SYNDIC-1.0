@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panelWrapper = new System.Windows.Forms.Panel();
-            this.panelHeader = new System.Windows.Forms.Panel();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
-            this.buttonAddUser = new System.Windows.Forms.Button();
-            this.buttonModifyUser = new System.Windows.Forms.Button();
-            this.buttonDeleteUser = new System.Windows.Forms.Button();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
+            this.labelUserType = new System.Windows.Forms.Label();
+            this.comboBoxTypeUser = new System.Windows.Forms.ComboBox();
             this.textBoxConfirmePassword = new System.Windows.Forms.TextBox();
             this.labelConfirme = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.labelUserType = new System.Windows.Forms.Label();
-            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
-            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.buttonDeleteUser = new System.Windows.Forms.Button();
+            this.buttonModifyUser = new System.Windows.Forms.Button();
+            this.buttonAddUser = new System.Windows.Forms.Button();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.panelWrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.Panel1.SuspendLayout();
@@ -62,14 +62,6 @@
             this.panelWrapper.Size = new System.Drawing.Size(800, 450);
             this.panelWrapper.TabIndex = 0;
             // 
-            // panelHeader
-            // 
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(800, 57);
-            this.panelHeader.TabIndex = 0;
-            // 
             // splitContainerMain
             // 
             this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -84,7 +76,7 @@
             // 
             this.splitContainerMain.Panel2.Controls.Add(this.checkBoxShowPassword);
             this.splitContainerMain.Panel2.Controls.Add(this.labelUserType);
-            this.splitContainerMain.Panel2.Controls.Add(this.comboBox1);
+            this.splitContainerMain.Panel2.Controls.Add(this.comboBoxTypeUser);
             this.splitContainerMain.Panel2.Controls.Add(this.textBoxConfirmePassword);
             this.splitContainerMain.Panel2.Controls.Add(this.labelConfirme);
             this.splitContainerMain.Panel2.Controls.Add(this.textBoxPassword);
@@ -98,64 +90,45 @@
             this.splitContainerMain.SplitterDistance = 197;
             this.splitContainerMain.TabIndex = 1;
             // 
-            // buttonAddUser
+            // dataGridViewUsers
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(138, 335);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddUser.TabIndex = 0;
-            this.buttonAddUser.Text = "Ajouter utilisateur";
-            this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewUsers.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.Size = new System.Drawing.Size(197, 393);
+            this.dataGridViewUsers.TabIndex = 0;
             // 
-            // buttonModifyUser
+            // checkBoxShowPassword
             // 
-            this.buttonModifyUser.Location = new System.Drawing.Point(248, 335);
-            this.buttonModifyUser.Name = "buttonModifyUser";
-            this.buttonModifyUser.Size = new System.Drawing.Size(75, 23);
-            this.buttonModifyUser.TabIndex = 1;
-            this.buttonModifyUser.Text = "Modifier utilisateur";
-            this.buttonModifyUser.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(291, 140);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(122, 17);
+            this.checkBoxShowPassword.TabIndex = 11;
+            this.checkBoxShowPassword.Text = "Affiche mot de pass ";
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
-            // buttonDeleteUser
+            // labelUserType
             // 
-            this.buttonDeleteUser.Location = new System.Drawing.Point(359, 335);
-            this.buttonDeleteUser.Name = "buttonDeleteUser";
-            this.buttonDeleteUser.Size = new System.Drawing.Size(75, 23);
-            this.buttonDeleteUser.TabIndex = 2;
-            this.buttonDeleteUser.Text = "Supprimer utilisateur";
-            this.buttonDeleteUser.UseVisualStyleBackColor = true;
+            this.labelUserType.AutoSize = true;
+            this.labelUserType.Location = new System.Drawing.Point(99, 184);
+            this.labelUserType.Name = "labelUserType";
+            this.labelUserType.Size = new System.Drawing.Size(80, 13);
+            this.labelUserType.TabIndex = 10;
+            this.labelUserType.Text = "type utilisateur :";
             // 
-            // labelLogin
+            // comboBoxTypeUser
             // 
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(143, 57);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(38, 13);
-            this.labelLogin.TabIndex = 3;
-            this.labelLogin.Text = "login : ";
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Location = new System.Drawing.Point(185, 57);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLogin.TabIndex = 4;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(185, 96);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPassword.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "mot de pass :";
+            this.comboBoxTypeUser.FormattingEnabled = true;
+            this.comboBoxTypeUser.Items.AddRange(new object[] {
+            "Admin",
+            "Utilisateur"});
+            this.comboBoxTypeUser.Location = new System.Drawing.Point(185, 176);
+            this.comboBoxTypeUser.Name = "comboBoxTypeUser";
+            this.comboBoxTypeUser.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxTypeUser.TabIndex = 9;
             // 
             // textBoxConfirmePassword
             // 
@@ -173,41 +146,75 @@
             this.labelConfirme.TabIndex = 7;
             this.labelConfirme.Text = "confirmer mot de pass :";
             // 
-            // comboBox1
+            // textBoxPassword
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(185, 176);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 9;
+            this.textBoxPassword.Location = new System.Drawing.Point(185, 96);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword.TabIndex = 6;
             // 
-            // labelUserType
+            // label2
             // 
-            this.labelUserType.AutoSize = true;
-            this.labelUserType.Location = new System.Drawing.Point(99, 184);
-            this.labelUserType.Name = "labelUserType";
-            this.labelUserType.Size = new System.Drawing.Size(80, 13);
-            this.labelUserType.TabIndex = 10;
-            this.labelUserType.Text = "type utilisateur :";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(109, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "mot de pass :";
             // 
-            // checkBoxShowPassword
+            // textBoxLogin
             // 
-            this.checkBoxShowPassword.AutoSize = true;
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(291, 140);
-            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(122, 17);
-            this.checkBoxShowPassword.TabIndex = 11;
-            this.checkBoxShowPassword.Text = "Affiche mot de pass ";
-            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.textBoxLogin.Location = new System.Drawing.Point(185, 57);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLogin.TabIndex = 4;
             // 
-            // dataGridViewUsers
+            // labelLogin
             // 
-            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewUsers.Name = "dataGridViewUsers";
-            this.dataGridViewUsers.Size = new System.Drawing.Size(197, 393);
-            this.dataGridViewUsers.TabIndex = 0;
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Location = new System.Drawing.Point(143, 57);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(38, 13);
+            this.labelLogin.TabIndex = 3;
+            this.labelLogin.Text = "login : ";
+            // 
+            // buttonDeleteUser
+            // 
+            this.buttonDeleteUser.Location = new System.Drawing.Point(359, 335);
+            this.buttonDeleteUser.Name = "buttonDeleteUser";
+            this.buttonDeleteUser.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteUser.TabIndex = 2;
+            this.buttonDeleteUser.Text = "Supprimer utilisateur";
+            this.buttonDeleteUser.UseVisualStyleBackColor = true;
+            this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
+            // 
+            // buttonModifyUser
+            // 
+            this.buttonModifyUser.Location = new System.Drawing.Point(248, 335);
+            this.buttonModifyUser.Name = "buttonModifyUser";
+            this.buttonModifyUser.Size = new System.Drawing.Size(75, 23);
+            this.buttonModifyUser.TabIndex = 1;
+            this.buttonModifyUser.Text = "Modifier utilisateur";
+            this.buttonModifyUser.UseVisualStyleBackColor = true;
+            this.buttonModifyUser.Click += new System.EventHandler(this.buttonModifyUser_Click);
+            // 
+            // buttonAddUser
+            // 
+            this.buttonAddUser.Location = new System.Drawing.Point(138, 335);
+            this.buttonAddUser.Name = "buttonAddUser";
+            this.buttonAddUser.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddUser.TabIndex = 0;
+            this.buttonAddUser.Text = "Ajouter utilisateur";
+            this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(800, 57);
+            this.panelHeader.TabIndex = 0;
             // 
             // FormUtilisateurs
             // 
@@ -218,6 +225,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUtilisateurs";
             this.Text = "FormUtilisateurs";
+            this.Load += new System.EventHandler(this.FormUtilisateurs_Load);
             this.panelWrapper.ResumeLayout(false);
             this.splitContainerMain.Panel1.ResumeLayout(false);
             this.splitContainerMain.Panel2.ResumeLayout(false);
@@ -239,7 +247,7 @@
         private System.Windows.Forms.Button buttonAddUser;
         private System.Windows.Forms.CheckBox checkBoxShowPassword;
         private System.Windows.Forms.Label labelUserType;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxTypeUser;
         private System.Windows.Forms.TextBox textBoxConfirmePassword;
         private System.Windows.Forms.Label labelConfirme;
         private System.Windows.Forms.TextBox textBoxPassword;
