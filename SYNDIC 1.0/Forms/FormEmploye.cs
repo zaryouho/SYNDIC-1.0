@@ -26,21 +26,21 @@ namespace SYNDIC_1._0.Forms
 
 
             var res = from em in syndicDataContext.employes
-                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
+                      join vil in syndicDataContext.villes on em.id_ville equals vil.id
 
-                       select new
-                       {
-                           em.id,
-                           em.nom,
-                           em.prenom,
-                           em.adresse,
-                           em.code_postal,
-                           em.tel,
-                           em.email,
-                           em.date_recrutement,
-                           em.typeEmploye,
-                           ville = vil.nom
-                       };
+                      select new
+                      {
+                          em.id,
+                          em.nom,
+                          em.prenom,
+                          em.adresse,
+                          em.code_postal,
+                          em.tel,
+                          em.email,
+                          em.date_recrutement,
+                          em.typeEmploye,
+                          ville = vil.nom
+                      };
 
             dataGridViewEmploye.DataSource = res;
             dataGridViewEmploye.Columns[0].Visible = false;
@@ -97,7 +97,8 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
-            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
+            i = 0;
+            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[1, i];
         }
 
         private void buttonprevious_Click(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace SYNDIC_1._0.Forms
             {
 
                 i--;
-                dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
+                dataGridViewEmploye.CurrentCell = dataGridViewEmploye[1,i];
 
             }
         }
@@ -116,14 +117,14 @@ namespace SYNDIC_1._0.Forms
             if (i < dataGridViewEmploye.RowCount - 1)
             {
                 i++;
-                dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
+                dataGridViewEmploye.CurrentCell = dataGridViewEmploye[1, i];
             }
         }
 
         private void buttonLast_Click(object sender, EventArgs e)
         {
             i = dataGridViewEmploye.RowCount - 1;
-            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
+            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[1, i];
         }
 
         private void buttonModifierEmploye_Click(object sender, EventArgs e)
@@ -152,19 +153,6 @@ namespace SYNDIC_1._0.Forms
             }
             FormEmploye_Load(sender, e);
             dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
-        }
-
-        private void buttonAjouterSEmploye_Click(object sender, EventArgs e)
-        {
-            c = 'A';
-
-            using (var FormAjouterModifierEmploye = new FormAjouterModifierEmploye(new employe(), c))
-            {
-                FormAjouterModifierEmploye.ShowDialog();
-
-            }
-
-            FormEmploye_Load(sender, e);
         }
 
         private void buttonSupprimerEmploye_Click(object sender, EventArgs e)
@@ -237,5 +225,11 @@ namespace SYNDIC_1._0.Forms
 
         }
 
+        private void textBoxRechercher_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxRechercher.Text=="")
+                FormEmploye_Load(sender, e);
+        }
     }
 }
+

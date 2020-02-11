@@ -28,6 +28,7 @@ namespace SYNDIC_1._0.Forms
 
         private void FormGestionDocument_Load(object sender, EventArgs e)
         {
+            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
             DBHelper.remplir_dataset("select * from " + table+" "+condition, table);
             
             bsDocument = DBHelper.remplir_bindingsource(table);
