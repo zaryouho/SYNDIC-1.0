@@ -71,6 +71,7 @@
             this.textBoxNom.Size = new System.Drawing.Size(201, 20);
             this.textBoxNom.TabIndex = 2;
             this.textBoxNom.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
+            this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // textBoxPrenom
             // 
@@ -79,6 +80,7 @@
             this.textBoxPrenom.Size = new System.Drawing.Size(201, 20);
             this.textBoxPrenom.TabIndex = 3;
             this.textBoxPrenom.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
+            this.textBoxPrenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // textBoxAdresse
             // 
@@ -111,6 +113,7 @@
             this.textBoxTele.Size = new System.Drawing.Size(201, 20);
             this.textBoxTele.TabIndex = 8;
             this.textBoxTele.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
+            this.textBoxTele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTele_KeyPress);
             // 
             // comboBoxVille
             // 
@@ -273,7 +276,6 @@
             this.comboBoxIdVille.Name = "comboBoxIdVille";
             this.comboBoxIdVille.Size = new System.Drawing.Size(201, 21);
             this.comboBoxIdVille.TabIndex = 37;
-            this.comboBoxIdVille.SelectedIndexChanged += new System.EventHandler(this.comboBoxIdVille_SelectedIndexChanged);
             this.comboBoxIdVille.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // comboBoxTitre

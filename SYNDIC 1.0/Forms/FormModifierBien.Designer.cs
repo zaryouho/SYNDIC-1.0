@@ -253,6 +253,7 @@
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
             this.comboBoxProprietaire.Size = new System.Drawing.Size(175, 21);
             this.comboBoxProprietaire.TabIndex = 23;
+            this.comboBoxProprietaire.SelectedIndexChanged += new System.EventHandler(this.comboBoxProprietaire_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -285,11 +286,10 @@
             // 
             // textBoxIdProprietaire
             // 
-            this.textBoxIdProprietaire.Location = new System.Drawing.Point(380, 427);
+            this.textBoxIdProprietaire.Location = new System.Drawing.Point(229, 310);
             this.textBoxIdProprietaire.Name = "textBoxIdProprietaire";
             this.textBoxIdProprietaire.Size = new System.Drawing.Size(63, 20);
             this.textBoxIdProprietaire.TabIndex = 25;
-            this.textBoxIdProprietaire.Visible = false;
             // 
             // textBoxIdBien
             // 
@@ -305,7 +305,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 450);
             this.Controls.Add(this.textBoxIdBien);
-            this.Controls.Add(this.textBoxIdProprietaire);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBoxProprietaire);
             this.Controls.Add(this.dateTimePickerDateAchat);
@@ -327,6 +326,7 @@
             this.Controls.Add(this.textBoxNom);
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.panelHead);
+            this.Controls.Add(this.textBoxIdProprietaire);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormModifierBien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
