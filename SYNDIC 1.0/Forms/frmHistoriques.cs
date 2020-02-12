@@ -49,108 +49,92 @@ namespace SYNDIC_1._0
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            
-            SqlConnection connection = new SqlConnection(connectionString);
-            if (connection.State != ConnectionState.Open)
-            {
-                connection.Open();
-            }
-
-            int rowsCount = dataGridViewHistorique.SelectedRows.Count;
-            if (rowsCount == 0)
+            if (dataGridViewHistorique.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selectioner une ligne pour supprimer","Aucune ligne a ete selectioner",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                connection.Close();
                 return;
             }
-
-            int queryId = 0;
-            string query = "delete j.*,c.* from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where id =@queryId";
-
-            SqlCommand command = new SqlCommand();
-            command = connection.CreateCommand();
-            command.CommandText = query;
-            
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete'"+ rowsCount +"' rows ?","Deleting...",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2);
-            
-            if (dialogResult.Equals(DialogResult.Yes))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                #region deleting single row
-                if (rowsCount == 1)
+                if (connection.State != ConnectionState.Open)
                 {
-                    try
+                    connection.Open();
+                }
+                int queryId = 0;
+                string query = "delete j.*,c.* from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where id =@queryId";
+                using (SqlCommand command = new SqlCommand(query,connection))
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete'"+ dataGridViewHistorique.SelectedRows.Count +"' rows ?","Deleting...",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2);
+                    if (dialogResult.Equals(DialogResult.Yes))
                     {
-                        int idRow = Convert.ToInt32(dataGridViewHistorique.CurrentRow.Cells[0].Value.ToString());
-                        command.Parameters.AddWithValue("@queryId", idRow);
-                        int exe = command.ExecuteNonQuery();
-                        if (exe != 0)
+                        #region deleting single row
+                        if (dataGridViewHistorique.SelectedRows.Count == 1)
                         {
-                            MessageBox.Show("item deleted successfully");
-                            command = null;
-                            connection = null;
-                            return;
+                            try
+                            {
+                                int idRow = Convert.ToInt32(dataGridViewHistorique.CurrentRow.Cells[0].Value.ToString());
+                                command.Parameters.AddWithValue("@queryId", idRow);
+                                this.Cursor = Cursors.WaitCursor;
+                                int exe = command.ExecuteNonQuery();
+                                this.Cursor = Cursors.Default;
+                                if (exe != 0)
+                                {
+                                    MessageBox.Show("item deleted successfully");
+                                    return;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        command = null;
-                        connection = null;
+                        #endregion
+
+                        //dataContext.journal.DeleteOnSubmit();
+                        //foreach (DataGridViewRow row in dataGridViewHistorique.SelectedRows)
+                        //{
+                        //    currentIds.Add(Convert.ToInt32(row.Cells[0].Value.ToString()));
+
+                        //    var query = dataContext.journal.Where(log => currentIds.Contains(log.id))
+                        //                .Select(log => log.id).ToArray();
+
+                        //    dataContext.journal.DeleteAllOnSubmit(query);
+                        //    dataContext.SubmitChanges();
+                        //}
+
+                        #region Deleting multiple rows
+                        foreach (DataGridViewRow row in dataGridViewHistorique.SelectedRows)
+                        {
+                            try
+                            {
+                                queryId = Convert.ToInt32(row.Cells[0].Value.ToString());
+                                command.Parameters.AddWithValue("@queryId", queryId);
+                                this.Cursor = Cursors.WaitCursor;
+                                int exe = command.ExecuteNonQuery();
+                                this.Cursor = Cursors.Default;
+                                if (exe != 0)
+                                {
+                                    MessageBox.Show("items deleted successfully");
+                                    return;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }
+                        }
+                        #endregion
                     }
                 }
-                #endregion
-
-                //dataContext.journal.DeleteOnSubmit();
-                //foreach (DataGridViewRow row in dataGridViewHistorique.SelectedRows)
-                //{
-                //    currentIds.Add(Convert.ToInt32(row.Cells[0].Value.ToString()));
-
-                //    var query = dataContext.journal.Where(log => currentIds.Contains(log.id))
-                //                .Select(log => log.id).ToArray();
-
-                //    dataContext.journal.DeleteAllOnSubmit(query);
-                //    dataContext.SubmitChanges();
-                //}
-
-                #region Deleting multiple rows
-                foreach (DataGridViewRow row in dataGridViewHistorique.SelectedRows)
-                {
-                    try
-                    {
-                        this.Cursor = Cursors.WaitCursor;
-                        queryId = Convert.ToInt32(row.Cells[0].Value.ToString());
-                        command.Parameters.AddWithValue("@queryId", queryId);
-                        int exe = command.ExecuteNonQuery();
-                        this.Cursor = Cursors.Default;
-                        if (exe != 0)
-                        {
-                            MessageBox.Show("items deleted successfully");
-                            command = null;
-                            connection = null;
-                            return;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        command = null;
-                        connection = null;
-                    }
-                } 
-                #endregion
             }
+            
             frmHistoriques_Load(sender, e);
-            connection.Close();
         }
 
         private void buttonSearchDataGridView_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            if (connection.State != ConnectionState.Open)
-            {
-                connection.Open(); 
-            }
-
             dateTimePickerHistorique.Enabled = !textBoxStrings.hasText();
 
             if (!textBoxStrings.hasText() || dateTimePickerHistorique.Value == DateTime.Now)
@@ -158,44 +142,47 @@ namespace SYNDIC_1._0
                 textBoxStrings.Focus();
                 return;
             }
-
+            
             string filter = textBoxStrings.hasText() ? comboBoxFilterItems.Text : "date_action";
 
             string searchedString = textBoxStrings.hasText() ? textBoxStrings.Text.Trim().Replace("'", "''") : dateTimePickerHistorique.Value.ToString();
 
             string query = "select (id,date_connexion,typeUtilisateur,date_action,action,table_action,anciennes_valeurs,nouvelles_valeurs) from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where @filter = @searchedString ";
 
-            SqlCommand command = new SqlCommand();
-
-            if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now)
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                try
+                if (connection.State != ConnectionState.Open)
                 {
-                    this.Cursor = Cursors.WaitCursor;
-
-                    command = connection.CreateCommand();
-                    command.CommandText = query;
-                    command.Parameters.AddWithValue("@filter", filter);
-                    command.Parameters.AddWithValue("@searchedString", searchedString);
-                    command.ExecuteNonQuery();
-                 
-                    DataTable dataTable = new DataTable();
-                    using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection))
+                    connection.Open(); 
+                }
+                using (SqlCommand command = new SqlCommand(query,connection))
+                {
+                    if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now)
                     {
-                        dataAdapter.Fill(dataTable);
+                        try
+                        {
+                            command.Parameters.AddWithValue("@filter", filter);
+                            command.Parameters.AddWithValue("@searchedString", searchedString);
+
+                            this.Cursor = Cursors.WaitCursor;
+                            command.ExecuteNonQuery();
+
+                            DataTable dataTable = new DataTable();
+                            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection))
+                            {
+                                dataAdapter.Fill(dataTable);
+                            }
+
+                            dataGridViewHistorique.DataSource = dataTable;
+                            this.Cursor = Cursors.Default;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
-
-                    dataGridViewHistorique.DataSource = dataTable;
-                    this.Cursor = Cursors.Default;
                 }
-                catch (Exception ex )
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-                connection = null;
             }
-
         }
 
         private void frmHistoriques_KeyPress(object sender, KeyPressEventArgs e)
