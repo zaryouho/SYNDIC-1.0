@@ -26,9 +26,6 @@ namespace SYNDIC_1._0.Forms
         }
         private void FormUtilisateurs_Load(object sender, EventArgs e)
         {
-            login = textBoxLogin.Text.Trim().Replace("'", "''");
-            passWord = textBoxPassword.Text.Trim().Replace("'", "''");
-            confirmedPassWord = textBoxConfirmePassword.Text.Trim().Replace("'", "''");
             comboBoxTypeUser.SelectedIndex = 1;
             dataGridViewUsers.ColumnCount = 2;
             dataGridViewUsers.Columns[0].Name = "Type";
@@ -73,14 +70,19 @@ namespace SYNDIC_1._0.Forms
         }
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
-            string hash = Security.GenerathashandSalt(64, login).hash;
-            string salt = Security.GenerathashandSalt(64, login).salt;
-            
-            if (!textBoxLogin.hasText() || !textBoxPassword.hasText())
+            if (!textBoxLogin.hasText() || !textBoxPassword.hasText() || !textBoxConfirmePassword.hasText())
             {
                 textBoxLogin.Focus();
                 MessageBox.Show("empty");
+                return;
             }
+
+            login = textBoxLogin.Text.Trim().Replace("'", "''").Replace("-","");
+            passWord = textBoxPassword.Text.Trim().Replace("'", "''");
+            confirmedPassWord = textBoxConfirmePassword.Text.Trim().Replace("'", "''");
+
+            string hash = Security.GenerathashandSalt(64, passWord).hash;
+            string salt = Security.GenerathashandSalt(64, passWord).salt;
             
             while (passWord.Equals(confirmedPassWord) && isUnique(login))
             {
@@ -95,6 +97,7 @@ namespace SYNDIC_1._0.Forms
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
+                        
                         if (update)
                         {
                             command.CommandText = queryUpdate;

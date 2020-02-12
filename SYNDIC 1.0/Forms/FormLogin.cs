@@ -12,13 +12,15 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Threading;
 using System.Security.Cryptography;
+using SYNDIC_1._0.Helpers;
 
 namespace SYNDIC_1._0.Forms
 {
     public partial class FormLogin : Form
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
-        private string typeUtilisateur = string.Empty;
+        string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
+        string typeUtilisateur = string.Empty;
+        public bool authentitace = false;
         public FormLogin()
         {
             Thread thread = new Thread(new ThreadStart(startForm));
@@ -111,56 +113,54 @@ namespace SYNDIC_1._0.Forms
                 {
                     connection.Open();
                 }
-                string query = "select * from utilisateur where login ='" + username + "'and mot_de_passe = '" + password + "'";
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query,connection))
+                string query = "select * from utilisateur where login like '% @login %' ";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    using (DataTable dataTable = new DataTable())
+                    command.Parameters.AddWithValue("@login", username);
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        dataAdapter.Fill(dataTable);
-                        if (dataTable.Rows.Count == 0)
+                        if (!reader.HasRows)
                         {
-                            MessageBox.Show("majebroxi");
+                            MessageBox.Show("majebrochi");
                             return;
-
                         }
-                        if (dataTable.Rows.Count == 1)
+                        while (reader.Read())
                         {
-                            string mot_de_pass = dataTable.Rows[1]["mot_de_pass"] as string;
-                            string salt = dataTable.Rows[1]["salt"] as string;
-                            bool authenticat = VerifyPassword(password, mot_de_pass, salt);
-                            if (authenticat)
+                            typeUtilisateur = reader.GetString(1);
+                            string storedPassword = reader.GetString(3);
+                            string storedSalt = reader.GetString(4);
+                            authentitace = Security.VerifyPassword(password, storedPassword, storedSalt);
+                        }
+                        if (authentitace)
+                        {
+                            // login successful
+                            switch (typeUtilisateur)
                             {
-                                // login successful
-                                switch (dataTable.Rows[1]["typeUtilisateur"] as string)
-                                {
-                                    case "Admin":
-                                        {
-                                            typeUtilisateur = "Admin";
-                                            this.Hide();
-                                            // Show the main menu
-                                            MessageBox.Show("Login was succesful. " + username + " !");
-                                            break;
-                                        }
-                                    case "Utilisateur":
-                                        {
-                                            typeUtilisateur = "Utilisateur";
-                                            this.Hide();
-                                            // Show the main menu
-                                            MessageBox.Show("Login was succesful. " + username + " !");
-                                            break;
-                                        }
-                                }
+                                case "Admin":
+                                    {
+                                        typeUtilisateur = "Admin";
+                                        this.Hide();
+                                        // Show the main menu
+                                        MessageBox.Show("Login was succesful. " + username + " !");
+                                        break;
+                                    }
+                                case "Utilisateur":
+                                    {
+                                        typeUtilisateur = "Utilisateur";
+                                        this.Hide();
+                                        // Show the main menu
+                                        MessageBox.Show("Login was succesful. " + username + " !");
+                                        break;
+                                    }
                             }
-                            if (!authenticat)
-                            {
-                                MessageBox.Show("jrijri");
-                                return;
-                            }
+                        }
+                        if (!authentitace)
+                        {
+                            MessageBox.Show("jrijri");
                         }
                     }
-
                 }
-            }
+            }    
             
         }
 
