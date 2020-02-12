@@ -38,6 +38,7 @@ namespace SYNDIC_1._0
                           log.id,
                           connectionTable.date_connexion,
                           user.typeUtilisateur,
+                          user.login,
                           log.date_action,
                           log.action,
                           log.table_action,
