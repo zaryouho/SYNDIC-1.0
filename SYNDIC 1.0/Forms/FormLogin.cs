@@ -20,6 +20,7 @@ namespace SYNDIC_1._0.Forms
     {
         string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
         string typeUtilisateur = string.Empty;
+        public static int userId = -1;
         public bool authentitace = false;
         public FormLogin()
         {
@@ -126,6 +127,7 @@ namespace SYNDIC_1._0.Forms
                         }
                         while (reader.Read())
                         {
+                            userId = reader.GetInt32(0);
                             typeUtilisateur = reader.GetString(1);
                             string storedPassword = reader.GetString(3);
                             string storedSalt = reader.GetString(4);
