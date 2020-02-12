@@ -10,7 +10,12 @@ namespace SYNDIC_1._0.Helper
     public static class Log
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString;
-        
+
+        public enum actions
+        {
+            Ajouter, Modifer,Supprimer
+        };
+
         /// <summary>
         /// Inserts values into database table <em>journal<em>
         /// Does not returns
@@ -50,6 +55,7 @@ namespace SYNDIC_1._0.Helper
                         System.Windows.Forms.MessageBox.Show(e.Message);
                     }
                 }
+
             }
         }
         /// <summary>
@@ -94,7 +100,6 @@ namespace SYNDIC_1._0.Helper
                         command.Parameters.AddWithValue("@anciennes_valeurs", oldValues[i].ToString());
                         command.Parameters.AddWithValue("@nouvelles_valeurs", newValues[i].ToString());
                     }
-
                     try
                     {
                         command.ExecuteNonQuery();

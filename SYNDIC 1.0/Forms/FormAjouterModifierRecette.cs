@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SYNDIC_1._0.Forms
@@ -22,14 +18,11 @@ namespace SYNDIC_1._0.Forms
         private string operation;
         private DataClassesSyndicDataContext SyndicDataContext = new DataClassesSyndicDataContext();
 
-
-
         public FormAjouterModifierRecette(int _id_Proprietaire = -1, string _operation = "")
         {
             InitializeComponent();
             id_Proprietaire = _id_Proprietaire;
             operation = _operation;
-
         }
 
         private void FormAjouterModifierRecette_Load(object sender, EventArgs e)
@@ -41,8 +34,7 @@ namespace SYNDIC_1._0.Forms
                 DBHelper.remplir_dataset("select b.id,b.nom + ' ' + b.titre as BienNom,im.nom as ImNom from bien b inner join immeuble im on im.id = b.id_immeuble where id_proprietaire = " + id_Proprietaire.ToString(), "Bien_Prop");
                 DBHelper.remplir_dataset("select * from type where idTableType in (select id from tabletype where libelle like 'echeance')", "typeEcheance");
                 DBHelper.remplir_dataset("select * from type where idTableType in (select id from tabletype where libelle like 'recette')", "typeRecette");
-                DBHelper.remplir_dataset("select e.id,e.montant,e.typeEchea,e.montant - e.montant_reçu as reste, e.id_bien, e.annee from echeance e inner join bien b on b.id = e.id_bien where b.id_proprietaire = "+id_Proprietaire.ToString() +" and e.typeEchea not like 'Frais biens' and e.montant>e.montant_reçu","echeanceCotisation");
-
+                DBHelper.remplir_dataset("select e.id,e.montant,e.typeEchea,e.montant - e.montant_reçu as reste, e.id_bien, e.annee from echeance e inner join bien b on b.id = e.id_bien where b.id_proprietaire = " + id_Proprietaire.ToString() + " and e.typeEchea not like 'Frais biens' and e.montant>e.montant_reçu", "echeanceCotisation");
 
                 bsProprietaire = DBHelper.remplir_bindingsource("Proprietaire_Recette");
                 bsProprietaireBien = DBHelper.remplir_bindingsource("Bien_Prop");
@@ -56,17 +48,15 @@ namespace SYNDIC_1._0.Forms
                 DBHelper.remplir_ListControl(comboBoxNomProprietaire, bsProprietaire, "nom_complet", "id");
                 DBHelper.remplir_Grille(dataGridViewListEcheance, bsEcheanceCotisation);
 
-
                 comboBoxNomProprietaire.SelectedValue = id_Proprietaire;
                 comboBoxNomProprietaire.Enabled = false;
 
                 comboBoxTypeEcheance.SelectedValue = "Frais biens";
 
                 dataGridViewListEcheance.Columns[0].Visible = false;
-
-
             }
         }
+
         private void buttonValider_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure want to Add this Informations ?"
@@ -81,10 +71,8 @@ namespace SYNDIC_1._0.Forms
                 MessageBoxDefaultButton.Button3
              );
 
-
             if (result == DialogResult.Yes)
             {
-
                 int id_Cotisation;
                 decimal montantRecette = Convert.ToDecimal(textBoxMontant.Text);
 
@@ -98,7 +86,7 @@ namespace SYNDIC_1._0.Forms
                     + comboBoxTypeRecette.SelectedValue.ToString() + "',"
                     + comboBoxNomProprietaire.SelectedValue.ToString() + ","
                     + textBoxNumRecu.Text + ")";
-                
+
                 com = new SqlCommand(sql, conn);
                 com.ExecuteNonQuery();
                 com = null;
@@ -115,10 +103,8 @@ namespace SYNDIC_1._0.Forms
                               where echeance.id_bien.Equals(Convert.ToInt32(comboBoxNomBien.SelectedValue))
                               select echeance;
 
-
                     foreach (echeance ech in src)
                     {
-
                         if (ech.montant_reçu < ech.montant || ech.montant_reçu == 0)
                         {
                             MessageBox.Show(ech.montant_reçu.ToString() + "-----" + ech.mois);
@@ -136,14 +122,10 @@ namespace SYNDIC_1._0.Forms
                                 {
                                     MessageBox.Show("Montant recu <=  montantRecette + ech.montant_reçu ");
 
-
                                     montantRecette += Convert.ToDecimal(updateEcheance.montant_reçu);
                                     updateEcheance.montant_reçu = ech.montant;
 
                                     montantRecette -= Convert.ToDecimal(ech.montant);
-
-
-
                                 }
                                 else if (ech.montant > montantRecette + ech.montant_reçu)
                                 {
@@ -162,7 +144,6 @@ namespace SYNDIC_1._0.Forms
                                     updateEcheance.montant_reçu = ech.montant;
 
                                     montantRecette -= Convert.ToDecimal(ech.montant);
-
                                 }
                                 else if (ech.montant > montantRecette)
                                 {
@@ -170,7 +151,6 @@ namespace SYNDIC_1._0.Forms
                                     montantRecette = 0;
                                 }
                             }
-
 
                             SyndicDataContext.SubmitChanges();
                             sql = "insert into cotisation_echeance values (" + id_Cotisation.ToString() + "," + updateEcheance.id.ToString() + ")";
@@ -184,14 +164,13 @@ namespace SYNDIC_1._0.Forms
                     }
                     conn.Close();
                     SyndicDataContext.Dispose();
-                    DBHelper.syncroniser("cotisation");
+                    DBHelper.syncroniser(nameof(cotisation));
                     this.Close();
                 }
                 else
                 {
                     try
                     {
-
                         var echeance1 = (from echeance
                                          in SyndicDataContext.echeances
                                          where echeance.id.Equals(Convert.ToInt32(dataGridViewListEcheance.CurrentRow.Cells[0].Value.ToString()))
@@ -205,22 +184,19 @@ namespace SYNDIC_1._0.Forms
                         SyndicDataContext.SubmitChanges();
 
                         sql = "insert into cotisation_echeance values (" + id_Cotisation.ToString() + "," + dataGridViewListEcheance.CurrentRow.Cells[0].Value.ToString() + ")";
-                        com = new SqlCommand(sql, conn);
-                        com.ExecuteNonQuery();
-                        DBHelper.syncroniser("cotisation");
-                        this.Close();
-
+                        using (com = new SqlCommand(sql, conn))
+                        {
+                            com.ExecuteNonQuery();
+                            DBHelper.syncroniser(nameof(cotisation));
+                            this.Close();
+                        }
                     }
                     catch (Exception ee)
                     {
-                        MessageBox.Show(ee.Message,"Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show(ee.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    
-
                 }
             }
-           
-
 
             if (result == DialogResult.No)
                 this.Close();
@@ -234,26 +210,29 @@ namespace SYNDIC_1._0.Forms
 
         private void comboBoxIdEcheance_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (comboBoxTypeEcheance.SelectedValue.Equals( "Frais biens")) 
-            //{ 
+            //if (comboBoxTypeEcheance.SelectedValue.Equals( "Frais biens"))
+            //{
             //    panelIdEcheance.Visible = false;
             //    return;
             //}
             //panelIdEcheance.Visible = true;
-
         }
 
         private void comboBoxTypeEcheance_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            try { 
-            if (comboBoxTypeEcheance.SelectedValue.Equals("Frais biens"))
+            try
             {
-                panelIdEcheance.Visible = false;
-                return;
+                if (comboBoxTypeEcheance.SelectedValue.Equals("Frais biens"))
+                {
+                    panelIdEcheance.Visible = false;
+                    return;
+                }
+                panelIdEcheance.Visible = true;
             }
-            panelIdEcheance.Visible = true;
-            }catch(Exception ee) { }
+            catch (Exception )
+            {
+                throw;
+            }
         }
 
         private void comboBoxNomBien_SelectedIndexChanged(object sender, EventArgs e)
@@ -261,14 +240,20 @@ namespace SYNDIC_1._0.Forms
             try
             {
                 bsEcheanceCotisation.Filter = "id_bien = " + comboBoxNomBien.SelectedValue.ToString();
-
-            }catch(Exception ee) { }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void buttonAddNewTypeEcheance_Click(object sender, EventArgs e)
         {
-            new FormGestionTypes("echeance").ShowDialog();
-            DBHelper.syncroniser("type");
+            using (var formGestionTypes = new FormGestionTypes(nameof(echeance)))
+            {
+                formGestionTypes.ShowDialog();
+                DBHelper.syncroniser("type");
+            }
         }
 
         private void buttonAjouterDocument_Click(object sender, EventArgs e)
@@ -279,8 +264,6 @@ namespace SYNDIC_1._0.Forms
             if(save.ShowDialog() == DialogResult.OK)
             {
                 string fileName = save.FileName;
-
-
             }*/
         }
     }

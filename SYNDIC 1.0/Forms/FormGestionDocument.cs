@@ -56,37 +56,39 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonAjouterDocument_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Title = "Saving File";
-            save.Filter = "Pdf Files| *.pdf";
-            if (save.ShowDialog() == DialogResult.OK)
+            using (var save = new SaveFileDialog())
             {
-                string fileName = save.FileName;
-                
-                string d = DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
-                Random n = new Random();
-                string i = n.Next().ToString();
+                save.Title = "Saving File";
+                save.Filter = "Pdf Files| *.pdf";
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    var fileName = save.FileName;
 
-                string ext = Path.GetExtension(fileName);
+                    var d = DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
+                    var n = new Random();
+                    var i = n.Next().ToString();
 
-                string newName = d + n + i + ext;
+                    var ext = Path.GetExtension(fileName);
 
-                File.Copy(fileName, "documents/"+ newName);
+                    var newName = d + n + i + ext;
 
-                bsDocument.AddNew();
-               
-                dataGridViewListeDocuments.CurrentRow.Cells[3].Value = id.ToString();
-                dataGridViewListeDocuments.CurrentRow.Cells[2].Value = Application.StartupPath + "/documents/" + newName;
-                dataGridViewListeDocuments.CurrentRow.Cells[1].Value = Path.GetFileName(fileName);
+                    File.Copy(fileName, "documents/" + newName);
 
-                bsDocument.EndEdit();
-                
-                DBHelper.syncroniser(table);
+                    bsDocument.AddNew();
 
-                if (DBHelper.dataSet.Tables.Contains(table))
-                    DBHelper.dataSet.Tables.Remove(table);
+                    dataGridViewListeDocuments.CurrentRow.Cells[3].Value = id.ToString();
+                    dataGridViewListeDocuments.CurrentRow.Cells[2].Value = Application.StartupPath + "/documents/" + newName;
+                    dataGridViewListeDocuments.CurrentRow.Cells[1].Value = Path.GetFileName(fileName);
 
-                FormGestionDocument_Load(sender, e);
+                    bsDocument.EndEdit();
+
+                    DBHelper.syncroniser(table);
+
+                    if (DBHelper.dataSet.Tables.Contains(table))
+                        DBHelper.dataSet.Tables.Remove(table);
+
+                    FormGestionDocument_Load(sender, e);
+                }
             }
 
         }
@@ -115,11 +117,15 @@ namespace SYNDIC_1._0.Forms
         {
             try
             {
-                string fichier = dataGridViewListeDocuments.CurrentRow.Cells[2].Value.ToString();
+                var fichier = dataGridViewListeDocuments.CurrentRow.Cells[2].Value.ToString();
                 MessageBox.Show(fichier);
                 System.Diagnostics.Process.Start(@fichier);
 
-            }catch(Exception ee) { }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void buttonSupprimerDocument_Click(object sender, EventArgs e)
@@ -130,7 +136,7 @@ namespace SYNDIC_1._0.Forms
                 {
                     if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet Document ?", "Supprission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                     {
-                        string fichier = dataGridViewListeDocuments.CurrentRow.Cells[2].Value.ToString();
+                        var fichier = dataGridViewListeDocuments.CurrentRow.Cells[2].Value.ToString();
 
                         File.Delete(fichier);
                         bsDocument.RemoveCurrent();
@@ -138,7 +144,12 @@ namespace SYNDIC_1._0.Forms
 
                     }
                 }
-            }catch(Exception ee) { }
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

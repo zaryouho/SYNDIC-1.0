@@ -22,10 +22,7 @@ namespace SYNDIC_1._0
             op = _op;
         }
 
-        private void labelTitre_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void FormAjouterModifierProp_Load(object sender, EventArgs e)
         {
@@ -135,9 +132,7 @@ namespace SYNDIC_1._0
             this.Close();
         }
 
-        private void comboBoxIdVille_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        
 
         private void comboBoxSexe_TextChanged(object sender, EventArgs e)
         {
@@ -166,6 +161,8 @@ namespace SYNDIC_1._0
 
         private void textBoxTele_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (textBoxTele.Text.Contains('+') && e.KeyChar == '+')
+                e.Handled = true;
 
 
             if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '+')
@@ -177,7 +174,7 @@ namespace SYNDIC_1._0
 
                 if (Char.IsDigit(e.KeyChar))
                 {
-                    if (textBoxTele.Text.Length > 9)
+                    if (textBoxTele.Text.Length > 12)
                     {
                         e.Handled = true;
 
@@ -191,6 +188,12 @@ namespace SYNDIC_1._0
         private void textBoxCodePostal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) || textBoxCodePostal.TextLength > 4)
+                e.Handled = true;
+        }
+
+        private void textBoxPrenom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar))
                 e.Handled = true;
         }
     }

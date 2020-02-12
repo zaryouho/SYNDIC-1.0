@@ -97,6 +97,7 @@ namespace SYNDIC_1._0.Forms
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
+                        int result = -1;
                         
                         if (update)
                         {
@@ -104,6 +105,7 @@ namespace SYNDIC_1._0.Forms
                             command.Parameters.AddWithValue("@passWord", hash);
                             command.Parameters.AddWithValue("@salt", salt);
                             command.Parameters.AddWithValue("@login", login);
+                            result = command.ExecuteNonQuery();
                         }
                         if (!update)
                         {
@@ -112,17 +114,19 @@ namespace SYNDIC_1._0.Forms
                             command.Parameters.AddWithValue("@login", login);
                             command.Parameters.AddWithValue("@hash", hash);
                             command.Parameters.AddWithValue("@salt", salt);
+                            result = command.ExecuteNonQuery();
                         }
                         
-                        int result = command.ExecuteNonQuery();
                         if (result != -1)
                         {
                             if (update)
                             {
+                                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Modifer.ToString(),"utilisateur", "oldPassword", "newPassword");
                                 MessageBox.Show("daz update");
                             }
                             else
                             {
+                                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Ajouter.ToString(),"utilisateur", "oldPassword", "newPassword");
                                 MessageBox.Show("daz insert");
                             }
                         }
@@ -173,6 +177,7 @@ namespace SYNDIC_1._0.Forms
                         
                         if (result != -1)
                         {
+                            Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Supprimer.ToString(), "utilisateur", currentLogin, "-");
                             MessageBox.Show("daz");
                             fillDataGrid();
                         }

@@ -158,5 +158,10 @@ namespace SYNDIC_1._0
                 formAjouterModifierProp.ShowDialog();
             }
         }
+
+        private void comboBoxProprietaire_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxIdProprietaire.Text = comboBoxProprietaire.SelectedValue.ToString();
+        }
     }
 }
