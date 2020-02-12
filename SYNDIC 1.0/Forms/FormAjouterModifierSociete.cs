@@ -88,7 +88,7 @@ namespace SYNDIC_1._0.Forms
                             where soc.id == so.id
                             select soc).Single();
 
-
+                soci.raison_sociale = textBoxRaison_Social.Text;
                 soci.nom = textBoxNom.Text;
                 soci.prenom = textBoxPrenom.Text;
                 soci.adresse = textBoxAddress.Text;
@@ -104,7 +104,7 @@ namespace SYNDIC_1._0.Forms
             else
             {
 
-             
+                so.raison_sociale = textBoxRaison_Social.Text;
                 so.nom = textBoxNom.Text;
                 so.prenom = textBoxPrenom.Text;
                 so.adresse = textBoxAddress.Text;

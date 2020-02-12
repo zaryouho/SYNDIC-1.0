@@ -23,6 +23,7 @@ namespace SYNDIC_1._0.Forms
 
         private void FormAjouterModifierEmploye_Load(object sender, EventArgs e)
         {
+         
             if (c == 'A')
             {
                 dateTimePickerDateRecrutement.Enabled = false;
@@ -33,18 +34,13 @@ namespace SYNDIC_1._0.Forms
             var src = from v in syndicDataContext.villes
                       select v;
 
-            comboBoxVille.DataSource = src;
             comboBoxVille.DisplayMember = "nom";
             comboBoxVille.ValueMember = "id";
+            comboBoxVille.DataSource = src;
 
-            comboBoxIdVille.DataSource = src;
-            comboBoxIdVille.DisplayMember = "id";
-            comboBoxIdVille.ValueMember = "id";
-            if (c == 'A')
-            {
-                radioButtonActifTrue.Checked = true;
-            }
-            radioButtonActifFalse.Checked = false;
+          
+            radioButtonActifTrue.Checked = true;
+            
 
             var scr = from TEmp in syndicDataContext.employes
                       select TEmp;
@@ -57,6 +53,12 @@ namespace SYNDIC_1._0.Forms
 
             if (c == 'M')
             {
+                var emp = (from emps in syndicDataContext.employes
+                           where emps.id.Equals(em.id)
+                           select emps).Single();
+
+                em = emp;
+
 
 
                 textBoxNom.Text = em.nom.ToString();
@@ -65,9 +67,10 @@ namespace SYNDIC_1._0.Forms
                 textBoxCodePostal.Text = em.code_postal.ToString();
                 textBoxEmail.Text = em.email.ToString();
                 textBoxTele.Text = em.tel.ToString();
-                radioButtonActifFalse.Checked = false;
+                radioButtonActifFalse.Checked = Convert.ToBoolean(!em.actif);
                 comboBoxTypeEmploye.SelectedItem = em.typeEmploye.ToString();
-                //  comboBoxVille.SelectedValue = em.id_ville;
+                MessageBox.Show(em.actif.ToString());
+                comboBoxVille.SelectedValue = em.id_ville;
 
             }
         }
@@ -125,7 +128,7 @@ namespace SYNDIC_1._0.Forms
                 empl.email = textBoxEmail.Text;
                 empl.date_recrutement = dateTimePickerDateRecrutement.Value;
                 empl.typeEmploye = comboBoxTypeEmploye.Text;
-                empl.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
+                empl.id_ville = int.Parse(comboBoxVille.Text.ToString());
             }
             else
             {
@@ -138,11 +141,11 @@ namespace SYNDIC_1._0.Forms
                 em.email = textBoxEmail.Text;
                 em.date_recrutement = dateTimePickerDateRecrutement.Value;
 
-              
+                em.actif = radioButtonActifTrue.Checked;
 
                 //  em.date_depart = dateTimePickerDateDepart.Value;
                 em.typeEmploye = comboBoxTypeEmploye.Text;
-                em.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
+                em.id_ville = int.Parse(comboBoxVille.SelectedValue.ToString()); ;
                 syndicDataContext.employes.InsertOnSubmit(em);
 
             }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.comboBoxVille = new System.Windows.Forms.ComboBox();
-            this.comboBoxIdVille = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValdier = new System.Windows.Forms.Button();
@@ -69,14 +68,6 @@
             this.comboBoxVille.Name = "comboBoxVille";
             this.comboBoxVille.Size = new System.Drawing.Size(201, 21);
             this.comboBoxVille.TabIndex = 119;
-            // 
-            // comboBoxIdVille
-            // 
-            this.comboBoxIdVille.FormattingEnabled = true;
-            this.comboBoxIdVille.Location = new System.Drawing.Point(204, 326);
-            this.comboBoxIdVille.Name = "comboBoxIdVille";
-            this.comboBoxIdVille.Size = new System.Drawing.Size(201, 21);
-            this.comboBoxIdVille.TabIndex = 125;
             // 
             // panel1
             // 
@@ -330,7 +321,6 @@
             this.Controls.Add(this.radioButtonActifTrue);
             this.Controls.Add(this.panelHead);
             this.Controls.Add(this.comboBoxVille);
-            this.Controls.Add(this.comboBoxIdVille);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTypeEmploye);
@@ -365,7 +355,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxVille;
-        private System.Windows.Forms.ComboBox comboBoxIdVille;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonValdier;
         private System.Windows.Forms.Button buttonRaz;

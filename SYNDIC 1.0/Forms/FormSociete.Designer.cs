@@ -36,22 +36,32 @@
             this.buttonSocieteArchive = new System.Windows.Forms.Button();
             this.buttonAjouterSociete = new System.Windows.Forms.Button();
             this.panelIN = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelEmployeBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAjouterSSociete = new System.Windows.Forms.Button();
-            this.buttonSupprimerSociete = new System.Windows.Forms.Button();
-            this.buttonModifierSociete = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonRechercher = new System.Windows.Forms.Button();
+            this.textBoxRechercher = new System.Windows.Forms.TextBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonprevious = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
-            this.buttonRechercher = new System.Windows.Forms.Button();
-            this.textBoxRechercher = new System.Windows.Forms.TextBox();
             this.dataGridViewSociete = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanelEmployeBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAjouterSSociete = new System.Windows.Forms.Button();
+            this.buttonSupprimerSociete = new System.Windows.Forms.Button();
+            this.buttonModifierSociete = new System.Windows.Forms.Button();
             this.tableLayoutPSociete.SuspendLayout();
             this.tableLayoutPanelEmploye.SuspendLayout();
             this.panelIN.SuspendLayout();
-            this.tableLayoutPanelEmployeBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSociete)).BeginInit();
+            this.tableLayoutPanelEmployeBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPSociete
@@ -181,19 +191,122 @@
             // 
             // panelIN
             // 
+            this.panelIN.Controls.Add(this.splitContainer1);
             this.panelIN.Controls.Add(this.tableLayoutPanelEmployeBottom);
-            this.panelIN.Controls.Add(this.buttonLast);
-            this.panelIN.Controls.Add(this.buttonNext);
-            this.panelIN.Controls.Add(this.buttonprevious);
-            this.panelIN.Controls.Add(this.buttonFirst);
-            this.panelIN.Controls.Add(this.buttonRechercher);
-            this.panelIN.Controls.Add(this.textBoxRechercher);
-            this.panelIN.Controls.Add(this.dataGridViewSociete);
             this.panelIN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelIN.Location = new System.Drawing.Point(0, 92);
             this.panelIN.Name = "panelIN";
             this.panelIN.Size = new System.Drawing.Size(800, 358);
             this.panelIN.TabIndex = 30;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonRechercher);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxRechercher);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 303);
+            this.splitContainer1.SplitterDistance = 41;
+            this.splitContainer1.TabIndex = 13;
+            // 
+            // buttonRechercher
+            // 
+            this.buttonRechercher.Location = new System.Drawing.Point(220, 11);
+            this.buttonRechercher.Name = "buttonRechercher";
+            this.buttonRechercher.Size = new System.Drawing.Size(98, 20);
+            this.buttonRechercher.TabIndex = 16;
+            this.buttonRechercher.Text = "Rechercher";
+            this.buttonRechercher.UseVisualStyleBackColor = true;
+            this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click);
+            // 
+            // textBoxRechercher
+            // 
+            this.textBoxRechercher.Location = new System.Drawing.Point(12, 11);
+            this.textBoxRechercher.Name = "textBoxRechercher";
+            this.textBoxRechercher.Size = new System.Drawing.Size(202, 20);
+            this.textBoxRechercher.TabIndex = 15;
+            this.textBoxRechercher.TextChanged += new System.EventHandler(this.textBoxRechercher_TextChanged);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.buttonLast);
+            this.splitContainer2.Panel1.Controls.Add(this.buttonNext);
+            this.splitContainer2.Panel1.Controls.Add(this.buttonprevious);
+            this.splitContainer2.Panel1.Controls.Add(this.buttonFirst);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridViewSociete);
+            this.splitContainer2.Size = new System.Drawing.Size(800, 258);
+            this.splitContainer2.SplitterDistance = 58;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.Location = new System.Drawing.Point(10, 188);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 31);
+            this.buttonLast.TabIndex = 22;
+            this.buttonLast.Text = ">>";
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Location = new System.Drawing.Point(10, 133);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 31);
+            this.buttonNext.TabIndex = 21;
+            this.buttonNext.Text = ">";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonprevious
+            // 
+            this.buttonprevious.Location = new System.Drawing.Point(10, 78);
+            this.buttonprevious.Name = "buttonprevious";
+            this.buttonprevious.Size = new System.Drawing.Size(39, 31);
+            this.buttonprevious.TabIndex = 20;
+            this.buttonprevious.Text = "<";
+            this.buttonprevious.UseVisualStyleBackColor = true;
+            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.Location = new System.Drawing.Point(10, 23);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 31);
+            this.buttonFirst.TabIndex = 19;
+            this.buttonFirst.Text = "<<";
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
+            // dataGridViewSociete
+            // 
+            this.dataGridViewSociete.AllowUserToAddRows = false;
+            this.dataGridViewSociete.AllowUserToDeleteRows = false;
+            this.dataGridViewSociete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSociete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSociete.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewSociete.Name = "dataGridViewSociete";
+            this.dataGridViewSociete.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSociete.Size = new System.Drawing.Size(738, 258);
+            this.dataGridViewSociete.TabIndex = 13;
             // 
             // tableLayoutPanelEmployeBottom
             // 
@@ -234,7 +347,7 @@
             this.buttonAjouterSSociete.TabIndex = 8;
             this.buttonAjouterSSociete.Text = "Ajouter Societe";
             this.buttonAjouterSSociete.UseVisualStyleBackColor = false;
-            
+            this.buttonAjouterSSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
             // buttonSupprimerSociete
             // 
@@ -257,7 +370,7 @@
             this.buttonSupprimerSociete.TabIndex = 10;
             this.buttonSupprimerSociete.Text = "Supprimer Societe";
             this.buttonSupprimerSociete.UseVisualStyleBackColor = false;
-            
+            this.buttonSupprimerSociete.Click += new System.EventHandler(this.buttonSupprimerSociete_Click);
             // 
             // buttonModifierSociete
             // 
@@ -280,75 +393,7 @@
             this.buttonModifierSociete.TabIndex = 9;
             this.buttonModifierSociete.Text = "Modifier Societe";
             this.buttonModifierSociete.UseVisualStyleBackColor = false;
-            
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.Location = new System.Drawing.Point(706, 227);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 31);
-            this.buttonLast.TabIndex = 11;
-            this.buttonLast.Text = ">>";
-            this.buttonLast.UseVisualStyleBackColor = true;
-            
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(706, 172);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 31);
-            this.buttonNext.TabIndex = 10;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            
-            // 
-            // buttonprevious
-            // 
-            this.buttonprevious.Location = new System.Drawing.Point(706, 117);
-            this.buttonprevious.Name = "buttonprevious";
-            this.buttonprevious.Size = new System.Drawing.Size(39, 31);
-            this.buttonprevious.TabIndex = 9;
-            this.buttonprevious.Text = "<";
-            this.buttonprevious.UseVisualStyleBackColor = true;
-            
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.Location = new System.Drawing.Point(706, 62);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 31);
-            this.buttonFirst.TabIndex = 8;
-            this.buttonFirst.Text = "<<";
-            this.buttonFirst.UseVisualStyleBackColor = true;
-            
-            // 
-            // buttonRechercher
-            // 
-            this.buttonRechercher.Location = new System.Drawing.Point(222, 20);
-            this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(98, 20);
-            this.buttonRechercher.TabIndex = 7;
-            this.buttonRechercher.Text = "Rechercher";
-            this.buttonRechercher.UseVisualStyleBackColor = true;
-            this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click);
-            // 
-            // textBoxRechercher
-            // 
-            this.textBoxRechercher.Location = new System.Drawing.Point(14, 20);
-            this.textBoxRechercher.Name = "textBoxRechercher";
-            this.textBoxRechercher.Size = new System.Drawing.Size(202, 20);
-            this.textBoxRechercher.TabIndex = 6;
-            // 
-            // dataGridViewSociete
-            // 
-            this.dataGridViewSociete.AllowUserToAddRows = false;
-            this.dataGridViewSociete.AllowUserToDeleteRows = false;
-            this.dataGridViewSociete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSociete.Location = new System.Drawing.Point(12, 46);
-            this.dataGridViewSociete.Name = "dataGridViewSociete";
-            this.dataGridViewSociete.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSociete.Size = new System.Drawing.Size(668, 232);
-            this.dataGridViewSociete.TabIndex = 5;
+            this.buttonModifierSociete.Click += new System.EventHandler(this.buttonModifierSociete_Click);
             // 
             // FormSociete
             // 
@@ -366,9 +411,17 @@
             this.tableLayoutPSociete.PerformLayout();
             this.tableLayoutPanelEmploye.ResumeLayout(false);
             this.panelIN.ResumeLayout(false);
-            this.panelIN.PerformLayout();
-            this.tableLayoutPanelEmployeBottom.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSociete)).EndInit();
+            this.tableLayoutPanelEmployeBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -387,12 +440,14 @@
         private System.Windows.Forms.Button buttonAjouterSSociete;
         private System.Windows.Forms.Button buttonSupprimerSociete;
         private System.Windows.Forms.Button buttonModifierSociete;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button buttonRechercher;
+        private System.Windows.Forms.TextBox textBoxRechercher;
+        private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Button buttonLast;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonprevious;
         private System.Windows.Forms.Button buttonFirst;
-        private System.Windows.Forms.Button buttonRechercher;
-        private System.Windows.Forms.TextBox textBoxRechercher;
         private System.Windows.Forms.DataGridView dataGridViewSociete;
     }
 }
