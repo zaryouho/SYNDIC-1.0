@@ -31,15 +31,15 @@ namespace SYNDIC_1._0.Helper
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
 
-                string query = " insert into journal values (@userId ,@dateTimeAction ,@action ,@actionTable,@oldValues ,@newValues )";
+                string query = " insert into journal values (@userId ,@dateTimeAction ,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
                 using (SqlCommand command = new SqlCommand(query,connection))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@dateAction", dateTimeAction);
                     command.Parameters.AddWithValue("@action", action);
                     command.Parameters.AddWithValue("@actionTable", actionTable);
-                    command.Parameters.AddWithValue("@oldValues", oldValues);
-                    command.Parameters.AddWithValue("@newValue", newValues);
+                    command.Parameters.AddWithValue("@anciennes_valeurs", oldValues);
+                    command.Parameters.AddWithValue("@nouvelles_valeurs", newValues);
 
                     try
                     {
@@ -50,9 +50,61 @@ namespace SYNDIC_1._0.Helper
                         System.Windows.Forms.MessageBox.Show(e.Message);
                     }
                 }
-
             }
-            
+        }
+        /// <summary>
+        /// Overloading the makeLog method with the ability to take multiple parameters as an input type of list of strings
+        /// and inserts values into database table <em>journal<em>
+        /// The size of the two lists must match otherwise throws an error 
+        /// </summary>
+        /// <param name="oldValues">List of strings</param>
+        /// <param name="newValues">List of strings</param>
+        public static void makeLog(int userId, DateTime dateTimeAction, string action, string actionTable, string[] oldValues, string[] newValues)
+        {
+            // To be deleted after testing
+
+            if (oldValues.Length != newValues.Length )
+            {
+                throw new Exception("Doesnt match !!");
+            }
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    if (connection.State != System.Data.ConnectionState.Open)
+                    {
+                        connection.Open();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+
+                string query = " insert into journal values (@userId ,@dateTimeAction ,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@dateAction", dateTimeAction);
+                    command.Parameters.AddWithValue("@action", action);
+                    command.Parameters.AddWithValue("@actionTable", actionTable);
+                    
+                    for (int i = 0; i < oldValues.Length; i++)
+                    {
+                        command.Parameters.AddWithValue("@anciennes_valeurs", oldValues[i].ToString());
+                        command.Parameters.AddWithValue("@nouvelles_valeurs", newValues[i].ToString());
+                    }
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        System.Windows.Forms.MessageBox.Show(e.Message);
+                    }
+                }
+            }
         }
     }
 }
