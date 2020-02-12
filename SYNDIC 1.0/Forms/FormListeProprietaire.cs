@@ -24,7 +24,7 @@ namespace SYNDIC_1._0
 
         private void FormListeProprietaire_Load(object sender, EventArgs e)
         {
-            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
+            
             var src = from v in syndicDataContext.villes
                       join p in syndicDataContext.proprietaires
                         on v.id equals p.id_ville
@@ -129,7 +129,7 @@ namespace SYNDIC_1._0
         {
             if (!textBoxrechercher.Text.Equals(string.Empty))
             {
-                string[] vs = textBoxrechercher.Text.Split(' ');
+                var vs = textBoxrechercher.Text.Split(' ');
                 for (int i = 0; i < vs.Length; i++)
                 {
                     vs[i].Trim();
@@ -163,9 +163,11 @@ namespace SYNDIC_1._0
 
     private void buttonListDocs_Click(object sender, EventArgs e)
         {
-            int current_Id = Convert.ToInt32(dataGridViewProprietaires.CurrentRow.Cells[11].Value.ToString());
-            new FormGestionDocument("documentProprietaire", "where id_Proprietaire = " + current_Id.ToString(), current_Id).ShowDialog();
-
+            var current_Id = Convert.ToInt32(dataGridViewProprietaires.CurrentRow.Cells[11].Value.ToString());
+            using (var formGestionDocument = new FormGestionDocument(nameof(documentProprietaire), "where id_Proprietaire = " + current_Id.ToString(), current_Id))
+            {
+                formGestionDocument.ShowDialog();
+            }
         }
     }
 }

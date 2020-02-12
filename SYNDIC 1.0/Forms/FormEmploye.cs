@@ -27,19 +27,22 @@ namespace SYNDIC_1._0.Forms
 
             var res = from em in syndicDataContext.employes
                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
+                      where em.date_depart == null
 
                       select new
                       {
                           em.id,
-                          em.nom,
-                          em.prenom,
-                          em.adresse,
-                          em.code_postal,
-                          em.tel,
-                          em.email,
-                          em.date_recrutement,
-                          em.typeEmploye,
-                          ville = vil.nom
+                          Nom = em.nom,
+                          Prénom = em.prenom,
+                          Adresse = em.adresse,
+                          Code_Postal = em.code_postal,
+                          Tele = em.tel,
+                          Email = em.email,
+                          Date_Recrutement = em.date_recrutement,
+                          Type_Employe = em.typeEmploye,
+                          Ville = vil.nom,
+                          
+                          Disponible = em.actif,
                       };
 
             dataGridViewEmploye.DataSource = res;
@@ -63,6 +66,15 @@ namespace SYNDIC_1._0.Forms
             buttonEmploye.BackColor = Color.Blue;
             buttonEmployeArchive.BackColor = Color.Blue;
             buttonAjouterEmploye.BackColor = Color.Navy;
+            c = 'A';
+
+            using (var FormAjouterModifierEmploye = new FormAjouterModifierEmploye(new employe(), c))
+            {
+                FormAjouterModifierEmploye.ShowDialog();
+
+            }
+            FormEmploye_Load(sender, e);
+            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[1, i];
         }
 
         private void buttonEmployeArchive_Click(object sender, EventArgs e)
@@ -77,22 +89,22 @@ namespace SYNDIC_1._0.Forms
                        select new
                        {
                            em.id,
-                           em.nom,
-                           em.prenom,
-                           em.adresse,
-                           em.code_postal,
-                           em.tel,
-                           em.email,
-                           em.date_recrutement,
-                           em.typeEmploye,
-                           idville = vil.id,
-                           ville = vil.nom,
-                           em.date_depart
+                           Nom = em.nom,
+                           Prénom = em.prenom,
+                           Adresse = em.adresse,
+                           Code_Postal = em.code_postal,
+                           Tele = em.tel,
+                           Email = em.email,
+                           Date_Recrutement = em.date_recrutement,
+                           Type_Employe = em.typeEmploye,
+                           Ville = vil.nom,
+                           Date_depart=em.date_depart,
+                           Disponible = em.actif,
                        });
 
             buttonModifierEmploye.Enabled = false;
             dataGridViewEmploye.DataSource = res;
-            dataGridViewEmploye.Columns[9].Visible = false;
+            dataGridViewEmploye.Columns[0].Visible = false;
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)
@@ -131,18 +143,18 @@ namespace SYNDIC_1._0.Forms
         {
             c = 'M';
 
-            //   em.id = int.Parse(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
+            em.id = int.Parse(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
             em.nom = dataGridViewEmploye.CurrentRow.Cells[1].Value.ToString();
             em.prenom = dataGridViewEmploye.CurrentRow.Cells[2].Value.ToString();
             em.adresse = dataGridViewEmploye.CurrentRow.Cells[3].Value.ToString();
             em.code_postal = int.Parse(dataGridViewEmploye.CurrentRow.Cells[4].Value.ToString());
             em.tel = dataGridViewEmploye.CurrentRow.Cells[5].Value.ToString();
             em.email = dataGridViewEmploye.CurrentRow.Cells[6].Value.ToString();
-            em.date_recrutement = DateTime.Parse(dataGridViewEmploye.CurrentRow.Cells[7].Value.ToString());
-            // em.actif = bool.Parse(dataGridViewEmploye.CurrentRow.Cells[8].Value.ToString());
-            // em.date_depart = DateTime.Parse(dataGridViewEmploye.CurrentRow.Cells[9].Value.ToString());
-            em.typeEmploye = dataGridViewEmploye.CurrentRow.Cells[7].Value.ToString();
-            em.id = int.Parse(dataGridViewEmploye.CurrentRow.Cells[9].Value.ToString());
+            //em.date_recrutement = DateTime.Parse(dataGridViewEmploye.CurrentRow.Cells[7].Value.ToString());
+            //em.actif = bool.Parse(dataGridViewEmploye.CurrentRow.Cells[11].Value.ToString());
+            
+            em.typeEmploye = dataGridViewEmploye.CurrentRow.Cells[8].Value.ToString();
+           
 
 
 
@@ -152,7 +164,7 @@ namespace SYNDIC_1._0.Forms
 
             }
             FormEmploye_Load(sender, e);
-            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[0, i];
+            dataGridViewEmploye.CurrentCell = dataGridViewEmploye[1, i];
         }
 
         private void buttonSupprimerEmploye_Click(object sender, EventArgs e)
@@ -168,7 +180,10 @@ namespace SYNDIC_1._0.Forms
                             where pr.id.Equals(em.id)
                             select pr).Single();
 
-                syndicDataContext.employes.DeleteOnSubmit(empl);
+                empl.date_depart = DateTime.Today;
+                empl.actif = false;
+
+                
                 syndicDataContext.SubmitChanges();
 
                 this.FormEmploye_Load(sender, e);
@@ -179,7 +194,7 @@ namespace SYNDIC_1._0.Forms
         {
             if (!textBoxRechercher.Text.Equals(string.Empty))
             {
-                string[] vs = textBoxRechercher.Text.Split(' ');
+                var vs = textBoxRechercher.Text.Split(' ');
                 for (int i = 0; i < vs.Length; i++)
                 {
                     vs[i].Trim();
@@ -196,15 +211,17 @@ namespace SYNDIC_1._0.Forms
                           select new
                           {
                               em.id,
-                              em.nom,
-                              em.prenom,
-                              em.adresse,
-                              em.code_postal,
-                              em.tel,
-                              em.email,
-                              em.date_recrutement,
-                              em.typeEmploye,
-                              ville = vil.nom
+                              Nom = em.nom,
+                              Prénom = em.prenom,
+                              Adresse = em.adresse,
+                              Code_Postal = em.code_postal,
+                              Tele = em.tel,
+                              Email = em.email,
+                              Date_Recrutement = em.date_recrutement,
+                              Type_Employe = em.typeEmploye,
+                              Ville = vil.nom,
+
+                              Disponible = em.actif,
                           };
 
                 dataGridViewEmploye.DataSource = src;
@@ -220,9 +237,11 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonListDocs_Click(object sender, EventArgs e)
         {
-            int current_Id = Convert.ToInt32(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
-            new FormGestionDocument("documentEmploye", "where id_employe = " + current_Id.ToString(), current_Id).ShowDialog();
-
+            var current_Id = Convert.ToInt32(dataGridViewEmploye.CurrentRow.Cells[0].Value.ToString());
+            using (var formGestionDocument = new FormGestionDocument(nameof(documentEmploye), "where id_employe = " + current_Id.ToString(), current_Id))
+            {
+                formGestionDocument.ShowDialog();
+            }
         }
 
         private void textBoxRechercher_TextChanged(object sender, EventArgs e)

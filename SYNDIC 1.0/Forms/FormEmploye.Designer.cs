@@ -400,6 +400,7 @@
             this.dataGridViewEmploye.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewEmploye.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewEmploye.Name = "dataGridViewEmploye";
+            this.dataGridViewEmploye.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEmploye.Size = new System.Drawing.Size(742, 250);
             this.dataGridViewEmploye.TabIndex = 0;
             // 
