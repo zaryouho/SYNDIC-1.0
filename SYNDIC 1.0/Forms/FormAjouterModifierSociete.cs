@@ -134,5 +134,50 @@ namespace SYNDIC_1._0.Forms
             textBoxEmail.Clear();
             textBoxRaison_Social.Focus();
         }
+
+        private void textBoxPrenom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxcode_Postal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar) || textBoxcode_Postal.TextLength > 4) && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxTelephone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxTelephone.Text.Contains('+') && e.KeyChar == '+')
+                e.Handled = true;
+
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '+')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    if (textBoxTelephone.Text.Length > 12)
+                    {
+                        e.Handled = true;
+
+                    }
+                }
+            }
+        }
+
+        private void textBoxEmail_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBoxNom.Text != "" && textBoxPrenom.Text != "" && textBoxRaison_Social.Text != ""
+            && StringHelper.IsValidEmailFormat(textBoxEmail.Text) && StringHelper.IsValidPhoneNumberFormat(textBoxTelephone.Text))
+                buttonValdier.Enabled = true;
+            else
+                buttonValdier.Enabled = false;
+        }
     }
 }

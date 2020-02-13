@@ -154,5 +154,50 @@ namespace SYNDIC_1._0.Forms
             syndicDataContext.Dispose();
             this.Close();
         }
+
+        private void textBoxPrenom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxCodePostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar) || textBoxCodePostal.TextLength > 4) && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxTele_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxTele.Text.Contains('+') && e.KeyChar == '+')
+                e.Handled = true;
+
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '+')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    if (textBoxTele.Text.Length > 12)
+                    {
+                        e.Handled = true;
+
+                    }
+                }
+            }
+        }
+
+        private void textBoxNom_TextChanged(object sender, EventArgs e)
+        {
+            if ( textBoxNom.Text != "" && textBoxPrenom.Text != ""
+            && StringHelper.IsValidEmailFormat(textBoxEmail.Text) && StringHelper.IsValidPhoneNumberFormat(textBoxTele.Text))
+                buttonValdier.Enabled = true;
+            else
+                buttonValdier.Enabled = false;
+        }
     }
 }

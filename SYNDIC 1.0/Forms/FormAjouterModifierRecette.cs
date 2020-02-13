@@ -266,5 +266,21 @@ namespace SYNDIC_1._0.Forms
                 string fileName = save.FileName;
             }*/
         }
+
+        private void textBoxNumRecu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxMontant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (textBoxMontant.Text.Contains('.') && e.KeyChar == '.')
+                e.Handled = true;
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
+                e.Handled = true;
+        }
     }
 }
