@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainerRecetteProprietaire = new System.Windows.Forms.SplitContainer();
+            this.buttonListDocs = new System.Windows.Forms.Button();
             this.buttonImprimerRecette = new System.Windows.Forms.Button();
             this.labelListeProprietaire = new System.Windows.Forms.Label();
             this.comboBoxProprietaire = new System.Windows.Forms.ComboBox();
@@ -41,7 +42,6 @@
             this.buttonFirst = new System.Windows.Forms.Button();
             this.buttonAjouterRecette = new System.Windows.Forms.Button();
             this.buttonSupprimerRecette = new System.Windows.Forms.Button();
-            this.buttonListDocs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteProprietaire)).BeginInit();
             this.splitContainerRecetteProprietaire.Panel1.SuspendLayout();
             this.splitContainerRecetteProprietaire.Panel2.SuspendLayout();
@@ -74,6 +74,29 @@
             this.splitContainerRecetteProprietaire.Size = new System.Drawing.Size(800, 450);
             this.splitContainerRecetteProprietaire.SplitterDistance = 68;
             this.splitContainerRecetteProprietaire.TabIndex = 0;
+            // 
+            // buttonListDocs
+            // 
+            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonListDocs.FlatAppearance.BorderSize = 0;
+            this.buttonListDocs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonListDocs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonListDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListDocs.ForeColor = System.Drawing.Color.White;
+            this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListDocs.Location = new System.Drawing.Point(398, 26);
+            this.buttonListDocs.Name = "buttonListDocs";
+            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+            this.buttonListDocs.TabIndex = 17;
+            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.UseVisualStyleBackColor = false;
+            this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
             // buttonImprimerRecette
             // 
@@ -108,6 +131,7 @@
             // 
             // comboBoxProprietaire
             // 
+            this.comboBoxProprietaire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProprietaire.FormattingEnabled = true;
             this.comboBoxProprietaire.Location = new System.Drawing.Point(12, 29);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
@@ -243,29 +267,6 @@
             this.buttonSupprimerRecette.Text = "Supprimer Recette";
             this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
             this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
-            // 
-            // buttonListDocs
-            // 
-            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonListDocs.FlatAppearance.BorderSize = 0;
-            this.buttonListDocs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonListDocs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonListDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListDocs.ForeColor = System.Drawing.Color.White;
-            this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListDocs.Location = new System.Drawing.Point(398, 26);
-            this.buttonListDocs.Name = "buttonListDocs";
-            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
-            this.buttonListDocs.TabIndex = 17;
-            this.buttonListDocs.Text = "Listes Documents";
-            this.buttonListDocs.UseVisualStyleBackColor = false;
-            this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
             // FormRecetteProprietaire
             // 

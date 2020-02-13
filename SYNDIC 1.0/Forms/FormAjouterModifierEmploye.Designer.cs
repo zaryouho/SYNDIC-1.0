@@ -63,11 +63,13 @@
             // comboBoxVille
             // 
             this.comboBoxVille.AllowDrop = true;
+            this.comboBoxVille.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVille.FormattingEnabled = true;
             this.comboBoxVille.Location = new System.Drawing.Point(204, 326);
             this.comboBoxVille.Name = "comboBoxVille";
             this.comboBoxVille.Size = new System.Drawing.Size(201, 21);
             this.comboBoxVille.TabIndex = 119;
+            this.comboBoxVille.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // panel1
             // 
@@ -120,11 +122,13 @@
             // 
             // comboBoxTypeEmploye
             // 
+            this.comboBoxTypeEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypeEmploye.FormattingEnabled = true;
             this.comboBoxTypeEmploye.Location = new System.Drawing.Point(204, 299);
             this.comboBoxTypeEmploye.Name = "comboBoxTypeEmploye";
             this.comboBoxTypeEmploye.Size = new System.Drawing.Size(201, 21);
             this.comboBoxTypeEmploye.TabIndex = 121;
+            this.comboBoxTypeEmploye.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // labelActif
             // 
@@ -221,6 +225,8 @@
             this.textBoxTele.Name = "textBoxTele";
             this.textBoxTele.Size = new System.Drawing.Size(201, 20);
             this.textBoxTele.TabIndex = 109;
+            this.textBoxTele.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
+            this.textBoxTele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTele_KeyPress);
             // 
             // textBoxEmail
             // 
@@ -228,6 +234,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(201, 20);
             this.textBoxEmail.TabIndex = 108;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxCodePostal
             // 
@@ -235,6 +242,8 @@
             this.textBoxCodePostal.Name = "textBoxCodePostal";
             this.textBoxCodePostal.Size = new System.Drawing.Size(201, 20);
             this.textBoxCodePostal.TabIndex = 107;
+            this.textBoxCodePostal.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
+            this.textBoxCodePostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodePostal_KeyPress);
             // 
             // textBoxAdresse
             // 
@@ -242,6 +251,7 @@
             this.textBoxAdresse.Name = "textBoxAdresse";
             this.textBoxAdresse.Size = new System.Drawing.Size(201, 20);
             this.textBoxAdresse.TabIndex = 106;
+            this.textBoxAdresse.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxPrenom
             // 
@@ -249,6 +259,8 @@
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(201, 20);
             this.textBoxPrenom.TabIndex = 105;
+            this.textBoxPrenom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
+            this.textBoxPrenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // textBoxNom
             // 
@@ -256,6 +268,8 @@
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(201, 20);
             this.textBoxNom.TabIndex = 104;
+            this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
+            this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // panelHead
             // 
@@ -344,6 +358,7 @@
             this.Name = "FormAjouterModifierEmploye";
             this.Text = "FormAjouterModifierEmploye";
             this.Load += new System.EventHandler(this.FormAjouterModifierEmploye_Load);
+            this.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.panel1.ResumeLayout(false);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();

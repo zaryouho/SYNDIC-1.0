@@ -133,6 +133,7 @@
             // 
             // comboBoxTypeEcheance
             // 
+            this.comboBoxTypeEcheance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypeEcheance.FormattingEnabled = true;
             this.comboBoxTypeEcheance.Location = new System.Drawing.Point(533, 96);
             this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
@@ -142,6 +143,7 @@
             // 
             // comboBoxNomBien
             // 
+            this.comboBoxNomBien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNomBien.FormattingEnabled = true;
             this.comboBoxNomBien.Location = new System.Drawing.Point(533, 61);
             this.comboBoxNomBien.Name = "comboBoxNomBien";
@@ -263,6 +265,7 @@
             // 
             // comboBoxTypeRecette
             // 
+            this.comboBoxTypeRecette.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypeRecette.FormattingEnabled = true;
             this.comboBoxTypeRecette.Location = new System.Drawing.Point(135, 143);
             this.comboBoxTypeRecette.Name = "comboBoxTypeRecette";
@@ -316,6 +319,7 @@
             this.textBoxNumRecu.Name = "textBoxNumRecu";
             this.textBoxNumRecu.Size = new System.Drawing.Size(200, 20);
             this.textBoxNumRecu.TabIndex = 7;
+            this.textBoxNumRecu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumRecu_KeyPress);
             // 
             // textBoxMontant
             // 
@@ -323,6 +327,7 @@
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(200, 20);
             this.textBoxMontant.TabIndex = 5;
+            this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // dateTimePickerDateRecette
             // 

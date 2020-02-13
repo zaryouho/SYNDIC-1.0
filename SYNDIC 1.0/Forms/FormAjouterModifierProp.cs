@@ -187,7 +187,7 @@ namespace SYNDIC_1._0
 
         private void textBoxCodePostal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) || textBoxCodePostal.TextLength > 4)
+            if ((!char.IsDigit(e.KeyChar) || textBoxCodePostal.TextLength > 4) && (e.KeyChar != (char)(Keys.Back)))
                 e.Handled = true;
         }
 
