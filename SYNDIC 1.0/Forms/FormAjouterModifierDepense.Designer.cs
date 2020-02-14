@@ -109,6 +109,7 @@
             // 
             // buttonValider
             // 
+            this.buttonValider.Enabled = false;
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
@@ -135,31 +136,36 @@
             // 
             // textBoxNumDocument
             // 
-            this.textBoxNumDocument.Location = new System.Drawing.Point(159, 306);
+            this.textBoxNumDocument.Location = new System.Drawing.Point(161, 306);
             this.textBoxNumDocument.Name = "textBoxNumDocument";
             this.textBoxNumDocument.Size = new System.Drawing.Size(231, 20);
             this.textBoxNumDocument.TabIndex = 51;
+            this.textBoxNumDocument.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            this.textBoxNumDocument.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumDocument_KeyPress);
             // 
             // comboBoxEmploye
             // 
+            this.comboBoxEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEmploye.FormattingEnabled = true;
-            this.comboBoxEmploye.Location = new System.Drawing.Point(161, 195);
+            this.comboBoxEmploye.Location = new System.Drawing.Point(162, 195);
             this.comboBoxEmploye.Name = "comboBoxEmploye";
             this.comboBoxEmploye.Size = new System.Drawing.Size(229, 21);
             this.comboBoxEmploye.TabIndex = 50;
             // 
             // comboBoxSociete
             // 
+            this.comboBoxSociete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSociete.FormattingEnabled = true;
-            this.comboBoxSociete.Location = new System.Drawing.Point(159, 232);
+            this.comboBoxSociete.Location = new System.Drawing.Point(161, 232);
             this.comboBoxSociete.Name = "comboBoxSociete";
             this.comboBoxSociete.Size = new System.Drawing.Size(231, 21);
             this.comboBoxSociete.TabIndex = 49;
             // 
             // comboBoxTypeDepense
             // 
+            this.comboBoxTypeDepense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypeDepense.FormattingEnabled = true;
-            this.comboBoxTypeDepense.Location = new System.Drawing.Point(159, 269);
+            this.comboBoxTypeDepense.Location = new System.Drawing.Point(162, 269);
             this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
             this.comboBoxTypeDepense.Size = new System.Drawing.Size(229, 21);
             this.comboBoxTypeDepense.TabIndex = 48;
@@ -167,7 +173,7 @@
             // labelNumDocument
             // 
             this.labelNumDocument.AutoSize = true;
-            this.labelNumDocument.Location = new System.Drawing.Point(64, 312);
+            this.labelNumDocument.Location = new System.Drawing.Point(54, 312);
             this.labelNumDocument.Name = "labelNumDocument";
             this.labelNumDocument.Size = new System.Drawing.Size(90, 13);
             this.labelNumDocument.TabIndex = 47;
@@ -176,7 +182,7 @@
             // labelType
             // 
             this.labelType.AutoSize = true;
-            this.labelType.Location = new System.Drawing.Point(55, 275);
+            this.labelType.Location = new System.Drawing.Point(54, 275);
             this.labelType.Name = "labelType";
             this.labelType.Size = new System.Drawing.Size(96, 13);
             this.labelType.TabIndex = 46;
@@ -185,7 +191,7 @@
             // labelSociete
             // 
             this.labelSociete.AutoSize = true;
-            this.labelSociete.Location = new System.Drawing.Point(64, 238);
+            this.labelSociete.Location = new System.Drawing.Point(54, 238);
             this.labelSociete.Name = "labelSociete";
             this.labelSociete.Size = new System.Drawing.Size(49, 13);
             this.labelSociete.TabIndex = 45;
@@ -194,7 +200,7 @@
             // labelEmploye
             // 
             this.labelEmploye.AutoSize = true;
-            this.labelEmploye.Location = new System.Drawing.Point(59, 201);
+            this.labelEmploye.Location = new System.Drawing.Point(54, 201);
             this.labelEmploye.Name = "labelEmploye";
             this.labelEmploye.Size = new System.Drawing.Size(65, 13);
             this.labelEmploye.TabIndex = 44;
@@ -202,15 +208,17 @@
             // 
             // textBoxMontant
             // 
-            this.textBoxMontant.Location = new System.Drawing.Point(159, 159);
+            this.textBoxMontant.Location = new System.Drawing.Point(161, 159);
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 20);
             this.textBoxMontant.TabIndex = 43;
+            this.textBoxMontant.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // labelMontant
             // 
             this.labelMontant.AutoSize = true;
-            this.labelMontant.Location = new System.Drawing.Point(61, 164);
+            this.labelMontant.Location = new System.Drawing.Point(54, 164);
             this.labelMontant.Name = "labelMontant";
             this.labelMontant.Size = new System.Drawing.Size(52, 13);
             this.labelMontant.TabIndex = 42;
@@ -219,7 +227,7 @@
             // labelDateDepense
             // 
             this.labelDateDepense.AutoSize = true;
-            this.labelDateDepense.Location = new System.Drawing.Point(59, 127);
+            this.labelDateDepense.Location = new System.Drawing.Point(54, 127);
             this.labelDateDepense.Name = "labelDateDepense";
             this.labelDateDepense.Size = new System.Drawing.Size(36, 13);
             this.labelDateDepense.TabIndex = 41;
@@ -228,22 +236,24 @@
             // dateTimePickerDepense
             // 
             this.dateTimePickerDepense.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDepense.Location = new System.Drawing.Point(157, 123);
+            this.dateTimePickerDepense.Location = new System.Drawing.Point(161, 123);
             this.dateTimePickerDepense.Name = "dateTimePickerDepense";
             this.dateTimePickerDepense.Size = new System.Drawing.Size(231, 20);
             this.dateTimePickerDepense.TabIndex = 40;
             // 
             // textBoxDesignationDepense
             // 
-            this.textBoxDesignationDepense.Location = new System.Drawing.Point(157, 87);
+            this.textBoxDesignationDepense.Location = new System.Drawing.Point(161, 87);
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
             this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 20);
             this.textBoxDesignationDepense.TabIndex = 39;
+            this.textBoxDesignationDepense.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
             // 
             // labelDesignationDepense
             // 
             this.labelDesignationDepense.AutoSize = true;
-            this.labelDesignationDepense.Location = new System.Drawing.Point(59, 90);
+            this.labelDesignationDepense.Location = new System.Drawing.Point(54, 90);
             this.labelDesignationDepense.Name = "labelDesignationDepense";
             this.labelDesignationDepense.Size = new System.Drawing.Size(69, 13);
             this.labelDesignationDepense.TabIndex = 38;

@@ -282,5 +282,13 @@ namespace SYNDIC_1._0.Forms
             if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
                 e.Handled = true;
         }
+
+        private void textBoxNumRecu_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNumRecu.Text != "" && textBoxMontant.Text != "")
+                buttonValider.Enabled = true;
+            else
+                buttonValider.Enabled = false;
+        }
     }
 }

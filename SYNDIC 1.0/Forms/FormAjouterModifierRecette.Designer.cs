@@ -219,6 +219,7 @@
             this.buttonValider.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonValider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonValider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonValider.Enabled = false;
             this.buttonValider.FlatAppearance.BorderSize = 0;
             this.buttonValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.buttonValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
@@ -319,6 +320,7 @@
             this.textBoxNumRecu.Name = "textBoxNumRecu";
             this.textBoxNumRecu.Size = new System.Drawing.Size(200, 20);
             this.textBoxNumRecu.TabIndex = 7;
+            this.textBoxNumRecu.TextChanged += new System.EventHandler(this.textBoxNumRecu_TextChanged);
             this.textBoxNumRecu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumRecu_KeyPress);
             // 
             // textBoxMontant
@@ -327,6 +329,7 @@
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(200, 20);
             this.textBoxMontant.TabIndex = 5;
+            this.textBoxMontant.TextChanged += new System.EventHandler(this.textBoxNumRecu_TextChanged);
             this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // dateTimePickerDateRecette
@@ -382,6 +385,7 @@
             this.Name = "FormAjouterModifierRecette";
             this.Text = "FormAjouterModifierRecette";
             this.Load += new System.EventHandler(this.FormAjouterModifierRecette_Load);
+            this.TextChanged += new System.EventHandler(this.textBoxNumRecu_TextChanged);
             this.splitContainerRecetteInfo.Panel1.ResumeLayout(false);
             this.splitContainerRecetteInfo.Panel1.PerformLayout();
             this.splitContainerRecetteInfo.Panel2.ResumeLayout(false);
