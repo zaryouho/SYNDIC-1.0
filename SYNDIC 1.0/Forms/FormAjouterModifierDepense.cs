@@ -171,5 +171,34 @@ namespace SYNDIC_1._0
         {
             this.Close();
         }
+
+        private void textBoxDesignationDepense_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && (e.KeyChar !=(char)(Keys.Space)))
+                e.Handled = true;
+        }
+
+        private void textBoxMontant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxMontant.Text.Contains('.') && e.KeyChar == '.')
+                e.Handled = true;
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        private void textBoxNumDocument_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxMontant_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxDesignationDepense.Text != "" && textBoxMontant.Text != "")
+                buttonValider.Enabled = true;
+            else
+                buttonValider.Enabled = false;
+        }
     }
 }
