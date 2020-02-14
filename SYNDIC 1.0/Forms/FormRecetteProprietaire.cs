@@ -26,6 +26,8 @@ namespace SYNDIC_1._0.Forms
 
         private void FormRecetteProprietaire_Load(object sender, EventArgs e)
         {
+            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
+
             DBHelper.remplir_dataset("select nom + ' ' + prenom as Nom_Complet,id from proprietaire where id in (select distinct id_proprietaire from bien)", "Proprietaire_Recette");
             DBHelper.remplir_dataset("select * from cotisation where id_propietaire in (select distinct id_proprietaire from bien)", "cotisation");
 

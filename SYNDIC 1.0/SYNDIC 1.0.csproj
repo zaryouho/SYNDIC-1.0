@@ -56,11 +56,53 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAjouterModifierDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierDepense.Designer.cs">
+      <DependentUpon>FormAjouterModifierDepense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierFacture.Designer.cs">
+      <DependentUpon>FormAjouterModifierFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierIntervention.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterModifierIntervention.Designer.cs">
+      <DependentUpon>FormAjouterModifierIntervention.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAjouterProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterProduit.Designer.cs">
+      <DependentUpon>FormAjouterProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDepenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDepenses.Designer.cs">
+      <DependentUpon>FormDepenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormEmploye.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormEmploye.Designer.cs">
       <DependentUpon>FormEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormFacture.Designer.cs">
+      <DependentUpon>FormFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInterventions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInterventions.Designer.cs">
+      <DependentUpon>FormInterventions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSettings.cs">
       <SubType>Form</SubType>
@@ -230,8 +272,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormAjouterModifierDepense.resx">
+      <DependentUpon>FormAjouterModifierDepense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAjouterModifierFacture.resx">
+      <DependentUpon>FormAjouterModifierFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAjouterModifierIntervention.resx">
+      <DependentUpon>FormAjouterModifierIntervention.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAjouterProduit.resx">
+      <DependentUpon>FormAjouterProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDepenses.resx">
+      <DependentUpon>FormDepenses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEmploye.resx">
       <DependentUpon>FormEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFacture.resx">
+      <DependentUpon>FormFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInterventions.resx">
+      <DependentUpon>FormInterventions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
