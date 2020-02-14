@@ -229,9 +229,9 @@ namespace SYNDIC_1._0.Forms
                 }
                 panelIdEcheance.Visible = true;
             }
-            catch (Exception )
+            catch (Exception)
             {
-                throw;
+               // MessageBox.Show(exc.Message);
             }
         }
 
@@ -243,7 +243,7 @@ namespace SYNDIC_1._0.Forms
             }
             catch (Exception)
             {
-                throw;
+               // MessageBox.Show(exc.Message);
             }
         }
 

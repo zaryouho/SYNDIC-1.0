@@ -54,6 +54,7 @@ namespace SYNDIC_1._0
             bsEcheance = DBHelper.remplir_bindingsource("bien_Echeance", "id", "Echeance", "id_bien", bsBien);
             DBHelper.remplir_Grille(dataGridViewBienEcheance, bsEcheance);
             dataGridViewBienEcheance.Columns[0].Visible = false;
+            dataGridViewBienEcheance.Columns[5].Visible = false;
 
 
             bsTypeEcheance = DBHelper.remplir_bindingsource("typeEcheance");
@@ -99,6 +100,7 @@ namespace SYNDIC_1._0
             if (filter.Equals("Frais biens"))
             {
                 buttonSupprimerEcheance.Enabled = false;
+                buttonModifierEcheance.Enabled = false;
                 filter = null;
                 panelMontantEcheance.Visible = true;
                 dataGridViewBienEcheance.Columns[1].Visible = true;
@@ -106,6 +108,7 @@ namespace SYNDIC_1._0
                 return;
             }
             buttonSupprimerEcheance.Enabled = true;
+            buttonModifierEcheance.Enabled = true;
             panelMontantEcheance.Visible = false ;
             dataGridViewBienEcheance.Columns[1].Visible = false;
             dataGridViewBienEcheance.Columns[2].Visible = false;
@@ -184,12 +187,12 @@ namespace SYNDIC_1._0
                 textBoxMontantRecu.Text = montantRecu.ToString();
                 textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
             }
-            catch(Exception ee) { }
+            catch(Exception) { }
         }
 
         private void buttonAjouterEcheance_Click(object sender, EventArgs e)
         {
-            new FormAjouterModifierEcheance(bsBien).ShowDialog();
+            new FormAjouterModifierEcheance("Ajouter",bsBien).ShowDialog();
             DBHelper.dataSet.Reset();
 
             FormBienEcheance_Load(sender, e);
@@ -218,6 +221,28 @@ namespace SYNDIC_1._0
         private void FormBienEcheance_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void buttonModifierEcheance_Click(object sender, EventArgs e)
+        {
+            echeance echeance = new echeance();
+            
+            echeance.id = Convert.ToInt32(dataGridViewBienEcheance.CurrentRow.Cells[0].Value.ToString());
+            echeance.montant = Convert.ToDecimal(dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString());
+            echeance.montant_reçu = Convert.ToDecimal(dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString());
+            echeance.id_bien = Convert.ToInt32(dataGridViewBienEcheance.CurrentRow.Cells[5].Value.ToString());
+            echeance.typeEchea = dataGridViewBienEcheance.CurrentRow.Cells[6].Value.ToString();
+            
+            new FormAjouterModifierEcheance("Modifier",bsBien,echeance).ShowDialog();
+            DBHelper.dataSet.Reset();
+
+            FormBienEcheance_Load(sender, e);
+        }
+
+        private void dataGridViewBienEcheance_DoubleClick(object sender, EventArgs e)
+        {
+            if(comboBoxTypeEcheance.SelectedValue.ToString() != "Frais biens")
+                buttonModifierEcheance_Click(sender, e);
         }
     }
 }

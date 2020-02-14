@@ -43,6 +43,7 @@
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
             this.comboBoxBien = new System.Windows.Forms.ComboBox();
+            this.textBoxIdEchea = new System.Windows.Forms.TextBox();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +153,7 @@
             // 
             this.panelValid.Controls.Add(this.buttonAnnuler);
             this.panelValid.Controls.Add(this.buttonValider);
+            this.panelValid.Controls.Add(this.textBoxIdEchea);
             this.panelValid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelValid.Location = new System.Drawing.Point(0, 232);
             this.panelValid.Name = "panelValid";
@@ -186,6 +188,15 @@
             this.comboBoxBien.Size = new System.Drawing.Size(231, 21);
             this.comboBoxBien.TabIndex = 20;
             // 
+            // textBoxIdEchea
+            // 
+            this.textBoxIdEchea.Enabled = false;
+            this.textBoxIdEchea.Location = new System.Drawing.Point(45, 11);
+            this.textBoxIdEchea.Name = "textBoxIdEchea";
+            this.textBoxIdEchea.Size = new System.Drawing.Size(10, 20);
+            this.textBoxIdEchea.TabIndex = 21;
+            this.textBoxIdEchea.TabStop = false;
+            // 
             // FormAjouterModifierEcheance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +222,7 @@
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.panelValid.ResumeLayout(false);
+            this.panelValid.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +245,6 @@
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.ComboBox comboBoxBien;
+        private System.Windows.Forms.TextBox textBoxIdEchea;
     }
 }

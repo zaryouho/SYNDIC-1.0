@@ -51,9 +51,9 @@
             this.textBoxMontantTotal = new System.Windows.Forms.TextBox();
             this.labelMontantTotal = new System.Windows.Forms.Label();
             this.panelBienEcheanceFooter = new System.Windows.Forms.Panel();
+            this.buttonSupprimerEcheance = new System.Windows.Forms.Button();
             this.buttonModifierEcheance = new System.Windows.Forms.Button();
             this.buttonAjouterEcheance = new System.Windows.Forms.Button();
-            this.buttonSupprimerEcheance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBienEcheance)).BeginInit();
             this.splitContainerBienEcheance.Panel1.SuspendLayout();
             this.splitContainerBienEcheance.Panel2.SuspendLayout();
@@ -231,19 +231,25 @@
             this.dataGridViewBienEcheance.Location = new System.Drawing.Point(151, 0);
             this.dataGridViewBienEcheance.MultiSelect = false;
             this.dataGridViewBienEcheance.Name = "dataGridViewBienEcheance";
+            this.dataGridViewBienEcheance.ReadOnly = true;
+            this.dataGridViewBienEcheance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBienEcheance.Size = new System.Drawing.Size(566, 262);
             this.dataGridViewBienEcheance.TabIndex = 4;
             this.dataGridViewBienEcheance.SelectionChanged += new System.EventHandler(this.dataGridViewBienEcheance_SelectionChanged);
+            this.dataGridViewBienEcheance.DoubleClick += new System.EventHandler(this.dataGridViewBienEcheance_DoubleClick);
             // 
             // dataGridViewListeBien
             // 
             this.dataGridViewListeBien.AllowUserToAddRows = false;
+            this.dataGridViewListeBien.AllowUserToDeleteRows = false;
             this.dataGridViewListeBien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListeBien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListeBien.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewListeBien.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewListeBien.MultiSelect = false;
             this.dataGridViewListeBien.Name = "dataGridViewListeBien";
+            this.dataGridViewListeBien.ReadOnly = true;
+            this.dataGridViewListeBien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListeBien.Size = new System.Drawing.Size(151, 262);
             this.dataGridViewListeBien.TabIndex = 3;
             // 
@@ -328,47 +334,6 @@
             this.panelBienEcheanceFooter.Size = new System.Drawing.Size(800, 69);
             this.panelBienEcheanceFooter.TabIndex = 0;
             // 
-            // buttonModifierEcheance
-            // 
-            this.buttonModifierEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonModifierEcheance.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonModifierEcheance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonModifierEcheance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonModifierEcheance.FlatAppearance.BorderSize = 0;
-            this.buttonModifierEcheance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonModifierEcheance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonModifierEcheance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModifierEcheance.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.buttonModifierEcheance.ForeColor = System.Drawing.Color.White;
-            this.buttonModifierEcheance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModifierEcheance.Location = new System.Drawing.Point(373, 11);
-            this.buttonModifierEcheance.Name = "buttonModifierEcheance";
-            this.buttonModifierEcheance.Size = new System.Drawing.Size(187, 42);
-            this.buttonModifierEcheance.TabIndex = 14;
-            this.buttonModifierEcheance.Text = "Modifier Une Echéance";
-            this.buttonModifierEcheance.UseVisualStyleBackColor = false;
-            // 
-            // buttonAjouterEcheance
-            // 
-            this.buttonAjouterEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjouterEcheance.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAjouterEcheance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAjouterEcheance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAjouterEcheance.FlatAppearance.BorderSize = 0;
-            this.buttonAjouterEcheance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterEcheance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonAjouterEcheance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAjouterEcheance.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.buttonAjouterEcheance.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterEcheance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterEcheance.Location = new System.Drawing.Point(593, 11);
-            this.buttonAjouterEcheance.Name = "buttonAjouterEcheance";
-            this.buttonAjouterEcheance.Size = new System.Drawing.Size(187, 42);
-            this.buttonAjouterEcheance.TabIndex = 13;
-            this.buttonAjouterEcheance.Text = "Ajouter Une Echéance";
-            this.buttonAjouterEcheance.UseVisualStyleBackColor = false;
-            this.buttonAjouterEcheance.Click += new System.EventHandler(this.buttonAjouterEcheance_Click);
-            // 
             // buttonSupprimerEcheance
             // 
             this.buttonSupprimerEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -390,6 +355,48 @@
             this.buttonSupprimerEcheance.Text = "Supprimer Une Echéance";
             this.buttonSupprimerEcheance.UseVisualStyleBackColor = false;
             this.buttonSupprimerEcheance.Click += new System.EventHandler(this.buttonSupprimerEcheance_Click);
+            // 
+            // buttonModifierEcheance
+            // 
+            this.buttonModifierEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonModifierEcheance.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonModifierEcheance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonModifierEcheance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonModifierEcheance.FlatAppearance.BorderSize = 0;
+            this.buttonModifierEcheance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonModifierEcheance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonModifierEcheance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonModifierEcheance.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.buttonModifierEcheance.ForeColor = System.Drawing.Color.White;
+            this.buttonModifierEcheance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModifierEcheance.Location = new System.Drawing.Point(373, 11);
+            this.buttonModifierEcheance.Name = "buttonModifierEcheance";
+            this.buttonModifierEcheance.Size = new System.Drawing.Size(187, 42);
+            this.buttonModifierEcheance.TabIndex = 14;
+            this.buttonModifierEcheance.Text = "Modifier Une Echéance";
+            this.buttonModifierEcheance.UseVisualStyleBackColor = false;
+            this.buttonModifierEcheance.Click += new System.EventHandler(this.buttonModifierEcheance_Click);
+            // 
+            // buttonAjouterEcheance
+            // 
+            this.buttonAjouterEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAjouterEcheance.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterEcheance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAjouterEcheance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAjouterEcheance.FlatAppearance.BorderSize = 0;
+            this.buttonAjouterEcheance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonAjouterEcheance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonAjouterEcheance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjouterEcheance.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.buttonAjouterEcheance.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterEcheance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterEcheance.Location = new System.Drawing.Point(593, 11);
+            this.buttonAjouterEcheance.Name = "buttonAjouterEcheance";
+            this.buttonAjouterEcheance.Size = new System.Drawing.Size(187, 42);
+            this.buttonAjouterEcheance.TabIndex = 13;
+            this.buttonAjouterEcheance.Text = "Ajouter Une Echéance";
+            this.buttonAjouterEcheance.UseVisualStyleBackColor = false;
+            this.buttonAjouterEcheance.Click += new System.EventHandler(this.buttonAjouterEcheance_Click);
             // 
             // FormBienEcheance
             // 

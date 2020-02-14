@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -35,7 +36,7 @@ namespace SYNDIC_1._0
             buttonSsCotisations.BackColor = Color.Navy;
             buttonSsDepenses.BackColor = Color.Blue;
             buttonSsEcheances.BackColor = Color.Blue;
-          //  OpenFormInPannel(new FormCotisation());
+            OpenFormInPannel(new FormRecetteProprietaire());
         }
 
         private void buttonSsDepenses_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace SYNDIC_1._0
             buttonSsDepenses.BackColor = Color.Navy;
             buttonSsEcheances.BackColor = Color.Blue;
             buttonSsCotisations.BackColor = Color.Blue;
-           // OpenFormInPannel(new FormDepenses());
+            OpenFormInPannel(new FormDepenses());
         }
 
         private void buttonSsEcheances_Click(object sender, EventArgs e)
