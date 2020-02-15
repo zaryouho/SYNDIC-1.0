@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -46,6 +47,10 @@ namespace SYNDIC_1._0
             SqlCommand com = new SqlCommand(sql, DBHelper.connection);
             com.ExecuteNonQuery();
             com = null;
+
+            string[] oldValues = null;
+            string[] newValues = { textBoxDesignationDepense.Text, dateTimePickerDebutIntervention.Text, dateTimePickerFinIntervention.Text, textBoxMontantIntervention.Text };
+            Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Intervention",oldValues,newValues);
         }
     }
 }

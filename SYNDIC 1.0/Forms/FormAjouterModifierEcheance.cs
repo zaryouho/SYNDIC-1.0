@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYNDIC_1._0.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -99,6 +100,10 @@ namespace SYNDIC_1._0
                     com.ExecuteNonQuery();
                     com = null;
 
+                    string[] oldValues = null;
+                    string[] newValues = { textBoxMontant.Text, comboBoxTypeEcheance.SelectedValue.ToString(), comboBoxBien.SelectedValue.ToString() };
+
+                    Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Echeance", oldValues, newValues);
                     this.Close();
                 }
                 else if (result == DialogResult.No)
@@ -107,7 +112,7 @@ namespace SYNDIC_1._0
             }
             else
             {
-                DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?" +
+                DialogResult result = MessageBox.Show("Voulez vous vraiment Modifier cet Echeance ?" +
                     "Montant : " + textBoxMontant.Text +
                     "\nMontant Reçu :" + textBoxMontantRecu.Text +
                     "\nNom Bien : " + comboBoxBien.Text +

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -94,6 +95,8 @@ namespace SYNDIC_1._0
                 var prop = (from pro in syndicDataContext.proprietaires
                             where pro.id == p.id
                             select pro).Single();
+                
+                string[] oldValues = { prop.CIN, prop.nom, prop.prenom, prop.Sexe, prop.adresse, prop.code_postal.ToString(), prop.email, prop.tel, prop.Titre };
 
                 prop.CIN = textBoxCin.Text;
                 prop.nom = textBoxNom.Text;
@@ -106,7 +109,9 @@ namespace SYNDIC_1._0
                 prop.Titre = comboBoxTitre.Text;
                 prop.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
 
+                string[] newValues = { prop.CIN, prop.nom, prop.prenom, prop.Sexe, prop.adresse, prop.code_postal.ToString(), prop.email, prop.tel, prop.Titre };
 
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Modifier", "proprietaire", oldValues, newValues);
             }
 
             else
@@ -124,6 +129,10 @@ namespace SYNDIC_1._0
                 p.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
 
                 syndicDataContext.proprietaires.InsertOnSubmit(p);
+
+                string [] newValues = { p.CIN, p.nom, p.prenom, p.Sexe, p.adresse, p.code_postal.ToString(), p.email, p.tel, p.Titre };
+                string[] oldValues = null;
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "proprietaire",oldValues,newValues);
 
             }
 
