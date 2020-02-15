@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0.Forms
 {
@@ -131,6 +132,7 @@ namespace SYNDIC_1._0.Forms
                             where emp.id == em.id
                             select emp).Single();
 
+                string[] oldValues = { empl.nom, empl.prenom, empl.adresse, empl.code_postal.ToString(), empl.tel, empl.email, empl.date_recrutement.ToString(), empl.date_depart.ToString() };
 
                 empl.nom = textBoxNom.Text;
                 empl.prenom = textBoxPrenom.Text;
@@ -141,6 +143,9 @@ namespace SYNDIC_1._0.Forms
                 empl.date_recrutement = dateTimePickerDateRecrutement.Value;
                 empl.typeEmploye = comboBoxTypeEmploye.Text;
                 empl.id_ville = int.Parse(comboBoxVille.Text.ToString());
+
+                string [] newValues = { empl.nom, empl.prenom, empl.adresse, empl.code_postal.ToString(), empl.tel, empl.email, empl.date_recrutement.ToString(), empl.date_depart.ToString() };
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Modifier", "Employe", oldValues, newValues);
             }
             else
             {
@@ -160,6 +165,10 @@ namespace SYNDIC_1._0.Forms
                 em.id_ville = int.Parse(comboBoxVille.SelectedValue.ToString()); ;
                 syndicDataContext.employes.InsertOnSubmit(em);
 
+                string [] newValues = { em.nom, em.prenom, em.adresse, em.code_postal.ToString(), em.tel, em.email, em.date_recrutement.ToString(), em.date_depart.ToString() };
+                string[] oldValues = null;
+
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Employe", oldValues, newValues);
             }
 
             syndicDataContext.SubmitChanges();

@@ -20,7 +20,7 @@ namespace SYNDIC_1._0.Helper
         /// Inserts values into database table <em>journal<em>
         /// Does not returns
         /// </summary>
-        public static void makeLog(int userId, DateTime dateTimeAction, string action, string actionTable, string oldValues,string newValues)
+        public static void makeLog(int userId, DateTime dateTimeAction, string action, string actionTable, string oldValues ,string newValues)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -64,7 +64,7 @@ namespace SYNDIC_1._0.Helper
         /// </summary>
         /// <param name="oldValues">List of strings</param>
         /// <param name="newValues">List of strings</param>
-        public static void makeLog(int userId, DateTime dateTimeAction, string action, string actionTable, string[] oldValues, string[] newValues)
+        public static void makeLog(int userId, DateTime dateTimeAction, string action, string actionTable, string[] oldValues , string[] newValues )
         {
             // To be deleted after testing
 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0.Forms
 {
@@ -98,7 +99,8 @@ namespace SYNDIC_1._0.Forms
                 var soci = (from soc in syndicDataContext.societes
                             where soc.id == so.id
                             select soc).Single();
-
+                string[] oldValues = { soci.raison_sociale, soci.nom, soci.prenom, soci.adresse, soci.code_postal.ToString(), soci.tel, soci.email };
+                
                 soci.raison_sociale = textBoxRaison_Social.Text;
                 soci.nom = textBoxNom.Text;
                 soci.prenom = textBoxPrenom.Text;
@@ -108,8 +110,9 @@ namespace SYNDIC_1._0.Forms
                 soci.email = textBoxEmail.Text;
                 soci.id_ville = int.Parse(comboBoxIdVille.Text.ToString());
 
+                string [] newValues = { soci.raison_sociale, soci.nom, soci.prenom, soci.adresse, soci.code_postal.ToString(), soci.tel, soci.email };
 
-
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Modifier", "Societe", oldValues, newValues);
             }
 
             else
@@ -126,6 +129,10 @@ namespace SYNDIC_1._0.Forms
 
                 so.id_ville = int.Parse(comboBoxIdVille.Text.ToString()); ;
                 syndicDataContext.societes.InsertOnSubmit(so);
+
+                string[] newValues = { so.raison_sociale, so.nom, so.prenom, so.adresse, so.code_postal.ToString(), so.tel, so.email };
+                string[] oldValues = null;
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Societe",oldValues ,newValues);
 
             }
 

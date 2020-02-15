@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using SYNDIC_1._0.Forms;
 
 
 namespace SYNDIC_1._0
@@ -50,6 +51,9 @@ namespace SYNDIC_1._0
         {
             bsProduit.EndEdit();
             DBHelper.syncroniser("produit");
+
+            string[] newValues = { textBoxDesignation.Text, textBoxQteStckProduit.Text, textBoxCategorieProduit.Text, textBoxID.Text };
+            Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Produit", newValues);
         }
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
