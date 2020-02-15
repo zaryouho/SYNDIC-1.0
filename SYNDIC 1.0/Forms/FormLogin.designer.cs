@@ -153,7 +153,7 @@
             this.checkBoxRememberMe.Name = "checkBoxRememberMe";
             this.checkBoxRememberMe.Size = new System.Drawing.Size(94, 17);
             this.checkBoxRememberMe.TabIndex = 3;
-            this.checkBoxRememberMe.Text = "Remombre me";
+            this.checkBoxRememberMe.Text = "Remember me";
             this.checkBoxRememberMe.UseVisualStyleBackColor = true;
             this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
             // 

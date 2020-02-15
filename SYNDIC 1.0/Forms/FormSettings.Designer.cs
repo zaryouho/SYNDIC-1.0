@@ -81,6 +81,7 @@
             this.panelBackgroundWorkerContainer.Controls.Add(this.progressBarBackgroundWorker);
             this.panelBackgroundWorkerContainer.Controls.Add(this.buttonCancelBackgroundWorker);
             this.panelBackgroundWorkerContainer.Controls.Add(this.buttonStartBackgroundWorker);
+            this.panelBackgroundWorkerContainer.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelBackgroundWorkerContainer.Location = new System.Drawing.Point(376, 235);
             this.panelBackgroundWorkerContainer.Name = "panelBackgroundWorkerContainer";
             this.panelBackgroundWorkerContainer.Size = new System.Drawing.Size(194, 121);
@@ -91,7 +92,7 @@
             this.labelResultPercentage.AutoSize = true;
             this.labelResultPercentage.Location = new System.Drawing.Point(77, 87);
             this.labelResultPercentage.Name = "labelResultPercentage";
-            this.labelResultPercentage.Size = new System.Drawing.Size(0, 13);
+            this.labelResultPercentage.Size = new System.Drawing.Size(0, 17);
             this.labelResultPercentage.TabIndex = 3;
             // 
             // progressBarBackgroundWorker
@@ -126,18 +127,19 @@
             this.groupBoxBackup.Controls.Add(this.radioButtonMonthlyBackup);
             this.groupBoxBackup.Controls.Add(this.radioButtonWeeklyBackup);
             this.groupBoxBackup.Controls.Add(this.radioButtonDailyBackup);
+            this.groupBoxBackup.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxBackup.Location = new System.Drawing.Point(188, 316);
             this.groupBoxBackup.Name = "groupBoxBackup";
-            this.groupBoxBackup.Size = new System.Drawing.Size(156, 93);
+            this.groupBoxBackup.Size = new System.Drawing.Size(155, 100);
             this.groupBoxBackup.TabIndex = 10;
             this.groupBoxBackup.TabStop = false;
             // 
             // radioButtonMonthlyBackup
             // 
             this.radioButtonMonthlyBackup.AutoSize = true;
-            this.radioButtonMonthlyBackup.Location = new System.Drawing.Point(6, 69);
+            this.radioButtonMonthlyBackup.Location = new System.Drawing.Point(28, 66);
             this.radioButtonMonthlyBackup.Name = "radioButtonMonthlyBackup";
-            this.radioButtonMonthlyBackup.Size = new System.Drawing.Size(62, 17);
+            this.radioButtonMonthlyBackup.Size = new System.Drawing.Size(73, 21);
             this.radioButtonMonthlyBackup.TabIndex = 11;
             this.radioButtonMonthlyBackup.TabStop = true;
             this.radioButtonMonthlyBackup.Text = "Monthly";
@@ -146,9 +148,9 @@
             // radioButtonWeeklyBackup
             // 
             this.radioButtonWeeklyBackup.AutoSize = true;
-            this.radioButtonWeeklyBackup.Location = new System.Drawing.Point(6, 46);
+            this.radioButtonWeeklyBackup.Location = new System.Drawing.Point(28, 43);
             this.radioButtonWeeklyBackup.Name = "radioButtonWeeklyBackup";
-            this.radioButtonWeeklyBackup.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonWeeklyBackup.Size = new System.Drawing.Size(70, 21);
             this.radioButtonWeeklyBackup.TabIndex = 10;
             this.radioButtonWeeklyBackup.TabStop = true;
             this.radioButtonWeeklyBackup.Text = "Weekly";
@@ -157,9 +159,9 @@
             // radioButtonDailyBackup
             // 
             this.radioButtonDailyBackup.AutoSize = true;
-            this.radioButtonDailyBackup.Location = new System.Drawing.Point(6, 23);
+            this.radioButtonDailyBackup.Location = new System.Drawing.Point(28, 20);
             this.radioButtonDailyBackup.Name = "radioButtonDailyBackup";
-            this.radioButtonDailyBackup.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonDailyBackup.Size = new System.Drawing.Size(55, 21);
             this.radioButtonDailyBackup.TabIndex = 9;
             this.radioButtonDailyBackup.TabStop = true;
             this.radioButtonDailyBackup.Text = "Daily";
@@ -167,7 +169,8 @@
             // 
             // buttonRestoreFromExternalDrive
             // 
-            this.buttonRestoreFromExternalDrive.Location = new System.Drawing.Point(188, 264);
+            this.buttonRestoreFromExternalDrive.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestoreFromExternalDrive.Location = new System.Drawing.Point(188, 247);
             this.buttonRestoreFromExternalDrive.Name = "buttonRestoreFromExternalDrive";
             this.buttonRestoreFromExternalDrive.Size = new System.Drawing.Size(155, 23);
             this.buttonRestoreFromExternalDrive.TabIndex = 7;
@@ -178,9 +181,10 @@
             // checkBoxAutoBackup
             // 
             this.checkBoxAutoBackup.AutoSize = true;
-            this.checkBoxAutoBackup.Location = new System.Drawing.Point(208, 301);
+            this.checkBoxAutoBackup.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAutoBackup.Location = new System.Drawing.Point(216, 286);
             this.checkBoxAutoBackup.Name = "checkBoxAutoBackup";
-            this.checkBoxAutoBackup.Size = new System.Drawing.Size(86, 17);
+            this.checkBoxAutoBackup.Size = new System.Drawing.Size(103, 21);
             this.checkBoxAutoBackup.TabIndex = 8;
             this.checkBoxAutoBackup.Text = "auto backup";
             this.checkBoxAutoBackup.UseVisualStyleBackColor = true;
@@ -188,7 +192,8 @@
             // 
             // buttonBackuptoExternalDrive
             // 
-            this.buttonBackuptoExternalDrive.Location = new System.Drawing.Point(188, 235);
+            this.buttonBackuptoExternalDrive.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackuptoExternalDrive.Location = new System.Drawing.Point(188, 218);
             this.buttonBackuptoExternalDrive.Name = "buttonBackuptoExternalDrive";
             this.buttonBackuptoExternalDrive.Size = new System.Drawing.Size(155, 23);
             this.buttonBackuptoExternalDrive.TabIndex = 6;
@@ -198,7 +203,8 @@
             // 
             // buttonRestore
             // 
-            this.buttonRestore.Location = new System.Drawing.Point(269, 194);
+            this.buttonRestore.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestore.Location = new System.Drawing.Point(269, 177);
             this.buttonRestore.Name = "buttonRestore";
             this.buttonRestore.Size = new System.Drawing.Size(75, 23);
             this.buttonRestore.TabIndex = 5;
@@ -208,7 +214,8 @@
             // 
             // buttonBackupDataBase
             // 
-            this.buttonBackupDataBase.Location = new System.Drawing.Point(188, 194);
+            this.buttonBackupDataBase.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackupDataBase.Location = new System.Drawing.Point(188, 177);
             this.buttonBackupDataBase.Name = "buttonBackupDataBase";
             this.buttonBackupDataBase.Size = new System.Drawing.Size(75, 23);
             this.buttonBackupDataBase.TabIndex = 4;
@@ -218,35 +225,39 @@
             // 
             // comboBoxDataBaseName
             // 
+            this.comboBoxDataBaseName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDataBaseName.FormattingEnabled = true;
-            this.comboBoxDataBaseName.Location = new System.Drawing.Point(188, 104);
+            this.comboBoxDataBaseName.Location = new System.Drawing.Point(216, 104);
             this.comboBoxDataBaseName.Name = "comboBoxDataBaseName";
-            this.comboBoxDataBaseName.Size = new System.Drawing.Size(145, 21);
+            this.comboBoxDataBaseName.Size = new System.Drawing.Size(145, 25);
             this.comboBoxDataBaseName.TabIndex = 3;
             // 
             // labelDataBaseName
             // 
             this.labelDataBaseName.AutoSize = true;
+            this.labelDataBaseName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataBaseName.Location = new System.Drawing.Point(49, 107);
             this.labelDataBaseName.Name = "labelDataBaseName";
-            this.labelDataBaseName.Size = new System.Drawing.Size(133, 13);
+            this.labelDataBaseName.Size = new System.Drawing.Size(163, 17);
             this.labelDataBaseName.TabIndex = 2;
             this.labelDataBaseName.Text = "Nom du base de donnee : ";
             // 
             // comboBoxServerName
             // 
+            this.comboBoxServerName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxServerName.FormattingEnabled = true;
-            this.comboBoxServerName.Location = new System.Drawing.Point(188, 53);
+            this.comboBoxServerName.Location = new System.Drawing.Point(216, 53);
             this.comboBoxServerName.Name = "comboBoxServerName";
-            this.comboBoxServerName.Size = new System.Drawing.Size(145, 21);
+            this.comboBoxServerName.Size = new System.Drawing.Size(145, 25);
             this.comboBoxServerName.TabIndex = 1;
             // 
             // labelServerName
             // 
             this.labelServerName.AutoSize = true;
-            this.labelServerName.Location = new System.Drawing.Point(91, 56);
+            this.labelServerName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelServerName.Location = new System.Drawing.Point(101, 56);
             this.labelServerName.Name = "labelServerName";
-            this.labelServerName.Size = new System.Drawing.Size(91, 13);
+            this.labelServerName.Size = new System.Drawing.Size(111, 17);
             this.labelServerName.TabIndex = 0;
             this.labelServerName.Text = "Nom de serveur : ";
             // 
@@ -286,6 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelWrapper);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

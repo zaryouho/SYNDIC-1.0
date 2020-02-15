@@ -64,10 +64,11 @@
             // 
             this.comboBoxVille.AllowDrop = true;
             this.comboBoxVille.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVille.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVille.FormattingEnabled = true;
             this.comboBoxVille.Location = new System.Drawing.Point(204, 326);
             this.comboBoxVille.Name = "comboBoxVille";
-            this.comboBoxVille.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxVille.Size = new System.Drawing.Size(201, 25);
             this.comboBoxVille.TabIndex = 119;
             this.comboBoxVille.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
@@ -76,6 +77,7 @@
             this.panel1.Controls.Add(this.buttonAnnuler);
             this.panel1.Controls.Add(this.buttonValdier);
             this.panel1.Controls.Add(this.buttonRaz);
+            this.panel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(74, 364);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 74);
@@ -83,7 +85,7 @@
             // 
             // buttonAnnuler
             // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(85, 35);
+            this.buttonAnnuler.Location = new System.Drawing.Point(88, 48);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(118, 23);
             this.buttonAnnuler.TabIndex = 2;
@@ -114,159 +116,177 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 334);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(120, 334);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 122;
             this.label1.Text = "Ville :";
             // 
             // comboBoxTypeEmploye
             // 
             this.comboBoxTypeEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeEmploye.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeEmploye.FormattingEnabled = true;
             this.comboBoxTypeEmploye.Location = new System.Drawing.Point(204, 299);
             this.comboBoxTypeEmploye.Name = "comboBoxTypeEmploye";
-            this.comboBoxTypeEmploye.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxTypeEmploye.Size = new System.Drawing.Size(201, 25);
             this.comboBoxTypeEmploye.TabIndex = 121;
             this.comboBoxTypeEmploye.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // labelActif
             // 
             this.labelActif.AutoSize = true;
-            this.labelActif.Location = new System.Drawing.Point(51, 274);
+            this.labelActif.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActif.Location = new System.Drawing.Point(40, 274);
             this.labelActif.Name = "labelActif";
-            this.labelActif.Size = new System.Drawing.Size(34, 13);
+            this.labelActif.Size = new System.Drawing.Size(120, 17);
             this.labelActif.TabIndex = 120;
-            this.labelActif.Text = "Actif :";
+            this.labelActif.Text = "Situation actuelle :";
             // 
             // labelTypeEmploye
             // 
             this.labelTypeEmploye.AutoSize = true;
-            this.labelTypeEmploye.Location = new System.Drawing.Point(49, 307);
+            this.labelTypeEmploye.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeEmploye.Location = new System.Drawing.Point(66, 307);
             this.labelTypeEmploye.Name = "labelTypeEmploye";
-            this.labelTypeEmploye.Size = new System.Drawing.Size(80, 13);
+            this.labelTypeEmploye.Size = new System.Drawing.Size(94, 17);
             this.labelTypeEmploye.TabIndex = 118;
             this.labelTypeEmploye.Text = "Type Employe :";
             // 
             // dateTimePickerDateRecrutement
             // 
             this.dateTimePickerDateRecrutement.Enabled = false;
+            this.dateTimePickerDateRecrutement.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDateRecrutement.Location = new System.Drawing.Point(204, 240);
             this.dateTimePickerDateRecrutement.Name = "dateTimePickerDateRecrutement";
-            this.dateTimePickerDateRecrutement.Size = new System.Drawing.Size(201, 20);
+            this.dateTimePickerDateRecrutement.Size = new System.Drawing.Size(201, 22);
             this.dateTimePickerDateRecrutement.TabIndex = 117;
             // 
             // labelDateRecrutement
             // 
             this.labelDateRecrutement.AutoSize = true;
-            this.labelDateRecrutement.Location = new System.Drawing.Point(51, 247);
+            this.labelDateRecrutement.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateRecrutement.Location = new System.Drawing.Point(39, 247);
             this.labelDateRecrutement.Name = "labelDateRecrutement";
-            this.labelDateRecrutement.Size = new System.Drawing.Size(97, 13);
+            this.labelDateRecrutement.Size = new System.Drawing.Size(121, 17);
             this.labelDateRecrutement.TabIndex = 116;
             this.labelDateRecrutement.Text = "Date Recrutemet  :";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(51, 218);
+            this.labelEmail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(115, 218);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(38, 13);
+            this.labelEmail.Size = new System.Drawing.Size(45, 17);
             this.labelEmail.TabIndex = 115;
             this.labelEmail.Text = "Email :";
             // 
             // labelTele
             // 
             this.labelTele.AutoSize = true;
-            this.labelTele.Location = new System.Drawing.Point(51, 189);
+            this.labelTele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTele.Location = new System.Drawing.Point(81, 189);
             this.labelTele.Name = "labelTele";
-            this.labelTele.Size = new System.Drawing.Size(67, 13);
+            this.labelTele.Size = new System.Drawing.Size(79, 17);
             this.labelTele.TabIndex = 114;
             this.labelTele.Text = "Telephone  :";
             // 
             // labelCharge
             // 
             this.labelCharge.AutoSize = true;
-            this.labelCharge.Location = new System.Drawing.Point(51, 160);
+            this.labelCharge.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCharge.Location = new System.Drawing.Point(74, 160);
             this.labelCharge.Name = "labelCharge";
-            this.labelCharge.Size = new System.Drawing.Size(70, 13);
+            this.labelCharge.Size = new System.Drawing.Size(86, 17);
             this.labelCharge.TabIndex = 113;
             this.labelCharge.Text = "Code Postal :";
             // 
             // labelAdresse
             // 
             this.labelAdresse.AutoSize = true;
-            this.labelAdresse.Location = new System.Drawing.Point(51, 131);
+            this.labelAdresse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdresse.Location = new System.Drawing.Point(99, 131);
             this.labelAdresse.Name = "labelAdresse";
-            this.labelAdresse.Size = new System.Drawing.Size(51, 13);
+            this.labelAdresse.Size = new System.Drawing.Size(61, 17);
             this.labelAdresse.TabIndex = 112;
             this.labelAdresse.Text = "Adresse :";
             // 
             // labelPrenom
             // 
             this.labelPrenom.AutoSize = true;
-            this.labelPrenom.Location = new System.Drawing.Point(51, 106);
+            this.labelPrenom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrenom.Location = new System.Drawing.Point(101, 106);
             this.labelPrenom.Name = "labelPrenom";
-            this.labelPrenom.Size = new System.Drawing.Size(49, 13);
+            this.labelPrenom.Size = new System.Drawing.Size(59, 17);
             this.labelPrenom.TabIndex = 111;
             this.labelPrenom.Text = "Prénom :";
             // 
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(51, 77);
+            this.labelNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNom.Location = new System.Drawing.Point(115, 77);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(38, 13);
+            this.labelNom.Size = new System.Drawing.Size(45, 17);
             this.labelNom.TabIndex = 110;
             this.labelNom.Text = "Nom  :";
             // 
             // textBoxTele
             // 
+            this.textBoxTele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTele.Location = new System.Drawing.Point(204, 187);
             this.textBoxTele.Name = "textBoxTele";
-            this.textBoxTele.Size = new System.Drawing.Size(201, 20);
+            this.textBoxTele.Size = new System.Drawing.Size(201, 22);
             this.textBoxTele.TabIndex = 109;
             this.textBoxTele.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxTele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTele_KeyPress);
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(204, 215);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(201, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(201, 22);
             this.textBoxEmail.TabIndex = 108;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxCodePostal
             // 
+            this.textBoxCodePostal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodePostal.Location = new System.Drawing.Point(204, 158);
             this.textBoxCodePostal.Name = "textBoxCodePostal";
-            this.textBoxCodePostal.Size = new System.Drawing.Size(201, 20);
+            this.textBoxCodePostal.Size = new System.Drawing.Size(201, 22);
             this.textBoxCodePostal.TabIndex = 107;
             this.textBoxCodePostal.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxCodePostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodePostal_KeyPress);
             // 
             // textBoxAdresse
             // 
+            this.textBoxAdresse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAdresse.Location = new System.Drawing.Point(204, 129);
             this.textBoxAdresse.Name = "textBoxAdresse";
-            this.textBoxAdresse.Size = new System.Drawing.Size(201, 20);
+            this.textBoxAdresse.Size = new System.Drawing.Size(201, 22);
             this.textBoxAdresse.TabIndex = 106;
             this.textBoxAdresse.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // textBoxPrenom
             // 
+            this.textBoxPrenom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrenom.Location = new System.Drawing.Point(204, 103);
             this.textBoxPrenom.Name = "textBoxPrenom";
-            this.textBoxPrenom.Size = new System.Drawing.Size(201, 20);
+            this.textBoxPrenom.Size = new System.Drawing.Size(201, 22);
             this.textBoxPrenom.TabIndex = 105;
             this.textBoxPrenom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxPrenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // textBoxNom
             // 
+            this.textBoxNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNom.Location = new System.Drawing.Point(204, 74);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(201, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(201, 22);
             this.textBoxNom.TabIndex = 104;
             this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
@@ -297,7 +317,7 @@
             // labelBiens
             // 
             this.labelBiens.AutoSize = true;
-            this.labelBiens.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBiens.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBiens.Location = new System.Drawing.Point(172, 12);
             this.labelBiens.Name = "labelBiens";
             this.labelBiens.Size = new System.Drawing.Size(117, 30);
@@ -307,29 +327,32 @@
             // radioButtonActifTrue
             // 
             this.radioButtonActifTrue.AutoSize = true;
-            this.radioButtonActifTrue.Location = new System.Drawing.Point(213, 276);
+            this.radioButtonActifTrue.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonActifTrue.Location = new System.Drawing.Point(204, 272);
             this.radioButtonActifTrue.Name = "radioButtonActifTrue";
-            this.radioButtonActifTrue.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonActifTrue.Size = new System.Drawing.Size(67, 21);
             this.radioButtonActifTrue.TabIndex = 128;
             this.radioButtonActifTrue.TabStop = true;
-            this.radioButtonActifTrue.Text = "True";
+            this.radioButtonActifTrue.Text = "Active";
             this.radioButtonActifTrue.UseVisualStyleBackColor = true;
             // 
             // radioButtonActifFalse
             // 
             this.radioButtonActifFalse.AutoSize = true;
-            this.radioButtonActifFalse.Location = new System.Drawing.Point(285, 276);
+            this.radioButtonActifFalse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonActifFalse.Location = new System.Drawing.Point(329, 272);
             this.radioButtonActifFalse.Name = "radioButtonActifFalse";
-            this.radioButtonActifFalse.Size = new System.Drawing.Size(50, 17);
+            this.radioButtonActifFalse.Size = new System.Drawing.Size(76, 21);
             this.radioButtonActifFalse.TabIndex = 129;
             this.radioButtonActifFalse.TabStop = true;
-            this.radioButtonActifFalse.Text = "False";
+            this.radioButtonActifFalse.Text = "Inactive";
             this.radioButtonActifFalse.UseVisualStyleBackColor = true;
             // 
             // FormAjouterModifierEmploye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(444, 450);
             this.Controls.Add(this.radioButtonActifFalse);
             this.Controls.Add(this.radioButtonActifTrue);

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelHistoriques = new System.Windows.Forms.Label();
             this.labelCloseHistoriques = new System.Windows.Forms.Label();
             this.dataGridViewHistorique = new System.Windows.Forms.DataGridView();
@@ -86,10 +89,40 @@
             // 
             // dataGridViewHistorique
             // 
-            this.dataGridViewHistorique.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHistorique.AllowUserToAddRows = false;
+            this.dataGridViewHistorique.AllowUserToDeleteRows = false;
+            this.dataGridViewHistorique.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHistorique.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewHistorique.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewHistorique.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewHistorique.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewHistorique.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewHistorique.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewHistorique.Name = "dataGridViewHistorique";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHistorique.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewHistorique.RowHeadersWidth = 25;
+            this.dataGridViewHistorique.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewHistorique.Size = new System.Drawing.Size(709, 567);
             this.dataGridViewHistorique.TabIndex = 9;
             this.dataGridViewHistorique.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHistorique_CellContentClick);
@@ -98,9 +131,13 @@
             // buttonDelete
             // 
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDelete.Location = new System.Drawing.Point(713, 13);
+            this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Location = new System.Drawing.Point(687, 13);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 26);
+            this.buttonDelete.Size = new System.Drawing.Size(101, 26);
             this.buttonDelete.TabIndex = 10;
             this.buttonDelete.Text = "Supprimer";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -116,6 +153,7 @@
             this.groupBoxSearchDataGridView.Controls.Add(this.textBoxStrings);
             this.groupBoxSearchDataGridView.Controls.Add(this.labelWords);
             this.groupBoxSearchDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSearchDataGridView.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxSearchDataGridView.Location = new System.Drawing.Point(0, 0);
             this.groupBoxSearchDataGridView.Name = "groupBoxSearchDataGridView";
             this.groupBoxSearchDataGridView.Size = new System.Drawing.Size(800, 71);
@@ -127,7 +165,10 @@
             // 
             this.buttonSearchDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchDataGridView.Location = new System.Drawing.Point(707, 27);
+            this.buttonSearchDataGridView.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonSearchDataGridView.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonSearchDataGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearchDataGridView.Location = new System.Drawing.Point(707, 23);
             this.buttonSearchDataGridView.Name = "buttonSearchDataGridView";
             this.buttonSearchDataGridView.Size = new System.Drawing.Size(87, 29);
             this.buttonSearchDataGridView.TabIndex = 4;
@@ -138,18 +179,18 @@
             // dateTimePickerHistorique
             // 
             this.dateTimePickerHistorique.CustomFormat = "dd/mm/yyyy";
-            this.dateTimePickerHistorique.Location = new System.Drawing.Point(390, 29);
+            this.dateTimePickerHistorique.Location = new System.Drawing.Point(375, 38);
             this.dateTimePickerHistorique.Name = "dateTimePickerHistorique";
-            this.dateTimePickerHistorique.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerHistorique.Size = new System.Drawing.Size(219, 22);
             this.dateTimePickerHistorique.TabIndex = 3;
             this.dateTimePickerHistorique.Value = new System.DateTime(2020, 1, 26, 0, 0, 0, 0);
             // 
             // labelFilterByDateTimePicker
             // 
             this.labelFilterByDateTimePicker.AutoSize = true;
-            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(315, 35);
+            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(372, 18);
             this.labelFilterByDateTimePicker.Name = "labelFilterByDateTimePicker";
-            this.labelFilterByDateTimePicker.Size = new System.Drawing.Size(69, 13);
+            this.labelFilterByDateTimePicker.Size = new System.Drawing.Size(86, 17);
             this.labelFilterByDateTimePicker.TabIndex = 4;
             this.labelFilterByDateTimePicker.Text = "Ou par date :";
             // 
@@ -161,25 +202,25 @@
             "Nom_Utilisateur",
             "Action",
             "Valeur"});
-            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 32);
+            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 40);
             this.comboBoxFilterItems.Name = "comboBoxFilterItems";
-            this.comboBoxFilterItems.Size = new System.Drawing.Size(101, 21);
+            this.comboBoxFilterItems.Size = new System.Drawing.Size(101, 25);
             this.comboBoxFilterItems.TabIndex = 2;
             // 
             // labelFilter
             // 
             this.labelFilter.AutoSize = true;
-            this.labelFilter.Location = new System.Drawing.Point(146, 35);
+            this.labelFilter.Location = new System.Drawing.Point(205, 18);
             this.labelFilter.Name = "labelFilter";
-            this.labelFilter.Size = new System.Drawing.Size(56, 13);
+            this.labelFilter.Size = new System.Drawing.Size(70, 17);
             this.labelFilter.TabIndex = 2;
             this.labelFilter.Text = "Filtrer par :";
             // 
             // textBoxStrings
             // 
-            this.textBoxStrings.Location = new System.Drawing.Point(42, 32);
+            this.textBoxStrings.Location = new System.Drawing.Point(72, 38);
             this.textBoxStrings.Name = "textBoxStrings";
-            this.textBoxStrings.Size = new System.Drawing.Size(98, 20);
+            this.textBoxStrings.Size = new System.Drawing.Size(98, 22);
             this.textBoxStrings.TabIndex = 1;
             // 
             // labelWords
@@ -187,9 +228,9 @@
             this.labelWords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelWords.AutoSize = true;
-            this.labelWords.Location = new System.Drawing.Point(0, 35);
+            this.labelWords.Location = new System.Drawing.Point(69, 18);
             this.labelWords.Name = "labelWords";
-            this.labelWords.Size = new System.Drawing.Size(36, 13);
+            this.labelWords.Size = new System.Drawing.Size(43, 17);
             this.labelWords.TabIndex = 0;
             this.labelWords.Text = "Mots :";
             // 
@@ -256,33 +297,45 @@
             // 
             // buttonToLast
             // 
-            this.buttonToLast.Location = new System.Drawing.Point(9, 366);
+            this.buttonToLast.FlatAppearance.BorderSize = 0;
+            this.buttonToLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonToLast.Location = new System.Drawing.Point(24, 428);
             this.buttonToLast.Name = "buttonToLast";
-            this.buttonToLast.Size = new System.Drawing.Size(65, 48);
+            this.buttonToLast.Size = new System.Drawing.Size(39, 39);
             this.buttonToLast.TabIndex = 8;
             this.buttonToLast.UseVisualStyleBackColor = true;
             // 
             // buttonToNext
             // 
-            this.buttonToNext.Location = new System.Drawing.Point(9, 312);
+            this.buttonToNext.FlatAppearance.BorderSize = 0;
+            this.buttonToNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonToNext.Location = new System.Drawing.Point(24, 374);
             this.buttonToNext.Name = "buttonToNext";
-            this.buttonToNext.Size = new System.Drawing.Size(65, 48);
+            this.buttonToNext.Size = new System.Drawing.Size(39, 39);
             this.buttonToNext.TabIndex = 7;
             this.buttonToNext.UseVisualStyleBackColor = true;
             // 
             // buttonToPrev
             // 
-            this.buttonToPrev.Location = new System.Drawing.Point(9, 258);
+            this.buttonToPrev.FlatAppearance.BorderSize = 0;
+            this.buttonToPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToPrev.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
+            this.buttonToPrev.Location = new System.Drawing.Point(24, 221);
             this.buttonToPrev.Name = "buttonToPrev";
-            this.buttonToPrev.Size = new System.Drawing.Size(65, 48);
+            this.buttonToPrev.Size = new System.Drawing.Size(39, 39);
             this.buttonToPrev.TabIndex = 6;
             this.buttonToPrev.UseVisualStyleBackColor = true;
             // 
             // buttonTofirst
             // 
-            this.buttonTofirst.Location = new System.Drawing.Point(9, 204);
+            this.buttonTofirst.FlatAppearance.BorderSize = 0;
+            this.buttonTofirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTofirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
+            this.buttonTofirst.Location = new System.Drawing.Point(24, 167);
             this.buttonTofirst.Name = "buttonTofirst";
-            this.buttonTofirst.Size = new System.Drawing.Size(65, 48);
+            this.buttonTofirst.Size = new System.Drawing.Size(39, 39);
             this.buttonTofirst.TabIndex = 5;
             this.buttonTofirst.UseVisualStyleBackColor = true;
             // 
@@ -290,6 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 567);
             this.Controls.Add(this.panelAll);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

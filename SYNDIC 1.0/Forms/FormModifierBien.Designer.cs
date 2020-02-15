@@ -85,7 +85,7 @@
             // labelBiens
             // 
             this.labelBiens.AutoSize = true;
-            this.labelBiens.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBiens.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBiens.Location = new System.Drawing.Point(172, 12);
             this.labelBiens.Name = "labelBiens";
             this.labelBiens.Size = new System.Drawing.Size(76, 30);
@@ -95,145 +95,162 @@
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(41, 121);
+            this.labelNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNom.Location = new System.Drawing.Point(73, 121);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(74, 13);
+            this.labelNom.Size = new System.Drawing.Size(89, 17);
             this.labelNom.TabIndex = 4;
             this.labelNom.Text = "Nom de Bien :";
             // 
             // textBoxNom
             // 
             this.textBoxNom.Enabled = false;
-            this.textBoxNom.Location = new System.Drawing.Point(156, 118);
+            this.textBoxNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNom.Location = new System.Drawing.Point(181, 118);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(206, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(218, 22);
             this.textBoxNom.TabIndex = 5;
             // 
             // textBoxEtage
             // 
             this.textBoxEtage.Enabled = false;
-            this.textBoxEtage.Location = new System.Drawing.Point(156, 150);
+            this.textBoxEtage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEtage.Location = new System.Drawing.Point(181, 150);
             this.textBoxEtage.Name = "textBoxEtage";
-            this.textBoxEtage.Size = new System.Drawing.Size(206, 20);
+            this.textBoxEtage.Size = new System.Drawing.Size(218, 22);
             this.textBoxEtage.TabIndex = 7;
             // 
             // labelEtage
             // 
             this.labelEtage.AutoSize = true;
-            this.labelEtage.Location = new System.Drawing.Point(41, 153);
+            this.labelEtage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEtage.Location = new System.Drawing.Point(66, 153);
             this.labelEtage.Name = "labelEtage";
-            this.labelEtage.Size = new System.Drawing.Size(80, 13);
+            this.labelEtage.Size = new System.Drawing.Size(96, 17);
             this.labelEtage.TabIndex = 6;
             this.labelEtage.Text = "Etage de Bien :";
             // 
             // textBoxSuperficie
             // 
             this.textBoxSuperficie.Enabled = false;
-            this.textBoxSuperficie.Location = new System.Drawing.Point(156, 182);
+            this.textBoxSuperficie.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSuperficie.Location = new System.Drawing.Point(181, 182);
             this.textBoxSuperficie.Name = "textBoxSuperficie";
-            this.textBoxSuperficie.Size = new System.Drawing.Size(206, 20);
+            this.textBoxSuperficie.Size = new System.Drawing.Size(218, 22);
             this.textBoxSuperficie.TabIndex = 9;
             // 
             // labelSuperficie
             // 
             this.labelSuperficie.AutoSize = true;
+            this.labelSuperficie.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSuperficie.Location = new System.Drawing.Point(41, 185);
             this.labelSuperficie.Name = "labelSuperficie";
-            this.labelSuperficie.Size = new System.Drawing.Size(99, 13);
+            this.labelSuperficie.Size = new System.Drawing.Size(121, 17);
             this.labelSuperficie.TabIndex = 8;
             this.labelSuperficie.Text = "Superficie de Bien :";
             // 
             // textBoxCharge
             // 
             this.textBoxCharge.Enabled = false;
-            this.textBoxCharge.Location = new System.Drawing.Point(156, 214);
+            this.textBoxCharge.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCharge.Location = new System.Drawing.Point(181, 214);
             this.textBoxCharge.Name = "textBoxCharge";
-            this.textBoxCharge.Size = new System.Drawing.Size(206, 20);
+            this.textBoxCharge.Size = new System.Drawing.Size(218, 22);
             this.textBoxCharge.TabIndex = 11;
             // 
             // labelCharge
             // 
             this.labelCharge.AutoSize = true;
-            this.labelCharge.Location = new System.Drawing.Point(41, 217);
+            this.labelCharge.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCharge.Location = new System.Drawing.Point(57, 217);
             this.labelCharge.Name = "labelCharge";
-            this.labelCharge.Size = new System.Drawing.Size(86, 13);
+            this.labelCharge.Size = new System.Drawing.Size(105, 17);
             this.labelCharge.TabIndex = 10;
             this.labelCharge.Text = "Charge de Bien :";
             // 
             // textBoxTypeBien
             // 
             this.textBoxTypeBien.Enabled = false;
-            this.textBoxTypeBien.Location = new System.Drawing.Point(156, 246);
+            this.textBoxTypeBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTypeBien.Location = new System.Drawing.Point(181, 246);
             this.textBoxTypeBien.Name = "textBoxTypeBien";
-            this.textBoxTypeBien.Size = new System.Drawing.Size(206, 20);
+            this.textBoxTypeBien.Size = new System.Drawing.Size(218, 22);
             this.textBoxTypeBien.TabIndex = 13;
             // 
             // labelType
             // 
             this.labelType.AutoSize = true;
-            this.labelType.Location = new System.Drawing.Point(41, 249);
+            this.labelType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(74, 249);
             this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(76, 13);
+            this.labelType.Size = new System.Drawing.Size(88, 17);
             this.labelType.TabIndex = 12;
             this.labelType.Text = "Type de Bien :";
             // 
             // textBoxIdImmeuble
             // 
             this.textBoxIdImmeuble.Enabled = false;
-            this.textBoxIdImmeuble.Location = new System.Drawing.Point(156, 278);
+            this.textBoxIdImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIdImmeuble.Location = new System.Drawing.Point(181, 278);
             this.textBoxIdImmeuble.Name = "textBoxIdImmeuble";
-            this.textBoxIdImmeuble.Size = new System.Drawing.Size(206, 20);
+            this.textBoxIdImmeuble.Size = new System.Drawing.Size(218, 22);
             this.textBoxIdImmeuble.TabIndex = 15;
             // 
             // labelImmeuble
             // 
             this.labelImmeuble.AutoSize = true;
-            this.labelImmeuble.Location = new System.Drawing.Point(41, 281);
+            this.labelImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImmeuble.Location = new System.Drawing.Point(89, 281);
             this.labelImmeuble.Name = "labelImmeuble";
-            this.labelImmeuble.Size = new System.Drawing.Size(58, 13);
+            this.labelImmeuble.Size = new System.Drawing.Size(73, 17);
             this.labelImmeuble.TabIndex = 14;
             this.labelImmeuble.Text = "Immeuble :";
             // 
             // labelProprietaire
             // 
             this.labelProprietaire.AutoSize = true;
-            this.labelProprietaire.Location = new System.Drawing.Point(41, 313);
+            this.labelProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProprietaire.Location = new System.Drawing.Point(31, 313);
             this.labelProprietaire.Name = "labelProprietaire";
-            this.labelProprietaire.Size = new System.Drawing.Size(105, 13);
+            this.labelProprietaire.Size = new System.Drawing.Size(131, 17);
             this.labelProprietaire.TabIndex = 16;
             this.labelProprietaire.Text = "Proprietaire de Bien :";
             // 
             // textBoxTitre
             // 
             this.textBoxTitre.Enabled = false;
-            this.textBoxTitre.Location = new System.Drawing.Point(156, 86);
+            this.textBoxTitre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitre.Location = new System.Drawing.Point(181, 86);
             this.textBoxTitre.Name = "textBoxTitre";
-            this.textBoxTitre.Size = new System.Drawing.Size(206, 20);
+            this.textBoxTitre.Size = new System.Drawing.Size(218, 22);
             this.textBoxTitre.TabIndex = 19;
             // 
             // labelid
             // 
             this.labelid.AutoSize = true;
-            this.labelid.Location = new System.Drawing.Point(41, 89);
+            this.labelid.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelid.Location = new System.Drawing.Point(76, 89);
             this.labelid.Name = "labelid";
-            this.labelid.Size = new System.Drawing.Size(73, 13);
+            this.labelid.Size = new System.Drawing.Size(86, 17);
             this.labelid.TabIndex = 18;
             this.labelid.Text = "Titre de Bien :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 344);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 344);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.Size = new System.Drawing.Size(140, 17);
             this.label1.TabIndex = 20;
             this.label1.Text = "Date d\'achat de Bien :";
             // 
             // buttonAddNewProprietaire
             // 
-            this.buttonAddNewProprietaire.Location = new System.Drawing.Point(337, 310);
+            this.buttonAddNewProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddNewProprietaire.Location = new System.Drawing.Point(374, 310);
             this.buttonAddNewProprietaire.Name = "buttonAddNewProprietaire";
-            this.buttonAddNewProprietaire.Size = new System.Drawing.Size(25, 20);
+            this.buttonAddNewProprietaire.Size = new System.Drawing.Size(25, 25);
             this.buttonAddNewProprietaire.TabIndex = 21;
             this.buttonAddNewProprietaire.Text = "...";
             this.buttonAddNewProprietaire.UseVisualStyleBackColor = true;
@@ -241,18 +258,20 @@
             // 
             // dateTimePickerDateAchat
             // 
-            this.dateTimePickerDateAchat.Location = new System.Drawing.Point(156, 339);
+            this.dateTimePickerDateAchat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDateAchat.Location = new System.Drawing.Point(181, 339);
             this.dateTimePickerDateAchat.Name = "dateTimePickerDateAchat";
-            this.dateTimePickerDateAchat.Size = new System.Drawing.Size(206, 20);
+            this.dateTimePickerDateAchat.Size = new System.Drawing.Size(218, 22);
             this.dateTimePickerDateAchat.TabIndex = 22;
             // 
             // comboBoxProprietaire
             // 
             this.comboBoxProprietaire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProprietaire.FormattingEnabled = true;
-            this.comboBoxProprietaire.Location = new System.Drawing.Point(156, 310);
+            this.comboBoxProprietaire.Location = new System.Drawing.Point(181, 310);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
-            this.comboBoxProprietaire.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxProprietaire.Size = new System.Drawing.Size(187, 25);
             this.comboBoxProprietaire.TabIndex = 23;
             this.comboBoxProprietaire.SelectedIndexChanged += new System.EventHandler(this.comboBoxProprietaire_SelectedIndexChanged);
             // 
@@ -260,16 +279,19 @@
             // 
             this.panel1.Controls.Add(this.buttonValdier);
             this.panel1.Controls.Add(this.buttonAnnuler);
-            this.panel1.Location = new System.Drawing.Point(69, 385);
+            this.panel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(69, 367);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(293, 32);
+            this.panel1.Size = new System.Drawing.Size(330, 54);
             this.panel1.TabIndex = 24;
             // 
             // buttonValdier
             // 
-            this.buttonValdier.Location = new System.Drawing.Point(14, 6);
+            this.buttonValdier.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValdier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValdier.Location = new System.Drawing.Point(10, 6);
             this.buttonValdier.Name = "buttonValdier";
-            this.buttonValdier.Size = new System.Drawing.Size(118, 23);
+            this.buttonValdier.Size = new System.Drawing.Size(150, 45);
             this.buttonValdier.TabIndex = 1;
             this.buttonValdier.Text = "Valider";
             this.buttonValdier.UseVisualStyleBackColor = true;
@@ -277,9 +299,11 @@
             // 
             // buttonAnnuler
             // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(160, 6);
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnnuler.Location = new System.Drawing.Point(177, 6);
             this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(118, 23);
+            this.buttonAnnuler.Size = new System.Drawing.Size(150, 45);
             this.buttonAnnuler.TabIndex = 0;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
@@ -287,9 +311,10 @@
             // 
             // textBoxIdProprietaire
             // 
-            this.textBoxIdProprietaire.Location = new System.Drawing.Point(229, 310);
+            this.textBoxIdProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIdProprietaire.Location = new System.Drawing.Point(254, 310);
             this.textBoxIdProprietaire.Name = "textBoxIdProprietaire";
-            this.textBoxIdProprietaire.Size = new System.Drawing.Size(63, 20);
+            this.textBoxIdProprietaire.Size = new System.Drawing.Size(75, 22);
             this.textBoxIdProprietaire.TabIndex = 25;
             // 
             // textBoxIdBien
@@ -304,6 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 450);
             this.Controls.Add(this.textBoxIdBien);
             this.Controls.Add(this.panel1);

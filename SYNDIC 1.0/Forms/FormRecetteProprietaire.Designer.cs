@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRecetteProprietaire));
             this.splitContainerRecetteProprietaire = new System.Windows.Forms.SplitContainer();
             this.buttonListDocs = new System.Windows.Forms.Button();
             this.buttonImprimerRecette = new System.Windows.Forms.Button();
@@ -36,12 +41,12 @@
             this.splitContainerRecette = new System.Windows.Forms.SplitContainer();
             this.dataGridViewRecette = new System.Windows.Forms.DataGridView();
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.buttonAjouterRecette = new System.Windows.Forms.Button();
+            this.buttonSupprimerRecette = new System.Windows.Forms.Button();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
-            this.buttonAjouterRecette = new System.Windows.Forms.Button();
-            this.buttonSupprimerRecette = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteProprietaire)).BeginInit();
             this.splitContainerRecetteProprietaire.Panel1.SuspendLayout();
             this.splitContainerRecetteProprietaire.Panel2.SuspendLayout();
@@ -90,7 +95,7 @@
             this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListDocs.ForeColor = System.Drawing.Color.White;
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListDocs.Location = new System.Drawing.Point(398, 26);
+            this.buttonListDocs.Location = new System.Drawing.Point(334, 26);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
             this.buttonListDocs.TabIndex = 17;
@@ -123,19 +128,21 @@
             // labelListeProprietaire
             // 
             this.labelListeProprietaire.AutoSize = true;
-            this.labelListeProprietaire.Location = new System.Drawing.Point(9, 13);
+            this.labelListeProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListeProprietaire.Location = new System.Drawing.Point(15, 11);
             this.labelListeProprietaire.Name = "labelListeProprietaire";
-            this.labelListeProprietaire.Size = new System.Drawing.Size(86, 13);
+            this.labelListeProprietaire.Size = new System.Drawing.Size(106, 17);
             this.labelListeProprietaire.TabIndex = 3;
             this.labelListeProprietaire.Text = "Les Propriétaire :";
             // 
             // comboBoxProprietaire
             // 
             this.comboBoxProprietaire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProprietaire.FormattingEnabled = true;
-            this.comboBoxProprietaire.Location = new System.Drawing.Point(12, 29);
+            this.comboBoxProprietaire.Location = new System.Drawing.Point(12, 33);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
-            this.comboBoxProprietaire.Size = new System.Drawing.Size(297, 21);
+            this.comboBoxProprietaire.Size = new System.Drawing.Size(297, 25);
             this.comboBoxProprietaire.TabIndex = 2;
             // 
             // splitContainerRecette
@@ -161,11 +168,42 @@
             // dataGridViewRecette
             // 
             this.dataGridViewRecette.AllowUserToAddRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewRecette.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewRecette.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewRecette.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRecette.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewRecette.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRecette.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewRecette.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRecette.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewRecette.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewRecette.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewRecette.Location = new System.Drawing.Point(57, 0);
             this.dataGridViewRecette.Name = "dataGridViewRecette";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRecette.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewRecette.RowHeadersWidth = 25;
             this.dataGridViewRecette.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRecette.Size = new System.Drawing.Size(743, 302);
             this.dataGridViewRecette.TabIndex = 4;
@@ -182,46 +220,6 @@
             this.panelNavigation.Size = new System.Drawing.Size(57, 302);
             this.panelNavigation.TabIndex = 3;
             // 
-            // buttonLast
-            // 
-            this.buttonLast.Location = new System.Drawing.Point(11, 234);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 21;
-            this.buttonLast.Text = ">>";
-            this.buttonLast.UseVisualStyleBackColor = true;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Location = new System.Drawing.Point(8, 92);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonPrevious.TabIndex = 19;
-            this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(11, 163);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 20;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.Location = new System.Drawing.Point(8, 21);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 18;
-            this.buttonFirst.Text = "<<";
-            this.buttonFirst.UseVisualStyleBackColor = true;
-            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
-            // 
             // buttonAjouterRecette
             // 
             this.buttonAjouterRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -236,6 +234,7 @@
             this.buttonAjouterRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAjouterRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAjouterRecette.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterRecette.Image = ((System.Drawing.Image)(resources.GetObject("buttonAjouterRecette.Image")));
             this.buttonAjouterRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
             this.buttonAjouterRecette.Name = "buttonAjouterRecette";
@@ -259,6 +258,7 @@
             this.buttonSupprimerRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSupprimerRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSupprimerRecette.ForeColor = System.Drawing.Color.White;
+            this.buttonSupprimerRecette.Image = global::SYNDIC_1._0.Properties.Resources.delete;
             this.buttonSupprimerRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
             this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
@@ -268,10 +268,63 @@
             this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
             this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
             // 
+            // buttonLast
+            // 
+            this.buttonLast.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonLast.Location = new System.Drawing.Point(8, 234);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
+            this.buttonLast.TabIndex = 21;
+            this.buttonLast.UseVisualStyleBackColor = false;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonPrevious
+            // 
+            this.buttonPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
+            this.buttonPrevious.Location = new System.Drawing.Point(8, 92);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
+            this.buttonPrevious.TabIndex = 19;
+            this.buttonPrevious.UseVisualStyleBackColor = false;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonNext.Location = new System.Drawing.Point(8, 163);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
+            this.buttonNext.TabIndex = 20;
+            this.buttonNext.UseVisualStyleBackColor = false;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
+            this.buttonFirst.Location = new System.Drawing.Point(8, 21);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+            this.buttonFirst.TabIndex = 18;
+            this.buttonFirst.UseVisualStyleBackColor = false;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
             // FormRecetteProprietaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainerRecetteProprietaire);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

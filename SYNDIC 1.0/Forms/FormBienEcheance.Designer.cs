@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerBienEcheance = new System.Windows.Forms.SplitContainer();
             this.labelTypeEcheance = new System.Windows.Forms.Label();
             this.comboBoxTypeEcheance = new System.Windows.Forms.ComboBox();
@@ -97,9 +103,10 @@
             // 
             this.labelTypeEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTypeEcheance.AutoSize = true;
-            this.labelTypeEcheance.Location = new System.Drawing.Point(513, 21);
+            this.labelTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeEcheance.Location = new System.Drawing.Point(514, 9);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(182, 13);
+            this.labelTypeEcheance.Size = new System.Drawing.Size(220, 17);
             this.labelTypeEcheance.TabIndex = 23;
             this.labelTypeEcheance.Text = "Selectioner Le Type de l\'Echéance : ";
             // 
@@ -107,45 +114,50 @@
             // 
             this.comboBoxTypeEcheance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxTypeEcheance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeEcheance.FormattingEnabled = true;
-            this.comboBoxTypeEcheance.Location = new System.Drawing.Point(514, 39);
+            this.comboBoxTypeEcheance.Location = new System.Drawing.Point(514, 30);
             this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
-            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(251, 21);
+            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(251, 25);
             this.comboBoxTypeEcheance.TabIndex = 22;
             this.comboBoxTypeEcheance.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeEcheance_SelectedIndexChanged);
             // 
             // labelImmeuble
             // 
             this.labelImmeuble.AutoSize = true;
-            this.labelImmeuble.Location = new System.Drawing.Point(209, 9);
+            this.labelImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImmeuble.Location = new System.Drawing.Point(210, 9);
             this.labelImmeuble.Name = "labelImmeuble";
-            this.labelImmeuble.Size = new System.Drawing.Size(132, 13);
+            this.labelImmeuble.Size = new System.Drawing.Size(165, 17);
             this.labelImmeuble.TabIndex = 21;
             this.labelImmeuble.Text = "Selectioner un Immeuble : ";
             // 
             // comboBoxImmeuble
             // 
+            this.comboBoxImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxImmeuble.FormattingEnabled = true;
-            this.comboBoxImmeuble.Location = new System.Drawing.Point(210, 27);
+            this.comboBoxImmeuble.Location = new System.Drawing.Point(210, 30);
             this.comboBoxImmeuble.Name = "comboBoxImmeuble";
-            this.comboBoxImmeuble.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxImmeuble.Size = new System.Drawing.Size(168, 25);
             this.comboBoxImmeuble.TabIndex = 20;
             // 
             // labelBloc
             // 
             this.labelBloc.AutoSize = true;
-            this.labelBloc.Location = new System.Drawing.Point(16, 9);
+            this.labelBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBloc.Location = new System.Drawing.Point(17, 9);
             this.labelBloc.Name = "labelBloc";
-            this.labelBloc.Size = new System.Drawing.Size(114, 13);
+            this.labelBloc.Size = new System.Drawing.Size(140, 17);
             this.labelBloc.TabIndex = 19;
             this.labelBloc.Text = "Selectioner une Bloc : ";
             // 
             // comboBoxBloc
             // 
+            this.comboBoxBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBloc.FormattingEnabled = true;
-            this.comboBoxBloc.Location = new System.Drawing.Point(17, 27);
+            this.comboBoxBloc.Location = new System.Drawing.Point(17, 30);
             this.comboBoxBloc.Name = "comboBoxBloc";
-            this.comboBoxBloc.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxBloc.Size = new System.Drawing.Size(168, 25);
             this.comboBoxBloc.TabIndex = 18;
             // 
             // splitContainerBienEcheanceBody
@@ -177,61 +189,91 @@
             this.comboBoxBienEcheance.FormattingEnabled = true;
             this.comboBoxBienEcheance.Location = new System.Drawing.Point(3, 283);
             this.comboBoxBienEcheance.Name = "comboBoxBienEcheance";
-            this.comboBoxBienEcheance.Size = new System.Drawing.Size(10, 21);
+            this.comboBoxBienEcheance.Size = new System.Drawing.Size(16, 21);
             this.comboBoxBienEcheance.TabIndex = 15;
             this.comboBoxBienEcheance.Visible = false;
             this.comboBoxBienEcheance.SelectedIndexChanged += new System.EventHandler(this.comboBoxBienEcheance_SelectedIndexChanged);
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(19, 238);
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonLast.Location = new System.Drawing.Point(16, 238);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
             this.buttonLast.TabIndex = 17;
-            this.buttonLast.Text = ">>";
             this.buttonLast.UseVisualStyleBackColor = true;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
             // buttonPrevious
             // 
+            this.buttonPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
             this.buttonPrevious.Location = new System.Drawing.Point(16, 96);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
             this.buttonPrevious.TabIndex = 15;
-            this.buttonPrevious.Text = "<";
             this.buttonPrevious.UseVisualStyleBackColor = true;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(19, 167);
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonNext.Location = new System.Drawing.Point(16, 167);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
             this.buttonNext.TabIndex = 16;
-            this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonFirst
             // 
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
             this.buttonFirst.Location = new System.Drawing.Point(16, 25);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
             this.buttonFirst.TabIndex = 14;
-            this.buttonFirst.Text = "<<";
             this.buttonFirst.UseVisualStyleBackColor = true;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
             // dataGridViewBienEcheance
             // 
             this.dataGridViewBienEcheance.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewBienEcheance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBienEcheance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewBienEcheance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBienEcheance.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBienEcheance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewBienEcheance.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBienEcheance.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewBienEcheance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewBienEcheance.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewBienEcheance.Location = new System.Drawing.Point(151, 0);
             this.dataGridViewBienEcheance.MultiSelect = false;
             this.dataGridViewBienEcheance.Name = "dataGridViewBienEcheance";
             this.dataGridViewBienEcheance.ReadOnly = true;
+            this.dataGridViewBienEcheance.RowHeadersWidth = 25;
             this.dataGridViewBienEcheance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBienEcheance.Size = new System.Drawing.Size(566, 262);
             this.dataGridViewBienEcheance.TabIndex = 4;
@@ -242,13 +284,35 @@
             // 
             this.dataGridViewListeBien.AllowUserToAddRows = false;
             this.dataGridViewListeBien.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewListeBien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewListeBien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewListeBien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListeBien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewListeBien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewListeBien.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewListeBien.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewListeBien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridViewListeBien.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewListeBien.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewListeBien.MultiSelect = false;
             this.dataGridViewListeBien.Name = "dataGridViewListeBien";
             this.dataGridViewListeBien.ReadOnly = true;
+            this.dataGridViewListeBien.RowHeadersWidth = 25;
             this.dataGridViewListeBien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListeBien.Size = new System.Drawing.Size(151, 262);
             this.dataGridViewListeBien.TabIndex = 3;
@@ -271,36 +335,40 @@
             // 
             this.textBoxMontantReste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMontantReste.Enabled = false;
-            this.textBoxMontantReste.Location = new System.Drawing.Point(591, 15);
+            this.textBoxMontantReste.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMontantReste.Location = new System.Drawing.Point(606, 15);
             this.textBoxMontantReste.Name = "textBoxMontantReste";
-            this.textBoxMontantReste.Size = new System.Drawing.Size(105, 20);
+            this.textBoxMontantReste.Size = new System.Drawing.Size(105, 22);
             this.textBoxMontantReste.TabIndex = 5;
             // 
             // labelMontantReste
             // 
             this.labelMontantReste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMontantReste.AutoSize = true;
-            this.labelMontantReste.Location = new System.Drawing.Point(497, 18);
+            this.labelMontantReste.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontantReste.Location = new System.Drawing.Point(504, 20);
             this.labelMontantReste.Name = "labelMontantReste";
-            this.labelMontantReste.Size = new System.Drawing.Size(86, 13);
+            this.labelMontantReste.Size = new System.Drawing.Size(99, 17);
             this.labelMontantReste.TabIndex = 4;
             this.labelMontantReste.Text = "Le Reste Total  :";
             // 
             // textBoxMontantRecu
             // 
             this.textBoxMontantRecu.Enabled = false;
-            this.textBoxMontantRecu.Location = new System.Drawing.Point(344, 15);
+            this.textBoxMontantRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMontantRecu.Location = new System.Drawing.Point(363, 15);
             this.textBoxMontantRecu.Name = "textBoxMontantRecu";
-            this.textBoxMontantRecu.Size = new System.Drawing.Size(105, 20);
+            this.textBoxMontantRecu.Size = new System.Drawing.Size(114, 22);
             this.textBoxMontantRecu.TabIndex = 3;
             // 
             // labelMontantRecu
             // 
             this.labelMontantRecu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelMontantRecu.AutoSize = true;
-            this.labelMontantRecu.Location = new System.Drawing.Point(233, 18);
+            this.labelMontantRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontantRecu.Location = new System.Drawing.Point(233, 20);
             this.labelMontantRecu.Name = "labelMontantRecu";
-            this.labelMontantRecu.Size = new System.Drawing.Size(111, 13);
+            this.labelMontantRecu.Size = new System.Drawing.Size(133, 17);
             this.labelMontantRecu.TabIndex = 2;
             this.labelMontantRecu.Text = "Montant Reçu Total  :";
             // 
@@ -308,18 +376,20 @@
             // 
             this.textBoxMontantTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxMontantTotal.Enabled = false;
-            this.textBoxMontantTotal.Location = new System.Drawing.Point(93, 15);
+            this.textBoxMontantTotal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMontantTotal.Location = new System.Drawing.Point(102, 15);
             this.textBoxMontantTotal.Name = "textBoxMontantTotal";
-            this.textBoxMontantTotal.Size = new System.Drawing.Size(105, 20);
+            this.textBoxMontantTotal.Size = new System.Drawing.Size(112, 22);
             this.textBoxMontantTotal.TabIndex = 1;
             // 
             // labelMontantTotal
             // 
             this.labelMontantTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelMontantTotal.AutoSize = true;
-            this.labelMontantTotal.Location = new System.Drawing.Point(5, 18);
+            this.labelMontantTotal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontantTotal.Location = new System.Drawing.Point(5, 20);
             this.labelMontantTotal.Name = "labelMontantTotal";
-            this.labelMontantTotal.Size = new System.Drawing.Size(82, 13);
+            this.labelMontantTotal.Size = new System.Drawing.Size(100, 17);
             this.labelMontantTotal.TabIndex = 0;
             this.labelMontantTotal.Text = "Montant Total  :";
             // 
@@ -402,6 +472,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainerBienEcheance);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

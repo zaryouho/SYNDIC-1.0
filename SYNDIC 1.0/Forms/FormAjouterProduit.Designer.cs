@@ -71,7 +71,7 @@
             // labelNvProduit
             // 
             this.labelNvProduit.AutoSize = true;
-            this.labelNvProduit.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNvProduit.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNvProduit.Location = new System.Drawing.Point(173, 9);
             this.labelNvProduit.Name = "labelNvProduit";
             this.labelNvProduit.Size = new System.Drawing.Size(95, 30);
@@ -90,6 +90,9 @@
             // 
             // buttonAnnuler
             // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
@@ -100,6 +103,9 @@
             // 
             // buttonValider
             // 
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
@@ -110,56 +116,63 @@
             // 
             // textBoxID
             // 
+            this.textBoxID.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxID.Location = new System.Drawing.Point(371, 78);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(63, 20);
+            this.textBoxID.Size = new System.Drawing.Size(63, 22);
             this.textBoxID.TabIndex = 72;
             // 
             // textBoxDesignation
             // 
-            this.textBoxDesignation.Location = new System.Drawing.Point(128, 93);
+            this.textBoxDesignation.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDesignation.Location = new System.Drawing.Point(136, 93);
             this.textBoxDesignation.Name = "textBoxDesignation";
-            this.textBoxDesignation.Size = new System.Drawing.Size(231, 20);
+            this.textBoxDesignation.Size = new System.Drawing.Size(231, 22);
             this.textBoxDesignation.TabIndex = 71;
             // 
             // textBoxCategorieProduit
             // 
-            this.textBoxCategorieProduit.Location = new System.Drawing.Point(128, 188);
+            this.textBoxCategorieProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCategorieProduit.Location = new System.Drawing.Point(136, 188);
             this.textBoxCategorieProduit.Name = "textBoxCategorieProduit";
-            this.textBoxCategorieProduit.Size = new System.Drawing.Size(231, 20);
+            this.textBoxCategorieProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxCategorieProduit.TabIndex = 69;
             // 
             // labelPrix
             // 
             this.labelPrix.AutoSize = true;
-            this.labelPrix.Location = new System.Drawing.Point(56, 191);
+            this.labelPrix.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrix.Location = new System.Drawing.Point(53, 191);
             this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(58, 13);
+            this.labelPrix.Size = new System.Drawing.Size(75, 17);
             this.labelPrix.TabIndex = 68;
             this.labelPrix.Text = "Catégorie :";
             // 
             // textBoxQteStckProduit
             // 
-            this.textBoxQteStckProduit.Location = new System.Drawing.Point(128, 139);
+            this.textBoxQteStckProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQteStckProduit.Location = new System.Drawing.Point(136, 139);
             this.textBoxQteStckProduit.Name = "textBoxQteStckProduit";
-            this.textBoxQteStckProduit.Size = new System.Drawing.Size(231, 20);
+            this.textBoxQteStckProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxQteStckProduit.TabIndex = 67;
             // 
             // labelQteProduit
             // 
             this.labelQteProduit.AutoSize = true;
-            this.labelQteProduit.Location = new System.Drawing.Point(12, 142);
+            this.labelQteProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQteProduit.Location = new System.Drawing.Point(5, 142);
             this.labelQteProduit.Name = "labelQteProduit";
-            this.labelQteProduit.Size = new System.Drawing.Size(100, 13);
+            this.labelQteProduit.Size = new System.Drawing.Size(123, 17);
             this.labelQteProduit.TabIndex = 66;
             this.labelQteProduit.Text = "Quantité en stock  :";
             // 
             // labelProduit
             // 
             this.labelProduit.AutoSize = true;
+            this.labelProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProduit.Location = new System.Drawing.Point(40, 96);
             this.labelProduit.Name = "labelProduit";
-            this.labelProduit.Size = new System.Drawing.Size(72, 13);
+            this.labelProduit.Size = new System.Drawing.Size(88, 17);
             this.labelProduit.TabIndex = 70;
             this.labelProduit.Text = "Désignation  :";
             // 
@@ -167,6 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 287);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.textBoxDesignation);

@@ -13,6 +13,18 @@ namespace SYNDIC_1._0
 {
     public partial class FormAjouterModifierEcheance : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
+
         private string operation;
         private BindingSource bsTypeEcheance;
         private BindingSource bsBien;

@@ -382,6 +382,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
@@ -423,12 +424,23 @@
   <ItemGroup>
     <Content Include="Resources\1logo.jpg" />
     <Content Include="Resources\2LOGO.jpg" />
+    <None Include="Resources\valider.png" />
+    <None Include="Resources\modifier.png" />
+    <None Include="Resources\up-chevron-2222.png" />
+    <None Include="Resources\up-chevron-1111.png" />
+    <None Include="Resources\down-chevron-1.png" />
+    <None Include="Resources\down-chevron-2.png" />
+    <None Include="Resources\add prop.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\DeleteReddd.png" />
     <Content Include="Resources\icon cerrar2.png" />
     <Content Include="Resources\icon minimizar.png" />
+    <None Include="Resources\liste2.png" />
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\logo1.png" />
     <Content Include="Resources\logogoo.jpg" />
     <Content Include="Resources\logogoo1.jpg" />
+    <None Include="Resources\logoSyndicBlueFoncé.jpg" />
     <Content Include="Resources\minimazar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

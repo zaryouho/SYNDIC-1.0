@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPSociete = new System.Windows.Forms.TableLayoutPanel();
             this.labelEmploye = new System.Windows.Forms.Label();
             this.labelCloseEmploye = new System.Windows.Forms.Label();
@@ -220,9 +224,13 @@
             // 
             // buttonRechercher
             // 
-            this.buttonRechercher.Location = new System.Drawing.Point(220, 11);
+            this.buttonRechercher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonRechercher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonRechercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRechercher.Location = new System.Drawing.Point(238, 6);
             this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(98, 20);
+            this.buttonRechercher.Size = new System.Drawing.Size(98, 25);
             this.buttonRechercher.TabIndex = 16;
             this.buttonRechercher.Text = "Rechercher";
             this.buttonRechercher.UseVisualStyleBackColor = true;
@@ -230,9 +238,10 @@
             // 
             // textBoxRechercher
             // 
-            this.textBoxRechercher.Location = new System.Drawing.Point(12, 11);
+            this.textBoxRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRechercher.Location = new System.Drawing.Point(30, 7);
             this.textBoxRechercher.Name = "textBoxRechercher";
-            this.textBoxRechercher.Size = new System.Drawing.Size(202, 20);
+            this.textBoxRechercher.Size = new System.Drawing.Size(202, 22);
             this.textBoxRechercher.TabIndex = 15;
             this.textBoxRechercher.TextChanged += new System.EventHandler(this.textBoxRechercher_TextChanged);
             // 
@@ -258,41 +267,49 @@
             // 
             // buttonLast
             // 
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
             this.buttonLast.Location = new System.Drawing.Point(10, 188);
             this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 31);
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
             this.buttonLast.TabIndex = 22;
-            this.buttonLast.Text = ">>";
             this.buttonLast.UseVisualStyleBackColor = true;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
             // buttonNext
             // 
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
             this.buttonNext.Location = new System.Drawing.Point(10, 133);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 31);
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
             this.buttonNext.TabIndex = 21;
-            this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonprevious
             // 
+            this.buttonprevious.FlatAppearance.BorderSize = 0;
+            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
             this.buttonprevious.Location = new System.Drawing.Point(10, 78);
             this.buttonprevious.Name = "buttonprevious";
-            this.buttonprevious.Size = new System.Drawing.Size(39, 31);
+            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
             this.buttonprevious.TabIndex = 20;
-            this.buttonprevious.Text = "<";
             this.buttonprevious.UseVisualStyleBackColor = true;
             this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
             // 
             // buttonFirst
             // 
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
             this.buttonFirst.Location = new System.Drawing.Point(10, 23);
             this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 31);
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
             this.buttonFirst.TabIndex = 19;
-            this.buttonFirst.Text = "<<";
             this.buttonFirst.UseVisualStyleBackColor = true;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -300,10 +317,41 @@
             // 
             this.dataGridViewSociete.AllowUserToAddRows = false;
             this.dataGridViewSociete.AllowUserToDeleteRows = false;
-            this.dataGridViewSociete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewSociete.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewSociete.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewSociete.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSociete.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewSociete.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSociete.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewSociete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSociete.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewSociete.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewSociete.Name = "dataGridViewSociete";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSociete.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewSociete.RowHeadersWidth = 25;
             this.dataGridViewSociete.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSociete.Size = new System.Drawing.Size(738, 258);
             this.dataGridViewSociete.TabIndex = 13;
@@ -399,6 +447,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelIN);
             this.Controls.Add(this.tableLayoutPanelEmploye);

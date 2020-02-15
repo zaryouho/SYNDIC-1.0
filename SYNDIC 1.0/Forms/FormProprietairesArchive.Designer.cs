@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonRechercher = new System.Windows.Forms.Button();
+            this.textBoxrechercher = new System.Windows.Forms.TextBox();
             this.splitContainerListeProprietaireBody = new System.Windows.Forms.SplitContainer();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonprevious = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridViewProprietaires = new System.Windows.Forms.DataGridView();
-            this.buttonRechercher = new System.Windows.Forms.Button();
-            this.textBoxrechercher = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,6 +70,27 @@
             this.splitContainer1.SplitterDistance = 58;
             this.splitContainer1.TabIndex = 0;
             // 
+            // buttonRechercher
+            // 
+            this.buttonRechercher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonRechercher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonRechercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRechercher.Location = new System.Drawing.Point(247, 12);
+            this.buttonRechercher.Name = "buttonRechercher";
+            this.buttonRechercher.Size = new System.Drawing.Size(108, 30);
+            this.buttonRechercher.TabIndex = 26;
+            this.buttonRechercher.Text = "Rechercher";
+            this.buttonRechercher.UseVisualStyleBackColor = true;
+            // 
+            // textBoxrechercher
+            // 
+            this.textBoxrechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxrechercher.Location = new System.Drawing.Point(18, 22);
+            this.textBoxrechercher.Name = "textBoxrechercher";
+            this.textBoxrechercher.Size = new System.Drawing.Size(212, 22);
+            this.textBoxrechercher.TabIndex = 25;
+            // 
             // splitContainerListeProprietaireBody
             // 
             this.splitContainerListeProprietaireBody.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -89,33 +113,45 @@
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(18, 230);
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonLast.Location = new System.Drawing.Point(18, 258);
             this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 31);
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
             this.buttonLast.TabIndex = 30;
             this.buttonLast.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(18, 175);
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonNext.Location = new System.Drawing.Point(18, 203);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 31);
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
             this.buttonNext.TabIndex = 29;
             this.buttonNext.UseVisualStyleBackColor = true;
             // 
             // buttonprevious
             // 
-            this.buttonprevious.Location = new System.Drawing.Point(18, 120);
+            this.buttonprevious.FlatAppearance.BorderSize = 0;
+            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
+            this.buttonprevious.Location = new System.Drawing.Point(18, 96);
             this.buttonprevious.Name = "buttonprevious";
-            this.buttonprevious.Size = new System.Drawing.Size(39, 31);
+            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
             this.buttonprevious.TabIndex = 28;
             this.buttonprevious.UseVisualStyleBackColor = true;
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(18, 65);
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
+            this.buttonFirst.Location = new System.Drawing.Point(18, 41);
             this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 31);
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
             this.buttonFirst.TabIndex = 27;
             this.buttonFirst.UseVisualStyleBackColor = true;
             // 
@@ -123,34 +159,47 @@
             // 
             this.dataGridViewProprietaires.AllowUserToAddRows = false;
             this.dataGridViewProprietaires.AllowUserToDeleteRows = false;
-            this.dataGridViewProprietaires.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProprietaires.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewProprietaires.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewProprietaires.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewProprietaires.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewProprietaires.RowHeadersWidth = 25;
             this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProprietaires.Size = new System.Drawing.Size(708, 349);
             this.dataGridViewProprietaires.TabIndex = 21;
-            // 
-            // buttonRechercher
-            // 
-            this.buttonRechercher.Location = new System.Drawing.Point(247, 22);
-            this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(98, 20);
-            this.buttonRechercher.TabIndex = 26;
-            this.buttonRechercher.Text = "Rechercher";
-            this.buttonRechercher.UseVisualStyleBackColor = true;
-            // 
-            // textBoxrechercher
-            // 
-            this.textBoxrechercher.Location = new System.Drawing.Point(18, 22);
-            this.textBoxrechercher.Name = "textBoxrechercher";
-            this.textBoxrechercher.Size = new System.Drawing.Size(202, 20);
-            this.textBoxrechercher.TabIndex = 25;
             // 
             // FormProprietairesArchive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(784, 411);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

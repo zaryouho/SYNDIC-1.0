@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridGestionType = new System.Windows.Forms.DataGridView();
             this.panelCrud = new System.Windows.Forms.Panel();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -37,7 +40,7 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
             this.panelHead = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.labelCloseDepense = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGestionType)).BeginInit();
             this.panelCrud.SuspendLayout();
             this.panelValider.SuspendLayout();
@@ -47,8 +50,29 @@
             // dataGridGestionType
             // 
             this.dataGridGestionType.AllowUserToAddRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridGestionType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridGestionType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridGestionType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridGestionType.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridGestionType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridGestionType.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridGestionType.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridGestionType.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridGestionType.Location = new System.Drawing.Point(12, 33);
             this.dataGridGestionType.Name = "dataGridGestionType";
             this.dataGridGestionType.Size = new System.Drawing.Size(331, 274);
@@ -59,16 +83,17 @@
             this.panelCrud.Controls.Add(this.btnSupprimer);
             this.panelCrud.Controls.Add(this.btnModifier);
             this.panelCrud.Controls.Add(this.btnAjouter);
+            this.panelCrud.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCrud.Location = new System.Drawing.Point(12, 313);
             this.panelCrud.Name = "panelCrud";
-            this.panelCrud.Size = new System.Drawing.Size(319, 23);
+            this.panelCrud.Size = new System.Drawing.Size(319, 34);
             this.panelCrud.TabIndex = 6;
             // 
             // btnSupprimer
             // 
             this.btnSupprimer.Location = new System.Drawing.Point(225, 1);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(91, 21);
+            this.btnSupprimer.Size = new System.Drawing.Size(91, 30);
             this.btnSupprimer.TabIndex = 6;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -78,7 +103,7 @@
             // 
             this.btnModifier.Location = new System.Drawing.Point(111, 1);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(91, 21);
+            this.btnModifier.Size = new System.Drawing.Size(91, 30);
             this.btnModifier.TabIndex = 5;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -88,7 +113,7 @@
             // 
             this.btnAjouter.Location = new System.Drawing.Point(3, 1);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(91, 21);
+            this.btnAjouter.Size = new System.Drawing.Size(91, 30);
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -98,16 +123,19 @@
             // 
             this.panelValider.Controls.Add(this.btnAnnuler);
             this.panelValider.Controls.Add(this.btnValider);
-            this.panelValider.Location = new System.Drawing.Point(15, 339);
+            this.panelValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelValider.Location = new System.Drawing.Point(15, 353);
             this.panelValider.Name = "panelValider";
-            this.panelValider.Size = new System.Drawing.Size(319, 23);
+            this.panelValider.Size = new System.Drawing.Size(319, 39);
             this.panelValider.TabIndex = 7;
             // 
             // btnAnnuler
             // 
+            this.btnAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.btnAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnnuler.Location = new System.Drawing.Point(168, 0);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(91, 21);
+            this.btnAnnuler.Size = new System.Drawing.Size(145, 33);
             this.btnAnnuler.TabIndex = 7;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -115,9 +143,11 @@
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(48, 1);
+            this.btnValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.btnValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnValider.Location = new System.Drawing.Point(3, 1);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(91, 21);
+            this.btnValider.Size = new System.Drawing.Size(136, 32);
             this.btnValider.TabIndex = 6;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
@@ -125,28 +155,32 @@
             // 
             // panelHead
             // 
-            this.panelHead.Controls.Add(this.btnClose);
+            this.panelHead.Controls.Add(this.labelCloseDepense);
             this.panelHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHead.Location = new System.Drawing.Point(0, 0);
             this.panelHead.Name = "panelHead";
             this.panelHead.Size = new System.Drawing.Size(357, 27);
             this.panelHead.TabIndex = 8;
             // 
-            // btnClose
+            // labelCloseDepense
             // 
-            this.btnClose.Location = new System.Drawing.Point(329, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 21);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.labelCloseDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCloseDepense.AutoSize = true;
+            this.labelCloseDepense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelCloseDepense.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.labelCloseDepense.Location = new System.Drawing.Point(336, 0);
+            this.labelCloseDepense.Name = "labelCloseDepense";
+            this.labelCloseDepense.Size = new System.Drawing.Size(18, 18);
+            this.labelCloseDepense.TabIndex = 17;
+            this.labelCloseDepense.Text = "X";
+            this.labelCloseDepense.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FormGestionTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 374);
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.ClientSize = new System.Drawing.Size(357, 398);
             this.Controls.Add(this.panelHead);
             this.Controls.Add(this.panelValider);
             this.Controls.Add(this.panelCrud);
@@ -161,6 +195,7 @@
             this.panelCrud.ResumeLayout(false);
             this.panelValider.ResumeLayout(false);
             this.panelHead.ResumeLayout(false);
+            this.panelHead.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -176,6 +211,6 @@
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Panel panelHead;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label labelCloseDepense;
     }
 }

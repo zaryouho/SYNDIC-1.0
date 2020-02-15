@@ -42,8 +42,8 @@
             this.panelValid = new System.Windows.Forms.Panel();
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.comboBoxBien = new System.Windows.Forms.ComboBox();
             this.textBoxIdEchea = new System.Windows.Forms.TextBox();
+            this.comboBoxBien = new System.Windows.Forms.ComboBox();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,7 @@
             // labelEcheance
             // 
             this.labelEcheance.AutoSize = true;
-            this.labelEcheance.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEcheance.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEcheance.Location = new System.Drawing.Point(150, 13);
             this.labelEcheance.Name = "labelEcheance";
             this.labelEcheance.Size = new System.Drawing.Size(136, 30);
@@ -84,66 +84,74 @@
             // labelMontant
             // 
             this.labelMontant.AutoSize = true;
-            this.labelMontant.Location = new System.Drawing.Point(57, 80);
+            this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontant.Location = new System.Drawing.Point(74, 80);
             this.labelMontant.Name = "labelMontant";
-            this.labelMontant.Size = new System.Drawing.Size(52, 13);
+            this.labelMontant.Size = new System.Drawing.Size(65, 17);
             this.labelMontant.TabIndex = 7;
             this.labelMontant.Text = "Montant :";
             // 
             // labelMontantRecu
             // 
             this.labelMontantRecu.AutoSize = true;
-            this.labelMontantRecu.Location = new System.Drawing.Point(57, 116);
+            this.labelMontantRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontantRecu.Location = new System.Drawing.Point(41, 118);
             this.labelMontantRecu.Name = "labelMontantRecu";
-            this.labelMontantRecu.Size = new System.Drawing.Size(81, 13);
+            this.labelMontantRecu.Size = new System.Drawing.Size(98, 17);
             this.labelMontantRecu.TabIndex = 8;
             this.labelMontantRecu.Text = "Montant Reçu :";
             // 
             // labelNomBien
             // 
             this.labelNomBien.AutoSize = true;
-            this.labelNomBien.Location = new System.Drawing.Point(57, 152);
+            this.labelNomBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomBien.Location = new System.Drawing.Point(69, 152);
             this.labelNomBien.Name = "labelNomBien";
-            this.labelNomBien.Size = new System.Drawing.Size(59, 13);
+            this.labelNomBien.Size = new System.Drawing.Size(70, 17);
             this.labelNomBien.TabIndex = 9;
             this.labelNomBien.Text = "Nom Bien :";
             // 
             // labelTypeEcheance
             // 
             this.labelTypeEcheance.AutoSize = true;
-            this.labelTypeEcheance.Location = new System.Drawing.Point(57, 188);
+            this.labelTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeEcheance.Location = new System.Drawing.Point(35, 188);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(89, 13);
+            this.labelTypeEcheance.Size = new System.Drawing.Size(104, 17);
             this.labelTypeEcheance.TabIndex = 10;
             this.labelTypeEcheance.Text = "Type Echeance :";
             // 
             // textBoxMontant
             // 
+            this.textBoxMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMontant.Location = new System.Drawing.Point(155, 77);
             this.textBoxMontant.Name = "textBoxMontant";
-            this.textBoxMontant.Size = new System.Drawing.Size(231, 20);
+            this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontant.TabIndex = 11;
             // 
             // textBoxMontantRecu
             // 
+            this.textBoxMontantRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMontantRecu.Location = new System.Drawing.Point(155, 113);
             this.textBoxMontantRecu.Name = "textBoxMontantRecu";
-            this.textBoxMontantRecu.Size = new System.Drawing.Size(231, 20);
+            this.textBoxMontantRecu.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontantRecu.TabIndex = 12;
             // 
             // comboBoxTypeEcheance
             // 
+            this.comboBoxTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeEcheance.FormattingEnabled = true;
             this.comboBoxTypeEcheance.Location = new System.Drawing.Point(155, 185);
             this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
-            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(187, 21);
+            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(187, 25);
             this.comboBoxTypeEcheance.TabIndex = 17;
             // 
             // buttonAddNewTypeEcheance
             // 
+            this.buttonAddNewTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(348, 185);
             this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
-            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 21);
+            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 25);
             this.buttonAddNewTypeEcheance.TabIndex = 18;
             this.buttonAddNewTypeEcheance.Text = "...";
             this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
@@ -162,6 +170,9 @@
             // 
             // buttonAnnuler
             // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
@@ -172,6 +183,9 @@
             // 
             // buttonValider
             // 
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
@@ -179,14 +193,6 @@
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
-            // 
-            // comboBoxBien
-            // 
-            this.comboBoxBien.FormattingEnabled = true;
-            this.comboBoxBien.Location = new System.Drawing.Point(155, 149);
-            this.comboBoxBien.Name = "comboBoxBien";
-            this.comboBoxBien.Size = new System.Drawing.Size(231, 21);
-            this.comboBoxBien.TabIndex = 20;
             // 
             // textBoxIdEchea
             // 
@@ -197,10 +203,20 @@
             this.textBoxIdEchea.TabIndex = 21;
             this.textBoxIdEchea.TabStop = false;
             // 
+            // comboBoxBien
+            // 
+            this.comboBoxBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBien.FormattingEnabled = true;
+            this.comboBoxBien.Location = new System.Drawing.Point(155, 149);
+            this.comboBoxBien.Name = "comboBoxBien";
+            this.comboBoxBien.Size = new System.Drawing.Size(231, 25);
+            this.comboBoxBien.TabIndex = 20;
+            // 
             // FormAjouterModifierEcheance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 273);
             this.Controls.Add(this.comboBoxBien);
             this.Controls.Add(this.panelValid);

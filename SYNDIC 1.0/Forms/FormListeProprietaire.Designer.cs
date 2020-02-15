@@ -28,20 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerListeProprietaire = new System.Windows.Forms.SplitContainer();
+            this.buttonListDocs = new System.Windows.Forms.Button();
             this.buttonRechercher = new System.Windows.Forms.Button();
             this.textBoxrechercher = new System.Windows.Forms.TextBox();
             this.splitContainerListeProprietaireBody = new System.Windows.Forms.SplitContainer();
+            this.dataGridViewProprietaires = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanelProprietaireBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonprevious = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
-            this.dataGridViewProprietaires = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanelProprietaireBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonAjouterProprietaire = new System.Windows.Forms.Button();
             this.buttonSupprimerProprietaire = new System.Windows.Forms.Button();
             this.buttonModifierProprietaire = new System.Windows.Forms.Button();
-            this.buttonListDocs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeProprietaire)).BeginInit();
             this.splitContainerListeProprietaire.Panel1.SuspendLayout();
             this.splitContainerListeProprietaire.Panel2.SuspendLayout();
@@ -75,179 +79,6 @@
             this.splitContainerListeProprietaire.SplitterDistance = 64;
             this.splitContainerListeProprietaire.TabIndex = 0;
             // 
-            // buttonRechercher
-            // 
-            this.buttonRechercher.Location = new System.Drawing.Point(229, 26);
-            this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(98, 20);
-            this.buttonRechercher.TabIndex = 24;
-            this.buttonRechercher.Text = "Rechercher";
-            this.buttonRechercher.UseVisualStyleBackColor = true;
-            this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click);
-            // 
-            // textBoxrechercher
-            // 
-            this.textBoxrechercher.Location = new System.Drawing.Point(21, 26);
-            this.textBoxrechercher.Name = "textBoxrechercher";
-            this.textBoxrechercher.Size = new System.Drawing.Size(202, 20);
-            this.textBoxrechercher.TabIndex = 23;
-            this.textBoxrechercher.TextChanged += new System.EventHandler(this.textBoxrechercher_TextChanged);
-            // 
-            // splitContainerListeProprietaireBody
-            // 
-            this.splitContainerListeProprietaireBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerListeProprietaireBody.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerListeProprietaireBody.Name = "splitContainerListeProprietaireBody";
-            // 
-            // splitContainerListeProprietaireBody.Panel1
-            // 
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonLast);
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonNext);
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonprevious);
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonFirst);
-            // 
-            // splitContainerListeProprietaireBody.Panel2
-            // 
-            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.dataGridViewProprietaires);
-            this.splitContainerListeProprietaireBody.Size = new System.Drawing.Size(800, 327);
-            this.splitContainerListeProprietaireBody.SplitterDistance = 74;
-            this.splitContainerListeProprietaireBody.TabIndex = 29;
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.Location = new System.Drawing.Point(18, 230);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 31);
-            this.buttonLast.TabIndex = 30;
-            this.buttonLast.UseVisualStyleBackColor = true;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(18, 175);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 31);
-            this.buttonNext.TabIndex = 29;
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonprevious
-            // 
-            this.buttonprevious.Location = new System.Drawing.Point(18, 120);
-            this.buttonprevious.Name = "buttonprevious";
-            this.buttonprevious.Size = new System.Drawing.Size(39, 31);
-            this.buttonprevious.TabIndex = 28;
-            this.buttonprevious.UseVisualStyleBackColor = true;
-            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.Location = new System.Drawing.Point(18, 65);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 31);
-            this.buttonFirst.TabIndex = 27;
-            this.buttonFirst.UseVisualStyleBackColor = true;
-            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
-            // 
-            // dataGridViewProprietaires
-            // 
-            this.dataGridViewProprietaires.AllowUserToAddRows = false;
-            this.dataGridViewProprietaires.AllowUserToDeleteRows = false;
-            this.dataGridViewProprietaires.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
-            this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProprietaires.Size = new System.Drawing.Size(722, 327);
-            this.dataGridViewProprietaires.TabIndex = 21;
-            // 
-            // tableLayoutPanelProprietaireBottom
-            // 
-            this.tableLayoutPanelProprietaireBottom.ColumnCount = 3;
-            this.tableLayoutPanelProprietaireBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelProprietaireBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelProprietaireBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelProprietaireBottom.Controls.Add(this.buttonAjouterProprietaire, 0, 0);
-            this.tableLayoutPanelProprietaireBottom.Controls.Add(this.buttonSupprimerProprietaire, 2, 0);
-            this.tableLayoutPanelProprietaireBottom.Controls.Add(this.buttonModifierProprietaire, 1, 0);
-            this.tableLayoutPanelProprietaireBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanelProprietaireBottom.Location = new System.Drawing.Point(0, 327);
-            this.tableLayoutPanelProprietaireBottom.Name = "tableLayoutPanelProprietaireBottom";
-            this.tableLayoutPanelProprietaireBottom.RowCount = 1;
-            this.tableLayoutPanelProprietaireBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelProprietaireBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanelProprietaireBottom.Size = new System.Drawing.Size(800, 55);
-            this.tableLayoutPanelProprietaireBottom.TabIndex = 28;
-            // 
-            // buttonAjouterProprietaire
-            // 
-            this.buttonAjouterProprietaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjouterProprietaire.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAjouterProprietaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAjouterProprietaire.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAjouterProprietaire.FlatAppearance.BorderSize = 0;
-            this.buttonAjouterProprietaire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterProprietaire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonAjouterProprietaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAjouterProprietaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterProprietaire.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterProprietaire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterProprietaire.Location = new System.Drawing.Point(3, 3);
-            this.buttonAjouterProprietaire.Name = "buttonAjouterProprietaire";
-            this.buttonAjouterProprietaire.Size = new System.Drawing.Size(260, 49);
-            this.buttonAjouterProprietaire.TabIndex = 8;
-            this.buttonAjouterProprietaire.Text = "Ajouter Propriétaire";
-            this.buttonAjouterProprietaire.UseVisualStyleBackColor = false;
-            this.buttonAjouterProprietaire.Click += new System.EventHandler(this.buttonAjouterProprietaire_Click);
-            // 
-            // buttonSupprimerProprietaire
-            // 
-            this.buttonSupprimerProprietaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSupprimerProprietaire.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSupprimerProprietaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSupprimerProprietaire.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSupprimerProprietaire.FlatAppearance.BorderSize = 0;
-            this.buttonSupprimerProprietaire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonSupprimerProprietaire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonSupprimerProprietaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSupprimerProprietaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSupprimerProprietaire.ForeColor = System.Drawing.Color.White;
-            this.buttonSupprimerProprietaire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSupprimerProprietaire.Location = new System.Drawing.Point(535, 3);
-            this.buttonSupprimerProprietaire.Name = "buttonSupprimerProprietaire";
-            this.buttonSupprimerProprietaire.Size = new System.Drawing.Size(262, 49);
-            this.buttonSupprimerProprietaire.TabIndex = 10;
-            this.buttonSupprimerProprietaire.Text = "Supprimer Propriétaire";
-            this.buttonSupprimerProprietaire.UseVisualStyleBackColor = false;
-            
-            // 
-            // buttonModifierProprietaire
-            // 
-            this.buttonModifierProprietaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonModifierProprietaire.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonModifierProprietaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonModifierProprietaire.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonModifierProprietaire.FlatAppearance.BorderSize = 0;
-            this.buttonModifierProprietaire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonModifierProprietaire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonModifierProprietaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModifierProprietaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModifierProprietaire.ForeColor = System.Drawing.Color.White;
-            this.buttonModifierProprietaire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModifierProprietaire.Location = new System.Drawing.Point(269, 3);
-            this.buttonModifierProprietaire.Name = "buttonModifierProprietaire";
-            this.buttonModifierProprietaire.Size = new System.Drawing.Size(260, 49);
-            this.buttonModifierProprietaire.TabIndex = 9;
-            this.buttonModifierProprietaire.Text = "Modifier Propriétaire";
-            this.buttonModifierProprietaire.UseVisualStyleBackColor = false;
-            this.buttonModifierProprietaire.Click += new System.EventHandler(this.buttonModifierProprietaire_Click);
-            // 
             // buttonListDocs
             // 
             this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -271,10 +102,234 @@
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
+            // buttonRechercher
+            // 
+            this.buttonRechercher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonRechercher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonRechercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRechercher.Location = new System.Drawing.Point(239, 12);
+            this.buttonRechercher.Name = "buttonRechercher";
+            this.buttonRechercher.Size = new System.Drawing.Size(104, 34);
+            this.buttonRechercher.TabIndex = 24;
+            this.buttonRechercher.Text = "Rechercher";
+            this.buttonRechercher.UseVisualStyleBackColor = true;
+            this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click);
+            // 
+            // textBoxrechercher
+            // 
+            this.textBoxrechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxrechercher.Location = new System.Drawing.Point(25, 18);
+            this.textBoxrechercher.Name = "textBoxrechercher";
+            this.textBoxrechercher.Size = new System.Drawing.Size(208, 22);
+            this.textBoxrechercher.TabIndex = 23;
+            this.textBoxrechercher.TextChanged += new System.EventHandler(this.textBoxrechercher_TextChanged);
+            // 
+            // splitContainerListeProprietaireBody
+            // 
+            this.splitContainerListeProprietaireBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerListeProprietaireBody.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerListeProprietaireBody.Name = "splitContainerListeProprietaireBody";
+            // 
+            // splitContainerListeProprietaireBody.Panel1
+            // 
+            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonLast);
+            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonNext);
+            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonprevious);
+            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonFirst);
+            // 
+            // splitContainerListeProprietaireBody.Panel2
+            // 
+            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.dataGridViewProprietaires);
+            this.splitContainerListeProprietaireBody.Size = new System.Drawing.Size(800, 327);
+            this.splitContainerListeProprietaireBody.SplitterDistance = 74;
+            this.splitContainerListeProprietaireBody.TabIndex = 29;
+            // 
+            // dataGridViewProprietaires
+            // 
+            this.dataGridViewProprietaires.AllowUserToAddRows = false;
+            this.dataGridViewProprietaires.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewProprietaires.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewProprietaires.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewProprietaires.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewProprietaires.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewProprietaires.GridColor = System.Drawing.SystemColors.HotTrack;
+            this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewProprietaires.RowHeadersWidth = 25;
+            this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProprietaires.Size = new System.Drawing.Size(722, 327);
+            this.dataGridViewProprietaires.TabIndex = 21;
+            // 
+            // tableLayoutPanelProprietaireBottom
+            // 
+            this.tableLayoutPanelProprietaireBottom.ColumnCount = 3;
+            this.tableLayoutPanelProprietaireBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelProprietaireBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelProprietaireBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelProprietaireBottom.Controls.Add(this.buttonAjouterProprietaire, 0, 0);
+            this.tableLayoutPanelProprietaireBottom.Controls.Add(this.buttonSupprimerProprietaire, 2, 0);
+            this.tableLayoutPanelProprietaireBottom.Controls.Add(this.buttonModifierProprietaire, 1, 0);
+            this.tableLayoutPanelProprietaireBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanelProprietaireBottom.Location = new System.Drawing.Point(0, 327);
+            this.tableLayoutPanelProprietaireBottom.Name = "tableLayoutPanelProprietaireBottom";
+            this.tableLayoutPanelProprietaireBottom.RowCount = 1;
+            this.tableLayoutPanelProprietaireBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelProprietaireBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanelProprietaireBottom.Size = new System.Drawing.Size(800, 55);
+            this.tableLayoutPanelProprietaireBottom.TabIndex = 28;
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonLast.Location = new System.Drawing.Point(18, 251);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
+            this.buttonLast.TabIndex = 30;
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonNext.Location = new System.Drawing.Point(18, 195);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
+            this.buttonNext.TabIndex = 29;
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonprevious
+            // 
+            this.buttonprevious.FlatAppearance.BorderSize = 0;
+            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
+            this.buttonprevious.Location = new System.Drawing.Point(18, 83);
+            this.buttonprevious.Name = "buttonprevious";
+            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
+            this.buttonprevious.TabIndex = 28;
+            this.buttonprevious.UseVisualStyleBackColor = true;
+            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
+            this.buttonFirst.Location = new System.Drawing.Point(18, 27);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+            this.buttonFirst.TabIndex = 27;
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
+            // buttonAjouterProprietaire
+            // 
+            this.buttonAjouterProprietaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAjouterProprietaire.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterProprietaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAjouterProprietaire.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAjouterProprietaire.FlatAppearance.BorderSize = 0;
+            this.buttonAjouterProprietaire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonAjouterProprietaire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonAjouterProprietaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjouterProprietaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterProprietaire.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterProprietaire.Image = global::SYNDIC_1._0.Properties.Resources.add_prop;
+            this.buttonAjouterProprietaire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterProprietaire.Location = new System.Drawing.Point(3, 3);
+            this.buttonAjouterProprietaire.Name = "buttonAjouterProprietaire";
+            this.buttonAjouterProprietaire.Size = new System.Drawing.Size(260, 49);
+            this.buttonAjouterProprietaire.TabIndex = 8;
+            this.buttonAjouterProprietaire.Text = "Ajouter Propriétaire";
+            this.buttonAjouterProprietaire.UseVisualStyleBackColor = false;
+            this.buttonAjouterProprietaire.Click += new System.EventHandler(this.buttonAjouterProprietaire_Click);
+            // 
+            // buttonSupprimerProprietaire
+            // 
+            this.buttonSupprimerProprietaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSupprimerProprietaire.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSupprimerProprietaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSupprimerProprietaire.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSupprimerProprietaire.FlatAppearance.BorderSize = 0;
+            this.buttonSupprimerProprietaire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonSupprimerProprietaire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonSupprimerProprietaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSupprimerProprietaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSupprimerProprietaire.ForeColor = System.Drawing.Color.White;
+            this.buttonSupprimerProprietaire.Image = global::SYNDIC_1._0.Properties.Resources.delete;
+            this.buttonSupprimerProprietaire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSupprimerProprietaire.Location = new System.Drawing.Point(535, 3);
+            this.buttonSupprimerProprietaire.Name = "buttonSupprimerProprietaire";
+            this.buttonSupprimerProprietaire.Size = new System.Drawing.Size(262, 49);
+            this.buttonSupprimerProprietaire.TabIndex = 10;
+            this.buttonSupprimerProprietaire.Text = "Supprimer Propriétaire";
+            this.buttonSupprimerProprietaire.UseVisualStyleBackColor = false;
+            // 
+            // buttonModifierProprietaire
+            // 
+            this.buttonModifierProprietaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonModifierProprietaire.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonModifierProprietaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonModifierProprietaire.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonModifierProprietaire.FlatAppearance.BorderSize = 0;
+            this.buttonModifierProprietaire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonModifierProprietaire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonModifierProprietaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonModifierProprietaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModifierProprietaire.ForeColor = System.Drawing.Color.White;
+            this.buttonModifierProprietaire.Image = global::SYNDIC_1._0.Properties.Resources.modifier;
+            this.buttonModifierProprietaire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModifierProprietaire.Location = new System.Drawing.Point(269, 3);
+            this.buttonModifierProprietaire.Name = "buttonModifierProprietaire";
+            this.buttonModifierProprietaire.Size = new System.Drawing.Size(260, 49);
+            this.buttonModifierProprietaire.TabIndex = 9;
+            this.buttonModifierProprietaire.Text = "Modifier Propriétaire";
+            this.buttonModifierProprietaire.UseVisualStyleBackColor = false;
+            this.buttonModifierProprietaire.Click += new System.EventHandler(this.buttonModifierProprietaire_Click);
+            // 
             // FormListeProprietaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainerListeProprietaire);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

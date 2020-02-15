@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerRecetteInfo = new System.Windows.Forms.SplitContainer();
             this.labelHead = new System.Windows.Forms.Label();
             this.buttonAddNewTypeEcheance = new System.Windows.Forms.Button();
@@ -93,7 +96,7 @@
             // labelHead
             // 
             this.labelHead.AutoSize = true;
-            this.labelHead.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHead.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHead.Location = new System.Drawing.Point(301, 14);
             this.labelHead.Name = "labelHead";
             this.labelHead.Size = new System.Drawing.Size(77, 30);
@@ -102,9 +105,10 @@
             // 
             // buttonAddNewTypeEcheance
             // 
+            this.buttonAddNewTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(715, 96);
             this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
-            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 21);
+            this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(32, 25);
             this.buttonAddNewTypeEcheance.TabIndex = 23;
             this.buttonAddNewTypeEcheance.Text = "...";
             this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
@@ -122,9 +126,30 @@
             // dataGridViewListEcheance
             // 
             this.dataGridViewListEcheance.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewListEcheance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewListEcheance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListEcheance.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewListEcheance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewListEcheance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewListEcheance.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewListEcheance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewListEcheance.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewListEcheance.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewListEcheance.Name = "dataGridViewListEcheance";
             this.dataGridViewListEcheance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -134,47 +159,52 @@
             // comboBoxTypeEcheance
             // 
             this.comboBoxTypeEcheance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeEcheance.FormattingEnabled = true;
             this.comboBoxTypeEcheance.Location = new System.Drawing.Point(533, 96);
             this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
-            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(176, 21);
+            this.comboBoxTypeEcheance.Size = new System.Drawing.Size(176, 25);
             this.comboBoxTypeEcheance.TabIndex = 21;
             this.comboBoxTypeEcheance.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeEcheance_SelectedIndexChanged);
             // 
             // comboBoxNomBien
             // 
             this.comboBoxNomBien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNomBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxNomBien.FormattingEnabled = true;
             this.comboBoxNomBien.Location = new System.Drawing.Point(533, 61);
             this.comboBoxNomBien.Name = "comboBoxNomBien";
-            this.comboBoxNomBien.Size = new System.Drawing.Size(214, 21);
+            this.comboBoxNomBien.Size = new System.Drawing.Size(214, 25);
             this.comboBoxNomBien.TabIndex = 20;
             this.comboBoxNomBien.SelectedIndexChanged += new System.EventHandler(this.comboBoxNomBien_SelectedIndexChanged);
             // 
             // labelInfoBien
             // 
             this.labelInfoBien.AutoSize = true;
+            this.labelInfoBien.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInfoBien.Location = new System.Drawing.Point(545, 17);
             this.labelInfoBien.Name = "labelInfoBien";
-            this.labelInfoBien.Size = new System.Drawing.Size(98, 13);
+            this.labelInfoBien.Size = new System.Drawing.Size(134, 17);
             this.labelInfoBien.TabIndex = 19;
             this.labelInfoBien.Text = "Information de Bien";
             // 
             // labelTypeEcheance
             // 
             this.labelTypeEcheance.AutoSize = true;
-            this.labelTypeEcheance.Location = new System.Drawing.Point(423, 99);
+            this.labelTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeEcheance.Location = new System.Drawing.Point(402, 99);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(97, 13);
+            this.labelTypeEcheance.Size = new System.Drawing.Size(114, 17);
             this.labelTypeEcheance.TabIndex = 18;
             this.labelTypeEcheance.Text = "Type d\'Echeance :";
             // 
             // labelNomBien
             // 
             this.labelNomBien.AutoSize = true;
-            this.labelNomBien.Location = new System.Drawing.Point(423, 66);
+            this.labelNomBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomBien.Location = new System.Drawing.Point(446, 66);
             this.labelNomBien.Name = "labelNomBien";
-            this.labelNomBien.Size = new System.Drawing.Size(59, 13);
+            this.labelNomBien.Size = new System.Drawing.Size(70, 17);
             this.labelNomBien.TabIndex = 17;
             this.labelNomBien.Text = "Nom Bien :";
             // 
@@ -202,6 +232,7 @@
             this.buttonAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnnuler.ForeColor = System.Drawing.Color.White;
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
             this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAnnuler.Location = new System.Drawing.Point(229, 8);
             this.buttonAnnuler.Name = "buttonAnnuler";
@@ -226,6 +257,7 @@
             this.buttonValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValider.ForeColor = System.Drawing.Color.White;
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
             this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonValider.Location = new System.Drawing.Point(24, 8);
             this.buttonValider.Name = "buttonValider";
@@ -258,36 +290,40 @@
             // comboBoxNomProprietaire
             // 
             this.comboBoxNomProprietaire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNomProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxNomProprietaire.FormattingEnabled = true;
-            this.comboBoxNomProprietaire.Location = new System.Drawing.Point(135, 44);
+            this.comboBoxNomProprietaire.Location = new System.Drawing.Point(165, 44);
             this.comboBoxNomProprietaire.Name = "comboBoxNomProprietaire";
-            this.comboBoxNomProprietaire.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxNomProprietaire.Size = new System.Drawing.Size(200, 25);
             this.comboBoxNomProprietaire.TabIndex = 15;
             // 
             // comboBoxTypeRecette
             // 
             this.comboBoxTypeRecette.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeRecette.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeRecette.FormattingEnabled = true;
-            this.comboBoxTypeRecette.Location = new System.Drawing.Point(135, 143);
+            this.comboBoxTypeRecette.Location = new System.Drawing.Point(165, 143);
             this.comboBoxTypeRecette.Name = "comboBoxTypeRecette";
-            this.comboBoxTypeRecette.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxTypeRecette.Size = new System.Drawing.Size(200, 25);
             this.comboBoxTypeRecette.TabIndex = 14;
             // 
             // labelNomProprietaire
             // 
             this.labelNomProprietaire.AutoSize = true;
-            this.labelNomProprietaire.Location = new System.Drawing.Point(28, 47);
+            this.labelNomProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomProprietaire.Location = new System.Drawing.Point(12, 47);
             this.labelNomProprietaire.Name = "labelNomProprietaire";
-            this.labelNomProprietaire.Size = new System.Drawing.Size(106, 13);
+            this.labelNomProprietaire.Size = new System.Drawing.Size(134, 17);
             this.labelNomProprietaire.TabIndex = 12;
             this.labelNomProprietaire.Text = "Nom de Propriétaire :";
             // 
             // labelInfoRecette
             // 
             this.labelInfoRecette.AutoSize = true;
-            this.labelInfoRecette.Location = new System.Drawing.Point(119, 17);
+            this.labelInfoRecette.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfoRecette.Location = new System.Drawing.Point(115, 17);
             this.labelInfoRecette.Name = "labelInfoRecette";
-            this.labelInfoRecette.Size = new System.Drawing.Size(115, 13);
+            this.labelInfoRecette.Size = new System.Drawing.Size(158, 17);
             this.labelInfoRecette.TabIndex = 11;
             this.labelInfoRecette.Text = "Information de Recette";
             // 
@@ -306,9 +342,9 @@
             this.buttonAjouterDocument.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAjouterDocument.ForeColor = System.Drawing.Color.White;
             this.buttonAjouterDocument.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterDocument.Location = new System.Drawing.Point(89, 219);
+            this.buttonAjouterDocument.Location = new System.Drawing.Point(37, 219);
             this.buttonAjouterDocument.Name = "buttonAjouterDocument";
-            this.buttonAjouterDocument.Size = new System.Drawing.Size(278, 45);
+            this.buttonAjouterDocument.Size = new System.Drawing.Size(290, 45);
             this.buttonAjouterDocument.TabIndex = 10;
             this.buttonAjouterDocument.Text = "Ajouter Document";
             this.buttonAjouterDocument.UseVisualStyleBackColor = false;
@@ -316,62 +352,69 @@
             // 
             // textBoxNumRecu
             // 
-            this.textBoxNumRecu.Location = new System.Drawing.Point(135, 176);
+            this.textBoxNumRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumRecu.Location = new System.Drawing.Point(165, 176);
             this.textBoxNumRecu.Name = "textBoxNumRecu";
-            this.textBoxNumRecu.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNumRecu.Size = new System.Drawing.Size(200, 22);
             this.textBoxNumRecu.TabIndex = 7;
             this.textBoxNumRecu.TextChanged += new System.EventHandler(this.textBoxNumRecu_TextChanged);
             this.textBoxNumRecu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumRecu_KeyPress);
             // 
             // textBoxMontant
             // 
-            this.textBoxMontant.Location = new System.Drawing.Point(135, 110);
+            this.textBoxMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMontant.Location = new System.Drawing.Point(165, 110);
             this.textBoxMontant.Name = "textBoxMontant";
-            this.textBoxMontant.Size = new System.Drawing.Size(200, 20);
+            this.textBoxMontant.Size = new System.Drawing.Size(200, 22);
             this.textBoxMontant.TabIndex = 5;
             this.textBoxMontant.TextChanged += new System.EventHandler(this.textBoxNumRecu_TextChanged);
             this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // dateTimePickerDateRecette
             // 
-            this.dateTimePickerDateRecette.Location = new System.Drawing.Point(135, 77);
+            this.dateTimePickerDateRecette.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDateRecette.Location = new System.Drawing.Point(165, 77);
             this.dateTimePickerDateRecette.Name = "dateTimePickerDateRecette";
-            this.dateTimePickerDateRecette.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDateRecette.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerDateRecette.TabIndex = 4;
             // 
             // labelNumRecu
             // 
             this.labelNumRecu.AutoSize = true;
-            this.labelNumRecu.Location = new System.Drawing.Point(28, 179);
+            this.labelNumRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumRecu.Location = new System.Drawing.Point(85, 179);
             this.labelNumRecu.Name = "labelNumRecu";
-            this.labelNumRecu.Size = new System.Drawing.Size(54, 13);
+            this.labelNumRecu.Size = new System.Drawing.Size(61, 17);
             this.labelNumRecu.TabIndex = 3;
             this.labelNumRecu.Text = "N° Recu :";
             // 
             // labelTypeRecette
             // 
             this.labelTypeRecette.AutoSize = true;
-            this.labelTypeRecette.Location = new System.Drawing.Point(28, 146);
+            this.labelTypeRecette.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeRecette.Location = new System.Drawing.Point(34, 146);
             this.labelTypeRecette.Name = "labelTypeRecette";
-            this.labelTypeRecette.Size = new System.Drawing.Size(93, 13);
+            this.labelTypeRecette.Size = new System.Drawing.Size(112, 17);
             this.labelTypeRecette.TabIndex = 2;
             this.labelTypeRecette.Text = "Type de Recette :";
             // 
             // labelMontant
             // 
             this.labelMontant.AutoSize = true;
-            this.labelMontant.Location = new System.Drawing.Point(28, 113);
+            this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontant.Location = new System.Drawing.Point(81, 113);
             this.labelMontant.Name = "labelMontant";
-            this.labelMontant.Size = new System.Drawing.Size(52, 13);
+            this.labelMontant.Size = new System.Drawing.Size(65, 17);
             this.labelMontant.TabIndex = 1;
             this.labelMontant.Text = "Montant :";
             // 
             // labelDateRecette
             // 
             this.labelDateRecette.AutoSize = true;
-            this.labelDateRecette.Location = new System.Drawing.Point(28, 80);
+            this.labelDateRecette.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateRecette.Location = new System.Drawing.Point(31, 80);
             this.labelDateRecette.Name = "labelDateRecette";
-            this.labelDateRecette.Size = new System.Drawing.Size(92, 13);
+            this.labelDateRecette.Size = new System.Drawing.Size(115, 17);
             this.labelDateRecette.TabIndex = 0;
             this.labelDateRecette.Text = "Date de Recette :";
             // 
@@ -379,6 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 341);
             this.Controls.Add(this.splitContainerRecetteInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

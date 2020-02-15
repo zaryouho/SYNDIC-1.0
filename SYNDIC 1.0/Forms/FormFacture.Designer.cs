@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerFactures = new System.Windows.Forms.SplitContainer();
             this.buttonRetour = new System.Windows.Forms.Button();
             this.labelCloseDepense = new System.Windows.Forms.Label();
@@ -113,26 +117,32 @@
             // 
             // textBoxRechercher
             // 
-            this.textBoxRechercher.Location = new System.Drawing.Point(12, 25);
+            this.textBoxRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRechercher.Location = new System.Drawing.Point(12, 31);
             this.textBoxRechercher.Name = "textBoxRechercher";
-            this.textBoxRechercher.Size = new System.Drawing.Size(217, 20);
+            this.textBoxRechercher.Size = new System.Drawing.Size(217, 22);
             this.textBoxRechercher.TabIndex = 13;
             // 
             // labelRechercher
             // 
             this.labelRechercher.AutoSize = true;
+            this.labelRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRechercher.Location = new System.Drawing.Point(12, 8);
             this.labelRechercher.Name = "labelRechercher";
-            this.labelRechercher.Size = new System.Drawing.Size(69, 13);
+            this.labelRechercher.Size = new System.Drawing.Size(83, 17);
             this.labelRechercher.TabIndex = 14;
             this.labelRechercher.Text = "Rechercher :";
             // 
             // buttonChercher
             // 
             this.buttonChercher.Enabled = false;
+            this.buttonChercher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonChercher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonChercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChercher.Location = new System.Drawing.Point(252, 25);
             this.buttonChercher.Name = "buttonChercher";
-            this.buttonChercher.Size = new System.Drawing.Size(64, 20);
+            this.buttonChercher.Size = new System.Drawing.Size(91, 28);
             this.buttonChercher.TabIndex = 15;
             this.buttonChercher.Text = "Chercher";
             this.buttonChercher.UseVisualStyleBackColor = true;
@@ -155,54 +165,93 @@
             // 
             this.splitContainerBody.Panel2.Controls.Add(this.dataGridViewFactures);
             this.splitContainerBody.Size = new System.Drawing.Size(800, 290);
+            this.splitContainerBody.SplitterDistance = 266;
             this.splitContainerBody.TabIndex = 2;
             // 
             // buttonLast
             // 
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
             this.buttonLast.Location = new System.Drawing.Point(7, 232);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
             this.buttonLast.TabIndex = 21;
-            this.buttonLast.Text = ">>";
             this.buttonLast.UseVisualStyleBackColor = true;
             // 
             // buttonPrevious
             // 
+            this.buttonPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
             this.buttonPrevious.Location = new System.Drawing.Point(4, 90);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
             this.buttonPrevious.TabIndex = 19;
-            this.buttonPrevious.Text = "<";
             this.buttonPrevious.UseVisualStyleBackColor = true;
             // 
             // buttonNext
             // 
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
             this.buttonNext.Location = new System.Drawing.Point(7, 161);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
             this.buttonNext.TabIndex = 20;
-            this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
             // 
             // buttonFirst
             // 
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
             this.buttonFirst.Location = new System.Drawing.Point(4, 19);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
             this.buttonFirst.TabIndex = 18;
-            this.buttonFirst.Text = "<<";
             this.buttonFirst.UseVisualStyleBackColor = true;
             // 
             // dataGridViewFactures
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewFactures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewFactures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewFactures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFactures.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFactures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewFactures.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewFactures.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewFactures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewFactures.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewFactures.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewFactures.Name = "dataGridViewFactures";
             this.dataGridViewFactures.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFactures.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewFactures.RowHeadersWidth = 25;
             this.dataGridViewFactures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFactures.Size = new System.Drawing.Size(746, 290);
+            this.dataGridViewFactures.Size = new System.Drawing.Size(530, 290);
             this.dataGridViewFactures.TabIndex = 16;
             // 
             // panelFooter

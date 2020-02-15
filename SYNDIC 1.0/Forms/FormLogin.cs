@@ -18,6 +18,18 @@ namespace SYNDIC_1._0.Forms
 {
     public partial class FormLogin : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
+
         string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
         string typeUtilisateur = string.Empty;
         public static int userId = -1;

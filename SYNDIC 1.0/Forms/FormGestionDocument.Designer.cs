@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewListeDocuments = new System.Windows.Forms.DataGridView();
             this.buttonAjouterDocument = new System.Windows.Forms.Button();
             this.buttonAfficherDocument = new System.Windows.Forms.Button();
             this.buttonSupprimerDocument = new System.Windows.Forms.Button();
             this.panelHead = new System.Windows.Forms.Panel();
-            this.labelHead = new System.Windows.Forms.Label();
             this.labelCloseHistoriques = new System.Windows.Forms.Label();
+            this.labelHead = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListeDocuments)).BeginInit();
             this.panelHead.SuspendLayout();
             this.SuspendLayout();
@@ -42,10 +46,40 @@
             // dataGridViewListeDocuments
             // 
             this.dataGridViewListeDocuments.AllowUserToAddRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewListeDocuments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewListeDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewListeDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListeDocuments.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewListeDocuments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewListeDocuments.ColumnHeadersHeight = 35;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewListeDocuments.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewListeDocuments.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewListeDocuments.Location = new System.Drawing.Point(12, 52);
             this.dataGridViewListeDocuments.Name = "dataGridViewListeDocuments";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewListeDocuments.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewListeDocuments.RowHeadersWidth = 25;
             this.dataGridViewListeDocuments.Size = new System.Drawing.Size(500, 150);
             this.dataGridViewListeDocuments.TabIndex = 0;
             this.dataGridViewListeDocuments.SelectionChanged += new System.EventHandler(this.dataGridViewListeDocuments_SelectionChanged);
@@ -129,16 +163,6 @@
             this.panelHead.Size = new System.Drawing.Size(527, 49);
             this.panelHead.TabIndex = 14;
             // 
-            // labelHead
-            // 
-            this.labelHead.AutoSize = true;
-            this.labelHead.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHead.Location = new System.Drawing.Point(194, 9);
-            this.labelHead.Name = "labelHead";
-            this.labelHead.Size = new System.Drawing.Size(77, 30);
-            this.labelHead.TabIndex = 6;
-            this.labelHead.Text = "HEAD";
-            // 
             // labelCloseHistoriques
             // 
             this.labelCloseHistoriques.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -152,10 +176,21 @@
             this.labelCloseHistoriques.Text = "X";
             this.labelCloseHistoriques.Click += new System.EventHandler(this.labelCloseHistoriques_Click);
             // 
+            // labelHead
+            // 
+            this.labelHead.AutoSize = true;
+            this.labelHead.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHead.Location = new System.Drawing.Point(225, 9);
+            this.labelHead.Name = "labelHead";
+            this.labelHead.Size = new System.Drawing.Size(77, 30);
+            this.labelHead.TabIndex = 6;
+            this.labelHead.Text = "HEAD";
+            // 
             // FormGestionDocument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(527, 293);
             this.Controls.Add(this.panelHead);
             this.Controls.Add(this.buttonSupprimerDocument);

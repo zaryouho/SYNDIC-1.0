@@ -12,6 +12,17 @@ namespace SYNDIC_1._0
     public partial class FormModifierBien : Form
     {
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
         private int id_Proprietaire;
         private DateTime dateAchat;
         private BindingSource bsProprietaire;

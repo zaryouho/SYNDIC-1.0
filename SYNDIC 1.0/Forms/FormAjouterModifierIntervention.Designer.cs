@@ -72,7 +72,7 @@
             // labelIntervention
             // 
             this.labelIntervention.AutoSize = true;
-            this.labelIntervention.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIntervention.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIntervention.Location = new System.Drawing.Point(150, 13);
             this.labelIntervention.Name = "labelIntervention";
             this.labelIntervention.Size = new System.Drawing.Size(156, 30);
@@ -91,6 +91,9 @@
             // 
             // buttonAnnuler
             // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
@@ -100,6 +103,9 @@
             // 
             // buttonValider
             // 
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
@@ -111,73 +117,82 @@
             // labelDateFinIntervention
             // 
             this.labelDateFinIntervention.AutoSize = true;
+            this.labelDateFinIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDateFinIntervention.Location = new System.Drawing.Point(59, 164);
             this.labelDateFinIntervention.Name = "labelDateFinIntervention";
-            this.labelDateFinIntervention.Size = new System.Drawing.Size(50, 13);
+            this.labelDateFinIntervention.Size = new System.Drawing.Size(61, 17);
             this.labelDateFinIntervention.TabIndex = 53;
             this.labelDateFinIntervention.Text = "Date fin :";
             // 
             // dateTimePickerFinIntervention
             // 
+            this.dateTimePickerFinIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFinIntervention.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFinIntervention.Location = new System.Drawing.Point(157, 161);
             this.dateTimePickerFinIntervention.Name = "dateTimePickerFinIntervention";
-            this.dateTimePickerFinIntervention.Size = new System.Drawing.Size(231, 20);
+            this.dateTimePickerFinIntervention.Size = new System.Drawing.Size(231, 22);
             this.dateTimePickerFinIntervention.TabIndex = 52;
             // 
             // textBoxMontantIntervention
             // 
+            this.textBoxMontantIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMontantIntervention.Location = new System.Drawing.Point(157, 201);
             this.textBoxMontantIntervention.Name = "textBoxMontantIntervention";
-            this.textBoxMontantIntervention.Size = new System.Drawing.Size(231, 20);
+            this.textBoxMontantIntervention.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontantIntervention.TabIndex = 51;
             // 
             // labelMontant
             // 
             this.labelMontant.AutoSize = true;
-            this.labelMontant.Location = new System.Drawing.Point(59, 204);
+            this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontant.Location = new System.Drawing.Point(55, 204);
             this.labelMontant.Name = "labelMontant";
-            this.labelMontant.Size = new System.Drawing.Size(52, 13);
+            this.labelMontant.Size = new System.Drawing.Size(65, 17);
             this.labelMontant.TabIndex = 50;
             this.labelMontant.Text = "Montant :";
             // 
             // labelDateDebutIntervention
             // 
             this.labelDateDebutIntervention.AutoSize = true;
-            this.labelDateDebutIntervention.Location = new System.Drawing.Point(59, 124);
+            this.labelDateDebutIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDebutIntervention.Location = new System.Drawing.Point(37, 124);
             this.labelDateDebutIntervention.Name = "labelDateDebutIntervention";
-            this.labelDateDebutIntervention.Size = new System.Drawing.Size(66, 13);
+            this.labelDateDebutIntervention.Size = new System.Drawing.Size(83, 17);
             this.labelDateDebutIntervention.TabIndex = 49;
             this.labelDateDebutIntervention.Text = "Date début :";
             // 
             // textBoxDesignationDepense
             // 
+            this.textBoxDesignationDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDesignationDepense.Location = new System.Drawing.Point(157, 81);
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
-            this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 20);
+            this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
             this.textBoxDesignationDepense.TabIndex = 47;
             // 
             // labelDesignationDepense
             // 
             this.labelDesignationDepense.AutoSize = true;
-            this.labelDesignationDepense.Location = new System.Drawing.Point(59, 84);
+            this.labelDesignationDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDesignationDepense.Location = new System.Drawing.Point(35, 84);
             this.labelDesignationDepense.Name = "labelDesignationDepense";
-            this.labelDesignationDepense.Size = new System.Drawing.Size(69, 13);
+            this.labelDesignationDepense.Size = new System.Drawing.Size(85, 17);
             this.labelDesignationDepense.TabIndex = 46;
             this.labelDesignationDepense.Text = "Désignation :";
             // 
             // dateTimePickerDebutIntervention
             // 
+            this.dateTimePickerDebutIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDebutIntervention.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDebutIntervention.Location = new System.Drawing.Point(157, 121);
             this.dateTimePickerDebutIntervention.Name = "dateTimePickerDebutIntervention";
-            this.dateTimePickerDebutIntervention.Size = new System.Drawing.Size(231, 20);
+            this.dateTimePickerDebutIntervention.Size = new System.Drawing.Size(231, 22);
             this.dateTimePickerDebutIntervention.TabIndex = 48;
             // 
             // FormAjouterModifierIntervention
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 287);
             this.Controls.Add(this.labelDateFinIntervention);
             this.Controls.Add(this.dateTimePickerFinIntervention);

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerListeBien = new System.Windows.Forms.SplitContainer();
             this.comboBoxBloc = new System.Windows.Forms.ComboBox();
             this.textBoxRechercher = new System.Windows.Forms.TextBox();
@@ -43,8 +46,8 @@
             this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridViewBien = new System.Windows.Forms.DataGridView();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.buttonModifierBien = new System.Windows.Forms.Button();
             this.buttonListDocs = new System.Windows.Forms.Button();
+            this.buttonModifierBien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeBien)).BeginInit();
             this.splitContainerListeBien.Panel1.SuspendLayout();
             this.splitContainerListeBien.Panel2.SuspendLayout();
@@ -85,17 +88,19 @@
             // comboBoxBloc
             // 
             this.comboBoxBloc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBloc.FormattingEnabled = true;
-            this.comboBoxBloc.Location = new System.Drawing.Point(357, 35);
+            this.comboBoxBloc.Location = new System.Drawing.Point(357, 32);
             this.comboBoxBloc.Name = "comboBoxBloc";
-            this.comboBoxBloc.Size = new System.Drawing.Size(193, 21);
+            this.comboBoxBloc.Size = new System.Drawing.Size(193, 25);
             this.comboBoxBloc.TabIndex = 10;
             // 
             // textBoxRechercher
             // 
+            this.textBoxRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRechercher.Location = new System.Drawing.Point(12, 35);
             this.textBoxRechercher.Name = "textBoxRechercher";
-            this.textBoxRechercher.Size = new System.Drawing.Size(165, 20);
+            this.textBoxRechercher.Size = new System.Drawing.Size(165, 22);
             this.textBoxRechercher.TabIndex = 7;
             this.textBoxRechercher.TextChanged += new System.EventHandler(this.textBoxRechercher_TextChanged);
             this.textBoxRechercher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRechercher_KeyPress);
@@ -103,18 +108,23 @@
             // labelRechercher
             // 
             this.labelRechercher.AutoSize = true;
+            this.labelRechercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRechercher.Location = new System.Drawing.Point(12, 12);
             this.labelRechercher.Name = "labelRechercher";
-            this.labelRechercher.Size = new System.Drawing.Size(69, 13);
+            this.labelRechercher.Size = new System.Drawing.Size(83, 17);
             this.labelRechercher.TabIndex = 8;
             this.labelRechercher.Text = "Rechercher :";
             // 
             // buttonChercher
             // 
             this.buttonChercher.Enabled = false;
-            this.buttonChercher.Location = new System.Drawing.Point(193, 35);
+            this.buttonChercher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonChercher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.buttonChercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChercher.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChercher.Location = new System.Drawing.Point(183, 29);
             this.buttonChercher.Name = "buttonChercher";
-            this.buttonChercher.Size = new System.Drawing.Size(64, 20);
+            this.buttonChercher.Size = new System.Drawing.Size(85, 28);
             this.buttonChercher.TabIndex = 9;
             this.buttonChercher.Text = "Chercher";
             this.buttonChercher.UseVisualStyleBackColor = true;
@@ -123,19 +133,21 @@
             // comboBoxImmeuble
             // 
             this.comboBoxImmeuble.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxImmeuble.FormattingEnabled = true;
-            this.comboBoxImmeuble.Location = new System.Drawing.Point(593, 35);
+            this.comboBoxImmeuble.Location = new System.Drawing.Point(593, 32);
             this.comboBoxImmeuble.Name = "comboBoxImmeuble";
-            this.comboBoxImmeuble.Size = new System.Drawing.Size(193, 21);
+            this.comboBoxImmeuble.Size = new System.Drawing.Size(193, 25);
             this.comboBoxImmeuble.TabIndex = 11;
             // 
             // labelImmeuble
             // 
             this.labelImmeuble.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelImmeuble.AutoSize = true;
-            this.labelImmeuble.Location = new System.Drawing.Point(593, 13);
+            this.labelImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImmeuble.Location = new System.Drawing.Point(593, 12);
             this.labelImmeuble.Name = "labelImmeuble";
-            this.labelImmeuble.Size = new System.Drawing.Size(129, 13);
+            this.labelImmeuble.Size = new System.Drawing.Size(162, 17);
             this.labelImmeuble.TabIndex = 13;
             this.labelImmeuble.Text = "Selectioner un Immeuble :";
             // 
@@ -143,9 +155,10 @@
             // 
             this.labelBloc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBloc.AutoSize = true;
-            this.labelBloc.Location = new System.Drawing.Point(357, 13);
+            this.labelBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBloc.Location = new System.Drawing.Point(357, 12);
             this.labelBloc.Name = "labelBloc";
-            this.labelBloc.Size = new System.Drawing.Size(111, 13);
+            this.labelBloc.Size = new System.Drawing.Size(137, 17);
             this.labelBloc.TabIndex = 12;
             this.labelBloc.Text = "Selectioner une Bloc :";
             // 
@@ -172,52 +185,88 @@
             // 
             // buttonLast
             // 
+            this.buttonLast.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
             this.buttonLast.Location = new System.Drawing.Point(17, 230);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
             this.buttonLast.TabIndex = 17;
-            this.buttonLast.Text = ">>";
-            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.UseVisualStyleBackColor = false;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
             // buttonPrevious
             // 
+            this.buttonPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
             this.buttonPrevious.Location = new System.Drawing.Point(14, 88);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
             this.buttonPrevious.TabIndex = 15;
-            this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.UseVisualStyleBackColor = false;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonNext
             // 
+            this.buttonNext.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
             this.buttonNext.Location = new System.Drawing.Point(17, 159);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
             this.buttonNext.TabIndex = 16;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonFirst
             // 
+            this.buttonFirst.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
             this.buttonFirst.Location = new System.Drawing.Point(14, 17);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
             this.buttonFirst.TabIndex = 14;
-            this.buttonFirst.Text = "<<";
-            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.UseVisualStyleBackColor = false;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
             // dataGridViewBien
             // 
+            this.dataGridViewBien.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewBien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewBien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewBien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewBien.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewBien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewBien.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewBien.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewBien.Name = "dataGridViewBien";
             this.dataGridViewBien.ReadOnly = true;
+            this.dataGridViewBien.RowHeadersWidth = 25;
             this.dataGridViewBien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBien.Size = new System.Drawing.Size(726, 286);
             this.dataGridViewBien.TabIndex = 15;
@@ -231,27 +280,6 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(800, 83);
             this.panelFooter.TabIndex = 0;
-            // 
-            // buttonModifierBien
-            // 
-            this.buttonModifierBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonModifierBien.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonModifierBien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonModifierBien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonModifierBien.FlatAppearance.BorderSize = 0;
-            this.buttonModifierBien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonModifierBien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonModifierBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModifierBien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModifierBien.ForeColor = System.Drawing.Color.White;
-            this.buttonModifierBien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModifierBien.Location = new System.Drawing.Point(544, 14);
-            this.buttonModifierBien.Name = "buttonModifierBien";
-            this.buttonModifierBien.Size = new System.Drawing.Size(242, 53);
-            this.buttonModifierBien.TabIndex = 9;
-            this.buttonModifierBien.Text = "Modifier le bien";
-            this.buttonModifierBien.UseVisualStyleBackColor = false;
-            this.buttonModifierBien.Click += new System.EventHandler(this.buttonModifierBien_Click);
             // 
             // buttonListDocs
             // 
@@ -267,18 +295,42 @@
             this.buttonListDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListDocs.ForeColor = System.Drawing.Color.White;
+            this.buttonListDocs.Image = global::SYNDIC_1._0.Properties.Resources.liste2;
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListDocs.Location = new System.Drawing.Point(17, 23);
+            this.buttonListDocs.Location = new System.Drawing.Point(17, 14);
             this.buttonListDocs.Name = "buttonListDocs";
-            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+            this.buttonListDocs.Size = new System.Drawing.Size(283, 53);
             this.buttonListDocs.TabIndex = 18;
             this.buttonListDocs.Text = "Listes Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
+            // buttonModifierBien
+            // 
+            this.buttonModifierBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonModifierBien.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonModifierBien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonModifierBien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonModifierBien.FlatAppearance.BorderSize = 0;
+            this.buttonModifierBien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonModifierBien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonModifierBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonModifierBien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModifierBien.ForeColor = System.Drawing.Color.White;
+            this.buttonModifierBien.Image = global::SYNDIC_1._0.Properties.Resources.modifier;
+            this.buttonModifierBien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModifierBien.Location = new System.Drawing.Point(544, 14);
+            this.buttonModifierBien.Name = "buttonModifierBien";
+            this.buttonModifierBien.Size = new System.Drawing.Size(242, 53);
+            this.buttonModifierBien.TabIndex = 9;
+            this.buttonModifierBien.Text = "Modifier le bien";
+            this.buttonModifierBien.UseVisualStyleBackColor = false;
+            this.buttonModifierBien.Click += new System.EventHandler(this.buttonModifierBien_Click);
+            // 
             // FormListeBien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainerListeBien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

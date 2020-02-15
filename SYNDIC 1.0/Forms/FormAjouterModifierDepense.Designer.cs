@@ -32,8 +32,6 @@
             this.labelCloseDepense = new System.Windows.Forms.Label();
             this.labelDepense = new System.Windows.Forms.Label();
             this.panelValid = new System.Windows.Forms.Panel();
-            this.buttonAnnuler = new System.Windows.Forms.Button();
-            this.buttonValider = new System.Windows.Forms.Button();
             this.textBoxTypeDocument = new System.Windows.Forms.TextBox();
             this.labelTypeDocument = new System.Windows.Forms.Label();
             this.textBoxNumDocument = new System.Windows.Forms.TextBox();
@@ -50,6 +48,8 @@
             this.dateTimePickerDepense = new System.Windows.Forms.DateTimePicker();
             this.textBoxDesignationDepense = new System.Windows.Forms.TextBox();
             this.labelDesignationDepense = new System.Windows.Forms.Label();
+            this.buttonAnnuler = new System.Windows.Forms.Button();
+            this.buttonValider = new System.Windows.Forms.Button();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             // labelDepense
             // 
             this.labelDepense.AutoSize = true;
-            this.labelDepense.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDepense.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDepense.Location = new System.Drawing.Point(150, 13);
             this.labelDepense.Name = "labelDepense";
             this.labelDepense.Size = new System.Drawing.Size(120, 30);
@@ -97,8 +97,168 @@
             this.panelValid.Size = new System.Drawing.Size(447, 41);
             this.panelValid.TabIndex = 22;
             // 
+            // textBoxTypeDocument
+            // 
+            this.textBoxTypeDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTypeDocument.Location = new System.Drawing.Point(178, 342);
+            this.textBoxTypeDocument.Name = "textBoxTypeDocument";
+            this.textBoxTypeDocument.Size = new System.Drawing.Size(231, 22);
+            this.textBoxTypeDocument.TabIndex = 53;
+            // 
+            // labelTypeDocument
+            // 
+            this.labelTypeDocument.AutoSize = true;
+            this.labelTypeDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeDocument.Location = new System.Drawing.Point(26, 349);
+            this.labelTypeDocument.Name = "labelTypeDocument";
+            this.labelTypeDocument.Size = new System.Drawing.Size(125, 17);
+            this.labelTypeDocument.TabIndex = 52;
+            this.labelTypeDocument.Text = "Type de document :";
+            // 
+            // textBoxNumDocument
+            // 
+            this.textBoxNumDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumDocument.Location = new System.Drawing.Point(178, 306);
+            this.textBoxNumDocument.Name = "textBoxNumDocument";
+            this.textBoxNumDocument.Size = new System.Drawing.Size(231, 22);
+            this.textBoxNumDocument.TabIndex = 51;
+            this.textBoxNumDocument.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            this.textBoxNumDocument.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumDocument_KeyPress);
+            // 
+            // comboBoxEmploye
+            // 
+            this.comboBoxEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEmploye.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEmploye.FormattingEnabled = true;
+            this.comboBoxEmploye.Location = new System.Drawing.Point(179, 195);
+            this.comboBoxEmploye.Name = "comboBoxEmploye";
+            this.comboBoxEmploye.Size = new System.Drawing.Size(229, 25);
+            this.comboBoxEmploye.TabIndex = 50;
+            // 
+            // comboBoxSociete
+            // 
+            this.comboBoxSociete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSociete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSociete.FormattingEnabled = true;
+            this.comboBoxSociete.Location = new System.Drawing.Point(178, 232);
+            this.comboBoxSociete.Name = "comboBoxSociete";
+            this.comboBoxSociete.Size = new System.Drawing.Size(231, 25);
+            this.comboBoxSociete.TabIndex = 49;
+            // 
+            // comboBoxTypeDepense
+            // 
+            this.comboBoxTypeDepense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTypeDepense.FormattingEnabled = true;
+            this.comboBoxTypeDepense.Location = new System.Drawing.Point(179, 269);
+            this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
+            this.comboBoxTypeDepense.Size = new System.Drawing.Size(229, 25);
+            this.comboBoxTypeDepense.TabIndex = 48;
+            // 
+            // labelNumDocument
+            // 
+            this.labelNumDocument.AutoSize = true;
+            this.labelNumDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumDocument.Location = new System.Drawing.Point(39, 312);
+            this.labelNumDocument.Name = "labelNumDocument";
+            this.labelNumDocument.Size = new System.Drawing.Size(112, 17);
+            this.labelNumDocument.TabIndex = 47;
+            this.labelNumDocument.Text = "N° de document :";
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(36, 275);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(115, 17);
+            this.labelType.TabIndex = 46;
+            this.labelType.Text = "Type de dépense :";
+            // 
+            // labelSociete
+            // 
+            this.labelSociete.AutoSize = true;
+            this.labelSociete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSociete.Location = new System.Drawing.Point(90, 238);
+            this.labelSociete.Name = "labelSociete";
+            this.labelSociete.Size = new System.Drawing.Size(61, 17);
+            this.labelSociete.TabIndex = 45;
+            this.labelSociete.Text = "Société :";
+            // 
+            // labelEmploye
+            // 
+            this.labelEmploye.AutoSize = true;
+            this.labelEmploye.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmploye.Location = new System.Drawing.Point(70, 201);
+            this.labelEmploye.Name = "labelEmploye";
+            this.labelEmploye.Size = new System.Drawing.Size(81, 17);
+            this.labelEmploye.TabIndex = 44;
+            this.labelEmploye.Text = "Employé(e) :";
+            // 
+            // textBoxMontant
+            // 
+            this.textBoxMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMontant.Location = new System.Drawing.Point(178, 159);
+            this.textBoxMontant.Name = "textBoxMontant";
+            this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
+            this.textBoxMontant.TabIndex = 43;
+            this.textBoxMontant.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
+            // 
+            // labelMontant
+            // 
+            this.labelMontant.AutoSize = true;
+            this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMontant.Location = new System.Drawing.Point(86, 164);
+            this.labelMontant.Name = "labelMontant";
+            this.labelMontant.Size = new System.Drawing.Size(65, 17);
+            this.labelMontant.TabIndex = 42;
+            this.labelMontant.Text = "Montant :";
+            // 
+            // labelDateDepense
+            // 
+            this.labelDateDepense.AutoSize = true;
+            this.labelDateDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDepense.Location = new System.Drawing.Point(107, 127);
+            this.labelDateDepense.Name = "labelDateDepense";
+            this.labelDateDepense.Size = new System.Drawing.Size(44, 17);
+            this.labelDateDepense.TabIndex = 41;
+            this.labelDateDepense.Text = "Date :";
+            // 
+            // dateTimePickerDepense
+            // 
+            this.dateTimePickerDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDepense.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDepense.Location = new System.Drawing.Point(178, 123);
+            this.dateTimePickerDepense.Name = "dateTimePickerDepense";
+            this.dateTimePickerDepense.Size = new System.Drawing.Size(231, 22);
+            this.dateTimePickerDepense.TabIndex = 40;
+            // 
+            // textBoxDesignationDepense
+            // 
+            this.textBoxDesignationDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDesignationDepense.Location = new System.Drawing.Point(178, 87);
+            this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
+            this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
+            this.textBoxDesignationDepense.TabIndex = 39;
+            this.textBoxDesignationDepense.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
+            // 
+            // labelDesignationDepense
+            // 
+            this.labelDesignationDepense.AutoSize = true;
+            this.labelDesignationDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDesignationDepense.Location = new System.Drawing.Point(66, 90);
+            this.labelDesignationDepense.Name = "labelDesignationDepense";
+            this.labelDesignationDepense.Size = new System.Drawing.Size(85, 17);
+            this.labelDesignationDepense.TabIndex = 38;
+            this.labelDesignationDepense.Text = "Désignation :";
+            // 
             // buttonAnnuler
             // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
@@ -110,6 +270,9 @@
             // buttonValider
             // 
             this.buttonValider.Enabled = false;
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
@@ -118,151 +281,11 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
-            // textBoxTypeDocument
-            // 
-            this.textBoxTypeDocument.Location = new System.Drawing.Point(161, 342);
-            this.textBoxTypeDocument.Name = "textBoxTypeDocument";
-            this.textBoxTypeDocument.Size = new System.Drawing.Size(231, 20);
-            this.textBoxTypeDocument.TabIndex = 53;
-            // 
-            // labelTypeDocument
-            // 
-            this.labelTypeDocument.AutoSize = true;
-            this.labelTypeDocument.Location = new System.Drawing.Point(54, 349);
-            this.labelTypeDocument.Name = "labelTypeDocument";
-            this.labelTypeDocument.Size = new System.Drawing.Size(102, 13);
-            this.labelTypeDocument.TabIndex = 52;
-            this.labelTypeDocument.Text = "Type de document :";
-            // 
-            // textBoxNumDocument
-            // 
-            this.textBoxNumDocument.Location = new System.Drawing.Point(161, 306);
-            this.textBoxNumDocument.Name = "textBoxNumDocument";
-            this.textBoxNumDocument.Size = new System.Drawing.Size(231, 20);
-            this.textBoxNumDocument.TabIndex = 51;
-            this.textBoxNumDocument.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
-            this.textBoxNumDocument.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumDocument_KeyPress);
-            // 
-            // comboBoxEmploye
-            // 
-            this.comboBoxEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEmploye.FormattingEnabled = true;
-            this.comboBoxEmploye.Location = new System.Drawing.Point(162, 195);
-            this.comboBoxEmploye.Name = "comboBoxEmploye";
-            this.comboBoxEmploye.Size = new System.Drawing.Size(229, 21);
-            this.comboBoxEmploye.TabIndex = 50;
-            // 
-            // comboBoxSociete
-            // 
-            this.comboBoxSociete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSociete.FormattingEnabled = true;
-            this.comboBoxSociete.Location = new System.Drawing.Point(161, 232);
-            this.comboBoxSociete.Name = "comboBoxSociete";
-            this.comboBoxSociete.Size = new System.Drawing.Size(231, 21);
-            this.comboBoxSociete.TabIndex = 49;
-            // 
-            // comboBoxTypeDepense
-            // 
-            this.comboBoxTypeDepense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTypeDepense.FormattingEnabled = true;
-            this.comboBoxTypeDepense.Location = new System.Drawing.Point(162, 269);
-            this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
-            this.comboBoxTypeDepense.Size = new System.Drawing.Size(229, 21);
-            this.comboBoxTypeDepense.TabIndex = 48;
-            // 
-            // labelNumDocument
-            // 
-            this.labelNumDocument.AutoSize = true;
-            this.labelNumDocument.Location = new System.Drawing.Point(54, 312);
-            this.labelNumDocument.Name = "labelNumDocument";
-            this.labelNumDocument.Size = new System.Drawing.Size(90, 13);
-            this.labelNumDocument.TabIndex = 47;
-            this.labelNumDocument.Text = "N° de document :";
-            // 
-            // labelType
-            // 
-            this.labelType.AutoSize = true;
-            this.labelType.Location = new System.Drawing.Point(54, 275);
-            this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(96, 13);
-            this.labelType.TabIndex = 46;
-            this.labelType.Text = "Type de dépense :";
-            // 
-            // labelSociete
-            // 
-            this.labelSociete.AutoSize = true;
-            this.labelSociete.Location = new System.Drawing.Point(54, 238);
-            this.labelSociete.Name = "labelSociete";
-            this.labelSociete.Size = new System.Drawing.Size(49, 13);
-            this.labelSociete.TabIndex = 45;
-            this.labelSociete.Text = "Société :";
-            // 
-            // labelEmploye
-            // 
-            this.labelEmploye.AutoSize = true;
-            this.labelEmploye.Location = new System.Drawing.Point(54, 201);
-            this.labelEmploye.Name = "labelEmploye";
-            this.labelEmploye.Size = new System.Drawing.Size(65, 13);
-            this.labelEmploye.TabIndex = 44;
-            this.labelEmploye.Text = "Employé(e) :";
-            // 
-            // textBoxMontant
-            // 
-            this.textBoxMontant.Location = new System.Drawing.Point(161, 159);
-            this.textBoxMontant.Name = "textBoxMontant";
-            this.textBoxMontant.Size = new System.Drawing.Size(231, 20);
-            this.textBoxMontant.TabIndex = 43;
-            this.textBoxMontant.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
-            this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
-            // 
-            // labelMontant
-            // 
-            this.labelMontant.AutoSize = true;
-            this.labelMontant.Location = new System.Drawing.Point(54, 164);
-            this.labelMontant.Name = "labelMontant";
-            this.labelMontant.Size = new System.Drawing.Size(52, 13);
-            this.labelMontant.TabIndex = 42;
-            this.labelMontant.Text = "Montant :";
-            // 
-            // labelDateDepense
-            // 
-            this.labelDateDepense.AutoSize = true;
-            this.labelDateDepense.Location = new System.Drawing.Point(54, 127);
-            this.labelDateDepense.Name = "labelDateDepense";
-            this.labelDateDepense.Size = new System.Drawing.Size(36, 13);
-            this.labelDateDepense.TabIndex = 41;
-            this.labelDateDepense.Text = "Date :";
-            // 
-            // dateTimePickerDepense
-            // 
-            this.dateTimePickerDepense.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDepense.Location = new System.Drawing.Point(161, 123);
-            this.dateTimePickerDepense.Name = "dateTimePickerDepense";
-            this.dateTimePickerDepense.Size = new System.Drawing.Size(231, 20);
-            this.dateTimePickerDepense.TabIndex = 40;
-            // 
-            // textBoxDesignationDepense
-            // 
-            this.textBoxDesignationDepense.Location = new System.Drawing.Point(161, 87);
-            this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
-            this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 20);
-            this.textBoxDesignationDepense.TabIndex = 39;
-            this.textBoxDesignationDepense.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
-            this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
-            // 
-            // labelDesignationDepense
-            // 
-            this.labelDesignationDepense.AutoSize = true;
-            this.labelDesignationDepense.Location = new System.Drawing.Point(54, 90);
-            this.labelDesignationDepense.Name = "labelDesignationDepense";
-            this.labelDesignationDepense.Size = new System.Drawing.Size(69, 13);
-            this.labelDesignationDepense.TabIndex = 38;
-            this.labelDesignationDepense.Text = "Désignation :";
-            // 
             // FormAjouterModifierDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 454);
             this.Controls.Add(this.textBoxTypeDocument);
             this.Controls.Add(this.labelTypeDocument);

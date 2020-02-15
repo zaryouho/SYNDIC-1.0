@@ -71,7 +71,7 @@
             // labelFacture
             // 
             this.labelFacture.AutoSize = true;
-            this.labelFacture.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFacture.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFacture.Location = new System.Drawing.Point(173, 9);
             this.labelFacture.Name = "labelFacture";
             this.labelFacture.Size = new System.Drawing.Size(103, 30);
@@ -90,6 +90,9 @@
             // 
             // buttonAnnuler
             // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
@@ -99,6 +102,9 @@
             // 
             // buttonValider
             // 
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
@@ -109,7 +115,7 @@
             // 
             // buttonAjouterProduit
             // 
-            this.buttonAjouterProduit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.buttonAjouterProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAjouterProduit.Location = new System.Drawing.Point(352, 84);
             this.buttonAjouterProduit.Name = "buttonAjouterProduit";
             this.buttonAjouterProduit.Size = new System.Drawing.Size(51, 23);
@@ -120,50 +126,56 @@
             // 
             // comboBoxProduit
             // 
+            this.comboBoxProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProduit.FormattingEnabled = true;
             this.comboBoxProduit.Location = new System.Drawing.Point(115, 86);
             this.comboBoxProduit.Name = "comboBoxProduit";
-            this.comboBoxProduit.Size = new System.Drawing.Size(231, 21);
+            this.comboBoxProduit.Size = new System.Drawing.Size(231, 25);
             this.comboBoxProduit.TabIndex = 62;
             // 
             // labelProduit
             // 
             this.labelProduit.AutoSize = true;
-            this.labelProduit.Location = new System.Drawing.Point(43, 94);
+            this.labelProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProduit.Location = new System.Drawing.Point(44, 91);
             this.labelProduit.Name = "labelProduit";
-            this.labelProduit.Size = new System.Drawing.Size(49, 13);
+            this.labelProduit.Size = new System.Drawing.Size(59, 17);
             this.labelProduit.TabIndex = 61;
             this.labelProduit.Text = "Produit  :";
             // 
             // textBoxPrixProduit
             // 
+            this.textBoxPrixProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrixProduit.Location = new System.Drawing.Point(115, 182);
             this.textBoxPrixProduit.Name = "textBoxPrixProduit";
-            this.textBoxPrixProduit.Size = new System.Drawing.Size(231, 20);
+            this.textBoxPrixProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxPrixProduit.TabIndex = 60;
             // 
             // labelPrix
             // 
             this.labelPrix.AutoSize = true;
-            this.labelPrix.Location = new System.Drawing.Point(43, 185);
+            this.labelPrix.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrix.Location = new System.Drawing.Point(69, 182);
             this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(30, 13);
+            this.labelPrix.Size = new System.Drawing.Size(34, 17);
             this.labelPrix.TabIndex = 59;
             this.labelPrix.Text = "Prix :";
             // 
             // textBoxQteProduit
             // 
+            this.textBoxQteProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQteProduit.Location = new System.Drawing.Point(115, 133);
             this.textBoxQteProduit.Name = "textBoxQteProduit";
-            this.textBoxQteProduit.Size = new System.Drawing.Size(231, 20);
+            this.textBoxQteProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxQteProduit.TabIndex = 58;
             // 
             // labelQteProduit
             // 
             this.labelQteProduit.AutoSize = true;
-            this.labelQteProduit.Location = new System.Drawing.Point(43, 136);
+            this.labelQteProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQteProduit.Location = new System.Drawing.Point(33, 133);
             this.labelQteProduit.Name = "labelQteProduit";
-            this.labelQteProduit.Size = new System.Drawing.Size(56, 13);
+            this.labelQteProduit.Size = new System.Drawing.Size(70, 17);
             this.labelQteProduit.TabIndex = 57;
             this.labelQteProduit.Text = "Quantité  :";
             // 
@@ -171,6 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 287);
             this.Controls.Add(this.buttonAjouterProduit);
             this.Controls.Add(this.comboBoxProduit);

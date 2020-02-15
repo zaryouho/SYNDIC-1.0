@@ -9,6 +9,18 @@ namespace SYNDIC_1._0.Forms
 {
     public partial class FormAjouterModifierRecette : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
+
         private int id_Proprietaire;
         private BindingSource bsProprietaire;
         private BindingSource bsProprietaireBien;

@@ -58,59 +58,66 @@
             // 
             // textBoxCin
             // 
-            this.textBoxCin.Location = new System.Drawing.Point(203, 73);
+            this.textBoxCin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCin.Location = new System.Drawing.Point(171, 72);
             this.textBoxCin.Name = "textBoxCin";
-            this.textBoxCin.Size = new System.Drawing.Size(201, 20);
+            this.textBoxCin.Size = new System.Drawing.Size(201, 22);
             this.textBoxCin.TabIndex = 1;
             this.textBoxCin.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(203, 102);
+            this.textBoxNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNom.Location = new System.Drawing.Point(171, 101);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(201, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(201, 22);
             this.textBoxNom.TabIndex = 2;
             this.textBoxNom.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // textBoxPrenom
             // 
-            this.textBoxPrenom.Location = new System.Drawing.Point(203, 131);
+            this.textBoxPrenom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPrenom.Location = new System.Drawing.Point(171, 130);
             this.textBoxPrenom.Name = "textBoxPrenom";
-            this.textBoxPrenom.Size = new System.Drawing.Size(201, 20);
+            this.textBoxPrenom.Size = new System.Drawing.Size(201, 22);
             this.textBoxPrenom.TabIndex = 3;
             this.textBoxPrenom.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             this.textBoxPrenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
             // textBoxAdresse
             // 
-            this.textBoxAdresse.Location = new System.Drawing.Point(203, 190);
+            this.textBoxAdresse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAdresse.Location = new System.Drawing.Point(171, 189);
             this.textBoxAdresse.Name = "textBoxAdresse";
-            this.textBoxAdresse.Size = new System.Drawing.Size(201, 20);
+            this.textBoxAdresse.Size = new System.Drawing.Size(201, 22);
             this.textBoxAdresse.TabIndex = 5;
             this.textBoxAdresse.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxCodePostal
             // 
-            this.textBoxCodePostal.Location = new System.Drawing.Point(203, 219);
+            this.textBoxCodePostal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodePostal.Location = new System.Drawing.Point(171, 218);
             this.textBoxCodePostal.Name = "textBoxCodePostal";
-            this.textBoxCodePostal.Size = new System.Drawing.Size(201, 20);
+            this.textBoxCodePostal.Size = new System.Drawing.Size(201, 22);
             this.textBoxCodePostal.TabIndex = 6;
             this.textBoxCodePostal.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(203, 277);
+            this.textBoxEmail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(171, 276);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(201, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(201, 22);
             this.textBoxEmail.TabIndex = 7;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxTele
             // 
-            this.textBoxTele.Location = new System.Drawing.Point(203, 248);
+            this.textBoxTele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTele.Location = new System.Drawing.Point(171, 247);
             this.textBoxTele.Name = "textBoxTele";
-            this.textBoxTele.Size = new System.Drawing.Size(201, 20);
+            this.textBoxTele.Size = new System.Drawing.Size(201, 22);
             this.textBoxTele.TabIndex = 8;
             this.textBoxTele.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             this.textBoxTele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTele_KeyPress);
@@ -118,10 +125,11 @@
             // comboBoxVille
             // 
             this.comboBoxVille.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVille.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVille.FormattingEnabled = true;
-            this.comboBoxVille.Location = new System.Drawing.Point(203, 305);
+            this.comboBoxVille.Location = new System.Drawing.Point(171, 304);
             this.comboBoxVille.Name = "comboBoxVille";
-            this.comboBoxVille.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxVille.Size = new System.Drawing.Size(201, 25);
             this.comboBoxVille.TabIndex = 10;
             this.comboBoxVille.SelectedIndexChanged += new System.EventHandler(this.comboBoxVille_SelectedIndexChanged);
             this.comboBoxVille.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
@@ -129,108 +137,122 @@
             // labelSexe
             // 
             this.labelSexe.AutoSize = true;
-            this.labelSexe.Location = new System.Drawing.Point(51, 163);
+            this.labelSexe.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSexe.Location = new System.Drawing.Point(108, 163);
             this.labelSexe.Name = "labelSexe";
-            this.labelSexe.Size = new System.Drawing.Size(37, 13);
+            this.labelSexe.Size = new System.Drawing.Size(43, 17);
             this.labelSexe.TabIndex = 29;
             this.labelSexe.Text = "Sexe :";
             // 
             // labelVille
             // 
             this.labelVille.AutoSize = true;
-            this.labelVille.Location = new System.Drawing.Point(50, 308);
+            this.labelVille.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVille.Location = new System.Drawing.Point(111, 308);
             this.labelVille.Name = "labelVille";
-            this.labelVille.Size = new System.Drawing.Size(32, 13);
+            this.labelVille.Size = new System.Drawing.Size(40, 17);
             this.labelVille.TabIndex = 27;
             this.labelVille.Text = "Ville :";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(50, 279);
+            this.labelEmail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(106, 279);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(38, 13);
+            this.labelEmail.Size = new System.Drawing.Size(45, 17);
             this.labelEmail.TabIndex = 26;
             this.labelEmail.Text = "Email :";
             // 
             // labelTele
             // 
             this.labelTele.AutoSize = true;
-            this.labelTele.Location = new System.Drawing.Point(50, 250);
+            this.labelTele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTele.Location = new System.Drawing.Point(113, 250);
             this.labelTele.Name = "labelTele";
-            this.labelTele.Size = new System.Drawing.Size(34, 13);
+            this.labelTele.Size = new System.Drawing.Size(38, 17);
             this.labelTele.TabIndex = 25;
             this.labelTele.Text = "Tele :";
             // 
             // labelCharge
             // 
             this.labelCharge.AutoSize = true;
-            this.labelCharge.Location = new System.Drawing.Point(50, 221);
+            this.labelCharge.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCharge.Location = new System.Drawing.Point(65, 221);
             this.labelCharge.Name = "labelCharge";
-            this.labelCharge.Size = new System.Drawing.Size(70, 13);
+            this.labelCharge.Size = new System.Drawing.Size(86, 17);
             this.labelCharge.TabIndex = 24;
             this.labelCharge.Text = "Code Postal :";
             // 
             // labelAdresse
             // 
             this.labelAdresse.AutoSize = true;
-            this.labelAdresse.Location = new System.Drawing.Point(50, 192);
+            this.labelAdresse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdresse.Location = new System.Drawing.Point(90, 192);
             this.labelAdresse.Name = "labelAdresse";
-            this.labelAdresse.Size = new System.Drawing.Size(51, 13);
+            this.labelAdresse.Size = new System.Drawing.Size(61, 17);
             this.labelAdresse.TabIndex = 23;
             this.labelAdresse.Text = "Adresse :";
             // 
             // labelPrenom
             // 
             this.labelPrenom.AutoSize = true;
-            this.labelPrenom.Location = new System.Drawing.Point(50, 134);
+            this.labelPrenom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrenom.Location = new System.Drawing.Point(92, 134);
             this.labelPrenom.Name = "labelPrenom";
-            this.labelPrenom.Size = new System.Drawing.Size(49, 13);
+            this.labelPrenom.Size = new System.Drawing.Size(59, 17);
             this.labelPrenom.TabIndex = 22;
             this.labelPrenom.Text = "Prénom :";
             // 
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(50, 105);
+            this.labelNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNom.Location = new System.Drawing.Point(106, 105);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(38, 13);
+            this.labelNom.Size = new System.Drawing.Size(45, 17);
             this.labelNom.TabIndex = 21;
             this.labelNom.Text = "Nom  :";
             // 
             // labelTitre
             // 
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Location = new System.Drawing.Point(48, 337);
+            this.labelTitre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitre.Location = new System.Drawing.Point(112, 337);
             this.labelTitre.Name = "labelTitre";
-            this.labelTitre.Size = new System.Drawing.Size(34, 13);
+            this.labelTitre.Size = new System.Drawing.Size(39, 17);
             this.labelTitre.TabIndex = 30;
             this.labelTitre.Text = "Titre :";
             // 
             // labelCin
             // 
             this.labelCin.AutoSize = true;
-            this.labelCin.Location = new System.Drawing.Point(51, 76);
+            this.labelCin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCin.Location = new System.Drawing.Point(121, 76);
             this.labelCin.Name = "labelCin";
-            this.labelCin.Size = new System.Drawing.Size(25, 13);
+            this.labelCin.Size = new System.Drawing.Size(30, 17);
             this.labelCin.TabIndex = 31;
             this.labelCin.Text = "Cin:";
             // 
             // comboBoxSexe
             // 
             this.comboBoxSexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSexe.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSexe.FormattingEnabled = true;
-            this.comboBoxSexe.Location = new System.Drawing.Point(203, 160);
+            this.comboBoxSexe.Location = new System.Drawing.Point(171, 159);
             this.comboBoxSexe.Name = "comboBoxSexe";
-            this.comboBoxSexe.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxSexe.Size = new System.Drawing.Size(201, 25);
             this.comboBoxSexe.TabIndex = 32;
             this.comboBoxSexe.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // buttonValider
             // 
-            this.buttonValider.Location = new System.Drawing.Point(51, 399);
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValider.Location = new System.Drawing.Point(25, 399);
             this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(88, 39);
+            this.buttonValider.Size = new System.Drawing.Size(149, 39);
             this.buttonValider.TabIndex = 33;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
@@ -238,9 +260,12 @@
             // 
             // buttonAnnuler
             // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(315, 399);
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnnuler.Location = new System.Drawing.Point(180, 399);
             this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(88, 39);
+            this.buttonAnnuler.Size = new System.Drawing.Size(149, 39);
             this.buttonAnnuler.TabIndex = 34;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
@@ -262,8 +287,8 @@
             // labelProprietaires
             // 
             this.labelProprietaires.AutoSize = true;
-            this.labelProprietaires.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProprietaires.Location = new System.Drawing.Point(103, 9);
+            this.labelProprietaires.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProprietaires.Location = new System.Drawing.Point(127, 9);
             this.labelProprietaires.Name = "labelProprietaires";
             this.labelProprietaires.Size = new System.Drawing.Size(202, 30);
             this.labelProprietaires.TabIndex = 35;
@@ -271,27 +296,30 @@
             // 
             // comboBoxIdVille
             // 
+            this.comboBoxIdVille.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxIdVille.FormattingEnabled = true;
-            this.comboBoxIdVille.Location = new System.Drawing.Point(203, 305);
+            this.comboBoxIdVille.Location = new System.Drawing.Point(171, 304);
             this.comboBoxIdVille.Name = "comboBoxIdVille";
-            this.comboBoxIdVille.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxIdVille.Size = new System.Drawing.Size(201, 25);
             this.comboBoxIdVille.TabIndex = 37;
             this.comboBoxIdVille.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // comboBoxTitre
             // 
             this.comboBoxTitre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTitre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTitre.FormattingEnabled = true;
-            this.comboBoxTitre.Location = new System.Drawing.Point(203, 337);
+            this.comboBoxTitre.Location = new System.Drawing.Point(171, 336);
             this.comboBoxTitre.Name = "comboBoxTitre";
-            this.comboBoxTitre.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxTitre.Size = new System.Drawing.Size(201, 25);
             this.comboBoxTitre.TabIndex = 38;
             // 
             // buttonRAZ
             // 
-            this.buttonRAZ.Location = new System.Drawing.Point(183, 399);
+            this.buttonRAZ.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRAZ.Location = new System.Drawing.Point(372, 399);
             this.buttonRAZ.Name = "buttonRAZ";
-            this.buttonRAZ.Size = new System.Drawing.Size(88, 39);
+            this.buttonRAZ.Size = new System.Drawing.Size(71, 39);
             this.buttonRAZ.TabIndex = 39;
             this.buttonRAZ.Text = "RAZ";
             this.buttonRAZ.UseVisualStyleBackColor = true;
@@ -301,6 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(455, 450);
             this.Controls.Add(this.buttonRAZ);
             this.Controls.Add(this.comboBoxTitre);
