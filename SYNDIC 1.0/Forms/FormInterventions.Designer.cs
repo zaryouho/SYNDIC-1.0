@@ -294,6 +294,7 @@
             this.buttonModifierIntervention.TabIndex = 9;
             this.buttonModifierIntervention.Text = "Modifier l\'intervention";
             this.buttonModifierIntervention.UseVisualStyleBackColor = false;
+            this.buttonModifierIntervention.Click += new System.EventHandler(this.buttonModifierIntervention_Click);
             // 
             // FormInterventions
             // 

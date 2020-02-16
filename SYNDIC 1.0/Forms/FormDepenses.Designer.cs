@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDepenses));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerListeDepense = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBoxRadioButtons = new System.Windows.Forms.GroupBox();
@@ -53,16 +53,16 @@
             this.buttonChercher = new System.Windows.Forms.Button();
             this.labelRechercher = new System.Windows.Forms.Label();
             this.splitContainerBody = new System.Windows.Forms.SplitContainer();
+            this.buttonLast = new System.Windows.Forms.Button();
+            this.buttonPrevious = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridViewDepenses = new System.Windows.Forms.DataGridView();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.buttonAfficherFactures = new System.Windows.Forms.Button();
             this.buttonAfficherInterventions = new System.Windows.Forms.Button();
             this.buttonAjouterDepense = new System.Windows.Forms.Button();
             this.buttonModifierDepense = new System.Windows.Forms.Button();
-            this.buttonLast = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonFirst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeDepense)).BeginInit();
             this.splitContainerListeDepense.Panel1.SuspendLayout();
             this.splitContainerListeDepense.Panel2.SuspendLayout();
@@ -106,30 +106,31 @@
             // 
             this.panel4.Controls.Add(this.groupBoxRadioButtons);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(380, 0);
+            this.panel4.Location = new System.Drawing.Point(381, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(220, 79);
+            this.panel4.Size = new System.Drawing.Size(219, 79);
             this.panel4.TabIndex = 3;
             // 
             // groupBoxRadioButtons
             // 
+            this.groupBoxRadioButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxRadioButtons.Controls.Add(this.radioButtonALL);
             this.groupBoxRadioButtons.Controls.Add(this.radioButtonAutre);
             this.groupBoxRadioButtons.Controls.Add(this.radioButtonSociete);
             this.groupBoxRadioButtons.Controls.Add(this.radioButtonEmploye);
-            this.groupBoxRadioButtons.Location = new System.Drawing.Point(16, 4);
+            this.groupBoxRadioButtons.Location = new System.Drawing.Point(44, 7);
             this.groupBoxRadioButtons.Name = "groupBoxRadioButtons";
             this.groupBoxRadioButtons.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBoxRadioButtons.Size = new System.Drawing.Size(181, 58);
+            this.groupBoxRadioButtons.Size = new System.Drawing.Size(171, 58);
             this.groupBoxRadioButtons.TabIndex = 37;
             this.groupBoxRadioButtons.TabStop = false;
             // 
             // radioButtonALL
             // 
-            this.radioButtonALL.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButtonALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonALL.AutoSize = true;
             this.radioButtonALL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonALL.Location = new System.Drawing.Point(94, 11);
+            this.radioButtonALL.Location = new System.Drawing.Point(95, 11);
             this.radioButtonALL.Name = "radioButtonALL";
             this.radioButtonALL.Size = new System.Drawing.Size(41, 21);
             this.radioButtonALL.TabIndex = 17;
@@ -139,10 +140,10 @@
             // 
             // radioButtonAutre
             // 
-            this.radioButtonAutre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButtonAutre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonAutre.AutoSize = true;
             this.radioButtonAutre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonAutre.Location = new System.Drawing.Point(94, 31);
+            this.radioButtonAutre.Location = new System.Drawing.Point(95, 31);
             this.radioButtonAutre.Name = "radioButtonAutre";
             this.radioButtonAutre.Size = new System.Drawing.Size(71, 21);
             this.radioButtonAutre.TabIndex = 16;
@@ -152,10 +153,10 @@
             // 
             // radioButtonSociete
             // 
-            this.radioButtonSociete.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButtonSociete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonSociete.AutoSize = true;
             this.radioButtonSociete.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonSociete.Location = new System.Drawing.Point(8, 33);
+            this.radioButtonSociete.Location = new System.Drawing.Point(9, 33);
             this.radioButtonSociete.Name = "radioButtonSociete";
             this.radioButtonSociete.Size = new System.Drawing.Size(73, 21);
             this.radioButtonSociete.TabIndex = 15;
@@ -165,13 +166,13 @@
             // 
             // radioButtonEmploye
             // 
-            this.radioButtonEmploye.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButtonEmploye.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonEmploye.AutoSize = true;
             this.radioButtonEmploye.Checked = true;
             this.radioButtonEmploye.FlatAppearance.CheckedBackColor = System.Drawing.Color.Blue;
             this.radioButtonEmploye.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonEmploye.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonEmploye.Location = new System.Drawing.Point(8, 11);
+            this.radioButtonEmploye.Location = new System.Drawing.Point(9, 11);
             this.radioButtonEmploye.Name = "radioButtonEmploye";
             this.radioButtonEmploye.Size = new System.Drawing.Size(76, 21);
             this.radioButtonEmploye.TabIndex = 14;
@@ -241,17 +242,17 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBoxTypeDepense);
             this.panel2.Controls.Add(this.labelTypeDepense);
+            this.panel2.Controls.Add(this.comboBoxTypeDepense);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(180, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 79);
+            this.panel2.Size = new System.Drawing.Size(201, 79);
             this.panel2.TabIndex = 1;
             // 
             // comboBoxTypeDepense
             // 
-            this.comboBoxTypeDepense.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.comboBoxTypeDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxTypeDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeDepense.FormattingEnabled = true;
             this.comboBoxTypeDepense.Location = new System.Drawing.Point(6, 26);
@@ -262,7 +263,7 @@
             // 
             // labelTypeDepense
             // 
-            this.labelTypeDepense.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelTypeDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelTypeDepense.AutoSize = true;
             this.labelTypeDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTypeDepense.Location = new System.Drawing.Point(6, 8);
@@ -336,46 +337,99 @@
             this.splitContainerBody.SplitterDistance = 59;
             this.splitContainerBody.TabIndex = 2;
             // 
+            // buttonLast
+            // 
+            this.buttonLast.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonLast.Image = ((System.Drawing.Image)(resources.GetObject("buttonLast.Image")));
+            this.buttonLast.Location = new System.Drawing.Point(8, 231);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
+            this.buttonLast.TabIndex = 21;
+            this.buttonLast.UseVisualStyleBackColor = false;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonPrevious
+            // 
+            this.buttonPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrevious.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrevious.Image")));
+            this.buttonPrevious.Location = new System.Drawing.Point(8, 89);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
+            this.buttonPrevious.TabIndex = 19;
+            this.buttonPrevious.UseVisualStyleBackColor = false;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = ((System.Drawing.Image)(resources.GetObject("buttonNext.Image")));
+            this.buttonNext.Location = new System.Drawing.Point(8, 160);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
+            this.buttonNext.TabIndex = 20;
+            this.buttonNext.UseVisualStyleBackColor = false;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = ((System.Drawing.Image)(resources.GetObject("buttonFirst.Image")));
+            this.buttonFirst.Location = new System.Drawing.Point(8, 18);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+            this.buttonFirst.TabIndex = 18;
+            this.buttonFirst.UseVisualStyleBackColor = false;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
             // dataGridViewDepenses
             // 
             this.dataGridViewDepenses.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewDepenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewDepenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewDepenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDepenses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewDepenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewDepenses.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDepenses.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDepenses.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewDepenses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDepenses.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewDepenses.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDepenses.Name = "dataGridViewDepenses";
             this.dataGridViewDepenses.ReadOnly = true;
             this.dataGridViewDepenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MediumTurquoise;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDepenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.MediumTurquoise;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDepenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewDepenses.RowHeadersWidth = 25;
             this.dataGridViewDepenses.RowTemplate.Height = 25;
             this.dataGridViewDepenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -477,59 +531,6 @@
             this.buttonModifierDepense.Text = "Modifier Dépense";
             this.buttonModifierDepense.UseVisualStyleBackColor = false;
             this.buttonModifierDepense.Click += new System.EventHandler(this.buttonModifierDepense_Click);
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLast.FlatAppearance.BorderSize = 0;
-            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLast.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonLast.Image = ((System.Drawing.Image)(resources.GetObject("buttonLast.Image")));
-            this.buttonLast.Location = new System.Drawing.Point(8, 231);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 21;
-            this.buttonLast.UseVisualStyleBackColor = false;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.buttonPrevious.FlatAppearance.BorderSize = 0;
-            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPrevious.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrevious.Image")));
-            this.buttonPrevious.Location = new System.Drawing.Point(8, 89);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonPrevious.TabIndex = 19;
-            this.buttonPrevious.UseVisualStyleBackColor = false;
-            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.BackColor = System.Drawing.Color.Transparent;
-            this.buttonNext.FlatAppearance.BorderSize = 0;
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Image = ((System.Drawing.Image)(resources.GetObject("buttonNext.Image")));
-            this.buttonNext.Location = new System.Drawing.Point(8, 160);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 20;
-            this.buttonNext.UseVisualStyleBackColor = false;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFirst.FlatAppearance.BorderSize = 0;
-            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFirst.Image = ((System.Drawing.Image)(resources.GetObject("buttonFirst.Image")));
-            this.buttonFirst.Location = new System.Drawing.Point(8, 18);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 18;
-            this.buttonFirst.UseVisualStyleBackColor = false;
-            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
             // FormDepenses
             // 

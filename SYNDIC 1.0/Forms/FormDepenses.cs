@@ -14,7 +14,7 @@ namespace SYNDIC_1._0
     public partial class FormDepenses : Form
     {
         // les Variables Global
-        private BindingSource bsDepense, bsIntervention, bsDepenseRemarque, bsDepenseDocuments, bsDepenseLigne, bsProduit;
+        private BindingSource bsDepense, bsDepenseRemarque, bsDepenseDocuments;
         string button = "";
 
         private void buttonFirst_Click(object sender, EventArgs e)
@@ -29,12 +29,15 @@ namespace SYNDIC_1._0
 
         private void comboBoxTypeDepense_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bsDepense.Filter = string.Format("typeDepense like '%" + comboBoxTypeDepense.SelectedItem.ToString() + "%'");
+            //string filter = comboBoxTypeDepense.Text;
+            //if (filter == "Touts")
+            //    filter = "";
+            //bsDepense.Filter = string.Format("typeDepense like '%" + filter + "%'");
+            comboBoxids_SelectedIndexChanged(sender, e);
         }
 
         private void radioButtonEmploye_CheckedChanged(object sender, EventArgs e)
         {
-            // SqlCommand sqlCommandDepense = new SqlCommand("select distinct typeDepense from depense", DBHelper.cn);
 
 
 
@@ -84,7 +87,7 @@ namespace SYNDIC_1._0
             else if (radioButtonALL.Checked)
             {
 
-                bsDepense.Filter = "";
+                //bsDepense.Filter = "";
                 comboBoxQui.Items.Clear();
                 comboBoxQui.Text = "";
 
@@ -96,7 +99,7 @@ namespace SYNDIC_1._0
             if (comboBoxQui.Items.Count > 0)
                 comboBoxQui.SelectedIndex = 0;
 
-
+            comboBoxids_SelectedIndexChanged(sender, e);
         }
 
         private void buttonAjouterDepense_Click(object sender, EventArgs e)
@@ -113,11 +116,10 @@ namespace SYNDIC_1._0
             if (dataGridViewDepenses.CurrentRow == null)
             {
                 MessageBox.Show("Séléctioner une dépense d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
-            {
-                new FormInterventions(bsIntervention, Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[0].Value.ToString())).ShowDialog();
-            }
+            new FormInterventions(Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[0].Value.ToString())).ShowDialog();
+
         }
 
         private void labelCloseDepense_Click(object sender, EventArgs e)
@@ -129,8 +131,8 @@ namespace SYNDIC_1._0
         {
             button = "Modifier";
             depense depenseModifier = new depense();
-            
-            if(dataGridViewDepenses.CurrentRow.Cells[4].Value.ToString()!="")
+
+            if (dataGridViewDepenses.CurrentRow.Cells[4].Value.ToString() != "")
                 depenseModifier.id_employe = Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[4].Value.ToString());
 
             if (dataGridViewDepenses.CurrentRow.Cells[5].Value.ToString() != "")
@@ -142,14 +144,14 @@ namespace SYNDIC_1._0
             depenseModifier.date_depense = Convert.ToDateTime(dataGridViewDepenses.CurrentRow.Cells[2].Value.ToString());
             depenseModifier.montant = Convert.ToDecimal(dataGridViewDepenses.CurrentRow.Cells[3].Value.ToString());
             depenseModifier.typeDepense = dataGridViewDepenses.CurrentRow.Cells[6].Value.ToString();
-        
+
             if (dataGridViewDepenses.CurrentRow.Cells[7].Value.ToString() != "")
                 depenseModifier.numDocument = Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[7].Value.ToString());
             if (dataGridViewDepenses.CurrentRow.Cells[8].Value.ToString() != "")
                 depenseModifier.typeDocument = dataGridViewDepenses.CurrentRow.Cells[8].Value.ToString();
 
 
-            new FormAjouterModifierDepense( button, depenseModifier).ShowDialog();
+            new FormAjouterModifierDepense(button, depenseModifier).ShowDialog();
             DBHelper.dataSet.Reset();
 
             FormDepenses_Load(sender, e);
@@ -165,11 +167,20 @@ namespace SYNDIC_1._0
 
         private void comboBoxids_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string filter = comboBoxTypeDepense.Text;
+            if (filter == "Touts")
+                filter = "";
+
             if (radioButtonEmploye.Checked)
-                bsDepense.Filter = "id_employe = " + comboBoxids.Text;
+                bsDepense.Filter = string.Format("id_employe = " + comboBoxids.Text + " and typeDepense like '%" + filter + "%'");
 
             else if (radioButtonSociete.Checked)
-                bsDepense.Filter = "id_entreprise = " + comboBoxids.Text;
+                bsDepense.Filter = string.Format("id_entreprise = " + comboBoxids.Text + " and typeDepense like '%" + filter + "%'");
+
+            else if (radioButtonALL.Checked)
+            {
+                bsDepense.Filter = string.Format("typeDepense like '%" + filter + "%'");
+            }
 
 
         }
@@ -178,12 +189,11 @@ namespace SYNDIC_1._0
         {
             if (dataGridViewDepenses.CurrentRow == null)
             {
-                MessageBox.Show("Séléctioner une dépense d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Selectioner une dépense d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
-            {
-                new FormFacture(bsDepenseLigne, Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[0].Value.ToString()), bsProduit).ShowDialog();
-            }
+            new FormFacture(Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[0].Value.ToString())).ShowDialog();
+
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -216,21 +226,15 @@ namespace SYNDIC_1._0
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
             DBHelper.remplir_dataset("select * from depense", "depense");
-            DBHelper.remplir_dataset("select * from intervention", "intervention");
             DBHelper.remplir_dataset("select * from remarqueDepnse", "remarqueDepnse");
             DBHelper.remplir_dataset("select * from documentDepense", "documentDepense");
-            DBHelper.remplir_dataset("select * from ligne", "ligne");
-            DBHelper.remplir_dataset("select * from produit", "produit");
+
 
 
             bsDepense = DBHelper.remplir_bindingsource("depense");
-            bsIntervention = DBHelper.remplir_bindingsource("depense", "id", "intervention", "id_depense", bsDepense);
 
             bsDepenseRemarque = DBHelper.remplir_bindingsource("depense", "id", "remarqueDepnse", "id_depense", bsDepense);
             bsDepenseDocuments = DBHelper.remplir_bindingsource("depense", "id", "documentDepense", "id_depense", bsDepense);
-            bsProduit = DBHelper.remplir_bindingsource("produit");
-            bsDepenseLigne = DBHelper.remplir_bindingsource("depense", "id", "ligne", "id_depense", bsDepense);
-            bsDepenseLigne = DBHelper.remplir_bindingsource("produit", "id", "ligne", "id_produit", bsProduit);
 
             RemplirDataGridViewDepenses();
             dataGridViewDepenses.Rows[0].Selected = true;
@@ -245,10 +249,13 @@ namespace SYNDIC_1._0
             {
                 comboBoxTypeDepense.Items.Add(sqlDataReaderDepense["typeDepense"]);
             }
+            comboBoxTypeDepense.Items.Add("Touts");
             sqlDataReaderDepense.Close();
             sqlCommandDepense = null;
 
             radioButtonALL.Checked = true;
+
+            comboBoxTypeDepense.Text = "Touts";
 
 
         }

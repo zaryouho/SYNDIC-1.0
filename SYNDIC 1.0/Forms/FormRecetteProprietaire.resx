@@ -120,12 +120,12 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonAjouterRecette.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADvSURBVFhH7c4xDsJAFANR7n/pAEKmGKYZUSRFVnpbWNaX
-        H8dxXJKGxeu9vx/sVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTs
-        VRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVRoWHDTsVZ8PR892D6vuYdV32D94dNirNCw4aNir
-        NCw4aNirNCw4aNirNCw4aNirNCw4aNirNCw4aNirNCw4aNirNCw4aNirNCw4aNirNCw4aNirNCw4aNir
-        NCw4aNirNCw4aNirNCw4aNirNLwCDc93PJ4JzQ63zzvojgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAO9JREFUWEftzjEOwkAUA1Huf+kAQqYYphlRJEVWeltY1pcfx3FckobF672/H+xV
+        GhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxV
+        GhYcNOxVGhYcNOxVGhYcNOxVGhYcNOxVnw9Hz3YPq+5h1XfYP3h02Ks0LDho2Ks0LDho2Ks0LDho2Ks0
+        LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0LDho2Ks0
+        LDho2Ks0vAINz3c8ngnNDrfPO+iOAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
