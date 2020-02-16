@@ -42,6 +42,8 @@
             this.textBoxDesignationDepense = new System.Windows.Forms.TextBox();
             this.labelDesignationDepense = new System.Windows.Forms.Label();
             this.dateTimePickerDebutIntervention = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxIdDepense = new System.Windows.Forms.ComboBox();
+            this.labelidDepense = new System.Windows.Forms.Label();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +86,7 @@
             this.panelValid.Controls.Add(this.buttonAnnuler);
             this.panelValid.Controls.Add(this.buttonValider);
             this.panelValid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelValid.Location = new System.Drawing.Point(0, 246);
+            this.panelValid.Location = new System.Drawing.Point(0, 269);
             this.panelValid.Name = "panelValid";
             this.panelValid.Size = new System.Drawing.Size(447, 41);
             this.panelValid.TabIndex = 38;
@@ -100,6 +102,7 @@
             this.buttonAnnuler.TabIndex = 1;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
             // 
             // buttonValider
             // 
@@ -118,7 +121,7 @@
             // 
             this.labelDateFinIntervention.AutoSize = true;
             this.labelDateFinIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateFinIntervention.Location = new System.Drawing.Point(59, 164);
+            this.labelDateFinIntervention.Location = new System.Drawing.Point(61, 162);
             this.labelDateFinIntervention.Name = "labelDateFinIntervention";
             this.labelDateFinIntervention.Size = new System.Drawing.Size(61, 17);
             this.labelDateFinIntervention.TabIndex = 53;
@@ -128,15 +131,16 @@
             // 
             this.dateTimePickerFinIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFinIntervention.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFinIntervention.Location = new System.Drawing.Point(157, 161);
+            this.dateTimePickerFinIntervention.Location = new System.Drawing.Point(157, 157);
             this.dateTimePickerFinIntervention.Name = "dateTimePickerFinIntervention";
             this.dateTimePickerFinIntervention.Size = new System.Drawing.Size(231, 22);
             this.dateTimePickerFinIntervention.TabIndex = 52;
+            this.dateTimePickerFinIntervention.ValueChanged += new System.EventHandler(this.dateTimePickerFinIntervention_ValueChanged);
             // 
             // textBoxMontantIntervention
             // 
             this.textBoxMontantIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMontantIntervention.Location = new System.Drawing.Point(157, 201);
+            this.textBoxMontantIntervention.Location = new System.Drawing.Point(157, 195);
             this.textBoxMontantIntervention.Name = "textBoxMontantIntervention";
             this.textBoxMontantIntervention.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontantIntervention.TabIndex = 51;
@@ -145,7 +149,7 @@
             // 
             this.labelMontant.AutoSize = true;
             this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMontant.Location = new System.Drawing.Point(55, 204);
+            this.labelMontant.Location = new System.Drawing.Point(57, 201);
             this.labelMontant.Name = "labelMontant";
             this.labelMontant.Size = new System.Drawing.Size(65, 17);
             this.labelMontant.TabIndex = 50;
@@ -155,7 +159,7 @@
             // 
             this.labelDateDebutIntervention.AutoSize = true;
             this.labelDateDebutIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebutIntervention.Location = new System.Drawing.Point(37, 124);
+            this.labelDateDebutIntervention.Location = new System.Drawing.Point(39, 123);
             this.labelDateDebutIntervention.Name = "labelDateDebutIntervention";
             this.labelDateDebutIntervention.Size = new System.Drawing.Size(83, 17);
             this.labelDateDebutIntervention.TabIndex = 49;
@@ -173,7 +177,7 @@
             // 
             this.labelDesignationDepense.AutoSize = true;
             this.labelDesignationDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDesignationDepense.Location = new System.Drawing.Point(35, 84);
+            this.labelDesignationDepense.Location = new System.Drawing.Point(37, 84);
             this.labelDesignationDepense.Name = "labelDesignationDepense";
             this.labelDesignationDepense.Size = new System.Drawing.Size(85, 17);
             this.labelDesignationDepense.TabIndex = 46;
@@ -183,17 +187,38 @@
             // 
             this.dateTimePickerDebutIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDebutIntervention.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDebutIntervention.Location = new System.Drawing.Point(157, 121);
+            this.dateTimePickerDebutIntervention.Location = new System.Drawing.Point(157, 119);
             this.dateTimePickerDebutIntervention.Name = "dateTimePickerDebutIntervention";
             this.dateTimePickerDebutIntervention.Size = new System.Drawing.Size(231, 22);
             this.dateTimePickerDebutIntervention.TabIndex = 48;
+            this.dateTimePickerDebutIntervention.ValueChanged += new System.EventHandler(this.dateTimePickerFinIntervention_ValueChanged);
+            // 
+            // comboBoxIdDepense
+            // 
+            this.comboBoxIdDepense.FormattingEnabled = true;
+            this.comboBoxIdDepense.Location = new System.Drawing.Point(155, 233);
+            this.comboBoxIdDepense.Name = "comboBoxIdDepense";
+            this.comboBoxIdDepense.Size = new System.Drawing.Size(233, 21);
+            this.comboBoxIdDepense.TabIndex = 57;
+            // 
+            // labelidDepense
+            // 
+            this.labelidDepense.AutoSize = true;
+            this.labelidDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelidDepense.Location = new System.Drawing.Point(55, 234);
+            this.labelidDepense.Name = "labelidDepense";
+            this.labelidDepense.Size = new System.Drawing.Size(67, 17);
+            this.labelidDepense.TabIndex = 58;
+            this.labelidDepense.Text = "Depense :";
             // 
             // FormAjouterModifierIntervention
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(447, 287);
+            this.ClientSize = new System.Drawing.Size(447, 310);
+            this.Controls.Add(this.labelidDepense);
+            this.Controls.Add(this.comboBoxIdDepense);
             this.Controls.Add(this.labelDateFinIntervention);
             this.Controls.Add(this.dateTimePickerFinIntervention);
             this.Controls.Add(this.textBoxMontantIntervention);
@@ -207,6 +232,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierIntervention";
             this.Text = "FormAjouterModifierIntervention";
+            this.Load += new System.EventHandler(this.FormAjouterModifierIntervention_Load);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.panelValid.ResumeLayout(false);
@@ -231,5 +257,7 @@
         private System.Windows.Forms.TextBox textBoxDesignationDepense;
         private System.Windows.Forms.Label labelDesignationDepense;
         private System.Windows.Forms.DateTimePicker dateTimePickerDebutIntervention;
+        private System.Windows.Forms.ComboBox comboBoxIdDepense;
+        private System.Windows.Forms.Label labelidDepense;
     }
 }

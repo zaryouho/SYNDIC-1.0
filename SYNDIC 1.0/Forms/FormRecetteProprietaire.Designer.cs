@@ -41,12 +41,12 @@
             this.splitContainerRecette = new System.Windows.Forms.SplitContainer();
             this.dataGridViewRecette = new System.Windows.Forms.DataGridView();
             this.panelNavigation = new System.Windows.Forms.Panel();
-            this.buttonAjouterRecette = new System.Windows.Forms.Button();
-            this.buttonSupprimerRecette = new System.Windows.Forms.Button();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
+            this.buttonAjouterRecette = new System.Windows.Forms.Button();
+            this.buttonSupprimerRecette = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRecetteProprietaire)).BeginInit();
             this.splitContainerRecetteProprietaire.Panel1.SuspendLayout();
             this.splitContainerRecetteProprietaire.Panel2.SuspendLayout();
@@ -82,9 +82,7 @@
             // 
             // buttonListDocs
             // 
-            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -95,7 +93,7 @@
             this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListDocs.ForeColor = System.Drawing.Color.White;
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListDocs.Location = new System.Drawing.Point(334, 26);
+            this.buttonListDocs.Location = new System.Drawing.Point(393, 26);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
             this.buttonListDocs.TabIndex = 17;
@@ -105,9 +103,7 @@
             // 
             // buttonImprimerRecette
             // 
-            this.buttonImprimerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonImprimerRecette.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonImprimerRecette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonImprimerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -220,54 +216,6 @@
             this.panelNavigation.Size = new System.Drawing.Size(57, 302);
             this.panelNavigation.TabIndex = 3;
             // 
-            // buttonAjouterRecette
-            // 
-            this.buttonAjouterRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjouterRecette.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAjouterRecette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAjouterRecette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAjouterRecette.FlatAppearance.BorderSize = 0;
-            this.buttonAjouterRecette.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterRecette.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonAjouterRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAjouterRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterRecette.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterRecette.Image = ((System.Drawing.Image)(resources.GetObject("buttonAjouterRecette.Image")));
-            this.buttonAjouterRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
-            this.buttonAjouterRecette.Name = "buttonAjouterRecette";
-            this.buttonAjouterRecette.Size = new System.Drawing.Size(260, 53);
-            this.buttonAjouterRecette.TabIndex = 14;
-            this.buttonAjouterRecette.Text = "Ajouter Recette";
-            this.buttonAjouterRecette.UseVisualStyleBackColor = false;
-            this.buttonAjouterRecette.Click += new System.EventHandler(this.buttonAjouterRecette_Click);
-            // 
-            // buttonSupprimerRecette
-            // 
-            this.buttonSupprimerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSupprimerRecette.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSupprimerRecette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSupprimerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSupprimerRecette.FlatAppearance.BorderSize = 0;
-            this.buttonSupprimerRecette.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonSupprimerRecette.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonSupprimerRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSupprimerRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSupprimerRecette.ForeColor = System.Drawing.Color.White;
-            this.buttonSupprimerRecette.Image = global::SYNDIC_1._0.Properties.Resources.delete;
-            this.buttonSupprimerRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
-            this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
-            this.buttonSupprimerRecette.Size = new System.Drawing.Size(262, 53);
-            this.buttonSupprimerRecette.TabIndex = 16;
-            this.buttonSupprimerRecette.Text = "Supprimer Recette";
-            this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
-            this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
-            // 
             // buttonLast
             // 
             this.buttonLast.BackColor = System.Drawing.Color.Transparent;
@@ -319,6 +267,50 @@
             this.buttonFirst.TabIndex = 18;
             this.buttonFirst.UseVisualStyleBackColor = false;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
+            // buttonAjouterRecette
+            // 
+            this.buttonAjouterRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAjouterRecette.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterRecette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAjouterRecette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAjouterRecette.FlatAppearance.BorderSize = 0;
+            this.buttonAjouterRecette.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonAjouterRecette.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonAjouterRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjouterRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterRecette.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterRecette.Image = ((System.Drawing.Image)(resources.GetObject("buttonAjouterRecette.Image")));
+            this.buttonAjouterRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
+            this.buttonAjouterRecette.Name = "buttonAjouterRecette";
+            this.buttonAjouterRecette.Size = new System.Drawing.Size(260, 53);
+            this.buttonAjouterRecette.TabIndex = 14;
+            this.buttonAjouterRecette.Text = "Ajouter Recette";
+            this.buttonAjouterRecette.UseVisualStyleBackColor = false;
+            this.buttonAjouterRecette.Click += new System.EventHandler(this.buttonAjouterRecette_Click);
+            // 
+            // buttonSupprimerRecette
+            // 
+            this.buttonSupprimerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSupprimerRecette.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSupprimerRecette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSupprimerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSupprimerRecette.FlatAppearance.BorderSize = 0;
+            this.buttonSupprimerRecette.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonSupprimerRecette.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonSupprimerRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSupprimerRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSupprimerRecette.ForeColor = System.Drawing.Color.White;
+            this.buttonSupprimerRecette.Image = global::SYNDIC_1._0.Properties.Resources.delete;
+            this.buttonSupprimerRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
+            this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
+            this.buttonSupprimerRecette.Size = new System.Drawing.Size(262, 53);
+            this.buttonSupprimerRecette.TabIndex = 16;
+            this.buttonSupprimerRecette.Text = "Supprimer Recette";
+            this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
+            this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
             // 
             // FormRecetteProprietaire
             // 

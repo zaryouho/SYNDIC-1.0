@@ -27,43 +27,145 @@ namespace SYNDIC_1._0
         }
 
         BindingSource bsProduit;
+        BindingSource bsCategorie;
+        string button;
+        string[] oldValues = {"","","","" };
 
-        public FormAjouterProduit(BindingSource _bsProduit)
+        public FormAjouterProduit()
         {
             InitializeComponent();
 
-            bsProduit = _bsProduit;
+        }
+
+        private void enabled(bool v)
+        {
+            panelCRUD.Enabled = !v;
+            panelInputs.Enabled = v;
+            panelValid.Enabled = v;
+
+
         }
 
         private void FormAjouterProduit_Load(object sender, EventArgs e)
         {
-            textBoxDesignation.DataBindings.Add("text", bsProduit, "designation");
-            textBoxQteStckProduit.DataBindings.Add("text", bsProduit, "qteStock");
-            textBoxCategorieProduit.DataBindings.Add("text", bsProduit, "categorie");
-            textBoxID.DataBindings.Add("text", bsProduit, "id");
+            DBHelper.ouvrirConnection("SyndicConnectionStringReda");
+            
+            DBHelper.remplir_dataset("select libelleType from Type where idTableType in( select id from TableType where libelle like 'categorie' )", "categorieProduit");
+            bsCategorie = DBHelper.remplir_bindingsource("categorieProduit");
 
-            textBoxCategorieProduit.Clear();
-            textBoxDesignation.Clear();
-            textBoxQteStckProduit.Clear();
+            DBHelper.remplir_ListControl(comboBoxCategorie, bsCategorie, "libelleType", "libelleType");
+
+            DBHelper.remplir_dataset("select * from produit", "produit");
+            bsProduit = DBHelper.remplir_bindingsource("produit");
+
+            DBHelper.remplir_Grille(dataGridViewListProduits, bsProduit);
+
+            enabled(false);
+
+            textBoxDesignation.DataBindings.Add("text", bsProduit, "designation");
+            textBoxQteStockProduit.DataBindings.Add("text", bsProduit, "qteStock");
+            textBoxCategorieProduit.DataBindings.Add("text", bsProduit, "categorie");
+            textBoxIdProduit.DataBindings.Add("text", bsProduit, "id"); 
+
         }
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            bsProduit.EndEdit();
-            DBHelper.syncroniser("produit");
+            DialogResult result = MessageBox.Show("Voulez vous vraiment Enregistrer ces Information ?"
+                 + "\nReference : " + textBoxIdProduit.Text
+                 + "\nDesignation : " + textBoxDesignation.Text
+                 + "\nqteStock : " + textBoxQteStockProduit.Text
+                 + "\nCategorie : " + comboBoxCategorie.Text
+                 , "Ajouter", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            string[] newValues = { textBoxDesignation.Text, textBoxQteStckProduit.Text, textBoxCategorieProduit.Text, textBoxID.Text };
-            Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Produit", newValues);
+            if (result == DialogResult.Yes)
+            {
+                bsProduit.EndEdit();
+                DBHelper.syncroniser("produit");
+
+                if (button == "Ajouter") 
+                {
+                    string[] empty = { "", "", "", "" };
+                    oldValues = empty;
+                
+                }
+
+                string[] newValues = { textBoxDesignation.Text, textBoxIdProduit.Text, textBoxQteStockProduit.Text, textBoxIdProduit.Text };
+                Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Produit", oldValues,newValues);
+                enabled(false);
+            }
+            else if (result == DialogResult.No)
+            {
+                bsProduit.CancelEdit();
+                enabled(false);
+            }
         }
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
             bsProduit.CancelEdit();
+            enabled(false);
         }
 
         private void labelCloseDepense_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormAjouterProduit_Paint(object sender, PaintEventArgs e)
+        {
+            
+            
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+            Color.Black, 2, ButtonBorderStyle.Solid,
+            this.BackColor, 5, ButtonBorderStyle.Solid,
+            this.BackColor, 5, ButtonBorderStyle.Solid,
+            this.BackColor, 5, ButtonBorderStyle.Solid);
+
+        }
+
+        private void textBoxCategorieProduit_TextChanged(object sender, EventArgs e)
+        {
+            if (panelCRUD.Enabled)
+                comboBoxCategorie.Text = textBoxCategorieProduit.Text;
+        }
+
+        private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxCategorieProduit.Text = comboBoxCategorie.SelectedValue.ToString();
+        }
+
+        private void buttonAjouter_Click(object sender, EventArgs e)
+        {
+            enabled(true);
+            bsProduit.AddNew();
+            button = "Ajouter";
+        }
+
+        private void buttonModifier_Click(object sender, EventArgs e)
+        {
+            enabled(true);
+            button = "Modifier";
+            
+            oldValues[0] = textBoxDesignation.Text;
+            oldValues[1] = textBoxIdProduit.Text;
+            oldValues[2] = textBoxQteStockProduit.Text;
+            oldValues[3] = textBoxIdProduit.Text;
+        }
+
+        private void buttonSupprimer_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Voulez vous vraiment supprimer ces Information ?"
+                 + "\nReference : " + textBoxIdProduit.Text
+                 + "\nDesignation : " + textBoxDesignation.Text
+                 + "\nqteStock : " + textBoxQteStockProduit.Text
+                 + "\nCategorie : " + comboBoxCategorie.Text
+                 , "Ajouter", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if(result==DialogResult.Yes)
+            {
+                bsProduit.RemoveCurrent();
+                DBHelper.syncroniser("produit");
+            }
         }
     }
 }

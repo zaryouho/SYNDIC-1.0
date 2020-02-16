@@ -170,7 +170,7 @@ namespace SYNDIC_1._0
         private void buttonUsers_Click(object sender, EventArgs e)
         {
             if (flag != 9 || this.panelContainer.Controls.Count == 0)
-                OpenFormInPannel(new FormEmploye());
+                OpenFormInPannel(new FormUtilisateurs());
 
 
             flag = 9;
@@ -179,7 +179,7 @@ namespace SYNDIC_1._0
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             if (flag != 10 || this.panelContainer.Controls.Count == 0)
-                OpenFormInPannel(new FormEmploye());// to be replaced wit the settings form
+                OpenFormInPannel(new FormSettings());// to be replaced wit the settings form
 
 
             flag = 10;

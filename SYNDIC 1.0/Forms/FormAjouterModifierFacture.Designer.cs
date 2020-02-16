@@ -41,6 +41,7 @@
             this.labelPrix = new System.Windows.Forms.Label();
             this.textBoxQteProduit = new System.Windows.Forms.TextBox();
             this.labelQteProduit = new System.Windows.Forms.Label();
+            this.comboBoxidProduit = new System.Windows.Forms.ComboBox();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +100,7 @@
             this.buttonAnnuler.TabIndex = 1;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
             // 
             // buttonValider
             // 
@@ -116,13 +118,13 @@
             // buttonAjouterProduit
             // 
             this.buttonAjouterProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterProduit.Location = new System.Drawing.Point(352, 84);
+            this.buttonAjouterProduit.Location = new System.Drawing.Point(353, 89);
             this.buttonAjouterProduit.Name = "buttonAjouterProduit";
             this.buttonAjouterProduit.Size = new System.Drawing.Size(51, 23);
             this.buttonAjouterProduit.TabIndex = 63;
             this.buttonAjouterProduit.Text = "...";
             this.buttonAjouterProduit.UseVisualStyleBackColor = true;
-            this.buttonAjouterProduit.Click += new System.EventHandler(this.FormAjouterModifierFacture_Load);
+            this.buttonAjouterProduit.Click += new System.EventHandler(this.buttonAjouterProduit_Click);
             // 
             // comboBoxProduit
             // 
@@ -132,6 +134,8 @@
             this.comboBoxProduit.Name = "comboBoxProduit";
             this.comboBoxProduit.Size = new System.Drawing.Size(231, 25);
             this.comboBoxProduit.TabIndex = 62;
+            this.comboBoxProduit.SelectedIndexChanged += new System.EventHandler(this.comboBoxProduit_SelectedIndexChanged);
+            this.comboBoxProduit.Click += new System.EventHandler(this.comboBoxProduit_SelectedIndexChanged);
             // 
             // labelProduit
             // 
@@ -179,6 +183,15 @@
             this.labelQteProduit.TabIndex = 57;
             this.labelQteProduit.Text = "Quantité  :";
             // 
+            // comboBoxidProduit
+            // 
+            this.comboBoxidProduit.Enabled = false;
+            this.comboBoxidProduit.FormattingEnabled = true;
+            this.comboBoxidProduit.Location = new System.Drawing.Point(115, 87);
+            this.comboBoxidProduit.Name = "comboBoxidProduit";
+            this.comboBoxidProduit.Size = new System.Drawing.Size(15, 21);
+            this.comboBoxidProduit.TabIndex = 65;
+            // 
             // FormAjouterModifierFacture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,10 +207,12 @@
             this.Controls.Add(this.labelQteProduit);
             this.Controls.Add(this.panelValid);
             this.Controls.Add(this.panelHead);
+            this.Controls.Add(this.comboBoxidProduit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierFacture";
             this.Text = "FormAjouterModifierFacture";
             this.Load += new System.EventHandler(this.FormAjouterModifierFacture_Load);
+            this.Click += new System.EventHandler(this.FormAjouterModifierFacture_Load);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.panelValid.ResumeLayout(false);
@@ -221,5 +236,6 @@
         private System.Windows.Forms.Label labelPrix;
         private System.Windows.Forms.TextBox textBoxQteProduit;
         private System.Windows.Forms.Label labelQteProduit;
+        private System.Windows.Forms.ComboBox comboBoxidProduit;
     }
 }
