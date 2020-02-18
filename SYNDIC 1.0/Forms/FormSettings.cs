@@ -26,7 +26,7 @@ namespace SYNDIC_1._0
         /// </summary>
         public void getDataBaseNames()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 if (ConnectionState.Open != connection.State)
@@ -40,24 +40,25 @@ namespace SYNDIC_1._0
                         MessageBox.Show(ex.Message);
                     }
                 }
-                string query = "select * from sys.databases";
-                using (SqlCommand command = new SqlCommand(query,connection))
-                {
-                    try
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                comboBoxDataBaseName.Items.Add(reader[0]);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
+                 string query = "select name from sys.databases";
+                 using (SqlCommand command = new SqlCommand(query,connection))
+                   {
+                       try
+                       {
+                           using (SqlDataReader reader = command.ExecuteReader())
+                           {
+                               while (reader.Read())
+                               {
+                                   comboBoxDataBaseName.Items.Add(reader[0]);
+                               }
+                           }
+                       }
+                       catch (Exception ex)
+                       {
+                           MessageBox.Show(ex.Message);
+                       }
+                   }
+                
 
             }
         }   
@@ -66,7 +67,7 @@ namespace SYNDIC_1._0
         /// </summary>
         public void getServerNames()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 if (connection.State != ConnectionState.Open)
@@ -89,7 +90,7 @@ namespace SYNDIC_1._0
                         {
                             while (reader.Read())
                             {
-                                comboBoxServerName.Items.Add(reader[0]);
+                                comboBoxServerName.Items.Add(reader[1]);
                             }
                         }
                     }
@@ -109,7 +110,7 @@ namespace SYNDIC_1._0
             getServerNames();
             this.Cursor = Cursors.Default;
             
-            while (comboBoxDataBaseName.Items.Count != 0)
+            if (comboBoxDataBaseName.Items.Count != 0)
             {
                 autoBackupDatabaseName = comboBoxDataBaseName.Items[0].ToString();
             }
@@ -133,10 +134,11 @@ namespace SYNDIC_1._0
         }
         private string backupPath()
         {
-            using (FolderBrowserDialog browserDialog = new FolderBrowserDialog())
+            using (SaveFileDialog SaveFileDialog = new SaveFileDialog())
             {
-                DialogResult path = browserDialog.ShowDialog();
-                return browserDialog.SelectedPath;
+                SaveFileDialog.ShowDialog();
+                DialogResult path = SaveFileDialog.ShowDialog();
+                return SaveFileDialog.FileName;
             }
         }
 
@@ -221,15 +223,15 @@ namespace SYNDIC_1._0
                     }
 
             }
-            if (!autoBackup)
-            {
-                if (String.IsNullOrWhiteSpace(comboBoxDataBaseName.Text))
-                {
-                    MessageBox.Show("Plz Select the server name the the database then proceed");
-                    comboBoxServerName.Focus();
-                    return;
-                }
-            }
+            //if (!autoBackup)
+            //{
+            //    if (String.IsNullOrWhiteSpace(comboBoxDataBaseName.Text))
+            //    {
+            //        MessageBox.Show("Plz Select the server name the the database then proceed");
+            //        comboBoxServerName.Focus();
+            //        return;
+            //    }
+            //}
             
             string path = string.Empty;
             if (external)

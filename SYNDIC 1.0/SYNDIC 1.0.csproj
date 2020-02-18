@@ -420,7 +420,9 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Debug\documents\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\1logo.jpg" />
     <Content Include="Resources\2LOGO.jpg" />

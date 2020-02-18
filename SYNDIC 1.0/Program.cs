@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
+using SYNDIC_1._0.Forms;
 namespace SYNDIC_1._0
 {
     static class Program

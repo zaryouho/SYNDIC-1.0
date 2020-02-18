@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Threading;
 using System.Security.Cryptography;
 using SYNDIC_1._0.Helpers;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0.Forms
 {
@@ -87,7 +88,13 @@ namespace SYNDIC_1._0.Forms
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-                Application.Exit();
+            if (MessageBox.Show("Are you sure you want to store sensitive information").Equals(DialogResult.Yes))
+            {
+                Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
+                Properties.Settings.Default.Save();
+            }
+
+            Application.Exit();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -126,17 +133,17 @@ namespace SYNDIC_1._0.Forms
                 {
                     connection.Open();
                 }
-                string query = "select * from utilisateur where login like '% @login %' ";
+                string query = "select * from utilisateur where login like '"+username+"' ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@login", username);
+                   // command.Parameters.AddWithValue("@login", username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (!reader.HasRows)
+                        /*if (!reader.HasRows)
                         {
                             MessageBox.Show("majebrochi");
                             return;
-                        }
+                        }*/
                         while (reader.Read())
                         {
                             userId = reader.GetInt32(0);
@@ -161,8 +168,11 @@ namespace SYNDIC_1._0.Forms
                                 case "Utilisateur":
                                     {
                                         typeUtilisateur = "Utilisateur";
+
+                                        new frmMenuOfficiel().Show();
                                         this.Hide();
                                         // Show the main menu
+
                                         MessageBox.Show("Login was succesful. " + username + " !");
                                         break;
                                     }
