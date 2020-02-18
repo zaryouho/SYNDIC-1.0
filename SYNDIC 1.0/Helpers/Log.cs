@@ -105,6 +105,7 @@ namespace SYNDIC_1._0.Helper
                     command.Parameters.AddWithValue("@anciennes_valeurs", anciennes_valeurs);
                     command.Parameters.AddWithValue("@nouvelles_valeurs", nouvelles_valeurs);
                     
+
                     try
                     {
                         command.ExecuteNonQuery();
