@@ -23,7 +23,7 @@ namespace SYNDIC_1._0.Helper
         public static void makeLog(int userId, DateTime dateTimeAction, string action, string actionTable, string oldValues ,string newValues)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
-            {
+            {   
                 try
                 {
                     if (connection.State != System.Data.ConnectionState.Open)
@@ -35,12 +35,15 @@ namespace SYNDIC_1._0.Helper
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
+                //              dateTimeAction = DateTime.Now;
+                // DateTime date = DateTime.Now;
+                string query = " insert into journal(id_utilisateur,action,table_action,anciennes_valeurs,nouvelles_valeurs) values (@userId,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
 
-                string query = " insert into journal values (@userId ,@dateTimeAction ,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
                 using (SqlCommand command = new SqlCommand(query,connection))
                 {
+                    dateTimeAction = DateTime.Now;
                     command.Parameters.AddWithValue("@userId", userId);
-                    command.Parameters.AddWithValue("@dateAction", dateTimeAction);
+                 //   command.Parameters.AddWithValue("@dateAction", dateTimeAction);
                     command.Parameters.AddWithValue("@action", action);
                     command.Parameters.AddWithValue("@actionTable", actionTable);
                     command.Parameters.AddWithValue("@anciennes_valeurs", oldValues);
@@ -52,7 +55,7 @@ namespace SYNDIC_1._0.Helper
                     }
                     catch (Exception e)
                     {
-                        System.Windows.Forms.MessageBox.Show(e.Message);
+                       System.Windows.Forms.MessageBox.Show(e.Message);
                     }
                 }
             }
@@ -68,10 +71,10 @@ namespace SYNDIC_1._0.Helper
         {
             // To be deleted after testing
 
-            if (oldValues.Length != newValues.Length )
-            {
-                throw new Exception("Doesnt match !!");
-            }
+            //if (oldValues.Length != newValues.Length )
+            //{
+                //throw new Exception("Doesnt match !!");
+            //}
             // To be deleted after testing
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -87,21 +90,22 @@ namespace SYNDIC_1._0.Helper
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
 
-                string query = " insert into journal values (@userId ,@dateTimeAction ,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
+                string query = " insert into journal(id_utilisateur,action,table_action,anciennes_valeurs,nouvelles_valeurs) values (@userId,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
                 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
-                    command.Parameters.AddWithValue("@dateAction", dateTimeAction);
+                  //  command.Parameters.AddWithValue("@dateAction", dateTimeAction);
                     command.Parameters.AddWithValue("@action", action);
                     command.Parameters.AddWithValue("@actionTable", actionTable);
 
-                    string anciennes_valeurs = string.Join("-", oldValues.ToArray());
-                    string nouvelles_valeurs = string.Join("-", newValues.ToArray());
+                    string anciennes_valeurs = string.Join(" - ", oldValues.ToArray());
+                    string nouvelles_valeurs = string.Join(" - ", newValues.ToArray());
                     
                     command.Parameters.AddWithValue("@anciennes_valeurs", anciennes_valeurs);
                     command.Parameters.AddWithValue("@nouvelles_valeurs", nouvelles_valeurs);
                     
+
                     try
                     {
                         command.ExecuteNonQuery();
