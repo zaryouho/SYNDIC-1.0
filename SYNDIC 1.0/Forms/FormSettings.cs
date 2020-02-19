@@ -42,24 +42,22 @@ namespace SYNDIC_1._0
                 }
                  string query = "select name from sys.databases";
                  using (SqlCommand command = new SqlCommand(query,connection))
-                   {
-                       try
-                       {
-                           using (SqlDataReader reader = command.ExecuteReader())
-                           {
-                               while (reader.Read())
-                               {
-                                   comboBoxDataBaseName.Items.Add(reader[0]);
-                               }
-                           }
-                       }
-                       catch (Exception ex)
-                       {
-                           MessageBox.Show(ex.Message);
-                       }
-                   }
-                
-
+                 {
+                    try
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                comboBoxDataBaseName.Items.Add(reader[0]);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                 }
             }
         }   
         /// <summary>
@@ -100,7 +98,6 @@ namespace SYNDIC_1._0
                     }
                 }
             }
-
         }
 
         private void FormSettings_Load(object sender, EventArgs e)
@@ -132,13 +129,26 @@ namespace SYNDIC_1._0
                     break;
             }
         }
+        private string restorePath()
+        {
+            using (OpenFileDialog file = new OpenFileDialog())
+            {
+                file.ShowDialog();
+                file.InitialDirectory = @"c:\ Program Files\Microsoft SQL Server\";
+                file.Filter = "Backup File |*.bak";
+                if (file.DefaultExt != ".bak")
+                {
+                    MessageBox.Show("Error");
+                }
+                return file.FileName;
+            }
+        }
         private string backupPath()
         {
-            using (SaveFileDialog SaveFileDialog = new SaveFileDialog())
+            using (FolderBrowserDialog folder = new FolderBrowserDialog() )
             {
-                SaveFileDialog.ShowDialog();
-                DialogResult path = SaveFileDialog.ShowDialog();
-                return SaveFileDialog.FileName;
+                folder.ShowDialog();
+                return folder.SelectedPath;
             }
         }
 
