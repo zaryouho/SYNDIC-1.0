@@ -171,5 +171,14 @@ namespace SYNDIC_1._0
         {
 
         }
+
+        private void textBoxMontantRecu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxMontant.Text.Contains('.') && e.KeyChar == '.' && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
+                e.Handled = true;
+        }
     }
 }

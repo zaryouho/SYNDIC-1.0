@@ -14,6 +14,7 @@ namespace SYNDIC_1._0
     public partial class FormAjouterModifierDepense : Form
     {
 
+
         protected override CreateParams CreateParams
         {
             get
@@ -28,11 +29,11 @@ namespace SYNDIC_1._0
         private BindingSource bsEmploye;
         private BindingSource bsSociete;
         private BindingSource bstype;
-       // BindingSource bsdepense;
+        // BindingSource bsdepense;
         private string button;
         private depense depenseModifier;
-        
-        public FormAjouterModifierDepense(string _button,depense _depenseModifier=null)
+
+        public FormAjouterModifierDepense(string _button, depense _depenseModifier = null)
         {
 
             InitializeComponent();
@@ -91,7 +92,7 @@ namespace SYNDIC_1._0
                 textBoxMontant.Text = depenseModifier.montant.ToString();
                 if (depenseModifier.numDocument != null)
                     textBoxNumDocument.Text = depenseModifier.numDocument.ToString();
-                if(depenseModifier.typeDocument !=null)
+                if (depenseModifier.typeDocument != null)
                     textBoxTypeDocument.Text = depenseModifier.typeDocument;
 
                 dateTimePickerDepense.Value = depenseModifier.date_depense.Value;
@@ -113,9 +114,9 @@ namespace SYNDIC_1._0
         {
             DialogResult result = MessageBox.Show("Voulez vous vraiment Enregistrez ces Information ?\n" +
                 "Designation : " + textBoxDesignationDepense.Text + "\n" +
-                "Date de Depense : "+ dateTimePickerDepense.Text + "\n" +
-                "Montant : "+ textBoxMontant.Text
-                , "Information",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Information);
+                "Date de Depense : " + dateTimePickerDepense.Text + "\n" +
+                "Montant : " + textBoxMontant.Text
+                , "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
                 string soc, emp;
@@ -154,16 +155,16 @@ namespace SYNDIC_1._0
                     else
                         emp = comboBoxEmploye.SelectedValue.ToString();
 
-                    string sql = "update depense "+
+                    string sql = "update depense " +
                         "set designation = '" + textBoxDesignationDepense.Text.Replace("'", "''") + "' ," +
-                        " date_depense = '"+ dateTimePickerDepense.Text + "' ," +
-                        " montant = " + textBoxMontant.Text.Replace(",",".") + " , " +
+                        " date_depense = '" + dateTimePickerDepense.Text + "' ," +
+                        " montant = " + textBoxMontant.Text.Replace(",", ".") + " , " +
                         " id_employe = " + emp + " ," +
                         " id_entreprise = " + soc + " ," +
                         " typeDepense = '" + comboBoxTypeDepense.Text + "' ," +
                         " numDocument = " + textBoxNumDocument.Text + " ," +
-                        " typeDocument = '" + textBoxTypeDocument.Text.Replace("'","''") + "' " +
-                        " where id = "+depenseModifier.id;
+                        " typeDocument = '" + textBoxTypeDocument.Text.Replace("'", "''") + "' " +
+                        " where id = " + depenseModifier.id;
 
                     SqlCommand com = new SqlCommand(sql, DBHelper.connection);
                     com.ExecuteNonQuery();
@@ -186,13 +187,13 @@ namespace SYNDIC_1._0
 
         private void textBoxDesignationDepense_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && (e.KeyChar !=(char)(Keys.Space)))
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && (e.KeyChar != (char)(Keys.Space)))
                 e.Handled = true;
         }
 
         private void textBoxMontant_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (textBoxMontant.Text.Contains('.') && e.KeyChar == '.')
+            if (textBoxMontant.Text.Contains('.') && e.KeyChar == '.' && (e.KeyChar != (char)(Keys.Back)))
                 e.Handled = true;
 
             if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
@@ -205,12 +206,7 @@ namespace SYNDIC_1._0
                 e.Handled = true;
         }
 
-        private void textBoxMontant_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxDesignationDepense.Text != "" && textBoxMontant.Text != "")
-                buttonValider.Enabled = true;
-            else
-                buttonValider.Enabled = false;
-        }
+      
     }
+
 }

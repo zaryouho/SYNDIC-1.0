@@ -167,5 +167,20 @@ namespace SYNDIC_1._0
             DialogResult result = MessageBox.Show("Voulez vous vraiment sortir sans sauvegarder les Information ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes) this.Close();
         }
+
+        private void textBoxQteProduit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxPrixProduit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxPrixProduit.Text.Contains('.') && e.KeyChar == '.' && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
+                e.Handled = true;
+        }
     }
 }

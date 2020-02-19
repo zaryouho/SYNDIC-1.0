@@ -128,6 +128,7 @@
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontant.TabIndex = 11;
+            this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantRecu_KeyPress);
             // 
             // textBoxMontantRecu
             // 
@@ -136,6 +137,7 @@
             this.textBoxMontantRecu.Name = "textBoxMontantRecu";
             this.textBoxMontantRecu.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontantRecu.TabIndex = 12;
+            this.textBoxMontantRecu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantRecu_KeyPress);
             // 
             // comboBoxTypeEcheance
             // 
@@ -235,6 +237,7 @@
             this.Text = "FormAjouterEcheance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAjouterModifierEcheance_FormClosing);
             this.Load += new System.EventHandler(this.FormAjouterModifierEcheance_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantRecu_KeyPress);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.panelValid.ResumeLayout(false);

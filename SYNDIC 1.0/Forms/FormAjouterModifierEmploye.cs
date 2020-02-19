@@ -201,7 +201,7 @@ namespace SYNDIC_1._0.Forms
             else
             {
 
-                if (Char.IsDigit(e.KeyChar))
+                if (Char.IsDigit(e.KeyChar) )
                 {
                     if (textBoxTele.Text.Length > 12)
                     {

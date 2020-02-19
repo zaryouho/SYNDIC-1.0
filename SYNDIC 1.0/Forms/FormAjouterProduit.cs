@@ -167,5 +167,23 @@ namespace SYNDIC_1._0
                 DBHelper.syncroniser("produit");
             }
         }
+
+        private void textBoxDesignation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar!=' ')
+                e.Handled = true;
+        }
+
+        private void textBoxQteStockProduit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void textBoxIdProduit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+        }
     }
 }

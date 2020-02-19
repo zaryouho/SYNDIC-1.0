@@ -32,23 +32,23 @@
             this.labelCloseDepense = new System.Windows.Forms.Label();
             this.labelNvProduit = new System.Windows.Forms.Label();
             this.panelValid = new System.Windows.Forms.Panel();
+            this.buttonAnnuler = new System.Windows.Forms.Button();
+            this.buttonValider = new System.Windows.Forms.Button();
             this.dataGridViewListProduits = new System.Windows.Forms.DataGridView();
             this.panelInputs = new System.Windows.Forms.Panel();
             this.textBoxIdProduit = new System.Windows.Forms.TextBox();
             this.labelIdProduit = new System.Windows.Forms.Label();
             this.labelProduit = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
             this.labelQteProduit = new System.Windows.Forms.Label();
             this.textBoxDesignation = new System.Windows.Forms.TextBox();
             this.labelPrix = new System.Windows.Forms.Label();
             this.textBoxQteStockProduit = new System.Windows.Forms.TextBox();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.textBoxCategorieProduit = new System.Windows.Forms.TextBox();
             this.panelCRUD = new System.Windows.Forms.Panel();
             this.buttonSupprimer = new System.Windows.Forms.Button();
             this.buttonModifier = new System.Windows.Forms.Button();
             this.buttonAjouter = new System.Windows.Forms.Button();
-            this.buttonAnnuler = new System.Windows.Forms.Button();
-            this.buttonValider = new System.Windows.Forms.Button();
-            this.textBoxCategorieProduit = new System.Windows.Forms.TextBox();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProduits)).BeginInit();
@@ -101,6 +101,32 @@
             this.panelValid.TabIndex = 59;
             this.panelValid.Paint += new System.Windows.Forms.PaintEventHandler(this.FormAjouterProduit_Paint);
             // 
+            // buttonAnnuler
+            // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
+            this.buttonAnnuler.Name = "buttonAnnuler";
+            this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
+            this.buttonAnnuler.TabIndex = 1;
+            this.buttonAnnuler.Text = "Annuler";
+            this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValider.Location = new System.Drawing.Point(38, 3);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(139, 35);
+            this.buttonValider.TabIndex = 0;
+            this.buttonValider.Text = "Valider";
+            this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
+            // 
             // dataGridViewListProduits
             // 
             this.dataGridViewListProduits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -137,6 +163,7 @@
             this.textBoxIdProduit.Name = "textBoxIdProduit";
             this.textBoxIdProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxIdProduit.TabIndex = 67;
+            this.textBoxIdProduit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxIdProduit_KeyPress);
             // 
             // labelIdProduit
             // 
@@ -158,16 +185,6 @@
             this.labelProduit.TabIndex = 70;
             this.labelProduit.Text = "Désignation  :";
             // 
-            // comboBoxCategorie
-            // 
-            this.comboBoxCategorie.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.Location = new System.Drawing.Point(156, 145);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(231, 25);
-            this.comboBoxCategorie.TabIndex = 73;
-            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
-            // 
             // labelQteProduit
             // 
             this.labelQteProduit.AutoSize = true;
@@ -185,6 +202,7 @@
             this.textBoxDesignation.Name = "textBoxDesignation";
             this.textBoxDesignation.Size = new System.Drawing.Size(231, 22);
             this.textBoxDesignation.TabIndex = 71;
+            this.textBoxDesignation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignation_KeyPress);
             // 
             // labelPrix
             // 
@@ -203,6 +221,27 @@
             this.textBoxQteStockProduit.Name = "textBoxQteStockProduit";
             this.textBoxQteStockProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxQteStockProduit.TabIndex = 69;
+            this.textBoxQteStockProduit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQteStockProduit_KeyPress);
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(156, 145);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(231, 25);
+            this.comboBoxCategorie.TabIndex = 73;
+            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
+            // 
+            // textBoxCategorieProduit
+            // 
+            this.textBoxCategorieProduit.Enabled = false;
+            this.textBoxCategorieProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCategorieProduit.Location = new System.Drawing.Point(157, 145);
+            this.textBoxCategorieProduit.Name = "textBoxCategorieProduit";
+            this.textBoxCategorieProduit.Size = new System.Drawing.Size(21, 22);
+            this.textBoxCategorieProduit.TabIndex = 75;
+            this.textBoxCategorieProduit.TextChanged += new System.EventHandler(this.textBoxCategorieProduit_TextChanged);
             // 
             // panelCRUD
             // 
@@ -254,42 +293,6 @@
             this.buttonAjouter.Text = "Ajouter";
             this.buttonAjouter.UseVisualStyleBackColor = true;
             this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
-            // 
-            // buttonAnnuler
-            // 
-            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
-            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
-            this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
-            this.buttonAnnuler.TabIndex = 1;
-            this.buttonAnnuler.Text = "Annuler";
-            this.buttonAnnuler.UseVisualStyleBackColor = true;
-            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
-            // 
-            // buttonValider
-            // 
-            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
-            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValider.Location = new System.Drawing.Point(38, 3);
-            this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
-            this.buttonValider.Text = "Valider";
-            this.buttonValider.UseVisualStyleBackColor = true;
-            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
-            // 
-            // textBoxCategorieProduit
-            // 
-            this.textBoxCategorieProduit.Enabled = false;
-            this.textBoxCategorieProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCategorieProduit.Location = new System.Drawing.Point(157, 145);
-            this.textBoxCategorieProduit.Name = "textBoxCategorieProduit";
-            this.textBoxCategorieProduit.Size = new System.Drawing.Size(21, 22);
-            this.textBoxCategorieProduit.TabIndex = 75;
-            this.textBoxCategorieProduit.TextChanged += new System.EventHandler(this.textBoxCategorieProduit_TextChanged);
             // 
             // FormAjouterProduit
             // 

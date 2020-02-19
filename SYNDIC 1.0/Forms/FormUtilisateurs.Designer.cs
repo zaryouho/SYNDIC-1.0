@@ -142,6 +142,7 @@
             this.textBoxConfirmePassword.Name = "textBoxConfirmePassword";
             this.textBoxConfirmePassword.Size = new System.Drawing.Size(153, 22);
             this.textBoxConfirmePassword.TabIndex = 8;
+            this.textBoxConfirmePassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConfirmePassword_KeyPress);
             // 
             // labelConfirme
             // 
@@ -160,6 +161,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(153, 22);
             this.textBoxPassword.TabIndex = 6;
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConfirmePassword_KeyPress);
             // 
             // label2
             // 
@@ -178,6 +180,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(153, 22);
             this.textBoxLogin.TabIndex = 4;
+            this.textBoxLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConfirmePassword_KeyPress);
             // 
             // labelLogin
             // 
@@ -241,6 +244,7 @@
             this.Name = "FormUtilisateurs";
             this.Text = "FormUtilisateurs";
             this.Load += new System.EventHandler(this.FormUtilisateurs_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConfirmePassword_KeyPress);
             this.panelWrapper.ResumeLayout(false);
             this.splitContainerMain.Panel1.ResumeLayout(false);
             this.splitContainerMain.Panel2.ResumeLayout(false);

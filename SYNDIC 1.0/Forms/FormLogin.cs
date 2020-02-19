@@ -250,5 +250,11 @@ namespace SYNDIC_1._0.Forms
             this.Hide();
          
         }
+
+        private void textBoxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+                e.Handled = true;
+        }
     }
 }

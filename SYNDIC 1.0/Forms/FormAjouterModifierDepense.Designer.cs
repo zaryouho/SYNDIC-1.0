@@ -122,7 +122,7 @@
             this.textBoxNumDocument.Name = "textBoxNumDocument";
             this.textBoxNumDocument.Size = new System.Drawing.Size(231, 22);
             this.textBoxNumDocument.TabIndex = 51;
-            this.textBoxNumDocument.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+           
             this.textBoxNumDocument.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumDocument_KeyPress);
             // 
             // comboBoxEmploye
@@ -202,7 +202,7 @@
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontant.TabIndex = 43;
-            this.textBoxMontant.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+            
             this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // labelMontant
@@ -241,7 +241,7 @@
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
             this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
             this.textBoxDesignationDepense.TabIndex = 39;
-            this.textBoxDesignationDepense.TextChanged += new System.EventHandler(this.textBoxMontant_TextChanged);
+           
             this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
             // 
             // labelDesignationDepense

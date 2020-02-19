@@ -126,7 +126,7 @@ namespace SYNDIC_1._0
         private void buttonDocuments_Click(object sender, EventArgs e)
         {
             if (flag != 4 || this.panelContainer.Controls.Count == 0)
-                OpenFormInPannel(new frmDocuments());
+                OpenFormInPannel(new FormResidence());
 
             flag = 4;
 

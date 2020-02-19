@@ -197,5 +197,11 @@ namespace SYNDIC_1._0.Forms
                 }
             }
         }
+
+        private void textBoxConfirmePassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+                e.Handled = true;
+        }
     }
 }

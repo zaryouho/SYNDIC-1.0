@@ -22,13 +22,17 @@ namespace SYNDIC_1._0.Forms
         {
             var src = from p in syndicDataContext.ProprietaireArchives
                       join v in syndicDataContext.villes on p.id_ville equals v.id
-                      select new { CIN = p.cin, Prénom = p.prenom, Nom = p.nom, Sexe = p.sexe, p.titre, Telephone = p.tele, Email = p.email, CodePostal = p.code_postal, Ville = v.nom, Adresse = p.adresse, Bien = p.bien, Immeuble = p.immeuble, Date_Vente = p.dateVente, p.id };
+                      select new { CIN = p.cin, Prénom = p.prenom, Nom = p.nom, Sexe = p.sexe, p.titre, Telephone = p.tele, Email = p.email, p.code_postal, Ville = v.nom, Adresse = p.adresse, Bien = p.bien, Immeuble = p.immeuble, p.dateVente, p.id };
 
             dataGridViewProprietaires.DataSource = src;
             dataGridViewProprietaires.Columns[13].Visible = false;
+            dataGridViewProprietaires.Columns[7].HeaderText = "Code Postal";
+            dataGridViewProprietaires.Columns[12].HeaderText = "Date Vente";
             dataGridViewProprietaires.AutoResizeColumns();
             dataGridViewProprietaires.AutoResizeRows();
 
+            dataGridViewProprietaires.Columns[7].Width = "Code Postal".Length * 11;
+            dataGridViewProprietaires.Columns[12].Width = "Date Vente".Length * 11;
 
 
         }
@@ -83,12 +87,32 @@ namespace SYNDIC_1._0.Forms
                           || vs.Contains(p.adresse) || vs.Contains(p.sexe) || vs.Contains(p.bien.ToString())
                           || vs.Contains(p.immeuble.ToString()) || vs.Contains(p.code_postal.ToString())
                           || vs.Contains(p.dateVente.ToString())
-                          select new { CIN = p.cin, Prénom = p.prenom, Nom = p.nom, Sexe = p.sexe, p.titre, Telephone = p.tele, Email = p.email, CodePostal = p.code_postal, Ville = v.nom, Adresse = p.adresse, Bien = p.bien, Immeuble = p.immeuble, Date_Vente = p.dateVente, p.id };
+                        
+                          select new {
+                              CIN = p.cin,
+                              Prénom = p.prenom,
+                              Nom = p.nom,
+                              Sexe = p.sexe,
+                              p.titre,
+                              Telephone = p.tele,
+                              Email = p.email,
+                              p.code_postal,
+                              Ville = v.nom,
+                              Adresse = p.adresse,
+                              Bien = p.bien,
+                              Immeuble = p.immeuble,
+                              p.dateVente,
+                              p.id };
 
                 dataGridViewProprietaires.DataSource = src;
                 dataGridViewProprietaires.Columns[13].Visible = false;
+                dataGridViewProprietaires.Columns[7].HeaderText = "Code Postal";
+                dataGridViewProprietaires.Columns[12].HeaderText = "Date Vente";
                 dataGridViewProprietaires.AutoResizeColumns();
                 dataGridViewProprietaires.AutoResizeRows();
+
+                dataGridViewProprietaires.Columns[7].Width = "Code Postal".Length * 11;
+                dataGridViewProprietaires.Columns[12].Width = "Date Vente".Length * 11;
             }
         }
 

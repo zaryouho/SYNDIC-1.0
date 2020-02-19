@@ -144,6 +144,7 @@
             this.textBoxMontantIntervention.Name = "textBoxMontantIntervention";
             this.textBoxMontantIntervention.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontantIntervention.TabIndex = 51;
+            this.textBoxMontantIntervention.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantIntervention_KeyPress);
             // 
             // labelMontant
             // 
@@ -172,6 +173,7 @@
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
             this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
             this.textBoxDesignationDepense.TabIndex = 47;
+            this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
             // 
             // labelDesignationDepense
             // 
