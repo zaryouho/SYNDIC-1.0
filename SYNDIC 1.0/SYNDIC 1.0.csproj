@@ -435,6 +435,7 @@
   <ItemGroup>
     <Content Include="Resources\1logo.jpg" />
     <Content Include="Resources\2LOGO.jpg" />
+    <None Include="Resources\residenceDone1.png" />
     <None Include="Resources\valider.png" />
     <None Include="Resources\modifier.png" />
     <None Include="Resources\up-chevron-2222.png" />
@@ -455,6 +456,7 @@
     <Content Include="Resources\logogoo.jpg" />
     <Content Include="Resources\logogoo1.jpg" />
     <None Include="Resources\logoSyndicBlueFoncé.jpg" />
+    <None Include="Resources\LOGOtest8.png" />
     <Content Include="Resources\minimazar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
