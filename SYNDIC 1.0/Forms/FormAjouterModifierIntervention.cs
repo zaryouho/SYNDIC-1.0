@@ -134,5 +134,20 @@ namespace SYNDIC_1._0
             DialogResult result = MessageBox.Show("Voulez vous vraiment sortir sans sauvegarder les Information ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes) this.Close();
         }
+
+        private void textBoxMontantIntervention_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxMontantIntervention.Text.Contains('.') && e.KeyChar == '.' && (e.KeyChar != (char)(Keys.Back)))
+                e.Handled = true;
+
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        private void textBoxDesignationDepense_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back))&&(e.KeyChar != (char)(Keys.Space)))
+                e.Handled = true;
+        }
     }
 }

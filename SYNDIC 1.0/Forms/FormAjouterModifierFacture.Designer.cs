@@ -154,6 +154,7 @@
             this.textBoxPrixProduit.Name = "textBoxPrixProduit";
             this.textBoxPrixProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxPrixProduit.TabIndex = 60;
+            this.textBoxPrixProduit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrixProduit_KeyPress);
             // 
             // labelPrix
             // 
@@ -172,6 +173,7 @@
             this.textBoxQteProduit.Name = "textBoxQteProduit";
             this.textBoxQteProduit.Size = new System.Drawing.Size(231, 22);
             this.textBoxQteProduit.TabIndex = 58;
+            this.textBoxQteProduit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQteProduit_KeyPress);
             // 
             // labelQteProduit
             // 

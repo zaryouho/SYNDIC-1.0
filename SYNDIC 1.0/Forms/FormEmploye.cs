@@ -24,7 +24,6 @@ namespace SYNDIC_1._0.Forms
         private void FormEmploye_Load(object sender, EventArgs e)
         {
 
-
             var res = from em in syndicDataContext.employes
                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
                       where em.date_depart == null
@@ -38,19 +37,24 @@ namespace SYNDIC_1._0.Forms
                           Code_Postal = em.code_postal,
                           Tele = em.tel,
                           Email = em.email,
-                          Date_Recrutement = em.date_recrutement,
-                          Type_Employe = em.typeEmploye,
+                          em.date_recrutement,
+                          em.typeEmploye,
                           Ville = vil.nom,
-                          
+
                           Disponible = em.actif,
                       };
 
             dataGridViewEmploye.DataSource = res;
             dataGridViewEmploye.Columns[0].Visible = false;
+            dataGridViewEmploye.Columns[7].HeaderText = "Date Recruteement";
+            dataGridViewEmploye.Columns[8].HeaderText = "Type Employe";
+            dataGridViewEmploye.Columns[4].HeaderText = "Code Postal";
             dataGridViewEmploye.AutoResizeColumns();
             dataGridViewEmploye.AutoResizeRows();
 
-
+            dataGridViewEmploye.Columns[8].Width = "Type Employe".Length * 11;
+            dataGridViewEmploye.Columns[7].Width = "Date Recruteement".Length * 11;
+            dataGridViewEmploye.Columns[4].Width = "Code Postal".Length * 11;
         }
 
         private void buttonEmploye_Click(object sender, EventArgs e)
@@ -92,19 +96,30 @@ namespace SYNDIC_1._0.Forms
                            Nom = em.nom,
                            Prénom = em.prenom,
                            Adresse = em.adresse,
-                           Code_Postal = em.code_postal,
+                           em.code_postal,
                            Tele = em.tel,
                            Email = em.email,
-                           Date_Recrutement = em.date_recrutement,
-                           Type_Employe = em.typeEmploye,
+                           em.date_recrutement,
+                           em.typeEmploye,
                            Ville = vil.nom,
-                           Date_depart=em.date_depart,
+                           em.date_depart,
                            Disponible = em.actif,
                        });
 
             buttonModifierEmploye.Enabled = false;
             dataGridViewEmploye.DataSource = res;
             dataGridViewEmploye.Columns[0].Visible = false;
+            dataGridViewEmploye.Columns[7].HeaderText = "Date Recruteement";
+            dataGridViewEmploye.Columns[8].HeaderText = "Type Employe";
+            dataGridViewEmploye.Columns[9].HeaderText = "Date Depart";
+            dataGridViewEmploye.Columns[4].HeaderText = "Code Postal";
+            dataGridViewEmploye.AutoResizeColumns();
+            dataGridViewEmploye.AutoResizeRows();
+
+            dataGridViewEmploye.Columns[8].Width = "Type Employe".Length * 11;
+            dataGridViewEmploye.Columns[7].Width = "Date Recruteement".Length * 11;
+            dataGridViewEmploye.Columns[9].Width = "Date Depart".Length*11 ;
+            dataGridViewEmploye.Columns[4].Width = "Code Postal".Length*11 ;
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)
@@ -217,8 +232,8 @@ namespace SYNDIC_1._0.Forms
                               Code_Postal = em.code_postal,
                               Tele = em.tel,
                               Email = em.email,
-                              Date_Recrutement = em.date_recrutement,
-                              Type_Employe = em.typeEmploye,
+                              em.date_recrutement,
+                              em.typeEmploye,
                               Ville = vil.nom,
 
                               Disponible = em.actif,
@@ -226,10 +241,15 @@ namespace SYNDIC_1._0.Forms
 
                 dataGridViewEmploye.DataSource = src;
                 dataGridViewEmploye.Columns[0].Visible = false;
+                dataGridViewEmploye.Columns[7].HeaderText = "Date Recruteement";
+                dataGridViewEmploye.Columns[8].HeaderText = "Type Employe";
+                dataGridViewEmploye.Columns[4].HeaderText = "Code Postal";
                 dataGridViewEmploye.AutoResizeColumns();
                 dataGridViewEmploye.AutoResizeRows();
 
-
+                dataGridViewEmploye.Columns[8].Width = "Type Employe".Length * 11;
+                dataGridViewEmploye.Columns[7].Width = "Date Recruteement".Length * 11;
+                dataGridViewEmploye.Columns[4].Width = "Code Postal".Length * 11;
             }
         }
 

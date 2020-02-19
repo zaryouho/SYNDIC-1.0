@@ -26,21 +26,27 @@ namespace SYNDIC_1._0.Forms
             var src = from soc in syndicDataContext.societes
                       join v in syndicDataContext.villes on soc.id_ville equals v.id
                       select new {    soc.id,
-                                      soc.nom, 
-                                      soc.prenom, 
-                                      soc.raison_sociale, 
-                                      soc.tel,
-                                      soc.email,
-                                      soc.adresse,
-                                      soc.code_postal,
-                                      ville = v.nom,
-                                      soc.id_ville };
+                                     Nom= soc.nom, 
+                                     Prénom= soc.prenom, 
+                                     soc.raison_sociale, 
+                                     Tele=  soc.tel,
+                                     Email= soc.email,
+                                     Adresse= soc.adresse,
+                                     soc.code_postal,
+                                     ville = v.nom,
+                                     soc.id_ville };
 
             dataGridViewSociete.DataSource = src;
             dataGridViewSociete.Columns[0].Visible = false;
             dataGridViewSociete.Columns[9].Visible = false;
+            dataGridViewSociete.Columns[3].HeaderText = "Raison Sociale";
+            dataGridViewSociete.Columns[7].HeaderText = "Code Postal";
             dataGridViewSociete.AutoResizeColumns();
             dataGridViewSociete.AutoResizeRows();
+
+            dataGridViewSociete.Columns[7].Width = "Code Postal".Length * 11;
+            dataGridViewSociete.Columns[3].Width = "Raison Sociale".Length * 11;
+
         }
 
         private void buttonSociete_Click(object sender, EventArgs e)
@@ -95,24 +101,30 @@ namespace SYNDIC_1._0.Forms
                           where vs.Contains(soc.nom) || vs.Contains(soc.prenom)
                           || vs.Contains(soc.tel) || vs.Contains(soc.email) || vs.Contains(soc.adresse)
                           || vs.Contains(soc.code_postal.ToString()) || vs.Contains(v.nom)
-                          select new {
+                          select new
+                          {
                               soc.id,
-                              soc.nom,
-                              soc.prenom,
+                              Nom = soc.nom,
+                              Prénom = soc.prenom,
                               soc.raison_sociale,
-                              soc.tel,
-                              soc.email,
-                              soc.adresse,
+                              Tele = soc.tel,
+                              Email = soc.email,
+                              Adresse = soc.adresse,
                               soc.code_postal,
                               ville = v.nom,
                               soc.id_ville
                           };
+
                 dataGridViewSociete.DataSource = src;
                 dataGridViewSociete.Columns[0].Visible = false;
                 dataGridViewSociete.Columns[9].Visible = false;
-
+                dataGridViewSociete.Columns[3].HeaderText = "Raison Sociale";
+                dataGridViewSociete.Columns[7].HeaderText = "Code Postal";
                 dataGridViewSociete.AutoResizeColumns();
                 dataGridViewSociete.AutoResizeRows();
+
+                dataGridViewSociete.Columns[7].Width = "Code Postal".Length * 11;
+                dataGridViewSociete.Columns[3].Width = "Raison Sociale".Length * 11;
             }
         }
 

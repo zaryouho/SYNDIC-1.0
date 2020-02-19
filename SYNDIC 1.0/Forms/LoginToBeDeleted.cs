@@ -198,5 +198,11 @@ namespace SYNDIC_1._0.Forms
             }
             connection.Dispose();
         }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+                e.Handled = true;   
+        }
     }
 }

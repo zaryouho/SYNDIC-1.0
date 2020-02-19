@@ -218,7 +218,7 @@
             this.textBoxRaison_Social.Size = new System.Drawing.Size(200, 22);
             this.textBoxRaison_Social.TabIndex = 69;
             this.textBoxRaison_Social.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
-            this.textBoxRaison_Social.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
+            this.textBoxRaison_Social.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRaison_Social_KeyPress);
             // 
             // textBoxcode_Postal
             // 

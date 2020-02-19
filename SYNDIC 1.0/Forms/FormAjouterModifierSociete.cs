@@ -197,5 +197,11 @@ namespace SYNDIC_1._0.Forms
             else
                 buttonValdier.Enabled = false;
         }
+
+        private void textBoxRaison_Social_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)) && (e.KeyChar != (char)(Keys.Space)))
+                e.Handled = true;
+        }
     }
 }

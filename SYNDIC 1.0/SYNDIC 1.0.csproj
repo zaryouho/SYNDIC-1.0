@@ -56,6 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAjouterBlocOrImmeuble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouterBlocOrImmeuble.Designer.cs">
+      <DependentUpon>FormAjouterBlocOrImmeuble.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAjouterModifierDepense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,11 +230,11 @@
     <Compile Include="Forms\frmBiens.Designer.cs">
       <DependentUpon>frmBiens.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDocuments.cs">
+    <Compile Include="Forms\FormResidence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDocuments.Designer.cs">
-      <DependentUpon>frmDocuments.cs</DependentUpon>
+    <Compile Include="Forms\FormResidence.Designer.cs">
+      <DependentUpon>FormResidence.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmFinances.cs">
       <SubType>Form</SubType>
@@ -272,6 +278,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormAjouterBlocOrImmeuble.resx">
+      <DependentUpon>FormAjouterBlocOrImmeuble.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAjouterModifierDepense.resx">
       <DependentUpon>FormAjouterModifierDepense.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,8 +365,8 @@
     <EmbeddedResource Include="Forms\frmBiens.resx">
       <DependentUpon>frmBiens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDocuments.resx">
-      <DependentUpon>frmDocuments.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormResidence.resx">
+      <DependentUpon>FormResidence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFinances.resx">
       <DependentUpon>frmFinances.cs</DependentUpon>
