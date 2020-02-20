@@ -148,6 +148,7 @@
       <Column Name="montant_reçu" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="id_bien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="typeEchea" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="paid" Type="System.Boolean" DbType="bit" CanBeNull="true" />
       <Association Name="echeance_cotisation_echeance" Member="cotisation_echeances" ThisKey="id" OtherKey="id_echeance" Type="cotisation_echeance" />
       <Association Name="bien_echeance" Member="bien" ThisKey="id_bien" OtherKey="id" Type="bien" IsForeignKey="true" />
     </Type>

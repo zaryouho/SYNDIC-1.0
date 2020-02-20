@@ -33,19 +33,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.textBoxResidence = new System.Windows.Forms.TextBox();
             this.buttonAjouterBien = new System.Windows.Forms.Button();
             this.buttonAjouterImmeuble = new System.Windows.Forms.Button();
             this.buttonAjouterBloc = new System.Windows.Forms.Button();
             this.textBoxnbrBien = new System.Windows.Forms.TextBox();
             this.textBoxnbrImmeuble = new System.Windows.Forms.TextBox();
             this.textBoxnbrBloc = new System.Windows.Forms.TextBox();
-            this.listBoxResidence = new System.Windows.Forms.ListBox();
             this.dataGridViewconsultations = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxImmeuble = new System.Windows.Forms.ComboBox();
             this.comboBoxBloc = new System.Windows.Forms.ComboBox();
+            this.printDocumentECbiens = new System.Drawing.Printing.PrintDocument();
+            this.buttonImprimer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -106,13 +108,14 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonImprimer);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxResidence);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAjouterBien);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAjouterImmeuble);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAjouterBloc);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxnbrBien);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxnbrImmeuble);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxnbrBloc);
-            this.splitContainer1.Panel1.Controls.Add(this.listBoxResidence);
             // 
             // splitContainer1.Panel2
             // 
@@ -122,9 +125,20 @@
             this.splitContainer1.SplitterDistance = 273;
             this.splitContainer1.TabIndex = 6;
             // 
+            // textBoxResidence
+            // 
+            this.textBoxResidence.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxResidence.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxResidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxResidence.Location = new System.Drawing.Point(0, 0);
+            this.textBoxResidence.Multiline = true;
+            this.textBoxResidence.Name = "textBoxResidence";
+            this.textBoxResidence.Size = new System.Drawing.Size(273, 130);
+            this.textBoxResidence.TabIndex = 13;
+            // 
             // buttonAjouterBien
             // 
-            this.buttonAjouterBien.Location = new System.Drawing.Point(190, 188);
+            this.buttonAjouterBien.Location = new System.Drawing.Point(235, 187);
             this.buttonAjouterBien.Name = "buttonAjouterBien";
             this.buttonAjouterBien.Size = new System.Drawing.Size(35, 20);
             this.buttonAjouterBien.TabIndex = 12;
@@ -133,16 +147,17 @@
             // 
             // buttonAjouterImmeuble
             // 
-            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(190, 161);
+            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(235, 161);
             this.buttonAjouterImmeuble.Name = "buttonAjouterImmeuble";
             this.buttonAjouterImmeuble.Size = new System.Drawing.Size(35, 20);
             this.buttonAjouterImmeuble.TabIndex = 11;
             this.buttonAjouterImmeuble.Text = "...";
             this.buttonAjouterImmeuble.UseVisualStyleBackColor = true;
+            this.buttonAjouterImmeuble.Click += new System.EventHandler(this.buttonAjouterImmeuble_Click);
             // 
             // buttonAjouterBloc
             // 
-            this.buttonAjouterBloc.Location = new System.Drawing.Point(190, 136);
+            this.buttonAjouterBloc.Location = new System.Drawing.Point(235, 136);
             this.buttonAjouterBloc.Name = "buttonAjouterBloc";
             this.buttonAjouterBloc.Size = new System.Drawing.Size(35, 20);
             this.buttonAjouterBloc.TabIndex = 10;
@@ -155,7 +170,7 @@
             this.textBoxnbrBien.Enabled = false;
             this.textBoxnbrBien.Location = new System.Drawing.Point(3, 188);
             this.textBoxnbrBien.Name = "textBoxnbrBien";
-            this.textBoxnbrBien.Size = new System.Drawing.Size(183, 20);
+            this.textBoxnbrBien.Size = new System.Drawing.Size(226, 20);
             this.textBoxnbrBien.TabIndex = 9;
             // 
             // textBoxnbrImmeuble
@@ -163,7 +178,7 @@
             this.textBoxnbrImmeuble.Enabled = false;
             this.textBoxnbrImmeuble.Location = new System.Drawing.Point(3, 162);
             this.textBoxnbrImmeuble.Name = "textBoxnbrImmeuble";
-            this.textBoxnbrImmeuble.Size = new System.Drawing.Size(183, 20);
+            this.textBoxnbrImmeuble.Size = new System.Drawing.Size(226, 20);
             this.textBoxnbrImmeuble.TabIndex = 8;
             // 
             // textBoxnbrBloc
@@ -171,22 +186,8 @@
             this.textBoxnbrBloc.Enabled = false;
             this.textBoxnbrBloc.Location = new System.Drawing.Point(3, 136);
             this.textBoxnbrBloc.Name = "textBoxnbrBloc";
-            this.textBoxnbrBloc.Size = new System.Drawing.Size(183, 20);
+            this.textBoxnbrBloc.Size = new System.Drawing.Size(226, 20);
             this.textBoxnbrBloc.TabIndex = 7;
-            // 
-            // listBoxResidence
-            // 
-            this.listBoxResidence.BackColor = System.Drawing.Color.White;
-            this.listBoxResidence.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxResidence.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listBoxResidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxResidence.FormattingEnabled = true;
-            this.listBoxResidence.ItemHeight = 20;
-            this.listBoxResidence.Location = new System.Drawing.Point(0, 0);
-            this.listBoxResidence.Name = "listBoxResidence";
-            this.listBoxResidence.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxResidence.Size = new System.Drawing.Size(273, 100);
-            this.listBoxResidence.TabIndex = 0;
             // 
             // dataGridViewconsultations
             // 
@@ -213,7 +214,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(254, 12);
+            this.label2.Location = new System.Drawing.Point(230, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 17);
             this.label2.TabIndex = 4;
@@ -223,7 +224,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Location = new System.Drawing.Point(8, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 3;
@@ -231,8 +232,9 @@
             // 
             // comboBoxImmeuble
             // 
+            this.comboBoxImmeuble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxImmeuble.FormattingEnabled = true;
-            this.comboBoxImmeuble.Location = new System.Drawing.Point(336, 11);
+            this.comboBoxImmeuble.Location = new System.Drawing.Point(321, 12);
             this.comboBoxImmeuble.Name = "comboBoxImmeuble";
             this.comboBoxImmeuble.Size = new System.Drawing.Size(167, 21);
             this.comboBoxImmeuble.TabIndex = 2;
@@ -240,12 +242,27 @@
             // 
             // comboBoxBloc
             // 
+            this.comboBoxBloc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBloc.FormattingEnabled = true;
-            this.comboBoxBloc.Location = new System.Drawing.Point(66, 11);
+            this.comboBoxBloc.Location = new System.Drawing.Point(57, 12);
             this.comboBoxBloc.Name = "comboBoxBloc";
             this.comboBoxBloc.Size = new System.Drawing.Size(167, 21);
             this.comboBoxBloc.TabIndex = 1;
             this.comboBoxBloc.SelectedIndexChanged += new System.EventHandler(this.comboBoxBloc_SelectedIndexChanged);
+            // 
+            // printDocumentECbiens
+            // 
+            this.printDocumentECbiens.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentECbiens_PrintPage);
+            // 
+            // buttonImprimer
+            // 
+            this.buttonImprimer.Location = new System.Drawing.Point(73, 357);
+            this.buttonImprimer.Name = "buttonImprimer";
+            this.buttonImprimer.Size = new System.Drawing.Size(120, 29);
+            this.buttonImprimer.TabIndex = 14;
+            this.buttonImprimer.Text = "Imprimer";
+            this.buttonImprimer.UseVisualStyleBackColor = true;
+            this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
             // 
             // FormResidence
             // 
@@ -287,12 +304,14 @@
         private System.Windows.Forms.TextBox textBoxnbrBien;
         private System.Windows.Forms.TextBox textBoxnbrImmeuble;
         private System.Windows.Forms.TextBox textBoxnbrBloc;
-        private System.Windows.Forms.ListBox listBoxResidence;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxImmeuble;
         private System.Windows.Forms.ComboBox comboBoxBloc;
         private System.Windows.Forms.DataGridView dataGridViewconsultations;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBoxResidence;
+        private System.Windows.Forms.Button buttonImprimer;
+        private System.Drawing.Printing.PrintDocument printDocumentECbiens;
     }
 }
