@@ -39,9 +39,7 @@
             this.labelSuperficie = new System.Windows.Forms.Label();
             this.textBoxCharge = new System.Windows.Forms.TextBox();
             this.labelCharge = new System.Windows.Forms.Label();
-            this.textBoxTypeBien = new System.Windows.Forms.TextBox();
             this.labelType = new System.Windows.Forms.Label();
-            this.textBoxIdImmeuble = new System.Windows.Forms.TextBox();
             this.labelImmeuble = new System.Windows.Forms.Label();
             this.labelProprietaire = new System.Windows.Forms.Label();
             this.textBoxTitre = new System.Windows.Forms.TextBox();
@@ -55,6 +53,12 @@
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.textBoxIdProprietaire = new System.Windows.Forms.TextBox();
             this.textBoxIdBien = new System.Windows.Forms.TextBox();
+            this.buttonAjouterImmeuble = new System.Windows.Forms.Button();
+            this.textBoxIdImmeuble = new System.Windows.Forms.TextBox();
+            this.comboBoxListeImmeuble = new System.Windows.Forms.ComboBox();
+            this.comboBoxTypeBien = new System.Windows.Forms.ComboBox();
+            this.buttonAddNewTypeBien = new System.Windows.Forms.Button();
+            this.textBoxTypeBien = new System.Windows.Forms.TextBox();
             this.panelHead.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -168,15 +172,6 @@
             this.labelCharge.TabIndex = 10;
             this.labelCharge.Text = "Charge de Bien :";
             // 
-            // textBoxTypeBien
-            // 
-            this.textBoxTypeBien.Enabled = false;
-            this.textBoxTypeBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTypeBien.Location = new System.Drawing.Point(181, 246);
-            this.textBoxTypeBien.Name = "textBoxTypeBien";
-            this.textBoxTypeBien.Size = new System.Drawing.Size(218, 22);
-            this.textBoxTypeBien.TabIndex = 13;
-            // 
             // labelType
             // 
             this.labelType.AutoSize = true;
@@ -186,15 +181,6 @@
             this.labelType.Size = new System.Drawing.Size(88, 17);
             this.labelType.TabIndex = 12;
             this.labelType.Text = "Type de Bien :";
-            // 
-            // textBoxIdImmeuble
-            // 
-            this.textBoxIdImmeuble.Enabled = false;
-            this.textBoxIdImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIdImmeuble.Location = new System.Drawing.Point(181, 278);
-            this.textBoxIdImmeuble.Name = "textBoxIdImmeuble";
-            this.textBoxIdImmeuble.Size = new System.Drawing.Size(218, 22);
-            this.textBoxIdImmeuble.TabIndex = 15;
             // 
             // labelImmeuble
             // 
@@ -248,7 +234,7 @@
             // buttonAddNewProprietaire
             // 
             this.buttonAddNewProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddNewProprietaire.Location = new System.Drawing.Point(374, 310);
+            this.buttonAddNewProprietaire.Location = new System.Drawing.Point(374, 309);
             this.buttonAddNewProprietaire.Name = "buttonAddNewProprietaire";
             this.buttonAddNewProprietaire.Size = new System.Drawing.Size(25, 25);
             this.buttonAddNewProprietaire.TabIndex = 21;
@@ -269,7 +255,7 @@
             this.comboBoxProprietaire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProprietaire.FormattingEnabled = true;
-            this.comboBoxProprietaire.Location = new System.Drawing.Point(181, 310);
+            this.comboBoxProprietaire.Location = new System.Drawing.Point(181, 311);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
             this.comboBoxProprietaire.Size = new System.Drawing.Size(187, 25);
             this.comboBoxProprietaire.TabIndex = 23;
@@ -312,18 +298,78 @@
             // textBoxIdProprietaire
             // 
             this.textBoxIdProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIdProprietaire.Location = new System.Drawing.Point(254, 310);
+            this.textBoxIdProprietaire.Location = new System.Drawing.Point(129, 424);
             this.textBoxIdProprietaire.Name = "textBoxIdProprietaire";
             this.textBoxIdProprietaire.Size = new System.Drawing.Size(75, 22);
             this.textBoxIdProprietaire.TabIndex = 25;
             // 
             // textBoxIdBien
             // 
+            this.textBoxIdBien.Enabled = false;
             this.textBoxIdBien.Location = new System.Drawing.Point(289, 427);
             this.textBoxIdBien.Name = "textBoxIdBien";
             this.textBoxIdBien.Size = new System.Drawing.Size(73, 20);
             this.textBoxIdBien.TabIndex = 26;
-            this.textBoxIdBien.Visible = false;
+            // 
+            // buttonAjouterImmeuble
+            // 
+            this.buttonAjouterImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(374, 277);
+            this.buttonAjouterImmeuble.Name = "buttonAjouterImmeuble";
+            this.buttonAjouterImmeuble.Size = new System.Drawing.Size(25, 25);
+            this.buttonAjouterImmeuble.TabIndex = 27;
+            this.buttonAjouterImmeuble.Text = "...";
+            this.buttonAjouterImmeuble.UseVisualStyleBackColor = true;
+            this.buttonAjouterImmeuble.Click += new System.EventHandler(this.buttonAjouterImmeuble_Click);
+            // 
+            // textBoxIdImmeuble
+            // 
+            this.textBoxIdImmeuble.Enabled = false;
+            this.textBoxIdImmeuble.Location = new System.Drawing.Point(210, 427);
+            this.textBoxIdImmeuble.Name = "textBoxIdImmeuble";
+            this.textBoxIdImmeuble.Size = new System.Drawing.Size(73, 20);
+            this.textBoxIdImmeuble.TabIndex = 28;
+            // 
+            // comboBoxListeImmeuble
+            // 
+            this.comboBoxListeImmeuble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxListeImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxListeImmeuble.FormattingEnabled = true;
+            this.comboBoxListeImmeuble.Location = new System.Drawing.Point(181, 278);
+            this.comboBoxListeImmeuble.Name = "comboBoxListeImmeuble";
+            this.comboBoxListeImmeuble.Size = new System.Drawing.Size(187, 25);
+            this.comboBoxListeImmeuble.TabIndex = 29;
+            this.comboBoxListeImmeuble.SelectedIndexChanged += new System.EventHandler(this.comboBoxListeImmeuble_SelectedIndexChanged);
+            // 
+            // comboBoxTypeBien
+            // 
+            this.comboBoxTypeBien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTypeBien.FormattingEnabled = true;
+            this.comboBoxTypeBien.Location = new System.Drawing.Point(181, 245);
+            this.comboBoxTypeBien.Name = "comboBoxTypeBien";
+            this.comboBoxTypeBien.Size = new System.Drawing.Size(187, 25);
+            this.comboBoxTypeBien.TabIndex = 30;
+            this.comboBoxTypeBien.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeBien_SelectedIndexChanged);
+            // 
+            // buttonAddNewTypeBien
+            // 
+            this.buttonAddNewTypeBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddNewTypeBien.Location = new System.Drawing.Point(374, 245);
+            this.buttonAddNewTypeBien.Name = "buttonAddNewTypeBien";
+            this.buttonAddNewTypeBien.Size = new System.Drawing.Size(25, 25);
+            this.buttonAddNewTypeBien.TabIndex = 31;
+            this.buttonAddNewTypeBien.Text = "...";
+            this.buttonAddNewTypeBien.UseVisualStyleBackColor = true;
+            this.buttonAddNewTypeBien.Click += new System.EventHandler(this.buttonAddNewTypeBien_Click);
+            // 
+            // textBoxTypeBien
+            // 
+            this.textBoxTypeBien.Enabled = false;
+            this.textBoxTypeBien.Location = new System.Drawing.Point(44, 424);
+            this.textBoxTypeBien.Name = "textBoxTypeBien";
+            this.textBoxTypeBien.Size = new System.Drawing.Size(73, 20);
+            this.textBoxTypeBien.TabIndex = 32;
             // 
             // FormModifierBien
             // 
@@ -331,6 +377,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(447, 450);
+            this.Controls.Add(this.buttonAddNewTypeBien);
+            this.Controls.Add(this.comboBoxTypeBien);
+            this.Controls.Add(this.comboBoxListeImmeuble);
+            this.Controls.Add(this.textBoxIdImmeuble);
+            this.Controls.Add(this.buttonAjouterImmeuble);
             this.Controls.Add(this.textBoxIdBien);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBoxProprietaire);
@@ -340,9 +391,7 @@
             this.Controls.Add(this.textBoxTitre);
             this.Controls.Add(this.labelid);
             this.Controls.Add(this.labelProprietaire);
-            this.Controls.Add(this.textBoxIdImmeuble);
             this.Controls.Add(this.labelImmeuble);
-            this.Controls.Add(this.textBoxTypeBien);
             this.Controls.Add(this.labelType);
             this.Controls.Add(this.textBoxCharge);
             this.Controls.Add(this.labelCharge);
@@ -354,6 +403,7 @@
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.panelHead);
             this.Controls.Add(this.textBoxIdProprietaire);
+            this.Controls.Add(this.textBoxTypeBien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormModifierBien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -380,9 +430,7 @@
         private System.Windows.Forms.Label labelSuperficie;
         private System.Windows.Forms.TextBox textBoxCharge;
         private System.Windows.Forms.Label labelCharge;
-        private System.Windows.Forms.TextBox textBoxTypeBien;
         private System.Windows.Forms.Label labelType;
-        private System.Windows.Forms.TextBox textBoxIdImmeuble;
         private System.Windows.Forms.Label labelImmeuble;
         private System.Windows.Forms.Label labelProprietaire;
         private System.Windows.Forms.TextBox textBoxTitre;
@@ -396,5 +444,11 @@
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.TextBox textBoxIdProprietaire;
         private System.Windows.Forms.TextBox textBoxIdBien;
+        private System.Windows.Forms.Button buttonAjouterImmeuble;
+        private System.Windows.Forms.TextBox textBoxIdImmeuble;
+        private System.Windows.Forms.ComboBox comboBoxListeImmeuble;
+        private System.Windows.Forms.ComboBox comboBoxTypeBien;
+        private System.Windows.Forms.Button buttonAddNewTypeBien;
+        private System.Windows.Forms.TextBox textBoxTypeBien;
     }
 }
