@@ -239,17 +239,19 @@ namespace SYNDIC_1._0
 
                 DBHelper.syncroniser("proprietairePourComboBox");
                 DBHelper.dataSet.Tables.Remove("proprietairePourComboBox");
-                bsType.DataSource = null;
-                comboBoxTypeBien.DataSource = null;
+                bsProprietaire.DataSource = null;
+                comboBoxProprietaire.DataSource = null;
                 
                 DBHelper.remplir_dataset("select nom+' '+prenom as nomComplet,id from Proprietaire", "proprietairePourComboBox");
                 bsProprietaire = DBHelper.remplir_bindingsource("proprietairePourComboBox");
+                DBHelper.remplir_ListControl(comboBoxProprietaire, bsProprietaire, "nomComplet", "id");
             }
         }
 
         private void comboBoxProprietaire_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxIdProprietaire.Text = comboBoxProprietaire.SelectedValue.ToString();
+            if(comboBoxProprietaire.SelectedValue!=null)
+                textBoxIdProprietaire.Text = comboBoxProprietaire.SelectedValue.ToString();
         }
 
         private void buttonAjouterImmeuble_Click(object sender, EventArgs e)

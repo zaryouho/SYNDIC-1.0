@@ -302,6 +302,7 @@
             this.textBoxIdProprietaire.Name = "textBoxIdProprietaire";
             this.textBoxIdProprietaire.Size = new System.Drawing.Size(75, 22);
             this.textBoxIdProprietaire.TabIndex = 25;
+            this.textBoxIdProprietaire.Visible = false;
             // 
             // textBoxIdBien
             // 
@@ -310,6 +311,7 @@
             this.textBoxIdBien.Name = "textBoxIdBien";
             this.textBoxIdBien.Size = new System.Drawing.Size(73, 20);
             this.textBoxIdBien.TabIndex = 26;
+            this.textBoxIdBien.Visible = false;
             // 
             // buttonAjouterImmeuble
             // 
@@ -329,6 +331,7 @@
             this.textBoxIdImmeuble.Name = "textBoxIdImmeuble";
             this.textBoxIdImmeuble.Size = new System.Drawing.Size(73, 20);
             this.textBoxIdImmeuble.TabIndex = 28;
+            this.textBoxIdImmeuble.Visible = false;
             // 
             // comboBoxListeImmeuble
             // 
@@ -370,6 +373,7 @@
             this.textBoxTypeBien.Name = "textBoxTypeBien";
             this.textBoxTypeBien.Size = new System.Drawing.Size(73, 20);
             this.textBoxTypeBien.TabIndex = 32;
+            this.textBoxTypeBien.Visible = false;
             // 
             // FormModifierBien
             // 

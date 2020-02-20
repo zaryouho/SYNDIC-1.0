@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerListeBien = new System.Windows.Forms.SplitContainer();
             this.comboBoxBloc = new System.Windows.Forms.ComboBox();
             this.textBoxRechercher = new System.Windows.Forms.TextBox();
@@ -46,9 +46,9 @@
             this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridViewBien = new System.Windows.Forms.DataGridView();
             this.panelFooter = new System.Windows.Forms.Panel();
+            this.buttonAjouterBien = new System.Windows.Forms.Button();
             this.buttonListDocs = new System.Windows.Forms.Button();
             this.buttonModifierBien = new System.Windows.Forms.Button();
-            this.buttonAjouterBien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeBien)).BeginInit();
             this.splitContainerListeBien.Panel1.SuspendLayout();
             this.splitContainerListeBien.Panel2.SuspendLayout();
@@ -239,29 +239,29 @@
             // dataGridViewBien
             // 
             this.dataGridViewBien.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewBien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewBien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewBien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewBien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBien.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewBien.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewBien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBien.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewBien.Location = new System.Drawing.Point(0, 0);
@@ -283,6 +283,28 @@
             this.panelFooter.Size = new System.Drawing.Size(800, 83);
             this.panelFooter.TabIndex = 0;
             // 
+            // buttonAjouterBien
+            // 
+            this.buttonAjouterBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAjouterBien.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterBien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAjouterBien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAjouterBien.FlatAppearance.BorderSize = 0;
+            this.buttonAjouterBien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonAjouterBien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonAjouterBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjouterBien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterBien.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterBien.Image = global::SYNDIC_1._0.Properties.Resources.icons8_Plus_32;
+            this.buttonAjouterBien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterBien.Location = new System.Drawing.Point(376, 14);
+            this.buttonAjouterBien.Name = "buttonAjouterBien";
+            this.buttonAjouterBien.Size = new System.Drawing.Size(194, 53);
+            this.buttonAjouterBien.TabIndex = 19;
+            this.buttonAjouterBien.Text = "Ajouter le bien";
+            this.buttonAjouterBien.UseVisualStyleBackColor = false;
+            this.buttonAjouterBien.Click += new System.EventHandler(this.buttonAjouterBien_Click);
+            // 
             // buttonListDocs
             // 
             this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -299,7 +321,7 @@
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonListDocs.Location = new System.Drawing.Point(17, 14);
             this.buttonListDocs.Name = "buttonListDocs";
-            this.buttonListDocs.Size = new System.Drawing.Size(240, 53);
+            this.buttonListDocs.Size = new System.Drawing.Size(224, 53);
             this.buttonListDocs.TabIndex = 18;
             this.buttonListDocs.Text = "Listes Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
@@ -319,35 +341,13 @@
             this.buttonModifierBien.ForeColor = System.Drawing.Color.White;
             this.buttonModifierBien.Image = global::SYNDIC_1._0.Properties.Resources.modifier;
             this.buttonModifierBien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModifierBien.Location = new System.Drawing.Point(544, 14);
+            this.buttonModifierBien.Location = new System.Drawing.Point(578, 14);
             this.buttonModifierBien.Name = "buttonModifierBien";
-            this.buttonModifierBien.Size = new System.Drawing.Size(242, 53);
+            this.buttonModifierBien.Size = new System.Drawing.Size(208, 53);
             this.buttonModifierBien.TabIndex = 9;
             this.buttonModifierBien.Text = "Modifier le bien";
             this.buttonModifierBien.UseVisualStyleBackColor = false;
             this.buttonModifierBien.Click += new System.EventHandler(this.buttonModifierBien_Click);
-            // 
-            // buttonAjouterBien
-            // 
-            this.buttonAjouterBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjouterBien.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAjouterBien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAjouterBien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAjouterBien.FlatAppearance.BorderSize = 0;
-            this.buttonAjouterBien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterBien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonAjouterBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAjouterBien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterBien.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterBien.Image = global::SYNDIC_1._0.Properties.Resources.icons8_Plus_32;
-            this.buttonAjouterBien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterBien.Location = new System.Drawing.Point(296, 14);
-            this.buttonAjouterBien.Name = "buttonAjouterBien";
-            this.buttonAjouterBien.Size = new System.Drawing.Size(242, 53);
-            this.buttonAjouterBien.TabIndex = 19;
-            this.buttonAjouterBien.Text = "Ajouter le bien";
-            this.buttonAjouterBien.UseVisualStyleBackColor = false;
-            this.buttonAjouterBien.Click += new System.EventHandler(this.buttonAjouterBien_Click);
             // 
             // FormListeBien
             // 
