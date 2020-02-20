@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -115,7 +116,7 @@ namespace SYNDIC_1._0
         private void buttonModifierBien_Click(object sender, EventArgs e)
         {
             if (dataGridViewBien.Rows.Count > 0)
-                new FormModifierBien(Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[7].Value.ToString()), Convert.ToDateTime(dataGridViewBien.CurrentRow.Cells[9].Value.ToString()), bsBien).ShowDialog();
+                new FormModifierBien("Modifier", Convert.ToDateTime(dataGridViewBien.CurrentRow.Cells[9].Value.ToString()), bsBien, Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[7].Value.ToString()),dataGridViewBien.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[6].Value.ToString())).ShowDialog();
 
         }
 
@@ -140,6 +141,13 @@ namespace SYNDIC_1._0
             int current_Id = Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[0].Value.ToString());
             new FormGestionDocument("documentBien", "where id_bien = " + current_Id.ToString(), current_Id).ShowDialog();
 
+        }
+
+        private void buttonAjouterBien_Click(object sender, EventArgs e)
+        {
+            new FormModifierBien("Ajouter", Convert.ToDateTime("01/01/1900"), bsBien).ShowDialog();
+            DBHelper.dataSet.Reset();
+            FormListeBien_Load(sender, e);
         }
     }
 }

@@ -48,6 +48,7 @@
             this.panelFooter = new System.Windows.Forms.Panel();
             this.buttonListDocs = new System.Windows.Forms.Button();
             this.buttonModifierBien = new System.Windows.Forms.Button();
+            this.buttonAjouterBien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListeBien)).BeginInit();
             this.splitContainerListeBien.Panel1.SuspendLayout();
             this.splitContainerListeBien.Panel2.SuspendLayout();
@@ -273,6 +274,7 @@
             // 
             // panelFooter
             // 
+            this.panelFooter.Controls.Add(this.buttonAjouterBien);
             this.panelFooter.Controls.Add(this.buttonListDocs);
             this.panelFooter.Controls.Add(this.buttonModifierBien);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -297,7 +299,7 @@
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonListDocs.Location = new System.Drawing.Point(17, 14);
             this.buttonListDocs.Name = "buttonListDocs";
-            this.buttonListDocs.Size = new System.Drawing.Size(283, 53);
+            this.buttonListDocs.Size = new System.Drawing.Size(240, 53);
             this.buttonListDocs.TabIndex = 18;
             this.buttonListDocs.Text = "Listes Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
@@ -324,6 +326,28 @@
             this.buttonModifierBien.Text = "Modifier le bien";
             this.buttonModifierBien.UseVisualStyleBackColor = false;
             this.buttonModifierBien.Click += new System.EventHandler(this.buttonModifierBien_Click);
+            // 
+            // buttonAjouterBien
+            // 
+            this.buttonAjouterBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAjouterBien.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterBien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAjouterBien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAjouterBien.FlatAppearance.BorderSize = 0;
+            this.buttonAjouterBien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.buttonAjouterBien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonAjouterBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjouterBien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterBien.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterBien.Image = global::SYNDIC_1._0.Properties.Resources.icons8_Plus_32;
+            this.buttonAjouterBien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterBien.Location = new System.Drawing.Point(296, 14);
+            this.buttonAjouterBien.Name = "buttonAjouterBien";
+            this.buttonAjouterBien.Size = new System.Drawing.Size(242, 53);
+            this.buttonAjouterBien.TabIndex = 19;
+            this.buttonAjouterBien.Text = "Ajouter le bien";
+            this.buttonAjouterBien.UseVisualStyleBackColor = false;
+            this.buttonAjouterBien.Click += new System.EventHandler(this.buttonAjouterBien_Click);
             // 
             // FormListeBien
             // 
@@ -369,5 +393,6 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonFirst;
         private System.Windows.Forms.Button buttonListDocs;
+        private System.Windows.Forms.Button buttonAjouterBien;
     }
 }

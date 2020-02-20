@@ -91,14 +91,14 @@ namespace SYNDIC_1._0.Helper
                 }
 
                 string query = " insert into journal(id_utilisateur,action,table_action,anciennes_valeurs,nouvelles_valeurs) values (@userId,@action ,@actionTable,@anciennes_valeurs ,@nouvelles_valeurs )";
-                
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
-                  //  command.Parameters.AddWithValue("@dateAction", dateTimeAction);
+                    //  command.Parameters.AddWithValue("@dateAction", dateTimeAction);
                     command.Parameters.AddWithValue("@action", action);
                     command.Parameters.AddWithValue("@actionTable", actionTable);
-
+                  
                     string anciennes_valeurs = string.Join(" - ", oldValues.ToArray());
                     string nouvelles_valeurs = string.Join(" - ", newValues.ToArray());
                     
