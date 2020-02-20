@@ -160,19 +160,16 @@ namespace SYNDIC_1._0.Forms
                                 case "Admin":
                                     {
                                         typeUtilisateur = "Admin";
+                                        new frmMenuOfficiel().Show();
                                         this.Hide();
-                                        // Show the main menu
                                         MessageBox.Show("Login was succesful. " + username + " !");
                                         break;
                                     }
                                 case "Utilisateur":
                                     {
                                         typeUtilisateur = "Utilisateur";
-
                                         new frmMenuOfficiel().Show();
                                         this.Hide();
-                                        // Show the main menu
-
                                         MessageBox.Show("Login was succesful. " + username + " !");
                                         break;
                                     }
@@ -185,21 +182,6 @@ namespace SYNDIC_1._0.Forms
                     }
                 }
             }    
-            
-        }
-
-        private void FormLogin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (textBoxUsername.hasText() && textBoxPassword.hasText())
-            {
-                if (textBoxPassword.Focused || textBoxUsername.Focused)
-                {
-                    if (e.KeyChar == 13)
-                    {
-                        buttonLogin.PerformClick();
-                    }
-                }
-            }
         }
 
         private void checkBoxShowHidePassword_CheckedChanged(object sender, EventArgs e)
@@ -233,15 +215,6 @@ namespace SYNDIC_1._0.Forms
                 textBoxUsername.Text = Properties.Settings.Default.TextBoxLogin;
                 textBoxPassword.Text = Properties.Settings.Default.TextBoxPass;
                 checkBoxRememberMe.Checked = Properties.Settings.Default.CheckBox;
-            }
-        }
-
-        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if(MessageBox.Show("Are you sure you want to store sensitive information").Equals(DialogResult.Yes))
-            {
-                Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
-                Properties.Settings.Default.Save();
             }
         }
 
