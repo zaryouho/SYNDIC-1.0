@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYNDIC_1._0.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,10 +33,10 @@ namespace SYNDIC_1._0
                        on r.id_ville equals v.id
                        select new { r.nom, r.adresse, r.codepostale, Ville = v.nom }).First();
 
-            listBoxResidence.Items.Add("Residence: " + src.nom);
-            listBoxResidence.Items.Add("Adresse: " + src.adresse);
-            listBoxResidence.Items.Add("Ville: " + src.Ville);
-            listBoxResidence.Items.Add("Code Postal: " + src.codepostale);
+            textBoxResidence.Text+= "Residence: " + src.nom+"\r\n";
+            textBoxResidence.Text += "Adresse: " + src.adresse +"\r\n";
+            textBoxResidence.Text += "Ville: " + src.Ville +"\r\n";
+            textBoxResidence.Text += "Code Postal: " + src.codepostale;
 
 
             var src1 = from b in dc.blocs
@@ -82,7 +83,8 @@ namespace SYNDIC_1._0
 
         private void comboBoxBloc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+   
             var src = from b in dc.blocs
                       join i in dc.immeubles on b.id equals i.id_bloc
                       where i.id_bloc.Equals(comboBoxBloc.SelectedValue)
@@ -100,37 +102,121 @@ namespace SYNDIC_1._0
 
         private void comboBoxImmeuble_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            var source = from b in dc.biens
+                         join p in dc.proprietaires on b.id_proprietaire equals p.id
+                         where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
+                         select new { Bien = b.nom, Propriétaire = p.nom };
 
+            dataGridViewconsultations.DataSource = source;
 
-            for (int i = 0; i < dataGridViewconsultations.Rows.Count - 1; i++)
+            for (int i = 0; i < 12; i++)
             {
-                var s = (from im in dc.immeubles
-                         join b in dc.biens on im.id equals b.id_immeuble
-                         where im.id.Equals(comboBoxImmeuble.SelectedValue)
-                         && b.nom.Equals(dataGridViewconsultations.Rows[i].Cells[0].Value.ToString())
-                         select new { b.id }).Single();
-                for (int j = 0; j < 12; j++) {
 
-                    var src = (from p in dc.proprietaires
-                               join b in dc.biens on p.id equals b.id
-                              join ec in dc.echeances on b.id equals ec.id_bien
-                              where b.id.Equals(s.id)
-                              && ec.mois.Equals(j + 1) && ec.annee.Equals(DateTime.Today.Year)
-                              select new { ec.montant, ec.montant_reçu }).SingleOrDefault();
+                var ck = new DataGridViewTextBoxColumn();
+                ck.Name = months[i];
+                ck.HeaderText = months[i];
+                ck.Width = 50;
+                ck.ReadOnly = true;
+                dataGridViewconsultations.Columns.Add(ck);
 
-                    if (src.montant_reçu >= src.montant)
-                        dataGridViewconsultations.Rows[i].Cells[j + 1].Style.BackColor = Color.Black;
-
-                          }
             }
+
+            dataGridViewconsultations.AutoResizeColumns();
+
+
+            //for (int i = 0; i < dataGridViewconsultations.Rows.Count - 1; i++)
+            //{
+   
+
+            //    for (int j = 0; j < 12; j++)
+            //    {
+
+            //        var src = (
+            //                   from b in dc.biens
+            //                   join ec in dc.echeances on b.id equals ec.id_bien
+            //                   where b.id.Equals(dataGridViewconsultations.Rows[i].Cells[0].Value.ToString())
+            //                   && ec.mois.Equals(j + 1) && ec.annee.Equals(DateTime.Today.Year)
+            //                     && b.id.Equals(comboBoxImmeuble.SelectedValue)
+            //                   select new { ec.paid }).SingleOrDefault();
+
+            //        if (src.paid == true)
+            //            dataGridViewconsultations.Rows[i].Cells[j + 2].Style.BackColor = Color.Black;
+
+                //}
+            //}
 
 
         }
 
         private void buttonAjouterBloc_Click(object sender, EventArgs e)
         {
-          
+            using (var formAjouterBlocOrImmeuble = new FormAjouterBlocOrImmeuble(nameof(bloc)))
+            {
+                formAjouterBlocOrImmeuble.ShowDialog();
+            }
+
+            var source = from b in dc.biens
+                         join p in dc.proprietaires on b.id_proprietaire equals p.id
+                         where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
+                         select new { Bien = b.nom, Propriétaire = p.nom };
+
+            dataGridViewconsultations.DataSource = source;
+
+            for (int i = 0; i < 12; i++)
+            {
+
+                var ck = new DataGridViewTextBoxColumn();
+                ck.Name = months[i];
+                ck.HeaderText = months[i];
+                ck.Width = 50;
+                ck.ReadOnly = true;
+                dataGridViewconsultations.Columns.Add(ck);
+
+            }
+
+            dataGridViewconsultations.AutoResizeColumns();
+        }
+
+        private void buttonAjouterImmeuble_Click(object sender, EventArgs e)
+        {
+            using (var formAjouterBlocOrImmeuble = new FormAjouterBlocOrImmeuble(nameof(immeuble)))
+            {
+                formAjouterBlocOrImmeuble.ShowDialog();
+            }
+
+            var source = from b in dc.biens
+                         join p in dc.proprietaires on b.id_proprietaire equals p.id
+                         where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
+                         select new { Bien = b.nom, Propriétaire = p.nom };
+
+            dataGridViewconsultations.DataSource = source;
+
+            for (int i = 0; i < 12; i++)
+            {
+
+                var ck = new DataGridViewTextBoxColumn();
+                ck.Name = months[i];
+                ck.HeaderText = months[i];
+                ck.Width = 50;
+                ck.ReadOnly = true;
+                dataGridViewconsultations.Columns.Add(ck);
+
+            }
+
+            dataGridViewconsultations.AutoResizeColumns();
+        }
+
+        private void printDocumentECbiens_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(dataGridViewconsultations.Width, dataGridViewconsultations.Height);
+            dataGridViewconsultations.DrawToBitmap(bm, new Rectangle(0, 0, dataGridViewconsultations.Width,dataGridViewconsultations.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+
+        }
+
+        private void buttonImprimer_Click(object sender, EventArgs e)
+        {
+            printDocumentECbiens.Print();
         }
     }
 

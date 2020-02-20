@@ -25,12 +25,15 @@ namespace SYNDIC_1._0.Forms
             if (titre.Equals(nameof(bloc)))
             {
                 panelImeuble.Visible = false;
-
+                labelAjouter.Text += " Bloc";
+                this.Height = 185;
             }
 
             else
             {
                 panelImeuble.Visible = true;
+                labelAjouter.Text += " Immeuble";
+                this.Height = 255;
 
                 var src = from b in dc.blocs
                           select b;
@@ -68,6 +71,7 @@ namespace SYNDIC_1._0.Forms
             }
 
             dc.SubmitChanges();
+            this.Close();
         }
 
         private void buttonRaz_Click(object sender, EventArgs e)
@@ -76,5 +80,43 @@ namespace SYNDIC_1._0.Forms
             textBoxNom.Clear();
             comboBoxBloc.SelectedIndex = 0;
         }
+
+        private void labelCloseDocuments_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBoxNom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar!=(char)Keys.Back && e.KeyChar!=' ')
+                e.Handled = true;
+        }
+
+        private void textBoxNbretages_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
+        private void textBoxNom_TextChanged(object sender, EventArgs e)
+        {
+            if (titre.Equals(nameof(bloc)))
+            {
+                if (textBoxNom.Text == "")
+                    buttonValider.Enabled = false;
+                else
+                    buttonValider.Enabled = true;
+            }
+            else
+            {
+                if (textBoxNom.Text == "" || textBoxNbretages.Text=="")
+                    buttonValider.Enabled = false;
+                else
+                    buttonValider.Enabled = true;
+            }
+
+        }
+
+        
     }
 }
