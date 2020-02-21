@@ -188,6 +188,7 @@ namespace SYNDIC_1._0
         private void frmMenuOfficiel_Load(object sender, EventArgs e)
         {
             FormLogin.userId = 22;
+            
         }
     }
 }

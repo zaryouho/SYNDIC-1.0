@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMinimized = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +40,10 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkBoxShowHidePassword = new System.Windows.Forms.CheckBox();
             this.pictureBoxLogoholder = new System.Windows.Forms.PictureBox();
-            this.btnMinimized = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoholder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoholder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,6 +57,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 34);
             this.panel1.TabIndex = 0;
+            // 
+            // btnMinimized
+            // 
+            this.btnMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimized.Location = new System.Drawing.Point(278, 2);
+            this.btnMinimized.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimized.Name = "btnMinimized";
+            this.btnMinimized.Size = new System.Drawing.Size(22, 25);
+            this.btnMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimized.TabIndex = 8;
+            this.btnMinimized.TabStop = false;
+            this.btnMinimized.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Location = new System.Drawing.Point(304, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(22, 25);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 8;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // textBoxUsername
             // 
@@ -165,37 +189,13 @@
             // 
             this.pictureBoxLogoholder.Image = global::SYNDIC_1._0.Properties.Resources.logosyndic;
             this.pictureBoxLogoholder.InitialImage = null;
-            this.pictureBoxLogoholder.Location = new System.Drawing.Point(75, 48);
+            this.pictureBoxLogoholder.Location = new System.Drawing.Point(81, 48);
             this.pictureBoxLogoholder.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogoholder.Name = "pictureBoxLogoholder";
             this.pictureBoxLogoholder.Size = new System.Drawing.Size(164, 75);
             this.pictureBoxLogoholder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogoholder.TabIndex = 1;
             this.pictureBoxLogoholder.TabStop = false;
-            // 
-            // btnMinimized
-            // 
-            this.btnMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimized.Location = new System.Drawing.Point(278, 2);
-            this.btnMinimized.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimized.Name = "btnMinimized";
-            this.btnMinimized.Size = new System.Drawing.Size(22, 25);
-            this.btnMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimized.TabIndex = 8;
-            this.btnMinimized.TabStop = false;
-            this.btnMinimized.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Location = new System.Drawing.Point(304, 2);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(22, 25);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 8;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // FormLogin
             // 
@@ -223,9 +223,9 @@
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoholder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoholder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

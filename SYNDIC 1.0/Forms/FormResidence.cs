@@ -16,6 +16,7 @@ namespace SYNDIC_1._0
         DataClassesSyndicDataContext dc = new DataClassesSyndicDataContext();
 
         string[] months = { "Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Jui", "Aout", "Sep", "Oct", "Nov", "Déc" };
+        bool firstTime = true;
         public FormResidence()
         {
             InitializeComponent();
@@ -62,10 +63,10 @@ namespace SYNDIC_1._0
             var source = from b in dc.biens
                          join p in dc.proprietaires on b.id_proprietaire equals p.id
                          where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
-                         select new { Bien = b.nom,Propriétaire = p.nom  };
+                         select new { b.id, Bien = b.nom,Propriétaire = p.nom  };
 
             dataGridViewconsultations.DataSource = source;
-
+            dataGridViewconsultations.Columns[0].Visible = false;
             for (int i = 0; i < 12; i++)
             {
 
@@ -79,6 +80,8 @@ namespace SYNDIC_1._0
             }
 
             dataGridViewconsultations.AutoResizeColumns();
+            firstTime = false;
+            comboBoxImmeuble_SelectedIndexChanged(sender, e);
         }
 
         private void comboBoxBloc_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,47 +108,49 @@ namespace SYNDIC_1._0
             var source = from b in dc.biens
                          join p in dc.proprietaires on b.id_proprietaire equals p.id
                          where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
-                         select new { Bien = b.nom, Propriétaire = p.nom };
+                         select new { b.id,Bien = b.nom, Propriétaire = p.nom };
 
             dataGridViewconsultations.DataSource = source;
 
-            for (int i = 0; i < 12; i++)
-            {
-
-                var ck = new DataGridViewTextBoxColumn();
-                ck.Name = months[i];
-                ck.HeaderText = months[i];
-                ck.Width = 50;
-                ck.ReadOnly = true;
-                dataGridViewconsultations.Columns.Add(ck);
-
-            }
-
-            dataGridViewconsultations.AutoResizeColumns();
-
-
-            //for (int i = 0; i < dataGridViewconsultations.Rows.Count - 1; i++)
+            //for (int i = 0; i < 12; i++)
             //{
-   
 
-            //    for (int j = 0; j < 12; j++)
-            //    {
+            //    var ck = new DataGridViewTextBoxColumn();
+            //    ck.Name = months[i];
+            //    ck.HeaderText = months[i];
+            //    ck.Width = 50;
+            //    ck.ReadOnly = true;
+            //    dataGridViewconsultations.Columns.Add(ck);
 
-            //        var src = (
-            //                   from b in dc.biens
-            //                   join ec in dc.echeances on b.id equals ec.id_bien
-            //                   where b.id.Equals(dataGridViewconsultations.Rows[i].Cells[0].Value.ToString())
-            //                   && ec.mois.Equals(j + 1) && ec.annee.Equals(DateTime.Today.Year)
-            //                     && b.id.Equals(comboBoxImmeuble.SelectedValue)
-            //                   select new { ec.paid }).SingleOrDefault();
-
-            //        if (src.paid == true)
-            //            dataGridViewconsultations.Rows[i].Cells[j + 2].Style.BackColor = Color.Black;
-
-                //}
             //}
 
+            //dataGridViewconsultations.AutoResizeColumns();
+            
+            if (!firstTime)
+            {
+                for (int i = 0; i < dataGridViewconsultations.Rows.Count ; i++)
+                {
+                    MessageBox.Show(dataGridViewconsultations.Rows[i].Cells[0].Value.ToString());
+                    int id = Convert.ToInt32(dataGridViewconsultations.Rows[i].Cells[0].Value.ToString());
 
+                    for (int j = 0; j < 12; j++)
+                    {
+
+                        var src = (
+                                    from b in dc.biens
+                                    join ec in dc.echeances on b.id equals ec.id_bien
+                                    where b.id.Equals(id)
+                                    && ec.mois.Equals(j + 1) && ec.annee.Equals(DateTime.Today.AddYears(-5).Year)
+                                        && b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
+                                    select new { ec.paid }).SingleOrDefault();
+
+                        if (src.paid == true)
+                            dataGridViewconsultations.Rows[i].Cells[j + 3].Style.BackColor = Color.Black;
+
+                    }
+                }
+
+            }
         }
 
         private void buttonAjouterBloc_Click(object sender, EventArgs e)
@@ -162,17 +167,17 @@ namespace SYNDIC_1._0
 
             dataGridViewconsultations.DataSource = source;
 
-            for (int i = 0; i < 12; i++)
-            {
+            //for (int i = 0; i < 12; i++)
+            //{
 
-                var ck = new DataGridViewTextBoxColumn();
-                ck.Name = months[i];
-                ck.HeaderText = months[i];
-                ck.Width = 50;
-                ck.ReadOnly = true;
-                dataGridViewconsultations.Columns.Add(ck);
+            //    var ck = new DataGridViewTextBoxColumn();
+            //    ck.Name = months[i];
+            //    ck.HeaderText = months[i];
+            //    ck.Width = 50;
+            //    ck.ReadOnly = true;
+            //    dataGridViewconsultations.Columns.Add(ck);
 
-            }
+            //}
 
             dataGridViewconsultations.AutoResizeColumns();
         }
@@ -191,17 +196,17 @@ namespace SYNDIC_1._0
 
             dataGridViewconsultations.DataSource = source;
 
-            for (int i = 0; i < 12; i++)
-            {
+            //for (int i = 0; i < 12; i++)
+            //{
 
-                var ck = new DataGridViewTextBoxColumn();
-                ck.Name = months[i];
-                ck.HeaderText = months[i];
-                ck.Width = 50;
-                ck.ReadOnly = true;
-                dataGridViewconsultations.Columns.Add(ck);
+            //    var ck = new DataGridViewTextBoxColumn();
+            //    ck.Name = months[i];
+            //    ck.HeaderText = months[i];
+            //    ck.Width = 50;
+            //    ck.ReadOnly = true;
+            //    dataGridViewconsultations.Columns.Add(ck);
 
-            }
+            //}
 
             dataGridViewconsultations.AutoResizeColumns();
         }
