@@ -212,6 +212,7 @@
             this.Controls.Add(this.comboBoxidProduit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierFacture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterModifierFacture";
             this.Load += new System.EventHandler(this.FormAjouterModifierFacture_Load);
             this.Click += new System.EventHandler(this.FormAjouterModifierFacture_Load);

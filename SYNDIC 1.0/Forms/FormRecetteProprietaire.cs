@@ -151,5 +151,13 @@ namespace SYNDIC_1._0.Forms
             int current_Id = Convert.ToInt32(dataGridViewRecette.CurrentRow.Cells[0].Value.ToString());
             new FormGestionDocument("documentCotisation","where idRecette = "+current_Id.ToString(),current_Id).ShowDialog();
         }
+
+        private void buttonImprimerRecette_Click(object sender, EventArgs e)
+        {
+            crystalR.Reçu recu = new crystalR.Reçu();
+            string filter = "{cotisation.id} = " + dataGridViewRecette.CurrentRow.Cells[0].Value.ToString();
+            FormImpression imprimer = new FormImpression(recu, filter);
+            imprimer.ShowDialog();
+        }
     }
 }

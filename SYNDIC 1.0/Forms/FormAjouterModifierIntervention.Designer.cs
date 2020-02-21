@@ -233,6 +233,7 @@
             this.Controls.Add(this.panelHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierIntervention";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterModifierIntervention";
             this.Load += new System.EventHandler(this.FormAjouterModifierIntervention_Load);
             this.panelHead.ResumeLayout(false);

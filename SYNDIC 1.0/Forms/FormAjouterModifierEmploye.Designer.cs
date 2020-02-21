@@ -379,6 +379,7 @@
             this.Controls.Add(this.textBoxNom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierEmploye";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterModifierEmploye";
             this.Load += new System.EventHandler(this.FormAjouterModifierEmploye_Load);
             this.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);

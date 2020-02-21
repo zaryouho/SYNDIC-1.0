@@ -233,7 +233,7 @@
             this.Controls.Add(this.panelHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierEcheance";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterEcheance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAjouterModifierEcheance_FormClosing);
             this.Load += new System.EventHandler(this.FormAjouterModifierEcheance_Load);

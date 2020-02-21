@@ -32,9 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net40\LiveCharts.dll</HintPath>
     </Reference>
@@ -54,7 +56,9 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,6 +72,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crystalR\ConvocationAssemblée.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConvocationAssemblée.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="crystalR\Reçu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reçu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataClassesSyndic.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +142,12 @@
     </Compile>
     <Compile Include="Forms\FormFacture.Designer.cs">
       <DependentUpon>FormFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormImpression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormImpression.Designer.cs">
+      <DependentUpon>FormImpression.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormInterventions.cs">
       <SubType>Form</SubType>
@@ -301,6 +323,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="crystalR\ConvocationAssemblée.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ConvocationAssemblée.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crystalR\Reçu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reçu.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facture.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Facture.cs</LastGenOutput>
@@ -328,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormFacture.resx">
       <DependentUpon>FormFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormImpression.resx">
+      <DependentUpon>FormImpression.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormInterventions.resx">
       <DependentUpon>FormInterventions.cs</DependentUpon>
@@ -486,6 +519,7 @@
     <Content Include="Resources\logogoo1.jpg" />
     <None Include="Resources\logoSyndicBlueFoncé.jpg" />
     <None Include="Resources\LOGOtest8.png" />
+    <None Include="Resources\logosyndic1.png" />
     <Content Include="Resources\minimazar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

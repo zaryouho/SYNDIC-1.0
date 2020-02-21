@@ -410,7 +410,7 @@
             this.Controls.Add(this.textBoxTypeBien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormModifierBien";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormModifierBien";
             this.Load += new System.EventHandler(this.FormModifierBien_Load);
             this.panelHead.ResumeLayout(false);

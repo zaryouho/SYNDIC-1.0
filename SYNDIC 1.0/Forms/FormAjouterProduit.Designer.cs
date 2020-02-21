@@ -307,6 +307,7 @@
             this.Controls.Add(this.panelHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterProduit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterProduit";
             this.Load += new System.EventHandler(this.FormAjouterProduit_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormAjouterProduit_Paint);
