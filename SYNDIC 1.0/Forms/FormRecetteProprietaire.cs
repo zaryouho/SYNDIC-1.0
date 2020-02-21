@@ -158,6 +158,7 @@ namespace SYNDIC_1._0.Forms
             string filter = "{cotisation.id} = " + dataGridViewRecette.CurrentRow.Cells[0].Value.ToString();
             FormImpression imprimer = new FormImpression(recu, filter);
             imprimer.ShowDialog();
+
         }
     }
 }
