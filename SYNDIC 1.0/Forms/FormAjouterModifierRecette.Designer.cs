@@ -427,6 +427,7 @@
             this.Controls.Add(this.splitContainerRecetteInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierRecette";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterModifierRecette";
             this.Load += new System.EventHandler(this.FormAjouterModifierRecette_Load);
             this.TextChanged += new System.EventHandler(this.textBoxNumRecu_TextChanged);

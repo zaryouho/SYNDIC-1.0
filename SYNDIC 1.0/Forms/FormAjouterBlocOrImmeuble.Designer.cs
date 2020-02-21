@@ -155,7 +155,6 @@
             this.labelAjouter.Size = new System.Drawing.Size(97, 30);
             this.labelAjouter.TabIndex = 24;
             this.labelAjouter.Text = "Ajouter";
-            
             // 
             // panelContainer
             // 

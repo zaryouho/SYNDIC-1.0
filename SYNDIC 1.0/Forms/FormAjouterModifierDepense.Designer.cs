@@ -32,6 +32,8 @@
             this.labelCloseDepense = new System.Windows.Forms.Label();
             this.labelDepense = new System.Windows.Forms.Label();
             this.panelValid = new System.Windows.Forms.Panel();
+            this.buttonAnnuler = new System.Windows.Forms.Button();
+            this.buttonValider = new System.Windows.Forms.Button();
             this.textBoxTypeDocument = new System.Windows.Forms.TextBox();
             this.labelTypeDocument = new System.Windows.Forms.Label();
             this.textBoxNumDocument = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.dateTimePickerDepense = new System.Windows.Forms.DateTimePicker();
             this.textBoxDesignationDepense = new System.Windows.Forms.TextBox();
             this.labelDesignationDepense = new System.Windows.Forms.Label();
-            this.buttonAnnuler = new System.Windows.Forms.Button();
-            this.buttonValider = new System.Windows.Forms.Button();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,33 @@
             this.panelValid.Size = new System.Drawing.Size(447, 41);
             this.panelValid.TabIndex = 22;
             // 
+            // buttonAnnuler
+            // 
+            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
+            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
+            this.buttonAnnuler.Name = "buttonAnnuler";
+            this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
+            this.buttonAnnuler.TabIndex = 1;
+            this.buttonAnnuler.Text = "Annuler";
+            this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Enabled = false;
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValider.Location = new System.Drawing.Point(38, 3);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(139, 35);
+            this.buttonValider.TabIndex = 0;
+            this.buttonValider.Text = "Valider";
+            this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
+            // 
             // textBoxTypeDocument
             // 
             this.textBoxTypeDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,7 +149,6 @@
             this.textBoxNumDocument.Name = "textBoxNumDocument";
             this.textBoxNumDocument.Size = new System.Drawing.Size(231, 22);
             this.textBoxNumDocument.TabIndex = 51;
-           
             this.textBoxNumDocument.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumDocument_KeyPress);
             // 
             // comboBoxEmploye
@@ -202,7 +228,6 @@
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
             this.textBoxMontant.TabIndex = 43;
-            
             this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // labelMontant
@@ -241,7 +266,6 @@
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
             this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
             this.textBoxDesignationDepense.TabIndex = 39;
-           
             this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
             // 
             // labelDesignationDepense
@@ -253,33 +277,6 @@
             this.labelDesignationDepense.Size = new System.Drawing.Size(85, 17);
             this.labelDesignationDepense.TabIndex = 38;
             this.labelDesignationDepense.Text = "Désignation :";
-            // 
-            // buttonAnnuler
-            // 
-            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnnuler.Image = global::SYNDIC_1._0.Properties.Resources.DeleteReddd;
-            this.buttonAnnuler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
-            this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
-            this.buttonAnnuler.TabIndex = 1;
-            this.buttonAnnuler.Text = "Annuler";
-            this.buttonAnnuler.UseVisualStyleBackColor = true;
-            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
-            // 
-            // buttonValider
-            // 
-            this.buttonValider.Enabled = false;
-            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonValider.Image = global::SYNDIC_1._0.Properties.Resources.valider;
-            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValider.Location = new System.Drawing.Point(38, 3);
-            this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
-            this.buttonValider.Text = "Valider";
-            this.buttonValider.UseVisualStyleBackColor = true;
-            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // FormAjouterModifierDepense
             // 
@@ -307,6 +304,7 @@
             this.Controls.Add(this.panelHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierDepense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterModifierDepense";
             this.Load += new System.EventHandler(this.FormAjouterModifierDepense_Load);
             this.panelHead.ResumeLayout(false);

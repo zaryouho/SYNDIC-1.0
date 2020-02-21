@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonImprimer = new System.Windows.Forms.Button();
             this.textBoxResidence = new System.Windows.Forms.TextBox();
             this.buttonAjouterBien = new System.Windows.Forms.Button();
             this.buttonAjouterImmeuble = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.comboBoxImmeuble = new System.Windows.Forms.ComboBox();
             this.comboBoxBloc = new System.Windows.Forms.ComboBox();
             this.printDocumentECbiens = new System.Drawing.Printing.PrintDocument();
-            this.buttonImprimer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -125,6 +125,19 @@
             this.splitContainer1.SplitterDistance = 273;
             this.splitContainer1.TabIndex = 6;
             // 
+            // buttonImprimer
+            // 
+            this.buttonImprimer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonImprimer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimer.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimer.Location = new System.Drawing.Point(24, 351);
+            this.buttonImprimer.Name = "buttonImprimer";
+            this.buttonImprimer.Size = new System.Drawing.Size(195, 35);
+            this.buttonImprimer.TabIndex = 14;
+            this.buttonImprimer.Text = "Imprimer";
+            this.buttonImprimer.UseVisualStyleBackColor = false;
+            this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
+            // 
             // textBoxResidence
             // 
             this.textBoxResidence.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -138,31 +151,38 @@
             // 
             // buttonAjouterBien
             // 
-            this.buttonAjouterBien.Location = new System.Drawing.Point(235, 187);
+            this.buttonAjouterBien.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterBien.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterBien.Location = new System.Drawing.Point(225, 187);
             this.buttonAjouterBien.Name = "buttonAjouterBien";
             this.buttonAjouterBien.Size = new System.Drawing.Size(35, 20);
             this.buttonAjouterBien.TabIndex = 12;
             this.buttonAjouterBien.Text = "...";
-            this.buttonAjouterBien.UseVisualStyleBackColor = true;
+            this.buttonAjouterBien.UseVisualStyleBackColor = false;
             // 
             // buttonAjouterImmeuble
             // 
-            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(235, 161);
+            this.buttonAjouterImmeuble.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterImmeuble.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(225, 161);
             this.buttonAjouterImmeuble.Name = "buttonAjouterImmeuble";
             this.buttonAjouterImmeuble.Size = new System.Drawing.Size(35, 20);
             this.buttonAjouterImmeuble.TabIndex = 11;
             this.buttonAjouterImmeuble.Text = "...";
-            this.buttonAjouterImmeuble.UseVisualStyleBackColor = true;
+            this.buttonAjouterImmeuble.UseVisualStyleBackColor = false;
             this.buttonAjouterImmeuble.Click += new System.EventHandler(this.buttonAjouterImmeuble_Click);
             // 
             // buttonAjouterBloc
             // 
-            this.buttonAjouterBloc.Location = new System.Drawing.Point(235, 136);
+            this.buttonAjouterBloc.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterBloc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterBloc.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterBloc.Location = new System.Drawing.Point(225, 136);
             this.buttonAjouterBloc.Name = "buttonAjouterBloc";
             this.buttonAjouterBloc.Size = new System.Drawing.Size(35, 20);
             this.buttonAjouterBloc.TabIndex = 10;
             this.buttonAjouterBloc.Text = "...";
-            this.buttonAjouterBloc.UseVisualStyleBackColor = true;
+            this.buttonAjouterBloc.UseVisualStyleBackColor = false;
             this.buttonAjouterBloc.Click += new System.EventHandler(this.buttonAjouterBloc_Click);
             // 
             // textBoxnbrBien
@@ -170,7 +190,7 @@
             this.textBoxnbrBien.Enabled = false;
             this.textBoxnbrBien.Location = new System.Drawing.Point(3, 188);
             this.textBoxnbrBien.Name = "textBoxnbrBien";
-            this.textBoxnbrBien.Size = new System.Drawing.Size(226, 20);
+            this.textBoxnbrBien.Size = new System.Drawing.Size(216, 20);
             this.textBoxnbrBien.TabIndex = 9;
             // 
             // textBoxnbrImmeuble
@@ -178,7 +198,7 @@
             this.textBoxnbrImmeuble.Enabled = false;
             this.textBoxnbrImmeuble.Location = new System.Drawing.Point(3, 162);
             this.textBoxnbrImmeuble.Name = "textBoxnbrImmeuble";
-            this.textBoxnbrImmeuble.Size = new System.Drawing.Size(226, 20);
+            this.textBoxnbrImmeuble.Size = new System.Drawing.Size(216, 20);
             this.textBoxnbrImmeuble.TabIndex = 8;
             // 
             // textBoxnbrBloc
@@ -186,11 +206,12 @@
             this.textBoxnbrBloc.Enabled = false;
             this.textBoxnbrBloc.Location = new System.Drawing.Point(3, 136);
             this.textBoxnbrBloc.Name = "textBoxnbrBloc";
-            this.textBoxnbrBloc.Size = new System.Drawing.Size(226, 20);
+            this.textBoxnbrBloc.Size = new System.Drawing.Size(216, 20);
             this.textBoxnbrBloc.TabIndex = 7;
             // 
             // dataGridViewconsultations
             // 
+            this.dataGridViewconsultations.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewconsultations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewconsultations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewconsultations.Location = new System.Drawing.Point(0, 43);
@@ -213,20 +234,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(230, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Immeuble :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bloc :";
             // 
@@ -242,6 +263,7 @@
             // 
             // comboBoxBloc
             // 
+            this.comboBoxBloc.BackColor = System.Drawing.Color.White;
             this.comboBoxBloc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBloc.FormattingEnabled = true;
             this.comboBoxBloc.Location = new System.Drawing.Point(57, 12);
@@ -253,16 +275,6 @@
             // printDocumentECbiens
             // 
             this.printDocumentECbiens.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentECbiens_PrintPage);
-            // 
-            // buttonImprimer
-            // 
-            this.buttonImprimer.Location = new System.Drawing.Point(73, 357);
-            this.buttonImprimer.Name = "buttonImprimer";
-            this.buttonImprimer.Size = new System.Drawing.Size(120, 29);
-            this.buttonImprimer.TabIndex = 14;
-            this.buttonImprimer.Text = "Imprimer";
-            this.buttonImprimer.UseVisualStyleBackColor = true;
-            this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
             // 
             // FormResidence
             // 

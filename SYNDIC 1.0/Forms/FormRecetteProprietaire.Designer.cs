@@ -120,6 +120,7 @@
             this.buttonImprimerRecette.TabIndex = 15;
             this.buttonImprimerRecette.Text = "Imprimer Recette";
             this.buttonImprimerRecette.UseVisualStyleBackColor = false;
+            this.buttonImprimerRecette.Click += new System.EventHandler(this.buttonImprimerRecette_Click);
             // 
             // labelListeProprietaire
             // 

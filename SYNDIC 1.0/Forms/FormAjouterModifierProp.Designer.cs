@@ -359,6 +359,7 @@
             this.Controls.Add(this.comboBoxIdVille);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjouterModifierProp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAjouterModifierProp";
             this.Load += new System.EventHandler(this.FormAjouterModifierProp_Load);
             this.ResumeLayout(false);

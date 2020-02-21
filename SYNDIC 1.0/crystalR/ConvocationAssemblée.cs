@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SYNDIC_1._0 {
+namespace SYNDIC_1._0.crystalR {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace SYNDIC_1._0 {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Facture : ReportClass {
+    public class ConvocationAssemblée : ReportClass {
         
-        public Facture() {
+        public ConvocationAssemblée() {
         }
         
         public override string ResourceName {
             get {
-                return "Facture.rpt";
+                return "ConvocationAssemblée.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SYNDIC_1._0 {
         
         public override string FullResourceName {
             get {
-                return "SYNDIC_1._0.Facture.rpt";
+                return "SYNDIC_1._0.crystalR.ConvocationAssemblée.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SYNDIC_1._0 {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedFacture : Component, ICachedReport {
+    public class CachedConvocationAssemblée : Component, ICachedReport {
         
-        public CachedFacture() {
+        public CachedConvocationAssemblée() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SYNDIC_1._0 {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Facture rpt = new Facture();
+            ConvocationAssemblée rpt = new ConvocationAssemblée();
             rpt.Site = this.Site;
             return rpt;
         }
