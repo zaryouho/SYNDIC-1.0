@@ -184,6 +184,10 @@ namespace SYNDIC_1._0
 
             flag = 10;
         }
-       
+
+        private void frmMenuOfficiel_Load(object sender, EventArgs e)
+        {
+            FormLogin.userId = 22;
+        }
     }
 }

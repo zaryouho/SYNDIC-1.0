@@ -19,7 +19,7 @@ namespace SYNDIC_1._0.Forms
         }
 
         DataClassesSyndicDataContext dataContext = new DataClassesSyndicDataContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].Name.ToString();
+        string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
 
         private void frmHistoriques_Load(object sender, EventArgs e)
         {
@@ -59,11 +59,17 @@ namespace SYNDIC_1._0.Forms
                 return;
             }
 
-            string filter = textBoxStrings.hasText() ? comboBoxFilterItems.Text : "date_action";
+            string filter=comboBoxFilterItems.Text; 
+                if(textBoxStrings.Text=="")
+                    filter= "CONVERT(date,date_action)";
 
-            string searchedString = textBoxStrings.hasText() ? textBoxStrings.Text.Trim().Replace("'", "''") : dateTimePickerHistorique.Value.ToString();
+            string searchedString = textBoxStrings.Text.Trim().Replace("'", "''"); 
+                if(textBoxStrings.Text == "")
+                   searchedString= "'"+dateTimePickerHistorique.Value.ToShortDateString()+"'";
 
-            string query = "select (id,date_connexion,typeUtilisateur,date_action,action,table_action,anciennes_valeurs,nouvelles_valeurs) from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where @filter = @searchedString ";
+            string query = "select j.id,u.login,u.typeUtilisateur,date_action,action,table_action,anciennes_valeurs,nouvelles_valeurs from journal j  inner join utilisateur u on u.id = j.id_utilisateur  where "+filter +" = "+ searchedString;
+
+            // we need to add inner join connexion c on j.id_utilisateur = c.id_utilisateur 
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -77,8 +83,8 @@ namespace SYNDIC_1._0.Forms
                     {
                         try
                         {
-                            command.Parameters.AddWithValue("@filter", filter);
-                            command.Parameters.AddWithValue("@searchedString", searchedString);
+                           /* command.Parameters.AddWithValue("@filter", filter);
+                            command.Parameters.AddWithValue("@searchedString", searchedString);*/
 
                             this.Cursor = Cursors.WaitCursor;
                             command.ExecuteNonQuery();
@@ -94,7 +100,8 @@ namespace SYNDIC_1._0.Forms
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            throw ex;
+                            //MessageBox.Show(ex.Message);
                         }
                     }
                 }
