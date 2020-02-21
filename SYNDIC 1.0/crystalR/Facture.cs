@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SYNDIC_1._0 {
+namespace SYNDIC_1._0.crystalR {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace SYNDIC_1._0 {
         
         public override string FullResourceName {
             get {
-                return "SYNDIC_1._0.Facture.rpt";
+                return "SYNDIC_1._0.crystalR.Facture.rpt";
             }
             set {
                 // Do nothing

@@ -160,75 +160,87 @@ namespace SYNDIC_1._0
             if (textBoxIdProprietaire.Text == "")
                 textBoxIdProprietaire.Text = "-1";
 
-
-            // tester si il y a des Modification
-            if (id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text) || dateAchat.ToShortDateString() != dateTimePickerDateAchat.Value.ToShortDateString())
+            try
             {
-                
-                DialogResult question = MessageBox.Show("Voullez vous Enregistrer les nouveaux Données ?", "Information", MessageBoxButtons.YesNoCancel);
-                if (question == DialogResult.Cancel)
-                    return;
-                else if (question == DialogResult.Yes)
+                // tester si il y a des Modification
+                if (id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text) || dateAchat.ToShortDateString() != dateTimePickerDateAchat.Value.ToShortDateString())
                 {
-                    if (operation == "Modifier" && id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text)) { 
-                        var src = (from p in syndicDataContext.proprietaires
-                                   where p.id.Equals(Convert.ToInt32(comboBoxProprietaire.SelectedValue.ToString()))
-                                   select p).Single();
 
-                        ProprietaireArchive pa = new ProprietaireArchive();
-
-                        pa.cin = src.CIN;
-                        pa.titre = src.Titre;
-                        pa.sexe = src.Sexe;
-                        pa.id_ville = src.id_ville;
-                        pa.email = src.email;
-                        pa.tele = src.tel;
-                        pa.code_postal = src.code_postal;
-                        pa.adresse = src.adresse;
-                        pa.prenom = src.prenom;
-                        pa.nom = src.nom;
-                        pa.bien = int.Parse(textBoxNom.Text);
-                        pa.immeuble = int.Parse(textBoxIdImmeuble.Text);
-                        pa.dateVente = dateTimePickerDateAchat.Value;
-
-                        syndicDataContext.ProprietaireArchives.InsertOnSubmit(pa);
-                        syndicDataContext.SubmitChanges();
-                    }
-                    else if (operation == "Ajouter")
+                    DialogResult question = MessageBox.Show("Voullez vous Enregistrer les nouveaux Données ?", "Information", MessageBoxButtons.YesNoCancel);
+                    if (question == DialogResult.Cancel)
+                        return;
+                    else if (question == DialogResult.Yes)
                     {
-                        string querry= "insert into bien values('"+textBoxNom.Text+
-                            "'," + textBoxEtage.Text +
-                            " ," + textBoxSuperficie.Text +
-                            " ," + textBoxCharge.Text +
-                            " ,'" + textBoxTypeBien.Text+
-                            "'," + textBoxIdImmeuble.Text+
-                            " ," + textBoxIdProprietaire.Text+
-                            " ,'" + textBoxTitre.Text+
-                            "','"+dateTimePickerDateAchat.Value.ToShortDateString()+
-                            "')";
-                        SqlCommand Command = new SqlCommand(querry, DBHelper.connection);
-                        Command.ExecuteNonQuery();
+                        if (operation == "Modifier" && id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text))
+                        {
+                            var src = (from p in syndicDataContext.proprietaires
+                                       where p.id.Equals(Convert.ToInt32(comboBoxProprietaire.SelectedValue.ToString()))
+                                       select p).Single();
+
+                            ProprietaireArchive pa = new ProprietaireArchive();
+
+                            pa.cin = src.CIN;
+                            pa.titre = src.Titre;
+                            pa.sexe = src.Sexe;
+                            pa.id_ville = src.id_ville;
+                            pa.email = src.email;
+                            pa.tele = src.tel;
+                            pa.code_postal = src.code_postal;
+                            pa.adresse = src.adresse;
+                            pa.prenom = src.prenom;
+                            pa.nom = src.nom;
+                            pa.bien = int.Parse(textBoxNom.Text);
+                            pa.immeuble = int.Parse(textBoxIdImmeuble.Text);
+                            pa.dateVente = dateTimePickerDateAchat.Value;
+
+                            syndicDataContext.ProprietaireArchives.InsertOnSubmit(pa);
+                            syndicDataContext.SubmitChanges();
+                        }
+                        else if (operation == "Ajouter")
+                        {
+                            string querry = "insert into bien values('" + textBoxNom.Text +
+                                "'," + textBoxEtage.Text +
+                                " ," + textBoxSuperficie.Text +
+                                " ," + textBoxCharge.Text +
+                                " ,'" + textBoxTypeBien.Text +
+                                "'," + textBoxIdImmeuble.Text +
+                                " ," + textBoxIdProprietaire.Text +
+                                " ,'" + textBoxTitre.Text +
+                                "','" + dateTimePickerDateAchat.Value.ToShortDateString() +
+                                "')";
+                            SqlCommand Command = new SqlCommand(querry, DBHelper.connection);
+                            Command.ExecuteNonQuery();
+
+
+
+
+
+
+
+
+                        }
+
+
+
+                        bsBien.EndEdit();
+                        DBHelper.syncroniser("bien");
+
+
+
 
                     }
-                   
+                    else if (question == DialogResult.No)
+                    {
+                        bsBien.CancelEdit();
+                        DBHelper.syncroniser("bien");
 
-
-                    bsBien.EndEdit();
-                    DBHelper.syncroniser("bien");
-
-
-
-
+                    }
                 }
-                else if (question == DialogResult.No) { 
-                    bsBien.CancelEdit();
-                    DBHelper.syncroniser("bien");
 
-                }
+
+                this.Close();
             }
-
-
-            this.Close();
+            catch (Exception ex) { this.Close(); };
         }
 
         private void buttonAddNewProprietaire_Click(object sender, EventArgs e)

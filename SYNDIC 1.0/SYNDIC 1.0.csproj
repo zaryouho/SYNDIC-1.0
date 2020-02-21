@@ -59,6 +59,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -89,7 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Facture.cs">
+    <Compile Include="crystalR\Facture.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Facture.rpt</DependentUpon>
@@ -331,7 +332,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reçu.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facture.rpt">
+    <EmbeddedResource Include="crystalR\Facture.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Facture.cs</LastGenOutput>
     </EmbeddedResource>
