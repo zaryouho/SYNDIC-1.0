@@ -48,8 +48,8 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnSlideBar = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarreTitulaire.SuspendLayout();
@@ -372,14 +372,6 @@
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-            // solidGauge1
-            // 
-            this.solidGauge1.Location = new System.Drawing.Point(154, 6);
-            this.solidGauge1.Name = "solidGauge1";
-            this.solidGauge1.Size = new System.Drawing.Size(312, 142);
-            this.solidGauge1.TabIndex = 0;
-            this.solidGauge1.Text = "solidGauge1";
-            // 
             // pieChart1
             // 
             this.pieChart1.Location = new System.Drawing.Point(447, 6);
@@ -387,6 +379,14 @@
             this.pieChart1.Size = new System.Drawing.Size(309, 258);
             this.pieChart1.TabIndex = 1;
             this.pieChart1.Text = "pieChart1";
+            // 
+            // solidGauge1
+            // 
+            this.solidGauge1.Location = new System.Drawing.Point(154, 6);
+            this.solidGauge1.Name = "solidGauge1";
+            this.solidGauge1.Size = new System.Drawing.Size(312, 142);
+            this.solidGauge1.TabIndex = 0;
+            this.solidGauge1.Text = "solidGauge1";
             // 
             // frmMenuOfficiel
             // 
@@ -400,6 +400,7 @@
             this.Name = "frmMenuOfficiel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuOfficiel";
+            this.Load += new System.EventHandler(this.frmMenuOfficiel_Load);
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarreTitulaire.ResumeLayout(false);

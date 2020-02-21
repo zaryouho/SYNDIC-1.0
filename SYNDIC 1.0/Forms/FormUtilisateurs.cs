@@ -155,12 +155,13 @@ namespace SYNDIC_1._0.Forms
             }
             while (dataGridViewUsers.SelectedRows.Count != 0)
             {
-                if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this user ?","Deleting...",MessageBoxButtons.YesNo))
+                if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this user ?", "Deleting...", MessageBoxButtons.YesNo))
                 {
                     update = true;
                     buttonAddUser.PerformClick();
                     update = false;
                 }
+                else return;
             }
         }
         private void buttonDeleteUser_Click(object sender, EventArgs e)
