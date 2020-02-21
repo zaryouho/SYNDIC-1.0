@@ -26,10 +26,5 @@ namespace SYNDIC_1._0.Forms
             crystalReportViewer.ReportSource = r;
             crystalReportViewer.SelectionFormula = filter;
         }
-
-        private void FormImpression_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

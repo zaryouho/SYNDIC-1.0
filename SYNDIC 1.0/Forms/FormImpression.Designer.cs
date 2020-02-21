@@ -50,7 +50,7 @@
             this.Controls.Add(this.crystalReportViewer);
             this.Name = "FormImpression";
             this.Text = "FormImpression";
-            this.Load += new System.EventHandler(this.FormImpression_Load_1);
+            this.Load += new System.EventHandler(this.FormImpression_Load);
             this.ResumeLayout(false);
 
         }
