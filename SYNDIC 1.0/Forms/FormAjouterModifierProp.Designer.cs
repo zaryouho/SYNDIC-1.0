@@ -62,7 +62,7 @@
             this.textBoxCin.Location = new System.Drawing.Point(171, 72);
             this.textBoxCin.Name = "textBoxCin";
             this.textBoxCin.Size = new System.Drawing.Size(201, 22);
-            this.textBoxCin.TabIndex = 1;
+            this.textBoxCin.TabIndex = 0;
             this.textBoxCin.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxNom
@@ -71,7 +71,7 @@
             this.textBoxNom.Location = new System.Drawing.Point(171, 101);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(201, 22);
-            this.textBoxNom.TabIndex = 2;
+            this.textBoxNom.TabIndex = 1;
             this.textBoxNom.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
@@ -81,7 +81,7 @@
             this.textBoxPrenom.Location = new System.Drawing.Point(171, 130);
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(201, 22);
-            this.textBoxPrenom.TabIndex = 3;
+            this.textBoxPrenom.TabIndex = 2;
             this.textBoxPrenom.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             this.textBoxPrenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
@@ -91,7 +91,7 @@
             this.textBoxAdresse.Location = new System.Drawing.Point(171, 189);
             this.textBoxAdresse.Name = "textBoxAdresse";
             this.textBoxAdresse.Size = new System.Drawing.Size(201, 22);
-            this.textBoxAdresse.TabIndex = 5;
+            this.textBoxAdresse.TabIndex = 4;
             this.textBoxAdresse.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxCodePostal
@@ -100,7 +100,7 @@
             this.textBoxCodePostal.Location = new System.Drawing.Point(171, 218);
             this.textBoxCodePostal.Name = "textBoxCodePostal";
             this.textBoxCodePostal.Size = new System.Drawing.Size(201, 22);
-            this.textBoxCodePostal.TabIndex = 6;
+            this.textBoxCodePostal.TabIndex = 5;
             this.textBoxCodePostal.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // textBoxEmail
@@ -118,7 +118,7 @@
             this.textBoxTele.Location = new System.Drawing.Point(171, 247);
             this.textBoxTele.Name = "textBoxTele";
             this.textBoxTele.Size = new System.Drawing.Size(201, 22);
-            this.textBoxTele.TabIndex = 8;
+            this.textBoxTele.TabIndex = 6;
             this.textBoxTele.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             this.textBoxTele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTele_KeyPress);
             // 
@@ -130,7 +130,7 @@
             this.comboBoxVille.Location = new System.Drawing.Point(171, 304);
             this.comboBoxVille.Name = "comboBoxVille";
             this.comboBoxVille.Size = new System.Drawing.Size(201, 25);
-            this.comboBoxVille.TabIndex = 10;
+            this.comboBoxVille.TabIndex = 8;
             this.comboBoxVille.SelectedIndexChanged += new System.EventHandler(this.comboBoxVille_SelectedIndexChanged);
             this.comboBoxVille.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
@@ -236,13 +236,14 @@
             // 
             // comboBoxSexe
             // 
+            this.comboBoxSexe.BackColor = System.Drawing.Color.White;
             this.comboBoxSexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSexe.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSexe.FormattingEnabled = true;
             this.comboBoxSexe.Location = new System.Drawing.Point(171, 159);
             this.comboBoxSexe.Name = "comboBoxSexe";
             this.comboBoxSexe.Size = new System.Drawing.Size(201, 25);
-            this.comboBoxSexe.TabIndex = 32;
+            this.comboBoxSexe.TabIndex = 3;
             this.comboBoxSexe.TextChanged += new System.EventHandler(this.comboBoxSexe_TextChanged);
             // 
             // buttonValider
@@ -253,7 +254,7 @@
             this.buttonValider.Location = new System.Drawing.Point(25, 399);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(149, 39);
-            this.buttonValider.TabIndex = 33;
+            this.buttonValider.TabIndex = 12;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -266,7 +267,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(180, 399);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(149, 39);
-            this.buttonAnnuler.TabIndex = 34;
+            this.buttonAnnuler.TabIndex = 11;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
@@ -280,7 +281,7 @@
             this.labelCloseProprietaires.Location = new System.Drawing.Point(425, 9);
             this.labelCloseProprietaires.Name = "labelCloseProprietaires";
             this.labelCloseProprietaires.Size = new System.Drawing.Size(18, 18);
-            this.labelCloseProprietaires.TabIndex = 36;
+            this.labelCloseProprietaires.TabIndex = 13;
             this.labelCloseProprietaires.Text = "X";
             this.labelCloseProprietaires.Click += new System.EventHandler(this.labelCloseProprietaires_Click);
             // 
@@ -312,7 +313,7 @@
             this.comboBoxTitre.Location = new System.Drawing.Point(171, 336);
             this.comboBoxTitre.Name = "comboBoxTitre";
             this.comboBoxTitre.Size = new System.Drawing.Size(201, 25);
-            this.comboBoxTitre.TabIndex = 38;
+            this.comboBoxTitre.TabIndex = 9;
             // 
             // buttonRAZ
             // 
@@ -320,7 +321,7 @@
             this.buttonRAZ.Location = new System.Drawing.Point(372, 399);
             this.buttonRAZ.Name = "buttonRAZ";
             this.buttonRAZ.Size = new System.Drawing.Size(71, 39);
-            this.buttonRAZ.TabIndex = 39;
+            this.buttonRAZ.TabIndex = 10;
             this.buttonRAZ.Text = "RAZ";
             this.buttonRAZ.UseVisualStyleBackColor = true;
             this.buttonRAZ.Click += new System.EventHandler(this.buttonRAZ_Click);

@@ -77,7 +77,7 @@
             this.buttonSsEcheances.Location = new System.Drawing.Point(535, 50);
             this.buttonSsEcheances.Name = "buttonSsEcheances";
             this.buttonSsEcheances.Size = new System.Drawing.Size(262, 42);
-            this.buttonSsEcheances.TabIndex = 6;
+            this.buttonSsEcheances.TabIndex = 2;
             this.buttonSsEcheances.Text = "Echeances";
             this.buttonSsEcheances.UseVisualStyleBackColor = false;
             this.buttonSsEcheances.Click += new System.EventHandler(this.buttonSsEcheances_Click);
@@ -100,7 +100,7 @@
             this.buttonSsDepenses.Location = new System.Drawing.Point(269, 50);
             this.buttonSsDepenses.Name = "buttonSsDepenses";
             this.buttonSsDepenses.Size = new System.Drawing.Size(260, 42);
-            this.buttonSsDepenses.TabIndex = 8;
+            this.buttonSsDepenses.TabIndex = 1;
             this.buttonSsDepenses.Text = "Dépenses";
             this.buttonSsDepenses.UseVisualStyleBackColor = false;
             this.buttonSsDepenses.Click += new System.EventHandler(this.buttonSsDepenses_Click);
@@ -137,7 +137,7 @@
             this.buttonSsCotisations.Location = new System.Drawing.Point(3, 50);
             this.buttonSsCotisations.Name = "buttonSsCotisations";
             this.buttonSsCotisations.Size = new System.Drawing.Size(260, 42);
-            this.buttonSsCotisations.TabIndex = 7;
+            this.buttonSsCotisations.TabIndex = 0;
             this.buttonSsCotisations.Text = "Cotisations";
             this.buttonSsCotisations.UseVisualStyleBackColor = false;
             this.buttonSsCotisations.Click += new System.EventHandler(this.buttonSsCotisations_Click);

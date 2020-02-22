@@ -53,7 +53,7 @@
             this.labelCloseDocuments.Location = new System.Drawing.Point(370, 0);
             this.labelCloseDocuments.Name = "labelCloseDocuments";
             this.labelCloseDocuments.Size = new System.Drawing.Size(18, 18);
-            this.labelCloseDocuments.TabIndex = 20;
+            this.labelCloseDocuments.TabIndex = 5;
             this.labelCloseDocuments.Text = "X";
             this.labelCloseDocuments.Click += new System.EventHandler(this.labelCloseDocuments_Click);
             // 
@@ -63,7 +63,7 @@
             this.buttonValider.Location = new System.Drawing.Point(64, 218);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
-            this.buttonValider.TabIndex = 21;
+            this.buttonValider.TabIndex = 4;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -73,7 +73,7 @@
             this.textBoxNom.Location = new System.Drawing.Point(173, 84);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(182, 20);
-            this.textBoxNom.TabIndex = 18;
+            this.textBoxNom.TabIndex = 0;
             this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNom_KeyPress);
             // 
@@ -82,7 +82,7 @@
             this.buttonRaz.Location = new System.Drawing.Point(251, 218);
             this.buttonRaz.Name = "buttonRaz";
             this.buttonRaz.Size = new System.Drawing.Size(75, 23);
-            this.buttonRaz.TabIndex = 22;
+            this.buttonRaz.TabIndex = 3;
             this.buttonRaz.Text = "RAZ";
             this.buttonRaz.UseVisualStyleBackColor = true;
             this.buttonRaz.Click += new System.EventHandler(this.buttonRaz_Click);

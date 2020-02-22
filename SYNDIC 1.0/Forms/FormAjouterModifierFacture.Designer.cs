@@ -65,7 +65,7 @@
             this.labelCloseDepense.Location = new System.Drawing.Point(425, 4);
             this.labelCloseDepense.Name = "labelCloseDepense";
             this.labelCloseDepense.Size = new System.Drawing.Size(18, 18);
-            this.labelCloseDepense.TabIndex = 1;
+            this.labelCloseDepense.TabIndex = 6;
             this.labelCloseDepense.Text = "X";
             this.labelCloseDepense.Click += new System.EventHandler(this.labelCloseDepense_Click);
             // 
@@ -97,7 +97,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
-            this.buttonAnnuler.TabIndex = 1;
+            this.buttonAnnuler.TabIndex = 4;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
@@ -110,7 +110,7 @@
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
+            this.buttonValider.TabIndex = 5;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -121,7 +121,7 @@
             this.buttonAjouterProduit.Location = new System.Drawing.Point(353, 89);
             this.buttonAjouterProduit.Name = "buttonAjouterProduit";
             this.buttonAjouterProduit.Size = new System.Drawing.Size(51, 23);
-            this.buttonAjouterProduit.TabIndex = 63;
+            this.buttonAjouterProduit.TabIndex = 1;
             this.buttonAjouterProduit.Text = "...";
             this.buttonAjouterProduit.UseVisualStyleBackColor = true;
             this.buttonAjouterProduit.Click += new System.EventHandler(this.buttonAjouterProduit_Click);
@@ -133,7 +133,7 @@
             this.comboBoxProduit.Location = new System.Drawing.Point(115, 86);
             this.comboBoxProduit.Name = "comboBoxProduit";
             this.comboBoxProduit.Size = new System.Drawing.Size(231, 25);
-            this.comboBoxProduit.TabIndex = 62;
+            this.comboBoxProduit.TabIndex = 0;
             this.comboBoxProduit.SelectedIndexChanged += new System.EventHandler(this.comboBoxProduit_SelectedIndexChanged);
             this.comboBoxProduit.Click += new System.EventHandler(this.comboBoxProduit_SelectedIndexChanged);
             // 
@@ -153,7 +153,7 @@
             this.textBoxPrixProduit.Location = new System.Drawing.Point(115, 182);
             this.textBoxPrixProduit.Name = "textBoxPrixProduit";
             this.textBoxPrixProduit.Size = new System.Drawing.Size(231, 22);
-            this.textBoxPrixProduit.TabIndex = 60;
+            this.textBoxPrixProduit.TabIndex = 3;
             this.textBoxPrixProduit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrixProduit_KeyPress);
             // 
             // labelPrix
@@ -172,7 +172,7 @@
             this.textBoxQteProduit.Location = new System.Drawing.Point(115, 133);
             this.textBoxQteProduit.Name = "textBoxQteProduit";
             this.textBoxQteProduit.Size = new System.Drawing.Size(231, 22);
-            this.textBoxQteProduit.TabIndex = 58;
+            this.textBoxQteProduit.TabIndex = 2;
             this.textBoxQteProduit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQteProduit_KeyPress);
             // 
             // labelQteProduit

@@ -75,7 +75,7 @@
             this.labelCloseBiens.Location = new System.Drawing.Point(417, 4);
             this.labelCloseBiens.Name = "labelCloseBiens";
             this.labelCloseBiens.Size = new System.Drawing.Size(18, 18);
-            this.labelCloseBiens.TabIndex = 1;
+            this.labelCloseBiens.TabIndex = 11;
             this.labelCloseBiens.Text = "X";
             this.labelCloseBiens.Click += new System.EventHandler(this.labelCloseBiens_Click);
             // 
@@ -185,7 +185,7 @@
             this.buttonRaz.Location = new System.Drawing.Point(89, 35);
             this.buttonRaz.Name = "buttonRaz";
             this.buttonRaz.Size = new System.Drawing.Size(118, 23);
-            this.buttonRaz.TabIndex = 2;
+            this.buttonRaz.TabIndex = 8;
             this.buttonRaz.Text = "Raz";
             this.buttonRaz.UseVisualStyleBackColor = true;
             this.buttonRaz.Click += new System.EventHandler(this.buttonRaz_Click);
@@ -195,7 +195,7 @@
             this.buttonValdier.Location = new System.Drawing.Point(14, 6);
             this.buttonValdier.Name = "buttonValdier";
             this.buttonValdier.Size = new System.Drawing.Size(118, 23);
-            this.buttonValdier.TabIndex = 1;
+            this.buttonValdier.TabIndex = 10;
             this.buttonValdier.Text = "Valider";
             this.buttonValdier.UseVisualStyleBackColor = true;
             this.buttonValdier.Click += new System.EventHandler(this.buttonValdier_Click);
@@ -205,7 +205,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(160, 6);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(118, 23);
-            this.buttonAnnuler.TabIndex = 0;
+            this.buttonAnnuler.TabIndex = 9;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
@@ -216,7 +216,7 @@
             this.textBoxRaison_Social.Location = new System.Drawing.Point(182, 91);
             this.textBoxRaison_Social.Name = "textBoxRaison_Social";
             this.textBoxRaison_Social.Size = new System.Drawing.Size(200, 22);
-            this.textBoxRaison_Social.TabIndex = 69;
+            this.textBoxRaison_Social.TabIndex = 0;
             this.textBoxRaison_Social.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             this.textBoxRaison_Social.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRaison_Social_KeyPress);
             // 
@@ -226,7 +226,7 @@
             this.textBoxcode_Postal.Location = new System.Drawing.Point(182, 223);
             this.textBoxcode_Postal.Name = "textBoxcode_Postal";
             this.textBoxcode_Postal.Size = new System.Drawing.Size(200, 22);
-            this.textBoxcode_Postal.TabIndex = 70;
+            this.textBoxcode_Postal.TabIndex = 4;
             this.textBoxcode_Postal.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             this.textBoxcode_Postal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxcode_Postal_KeyPress);
             // 
@@ -236,7 +236,7 @@
             this.textBoxAddress.Location = new System.Drawing.Point(182, 191);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(200, 22);
-            this.textBoxAddress.TabIndex = 71;
+            this.textBoxAddress.TabIndex = 3;
             this.textBoxAddress.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             // 
             // textBoxPrenom
@@ -245,7 +245,7 @@
             this.textBoxPrenom.Location = new System.Drawing.Point(182, 159);
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(200, 22);
-            this.textBoxPrenom.TabIndex = 72;
+            this.textBoxPrenom.TabIndex = 2;
             this.textBoxPrenom.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             this.textBoxPrenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
@@ -255,7 +255,7 @@
             this.textBoxNom.Location = new System.Drawing.Point(182, 127);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(200, 22);
-            this.textBoxNom.TabIndex = 73;
+            this.textBoxNom.TabIndex = 1;
             this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenom_KeyPress);
             // 
@@ -265,7 +265,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(182, 287);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(200, 22);
-            this.textBoxEmail.TabIndex = 74;
+            this.textBoxEmail.TabIndex = 6;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             // 
             // textBoxTelephone
@@ -274,7 +274,7 @@
             this.textBoxTelephone.Location = new System.Drawing.Point(182, 255);
             this.textBoxTelephone.Name = "textBoxTelephone";
             this.textBoxTelephone.Size = new System.Drawing.Size(200, 22);
-            this.textBoxTelephone.TabIndex = 75;
+            this.textBoxTelephone.TabIndex = 5;
             this.textBoxTelephone.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             this.textBoxTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelephone_KeyPress);
             // 
@@ -286,7 +286,7 @@
             this.comboBoxVille.Location = new System.Drawing.Point(182, 318);
             this.comboBoxVille.Name = "comboBoxVille";
             this.comboBoxVille.Size = new System.Drawing.Size(200, 25);
-            this.comboBoxVille.TabIndex = 76;
+            this.comboBoxVille.TabIndex = 7;
             // 
             // comboBoxIdVille
             // 

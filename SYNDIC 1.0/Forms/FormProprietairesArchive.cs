@@ -20,6 +20,7 @@ namespace SYNDIC_1._0.Forms
 
         private void FormProprietairesArchive_Load(object sender, EventArgs e)
         {
+            textBoxrechercher.Focus();
             var src = from p in syndicDataContext.ProprietaireArchives
                       join v in syndicDataContext.villes on p.id_ville equals v.id
                       select new { CIN = p.cin, Prénom = p.prenom, Nom = p.nom, Sexe = p.sexe, p.titre, Telephone = p.tele, Email = p.email, p.code_postal, Ville = v.nom, Adresse = p.adresse, Bien = p.bien, Immeuble = p.immeuble, p.dateVente, p.id };

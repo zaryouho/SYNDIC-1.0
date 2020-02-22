@@ -22,7 +22,7 @@ namespace SYNDIC_1._0.Forms
 
         private void FormSociete_Load(object sender, EventArgs e)
         {
-
+            buttonSociete.Focus();
             var src = from soc in syndicDataContext.societes
                       join v in syndicDataContext.villes on soc.id_ville equals v.id
                       select new {    soc.id,
@@ -51,7 +51,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonSociete_Click(object sender, EventArgs e)
         {
-
+          
             buttonSociete.BackColor = Color.Navy;
             buttonSocieteArchive.BackColor = Color.Blue;
             buttonAjouterSociete.BackColor = Color.Blue;
@@ -230,6 +230,11 @@ namespace SYNDIC_1._0.Forms
         {
             if (textBoxRechercher.Text == "")
                 FormSociete_Load(sender, e);
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

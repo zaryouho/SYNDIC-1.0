@@ -79,7 +79,7 @@
             this.buttonRechercher.Location = new System.Drawing.Point(247, 12);
             this.buttonRechercher.Name = "buttonRechercher";
             this.buttonRechercher.Size = new System.Drawing.Size(108, 30);
-            this.buttonRechercher.TabIndex = 26;
+            this.buttonRechercher.TabIndex = 1;
             this.buttonRechercher.Text = "Rechercher";
             this.buttonRechercher.UseVisualStyleBackColor = true;
             // 
@@ -89,7 +89,7 @@
             this.textBoxrechercher.Location = new System.Drawing.Point(18, 22);
             this.textBoxrechercher.Name = "textBoxrechercher";
             this.textBoxrechercher.Size = new System.Drawing.Size(212, 22);
-            this.textBoxrechercher.TabIndex = 25;
+            this.textBoxrechercher.TabIndex = 0;
             // 
             // splitContainerListeProprietaireBody
             // 
@@ -119,7 +119,7 @@
             this.buttonLast.Location = new System.Drawing.Point(18, 258);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 30;
+            this.buttonLast.TabIndex = 4;
             this.buttonLast.UseVisualStyleBackColor = true;
             // 
             // buttonNext
@@ -130,7 +130,7 @@
             this.buttonNext.Location = new System.Drawing.Point(18, 203);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 29;
+            this.buttonNext.TabIndex = 2;
             this.buttonNext.UseVisualStyleBackColor = true;
             // 
             // buttonprevious
@@ -141,7 +141,7 @@
             this.buttonprevious.Location = new System.Drawing.Point(18, 96);
             this.buttonprevious.Name = "buttonprevious";
             this.buttonprevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonprevious.TabIndex = 28;
+            this.buttonprevious.TabIndex = 3;
             this.buttonprevious.UseVisualStyleBackColor = true;
             // 
             // buttonFirst
@@ -152,7 +152,7 @@
             this.buttonFirst.Location = new System.Drawing.Point(18, 41);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 27;
+            this.buttonFirst.TabIndex = 5;
             this.buttonFirst.UseVisualStyleBackColor = true;
             // 
             // dataGridViewProprietaires
@@ -193,7 +193,7 @@
             this.dataGridViewProprietaires.RowHeadersWidth = 25;
             this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProprietaires.Size = new System.Drawing.Size(708, 349);
-            this.dataGridViewProprietaires.TabIndex = 21;
+            this.dataGridViewProprietaires.TabIndex = 6;
             // 
             // FormProprietairesArchive
             // 

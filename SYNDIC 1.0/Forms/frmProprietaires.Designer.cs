@@ -96,7 +96,7 @@
             this.buttonSsProprietaires.Location = new System.Drawing.Point(3, 3);
             this.buttonSsProprietaires.Name = "buttonSsProprietaires";
             this.buttonSsProprietaires.Size = new System.Drawing.Size(183, 37);
-            this.buttonSsProprietaires.TabIndex = 8;
+            this.buttonSsProprietaires.TabIndex = 0;
             this.buttonSsProprietaires.Text = "Propriétaires";
             this.buttonSsProprietaires.UseVisualStyleBackColor = false;
             this.buttonSsProprietaires.Click += new System.EventHandler(this.buttonSsProprietaires_Click);
@@ -117,7 +117,7 @@
             this.buttonSsProprietairesArchive.Location = new System.Drawing.Point(381, 3);
             this.buttonSsProprietairesArchive.Name = "buttonSsProprietairesArchive";
             this.buttonSsProprietairesArchive.Size = new System.Drawing.Size(183, 37);
-            this.buttonSsProprietairesArchive.TabIndex = 10;
+            this.buttonSsProprietairesArchive.TabIndex = 2;
             this.buttonSsProprietairesArchive.Text = "Propriétaires arch.";
             this.buttonSsProprietairesArchive.UseVisualStyleBackColor = false;
             this.buttonSsProprietairesArchive.Click += new System.EventHandler(this.buttonSsProprietairesArchive_Click);
@@ -138,7 +138,7 @@
             this.buttonSsAjouterProprietaires.Location = new System.Drawing.Point(192, 3);
             this.buttonSsAjouterProprietaires.Name = "buttonSsAjouterProprietaires";
             this.buttonSsAjouterProprietaires.Size = new System.Drawing.Size(183, 37);
-            this.buttonSsAjouterProprietaires.TabIndex = 9;
+            this.buttonSsAjouterProprietaires.TabIndex = 1;
             this.buttonSsAjouterProprietaires.Text = "Ajouter Propriétaire";
             this.buttonSsAjouterProprietaires.UseVisualStyleBackColor = false;
             this.buttonSsAjouterProprietaires.Click += new System.EventHandler(this.buttonSsAjouterProprietaires_Click);
@@ -159,7 +159,7 @@
             this.buttonSsProprietairesRecettes.Location = new System.Drawing.Point(570, 3);
             this.buttonSsProprietairesRecettes.Name = "buttonSsProprietairesRecettes";
             this.buttonSsProprietairesRecettes.Size = new System.Drawing.Size(186, 37);
-            this.buttonSsProprietairesRecettes.TabIndex = 11;
+            this.buttonSsProprietairesRecettes.TabIndex = 3;
             this.buttonSsProprietairesRecettes.Text = "Recettes";
             this.buttonSsProprietairesRecettes.UseVisualStyleBackColor = false;
             this.buttonSsProprietairesRecettes.Click += new System.EventHandler(this.buttonSsProprietairesRecettes_Click);

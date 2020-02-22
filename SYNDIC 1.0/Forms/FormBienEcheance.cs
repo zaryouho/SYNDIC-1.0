@@ -28,6 +28,7 @@ namespace SYNDIC_1._0
 
         private void FormBienEcheance_Load(object sender, EventArgs e)
         {
+            comboBoxBloc.Focus();
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
 
             DBHelper.remplir_dataset("select * from bloc", "bloc");
@@ -243,6 +244,11 @@ namespace SYNDIC_1._0
         {
             if(comboBoxTypeEcheance.SelectedValue.ToString() != "Frais biens")
                 buttonModifierEcheance_Click(sender, e);
+        }
+
+        private void comboBoxBloc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

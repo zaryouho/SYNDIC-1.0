@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRecetteProprietaire));
             this.splitContainerRecetteProprietaire = new System.Windows.Forms.SplitContainer();
             this.buttonListDocs = new System.Windows.Forms.Button();
@@ -96,7 +96,7 @@
             this.buttonListDocs.Location = new System.Drawing.Point(393, 26);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
-            this.buttonListDocs.TabIndex = 17;
+            this.buttonListDocs.TabIndex = 1;
             this.buttonListDocs.Text = "Listes Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
@@ -117,7 +117,7 @@
             this.buttonImprimerRecette.Location = new System.Drawing.Point(609, 26);
             this.buttonImprimerRecette.Name = "buttonImprimerRecette";
             this.buttonImprimerRecette.Size = new System.Drawing.Size(182, 35);
-            this.buttonImprimerRecette.TabIndex = 15;
+            this.buttonImprimerRecette.TabIndex = 2;
             this.buttonImprimerRecette.Text = "Imprimer Recette";
             this.buttonImprimerRecette.UseVisualStyleBackColor = false;
             this.buttonImprimerRecette.Click += new System.EventHandler(this.buttonImprimerRecette_Click);
@@ -140,7 +140,7 @@
             this.comboBoxProprietaire.Location = new System.Drawing.Point(12, 33);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
             this.comboBoxProprietaire.Size = new System.Drawing.Size(297, 25);
-            this.comboBoxProprietaire.TabIndex = 2;
+            this.comboBoxProprietaire.TabIndex = 0;
             // 
             // splitContainerRecette
             // 
@@ -165,45 +165,45 @@
             // dataGridViewRecette
             // 
             this.dataGridViewRecette.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewRecette.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewRecette.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewRecette.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRecette.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewRecette.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRecette.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRecette.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewRecette.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRecette.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRecette.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewRecette.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewRecette.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewRecette.Location = new System.Drawing.Point(57, 0);
             this.dataGridViewRecette.Name = "dataGridViewRecette";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRecette.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRecette.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewRecette.RowHeadersWidth = 25;
             this.dataGridViewRecette.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRecette.Size = new System.Drawing.Size(743, 302);
-            this.dataGridViewRecette.TabIndex = 4;
+            this.dataGridViewRecette.TabIndex = 5;
             // 
             // panelNavigation
             // 
@@ -226,7 +226,7 @@
             this.buttonLast.Location = new System.Drawing.Point(8, 234);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 21;
+            this.buttonLast.TabIndex = 3;
             this.buttonLast.UseVisualStyleBackColor = false;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
@@ -239,7 +239,7 @@
             this.buttonPrevious.Location = new System.Drawing.Point(8, 92);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonPrevious.TabIndex = 19;
+            this.buttonPrevious.TabIndex = 2;
             this.buttonPrevious.UseVisualStyleBackColor = false;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
@@ -252,7 +252,7 @@
             this.buttonNext.Location = new System.Drawing.Point(8, 163);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 20;
+            this.buttonNext.TabIndex = 1;
             this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -265,7 +265,7 @@
             this.buttonFirst.Location = new System.Drawing.Point(8, 21);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 18;
+            this.buttonFirst.TabIndex = 4;
             this.buttonFirst.UseVisualStyleBackColor = false;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -286,7 +286,7 @@
             this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
             this.buttonAjouterRecette.Name = "buttonAjouterRecette";
             this.buttonAjouterRecette.Size = new System.Drawing.Size(260, 53);
-            this.buttonAjouterRecette.TabIndex = 14;
+            this.buttonAjouterRecette.TabIndex = 1;
             this.buttonAjouterRecette.Text = "Ajouter Recette";
             this.buttonAjouterRecette.UseVisualStyleBackColor = false;
             this.buttonAjouterRecette.Click += new System.EventHandler(this.buttonAjouterRecette_Click);
@@ -308,7 +308,7 @@
             this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
             this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
             this.buttonSupprimerRecette.Size = new System.Drawing.Size(262, 53);
-            this.buttonSupprimerRecette.TabIndex = 16;
+            this.buttonSupprimerRecette.TabIndex = 2;
             this.buttonSupprimerRecette.Text = "Supprimer Recette";
             this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
             this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);

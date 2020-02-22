@@ -105,7 +105,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
-            this.buttonAnnuler.TabIndex = 1;
+            this.buttonAnnuler.TabIndex = 8;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
@@ -119,7 +119,7 @@
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
+            this.buttonValider.TabIndex = 9;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -130,7 +130,7 @@
             this.textBoxTypeDocument.Location = new System.Drawing.Point(178, 342);
             this.textBoxTypeDocument.Name = "textBoxTypeDocument";
             this.textBoxTypeDocument.Size = new System.Drawing.Size(231, 22);
-            this.textBoxTypeDocument.TabIndex = 53;
+            this.textBoxTypeDocument.TabIndex = 7;
             // 
             // labelTypeDocument
             // 
@@ -148,7 +148,7 @@
             this.textBoxNumDocument.Location = new System.Drawing.Point(178, 306);
             this.textBoxNumDocument.Name = "textBoxNumDocument";
             this.textBoxNumDocument.Size = new System.Drawing.Size(231, 22);
-            this.textBoxNumDocument.TabIndex = 51;
+            this.textBoxNumDocument.TabIndex = 6;
             this.textBoxNumDocument.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumDocument_KeyPress);
             // 
             // comboBoxEmploye
@@ -159,7 +159,7 @@
             this.comboBoxEmploye.Location = new System.Drawing.Point(179, 195);
             this.comboBoxEmploye.Name = "comboBoxEmploye";
             this.comboBoxEmploye.Size = new System.Drawing.Size(229, 25);
-            this.comboBoxEmploye.TabIndex = 50;
+            this.comboBoxEmploye.TabIndex = 3;
             // 
             // comboBoxSociete
             // 
@@ -169,7 +169,7 @@
             this.comboBoxSociete.Location = new System.Drawing.Point(178, 232);
             this.comboBoxSociete.Name = "comboBoxSociete";
             this.comboBoxSociete.Size = new System.Drawing.Size(231, 25);
-            this.comboBoxSociete.TabIndex = 49;
+            this.comboBoxSociete.TabIndex = 4;
             // 
             // comboBoxTypeDepense
             // 
@@ -179,7 +179,7 @@
             this.comboBoxTypeDepense.Location = new System.Drawing.Point(179, 269);
             this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
             this.comboBoxTypeDepense.Size = new System.Drawing.Size(229, 25);
-            this.comboBoxTypeDepense.TabIndex = 48;
+            this.comboBoxTypeDepense.TabIndex = 5;
             // 
             // labelNumDocument
             // 
@@ -227,7 +227,7 @@
             this.textBoxMontant.Location = new System.Drawing.Point(178, 159);
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
-            this.textBoxMontant.TabIndex = 43;
+            this.textBoxMontant.TabIndex = 2;
             this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontant_KeyPress);
             // 
             // labelMontant
@@ -257,7 +257,7 @@
             this.dateTimePickerDepense.Location = new System.Drawing.Point(178, 123);
             this.dateTimePickerDepense.Name = "dateTimePickerDepense";
             this.dateTimePickerDepense.Size = new System.Drawing.Size(231, 22);
-            this.dateTimePickerDepense.TabIndex = 40;
+            this.dateTimePickerDepense.TabIndex = 1;
             // 
             // textBoxDesignationDepense
             // 
@@ -265,7 +265,7 @@
             this.textBoxDesignationDepense.Location = new System.Drawing.Point(178, 87);
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
             this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
-            this.textBoxDesignationDepense.TabIndex = 39;
+            this.textBoxDesignationDepense.TabIndex = 0;
             this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
             // 
             // labelDesignationDepense

@@ -12,7 +12,7 @@ namespace SYNDIC_1._0
     public partial class frmBiens : Form
     {
 
-       
+        private int c = 0;
         
 
         private void OpenFormInPannel(object formChild)
@@ -41,14 +41,16 @@ namespace SYNDIC_1._0
 
         private void frmBiens_Load(object sender, EventArgs e)
         {
-            
+            buttonSsBiensListe.Focus();
             buttonSsBiensListe.BackColor = Color.Navy;
             buttonSsBiensListe_Click(sender, e);
+            
 
         }
 
         private void buttonSsBiensListe_Click(object sender, EventArgs e)
         {
+          
             buttonSsBiensListe.BackColor = Color.Navy;
             buttonSsBiensEcheances.BackColor = Color.Blue;
             buttonSsBiensEchangeProprietaire.BackColor = Color.Blue;
@@ -65,7 +67,7 @@ namespace SYNDIC_1._0
 
         private void buttonSsBiensEcheances_Click(object sender, EventArgs e)
         {
-          
+           
             buttonSsBiensListe.BackColor = Color.Blue;
             buttonSsBiensEcheances.BackColor = Color.Navy;
             buttonSsBiensEchangeProprietaire.BackColor = Color.Blue;

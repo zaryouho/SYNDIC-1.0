@@ -23,7 +23,7 @@ namespace SYNDIC_1._0.Forms
 
         private void FormEmploye_Load(object sender, EventArgs e)
         {
-
+            buttonEmploye.Focus();
             var res = from em in syndicDataContext.employes
                       join vil in syndicDataContext.villes on em.id_ville equals vil.id
                       where em.date_depart == null

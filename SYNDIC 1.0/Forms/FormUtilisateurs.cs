@@ -204,5 +204,10 @@ namespace SYNDIC_1._0.Forms
             if (e.KeyChar == ' ')
                 e.Handled = true;
         }
+
+        private void splitContainerMain_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
