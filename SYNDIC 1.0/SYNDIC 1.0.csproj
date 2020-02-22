@@ -514,6 +514,7 @@
     <None Include="Resources\icons8_Delete_32.png" />
     <None Include="Resources\icons8_Edit_32.png" />
     <None Include="Resources\icons8_Plus_32.png" />
+    <None Include="Resources\imprimer icon mini.png" />
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\logo1.png" />
     <Content Include="Resources\logogoo.jpg" />

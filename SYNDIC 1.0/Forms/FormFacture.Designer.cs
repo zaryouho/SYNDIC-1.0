@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacture));
             this.splitContainerFactures = new System.Windows.Forms.SplitContainer();
-            this.buttonRetour = new System.Windows.Forms.Button();
             this.labelCloseDepense = new System.Windows.Forms.Label();
             this.textBoxRechercher = new System.Windows.Forms.TextBox();
             this.labelRechercher = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.panelFooter = new System.Windows.Forms.Panel();
             this.buttonAjouterFacture = new System.Windows.Forms.Button();
             this.buttonModifierIntervention = new System.Windows.Forms.Button();
+            this.buttonImprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFactures)).BeginInit();
             this.splitContainerFactures.Panel1.SuspendLayout();
             this.splitContainerFactures.Panel2.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             // splitContainerFactures.Panel1
             // 
-            this.splitContainerFactures.Panel1.Controls.Add(this.buttonRetour);
+            this.splitContainerFactures.Panel1.Controls.Add(this.buttonImprimer);
             this.splitContainerFactures.Panel1.Controls.Add(this.labelCloseDepense);
             this.splitContainerFactures.Panel1.Controls.Add(this.textBoxRechercher);
             this.splitContainerFactures.Panel1.Controls.Add(this.labelRechercher);
@@ -81,27 +82,6 @@
             this.splitContainerFactures.Size = new System.Drawing.Size(800, 450);
             this.splitContainerFactures.SplitterDistance = 73;
             this.splitContainerFactures.TabIndex = 0;
-            // 
-            // buttonRetour
-            // 
-            this.buttonRetour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRetour.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonRetour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonRetour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRetour.FlatAppearance.BorderSize = 0;
-            this.buttonRetour.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonRetour.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRetour.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRetour.ForeColor = System.Drawing.Color.White;
-            this.buttonRetour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRetour.Location = new System.Drawing.Point(653, 29);
-            this.buttonRetour.Name = "buttonRetour";
-            this.buttonRetour.Size = new System.Drawing.Size(133, 37);
-            this.buttonRetour.TabIndex = 17;
-            this.buttonRetour.Text = "Retour";
-            this.buttonRetour.UseVisualStyleBackColor = false;
-            this.buttonRetour.Click += new System.EventHandler(this.labelCloseDepense_Click);
             // 
             // labelCloseDepense
             // 
@@ -219,41 +199,41 @@
             // 
             // dataGridViewFactures
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewFactures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewFactures.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewFactures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewFactures.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFactures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFactures.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewFactures.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewFactures.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewFactures.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewFactures.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFactures.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewFactures.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewFactures.Name = "dataGridViewFactures";
             this.dataGridViewFactures.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFactures.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFactures.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewFactures.RowHeadersWidth = 25;
             this.dataGridViewFactures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewFactures.Size = new System.Drawing.Size(739, 290);
@@ -311,6 +291,27 @@
             this.buttonModifierIntervention.UseVisualStyleBackColor = false;
             this.buttonModifierIntervention.Click += new System.EventHandler(this.buttonModifierFacture_Click);
             // 
+            // buttonImprimer
+            // 
+            this.buttonImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimer.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImprimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonImprimer.FlatAppearance.BorderSize = 0;
+            this.buttonImprimer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.buttonImprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.buttonImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimer.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimer.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimer.Image")));
+            this.buttonImprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImprimer.Location = new System.Drawing.Point(683, 16);
+            this.buttonImprimer.Name = "buttonImprimer";
+            this.buttonImprimer.Size = new System.Drawing.Size(56, 54);
+            this.buttonImprimer.TabIndex = 18;
+            this.buttonImprimer.UseVisualStyleBackColor = false;
+            this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
+            // 
             // FormFacture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,7 +344,6 @@
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Button buttonAjouterFacture;
         private System.Windows.Forms.Button buttonModifierIntervention;
-        private System.Windows.Forms.Button buttonRetour;
         private System.Windows.Forms.Label labelCloseDepense;
         private System.Windows.Forms.TextBox textBoxRechercher;
         private System.Windows.Forms.Label labelRechercher;
@@ -353,5 +353,6 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonFirst;
         private System.Windows.Forms.DataGridView dataGridViewFactures;
+        private System.Windows.Forms.Button buttonImprimer;
     }
 }
