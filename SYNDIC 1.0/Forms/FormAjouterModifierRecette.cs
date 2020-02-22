@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYNDIC_1._0.Helper;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -29,6 +30,7 @@ namespace SYNDIC_1._0.Forms
         private BindingSource bsEcheanceCotisation;
         private string operation;
         private DataClassesSyndicDataContext SyndicDataContext = new DataClassesSyndicDataContext();
+        string[] values = null;
 
         public FormAjouterModifierRecette(int _id_Proprietaire = -1, string _operation = "")
         {
@@ -98,10 +100,18 @@ namespace SYNDIC_1._0.Forms
                     + comboBoxTypeRecette.SelectedValue.ToString() + "',"
                     + comboBoxNomProprietaire.SelectedValue.ToString() + ","
                     + textBoxNumRecu.Text + ")";
+                
+                string[] oldValues = { "", "" };
+                string[] newValues = { dateTimePickerDateRecette.Value.ToString() , textBoxMontant.Text.Replace("'", "''"),
+                comboBoxTypeRecette.SelectedValue.ToString(),comboBoxNomProprietaire.SelectedValue.ToString(),
+                textBoxNumRecu.Text};
+
 
                 com = new SqlCommand(sql, conn);
                 com.ExecuteNonQuery();
                 com = null;
+                Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Cotisation", oldValues, newValues);
+                values = oldValues;
                 sql = "select max(id) from cotisation";
                 com = new SqlCommand(sql, conn);
 

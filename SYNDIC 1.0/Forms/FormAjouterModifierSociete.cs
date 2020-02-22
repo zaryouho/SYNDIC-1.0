@@ -131,7 +131,7 @@ namespace SYNDIC_1._0.Forms
                 syndicDataContext.societes.InsertOnSubmit(so);
 
                 string[] newValues = { so.raison_sociale, so.nom, so.prenom, so.adresse, so.code_postal.ToString(), so.tel, so.email };
-                string[] oldValues = null;
+                string[] oldValues = { "",""};
                 Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Societe",oldValues ,newValues);
 
             }

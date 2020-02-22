@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using SYNDIC_1._0.Helper;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -28,6 +30,7 @@ namespace SYNDIC_1._0
         string operation;
         ligne ligneA;
         string produitLibelle;
+        string[] values = null;
 
         public FormAjouterModifierFacture(string _operation, ligne _ligne, string _produitLibelle = "")
         {
@@ -104,8 +107,6 @@ namespace SYNDIC_1._0
 
             if (result == DialogResult.Yes)
             {
-
-
                 if (operation == "Ajouter")
                 {
                     SqlCommand command = new SqlCommand("insert into ligne values (" +
@@ -117,6 +118,12 @@ namespace SYNDIC_1._0
 
                     command.ExecuteNonQuery();
                     command = null;
+
+                    string[] oldValues = { "", "" };
+                    string[] newValues = { comboBoxidProduit.Text , ligneA.id_depense.ToString() , textBoxQteProduit.Text ,
+                    textBoxPrixProduit.Text.Replace(",", ".")};
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Ligne", oldValues, newValues);
+                    values = newValues;
                 }
 
                 if (operation == "Modifier")
@@ -130,6 +137,10 @@ namespace SYNDIC_1._0
 
                         , DBHelper.connection);
                     command.ExecuteNonQuery();
+                    string[] oldValues = values;
+                    string[] newValues = { comboBoxidProduit.Text , ligneA.id_depense.ToString(), textBoxQteProduit.Text,
+                        textBoxPrixProduit.Text.Replace(",", ".") };
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Modifier", "Ligne", oldValues, newValues);
                 }
                 this.Close();
             }

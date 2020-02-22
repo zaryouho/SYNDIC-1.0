@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
+using SYNDIC_1._0.Helper;
+using SYNDIC_1._0.Forms;
 
 namespace SYNDIC_1._0
 {
@@ -32,6 +34,7 @@ namespace SYNDIC_1._0
         // BindingSource bsdepense;
         private string button;
         private depense depenseModifier;
+        string[] values = null;
 
         public FormAjouterModifierDepense(string _button, depense _depenseModifier = null)
         {
@@ -140,7 +143,14 @@ namespace SYNDIC_1._0
                     SqlCommand com = new SqlCommand(sql, DBHelper.connection);
                     com.ExecuteNonQuery();
                     com = null;
+                    
+                    string[] oldValues = { "", "" };
+                    string[] newValues 
+                     = { textBoxDesignationDepense.Text.Replace("'", "''") , textBoxDesignationDepense.Text.Replace("'", "''") ,
+                    textBoxMontant.Text ,emp,soc,comboBoxTypeDepense.Text,textBoxNumDocument.Text,textBoxTypeDocument.Text};
 
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Depence", oldValues, newValues);
+                    values = newValues;
                 }
                 else
                 {
@@ -169,6 +179,12 @@ namespace SYNDIC_1._0
                     SqlCommand com = new SqlCommand(sql, DBHelper.connection);
                     com.ExecuteNonQuery();
                     com = null;
+
+                    string[] oldValues = values;
+                    string[] newValues
+                     = { textBoxDesignationDepense.Text.Replace("'", "''") , textBoxDesignationDepense.Text.Replace("'", "''") ,
+                    textBoxMontant.Text ,emp,soc,comboBoxTypeDepense.Text,textBoxNumDocument.Text,textBoxTypeDocument.Text};
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Modifer", "Depence", oldValues, newValues);
                 }
 
                 this.Close();
