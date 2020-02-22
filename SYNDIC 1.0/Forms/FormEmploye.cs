@@ -184,7 +184,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonSupprimerEmploye_Click(object sender, EventArgs e)
         {
-            var question = MessageBox.Show("Voullez vous supprimer cet Employe ?", "Information", MessageBoxButtons.YesNo);
+            var question = MessageBox.Show("Voulez vous supprimer cet Employé ?", "Information", MessageBoxButtons.YesNo);
             if (question == DialogResult.No)
                 return;
             if (question == DialogResult.Yes)

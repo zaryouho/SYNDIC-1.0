@@ -95,7 +95,7 @@ namespace SYNDIC_1._0
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment enregistrez ces Information ?"
+            DialogResult result = MessageBox.Show("Voulez vous vraiment enregistrez ces Informations ?"
                 + "\nProduit : " + comboBoxProduit.Text
                 + "\nPrix : " + textBoxPrixProduit.Text
                 + "\nQuantité : " + textBoxQteProduit.Text
@@ -164,7 +164,7 @@ namespace SYNDIC_1._0
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment sortir sans sauvegarder les Information ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Voulez vous vraiment sortir sans sauvegarder les Informations ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes) this.Close();
         }
 

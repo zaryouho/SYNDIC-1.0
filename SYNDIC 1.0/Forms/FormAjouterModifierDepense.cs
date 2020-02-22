@@ -112,7 +112,7 @@ namespace SYNDIC_1._0
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment Enregistrez ces Information ?\n" +
+            DialogResult result = MessageBox.Show("Voulez vous vraiment Enregistrer ces Informations ?\n" +
                 "Designation : " + textBoxDesignationDepense.Text + "\n" +
                 "Date de Depense : " + dateTimePickerDepense.Text + "\n" +
                 "Montant : " + textBoxMontant.Text

@@ -103,11 +103,11 @@ namespace SYNDIC_1._0
             }
             if (!flag)
             {
-                MessageBox.Show("this is the last one");
+                MessageBox.Show("c'est le dernier");
                 return;
             }
 
-            MessageBox.Show("there is nothing");
+            MessageBox.Show("Il n'y a rien");
 
 
 

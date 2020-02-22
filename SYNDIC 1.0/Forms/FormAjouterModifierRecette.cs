@@ -71,8 +71,8 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure want to Add this Informations ?"
-                + "\nNumero de Recette : " + textBoxNumRecu.Text
+            DialogResult result = MessageBox.Show("Voulez vous ajouter ces informations ?"
+                + "\nNuméro de Recette : " + textBoxNumRecu.Text
                 + "\nDate de Recette : " + dateTimePickerDateRecette.Value.ToString()
                 + "\nMontant de Recette : " + textBoxMontant.Text
                 + "\nType de Recette : " + comboBoxTypeRecette.SelectedValue.ToString()
@@ -189,7 +189,7 @@ namespace SYNDIC_1._0.Forms
                                          select echeance).Single();
 
                         if (echeance1.montant_reçu + montantRecette > echeance1.montant)
-                            throw new Exception("Le Montant de Recette est superieur de le Montant d'Echeance s'il vous plaît modifier le monatnt de Recette");
+                            throw new Exception("Le Montant de Recette est supérieur de le Montant d'écheance s'il vous plaît modifier le montant de Recette");
 
                         echeance1.montant_reçu += montantRecette;
 
@@ -216,7 +216,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Les Données n'est pas Enregistrer , voulez vous vraiment Quitter ce Form ?", "Annulation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Les Données n'ont pas été enregistrées, voulez vous vraiment quitter ce Form ?", "Annulation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
 

@@ -166,7 +166,7 @@ namespace SYNDIC_1._0
                 if (id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text) || dateAchat.ToShortDateString() != dateTimePickerDateAchat.Value.ToShortDateString())
                 {
 
-                    DialogResult question = MessageBox.Show("Voullez vous Enregistrer les nouveaux Données ?", "Information", MessageBoxButtons.YesNoCancel);
+                    DialogResult question = MessageBox.Show("Voulez vous Enregistrer les nouveaux Données ?", "Information", MessageBoxButtons.YesNoCancel);
                     if (question == DialogResult.Cancel)
                         return;
                     else if (question == DialogResult.Yes)

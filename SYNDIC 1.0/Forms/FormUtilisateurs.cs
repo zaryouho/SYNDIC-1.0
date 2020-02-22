@@ -128,20 +128,20 @@ namespace SYNDIC_1._0.Forms
                         if (update)
                         {
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Modifer.ToString(), "utilisateur", "oldPassword", "newPassword");
-                            MessageBox.Show("daz update");
+                            MessageBox.Show("L'utilisateur a été modifié avec succés");
                         }
                         else
                         {
                             
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Ajouter.ToString(), "utilisateur", "oldPassword", "newPassword");
-                            MessageBox.Show("daz insert");
+                            MessageBox.Show("L'utilisateur a été ajouté avec succés");
                         }
                         //  }
                     }
                 }
             }
             else
-                MessageBox.Show("cet login déja existe");
+                MessageBox.Show("cette login existe déja !");
 
             FormUtilisateurs_Load(sender, e);
         }
@@ -149,13 +149,13 @@ namespace SYNDIC_1._0.Forms
         {
             if (dataGridViewUsers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("No user is selected");
+                MessageBox.Show("Aucun utilisateur sélectionné");
                 dataGridViewUsers.Focus();
                 return;
             }
             while (dataGridViewUsers.SelectedRows.Count != 0)
             {
-                if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this user ?", "Deleting...", MessageBoxButtons.YesNo))
+                if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet utilisateur ?", "Suppression...", MessageBoxButtons.YesNo,MessageBoxIcon.Question))
                 {
                     update = true;
                     buttonAddUser.PerformClick();
@@ -168,7 +168,7 @@ namespace SYNDIC_1._0.Forms
         {
             if (dataGridViewUsers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("select a user to delete");
+                MessageBox.Show("sélectionner un utilisateur pour le supprimer");
                 dataGridViewUsers.Focus();
                 return;
             }

@@ -132,7 +132,7 @@ namespace SYNDIC_1._0.Forms
         {
             if (dataGridViewHistorique.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selectioner une ligne pour supprimer", "Aucune ligne a ete selectioner", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sélectionner une ligne pour le supprimer", "Aucune ligne sélectionné", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -145,7 +145,7 @@ namespace SYNDIC_1._0.Forms
                 string query = "delete j.*,c.* from journal j inner join connection c on j.id_utilisateur = c.id_utilisateur where id =@queryId";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete'" + dataGridViewHistorique.SelectedRows.Count + "' rows ?", "Deleting...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer'" + dataGridViewHistorique.SelectedRows.Count + "' rows ?", "Suppression...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
                     if (dialogResult.Equals(DialogResult.Yes))
                     {
                         #region deleting single row

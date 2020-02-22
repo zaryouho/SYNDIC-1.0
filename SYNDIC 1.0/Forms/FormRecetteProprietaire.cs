@@ -77,8 +77,8 @@ namespace SYNDIC_1._0.Forms
         private void buttonSupprimerRecette_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Are you sure want to Remove this Recette ?"
-                + "\nNumero de Recette : " + dataGridViewRecette.CurrentRow.Cells[6].Value.ToString()
+            DialogResult result = MessageBox.Show("Voulez vous supprimer cette Recette ?"
+                + "\nNuméro de Recette : " + dataGridViewRecette.CurrentRow.Cells[6].Value.ToString()
                 + "\nDate de Recette : " + dataGridViewRecette.CurrentRow.Cells[1].Value.ToString()
                 + "\nMontant de Recette : " + dataGridViewRecette.CurrentRow.Cells[2].Value.ToString()
                 + "\nType de Recette : " + dataGridViewRecette.CurrentRow.Cells[4].Value.ToString()

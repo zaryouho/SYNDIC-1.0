@@ -96,7 +96,7 @@ namespace SYNDIC_1._0
         {
             if (dataGridViewInterventions.CurrentRow == null)
             {
-                MessageBox.Show("Selectioner une Intervention d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sélectioner une intervention d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             int index = dataGridViewInterventions.CurrentRow.Index;

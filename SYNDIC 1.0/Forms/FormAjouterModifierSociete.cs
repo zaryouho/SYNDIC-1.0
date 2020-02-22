@@ -40,7 +40,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            var question = MessageBox.Show("Voullez vous Ferme cet Forme ?", "Information", MessageBoxButtons.YesNo);
+            var question = MessageBox.Show("Voulez vous Fermer cette Form ?", "Information", MessageBoxButtons.YesNo);
             if (question == DialogResult.No)
                 return;
             if (question == DialogResult.Yes)

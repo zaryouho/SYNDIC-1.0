@@ -75,11 +75,11 @@ namespace SYNDIC_1._0
         private void buttonValider_Click(object sender, EventArgs e)
         {
             if(operation == "Ajouter") { 
-                DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?"+
+                DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cette écheance ?"+
                     "Montant : " + textBoxMontant.Text +
                     "\nMontant Reçu :" + textBoxMontantRecu.Text +
-                    "\nNom Bien : " + comboBoxBien.Text +
-                    "\nType de Echeance :" + comboBoxTypeEcheance.Text,
+                    "\nNom de Bien : " + comboBoxBien.Text +
+                    "\nType d'écheance :" + comboBoxTypeEcheance.Text,
                     "Information",
                     MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Information,
@@ -112,11 +112,11 @@ namespace SYNDIC_1._0
             }
             else
             {
-                DialogResult result = MessageBox.Show("Voulez vous vraiment Modifier cet Echeance ?" +
+                DialogResult result = MessageBox.Show("Voulez vous vraiment Modifier cette écheance ?" +
                     "Montant : " + textBoxMontant.Text +
                     "\nMontant Reçu :" + textBoxMontantRecu.Text +
-                    "\nNom Bien : " + comboBoxBien.Text +
-                    "\nType de Echeance :" + comboBoxTypeEcheance.Text,
+                    "\nNom de Bien : " + comboBoxBien.Text +
+                    "\nType d'écheance :" + comboBoxTypeEcheance.Text,
                     "Information",
                     MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Information,
@@ -152,7 +152,7 @@ namespace SYNDIC_1._0
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Les Données n'est pas Enregistrer , voulez vous vraiment Quitter ce Form ?", "Annulation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Les Données n'ont pas été enregistrées, voulez vous vraiment Quitter cette Form ?", "Annulation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 labelCloseBiens_Click(sender, e);
         }
 
