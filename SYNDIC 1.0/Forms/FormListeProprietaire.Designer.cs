@@ -37,12 +37,12 @@
             this.buttonRechercher = new System.Windows.Forms.Button();
             this.textBoxrechercher = new System.Windows.Forms.TextBox();
             this.splitContainerListeProprietaireBody = new System.Windows.Forms.SplitContainer();
-            this.dataGridViewProprietaires = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanelProprietaireBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonprevious = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
+            this.dataGridViewProprietaires = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanelProprietaireBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonAjouterProprietaire = new System.Windows.Forms.Button();
             this.buttonSupprimerProprietaire = new System.Windows.Forms.Button();
             this.buttonModifierProprietaire = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
             this.buttonListDocs.TabIndex = 25;
-            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.Text = "Liste de documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
@@ -144,6 +144,54 @@
             this.splitContainerListeProprietaireBody.Size = new System.Drawing.Size(800, 327);
             this.splitContainerListeProprietaireBody.SplitterDistance = 74;
             this.splitContainerListeProprietaireBody.TabIndex = 29;
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonLast.Location = new System.Drawing.Point(18, 251);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
+            this.buttonLast.TabIndex = 30;
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonNext.Location = new System.Drawing.Point(18, 195);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
+            this.buttonNext.TabIndex = 29;
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonprevious
+            // 
+            this.buttonprevious.FlatAppearance.BorderSize = 0;
+            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
+            this.buttonprevious.Location = new System.Drawing.Point(18, 83);
+            this.buttonprevious.Name = "buttonprevious";
+            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
+            this.buttonprevious.TabIndex = 28;
+            this.buttonprevious.UseVisualStyleBackColor = true;
+            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
+            this.buttonFirst.Location = new System.Drawing.Point(18, 27);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+            this.buttonFirst.TabIndex = 27;
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
             // dataGridViewProprietaires
             // 
@@ -205,54 +253,6 @@
             this.tableLayoutPanelProprietaireBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanelProprietaireBottom.Size = new System.Drawing.Size(800, 55);
             this.tableLayoutPanelProprietaireBottom.TabIndex = 28;
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.FlatAppearance.BorderSize = 0;
-            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
-            this.buttonLast.Location = new System.Drawing.Point(18, 251);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 30;
-            this.buttonLast.UseVisualStyleBackColor = true;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.FlatAppearance.BorderSize = 0;
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
-            this.buttonNext.Location = new System.Drawing.Point(18, 195);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 29;
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonprevious
-            // 
-            this.buttonprevious.FlatAppearance.BorderSize = 0;
-            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
-            this.buttonprevious.Location = new System.Drawing.Point(18, 83);
-            this.buttonprevious.Name = "buttonprevious";
-            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonprevious.TabIndex = 28;
-            this.buttonprevious.UseVisualStyleBackColor = true;
-            this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.FlatAppearance.BorderSize = 0;
-            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
-            this.buttonFirst.Location = new System.Drawing.Point(18, 27);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 27;
-            this.buttonFirst.UseVisualStyleBackColor = true;
-            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
             // buttonAjouterProprietaire
             // 

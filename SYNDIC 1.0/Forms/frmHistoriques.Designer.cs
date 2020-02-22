@@ -318,6 +318,7 @@
             this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Location = new System.Drawing.Point(701, 13);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(87, 29);

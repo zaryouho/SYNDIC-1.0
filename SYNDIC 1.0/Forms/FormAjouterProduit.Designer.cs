@@ -173,7 +173,7 @@
             this.labelIdProduit.Name = "labelIdProduit";
             this.labelIdProduit.Size = new System.Drawing.Size(76, 17);
             this.labelIdProduit.TabIndex = 74;
-            this.labelIdProduit.Text = "Reference :";
+            this.labelIdProduit.Text = "Référence :";
             // 
             // labelProduit
             // 

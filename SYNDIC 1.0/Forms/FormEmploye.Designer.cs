@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPEmploye = new System.Windows.Forms.TableLayoutPanel();
             this.labelEmploye = new System.Windows.Forms.Label();
             this.labelCloseEmploye = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@
             this.buttonEmploye.Name = "buttonEmploye";
             this.buttonEmploye.Size = new System.Drawing.Size(260, 37);
             this.buttonEmploye.TabIndex = 8;
-            this.buttonEmploye.Text = "Employe";
+            this.buttonEmploye.Text = "Employé";
             this.buttonEmploye.UseVisualStyleBackColor = false;
             this.buttonEmploye.Click += new System.EventHandler(this.buttonEmploye_Click);
             // 
@@ -166,7 +166,7 @@
             this.buttonEmployeArchive.Name = "buttonEmployeArchive";
             this.buttonEmployeArchive.Size = new System.Drawing.Size(262, 37);
             this.buttonEmployeArchive.TabIndex = 10;
-            this.buttonEmployeArchive.Text = "Employe  arch.";
+            this.buttonEmployeArchive.Text = "Employé(s)  arch.";
             this.buttonEmployeArchive.UseVisualStyleBackColor = false;
             this.buttonEmployeArchive.Click += new System.EventHandler(this.buttonEmployeArchive_Click);
             // 
@@ -187,7 +187,7 @@
             this.buttonAjouterEmploye.Name = "buttonAjouterEmploye";
             this.buttonAjouterEmploye.Size = new System.Drawing.Size(260, 37);
             this.buttonAjouterEmploye.TabIndex = 9;
-            this.buttonAjouterEmploye.Text = "Ajouter Employe";
+            this.buttonAjouterEmploye.Text = "Ajouter un employé";
             this.buttonAjouterEmploye.UseVisualStyleBackColor = false;
             this.buttonAjouterEmploye.Click += new System.EventHandler(this.buttonAjouterEmploye_Click);
             // 
@@ -228,7 +228,7 @@
             this.buttonAjouterSEmploye.Name = "buttonAjouterSEmploye";
             this.buttonAjouterSEmploye.Size = new System.Drawing.Size(260, 49);
             this.buttonAjouterSEmploye.TabIndex = 8;
-            this.buttonAjouterSEmploye.Text = "Ajouter Employe";
+            this.buttonAjouterSEmploye.Text = "Ajouter un employé";
             this.buttonAjouterSEmploye.UseVisualStyleBackColor = false;
             this.buttonAjouterSEmploye.Click += new System.EventHandler(this.buttonAjouterEmploye_Click);
             // 
@@ -251,7 +251,7 @@
             this.buttonSupprimerEmploye.Name = "buttonSupprimerEmploye";
             this.buttonSupprimerEmploye.Size = new System.Drawing.Size(262, 49);
             this.buttonSupprimerEmploye.TabIndex = 10;
-            this.buttonSupprimerEmploye.Text = "Supprimer Employe";
+            this.buttonSupprimerEmploye.Text = "Supprimer l\'employé";
             this.buttonSupprimerEmploye.UseVisualStyleBackColor = false;
             this.buttonSupprimerEmploye.Click += new System.EventHandler(this.buttonSupprimerEmploye_Click);
             // 
@@ -274,7 +274,7 @@
             this.buttonModifierEmploye.Name = "buttonModifierEmploye";
             this.buttonModifierEmploye.Size = new System.Drawing.Size(260, 49);
             this.buttonModifierEmploye.TabIndex = 9;
-            this.buttonModifierEmploye.Text = "Modifier Employe";
+            this.buttonModifierEmploye.Text = "Modifier l\'employé";
             this.buttonModifierEmploye.UseVisualStyleBackColor = false;
             this.buttonModifierEmploye.Click += new System.EventHandler(this.buttonModifierEmploye_Click);
             // 
@@ -315,7 +315,7 @@
             this.buttonListDoc.Name = "buttonListDoc";
             this.buttonListDoc.Size = new System.Drawing.Size(195, 35);
             this.buttonListDoc.TabIndex = 32;
-            this.buttonListDoc.Text = "Listes Documents";
+            this.buttonListDoc.Text = "Liste des documents";
             this.buttonListDoc.UseVisualStyleBackColor = false;
             this.buttonListDoc.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
@@ -410,27 +410,27 @@
             // dataGridViewEmploye
             // 
             this.dataGridViewEmploye.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewEmploye.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewEmploye.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEmploye.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEmploye.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEmploye.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewEmploye.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEmploye.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEmploye.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEmploye.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewEmploye.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewEmploye.Location = new System.Drawing.Point(0, 0);

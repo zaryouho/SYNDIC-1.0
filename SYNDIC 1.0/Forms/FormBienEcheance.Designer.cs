@@ -106,9 +106,9 @@
             this.labelTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTypeEcheance.Location = new System.Drawing.Point(514, 9);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(220, 17);
+            this.labelTypeEcheance.Size = new System.Drawing.Size(222, 17);
             this.labelTypeEcheance.TabIndex = 23;
-            this.labelTypeEcheance.Text = "Selectioner Le Type de l\'Echéance : ";
+            this.labelTypeEcheance.Text = "Selectioner Le Type de l\'échéance : ";
             // 
             // comboBoxTypeEcheance
             // 
@@ -147,9 +147,9 @@
             this.labelBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBloc.Location = new System.Drawing.Point(17, 9);
             this.labelBloc.Name = "labelBloc";
-            this.labelBloc.Size = new System.Drawing.Size(140, 17);
+            this.labelBloc.Size = new System.Drawing.Size(132, 17);
             this.labelBloc.TabIndex = 19;
-            this.labelBloc.Text = "Selectioner une Bloc : ";
+            this.labelBloc.Text = "Séléctioner un Bloc : ";
             // 
             // comboBoxBloc
             // 
@@ -422,7 +422,7 @@
             this.buttonSupprimerEcheance.Name = "buttonSupprimerEcheance";
             this.buttonSupprimerEcheance.Size = new System.Drawing.Size(195, 42);
             this.buttonSupprimerEcheance.TabIndex = 15;
-            this.buttonSupprimerEcheance.Text = "Supprimer Une Echéance";
+            this.buttonSupprimerEcheance.Text = "Supprimer l\'échéance";
             this.buttonSupprimerEcheance.UseVisualStyleBackColor = false;
             this.buttonSupprimerEcheance.Click += new System.EventHandler(this.buttonSupprimerEcheance_Click);
             // 
@@ -443,7 +443,7 @@
             this.buttonModifierEcheance.Name = "buttonModifierEcheance";
             this.buttonModifierEcheance.Size = new System.Drawing.Size(187, 42);
             this.buttonModifierEcheance.TabIndex = 14;
-            this.buttonModifierEcheance.Text = "Modifier Une Echéance";
+            this.buttonModifierEcheance.Text = "Modifier l\'échéance";
             this.buttonModifierEcheance.UseVisualStyleBackColor = false;
             this.buttonModifierEcheance.Click += new System.EventHandler(this.buttonModifierEcheance_Click);
             // 
@@ -464,7 +464,7 @@
             this.buttonAjouterEcheance.Name = "buttonAjouterEcheance";
             this.buttonAjouterEcheance.Size = new System.Drawing.Size(187, 42);
             this.buttonAjouterEcheance.TabIndex = 13;
-            this.buttonAjouterEcheance.Text = "Ajouter Une Echéance";
+            this.buttonAjouterEcheance.Text = "Ajouter Une échéance";
             this.buttonAjouterEcheance.UseVisualStyleBackColor = false;
             this.buttonAjouterEcheance.Click += new System.EventHandler(this.buttonAjouterEcheance_Click);
             // 

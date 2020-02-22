@@ -136,7 +136,7 @@
             // 
             this.labelTypeDocument.AutoSize = true;
             this.labelTypeDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeDocument.Location = new System.Drawing.Point(26, 349);
+            this.labelTypeDocument.Location = new System.Drawing.Point(26, 345);
             this.labelTypeDocument.Name = "labelTypeDocument";
             this.labelTypeDocument.Size = new System.Drawing.Size(125, 17);
             this.labelTypeDocument.TabIndex = 52;
@@ -185,7 +185,7 @@
             // 
             this.labelNumDocument.AutoSize = true;
             this.labelNumDocument.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumDocument.Location = new System.Drawing.Point(39, 312);
+            this.labelNumDocument.Location = new System.Drawing.Point(39, 309);
             this.labelNumDocument.Name = "labelNumDocument";
             this.labelNumDocument.Size = new System.Drawing.Size(112, 17);
             this.labelNumDocument.TabIndex = 47;
@@ -195,7 +195,7 @@
             // 
             this.labelType.AutoSize = true;
             this.labelType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelType.Location = new System.Drawing.Point(36, 275);
+            this.labelType.Location = new System.Drawing.Point(36, 273);
             this.labelType.Name = "labelType";
             this.labelType.Size = new System.Drawing.Size(115, 17);
             this.labelType.TabIndex = 46;

@@ -79,13 +79,13 @@
             this.labelEcheance.Name = "labelEcheance";
             this.labelEcheance.Size = new System.Drawing.Size(136, 30);
             this.labelEcheance.TabIndex = 0;
-            this.labelEcheance.Text = "Echeance";
+            this.labelEcheance.Text = "Echéance";
             // 
             // labelMontant
             // 
             this.labelMontant.AutoSize = true;
             this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMontant.Location = new System.Drawing.Point(74, 80);
+            this.labelMontant.Location = new System.Drawing.Point(86, 80);
             this.labelMontant.Name = "labelMontant";
             this.labelMontant.Size = new System.Drawing.Size(65, 17);
             this.labelMontant.TabIndex = 7;
@@ -95,7 +95,7 @@
             // 
             this.labelMontantRecu.AutoSize = true;
             this.labelMontantRecu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMontantRecu.Location = new System.Drawing.Point(41, 118);
+            this.labelMontantRecu.Location = new System.Drawing.Point(53, 118);
             this.labelMontantRecu.Name = "labelMontantRecu";
             this.labelMontantRecu.Size = new System.Drawing.Size(98, 17);
             this.labelMontantRecu.TabIndex = 8;
@@ -105,11 +105,11 @@
             // 
             this.labelNomBien.AutoSize = true;
             this.labelNomBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomBien.Location = new System.Drawing.Point(69, 152);
+            this.labelNomBien.Location = new System.Drawing.Point(62, 152);
             this.labelNomBien.Name = "labelNomBien";
-            this.labelNomBien.Size = new System.Drawing.Size(70, 17);
+            this.labelNomBien.Size = new System.Drawing.Size(89, 17);
             this.labelNomBien.TabIndex = 9;
-            this.labelNomBien.Text = "Nom Bien :";
+            this.labelNomBien.Text = "Nom de Bien :";
             // 
             // labelTypeEcheance
             // 
@@ -117,9 +117,9 @@
             this.labelTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTypeEcheance.Location = new System.Drawing.Point(35, 188);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(104, 17);
+            this.labelTypeEcheance.Size = new System.Drawing.Size(116, 17);
             this.labelTypeEcheance.TabIndex = 10;
-            this.labelTypeEcheance.Text = "Type Echeance :";
+            this.labelTypeEcheance.Text = "Type d\'écheance :";
             // 
             // textBoxMontant
             // 

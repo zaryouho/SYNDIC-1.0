@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDepenses));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerListeDepense = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBoxRadioButtons = new System.Windows.Forms.GroupBox();
@@ -46,8 +46,8 @@
             this.comboBoxQui = new System.Windows.Forms.ComboBox();
             this.comboBoxids = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBoxTypeDepense = new System.Windows.Forms.ComboBox();
             this.labelTypeDepense = new System.Windows.Forms.Label();
+            this.comboBoxTypeDepense = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxRechercher = new System.Windows.Forms.TextBox();
             this.buttonChercher = new System.Windows.Forms.Button();
@@ -250,17 +250,6 @@
             this.panel2.Size = new System.Drawing.Size(201, 79);
             this.panel2.TabIndex = 1;
             // 
-            // comboBoxTypeDepense
-            // 
-            this.comboBoxTypeDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBoxTypeDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTypeDepense.FormattingEnabled = true;
-            this.comboBoxTypeDepense.Location = new System.Drawing.Point(6, 26);
-            this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
-            this.comboBoxTypeDepense.Size = new System.Drawing.Size(187, 25);
-            this.comboBoxTypeDepense.TabIndex = 33;
-            this.comboBoxTypeDepense.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeDepense_SelectedIndexChanged);
-            // 
             // labelTypeDepense
             // 
             this.labelTypeDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -271,6 +260,17 @@
             this.labelTypeDepense.Size = new System.Drawing.Size(189, 17);
             this.labelTypeDepense.TabIndex = 35;
             this.labelTypeDepense.Text = "choisissez le type de dépense :";
+            // 
+            // comboBoxTypeDepense
+            // 
+            this.comboBoxTypeDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBoxTypeDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTypeDepense.FormattingEnabled = true;
+            this.comboBoxTypeDepense.Location = new System.Drawing.Point(6, 26);
+            this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
+            this.comboBoxTypeDepense.Size = new System.Drawing.Size(187, 25);
+            this.comboBoxTypeDepense.TabIndex = 33;
+            this.comboBoxTypeDepense.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeDepense_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -393,43 +393,43 @@
             // dataGridViewDepenses
             // 
             this.dataGridViewDepenses.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewDepenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewDepenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDepenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDepenses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewDepenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewDepenses.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDepenses.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDepenses.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewDepenses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDepenses.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewDepenses.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDepenses.Name = "dataGridViewDepenses";
             this.dataGridViewDepenses.ReadOnly = true;
             this.dataGridViewDepenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.MediumTurquoise;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDepenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MediumTurquoise;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDepenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewDepenses.RowHeadersWidth = 25;
             this.dataGridViewDepenses.RowTemplate.Height = 25;
             this.dataGridViewDepenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -486,7 +486,7 @@
             this.buttonAfficherInterventions.Name = "buttonAfficherInterventions";
             this.buttonAfficherInterventions.Size = new System.Drawing.Size(151, 53);
             this.buttonAfficherInterventions.TabIndex = 11;
-            this.buttonAfficherInterventions.Text = "Afficher Interventions";
+            this.buttonAfficherInterventions.Text = "Afficher les interventions";
             this.buttonAfficherInterventions.UseVisualStyleBackColor = false;
             this.buttonAfficherInterventions.Click += new System.EventHandler(this.buttonAfficherInterventions_Click);
             // 
@@ -507,7 +507,7 @@
             this.buttonAjouterDepense.Name = "buttonAjouterDepense";
             this.buttonAjouterDepense.Size = new System.Drawing.Size(198, 53);
             this.buttonAjouterDepense.TabIndex = 10;
-            this.buttonAjouterDepense.Text = "Ajouter Dépense";
+            this.buttonAjouterDepense.Text = "Ajouter une dépense";
             this.buttonAjouterDepense.UseVisualStyleBackColor = false;
             this.buttonAjouterDepense.Click += new System.EventHandler(this.buttonAjouterDepense_Click);
             // 
@@ -528,7 +528,7 @@
             this.buttonModifierDepense.Name = "buttonModifierDepense";
             this.buttonModifierDepense.Size = new System.Drawing.Size(205, 53);
             this.buttonModifierDepense.TabIndex = 9;
-            this.buttonModifierDepense.Text = "Modifier Dépense";
+            this.buttonModifierDepense.Text = "Modifier la dépense";
             this.buttonModifierDepense.UseVisualStyleBackColor = false;
             this.buttonModifierDepense.Click += new System.EventHandler(this.buttonModifierDepense_Click);
             // 

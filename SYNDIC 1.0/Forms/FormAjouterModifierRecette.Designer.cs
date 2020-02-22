@@ -97,11 +97,11 @@
             // 
             this.labelHead.AutoSize = true;
             this.labelHead.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHead.Location = new System.Drawing.Point(301, 14);
+            this.labelHead.Location = new System.Drawing.Point(323, 9);
             this.labelHead.Name = "labelHead";
-            this.labelHead.Size = new System.Drawing.Size(77, 30);
+            this.labelHead.Size = new System.Drawing.Size(108, 30);
             this.labelHead.TabIndex = 5;
-            this.labelHead.Text = "HEAD";
+            this.labelHead.Text = "Recette";
             // 
             // buttonAddNewTypeEcheance
             // 
@@ -194,19 +194,19 @@
             this.labelTypeEcheance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTypeEcheance.Location = new System.Drawing.Point(402, 99);
             this.labelTypeEcheance.Name = "labelTypeEcheance";
-            this.labelTypeEcheance.Size = new System.Drawing.Size(114, 17);
+            this.labelTypeEcheance.Size = new System.Drawing.Size(116, 17);
             this.labelTypeEcheance.TabIndex = 18;
-            this.labelTypeEcheance.Text = "Type d\'Echeance :";
+            this.labelTypeEcheance.Text = "Type d\'échéance :";
             // 
             // labelNomBien
             // 
             this.labelNomBien.AutoSize = true;
             this.labelNomBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomBien.Location = new System.Drawing.Point(446, 66);
+            this.labelNomBien.Location = new System.Drawing.Point(427, 64);
             this.labelNomBien.Name = "labelNomBien";
-            this.labelNomBien.Size = new System.Drawing.Size(70, 17);
+            this.labelNomBien.Size = new System.Drawing.Size(89, 17);
             this.labelNomBien.TabIndex = 17;
-            this.labelNomBien.Text = "Nom Bien :";
+            this.labelNomBien.Text = "Nom de Bien :";
             // 
             // panelValider
             // 
@@ -386,7 +386,7 @@
             this.labelNumRecu.Name = "labelNumRecu";
             this.labelNumRecu.Size = new System.Drawing.Size(61, 17);
             this.labelNumRecu.TabIndex = 3;
-            this.labelNumRecu.Text = "N° Recu :";
+            this.labelNumRecu.Text = "N° Reçu :";
             // 
             // labelTypeRecette
             // 

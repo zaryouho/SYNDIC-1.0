@@ -103,9 +103,9 @@
             this.label1.Location = new System.Drawing.Point(71, 142);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 21);
+            this.label1.Size = new System.Drawing.Size(102, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "User Name";
+            this.label1.Text = "User Name :";
             // 
             // label2
             // 
@@ -115,9 +115,9 @@
             this.label2.Location = new System.Drawing.Point(71, 209);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(90, 21);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Password";
+            this.label2.Text = "Password :";
             // 
             // textBoxPassword
             // 
@@ -187,12 +187,12 @@
             // 
             // pictureBoxLogoholder
             // 
-            this.pictureBoxLogoholder.Image = global::SYNDIC_1._0.Properties.Resources.logosyndic;
+            this.pictureBoxLogoholder.Image = global::SYNDIC_1._0.Properties.Resources.LOGOtest8;
             this.pictureBoxLogoholder.InitialImage = null;
-            this.pictureBoxLogoholder.Location = new System.Drawing.Point(81, 48);
+            this.pictureBoxLogoholder.Location = new System.Drawing.Point(65, 38);
             this.pictureBoxLogoholder.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogoholder.Name = "pictureBoxLogoholder";
-            this.pictureBoxLogoholder.Size = new System.Drawing.Size(164, 75);
+            this.pictureBoxLogoholder.Size = new System.Drawing.Size(199, 75);
             this.pictureBoxLogoholder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogoholder.TabIndex = 1;
             this.pictureBoxLogoholder.TabStop = false;

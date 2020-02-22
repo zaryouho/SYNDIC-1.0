@@ -140,10 +140,10 @@
             // labelProduit
             // 
             this.labelProduit.AutoSize = true;
-            this.labelProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProduit.Location = new System.Drawing.Point(44, 91);
+            this.labelProduit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProduit.Location = new System.Drawing.Point(39, 92);
             this.labelProduit.Name = "labelProduit";
-            this.labelProduit.Size = new System.Drawing.Size(59, 17);
+            this.labelProduit.Size = new System.Drawing.Size(66, 17);
             this.labelProduit.TabIndex = 61;
             this.labelProduit.Text = "Produit  :";
             // 
@@ -159,10 +159,10 @@
             // labelPrix
             // 
             this.labelPrix.AutoSize = true;
-            this.labelPrix.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrix.Location = new System.Drawing.Point(69, 182);
+            this.labelPrix.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrix.Location = new System.Drawing.Point(64, 183);
             this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(34, 17);
+            this.labelPrix.Size = new System.Drawing.Size(37, 17);
             this.labelPrix.TabIndex = 59;
             this.labelPrix.Text = "Prix :";
             // 
@@ -178,10 +178,10 @@
             // labelQteProduit
             // 
             this.labelQteProduit.AutoSize = true;
-            this.labelQteProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQteProduit.Location = new System.Drawing.Point(33, 133);
+            this.labelQteProduit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQteProduit.Location = new System.Drawing.Point(28, 134);
             this.labelQteProduit.Name = "labelQteProduit";
-            this.labelQteProduit.Size = new System.Drawing.Size(70, 17);
+            this.labelQteProduit.Size = new System.Drawing.Size(77, 17);
             this.labelQteProduit.TabIndex = 57;
             this.labelQteProduit.Text = "Quantité  :";
             // 

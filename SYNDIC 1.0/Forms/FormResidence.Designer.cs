@@ -66,7 +66,7 @@
             this.labelResidence.Name = "labelResidence";
             this.labelResidence.Size = new System.Drawing.Size(173, 30);
             this.labelResidence.TabIndex = 3;
-            this.labelResidence.Text = "La Residence";
+            this.labelResidence.Text = "La Résidence";
             // 
             // labelClose
             // 

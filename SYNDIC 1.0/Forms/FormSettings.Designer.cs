@@ -227,7 +227,7 @@
             // 
             this.comboBoxDataBaseName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDataBaseName.FormattingEnabled = true;
-            this.comboBoxDataBaseName.Location = new System.Drawing.Point(216, 104);
+            this.comboBoxDataBaseName.Location = new System.Drawing.Point(237, 104);
             this.comboBoxDataBaseName.Name = "comboBoxDataBaseName";
             this.comboBoxDataBaseName.Size = new System.Drawing.Size(145, 25);
             this.comboBoxDataBaseName.TabIndex = 3;
@@ -238,15 +238,15 @@
             this.labelDataBaseName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataBaseName.Location = new System.Drawing.Point(49, 107);
             this.labelDataBaseName.Name = "labelDataBaseName";
-            this.labelDataBaseName.Size = new System.Drawing.Size(163, 17);
+            this.labelDataBaseName.Size = new System.Drawing.Size(183, 17);
             this.labelDataBaseName.TabIndex = 2;
-            this.labelDataBaseName.Text = "Nom du base de donnee : ";
+            this.labelDataBaseName.Text = "Nom de la base de données : ";
             // 
             // comboBoxServerName
             // 
             this.comboBoxServerName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxServerName.FormattingEnabled = true;
-            this.comboBoxServerName.Location = new System.Drawing.Point(216, 53);
+            this.comboBoxServerName.Location = new System.Drawing.Point(237, 53);
             this.comboBoxServerName.Name = "comboBoxServerName";
             this.comboBoxServerName.Size = new System.Drawing.Size(145, 25);
             this.comboBoxServerName.TabIndex = 1;
@@ -255,7 +255,7 @@
             // 
             this.labelServerName.AutoSize = true;
             this.labelServerName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelServerName.Location = new System.Drawing.Point(101, 56);
+            this.labelServerName.Location = new System.Drawing.Point(121, 56);
             this.labelServerName.Name = "labelServerName";
             this.labelServerName.Size = new System.Drawing.Size(111, 17);
             this.labelServerName.TabIndex = 0;

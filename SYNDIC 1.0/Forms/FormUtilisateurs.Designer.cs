@@ -199,7 +199,7 @@
             this.buttonDeleteUser.Name = "buttonDeleteUser";
             this.buttonDeleteUser.Size = new System.Drawing.Size(153, 38);
             this.buttonDeleteUser.TabIndex = 2;
-            this.buttonDeleteUser.Text = "Supprimer utilisateur";
+            this.buttonDeleteUser.Text = "Supprimer l\'utilisateur";
             this.buttonDeleteUser.UseVisualStyleBackColor = true;
             this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
             // 
@@ -210,7 +210,7 @@
             this.buttonModifyUser.Name = "buttonModifyUser";
             this.buttonModifyUser.Size = new System.Drawing.Size(153, 38);
             this.buttonModifyUser.TabIndex = 1;
-            this.buttonModifyUser.Text = "Modifier utilisateur";
+            this.buttonModifyUser.Text = "Modifier l\'utilisateur";
             this.buttonModifyUser.UseVisualStyleBackColor = true;
             this.buttonModifyUser.Click += new System.EventHandler(this.buttonModifyUser_Click);
             // 

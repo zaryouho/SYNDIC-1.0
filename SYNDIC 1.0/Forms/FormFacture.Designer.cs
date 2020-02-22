@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacture));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacture));
             this.splitContainerFactures = new System.Windows.Forms.SplitContainer();
+            this.buttonImprimer = new System.Windows.Forms.Button();
             this.labelCloseDepense = new System.Windows.Forms.Label();
             this.textBoxRechercher = new System.Windows.Forms.TextBox();
             this.labelRechercher = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.panelFooter = new System.Windows.Forms.Panel();
             this.buttonAjouterFacture = new System.Windows.Forms.Button();
             this.buttonModifierIntervention = new System.Windows.Forms.Button();
-            this.buttonImprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFactures)).BeginInit();
             this.splitContainerFactures.Panel1.SuspendLayout();
             this.splitContainerFactures.Panel2.SuspendLayout();
@@ -82,6 +82,27 @@
             this.splitContainerFactures.Size = new System.Drawing.Size(800, 450);
             this.splitContainerFactures.SplitterDistance = 73;
             this.splitContainerFactures.TabIndex = 0;
+            // 
+            // buttonImprimer
+            // 
+            this.buttonImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimer.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImprimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonImprimer.FlatAppearance.BorderSize = 0;
+            this.buttonImprimer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.buttonImprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.buttonImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimer.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimer.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimer.Image")));
+            this.buttonImprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImprimer.Location = new System.Drawing.Point(683, 16);
+            this.buttonImprimer.Name = "buttonImprimer";
+            this.buttonImprimer.Size = new System.Drawing.Size(56, 54);
+            this.buttonImprimer.TabIndex = 18;
+            this.buttonImprimer.UseVisualStyleBackColor = false;
+            this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
             // 
             // labelCloseDepense
             // 
@@ -266,7 +287,7 @@
             this.buttonAjouterFacture.Name = "buttonAjouterFacture";
             this.buttonAjouterFacture.Size = new System.Drawing.Size(242, 53);
             this.buttonAjouterFacture.TabIndex = 10;
-            this.buttonAjouterFacture.Text = "Ajouter Facture";
+            this.buttonAjouterFacture.Text = "Ajouter une facture";
             this.buttonAjouterFacture.UseVisualStyleBackColor = false;
             this.buttonAjouterFacture.Click += new System.EventHandler(this.buttonAjouterFacture_Click);
             // 
@@ -290,27 +311,6 @@
             this.buttonModifierIntervention.Text = "Modifier la facture";
             this.buttonModifierIntervention.UseVisualStyleBackColor = false;
             this.buttonModifierIntervention.Click += new System.EventHandler(this.buttonModifierFacture_Click);
-            // 
-            // buttonImprimer
-            // 
-            this.buttonImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonImprimer.BackColor = System.Drawing.Color.Transparent;
-            this.buttonImprimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonImprimer.FlatAppearance.BorderSize = 0;
-            this.buttonImprimer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.buttonImprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.buttonImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImprimer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImprimer.ForeColor = System.Drawing.Color.White;
-            this.buttonImprimer.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimer.Image")));
-            this.buttonImprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImprimer.Location = new System.Drawing.Point(683, 16);
-            this.buttonImprimer.Name = "buttonImprimer";
-            this.buttonImprimer.Size = new System.Drawing.Size(56, 54);
-            this.buttonImprimer.TabIndex = 18;
-            this.buttonImprimer.UseVisualStyleBackColor = false;
-            this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
             // 
             // FormFacture
             // 
