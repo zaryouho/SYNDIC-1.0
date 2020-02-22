@@ -246,9 +246,6 @@ namespace SYNDIC_1._0
                 buttonModifierEcheance_Click(sender, e);
         }
 
-        private void comboBoxBloc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

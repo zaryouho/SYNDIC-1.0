@@ -161,7 +161,6 @@
             this.comboBoxBloc.Name = "comboBoxBloc";
             this.comboBoxBloc.Size = new System.Drawing.Size(168, 25);
             this.comboBoxBloc.TabIndex = 0;
-            this.comboBoxBloc.SelectedIndexChanged += new System.EventHandler(this.comboBoxBloc_SelectedIndexChanged);
             // 
             // splitContainerBienEcheanceBody
             // 
