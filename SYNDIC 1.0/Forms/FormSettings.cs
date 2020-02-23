@@ -59,6 +59,7 @@ namespace SYNDIC_1._0
                  }
             }
         }   
+
         /// <summary>
         /// Gets all system Sql Server instences names
         /// </summary>
@@ -129,6 +130,7 @@ namespace SYNDIC_1._0
                 }
             }           
         }
+
         /// <summary>
         /// Prompt and openFileDialog to the user to select the restoration file path
         /// </summary>
@@ -137,20 +139,52 @@ namespace SYNDIC_1._0
         {
             using (OpenFileDialog file = new OpenFileDialog())
             {
-                file.ShowDialog();
                 file.InitialDirectory = @"c:\ Program Files\Microsoft SQL Server\";
                 file.Filter = "Backup Files (*.bak)|*.bak";
                 file.DefaultExt = "bak";
                 file.Title = "Fichier de restoration";
-
-                string extension = Path.GetExtension(file.FileName);
-                if (extension != "bak")
+                
+                if (file.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Fichier invalide","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    return null;
+                    string extension = Path.GetExtension(file.FileName);
+                    if (extension != "bak")
+                    {
+                        MessageBox.Show("Fichier invalide","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        return null;
+                    }
+                    return file.FileName;
                 }
-                return file.FileName;
+                return null;
             }
+        }
+        private string defaultBackupPath()
+        {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[0].ConnectionString))
+            {
+                if (ConnectionState.Open != connection.State)
+                {
+                    try
+                    {
+                        connection.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                string query = "EXEC  master.dbo.xp_instance_regread  N'HKEY_LOCAL_MACHINE', N'Software\\Microsoft\\MSSQLServer\\MSSQLServer',N'BackupDirectory'";
+                using (SqlCommand command = new SqlCommand(query,connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            return reader.GetString(1);
+                        }
+                    }
+                }
+            }
+            return null;
         }
         /// <summary>
         /// Prompt a FolderBrowserDialog to the user to select the backup folder
@@ -160,11 +194,14 @@ namespace SYNDIC_1._0
         {
             using (FolderBrowserDialog folder = new FolderBrowserDialog() )
             {
-                folder.ShowDialog();
                 folder.Description = "Selectioner un emplacement ";
                 folder.ShowNewFolderButton = false;
                 
-                return folder.SelectedPath;
+                if (folder.ShowDialog() == DialogResult.OK)
+                {
+                    return folder.SelectedPath;
+                }
+                return null;
             }
         }
 
@@ -193,8 +230,8 @@ namespace SYNDIC_1._0
             DateTime today = DateTime.Now;
             int interval = 0;
             
-            buttonRestoreFromExternalDrive.Enabled = groupBoxBackup.Visible = checkBoxAutoBackup.Checked ? false : true;
-            buttonBackuptoExternalDrive.Enabled = groupBoxBackup.Visible = checkBoxAutoBackup.Checked ? false : true;
+            buttonRestoreFromExternalDrive.Enabled = checkBoxAutoBackup.Checked ? false : true;
+            buttonBackuptoExternalDrive.Enabled = checkBoxAutoBackup.Checked ? false : true;
 
             while (checkBoxAutoBackup.Checked)
             {
@@ -262,13 +299,14 @@ namespace SYNDIC_1._0
                     return;
                 }
             }
+
             else if (!external)
             {
-                path = ConfigurationManager.AppSettings["BackupFolder"].ToString();
+                path = defaultBackupPath();
             }
             
-            string databaseName = comboBoxDataBaseName.Text;
-            string name = String.Format("{0}{1}{2}.bak", path, databaseName, DateTime.Now.ToString("yyyy-MM-dd"));
+            string databaseName = comboBoxDataBaseName.SelectedText;
+            string fullPath = String.Format("{0}{1}{2}.bak", path, databaseName, DateTime.Now.ToLongTimeString().Replace(':', ' ').Replace('/',' '));
 
             string connection = ConfigurationManager.ConnectionStrings[0].ConnectionString;
             using (SqlConnection myConnection = new SqlConnection(connection))
@@ -287,6 +325,7 @@ namespace SYNDIC_1._0
             
                 using (SqlCommand command = new SqlCommand(query, myConnection))
                 {
+                    command.CommandText = query;
                     if (autoBackup)
                     {
                         command.Parameters.AddWithValue("@databasename", autoBackupDatabaseName);
@@ -295,7 +334,7 @@ namespace SYNDIC_1._0
                     {
                         command.Parameters.AddWithValue("@databsename", databaseName);
                     }
-                    command.Parameters.AddWithValue("@path", path);
+                    command.Parameters.AddWithValue("@path", fullPath);
                     try
                     {
                         this.Cursor = Cursors.WaitCursor;
@@ -304,7 +343,7 @@ namespace SYNDIC_1._0
 
                         if (result != 0 && !autoBackup)
                         {
-                            MessageBox.Show("Backup successful");
+                            MessageBox.Show("Operation réussie","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }
                     }
                     catch (Exception ex)
