@@ -17,12 +17,14 @@ namespace SYNDIC_1._0
         private BindingSource bsBien;
         private BindingSource bsBloc;
         private BindingSource bsImmeuble;
+      
 
         public FormListeBien()
         {
             InitializeComponent();
         }
 
+       
         public void RemplirDataGridViewBiens()
         {
             bsBien = DBHelper.remplir_bindingsource("immeuble", "id", "bien", "id_Immeuble", bsImmeuble);
@@ -34,6 +36,8 @@ namespace SYNDIC_1._0
 
         private void FormListeBien_Load(object sender, EventArgs e)
         {
+
+            textBoxRechercher.Focus();
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
 
             DBHelper.remplir_dataset("select * from bloc", "bloc");
@@ -130,6 +134,7 @@ namespace SYNDIC_1._0
 
         private void textBoxRechercher_TextChanged(object sender, EventArgs e)
         {
+          
             if (textBoxRechercher.Text == "")
                 buttonChercher.Enabled = false;
             else

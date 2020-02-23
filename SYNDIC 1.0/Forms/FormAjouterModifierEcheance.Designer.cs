@@ -127,7 +127,7 @@
             this.textBoxMontant.Location = new System.Drawing.Point(155, 77);
             this.textBoxMontant.Name = "textBoxMontant";
             this.textBoxMontant.Size = new System.Drawing.Size(231, 22);
-            this.textBoxMontant.TabIndex = 11;
+            this.textBoxMontant.TabIndex = 0;
             this.textBoxMontant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantRecu_KeyPress);
             // 
             // textBoxMontantRecu
@@ -136,7 +136,7 @@
             this.textBoxMontantRecu.Location = new System.Drawing.Point(155, 113);
             this.textBoxMontantRecu.Name = "textBoxMontantRecu";
             this.textBoxMontantRecu.Size = new System.Drawing.Size(231, 22);
-            this.textBoxMontantRecu.TabIndex = 12;
+            this.textBoxMontantRecu.TabIndex = 1;
             this.textBoxMontantRecu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantRecu_KeyPress);
             // 
             // comboBoxTypeEcheance
@@ -146,7 +146,7 @@
             this.comboBoxTypeEcheance.Location = new System.Drawing.Point(155, 185);
             this.comboBoxTypeEcheance.Name = "comboBoxTypeEcheance";
             this.comboBoxTypeEcheance.Size = new System.Drawing.Size(187, 25);
-            this.comboBoxTypeEcheance.TabIndex = 17;
+            this.comboBoxTypeEcheance.TabIndex = 3;
             // 
             // buttonAddNewTypeEcheance
             // 
@@ -154,7 +154,7 @@
             this.buttonAddNewTypeEcheance.Location = new System.Drawing.Point(348, 185);
             this.buttonAddNewTypeEcheance.Name = "buttonAddNewTypeEcheance";
             this.buttonAddNewTypeEcheance.Size = new System.Drawing.Size(38, 25);
-            this.buttonAddNewTypeEcheance.TabIndex = 18;
+            this.buttonAddNewTypeEcheance.TabIndex = 4;
             this.buttonAddNewTypeEcheance.Text = "...";
             this.buttonAddNewTypeEcheance.UseVisualStyleBackColor = true;
             this.buttonAddNewTypeEcheance.Click += new System.EventHandler(this.buttonAddNewTypeEcheance_Click);
@@ -178,7 +178,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
-            this.buttonAnnuler.TabIndex = 1;
+            this.buttonAnnuler.TabIndex = 5;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
@@ -191,7 +191,7 @@
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
+            this.buttonValider.TabIndex = 6;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -212,7 +212,7 @@
             this.comboBoxBien.Location = new System.Drawing.Point(155, 149);
             this.comboBoxBien.Name = "comboBoxBien";
             this.comboBoxBien.Size = new System.Drawing.Size(231, 25);
-            this.comboBoxBien.TabIndex = 20;
+            this.comboBoxBien.TabIndex = 2;
             // 
             // FormAjouterModifierEcheance
             // 

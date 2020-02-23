@@ -97,7 +97,7 @@
             this.groupBoxSearchDataGridView.Location = new System.Drawing.Point(0, 45);
             this.groupBoxSearchDataGridView.Name = "groupBoxSearchDataGridView";
             this.groupBoxSearchDataGridView.Size = new System.Drawing.Size(800, 71);
-            this.groupBoxSearchDataGridView.TabIndex = 15;
+            this.groupBoxSearchDataGridView.TabIndex = 0;
             this.groupBoxSearchDataGridView.TabStop = false;
             this.groupBoxSearchDataGridView.Text = "Chercher  ";
             // 
@@ -111,7 +111,7 @@
             this.buttonSearchDataGridView.Location = new System.Drawing.Point(707, 23);
             this.buttonSearchDataGridView.Name = "buttonSearchDataGridView";
             this.buttonSearchDataGridView.Size = new System.Drawing.Size(87, 29);
-            this.buttonSearchDataGridView.TabIndex = 4;
+            this.buttonSearchDataGridView.TabIndex = 3;
             this.buttonSearchDataGridView.Text = "Chercher";
             this.buttonSearchDataGridView.UseVisualStyleBackColor = true;
             this.buttonSearchDataGridView.Click += new System.EventHandler(this.buttonSearchDataGridView_Click);
@@ -122,7 +122,7 @@
             this.dateTimePickerHistorique.Location = new System.Drawing.Point(375, 38);
             this.dateTimePickerHistorique.Name = "dateTimePickerHistorique";
             this.dateTimePickerHistorique.Size = new System.Drawing.Size(219, 22);
-            this.dateTimePickerHistorique.TabIndex = 3;
+            this.dateTimePickerHistorique.TabIndex = 2;
             this.dateTimePickerHistorique.Value = new System.DateTime(2020, 1, 26, 0, 0, 0, 0);
             // 
             // labelFilterByDateTimePicker
@@ -145,7 +145,7 @@
             this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 40);
             this.comboBoxFilterItems.Name = "comboBoxFilterItems";
             this.comboBoxFilterItems.Size = new System.Drawing.Size(101, 25);
-            this.comboBoxFilterItems.TabIndex = 2;
+            this.comboBoxFilterItems.TabIndex = 1;
             // 
             // labelFilter
             // 
@@ -161,7 +161,7 @@
             this.textBoxStrings.Location = new System.Drawing.Point(72, 38);
             this.textBoxStrings.Name = "textBoxStrings";
             this.textBoxStrings.Size = new System.Drawing.Size(98, 22);
-            this.textBoxStrings.TabIndex = 1;
+            this.textBoxStrings.TabIndex = 0;
             // 
             // labelWords
             // 
@@ -236,7 +236,7 @@
             this.buttonToLast.Location = new System.Drawing.Point(14, 224);
             this.buttonToLast.Name = "buttonToLast";
             this.buttonToLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonToLast.TabIndex = 28;
+            this.buttonToLast.TabIndex = 2;
             this.buttonToLast.UseVisualStyleBackColor = true;
             this.buttonToLast.Click += new System.EventHandler(this.buttonToLast_Click);
             // 
@@ -249,7 +249,7 @@
             this.buttonToNext.Location = new System.Drawing.Point(14, 170);
             this.buttonToNext.Name = "buttonToNext";
             this.buttonToNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonToNext.TabIndex = 27;
+            this.buttonToNext.TabIndex = 0;
             this.buttonToNext.UseVisualStyleBackColor = true;
             this.buttonToNext.Click += new System.EventHandler(this.buttonToNext_Click);
             // 
@@ -262,7 +262,7 @@
             this.buttonTofirst.Location = new System.Drawing.Point(14, 10);
             this.buttonTofirst.Name = "buttonTofirst";
             this.buttonTofirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonTofirst.TabIndex = 25;
+            this.buttonTofirst.TabIndex = 3;
             this.buttonTofirst.UseVisualStyleBackColor = true;
             this.buttonTofirst.Click += new System.EventHandler(this.buttonTofirst_Click);
             // 
@@ -275,7 +275,7 @@
             this.buttonToPrev.Location = new System.Drawing.Point(14, 64);
             this.buttonToPrev.Name = "buttonToPrev";
             this.buttonToPrev.Size = new System.Drawing.Size(39, 39);
-            this.buttonToPrev.TabIndex = 26;
+            this.buttonToPrev.TabIndex = 1;
             this.buttonToPrev.UseVisualStyleBackColor = true;
             this.buttonToPrev.Click += new System.EventHandler(this.buttonToPrev_Click);
             // 
@@ -300,7 +300,7 @@
             this.dataGridViewHistorique.RowHeadersWidth = 25;
             this.dataGridViewHistorique.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewHistorique.Size = new System.Drawing.Size(729, 276);
-            this.dataGridViewHistorique.TabIndex = 20;
+            this.dataGridViewHistorique.TabIndex = 4;
             // 
             // panel1
             // 
@@ -309,7 +309,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 276);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 54);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // buttonDelete
             // 
@@ -322,7 +322,7 @@
             this.buttonDelete.Location = new System.Drawing.Point(701, 13);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(87, 29);
-            this.buttonDelete.TabIndex = 6;
+            this.buttonDelete.TabIndex = 0;
             this.buttonDelete.Text = "Supprimer";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);

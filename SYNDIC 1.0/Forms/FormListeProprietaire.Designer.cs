@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerListeProprietaire = new System.Windows.Forms.SplitContainer();
             this.buttonListDocs = new System.Windows.Forms.Button();
             this.buttonRechercher = new System.Windows.Forms.Button();
@@ -70,6 +70,7 @@
             this.splitContainerListeProprietaire.Panel1.Controls.Add(this.buttonListDocs);
             this.splitContainerListeProprietaire.Panel1.Controls.Add(this.buttonRechercher);
             this.splitContainerListeProprietaire.Panel1.Controls.Add(this.textBoxrechercher);
+            this.splitContainerListeProprietaire.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainerListeProprietaire_Panel1_Paint);
             // 
             // splitContainerListeProprietaire.Panel2
             // 
@@ -97,8 +98,10 @@
             this.buttonListDocs.Location = new System.Drawing.Point(593, 12);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
-            this.buttonListDocs.TabIndex = 25;
-            this.buttonListDocs.Text = "Liste de documents";
+
+            this.buttonListDocs.TabIndex = 2;
+            this.buttonListDocs.Text = "Listes Documents";
+
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
@@ -111,7 +114,7 @@
             this.buttonRechercher.Location = new System.Drawing.Point(239, 12);
             this.buttonRechercher.Name = "buttonRechercher";
             this.buttonRechercher.Size = new System.Drawing.Size(104, 34);
-            this.buttonRechercher.TabIndex = 24;
+            this.buttonRechercher.TabIndex = 1;
             this.buttonRechercher.Text = "Rechercher";
             this.buttonRechercher.UseVisualStyleBackColor = true;
             this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click);
@@ -122,7 +125,7 @@
             this.textBoxrechercher.Location = new System.Drawing.Point(25, 18);
             this.textBoxrechercher.Name = "textBoxrechercher";
             this.textBoxrechercher.Size = new System.Drawing.Size(208, 22);
-            this.textBoxrechercher.TabIndex = 23;
+            this.textBoxrechercher.TabIndex = 0;
             this.textBoxrechercher.TextChanged += new System.EventHandler(this.textBoxrechercher_TextChanged);
             // 
             // splitContainerListeProprietaireBody
@@ -153,7 +156,9 @@
             this.buttonLast.Location = new System.Drawing.Point(18, 251);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 30;
+
+            this.buttonLast.TabIndex = 2;
+
             this.buttonLast.UseVisualStyleBackColor = true;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
@@ -165,7 +170,9 @@
             this.buttonNext.Location = new System.Drawing.Point(18, 195);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 29;
+
+            this.buttonNext.TabIndex = 0;
+
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -177,7 +184,9 @@
             this.buttonprevious.Location = new System.Drawing.Point(18, 83);
             this.buttonprevious.Name = "buttonprevious";
             this.buttonprevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonprevious.TabIndex = 28;
+
+            this.buttonprevious.TabIndex = 1;
+
             this.buttonprevious.UseVisualStyleBackColor = true;
             this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
             // 
@@ -189,7 +198,9 @@
             this.buttonFirst.Location = new System.Drawing.Point(18, 27);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 27;
+
+            this.buttonFirst.TabIndex = 3;
+
             this.buttonFirst.UseVisualStyleBackColor = true;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -197,44 +208,48 @@
             // 
             this.dataGridViewProprietaires.AllowUserToAddRows = false;
             this.dataGridViewProprietaires.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewProprietaires.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewProprietaires.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewProprietaires.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewProprietaires.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProprietaires.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewProprietaires.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle7;
+
             this.dataGridViewProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewProprietaires.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProprietaires.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewProprietaires.RowHeadersWidth = 25;
             this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProprietaires.Size = new System.Drawing.Size(722, 327);
-            this.dataGridViewProprietaires.TabIndex = 21;
+            this.dataGridViewProprietaires.TabIndex = 4;
+
             // 
             // tableLayoutPanelProprietaireBottom
             // 
@@ -273,7 +288,7 @@
             this.buttonAjouterProprietaire.Location = new System.Drawing.Point(3, 3);
             this.buttonAjouterProprietaire.Name = "buttonAjouterProprietaire";
             this.buttonAjouterProprietaire.Size = new System.Drawing.Size(260, 49);
-            this.buttonAjouterProprietaire.TabIndex = 8;
+            this.buttonAjouterProprietaire.TabIndex = 0;
             this.buttonAjouterProprietaire.Text = "Ajouter Propriétaire";
             this.buttonAjouterProprietaire.UseVisualStyleBackColor = false;
             this.buttonAjouterProprietaire.Click += new System.EventHandler(this.buttonAjouterProprietaire_Click);
@@ -297,7 +312,7 @@
             this.buttonSupprimerProprietaire.Location = new System.Drawing.Point(535, 3);
             this.buttonSupprimerProprietaire.Name = "buttonSupprimerProprietaire";
             this.buttonSupprimerProprietaire.Size = new System.Drawing.Size(262, 49);
-            this.buttonSupprimerProprietaire.TabIndex = 10;
+            this.buttonSupprimerProprietaire.TabIndex = 2;
             this.buttonSupprimerProprietaire.Text = "Supprimer Propriétaire";
             this.buttonSupprimerProprietaire.UseVisualStyleBackColor = false;
             // 
@@ -320,7 +335,7 @@
             this.buttonModifierProprietaire.Location = new System.Drawing.Point(269, 3);
             this.buttonModifierProprietaire.Name = "buttonModifierProprietaire";
             this.buttonModifierProprietaire.Size = new System.Drawing.Size(260, 49);
-            this.buttonModifierProprietaire.TabIndex = 9;
+            this.buttonModifierProprietaire.TabIndex = 1;
             this.buttonModifierProprietaire.Text = "Modifier Propriétaire";
             this.buttonModifierProprietaire.UseVisualStyleBackColor = false;
             this.buttonModifierProprietaire.Click += new System.EventHandler(this.buttonModifierProprietaire_Click);

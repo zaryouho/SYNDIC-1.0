@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuOfficiel));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.BarreTitulaire = new System.Windows.Forms.Panel();
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.btnMinimized = new System.Windows.Forms.PictureBox();
-            this.btnMaximized = new System.Windows.Forms.PictureBox();
-            this.btnRestaure = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnSlideBar = new System.Windows.Forms.PictureBox();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonEmploye = new System.Windows.Forms.Button();
@@ -48,14 +41,21 @@
             this.buttonProprietaires = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonBiens = new System.Windows.Forms.Button();
+            this.BarreTitulaire = new System.Windows.Forms.Panel();
+            this.btnMinimized = new System.Windows.Forms.PictureBox();
+            this.btnMaximized = new System.Windows.Forms.PictureBox();
+            this.btnRestaure = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.btnSlideBar = new System.Windows.Forms.PictureBox();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarreTitulaire.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlideBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -76,7 +76,207 @@
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(265, 650);
-            this.MenuVertical.TabIndex = 0;
+            this.MenuVertical.TabIndex = 1;
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSettings.FlatAppearance.BorderSize = 0;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSettings.ForeColor = System.Drawing.Color.White;
+            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
+            this.buttonSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSettings.Location = new System.Drawing.Point(0, 528);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(265, 45);
+            this.buttonSettings.TabIndex = 10;
+            this.buttonSettings.Text = "Paramètres";
+            this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            // 
+            // buttonUsers
+            // 
+            this.buttonUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUsers.FlatAppearance.BorderSize = 0;
+            this.buttonUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUsers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsers.ForeColor = System.Drawing.Color.White;
+            this.buttonUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsers.Image")));
+            this.buttonUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonUsers.Location = new System.Drawing.Point(0, 479);
+            this.buttonUsers.Name = "buttonUsers";
+            this.buttonUsers.Size = new System.Drawing.Size(265, 45);
+            this.buttonUsers.TabIndex = 9;
+            this.buttonUsers.Text = "Utilisateurs";
+            this.buttonUsers.UseVisualStyleBackColor = true;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
+            // 
+            // buttonEmploye
+            // 
+            this.buttonEmploye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEmploye.FlatAppearance.BorderSize = 0;
+            this.buttonEmploye.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonEmploye.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEmploye.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmploye.ForeColor = System.Drawing.Color.White;
+            this.buttonEmploye.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmploye.Image")));
+            this.buttonEmploye.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmploye.Location = new System.Drawing.Point(0, 430);
+            this.buttonEmploye.Name = "buttonEmploye";
+            this.buttonEmploye.Size = new System.Drawing.Size(265, 45);
+            this.buttonEmploye.TabIndex = 8;
+            this.buttonEmploye.Text = "Employés";
+            this.buttonEmploye.UseVisualStyleBackColor = true;
+            this.buttonEmploye.Click += new System.EventHandler(this.buttonEmploye_Click);
+            // 
+            // buttonSociete
+            // 
+            this.buttonSociete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSociete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSociete.FlatAppearance.BorderSize = 0;
+            this.buttonSociete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonSociete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSociete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSociete.ForeColor = System.Drawing.Color.White;
+            this.buttonSociete.Image = ((System.Drawing.Image)(resources.GetObject("buttonSociete.Image")));
+            this.buttonSociete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSociete.Location = new System.Drawing.Point(0, 381);
+            this.buttonSociete.Name = "buttonSociete";
+            this.buttonSociete.Size = new System.Drawing.Size(265, 45);
+            this.buttonSociete.TabIndex = 7;
+            this.buttonSociete.Text = "Sociétés";
+            this.buttonSociete.UseVisualStyleBackColor = true;
+            this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
+            // 
+            // buttonRapportsStatistiques
+            // 
+            this.buttonRapportsStatistiques.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonRapportsStatistiques.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRapportsStatistiques.FlatAppearance.BorderSize = 0;
+            this.buttonRapportsStatistiques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonRapportsStatistiques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRapportsStatistiques.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRapportsStatistiques.ForeColor = System.Drawing.Color.White;
+            this.buttonRapportsStatistiques.Image = ((System.Drawing.Image)(resources.GetObject("buttonRapportsStatistiques.Image")));
+            this.buttonRapportsStatistiques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRapportsStatistiques.Location = new System.Drawing.Point(0, 332);
+            this.buttonRapportsStatistiques.Name = "buttonRapportsStatistiques";
+            this.buttonRapportsStatistiques.Size = new System.Drawing.Size(265, 45);
+            this.buttonRapportsStatistiques.TabIndex = 6;
+            this.buttonRapportsStatistiques.Text = "Rapports et Stat.";
+            this.buttonRapportsStatistiques.UseVisualStyleBackColor = true;
+            this.buttonRapportsStatistiques.Click += new System.EventHandler(this.buttonRapportsStatistiques_Click);
+            // 
+            // buttonDocuments
+            // 
+            this.buttonDocuments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonDocuments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDocuments.FlatAppearance.BorderSize = 0;
+            this.buttonDocuments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDocuments.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDocuments.ForeColor = System.Drawing.Color.White;
+            this.buttonDocuments.Image = global::SYNDIC_1._0.Properties.Resources.residenceDone1;
+            this.buttonDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDocuments.Location = new System.Drawing.Point(0, 234);
+            this.buttonDocuments.Name = "buttonDocuments";
+            this.buttonDocuments.Size = new System.Drawing.Size(265, 45);
+            this.buttonDocuments.TabIndex = 4;
+            this.buttonDocuments.Text = "Résidence";
+            this.buttonDocuments.UseVisualStyleBackColor = true;
+            this.buttonDocuments.Click += new System.EventHandler(this.buttonDocuments_Click);
+            // 
+            // buttonHistoriques
+            // 
+            this.buttonHistoriques.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonHistoriques.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonHistoriques.FlatAppearance.BorderSize = 0;
+            this.buttonHistoriques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonHistoriques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHistoriques.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHistoriques.ForeColor = System.Drawing.Color.White;
+            this.buttonHistoriques.Image = ((System.Drawing.Image)(resources.GetObject("buttonHistoriques.Image")));
+            this.buttonHistoriques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHistoriques.Location = new System.Drawing.Point(0, 283);
+            this.buttonHistoriques.Name = "buttonHistoriques";
+            this.buttonHistoriques.Size = new System.Drawing.Size(265, 45);
+            this.buttonHistoriques.TabIndex = 5;
+            this.buttonHistoriques.Text = "Historiques";
+            this.buttonHistoriques.UseVisualStyleBackColor = true;
+            this.buttonHistoriques.Click += new System.EventHandler(this.buttonHistoriques_Click);
+            // 
+            // buttonFinances
+            // 
+            this.buttonFinances.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonFinances.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFinances.FlatAppearance.BorderSize = 0;
+            this.buttonFinances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonFinances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFinances.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFinances.ForeColor = System.Drawing.Color.White;
+            this.buttonFinances.Image = ((System.Drawing.Image)(resources.GetObject("buttonFinances.Image")));
+            this.buttonFinances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFinances.Location = new System.Drawing.Point(0, 185);
+            this.buttonFinances.Name = "buttonFinances";
+            this.buttonFinances.Size = new System.Drawing.Size(265, 45);
+            this.buttonFinances.TabIndex = 3;
+            this.buttonFinances.Text = "Finances";
+            this.buttonFinances.UseVisualStyleBackColor = true;
+            this.buttonFinances.Click += new System.EventHandler(this.buttonFinances_Click);
+            // 
+            // buttonProprietaires
+            // 
+            this.buttonProprietaires.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProprietaires.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonProprietaires.FlatAppearance.BorderSize = 0;
+            this.buttonProprietaires.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonProprietaires.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProprietaires.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProprietaires.ForeColor = System.Drawing.Color.White;
+            this.buttonProprietaires.Image = ((System.Drawing.Image)(resources.GetObject("buttonProprietaires.Image")));
+            this.buttonProprietaires.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProprietaires.Location = new System.Drawing.Point(0, 136);
+            this.buttonProprietaires.Name = "buttonProprietaires";
+            this.buttonProprietaires.Size = new System.Drawing.Size(265, 45);
+            this.buttonProprietaires.TabIndex = 2;
+            this.buttonProprietaires.Text = "Propriétaires";
+            this.buttonProprietaires.UseVisualStyleBackColor = true;
+            this.buttonProprietaires.Click += new System.EventHandler(this.buttonProprietaires_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SYNDIC_1._0.Properties.Resources.LOGOtest8;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(267, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonBiens
+            // 
+            this.buttonBiens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonBiens.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBiens.FlatAppearance.BorderSize = 0;
+            this.buttonBiens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonBiens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBiens.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBiens.ForeColor = System.Drawing.Color.White;
+            this.buttonBiens.Image = ((System.Drawing.Image)(resources.GetObject("buttonBiens.Image")));
+            this.buttonBiens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBiens.Location = new System.Drawing.Point(0, 87);
+            this.buttonBiens.Name = "buttonBiens";
+            this.buttonBiens.Size = new System.Drawing.Size(265, 45);
+            this.buttonBiens.TabIndex = 1;
+            this.buttonBiens.Text = "Biens";
+            this.buttonBiens.UseVisualStyleBackColor = true;
+            this.buttonBiens.Click += new System.EventHandler(this.buttonBiens_Click);
             // 
             // BarreTitulaire
             // 
@@ -90,17 +290,8 @@
             this.BarreTitulaire.Location = new System.Drawing.Point(265, 0);
             this.BarreTitulaire.Name = "BarreTitulaire";
             this.BarreTitulaire.Size = new System.Drawing.Size(759, 50);
-            this.BarreTitulaire.TabIndex = 1;
+            this.BarreTitulaire.TabIndex = 0;
             this.BarreTitulaire.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarreTitulaire_MouseDown);
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(265, 50);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(759, 600);
-            this.panelContainer.TabIndex = 2;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // btnMinimized
             // 
@@ -167,205 +358,14 @@
             this.btnSlideBar.TabStop = false;
             this.btnSlideBar.Click += new System.EventHandler(this.btnSlideBar_Click);
             // 
-            // buttonSettings
+            // panelContainer
             // 
-            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSettings.FlatAppearance.BorderSize = 0;
-            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSettings.ForeColor = System.Drawing.Color.White;
-            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
-            this.buttonSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSettings.Location = new System.Drawing.Point(0, 528);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(265, 45);
-            this.buttonSettings.TabIndex = 9;
-            this.buttonSettings.Text = "Paramètres";
-            this.buttonSettings.UseVisualStyleBackColor = true;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
-            // 
-            // buttonUsers
-            // 
-            this.buttonUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonUsers.FlatAppearance.BorderSize = 0;
-            this.buttonUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsers.ForeColor = System.Drawing.Color.White;
-            this.buttonUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsers.Image")));
-            this.buttonUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUsers.Location = new System.Drawing.Point(0, 479);
-            this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(265, 45);
-            this.buttonUsers.TabIndex = 8;
-            this.buttonUsers.Text = "Utilisateurs";
-            this.buttonUsers.UseVisualStyleBackColor = true;
-            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
-            // 
-            // buttonEmploye
-            // 
-            this.buttonEmploye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEmploye.FlatAppearance.BorderSize = 0;
-            this.buttonEmploye.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonEmploye.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmploye.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEmploye.ForeColor = System.Drawing.Color.White;
-            this.buttonEmploye.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmploye.Image")));
-            this.buttonEmploye.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEmploye.Location = new System.Drawing.Point(0, 430);
-            this.buttonEmploye.Name = "buttonEmploye";
-            this.buttonEmploye.Size = new System.Drawing.Size(265, 45);
-            this.buttonEmploye.TabIndex = 7;
-            this.buttonEmploye.Text = "Employés";
-            this.buttonEmploye.UseVisualStyleBackColor = true;
-            this.buttonEmploye.Click += new System.EventHandler(this.buttonEmploye_Click);
-            // 
-            // buttonSociete
-            // 
-            this.buttonSociete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSociete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSociete.FlatAppearance.BorderSize = 0;
-            this.buttonSociete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonSociete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSociete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSociete.ForeColor = System.Drawing.Color.White;
-            this.buttonSociete.Image = ((System.Drawing.Image)(resources.GetObject("buttonSociete.Image")));
-            this.buttonSociete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSociete.Location = new System.Drawing.Point(0, 381);
-            this.buttonSociete.Name = "buttonSociete";
-            this.buttonSociete.Size = new System.Drawing.Size(265, 45);
-            this.buttonSociete.TabIndex = 6;
-            this.buttonSociete.Text = "Sociétés";
-            this.buttonSociete.UseVisualStyleBackColor = true;
-            this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
-            // 
-            // buttonRapportsStatistiques
-            // 
-            this.buttonRapportsStatistiques.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonRapportsStatistiques.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRapportsStatistiques.FlatAppearance.BorderSize = 0;
-            this.buttonRapportsStatistiques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonRapportsStatistiques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRapportsStatistiques.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRapportsStatistiques.ForeColor = System.Drawing.Color.White;
-            this.buttonRapportsStatistiques.Image = ((System.Drawing.Image)(resources.GetObject("buttonRapportsStatistiques.Image")));
-            this.buttonRapportsStatistiques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRapportsStatistiques.Location = new System.Drawing.Point(0, 332);
-            this.buttonRapportsStatistiques.Name = "buttonRapportsStatistiques";
-            this.buttonRapportsStatistiques.Size = new System.Drawing.Size(265, 45);
-            this.buttonRapportsStatistiques.TabIndex = 5;
-            this.buttonRapportsStatistiques.Text = "Rapports et Stat.";
-            this.buttonRapportsStatistiques.UseVisualStyleBackColor = true;
-            this.buttonRapportsStatistiques.Click += new System.EventHandler(this.buttonRapportsStatistiques_Click);
-            // 
-            // buttonDocuments
-            // 
-            this.buttonDocuments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonDocuments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDocuments.FlatAppearance.BorderSize = 0;
-            this.buttonDocuments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDocuments.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDocuments.ForeColor = System.Drawing.Color.White;
-            this.buttonDocuments.Image = global::SYNDIC_1._0.Properties.Resources.residenceDone1;
-            this.buttonDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDocuments.Location = new System.Drawing.Point(0, 234);
-            this.buttonDocuments.Name = "buttonDocuments";
-            this.buttonDocuments.Size = new System.Drawing.Size(265, 45);
-            this.buttonDocuments.TabIndex = 4;
-            this.buttonDocuments.Text = "Résidence";
-            this.buttonDocuments.UseVisualStyleBackColor = true;
-            this.buttonDocuments.Click += new System.EventHandler(this.buttonDocuments_Click);
-            // 
-            // buttonHistoriques
-            // 
-            this.buttonHistoriques.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonHistoriques.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonHistoriques.FlatAppearance.BorderSize = 0;
-            this.buttonHistoriques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonHistoriques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHistoriques.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHistoriques.ForeColor = System.Drawing.Color.White;
-            this.buttonHistoriques.Image = ((System.Drawing.Image)(resources.GetObject("buttonHistoriques.Image")));
-            this.buttonHistoriques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHistoriques.Location = new System.Drawing.Point(0, 283);
-            this.buttonHistoriques.Name = "buttonHistoriques";
-            this.buttonHistoriques.Size = new System.Drawing.Size(265, 45);
-            this.buttonHistoriques.TabIndex = 3;
-            this.buttonHistoriques.Text = "Historiques";
-            this.buttonHistoriques.UseVisualStyleBackColor = true;
-            this.buttonHistoriques.Click += new System.EventHandler(this.buttonHistoriques_Click);
-            // 
-            // buttonFinances
-            // 
-            this.buttonFinances.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonFinances.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFinances.FlatAppearance.BorderSize = 0;
-            this.buttonFinances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonFinances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFinances.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFinances.ForeColor = System.Drawing.Color.White;
-            this.buttonFinances.Image = ((System.Drawing.Image)(resources.GetObject("buttonFinances.Image")));
-            this.buttonFinances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFinances.Location = new System.Drawing.Point(0, 185);
-            this.buttonFinances.Name = "buttonFinances";
-            this.buttonFinances.Size = new System.Drawing.Size(265, 45);
-            this.buttonFinances.TabIndex = 2;
-            this.buttonFinances.Text = "Finances";
-            this.buttonFinances.UseVisualStyleBackColor = true;
-            this.buttonFinances.Click += new System.EventHandler(this.buttonFinances_Click);
-            // 
-            // buttonProprietaires
-            // 
-            this.buttonProprietaires.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProprietaires.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonProprietaires.FlatAppearance.BorderSize = 0;
-            this.buttonProprietaires.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonProprietaires.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProprietaires.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProprietaires.ForeColor = System.Drawing.Color.White;
-            this.buttonProprietaires.Image = ((System.Drawing.Image)(resources.GetObject("buttonProprietaires.Image")));
-            this.buttonProprietaires.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProprietaires.Location = new System.Drawing.Point(0, 136);
-            this.buttonProprietaires.Name = "buttonProprietaires";
-            this.buttonProprietaires.Size = new System.Drawing.Size(265, 45);
-            this.buttonProprietaires.TabIndex = 1;
-            this.buttonProprietaires.Text = "Propriétaires";
-            this.buttonProprietaires.UseVisualStyleBackColor = true;
-            this.buttonProprietaires.Click += new System.EventHandler(this.buttonProprietaires_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SYNDIC_1._0.Properties.Resources.LOGOtest8;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // buttonBiens
-            // 
-            this.buttonBiens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonBiens.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBiens.FlatAppearance.BorderSize = 0;
-            this.buttonBiens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.buttonBiens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBiens.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBiens.ForeColor = System.Drawing.Color.White;
-            this.buttonBiens.Image = ((System.Drawing.Image)(resources.GetObject("buttonBiens.Image")));
-            this.buttonBiens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBiens.Location = new System.Drawing.Point(0, 87);
-            this.buttonBiens.Name = "buttonBiens";
-            this.buttonBiens.Size = new System.Drawing.Size(265, 45);
-            this.buttonBiens.TabIndex = 0;
-            this.buttonBiens.Text = "Biens";
-            this.buttonBiens.UseVisualStyleBackColor = true;
-            this.buttonBiens.Click += new System.EventHandler(this.buttonBiens_Click);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(265, 50);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(759, 600);
+            this.panelContainer.TabIndex = 2;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // frmMenuOfficiel
             // 
@@ -381,13 +381,13 @@
             this.Text = "MenuOfficiel";
             this.Load += new System.EventHandler(this.frmMenuOfficiel_Load);
             this.MenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarreTitulaire.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlideBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

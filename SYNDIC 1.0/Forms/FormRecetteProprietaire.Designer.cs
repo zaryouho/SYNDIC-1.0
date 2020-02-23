@@ -96,7 +96,7 @@
             this.buttonListDocs.Location = new System.Drawing.Point(393, 26);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
-            this.buttonListDocs.TabIndex = 17;
+            this.buttonListDocs.TabIndex = 1;
             this.buttonListDocs.Text = "Listes Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
@@ -117,8 +117,11 @@
             this.buttonImprimerRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonImprimerRecette.Location = new System.Drawing.Point(732, 9);
             this.buttonImprimerRecette.Name = "buttonImprimerRecette";
-            this.buttonImprimerRecette.Size = new System.Drawing.Size(56, 56);
-            this.buttonImprimerRecette.TabIndex = 15;
+
+            this.buttonImprimerRecette.Size = new System.Drawing.Size(182, 35);
+            this.buttonImprimerRecette.TabIndex = 2;
+            this.buttonImprimerRecette.Text = "Imprimer Recette";
+
             this.buttonImprimerRecette.UseVisualStyleBackColor = false;
             this.buttonImprimerRecette.Click += new System.EventHandler(this.buttonImprimerRecette_Click);
             // 
@@ -140,7 +143,7 @@
             this.comboBoxProprietaire.Location = new System.Drawing.Point(12, 33);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
             this.comboBoxProprietaire.Size = new System.Drawing.Size(297, 25);
-            this.comboBoxProprietaire.TabIndex = 2;
+            this.comboBoxProprietaire.TabIndex = 0;
             // 
             // splitContainerRecette
             // 
@@ -203,7 +206,7 @@
             this.dataGridViewRecette.RowHeadersWidth = 25;
             this.dataGridViewRecette.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRecette.Size = new System.Drawing.Size(743, 302);
-            this.dataGridViewRecette.TabIndex = 4;
+            this.dataGridViewRecette.TabIndex = 5;
             // 
             // panelNavigation
             // 
@@ -226,7 +229,7 @@
             this.buttonLast.Location = new System.Drawing.Point(8, 234);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 21;
+            this.buttonLast.TabIndex = 3;
             this.buttonLast.UseVisualStyleBackColor = false;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
@@ -239,7 +242,7 @@
             this.buttonPrevious.Location = new System.Drawing.Point(8, 92);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonPrevious.TabIndex = 19;
+            this.buttonPrevious.TabIndex = 2;
             this.buttonPrevious.UseVisualStyleBackColor = false;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
@@ -252,7 +255,7 @@
             this.buttonNext.Location = new System.Drawing.Point(8, 163);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 20;
+            this.buttonNext.TabIndex = 1;
             this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -265,7 +268,7 @@
             this.buttonFirst.Location = new System.Drawing.Point(8, 21);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 18;
+            this.buttonFirst.TabIndex = 4;
             this.buttonFirst.UseVisualStyleBackColor = false;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -286,8 +289,10 @@
             this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
             this.buttonAjouterRecette.Name = "buttonAjouterRecette";
             this.buttonAjouterRecette.Size = new System.Drawing.Size(260, 53);
-            this.buttonAjouterRecette.TabIndex = 14;
-            this.buttonAjouterRecette.Text = "Ajouter une recette";
+
+            this.buttonAjouterRecette.TabIndex = 1;
+            this.buttonAjouterRecette.Text = "Ajouter Recette";
+
             this.buttonAjouterRecette.UseVisualStyleBackColor = false;
             this.buttonAjouterRecette.Click += new System.EventHandler(this.buttonAjouterRecette_Click);
             // 
@@ -308,8 +313,10 @@
             this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
             this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
             this.buttonSupprimerRecette.Size = new System.Drawing.Size(262, 53);
-            this.buttonSupprimerRecette.TabIndex = 16;
-            this.buttonSupprimerRecette.Text = "Supprimer la recette";
+
+            this.buttonSupprimerRecette.TabIndex = 2;
+            this.buttonSupprimerRecette.Text = "Supprimer Recette";
+
             this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
             this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
             // 

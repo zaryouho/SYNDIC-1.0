@@ -24,8 +24,9 @@ namespace SYNDIC_1._0
 
         private void FormListeProprietaire_Load(object sender, EventArgs e)
         {
-            
-            var src = from v in syndicDataContext.villes
+            textBoxrechercher.Focus();
+
+               var src = from v in syndicDataContext.villes
                       join p in syndicDataContext.proprietaires
                         on v.id equals p.id_ville
                       join b in syndicDataContext.biens
@@ -169,6 +170,11 @@ namespace SYNDIC_1._0
             {
                 formGestionDocument.ShowDialog();
             }
+        }
+
+        private void splitContainerListeProprietaire_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

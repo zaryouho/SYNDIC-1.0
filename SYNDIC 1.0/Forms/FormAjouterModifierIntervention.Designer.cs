@@ -67,7 +67,7 @@
             this.labelCloseDepense.Location = new System.Drawing.Point(425, 4);
             this.labelCloseDepense.Name = "labelCloseDepense";
             this.labelCloseDepense.Size = new System.Drawing.Size(18, 18);
-            this.labelCloseDepense.TabIndex = 1;
+            this.labelCloseDepense.TabIndex = 7;
             this.labelCloseDepense.Text = "X";
             this.labelCloseDepense.Click += new System.EventHandler(this.labelCloseDepense_Click);
             // 
@@ -99,7 +99,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(270, 3);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(139, 35);
-            this.buttonAnnuler.TabIndex = 1;
+            this.buttonAnnuler.TabIndex = 5;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
@@ -112,7 +112,7 @@
             this.buttonValider.Location = new System.Drawing.Point(38, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(139, 35);
-            this.buttonValider.TabIndex = 0;
+            this.buttonValider.TabIndex = 6;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -134,7 +134,7 @@
             this.dateTimePickerFinIntervention.Location = new System.Drawing.Point(157, 157);
             this.dateTimePickerFinIntervention.Name = "dateTimePickerFinIntervention";
             this.dateTimePickerFinIntervention.Size = new System.Drawing.Size(231, 22);
-            this.dateTimePickerFinIntervention.TabIndex = 52;
+            this.dateTimePickerFinIntervention.TabIndex = 2;
             this.dateTimePickerFinIntervention.ValueChanged += new System.EventHandler(this.dateTimePickerFinIntervention_ValueChanged);
             // 
             // textBoxMontantIntervention
@@ -143,7 +143,7 @@
             this.textBoxMontantIntervention.Location = new System.Drawing.Point(157, 195);
             this.textBoxMontantIntervention.Name = "textBoxMontantIntervention";
             this.textBoxMontantIntervention.Size = new System.Drawing.Size(231, 22);
-            this.textBoxMontantIntervention.TabIndex = 51;
+            this.textBoxMontantIntervention.TabIndex = 3;
             this.textBoxMontantIntervention.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMontantIntervention_KeyPress);
             // 
             // labelMontant
@@ -172,7 +172,7 @@
             this.textBoxDesignationDepense.Location = new System.Drawing.Point(157, 81);
             this.textBoxDesignationDepense.Name = "textBoxDesignationDepense";
             this.textBoxDesignationDepense.Size = new System.Drawing.Size(231, 22);
-            this.textBoxDesignationDepense.TabIndex = 47;
+            this.textBoxDesignationDepense.TabIndex = 0;
             this.textBoxDesignationDepense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDesignationDepense_KeyPress);
             // 
             // labelDesignationDepense
@@ -192,7 +192,7 @@
             this.dateTimePickerDebutIntervention.Location = new System.Drawing.Point(157, 119);
             this.dateTimePickerDebutIntervention.Name = "dateTimePickerDebutIntervention";
             this.dateTimePickerDebutIntervention.Size = new System.Drawing.Size(231, 22);
-            this.dateTimePickerDebutIntervention.TabIndex = 48;
+            this.dateTimePickerDebutIntervention.TabIndex = 1;
             this.dateTimePickerDebutIntervention.ValueChanged += new System.EventHandler(this.dateTimePickerFinIntervention_ValueChanged);
             // 
             // comboBoxIdDepense
@@ -201,7 +201,7 @@
             this.comboBoxIdDepense.Location = new System.Drawing.Point(155, 233);
             this.comboBoxIdDepense.Name = "comboBoxIdDepense";
             this.comboBoxIdDepense.Size = new System.Drawing.Size(233, 21);
-            this.comboBoxIdDepense.TabIndex = 57;
+            this.comboBoxIdDepense.TabIndex = 4;
             // 
             // labelidDepense
             // 

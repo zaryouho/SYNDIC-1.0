@@ -27,7 +27,7 @@ namespace SYNDIC_1._0
         }
 
         private void FormBienEcheance_Load(object sender, EventArgs e)
-        {
+        { comboBoxBloc.Focus();
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
 
             DBHelper.remplir_dataset("select * from bloc", "bloc");
@@ -41,7 +41,7 @@ namespace SYNDIC_1._0
 
             bsBloc = DBHelper.remplir_bindingsource("bloc");
             bsImmeuble = DBHelper.remplir_bindingsource("bloc", "id", "immeuble", "id_bloc", bsBloc);
-            
+
             DBHelper.remplir_ListControl(comboBoxBloc, bsBloc, "nomBloc", "id");
             DBHelper.remplir_ListControl(comboBoxImmeuble, bsImmeuble, "nom", "id");
 
@@ -95,7 +95,7 @@ namespace SYNDIC_1._0
 
             if (filter.Equals("Touts"))
                 filter = "";
-            
+
             bsEcheance.Filter = "TypeEchea like '%" + filter.Replace("'", "''") + "%'";
             if (filter.Equals("Frais biens"))
             {
@@ -109,7 +109,7 @@ namespace SYNDIC_1._0
             }
             buttonSupprimerEcheance.Enabled = true;
             buttonModifierEcheance.Enabled = true;
-            panelMontantEcheance.Visible = false ;
+            panelMontantEcheance.Visible = false;
             dataGridViewBienEcheance.Columns[1].Visible = false;
             dataGridViewBienEcheance.Columns[2].Visible = false;
             filter = null;
@@ -117,20 +117,20 @@ namespace SYNDIC_1._0
 
         private void dataGridViewBienEcheance_SelectionChanged(object sender, EventArgs e)
         {
-             /*double montantTotal = 0, montantRecu = 0;
-             foreach(DataGridViewRow row in dataGridViewBienEcheance.Rows)
-                  montantRecu += Convert.ToDouble(row.Cells[4].Value.ToString());
+            /*double montantTotal = 0, montantRecu = 0;
+            foreach(DataGridViewRow row in dataGridViewBienEcheance.Rows)
+                 montantRecu += Convert.ToDouble(row.Cells[4].Value.ToString());
 
 
-             montantTotal = Convert.ToDouble(dataGridViewBienEcheance.Rows[0].Cells[3].Value)*12;
+            montantTotal = Convert.ToDouble(dataGridViewBienEcheance.Rows[0].Cells[3].Value)*12;
 
-            
-             if (dataGridViewBienEcheance.Rows.Count > 0)
-             {
-                 textBoxMontantTotal.Text = montantTotal.ToString();
-                 textBoxMontantRecu.Text = montantRecu.ToString();
-                 textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
-             }*/
+
+            if (dataGridViewBienEcheance.Rows.Count > 0)
+            {
+                textBoxMontantTotal.Text = montantTotal.ToString();
+                textBoxMontantRecu.Text = montantRecu.ToString();
+                textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
+            }*/
             /* double montantTotal = 0, montantRecu = 0;
 
              SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionString"].ConnectionString);
@@ -151,13 +151,7 @@ namespace SYNDIC_1._0
              textBoxMontantRecu.Text = montantRecu.ToString();
              textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
             */
-             
-
-
-
         }
-
-        
 
         private void comboBoxBienEcheance_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -187,21 +181,23 @@ namespace SYNDIC_1._0
                 textBoxMontantRecu.Text = montantRecu.ToString();
                 textBoxMontantReste.Text = (montantTotal - montantRecu).ToString();
             }
-            catch(Exception) { }
+            catch (Exception) { }
         }
 
         private void buttonAjouterEcheance_Click(object sender, EventArgs e)
         {
-            new FormAjouterModifierEcheance("Ajouter",bsBien).ShowDialog();
+            new FormAjouterModifierEcheance("Ajouter", bsBien).ShowDialog();
             DBHelper.dataSet.Reset();
 
             FormBienEcheance_Load(sender, e);
-            
+
         }
 
         private void buttonSupprimerEcheance_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet écheance ?"+
+
+            DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?" +
+
                 "Montant : " + dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString() +
                 "\nMontant Reçu :" + dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString() +
                 "\nNom de Bien : " + dataGridViewListeBien.CurrentRow.Cells[1].Value.ToString() +
@@ -226,14 +222,14 @@ namespace SYNDIC_1._0
         private void buttonModifierEcheance_Click(object sender, EventArgs e)
         {
             echeance echeance = new echeance();
-            
+
             echeance.id = Convert.ToInt32(dataGridViewBienEcheance.CurrentRow.Cells[0].Value.ToString());
             echeance.montant = Convert.ToDecimal(dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString());
             echeance.montant_reçu = Convert.ToDecimal(dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString());
             echeance.id_bien = Convert.ToInt32(dataGridViewBienEcheance.CurrentRow.Cells[5].Value.ToString());
             echeance.typeEchea = dataGridViewBienEcheance.CurrentRow.Cells[6].Value.ToString();
-            
-            new FormAjouterModifierEcheance("Modifier",bsBien,echeance).ShowDialog();
+
+            new FormAjouterModifierEcheance("Modifier", bsBien, echeance).ShowDialog();
             DBHelper.dataSet.Reset();
 
             FormBienEcheance_Load(sender, e);
@@ -241,8 +237,9 @@ namespace SYNDIC_1._0
 
         private void dataGridViewBienEcheance_DoubleClick(object sender, EventArgs e)
         {
-            if(comboBoxTypeEcheance.SelectedValue.ToString() != "Frais biens")
+            if (comboBoxTypeEcheance.SelectedValue.ToString() != "Frais biens")
                 buttonModifierEcheance_Click(sender, e);
         }
-    }
+    } 
 }
+

@@ -122,7 +122,7 @@
             this.groupBoxRadioButtons.Name = "groupBoxRadioButtons";
             this.groupBoxRadioButtons.Padding = new System.Windows.Forms.Padding(0);
             this.groupBoxRadioButtons.Size = new System.Drawing.Size(171, 58);
-            this.groupBoxRadioButtons.TabIndex = 37;
+            this.groupBoxRadioButtons.TabIndex = 3;
             this.groupBoxRadioButtons.TabStop = false;
             // 
             // radioButtonALL
@@ -133,7 +133,7 @@
             this.radioButtonALL.Location = new System.Drawing.Point(95, 11);
             this.radioButtonALL.Name = "radioButtonALL";
             this.radioButtonALL.Size = new System.Drawing.Size(41, 21);
-            this.radioButtonALL.TabIndex = 17;
+            this.radioButtonALL.TabIndex = 2;
             this.radioButtonALL.Text = "All";
             this.radioButtonALL.UseVisualStyleBackColor = true;
             this.radioButtonALL.CheckedChanged += new System.EventHandler(this.radioButtonEmploye_CheckedChanged);
@@ -146,7 +146,7 @@
             this.radioButtonAutre.Location = new System.Drawing.Point(95, 31);
             this.radioButtonAutre.Name = "radioButtonAutre";
             this.radioButtonAutre.Size = new System.Drawing.Size(71, 21);
-            this.radioButtonAutre.TabIndex = 16;
+            this.radioButtonAutre.TabIndex = 3;
             this.radioButtonAutre.Text = "Autre ...";
             this.radioButtonAutre.UseVisualStyleBackColor = true;
             this.radioButtonAutre.CheckedChanged += new System.EventHandler(this.radioButtonEmploye_CheckedChanged);
@@ -159,7 +159,7 @@
             this.radioButtonSociete.Location = new System.Drawing.Point(9, 33);
             this.radioButtonSociete.Name = "radioButtonSociete";
             this.radioButtonSociete.Size = new System.Drawing.Size(73, 21);
-            this.radioButtonSociete.TabIndex = 15;
+            this.radioButtonSociete.TabIndex = 1;
             this.radioButtonSociete.Text = "Société";
             this.radioButtonSociete.UseVisualStyleBackColor = true;
             this.radioButtonSociete.CheckedChanged += new System.EventHandler(this.radioButtonEmploye_CheckedChanged);
@@ -175,7 +175,7 @@
             this.radioButtonEmploye.Location = new System.Drawing.Point(9, 11);
             this.radioButtonEmploye.Name = "radioButtonEmploye";
             this.radioButtonEmploye.Size = new System.Drawing.Size(76, 21);
-            this.radioButtonEmploye.TabIndex = 14;
+            this.radioButtonEmploye.TabIndex = 0;
             this.radioButtonEmploye.TabStop = true;
             this.radioButtonEmploye.Text = "Employé";
             this.radioButtonEmploye.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@
             this.comboBoxQui.Location = new System.Drawing.Point(3, 35);
             this.comboBoxQui.Name = "comboBoxQui";
             this.comboBoxQui.Size = new System.Drawing.Size(193, 25);
-            this.comboBoxQui.TabIndex = 34;
+            this.comboBoxQui.TabIndex = 4;
             this.comboBoxQui.SelectedIndexChanged += new System.EventHandler(this.comboBoxQui_SelectedIndexChanged);
             // 
             // comboBoxids
@@ -269,7 +269,9 @@
             this.comboBoxTypeDepense.Location = new System.Drawing.Point(6, 26);
             this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
             this.comboBoxTypeDepense.Size = new System.Drawing.Size(187, 25);
-            this.comboBoxTypeDepense.TabIndex = 33;
+
+            this.comboBoxTypeDepense.TabIndex = 2;
+
             this.comboBoxTypeDepense.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeDepense_SelectedIndexChanged);
             // 
             // panel1
@@ -290,7 +292,7 @@
             this.textBoxRechercher.Location = new System.Drawing.Point(8, 26);
             this.textBoxRechercher.Name = "textBoxRechercher";
             this.textBoxRechercher.Size = new System.Drawing.Size(165, 22);
-            this.textBoxRechercher.TabIndex = 30;
+            this.textBoxRechercher.TabIndex = 0;
             // 
             // buttonChercher
             // 
@@ -302,7 +304,7 @@
             this.buttonChercher.Location = new System.Drawing.Point(98, 51);
             this.buttonChercher.Name = "buttonChercher";
             this.buttonChercher.Size = new System.Drawing.Size(75, 25);
-            this.buttonChercher.TabIndex = 32;
+            this.buttonChercher.TabIndex = 1;
             this.buttonChercher.Text = "Chercher";
             this.buttonChercher.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +349,7 @@
             this.buttonLast.Location = new System.Drawing.Point(8, 231);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 21;
+            this.buttonLast.TabIndex = 2;
             this.buttonLast.UseVisualStyleBackColor = false;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
@@ -360,7 +362,7 @@
             this.buttonPrevious.Location = new System.Drawing.Point(8, 89);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonPrevious.TabIndex = 19;
+            this.buttonPrevious.TabIndex = 1;
             this.buttonPrevious.UseVisualStyleBackColor = false;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
@@ -373,7 +375,7 @@
             this.buttonNext.Location = new System.Drawing.Point(8, 160);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 20;
+            this.buttonNext.TabIndex = 0;
             this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -386,7 +388,7 @@
             this.buttonFirst.Location = new System.Drawing.Point(8, 18);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 18;
+            this.buttonFirst.TabIndex = 3;
             this.buttonFirst.UseVisualStyleBackColor = false;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -434,7 +436,7 @@
             this.dataGridViewDepenses.RowTemplate.Height = 25;
             this.dataGridViewDepenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDepenses.Size = new System.Drawing.Size(737, 295);
-            this.dataGridViewDepenses.TabIndex = 16;
+            this.dataGridViewDepenses.TabIndex = 4;
             // 
             // panelFooter
             // 
@@ -464,7 +466,7 @@
             this.buttonAfficherFactures.Location = new System.Drawing.Point(426, 8);
             this.buttonAfficherFactures.Name = "buttonAfficherFactures";
             this.buttonAfficherFactures.Size = new System.Drawing.Size(151, 53);
-            this.buttonAfficherFactures.TabIndex = 12;
+            this.buttonAfficherFactures.TabIndex = 3;
             this.buttonAfficherFactures.Text = "Afficher Factures";
             this.buttonAfficherFactures.UseVisualStyleBackColor = false;
             this.buttonAfficherFactures.Click += new System.EventHandler(this.buttonAfficherFactures_Click);
@@ -485,8 +487,10 @@
             this.buttonAfficherInterventions.Location = new System.Drawing.Point(262, 8);
             this.buttonAfficherInterventions.Name = "buttonAfficherInterventions";
             this.buttonAfficherInterventions.Size = new System.Drawing.Size(151, 53);
-            this.buttonAfficherInterventions.TabIndex = 11;
-            this.buttonAfficherInterventions.Text = "Afficher les interventions";
+
+            this.buttonAfficherInterventions.TabIndex = 2;
+            this.buttonAfficherInterventions.Text = "Afficher Interventions";
+
             this.buttonAfficherInterventions.UseVisualStyleBackColor = false;
             this.buttonAfficherInterventions.Click += new System.EventHandler(this.buttonAfficherInterventions_Click);
             // 
@@ -506,8 +510,10 @@
             this.buttonAjouterDepense.Location = new System.Drawing.Point(51, 8);
             this.buttonAjouterDepense.Name = "buttonAjouterDepense";
             this.buttonAjouterDepense.Size = new System.Drawing.Size(198, 53);
-            this.buttonAjouterDepense.TabIndex = 10;
-            this.buttonAjouterDepense.Text = "Ajouter une dépense";
+
+            this.buttonAjouterDepense.TabIndex = 1;
+            this.buttonAjouterDepense.Text = "Ajouter Dépense";
+
             this.buttonAjouterDepense.UseVisualStyleBackColor = false;
             this.buttonAjouterDepense.Click += new System.EventHandler(this.buttonAjouterDepense_Click);
             // 
@@ -527,8 +533,10 @@
             this.buttonModifierDepense.Location = new System.Drawing.Point(590, 8);
             this.buttonModifierDepense.Name = "buttonModifierDepense";
             this.buttonModifierDepense.Size = new System.Drawing.Size(205, 53);
-            this.buttonModifierDepense.TabIndex = 9;
-            this.buttonModifierDepense.Text = "Modifier la dépense";
+
+            this.buttonModifierDepense.TabIndex = 0;
+            this.buttonModifierDepense.Text = "Modifier Dépense";
+
             this.buttonModifierDepense.UseVisualStyleBackColor = false;
             this.buttonModifierDepense.Click += new System.EventHandler(this.buttonModifierDepense_Click);
             // 

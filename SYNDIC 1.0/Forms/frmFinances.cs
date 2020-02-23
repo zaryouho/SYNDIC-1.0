@@ -60,7 +60,7 @@ namespace SYNDIC_1._0
 
         private void frmFinances_Load(object sender, EventArgs e)
         {
-            buttonSsEcheances_Click(sender, e);
+            buttonSsCotisations_Click(sender, e);
         }
 
         private void labelCloseFinances_Click(object sender, EventArgs e)

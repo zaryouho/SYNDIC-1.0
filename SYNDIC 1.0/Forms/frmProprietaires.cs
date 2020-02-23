@@ -13,6 +13,10 @@ namespace SYNDIC_1._0
 {
     public partial class frmProprietaires : Form
     {
+        DataClassesSyndicDataContext syndicDataContext = new DataClassesSyndicDataContext();
+        char op = 'A';
+        static int i = 0;
+        proprietaire p = new proprietaire();
         private void OpenFormInPannel(object formChild)
         {
             if (this.splitContainerProprietaire.Panel2.Controls.Count > 0)
@@ -59,6 +63,14 @@ namespace SYNDIC_1._0
 
         private void buttonSsAjouterProprietaires_Click(object sender, EventArgs e)
         {
+            op = 'A';
+            using (var formAjouterModifierProp = new FormAjouterModifierProp(new proprietaire(), op))
+            {
+
+                formAjouterModifierProp.ShowDialog();
+            }
+
+           
             buttonSsProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesArchive.BackColor = Color.Blue;
             buttonSsAjouterProprietaires.BackColor = Color.Navy;

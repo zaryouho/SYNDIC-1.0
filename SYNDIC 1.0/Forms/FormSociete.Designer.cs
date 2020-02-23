@@ -83,7 +83,7 @@
             this.tableLayoutPSociete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPSociete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPSociete.Size = new System.Drawing.Size(800, 49);
-            this.tableLayoutPSociete.TabIndex = 24;
+            this.tableLayoutPSociete.TabIndex = 4;
             // 
             // labelEmploye
             // 
@@ -128,7 +128,7 @@
             this.tableLayoutPanelEmploye.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelEmploye.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanelEmploye.Size = new System.Drawing.Size(800, 43);
-            this.tableLayoutPanelEmploye.TabIndex = 25;
+            this.tableLayoutPanelEmploye.TabIndex = 0;
             // 
             // buttonSociete
             // 
@@ -146,8 +146,10 @@
             this.buttonSociete.Location = new System.Drawing.Point(3, 3);
             this.buttonSociete.Name = "buttonSociete";
             this.buttonSociete.Size = new System.Drawing.Size(260, 37);
-            this.buttonSociete.TabIndex = 8;
-            this.buttonSociete.Text = "Société";
+
+            this.buttonSociete.TabIndex = 0;
+            this.buttonSociete.Text = "Societe";
+
             this.buttonSociete.UseVisualStyleBackColor = false;
             this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
             // 
@@ -167,8 +169,10 @@
             this.buttonSocieteArchive.Location = new System.Drawing.Point(535, 3);
             this.buttonSocieteArchive.Name = "buttonSocieteArchive";
             this.buttonSocieteArchive.Size = new System.Drawing.Size(262, 37);
-            this.buttonSocieteArchive.TabIndex = 10;
-            this.buttonSocieteArchive.Text = "Société  arch.";
+
+            this.buttonSocieteArchive.TabIndex = 2;
+            this.buttonSocieteArchive.Text = "Societe  arch.";
+
             this.buttonSocieteArchive.UseVisualStyleBackColor = false;
             this.buttonSocieteArchive.Click += new System.EventHandler(this.buttonSocieteArchive_Click);
             // 
@@ -188,8 +192,10 @@
             this.buttonAjouterSociete.Location = new System.Drawing.Point(269, 3);
             this.buttonAjouterSociete.Name = "buttonAjouterSociete";
             this.buttonAjouterSociete.Size = new System.Drawing.Size(260, 37);
-            this.buttonAjouterSociete.TabIndex = 9;
-            this.buttonAjouterSociete.Text = "Ajouter Société";
+
+            this.buttonAjouterSociete.TabIndex = 1;
+            this.buttonAjouterSociete.Text = "Ajouter Societe";
+
             this.buttonAjouterSociete.UseVisualStyleBackColor = false;
             this.buttonAjouterSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
@@ -214,13 +220,14 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.buttonRechercher);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxRechercher);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(800, 303);
             this.splitContainer1.SplitterDistance = 41;
-            this.splitContainer1.TabIndex = 13;
+            this.splitContainer1.TabIndex = 1;
             // 
             // buttonRechercher
             // 
@@ -231,7 +238,7 @@
             this.buttonRechercher.Location = new System.Drawing.Point(238, 6);
             this.buttonRechercher.Name = "buttonRechercher";
             this.buttonRechercher.Size = new System.Drawing.Size(98, 25);
-            this.buttonRechercher.TabIndex = 16;
+            this.buttonRechercher.TabIndex = 1;
             this.buttonRechercher.Text = "Rechercher";
             this.buttonRechercher.UseVisualStyleBackColor = true;
             this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click);
@@ -242,7 +249,7 @@
             this.textBoxRechercher.Location = new System.Drawing.Point(30, 7);
             this.textBoxRechercher.Name = "textBoxRechercher";
             this.textBoxRechercher.Size = new System.Drawing.Size(202, 22);
-            this.textBoxRechercher.TabIndex = 15;
+            this.textBoxRechercher.TabIndex = 0;
             this.textBoxRechercher.TextChanged += new System.EventHandler(this.textBoxRechercher_TextChanged);
             // 
             // splitContainer2
@@ -263,7 +270,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.dataGridViewSociete);
             this.splitContainer2.Size = new System.Drawing.Size(800, 258);
             this.splitContainer2.SplitterDistance = 58;
-            this.splitContainer2.TabIndex = 0;
+            this.splitContainer2.TabIndex = 2;
             // 
             // buttonLast
             // 
@@ -273,7 +280,7 @@
             this.buttonLast.Location = new System.Drawing.Point(10, 188);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 22;
+            this.buttonLast.TabIndex = 2;
             this.buttonLast.UseVisualStyleBackColor = true;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
@@ -285,7 +292,7 @@
             this.buttonNext.Location = new System.Drawing.Point(10, 133);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 21;
+            this.buttonNext.TabIndex = 0;
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -297,7 +304,7 @@
             this.buttonprevious.Location = new System.Drawing.Point(10, 78);
             this.buttonprevious.Name = "buttonprevious";
             this.buttonprevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonprevious.TabIndex = 20;
+            this.buttonprevious.TabIndex = 1;
             this.buttonprevious.UseVisualStyleBackColor = true;
             this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
             // 
@@ -309,7 +316,7 @@
             this.buttonFirst.Location = new System.Drawing.Point(10, 23);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 19;
+            this.buttonFirst.TabIndex = 3;
             this.buttonFirst.UseVisualStyleBackColor = true;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -372,7 +379,7 @@
             this.tableLayoutPanelEmployeBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelEmployeBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanelEmployeBottom.Size = new System.Drawing.Size(800, 55);
-            this.tableLayoutPanelEmployeBottom.TabIndex = 12;
+            this.tableLayoutPanelEmployeBottom.TabIndex = 3;
             // 
             // buttonAjouterSSociete
             // 
@@ -392,8 +399,10 @@
             this.buttonAjouterSSociete.Location = new System.Drawing.Point(3, 3);
             this.buttonAjouterSSociete.Name = "buttonAjouterSSociete";
             this.buttonAjouterSSociete.Size = new System.Drawing.Size(260, 49);
-            this.buttonAjouterSSociete.TabIndex = 8;
-            this.buttonAjouterSSociete.Text = "Ajouter une société";
+
+            this.buttonAjouterSSociete.TabIndex = 1;
+            this.buttonAjouterSSociete.Text = "Ajouter Societe";
+
             this.buttonAjouterSSociete.UseVisualStyleBackColor = false;
             this.buttonAjouterSSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
@@ -415,8 +424,10 @@
             this.buttonSupprimerSociete.Location = new System.Drawing.Point(535, 3);
             this.buttonSupprimerSociete.Name = "buttonSupprimerSociete";
             this.buttonSupprimerSociete.Size = new System.Drawing.Size(262, 49);
-            this.buttonSupprimerSociete.TabIndex = 10;
-            this.buttonSupprimerSociete.Text = "Supprimer la société";
+
+            this.buttonSupprimerSociete.TabIndex = 2;
+            this.buttonSupprimerSociete.Text = "Supprimer Societe";
+
             this.buttonSupprimerSociete.UseVisualStyleBackColor = false;
             this.buttonSupprimerSociete.Click += new System.EventHandler(this.buttonSupprimerSociete_Click);
             // 
@@ -438,8 +449,10 @@
             this.buttonModifierSociete.Location = new System.Drawing.Point(269, 3);
             this.buttonModifierSociete.Name = "buttonModifierSociete";
             this.buttonModifierSociete.Size = new System.Drawing.Size(260, 49);
-            this.buttonModifierSociete.TabIndex = 9;
-            this.buttonModifierSociete.Text = "Modifier la société";
+
+            this.buttonModifierSociete.TabIndex = 0;
+            this.buttonModifierSociete.Text = "Modifier Societe";
+
             this.buttonModifierSociete.UseVisualStyleBackColor = false;
             this.buttonModifierSociete.Click += new System.EventHandler(this.buttonModifierSociete_Click);
             // 

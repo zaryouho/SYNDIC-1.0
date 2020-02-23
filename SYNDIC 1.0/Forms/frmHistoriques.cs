@@ -23,6 +23,7 @@ namespace SYNDIC_1._0.Forms
 
         private void frmHistoriques_Load(object sender, EventArgs e)
         {
+            textBoxStrings.Focus();
             var data = from log in dataContext.journals
                            join user in dataContext.utilisateurs
                            on log.id_utilisateur equals user.id

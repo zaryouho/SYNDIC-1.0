@@ -74,7 +74,7 @@
             this.panelHead.Location = new System.Drawing.Point(0, 0);
             this.panelHead.Name = "panelHead";
             this.panelHead.Size = new System.Drawing.Size(759, 60);
-            this.panelHead.TabIndex = 2;
+            this.panelHead.TabIndex = 0;
             // 
             // splitContainerBiens
             // 
@@ -107,7 +107,7 @@
             this.tableLayoutPanelFinanceTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelFinanceTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanelFinanceTitle.Size = new System.Drawing.Size(759, 48);
-            this.tableLayoutPanelFinanceTitle.TabIndex = 7;
+            this.tableLayoutPanelFinanceTitle.TabIndex = 0;
             // 
             // buttonSsBiensEcheances
             // 
@@ -127,7 +127,7 @@
             this.buttonSsBiensEcheances.Location = new System.Drawing.Point(509, 3);
             this.buttonSsBiensEcheances.Name = "buttonSsBiensEcheances";
             this.buttonSsBiensEcheances.Size = new System.Drawing.Size(247, 42);
-            this.buttonSsBiensEcheances.TabIndex = 6;
+            this.buttonSsBiensEcheances.TabIndex = 2;
             this.buttonSsBiensEcheances.Text = "Echéances";
             this.buttonSsBiensEcheances.UseVisualStyleBackColor = false;
             this.buttonSsBiensEcheances.Click += new System.EventHandler(this.buttonSsBiensEcheances_Click);
@@ -150,7 +150,7 @@
             this.buttonSsBiensEchangeProprietaire.Location = new System.Drawing.Point(256, 3);
             this.buttonSsBiensEchangeProprietaire.Name = "buttonSsBiensEchangeProprietaire";
             this.buttonSsBiensEchangeProprietaire.Size = new System.Drawing.Size(247, 42);
-            this.buttonSsBiensEchangeProprietaire.TabIndex = 8;
+            this.buttonSsBiensEchangeProprietaire.TabIndex = 1;
             this.buttonSsBiensEchangeProprietaire.Text = "Echange de propriétaire";
             this.buttonSsBiensEchangeProprietaire.UseVisualStyleBackColor = false;
             this.buttonSsBiensEchangeProprietaire.Click += new System.EventHandler(this.buttonSsBiensEchangeProprietaire_Click);
@@ -173,7 +173,7 @@
             this.buttonSsBiensListe.Location = new System.Drawing.Point(3, 3);
             this.buttonSsBiensListe.Name = "buttonSsBiensListe";
             this.buttonSsBiensListe.Size = new System.Drawing.Size(247, 42);
-            this.buttonSsBiensListe.TabIndex = 7;
+            this.buttonSsBiensListe.TabIndex = 0;
             this.buttonSsBiensListe.Text = "Liste des Biens";
             this.buttonSsBiensListe.UseVisualStyleBackColor = false;
             this.buttonSsBiensListe.Click += new System.EventHandler(this.buttonSsBiensListe_Click);
@@ -188,7 +188,6 @@
             this.Controls.Add(this.panelHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBiens";
-            this.Text = "frmBiens";
             this.Load += new System.EventHandler(this.frmBiens_Load);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();

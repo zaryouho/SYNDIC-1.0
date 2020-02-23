@@ -113,7 +113,7 @@
             this.textBoxNom.Location = new System.Drawing.Point(181, 118);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(218, 22);
-            this.textBoxNom.TabIndex = 5;
+            this.textBoxNom.TabIndex = 1;
             // 
             // textBoxEtage
             // 
@@ -122,7 +122,7 @@
             this.textBoxEtage.Location = new System.Drawing.Point(181, 150);
             this.textBoxEtage.Name = "textBoxEtage";
             this.textBoxEtage.Size = new System.Drawing.Size(218, 22);
-            this.textBoxEtage.TabIndex = 7;
+            this.textBoxEtage.TabIndex = 2;
             // 
             // labelEtage
             // 
@@ -141,7 +141,7 @@
             this.textBoxSuperficie.Location = new System.Drawing.Point(181, 182);
             this.textBoxSuperficie.Name = "textBoxSuperficie";
             this.textBoxSuperficie.Size = new System.Drawing.Size(218, 22);
-            this.textBoxSuperficie.TabIndex = 9;
+            this.textBoxSuperficie.TabIndex = 3;
             // 
             // labelSuperficie
             // 
@@ -160,7 +160,7 @@
             this.textBoxCharge.Location = new System.Drawing.Point(181, 214);
             this.textBoxCharge.Name = "textBoxCharge";
             this.textBoxCharge.Size = new System.Drawing.Size(218, 22);
-            this.textBoxCharge.TabIndex = 11;
+            this.textBoxCharge.TabIndex = 4;
             // 
             // labelCharge
             // 
@@ -209,7 +209,7 @@
             this.textBoxTitre.Location = new System.Drawing.Point(181, 86);
             this.textBoxTitre.Name = "textBoxTitre";
             this.textBoxTitre.Size = new System.Drawing.Size(218, 22);
-            this.textBoxTitre.TabIndex = 19;
+            this.textBoxTitre.TabIndex = 0;
             // 
             // labelid
             // 
@@ -237,7 +237,7 @@
             this.buttonAddNewProprietaire.Location = new System.Drawing.Point(374, 309);
             this.buttonAddNewProprietaire.Name = "buttonAddNewProprietaire";
             this.buttonAddNewProprietaire.Size = new System.Drawing.Size(25, 25);
-            this.buttonAddNewProprietaire.TabIndex = 21;
+            this.buttonAddNewProprietaire.TabIndex = 10;
             this.buttonAddNewProprietaire.Text = "...";
             this.buttonAddNewProprietaire.UseVisualStyleBackColor = true;
             this.buttonAddNewProprietaire.Click += new System.EventHandler(this.buttonAddNewProprietaire_Click);
@@ -248,7 +248,7 @@
             this.dateTimePickerDateAchat.Location = new System.Drawing.Point(181, 339);
             this.dateTimePickerDateAchat.Name = "dateTimePickerDateAchat";
             this.dateTimePickerDateAchat.Size = new System.Drawing.Size(218, 22);
-            this.dateTimePickerDateAchat.TabIndex = 22;
+            this.dateTimePickerDateAchat.TabIndex = 11;
             // 
             // comboBoxProprietaire
             // 
@@ -258,7 +258,7 @@
             this.comboBoxProprietaire.Location = new System.Drawing.Point(181, 311);
             this.comboBoxProprietaire.Name = "comboBoxProprietaire";
             this.comboBoxProprietaire.Size = new System.Drawing.Size(187, 25);
-            this.comboBoxProprietaire.TabIndex = 23;
+            this.comboBoxProprietaire.TabIndex = 9;
             this.comboBoxProprietaire.SelectedIndexChanged += new System.EventHandler(this.comboBoxProprietaire_SelectedIndexChanged);
             // 
             // panel1
@@ -278,7 +278,7 @@
             this.buttonValdier.Location = new System.Drawing.Point(10, 6);
             this.buttonValdier.Name = "buttonValdier";
             this.buttonValdier.Size = new System.Drawing.Size(150, 45);
-            this.buttonValdier.TabIndex = 1;
+            this.buttonValdier.TabIndex = 13;
             this.buttonValdier.Text = "Valider";
             this.buttonValdier.UseVisualStyleBackColor = true;
             this.buttonValdier.Click += new System.EventHandler(this.labelCloseBiens_Click);
@@ -290,7 +290,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(177, 6);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(150, 45);
-            this.buttonAnnuler.TabIndex = 0;
+            this.buttonAnnuler.TabIndex = 12;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             this.buttonAnnuler.Click += new System.EventHandler(this.labelCloseBiens_Click);
@@ -319,7 +319,7 @@
             this.buttonAjouterImmeuble.Location = new System.Drawing.Point(374, 277);
             this.buttonAjouterImmeuble.Name = "buttonAjouterImmeuble";
             this.buttonAjouterImmeuble.Size = new System.Drawing.Size(25, 25);
-            this.buttonAjouterImmeuble.TabIndex = 27;
+            this.buttonAjouterImmeuble.TabIndex = 8;
             this.buttonAjouterImmeuble.Text = "...";
             this.buttonAjouterImmeuble.UseVisualStyleBackColor = true;
             this.buttonAjouterImmeuble.Click += new System.EventHandler(this.buttonAjouterImmeuble_Click);
@@ -341,18 +341,19 @@
             this.comboBoxListeImmeuble.Location = new System.Drawing.Point(181, 278);
             this.comboBoxListeImmeuble.Name = "comboBoxListeImmeuble";
             this.comboBoxListeImmeuble.Size = new System.Drawing.Size(187, 25);
-            this.comboBoxListeImmeuble.TabIndex = 29;
+            this.comboBoxListeImmeuble.TabIndex = 7;
             this.comboBoxListeImmeuble.SelectedIndexChanged += new System.EventHandler(this.comboBoxListeImmeuble_SelectedIndexChanged);
             // 
             // comboBoxTypeBien
             // 
+            this.comboBoxTypeBien.BackColor = System.Drawing.Color.White;
             this.comboBoxTypeBien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypeBien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeBien.FormattingEnabled = true;
             this.comboBoxTypeBien.Location = new System.Drawing.Point(181, 245);
             this.comboBoxTypeBien.Name = "comboBoxTypeBien";
             this.comboBoxTypeBien.Size = new System.Drawing.Size(187, 25);
-            this.comboBoxTypeBien.TabIndex = 30;
+            this.comboBoxTypeBien.TabIndex = 5;
             this.comboBoxTypeBien.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeBien_SelectedIndexChanged);
             // 
             // buttonAddNewTypeBien
@@ -361,7 +362,7 @@
             this.buttonAddNewTypeBien.Location = new System.Drawing.Point(374, 245);
             this.buttonAddNewTypeBien.Name = "buttonAddNewTypeBien";
             this.buttonAddNewTypeBien.Size = new System.Drawing.Size(25, 25);
-            this.buttonAddNewTypeBien.TabIndex = 31;
+            this.buttonAddNewTypeBien.TabIndex = 6;
             this.buttonAddNewTypeBien.Text = "...";
             this.buttonAddNewTypeBien.UseVisualStyleBackColor = true;
             this.buttonAddNewTypeBien.Click += new System.EventHandler(this.buttonAddNewTypeBien_Click);
