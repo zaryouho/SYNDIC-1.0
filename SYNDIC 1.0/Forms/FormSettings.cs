@@ -8,14 +8,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-
+using System.IO;
 
 namespace SYNDIC_1._0
 {
     public partial class FormSettings : Form
     {
         public string autoBackupDatabaseName = string.Empty;
-        public string button = string.Empty;
         
         public FormSettings()
         {
@@ -112,72 +111,81 @@ namespace SYNDIC_1._0
                 autoBackupDatabaseName = comboBoxDataBaseName.Items[0].ToString();
             }
             
-            panelBackgroundWorkerContainer.Visible = false;
-
             checkBoxAutoBackup.Checked = Properties.Settings.Default.Interval != 0 ? true : false ;
-            
-            switch (Properties.Settings.Default.Interval)
+
+            if (checkBoxAutoBackup.Checked)
             {
-                case 1:
-                    radioButtonDailyBackup.Checked = true;
-                    break;
-                case 7:
-                    radioButtonWeeklyBackup.Checked = true;
-                    break;
-                case 30:
-                    radioButtonMonthlyBackup.Checked = true;
-                    break;
-            }
+                switch (Properties.Settings.Default.Interval)
+                {
+                    case 1:
+                        radioButtonDailyBackup.Checked = true;
+                        break;
+                    case 7:
+                        radioButtonWeeklyBackup.Checked = true;
+                        break;
+                    case 30:
+                        radioButtonMonthlyBackup.Checked = true;
+                        break;
+                }
+            }           
         }
+        /// <summary>
+        /// Prompt and openFileDialog to the user to select the restoration file path
+        /// </summary>
+        /// <returns>File path string</returns>
         private string restorePath()
         {
             using (OpenFileDialog file = new OpenFileDialog())
             {
                 file.ShowDialog();
                 file.InitialDirectory = @"c:\ Program Files\Microsoft SQL Server\";
-                file.Filter = "Backup File |*.bak";
-                if (file.DefaultExt != ".bak")
+                file.Filter = "Backup Files (*.bak)|*.bak";
+                file.DefaultExt = "bak";
+                file.Title = "Fichier de restoration";
+
+                string extension = Path.GetExtension(file.FileName);
+                if (extension != "bak")
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Fichier invalide","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return null;
                 }
                 return file.FileName;
             }
         }
+        /// <summary>
+        /// Prompt a FolderBrowserDialog to the user to select the backup folder
+        /// </summary>
+        /// <returns>Folder name string</returns>
         private string backupPath()
         {
             using (FolderBrowserDialog folder = new FolderBrowserDialog() )
             {
                 folder.ShowDialog();
+                folder.Description = "Selectioner un emplacement ";
+                folder.ShowNewFolderButton = false;
+                
                 return folder.SelectedPath;
             }
         }
 
         private void buttonBackupDataBase_Click(object sender, EventArgs e)
         {
-            panelBackgroundWorkerContainer.Visible = true;
-            button = "buttonBackupDataBase";
-            //backupandRestore("backup", false, false); moved to the Background Worker
+            backupandRestore("backup", false, false); 
         }
 
         private void buttonBackuptoExternalDrive_Click(object sender, EventArgs e)
         {
-            panelBackgroundWorkerContainer.Visible = true;
-            button = "buttonBackuptoExternalDrive";
-            //backupandRestore("backup", false, true); moved to the Background Worker
+            backupandRestore("backup", false, true);
         }
 
         private void buttonRestore_Click(object sender, EventArgs e)
         {
-            panelBackgroundWorkerContainer.Visible = true;
-            button = "buttonRestore";
-            //backupandRestore("restore", false, false); moved to the Background Worker
+            backupandRestore("restore", false, false);
         }
 
         private void buttonRestoreFromExternalDrive_Click(object sender, EventArgs e)
         {
-            panelBackgroundWorkerContainer.Visible = true;
-            button = "buttonRestoreFromExternalDrive";
-            //backupandRestore("restore", false, true); moved to the Background Worker
+            backupandRestore("restore", false, true); 
         }
 
         private void checkBoxAutoBackup_CheckedChanged(object sender, EventArgs e)
@@ -223,33 +231,33 @@ namespace SYNDIC_1._0
             {
                 case "backup" :
                     {
-                        query = "back up database @databasename to disk = '@path'";
+                        query = "use master back up database @databasename to disk = '@path'";
                         break;
                     }
                 case "restore":
                     {
-                        query = " restore database @databsename from disk ='@path'";
+                        query = " use master restore database @databsename from disk ='@path'";
                         break;
                     }
-
             }
-            //if (!autoBackup)
-            //{
-            //    if (String.IsNullOrWhiteSpace(comboBoxDataBaseName.Text))
-            //    {
-            //        MessageBox.Show("Plz Select the server name the the database then proceed");
-            //        comboBoxServerName.Focus();
-            //        return;
-            //    }
-            //}
             
+            if (!autoBackup)
+            {
+                if (comboBoxDataBaseName.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selectioner le nom de la base de donnee puis continuer!","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    comboBoxServerName.Focus();
+                    return;
+                }
+            }
+
             string path = string.Empty;
             if (external)
             {
                 path = backupPath();
                 if (string.IsNullOrWhiteSpace(path))
                 {
-                    MessageBox.Show("plz select a path to back up your database");
+                    MessageBox.Show("Selectioner un ficher pour sauvgarder la base de donnee","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     external = false;
                     return;
                 }
@@ -258,6 +266,7 @@ namespace SYNDIC_1._0
             {
                 path = ConfigurationManager.AppSettings["BackupFolder"].ToString();
             }
+            
             string databaseName = comboBoxDataBaseName.Text;
             string name = String.Format("{0}{1}{2}.bak", path, databaseName, DateTime.Now.ToString("yyyy-MM-dd"));
 
@@ -275,6 +284,7 @@ namespace SYNDIC_1._0
                         MessageBox.Show(ex.Message);
                     }
                 }
+            
                 using (SqlCommand command = new SqlCommand(query, myConnection))
                 {
                     if (autoBackup)
@@ -292,7 +302,7 @@ namespace SYNDIC_1._0
                         int result = command.ExecuteNonQuery();
                         this.Cursor = Cursors.Default;
 
-                        if (result != -1 && !autoBackup)
+                        if (result != 0 && !autoBackup)
                         {
                             MessageBox.Show("Backup successful");
                         }
@@ -303,133 +313,6 @@ namespace SYNDIC_1._0
                     }
                 }
             }
-        }
-
-        private void backgroundWorkerBackup_DoWork(object sender, DoWorkEventArgs e)
-        {
-            backupandRestore("backup", false, false);
-        }
-
-        private void backgroundWorkerBackup_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBarBackgroundWorker.Value = e.ProgressPercentage;
-            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorkerBackup_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
-            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
-            panelBackgroundWorkerContainer.Visible = false;
-            button = string.Empty;
-        }
-
-        private void buttonStartBackgroundWorker_Click(object sender, EventArgs e)
-        {
-            switch (button)
-            {
-                case "buttonBackupDataBase":
-                    if (!backgroundWorkerBackup.IsBusy)
-                    {
-                        backgroundWorkerBackup.RunWorkerAsync(); 
-                    }
-                    break;
-                case "buttonBackuptoExternalDrive":
-                    if (!backgroundWorkerBackuptoExternal.IsBusy)
-                    {
-                        backgroundWorkerBackuptoExternal.RunWorkerAsync(); 
-                    }
-                    break;
-                case "buttonRestore":
-                    if (!backgroundWorkerRestore.IsBusy)
-                    {
-                        backgroundWorkerRestore.RunWorkerAsync(); 
-                    }
-                    break;
-                case "buttonRestoreFromExternalDrive":
-                    if (!backgroundWorkerRestoreExternal.IsBusy)
-                    {
-                        backgroundWorkerRestoreExternal.RunWorkerAsync(); 
-                    }
-                    break;
-            }
-        }
-
-        private void buttonCancelBackgroundWorker_Click(object sender, EventArgs e)
-        {
-            if (backgroundWorkerBackup.IsBusy)
-            {
-                backgroundWorkerBackup.CancelAsync();
-            }
-            if (backgroundWorkerBackuptoExternal.IsBusy)
-            {
-                backgroundWorkerBackuptoExternal.CancelAsync();
-            }
-            if (backgroundWorkerRestore.IsBusy)
-            {
-                backgroundWorkerRestore.CancelAsync();
-            }
-            if (backgroundWorkerRestoreExternal.IsBusy)
-            {
-                backgroundWorkerRestoreExternal.CancelAsync();
-            }
-        }
-
-        private void backgroundWorkerBackuptoExternal_DoWork(object sender, DoWorkEventArgs e)
-        {
-            backupandRestore("backup", false, true);
-        }
-
-        private void backgroundWorkerBackuptoExternal_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBarBackgroundWorker.Value = e.ProgressPercentage;
-            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorkerBackuptoExternal_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
-            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
-            panelBackgroundWorkerContainer.Visible = false;
-            button = string.Empty;
-        }
-
-        private void backgroundWorkerRestore_DoWork(object sender, DoWorkEventArgs e)
-        {
-            backupandRestore("restore", false, false);
-        }
-
-        private void backgroundWorkerRestore_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBarBackgroundWorker.Value = e.ProgressPercentage;
-            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorkerRestore_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
-            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
-            panelBackgroundWorkerContainer.Visible = false;
-            button = string.Empty;
-        }
-
-        private void backgroundWorkerRestoreExternal_DoWork(object sender, DoWorkEventArgs e)
-        {
-            backupandRestore("restore", false, true);
-        }
-
-        private void backgroundWorkerRestoreExternal_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBarBackgroundWorker.Value = e.ProgressPercentage;
-            labelResultPercentage.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorkerRestoreExternal_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            labelResultPercentage.Text = e.Cancelled ? "operation annuler" : e.Result.ToString();
-            labelResultPercentage.Text = e.Error != null ? e.Error.Message : e.Result.ToString();
-            panelBackgroundWorkerContainer.Visible = false;
-            button = string.Empty;
         }
     }
 }
