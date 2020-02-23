@@ -155,11 +155,11 @@ namespace SYNDIC_1._0
 
         private void buttonSupprimer_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment supprimer ces Information ?"
-                 + "\nReference : " + textBoxIdProduit.Text
-                 + "\nDesignation : " + textBoxDesignation.Text
-                 + "\nqteStock : " + textBoxQteStockProduit.Text
-                 + "\nCategorie : " + comboBoxCategorie.Text
+            DialogResult result = MessageBox.Show("Voulez vous vraiment supprimer ces informations ?"
+                 + "\nRéférence : " + textBoxIdProduit.Text
+                 + "\nDésignation : " + textBoxDesignation.Text
+                 + "\nQté en Stock : " + textBoxQteStockProduit.Text
+                 + "\nCatégorie : " + comboBoxCategorie.Text
                  , "Ajouter", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if(result==DialogResult.Yes)
             {

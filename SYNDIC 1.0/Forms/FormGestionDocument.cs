@@ -153,7 +153,7 @@ namespace SYNDIC_1._0.Forms
             {
                 if (dataGridViewListeDocuments.CurrentRow.Index != -1)
                 {
-                    if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet Document ?", "Supprission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                    if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer ce document ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                     {
                         string[] newValues = { "", "" };
                         string[] oldValues = { dataGridViewListeDocuments.CurrentRow.Cells[0].ToString(), dataGridViewListeDocuments.CurrentRow.Cells[1].ToString(), dataGridViewListeDocuments.CurrentRow.Cells[2].ToString(), dataGridViewListeDocuments.CurrentRow.Cells[3].ToString() };

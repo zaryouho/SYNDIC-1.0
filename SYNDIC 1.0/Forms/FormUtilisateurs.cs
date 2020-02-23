@@ -16,7 +16,7 @@ namespace SYNDIC_1._0.Forms
     {
         string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
         string login = string.Empty;
-        string passWord = string.Empty;
+        string password = string.Empty;
         string confirmedPassWord = string.Empty;
         bool update = false;
         
@@ -84,13 +84,13 @@ namespace SYNDIC_1._0.Forms
             }
 
             login = textBoxLogin.Text.Trim().Replace("'", "''").Replace("-","");
-            passWord = textBoxPassword.Text.Trim().Replace("'", "''");
+            password = textBoxPassword.Text.Trim().Replace("'", "''");
             confirmedPassWord = textBoxConfirmePassword.Text.Trim().Replace("'", "''");
 
-            string hash = Security.GenerathashandSalt(64, passWord).hash.ToString();
-            string salt = Security.GenerathashandSalt(64, passWord).salt.ToString();
+            string hash = Security.EncryptString(login, password)[0];
+            string salt = Security.EncryptString(login, password)[1];
             MessageBox.Show(hash.ToString() + "   " + salt.ToString());
-            if (passWord.Equals(confirmedPassWord) && isUnique(login))
+            if (password.Equals(confirmedPassWord) && isUnique(login))
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -123,25 +123,22 @@ namespace SYNDIC_1._0.Forms
 
                         }
 
-                        /*  if (result != -1)
-                          {*/
                         if (update)
                         {
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Modifer.ToString(), "utilisateur", "oldPassword", "newPassword");
-                            MessageBox.Show("daz update");
+                            MessageBox.Show("L'utilisateur a été modifié avec succés");
                         }
                         else
                         {
                             
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Ajouter.ToString(), "utilisateur", "oldPassword", "newPassword");
-                            MessageBox.Show("daz insert");
+                            MessageBox.Show("L'utilisateur a été ajouté avec succés");
                         }
-                        //  }
                     }
                 }
             }
             else
-                MessageBox.Show("cet login déja existe");
+                MessageBox.Show("ce login existe déja !");
 
             FormUtilisateurs_Load(sender, e);
         }
@@ -149,13 +146,13 @@ namespace SYNDIC_1._0.Forms
         {
             if (dataGridViewUsers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("No user is selected");
+                MessageBox.Show("Aucun utilisateur sélectionné");
                 dataGridViewUsers.Focus();
                 return;
             }
             while (dataGridViewUsers.SelectedRows.Count != 0)
             {
-                if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this user ?", "Deleting...", MessageBoxButtons.YesNo))
+                if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet utilisateur ?", "Suppression...", MessageBoxButtons.YesNo,MessageBoxIcon.Question))
                 {
                     update = true;
                     buttonAddUser.PerformClick();
@@ -168,7 +165,7 @@ namespace SYNDIC_1._0.Forms
         {
             if (dataGridViewUsers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("select a user to delete");
+                MessageBox.Show("sélectionner un utilisateur pour le supprimer");
                 dataGridViewUsers.Focus();
                 return;
             }

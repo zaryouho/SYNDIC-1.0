@@ -271,7 +271,7 @@
             this.buttonAjouterIntervention.Name = "buttonAjouterIntervention";
             this.buttonAjouterIntervention.Size = new System.Drawing.Size(242, 53);
             this.buttonAjouterIntervention.TabIndex = 10;
-            this.buttonAjouterIntervention.Text = "Ajouter Intervention";
+            this.buttonAjouterIntervention.Text = "Ajouter une intervention";
             this.buttonAjouterIntervention.UseVisualStyleBackColor = false;
             this.buttonAjouterIntervention.Click += new System.EventHandler(this.buttonAjouterIntervention_Click);
             // 

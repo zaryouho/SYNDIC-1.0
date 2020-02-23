@@ -34,7 +34,7 @@ namespace SYNDIC_1._0
                        on r.id_ville equals v.id
                        select new { r.nom, r.adresse, r.codepostale, Ville = v.nom }).First();
 
-            textBoxResidence.Text+= "Residence: " + src.nom+"\r\n";
+            textBoxResidence.Text+= "Résidence: " + src.nom+"\r\n";
             textBoxResidence.Text += "Adresse: " + src.adresse +"\r\n";
             textBoxResidence.Text += "Ville: " + src.Ville +"\r\n";
             textBoxResidence.Text += "Code Postal: " + src.codepostale;

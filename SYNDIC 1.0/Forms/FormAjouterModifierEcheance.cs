@@ -1,4 +1,5 @@
 ﻿using SYNDIC_1._0.Forms;
+using SYNDIC_1._0.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace SYNDIC_1._0
         private BindingSource bsTypeEcheance;
         private BindingSource bsBien;
         private echeance echeanceModifier;
+        string[] values = null;
 
         public FormAjouterModifierEcheance(string _operation, BindingSource _bsBien = null, echeance _echeanceModifier = null)
         {
@@ -75,11 +77,11 @@ namespace SYNDIC_1._0
         private void buttonValider_Click(object sender, EventArgs e)
         {
             if(operation == "Ajouter") { 
-                DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?"+
+                DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cette écheance ?"+
                     "Montant : " + textBoxMontant.Text +
                     "\nMontant Reçu :" + textBoxMontantRecu.Text +
-                    "\nNom Bien : " + comboBoxBien.Text +
-                    "\nType de Echeance :" + comboBoxTypeEcheance.Text,
+                    "\nNom de Bien : " + comboBoxBien.Text +
+                    "\nType d'écheance :" + comboBoxTypeEcheance.Text,
                     "Information",
                     MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Information,
@@ -100,10 +102,11 @@ namespace SYNDIC_1._0
                     com.ExecuteNonQuery();
                     com = null;
 
-                    string[] oldValues = null;
+                    string[] oldValues = {"",""};
                     string[] newValues = { textBoxMontant.Text, comboBoxTypeEcheance.SelectedValue.ToString(), comboBoxBien.SelectedValue.ToString() };
 
                     Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Echeance", oldValues, newValues);
+                    values = newValues;
                     this.Close();
                 }
                 else if (result == DialogResult.No)
@@ -112,11 +115,11 @@ namespace SYNDIC_1._0
             }
             else
             {
-                DialogResult result = MessageBox.Show("Voulez vous vraiment Modifier cet Echeance ?" +
+                DialogResult result = MessageBox.Show("Voulez vous vraiment Modifier cette écheance ?" +
                     "Montant : " + textBoxMontant.Text +
                     "\nMontant Reçu :" + textBoxMontantRecu.Text +
-                    "\nNom Bien : " + comboBoxBien.Text +
-                    "\nType de Echeance :" + comboBoxTypeEcheance.Text,
+                    "\nNom de Bien : " + comboBoxBien.Text +
+                    "\nType d'écheance :" + comboBoxTypeEcheance.Text,
                     "Information",
                     MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Information,
@@ -138,6 +141,9 @@ namespace SYNDIC_1._0
                     SqlCommand com = new SqlCommand(sql, conn);
                     com.ExecuteNonQuery();
                     com = null;
+                    string[] oldValues = values;
+                    string[] newValues = { textBoxMontant.Text, comboBoxTypeEcheance.SelectedValue.ToString(), comboBoxBien.SelectedValue.ToString() , comboBoxTypeEcheance.SelectedValue.ToString().Replace("'", "''") };
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Modifer", "Echeance", oldValues, newValues);
 
                     this.Close();
                 }
@@ -152,7 +158,7 @@ namespace SYNDIC_1._0
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Les Données n'est pas Enregistrer , voulez vous vraiment Quitter ce Form ?", "Annulation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Les Données n'ont pas été enregistrées, voulez vous vraiment Quitter cette Form ?", "Annulation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 labelCloseBiens_Click(sender, e);
         }
 

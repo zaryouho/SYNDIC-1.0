@@ -98,8 +98,10 @@
             this.buttonListDocs.Location = new System.Drawing.Point(593, 12);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+
             this.buttonListDocs.TabIndex = 2;
             this.buttonListDocs.Text = "Listes Documents";
+
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
@@ -154,7 +156,9 @@
             this.buttonLast.Location = new System.Drawing.Point(18, 251);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
+
             this.buttonLast.TabIndex = 2;
+
             this.buttonLast.UseVisualStyleBackColor = true;
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
             // 
@@ -166,7 +170,9 @@
             this.buttonNext.Location = new System.Drawing.Point(18, 195);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
+
             this.buttonNext.TabIndex = 0;
+
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -178,7 +184,9 @@
             this.buttonprevious.Location = new System.Drawing.Point(18, 83);
             this.buttonprevious.Name = "buttonprevious";
             this.buttonprevious.Size = new System.Drawing.Size(39, 39);
+
             this.buttonprevious.TabIndex = 1;
+
             this.buttonprevious.UseVisualStyleBackColor = true;
             this.buttonprevious.Click += new System.EventHandler(this.buttonprevious_Click);
             // 
@@ -190,7 +198,9 @@
             this.buttonFirst.Location = new System.Drawing.Point(18, 27);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+
             this.buttonFirst.TabIndex = 3;
+
             this.buttonFirst.UseVisualStyleBackColor = true;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
@@ -198,6 +208,7 @@
             // 
             this.dataGridViewProprietaires.AllowUserToAddRows = false;
             this.dataGridViewProprietaires.AllowUserToDeleteRows = false;
+
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.dataGridViewProprietaires.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -220,10 +231,12 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle7;
+
             this.dataGridViewProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewProprietaires.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
+
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,6 +249,7 @@
             this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProprietaires.Size = new System.Drawing.Size(722, 327);
             this.dataGridViewProprietaires.TabIndex = 4;
+
             // 
             // tableLayoutPanelProprietaireBottom
             // 

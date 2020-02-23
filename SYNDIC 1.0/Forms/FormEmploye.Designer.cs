@@ -144,8 +144,10 @@
             this.buttonEmploye.Location = new System.Drawing.Point(3, 3);
             this.buttonEmploye.Name = "buttonEmploye";
             this.buttonEmploye.Size = new System.Drawing.Size(260, 37);
+
             this.buttonEmploye.TabIndex = 0;
             this.buttonEmploye.Text = "Employe";
+
             this.buttonEmploye.UseVisualStyleBackColor = false;
             this.buttonEmploye.Click += new System.EventHandler(this.buttonEmploye_Click);
             // 
@@ -165,8 +167,10 @@
             this.buttonEmployeArchive.Location = new System.Drawing.Point(535, 3);
             this.buttonEmployeArchive.Name = "buttonEmployeArchive";
             this.buttonEmployeArchive.Size = new System.Drawing.Size(262, 37);
+
             this.buttonEmployeArchive.TabIndex = 2;
             this.buttonEmployeArchive.Text = "Employe  arch.";
+
             this.buttonEmployeArchive.UseVisualStyleBackColor = false;
             this.buttonEmployeArchive.Click += new System.EventHandler(this.buttonEmployeArchive_Click);
             // 
@@ -186,8 +190,10 @@
             this.buttonAjouterEmploye.Location = new System.Drawing.Point(269, 3);
             this.buttonAjouterEmploye.Name = "buttonAjouterEmploye";
             this.buttonAjouterEmploye.Size = new System.Drawing.Size(260, 37);
+
             this.buttonAjouterEmploye.TabIndex = 1;
             this.buttonAjouterEmploye.Text = "Ajouter Employe";
+
             this.buttonAjouterEmploye.UseVisualStyleBackColor = false;
             this.buttonAjouterEmploye.Click += new System.EventHandler(this.buttonAjouterEmploye_Click);
             // 
@@ -227,8 +233,10 @@
             this.buttonAjouterSEmploye.Location = new System.Drawing.Point(3, 3);
             this.buttonAjouterSEmploye.Name = "buttonAjouterSEmploye";
             this.buttonAjouterSEmploye.Size = new System.Drawing.Size(260, 49);
+
             this.buttonAjouterSEmploye.TabIndex = 1;
             this.buttonAjouterSEmploye.Text = "Ajouter Employe";
+
             this.buttonAjouterSEmploye.UseVisualStyleBackColor = false;
             this.buttonAjouterSEmploye.Click += new System.EventHandler(this.buttonAjouterEmploye_Click);
             // 
@@ -250,8 +258,10 @@
             this.buttonSupprimerEmploye.Location = new System.Drawing.Point(535, 3);
             this.buttonSupprimerEmploye.Name = "buttonSupprimerEmploye";
             this.buttonSupprimerEmploye.Size = new System.Drawing.Size(262, 49);
+
             this.buttonSupprimerEmploye.TabIndex = 2;
             this.buttonSupprimerEmploye.Text = "Supprimer Employe";
+
             this.buttonSupprimerEmploye.UseVisualStyleBackColor = false;
             this.buttonSupprimerEmploye.Click += new System.EventHandler(this.buttonSupprimerEmploye_Click);
             // 
@@ -273,8 +283,10 @@
             this.buttonModifierEmploye.Location = new System.Drawing.Point(269, 3);
             this.buttonModifierEmploye.Name = "buttonModifierEmploye";
             this.buttonModifierEmploye.Size = new System.Drawing.Size(260, 49);
+
             this.buttonModifierEmploye.TabIndex = 0;
             this.buttonModifierEmploye.Text = "Modifier Employe";
+
             this.buttonModifierEmploye.UseVisualStyleBackColor = false;
             this.buttonModifierEmploye.Click += new System.EventHandler(this.buttonModifierEmploye_Click);
             // 
@@ -314,8 +326,10 @@
             this.buttonListDoc.Location = new System.Drawing.Point(592, 7);
             this.buttonListDoc.Name = "buttonListDoc";
             this.buttonListDoc.Size = new System.Drawing.Size(195, 35);
+
             this.buttonListDoc.TabIndex = 3;
             this.buttonListDoc.Text = "Listes Documents";
+
             this.buttonListDoc.UseVisualStyleBackColor = false;
             this.buttonListDoc.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 

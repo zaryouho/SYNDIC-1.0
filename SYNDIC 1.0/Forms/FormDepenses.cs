@@ -115,7 +115,7 @@ namespace SYNDIC_1._0
         {
             if (dataGridViewDepenses.CurrentRow == null)
             {
-                MessageBox.Show("Séléctioner une dépense d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sélectionner une dépense d'abord !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             new FormInterventions(Convert.ToInt32(dataGridViewDepenses.CurrentRow.Cells[0].Value.ToString())).ShowDialog();

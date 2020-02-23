@@ -195,11 +195,13 @@ namespace SYNDIC_1._0
 
         private void buttonSupprimerEcheance_Click(object sender, EventArgs e)
         {
+
             DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?" +
+
                 "Montant : " + dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString() +
                 "\nMontant Reçu :" + dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString() +
-                "\nNom Bien : " + dataGridViewListeBien.CurrentRow.Cells[1].Value.ToString() +
-                "\nType de Echeance :" + dataGridViewBienEcheance.CurrentRow.Cells[5].Value.ToString(),
+                "\nNom de Bien : " + dataGridViewListeBien.CurrentRow.Cells[1].Value.ToString() +
+                "\nType d'écheance :" + dataGridViewBienEcheance.CurrentRow.Cells[5].Value.ToString(),
                 "Warning",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning,

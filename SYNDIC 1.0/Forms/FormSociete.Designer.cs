@@ -146,8 +146,10 @@
             this.buttonSociete.Location = new System.Drawing.Point(3, 3);
             this.buttonSociete.Name = "buttonSociete";
             this.buttonSociete.Size = new System.Drawing.Size(260, 37);
+
             this.buttonSociete.TabIndex = 0;
             this.buttonSociete.Text = "Societe";
+
             this.buttonSociete.UseVisualStyleBackColor = false;
             this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
             // 
@@ -167,8 +169,10 @@
             this.buttonSocieteArchive.Location = new System.Drawing.Point(535, 3);
             this.buttonSocieteArchive.Name = "buttonSocieteArchive";
             this.buttonSocieteArchive.Size = new System.Drawing.Size(262, 37);
+
             this.buttonSocieteArchive.TabIndex = 2;
             this.buttonSocieteArchive.Text = "Societe  arch.";
+
             this.buttonSocieteArchive.UseVisualStyleBackColor = false;
             this.buttonSocieteArchive.Click += new System.EventHandler(this.buttonSocieteArchive_Click);
             // 
@@ -188,8 +192,10 @@
             this.buttonAjouterSociete.Location = new System.Drawing.Point(269, 3);
             this.buttonAjouterSociete.Name = "buttonAjouterSociete";
             this.buttonAjouterSociete.Size = new System.Drawing.Size(260, 37);
+
             this.buttonAjouterSociete.TabIndex = 1;
             this.buttonAjouterSociete.Text = "Ajouter Societe";
+
             this.buttonAjouterSociete.UseVisualStyleBackColor = false;
             this.buttonAjouterSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
@@ -393,8 +399,10 @@
             this.buttonAjouterSSociete.Location = new System.Drawing.Point(3, 3);
             this.buttonAjouterSSociete.Name = "buttonAjouterSSociete";
             this.buttonAjouterSSociete.Size = new System.Drawing.Size(260, 49);
+
             this.buttonAjouterSSociete.TabIndex = 1;
             this.buttonAjouterSSociete.Text = "Ajouter Societe";
+
             this.buttonAjouterSSociete.UseVisualStyleBackColor = false;
             this.buttonAjouterSSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
@@ -416,8 +424,10 @@
             this.buttonSupprimerSociete.Location = new System.Drawing.Point(535, 3);
             this.buttonSupprimerSociete.Name = "buttonSupprimerSociete";
             this.buttonSupprimerSociete.Size = new System.Drawing.Size(262, 49);
+
             this.buttonSupprimerSociete.TabIndex = 2;
             this.buttonSupprimerSociete.Text = "Supprimer Societe";
+
             this.buttonSupprimerSociete.UseVisualStyleBackColor = false;
             this.buttonSupprimerSociete.Click += new System.EventHandler(this.buttonSupprimerSociete_Click);
             // 
@@ -439,8 +449,10 @@
             this.buttonModifierSociete.Location = new System.Drawing.Point(269, 3);
             this.buttonModifierSociete.Name = "buttonModifierSociete";
             this.buttonModifierSociete.Size = new System.Drawing.Size(260, 49);
+
             this.buttonModifierSociete.TabIndex = 0;
             this.buttonModifierSociete.Text = "Modifier Societe";
+
             this.buttonModifierSociete.UseVisualStyleBackColor = false;
             this.buttonModifierSociete.Click += new System.EventHandler(this.buttonModifierSociete_Click);
             // 

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using SYNDIC_1._0.Forms;
+using SYNDIC_1._0.Helper;
 
 namespace SYNDIC_1._0
 {
@@ -28,6 +29,7 @@ namespace SYNDIC_1._0
         intervention intervention;
         string operation;
         BindingSource bsDepInter;
+        string[] values = null;
         public FormAjouterModifierIntervention(string _operation, intervention _intervention)
         {
 
@@ -74,11 +76,11 @@ namespace SYNDIC_1._0
         }
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment enregistrez ces Information ?" +
-                "\nDesignation de l'Intervention : " + textBoxDesignationDepense.Text +
-                "\nDate Debut de l'Intervention : " + dateTimePickerDebutIntervention.Value.ToShortDateString() +
-                "\nDate Fin de l'Intervention : " + dateTimePickerFinIntervention.Value.ToShortDateString() +
-                "\nMontant de l'Intervention : " + textBoxMontantIntervention.Text
+            DialogResult result = MessageBox.Show("Voulez vous vraiment enregistrer ces informations ?" +
+                "\nDésignation de l'intervention : " + textBoxDesignationDepense.Text +
+                "\nDate de début de l'intervention : " + dateTimePickerDebutIntervention.Value.ToShortDateString() +
+                "\nDate de fin de l'intervention : " + dateTimePickerFinIntervention.Value.ToShortDateString() +
+                "\nMontant de l'intervention : " + textBoxMontantIntervention.Text
                 , operation, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -94,9 +96,10 @@ namespace SYNDIC_1._0
                     com.ExecuteNonQuery();
                     com = null;
 
-                    string[] oldValues = null;
+                    string[] oldValues = { "",""};
                     string[] newValues = { textBoxDesignationDepense.Text, dateTimePickerDebutIntervention.Text, dateTimePickerFinIntervention.Text, textBoxMontantIntervention.Text };
                     Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Intervention", oldValues, newValues);
+                    values = newValues;
 
                 }
                 else
@@ -112,6 +115,11 @@ namespace SYNDIC_1._0
                     SqlCommand com = new SqlCommand(sql, DBHelper.connection);
                     com.ExecuteNonQuery();
                     com = null;
+                    string[] oldValues = values;
+                    string[] newValues = { textBoxDesignationDepense.Text.Replace("'", "''") , dateTimePickerDebutIntervention.Value.ToShortDateString() ,
+                    dateTimePickerFinIntervention.Value.ToShortDateString(),textBoxMontantIntervention.Text.Replace(",", "."),
+                    comboBoxIdDepense.SelectedValue.ToString()};
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Modifier", "Intervention", oldValues, newValues);
 
                 }
                 this.Close();
@@ -123,7 +131,7 @@ namespace SYNDIC_1._0
         {
             if (dateTimePickerFinIntervention.Value < dateTimePickerDebutIntervention.Value)
             {
-                MessageBox.Show("la date de fin doit etre superieur de la date de debut !!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La date de fin doit être supérieur de la date de début !!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dateTimePickerFinIntervention.Value = dateTimePickerDebutIntervention.Value;
 
             }
@@ -131,7 +139,7 @@ namespace SYNDIC_1._0
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez vous vraiment sortir sans sauvegarder les Information ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Voulez vous vraiment sortir sans sauvegarder ces informations ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes) this.Close();
         }
 

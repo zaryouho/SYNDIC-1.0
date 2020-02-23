@@ -64,6 +64,7 @@ namespace SYNDIC_1._0
             var s = (from v in syndicDataContext.villes
                      where v.nom.Equals(dataGridViewProprietaires.CurrentRow.Cells[8].Value.ToString())
                      select v).First();
+            
             p.id = int.Parse(dataGridViewProprietaires.CurrentRow.Cells[11].Value.ToString());
             p.nom = dataGridViewProprietaires.CurrentRow.Cells[2].Value.ToString();
             p.prenom = dataGridViewProprietaires.CurrentRow.Cells[1].Value.ToString();

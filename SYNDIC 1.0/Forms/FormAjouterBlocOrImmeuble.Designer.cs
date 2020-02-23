@@ -60,40 +60,49 @@
             // buttonValider
             // 
             this.buttonValider.Enabled = false;
+            this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValider.Location = new System.Drawing.Point(64, 218);
             this.buttonValider.Name = "buttonValider";
+
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 4;
+
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(173, 84);
+            this.textBoxNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNom.Location = new System.Drawing.Point(180, 87);
             this.textBoxNom.Name = "textBoxNom";
+
             this.textBoxNom.Size = new System.Drawing.Size(182, 20);
             this.textBoxNom.TabIndex = 0;
+
             this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNom_KeyPress);
             // 
             // buttonRaz
             // 
-            this.buttonRaz.Location = new System.Drawing.Point(251, 218);
+            this.buttonRaz.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRaz.Location = new System.Drawing.Point(230, 218);
             this.buttonRaz.Name = "buttonRaz";
+
             this.buttonRaz.Size = new System.Drawing.Size(75, 23);
             this.buttonRaz.TabIndex = 3;
             this.buttonRaz.Text = "RAZ";
+
             this.buttonRaz.UseVisualStyleBackColor = true;
             this.buttonRaz.Click += new System.EventHandler(this.buttonRaz_Click);
             // 
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNom.Location = new System.Drawing.Point(61, 87);
+            this.labelNom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNom.Location = new System.Drawing.Point(121, 87);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(45, 17);
+            this.labelNom.Size = new System.Drawing.Size(51, 20);
             this.labelNom.TabIndex = 19;
             this.labelNom.Text = "Nom :";
             // 
@@ -103,35 +112,37 @@
             this.panelImeuble.Controls.Add(this.comboBoxBloc);
             this.panelImeuble.Controls.Add(this.textBoxNbretages);
             this.panelImeuble.Controls.Add(this.label3);
-            this.panelImeuble.Location = new System.Drawing.Point(25, 121);
+            this.panelImeuble.Location = new System.Drawing.Point(12, 121);
             this.panelImeuble.Name = "panelImeuble";
-            this.panelImeuble.Size = new System.Drawing.Size(341, 88);
+            this.panelImeuble.Size = new System.Drawing.Size(364, 88);
             this.panelImeuble.TabIndex = 23;
             // 
             // labelnbretages
             // 
             this.labelnbretages.AutoSize = true;
-            this.labelnbretages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnbretages.Location = new System.Drawing.Point(1, 14);
+            this.labelnbretages.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelnbretages.Location = new System.Drawing.Point(1, 11);
             this.labelnbretages.Name = "labelnbretages";
-            this.labelnbretages.Size = new System.Drawing.Size(141, 17);
+            this.labelnbretages.Size = new System.Drawing.Size(161, 20);
             this.labelnbretages.TabIndex = 5;
-            this.labelnbretages.Text = "Nombre des Etages :";
+            this.labelnbretages.Text = "Nombre des étages :";
             // 
             // comboBoxBloc
             // 
             this.comboBoxBloc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBloc.FormattingEnabled = true;
-            this.comboBoxBloc.Location = new System.Drawing.Point(148, 56);
+            this.comboBoxBloc.Location = new System.Drawing.Point(168, 53);
             this.comboBoxBloc.Name = "comboBoxBloc";
-            this.comboBoxBloc.Size = new System.Drawing.Size(182, 21);
+            this.comboBoxBloc.Size = new System.Drawing.Size(182, 25);
             this.comboBoxBloc.TabIndex = 2;
             // 
             // textBoxNbretages
             // 
-            this.textBoxNbretages.Location = new System.Drawing.Point(148, 11);
+            this.textBoxNbretages.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNbretages.Location = new System.Drawing.Point(168, 11);
             this.textBoxNbretages.Name = "textBoxNbretages";
-            this.textBoxNbretages.Size = new System.Drawing.Size(182, 20);
+            this.textBoxNbretages.Size = new System.Drawing.Size(182, 22);
             this.textBoxNbretages.TabIndex = 1;
             this.textBoxNbretages.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxNbretages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNbretages_KeyPress);
@@ -139,10 +150,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 60);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(111, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 17);
+            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Bloc :";
             // 
@@ -150,7 +161,7 @@
             // 
             this.labelAjouter.AutoSize = true;
             this.labelAjouter.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAjouter.Location = new System.Drawing.Point(92, 9);
+            this.labelAjouter.Location = new System.Drawing.Point(149, 9);
             this.labelAjouter.Name = "labelAjouter";
             this.labelAjouter.Size = new System.Drawing.Size(97, 30);
             this.labelAjouter.TabIndex = 24;

@@ -90,7 +90,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            var question = MessageBox.Show("Voullez vous Ferme cet Forme ?", "Information", MessageBoxButtons.YesNo);
+            var question = MessageBox.Show("Voulez vous Fermer cette Forme ?", "Information", MessageBoxButtons.YesNo);
             if (question == DialogResult.No)
                 return;
             if (question == DialogResult.Yes)
@@ -166,7 +166,7 @@ namespace SYNDIC_1._0.Forms
                 syndicDataContext.employes.InsertOnSubmit(em);
 
                 string [] newValues = { em.nom, em.prenom, em.adresse, em.code_postal.ToString(), em.tel, em.email, em.date_recrutement.ToString(), em.date_depart.ToString() };
-                string[] oldValues = null;
+                string[] oldValues = {"",""};
 
                 Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Employe", oldValues, newValues);
             }

@@ -291,9 +291,9 @@
             this.labelProprietaires.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProprietaires.Location = new System.Drawing.Point(127, 9);
             this.labelProprietaires.Name = "labelProprietaires";
-            this.labelProprietaires.Size = new System.Drawing.Size(202, 30);
+            this.labelProprietaires.Size = new System.Drawing.Size(181, 30);
             this.labelProprietaires.TabIndex = 35;
-            this.labelProprietaires.Text = "Les Propriétaires";
+            this.labelProprietaires.Text = "Propriétaire(e)";
             // 
             // comboBoxIdVille
             // 

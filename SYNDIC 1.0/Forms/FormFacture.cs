@@ -108,5 +108,13 @@ namespace SYNDIC_1._0
             new FormAjouterModifierFacture("Modifier", ligne, dataGridViewFactures.CurrentRow.Cells[2].Value.ToString()).ShowDialog();
             FormFacture_Load(sender, e);
         }
+
+        private void buttonImprimer_Click(object sender, EventArgs e)
+        {
+            crystalR.Facture facture = new crystalR.Facture();
+            string filter = "{depense.id} = " + id_Depense;
+            Forms.FormImpression imprimer = new Forms.FormImpression(facture, filter);
+            imprimer.ShowDialog();
+        }
     }
 }

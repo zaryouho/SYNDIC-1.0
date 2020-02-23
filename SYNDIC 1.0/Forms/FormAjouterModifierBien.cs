@@ -166,7 +166,7 @@ namespace SYNDIC_1._0
                 if (id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text) || dateAchat.ToShortDateString() != dateTimePickerDateAchat.Value.ToShortDateString())
                 {
 
-                    DialogResult question = MessageBox.Show("Voullez vous Enregistrer les nouveaux Données ?", "Information", MessageBoxButtons.YesNoCancel);
+                    DialogResult question = MessageBox.Show("Voulez vous Enregistrer les nouveaux Données ?", "Information", MessageBoxButtons.YesNoCancel);
                     if (question == DialogResult.Cancel)
                         return;
                     else if (question == DialogResult.Yes)
@@ -176,6 +176,8 @@ namespace SYNDIC_1._0
                             var src = (from p in syndicDataContext.proprietaires
                                        where p.id.Equals(Convert.ToInt32(comboBoxProprietaire.SelectedValue.ToString()))
                                        select p).Single();
+                            string[] oldValues = {src.id.ToString(),src.nom,src.prenom,src.adresse,src.code_postal.ToString(),
+                            src.tel,src.email,src.Sexe,src.Titre.ToString(),src.CIN};
 
                             ProprietaireArchive pa = new ProprietaireArchive();
 
@@ -192,6 +194,7 @@ namespace SYNDIC_1._0
                             pa.bien = int.Parse(textBoxNom.Text);
                             pa.immeuble = int.Parse(textBoxIdImmeuble.Text);
                             pa.dateVente = dateTimePickerDateAchat.Value;
+
 
                             syndicDataContext.ProprietaireArchives.InsertOnSubmit(pa);
                             syndicDataContext.SubmitChanges();

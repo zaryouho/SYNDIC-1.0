@@ -133,10 +133,10 @@ namespace SYNDIC_1._0.Forms
                 {
                     connection.Open();
                 }
-                string query = "select * from utilisateur where login like '"+username+"' ";
+                string query = "select * from utilisateur where login like '% @login %' ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                   // command.Parameters.AddWithValue("@login", username);
+                    command.Parameters.AddWithValue("@login", username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         /*if (!reader.HasRows)
@@ -150,7 +150,7 @@ namespace SYNDIC_1._0.Forms
                             typeUtilisateur = reader.GetString(1);
                             string storedPassword = reader.GetString(3);
                             string storedSalt = reader.GetString(4);
-                            authentitace = Security.VerifyPassword(password, storedPassword, storedSalt);
+                            
                         }
                         if (authentitace)
                         {
@@ -193,11 +193,11 @@ namespace SYNDIC_1._0.Forms
         {
             if (!textBoxUsername.hasText() || !textBoxPassword.hasText())
             {
-                MessageBox.Show("plz fill the login and pass then chech this box again","missing information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Remplissez le login et le mot de passe puis vérifiez à nouveau cette case", "manque des informations",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
             DialogResult dialogResult = 
-                MessageBox.Show("if you check this box you won't have to type your password next time","Remember your password",MessageBoxButtons.YesNo);
+                MessageBox.Show("si vous cochez cette case, vous n'aurez pas à taper votre mot de passe la prochaine fois", "Se souvenir du mot de passe", MessageBoxButtons.YesNo);
             if (dialogResult.Equals(DialogResult.Yes))
             {
                 Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;

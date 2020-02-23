@@ -117,7 +117,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 334);
+            this.label1.Location = new System.Drawing.Point(130, 334);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 122;
@@ -138,7 +138,7 @@
             // 
             this.labelActif.AutoSize = true;
             this.labelActif.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActif.Location = new System.Drawing.Point(40, 274);
+            this.labelActif.Location = new System.Drawing.Point(50, 274);
             this.labelActif.Name = "labelActif";
             this.labelActif.Size = new System.Drawing.Size(120, 17);
             this.labelActif.TabIndex = 120;
@@ -148,11 +148,11 @@
             // 
             this.labelTypeEmploye.AutoSize = true;
             this.labelTypeEmploye.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeEmploye.Location = new System.Drawing.Point(66, 307);
+            this.labelTypeEmploye.Location = new System.Drawing.Point(64, 307);
             this.labelTypeEmploye.Name = "labelTypeEmploye";
-            this.labelTypeEmploye.Size = new System.Drawing.Size(94, 17);
+            this.labelTypeEmploye.Size = new System.Drawing.Size(106, 17);
             this.labelTypeEmploye.TabIndex = 118;
-            this.labelTypeEmploye.Text = "Type Employe :";
+            this.labelTypeEmploye.Text = "Type d\'employé :";
             // 
             // dateTimePickerDateRecrutement
             // 
@@ -167,17 +167,17 @@
             // 
             this.labelDateRecrutement.AutoSize = true;
             this.labelDateRecrutement.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateRecrutement.Location = new System.Drawing.Point(39, 247);
+            this.labelDateRecrutement.Location = new System.Drawing.Point(30, 247);
             this.labelDateRecrutement.Name = "labelDateRecrutement";
-            this.labelDateRecrutement.Size = new System.Drawing.Size(121, 17);
+            this.labelDateRecrutement.Size = new System.Drawing.Size(140, 17);
             this.labelDateRecrutement.TabIndex = 116;
-            this.labelDateRecrutement.Text = "Date Recrutemet  :";
+            this.labelDateRecrutement.Text = "Date de Recrutemet  :";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(115, 218);
+            this.labelEmail.Location = new System.Drawing.Point(125, 218);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(45, 17);
             this.labelEmail.TabIndex = 115;
@@ -187,17 +187,17 @@
             // 
             this.labelTele.AutoSize = true;
             this.labelTele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTele.Location = new System.Drawing.Point(81, 189);
+            this.labelTele.Location = new System.Drawing.Point(91, 189);
             this.labelTele.Name = "labelTele";
             this.labelTele.Size = new System.Drawing.Size(79, 17);
             this.labelTele.TabIndex = 114;
-            this.labelTele.Text = "Telephone  :";
+            this.labelTele.Text = "Téléphone  :";
             // 
             // labelCharge
             // 
             this.labelCharge.AutoSize = true;
             this.labelCharge.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCharge.Location = new System.Drawing.Point(74, 160);
+            this.labelCharge.Location = new System.Drawing.Point(84, 160);
             this.labelCharge.Name = "labelCharge";
             this.labelCharge.Size = new System.Drawing.Size(86, 17);
             this.labelCharge.TabIndex = 113;
@@ -207,7 +207,7 @@
             // 
             this.labelAdresse.AutoSize = true;
             this.labelAdresse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdresse.Location = new System.Drawing.Point(99, 131);
+            this.labelAdresse.Location = new System.Drawing.Point(109, 131);
             this.labelAdresse.Name = "labelAdresse";
             this.labelAdresse.Size = new System.Drawing.Size(61, 17);
             this.labelAdresse.TabIndex = 112;
@@ -217,7 +217,7 @@
             // 
             this.labelPrenom.AutoSize = true;
             this.labelPrenom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrenom.Location = new System.Drawing.Point(101, 106);
+            this.labelPrenom.Location = new System.Drawing.Point(111, 106);
             this.labelPrenom.Name = "labelPrenom";
             this.labelPrenom.Size = new System.Drawing.Size(59, 17);
             this.labelPrenom.TabIndex = 111;
@@ -227,7 +227,7 @@
             // 
             this.labelNom.AutoSize = true;
             this.labelNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNom.Location = new System.Drawing.Point(115, 77);
+            this.labelNom.Location = new System.Drawing.Point(125, 77);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(45, 17);
             this.labelNom.TabIndex = 110;

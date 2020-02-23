@@ -159,9 +159,9 @@
             this.labelBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBloc.Location = new System.Drawing.Point(357, 12);
             this.labelBloc.Name = "labelBloc";
-            this.labelBloc.Size = new System.Drawing.Size(137, 17);
+            this.labelBloc.Size = new System.Drawing.Size(129, 17);
             this.labelBloc.TabIndex = 12;
-            this.labelBloc.Text = "Selectioner une Bloc :";
+            this.labelBloc.Text = "Selectioner un Bloc :";
             // 
             // splitContainerBody
             // 
@@ -300,8 +300,10 @@
             this.buttonAjouterBien.Location = new System.Drawing.Point(376, 14);
             this.buttonAjouterBien.Name = "buttonAjouterBien";
             this.buttonAjouterBien.Size = new System.Drawing.Size(194, 53);
+
             this.buttonAjouterBien.TabIndex = 9;
             this.buttonAjouterBien.Text = "Ajouter le bien";
+
             this.buttonAjouterBien.UseVisualStyleBackColor = false;
             this.buttonAjouterBien.Click += new System.EventHandler(this.buttonAjouterBien_Click);
             // 
@@ -322,8 +324,10 @@
             this.buttonListDocs.Location = new System.Drawing.Point(17, 14);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(224, 53);
+
             this.buttonListDocs.TabIndex = 10;
             this.buttonListDocs.Text = "Listes Documents";
+
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 

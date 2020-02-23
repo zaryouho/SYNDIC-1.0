@@ -218,10 +218,12 @@
             this.buttonDeleteUser.ForeColor = System.Drawing.Color.White;
             this.buttonDeleteUser.Location = new System.Drawing.Point(356, 311);
             this.buttonDeleteUser.Name = "buttonDeleteUser";
+
             this.buttonDeleteUser.Size = new System.Drawing.Size(152, 58);
             this.buttonDeleteUser.TabIndex = 7;
             this.buttonDeleteUser.Text = "Supprimer utilisateur";
             this.buttonDeleteUser.UseVisualStyleBackColor = false;
+
             this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
             // 
             // buttonModifyUser
@@ -231,10 +233,12 @@
             this.buttonModifyUser.ForeColor = System.Drawing.Color.White;
             this.buttonModifyUser.Location = new System.Drawing.Point(180, 311);
             this.buttonModifyUser.Name = "buttonModifyUser";
+
             this.buttonModifyUser.Size = new System.Drawing.Size(152, 58);
             this.buttonModifyUser.TabIndex = 5;
             this.buttonModifyUser.Text = "Modifier utilisateur";
             this.buttonModifyUser.UseVisualStyleBackColor = false;
+
             this.buttonModifyUser.Click += new System.EventHandler(this.buttonModifyUser_Click);
             // 
             // buttonAddUser

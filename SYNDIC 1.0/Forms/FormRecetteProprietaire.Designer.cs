@@ -104,21 +104,24 @@
             // buttonImprimerRecette
             // 
             this.buttonImprimerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonImprimerRecette.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonImprimerRecette.BackColor = System.Drawing.Color.Transparent;
             this.buttonImprimerRecette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonImprimerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonImprimerRecette.FlatAppearance.BorderSize = 0;
-            this.buttonImprimerRecette.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonImprimerRecette.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonImprimerRecette.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.buttonImprimerRecette.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.buttonImprimerRecette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonImprimerRecette.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonImprimerRecette.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimerRecette.Image = global::SYNDIC_1._0.Properties.Resources.imprimer_icon_mini;
             this.buttonImprimerRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImprimerRecette.Location = new System.Drawing.Point(609, 26);
+            this.buttonImprimerRecette.Location = new System.Drawing.Point(732, 9);
             this.buttonImprimerRecette.Name = "buttonImprimerRecette";
+
             this.buttonImprimerRecette.Size = new System.Drawing.Size(182, 35);
             this.buttonImprimerRecette.TabIndex = 2;
             this.buttonImprimerRecette.Text = "Imprimer Recette";
+
             this.buttonImprimerRecette.UseVisualStyleBackColor = false;
             this.buttonImprimerRecette.Click += new System.EventHandler(this.buttonImprimerRecette_Click);
             // 
@@ -128,9 +131,9 @@
             this.labelListeProprietaire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListeProprietaire.Location = new System.Drawing.Point(15, 11);
             this.labelListeProprietaire.Name = "labelListeProprietaire";
-            this.labelListeProprietaire.Size = new System.Drawing.Size(106, 17);
+            this.labelListeProprietaire.Size = new System.Drawing.Size(111, 17);
             this.labelListeProprietaire.TabIndex = 3;
-            this.labelListeProprietaire.Text = "Les Propriétaire :";
+            this.labelListeProprietaire.Text = "Les Propriétaires :";
             // 
             // comboBoxProprietaire
             // 
@@ -286,8 +289,10 @@
             this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
             this.buttonAjouterRecette.Name = "buttonAjouterRecette";
             this.buttonAjouterRecette.Size = new System.Drawing.Size(260, 53);
+
             this.buttonAjouterRecette.TabIndex = 1;
             this.buttonAjouterRecette.Text = "Ajouter Recette";
+
             this.buttonAjouterRecette.UseVisualStyleBackColor = false;
             this.buttonAjouterRecette.Click += new System.EventHandler(this.buttonAjouterRecette_Click);
             // 
@@ -308,8 +313,10 @@
             this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
             this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
             this.buttonSupprimerRecette.Size = new System.Drawing.Size(262, 53);
+
             this.buttonSupprimerRecette.TabIndex = 2;
             this.buttonSupprimerRecette.Text = "Supprimer Recette";
+
             this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
             this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
             // 

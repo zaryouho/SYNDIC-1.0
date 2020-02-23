@@ -90,7 +90,7 @@ namespace SYNDIC_1._0
             bsType.EndEdit();
             valider(true);
             flag = true;
-            MessageBox.Show("l'operation a étè effectue avec succes");
+            MessageBox.Show("l'opération a été effectuée avec succès");
 
         }
 
@@ -103,11 +103,11 @@ namespace SYNDIC_1._0
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Voullez vous Supprimer cet Type ?","Supprission",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2)==DialogResult.Yes )
+            if(MessageBox.Show("Voulez vous Supprimer ce type ?","Suppression",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2)==DialogResult.Yes )
             {
 
                 bsType.RemoveCurrent();
-                MessageBox.Show("la Supprission a étè effectue avec succes");
+                MessageBox.Show("la Suppression a été effectuée avec succès");
                 flag = true;
             }
         }

@@ -79,7 +79,7 @@
             this.labelIntervention.Name = "labelIntervention";
             this.labelIntervention.Size = new System.Drawing.Size(156, 30);
             this.labelIntervention.TabIndex = 0;
-            this.labelIntervention.Text = "Intervention";
+            this.labelIntervention.Text = "Intérvention";
             // 
             // panelValid
             // 
@@ -121,11 +121,11 @@
             // 
             this.labelDateFinIntervention.AutoSize = true;
             this.labelDateFinIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateFinIntervention.Location = new System.Drawing.Point(61, 162);
+            this.labelDateFinIntervention.Location = new System.Drawing.Point(58, 162);
             this.labelDateFinIntervention.Name = "labelDateFinIntervention";
-            this.labelDateFinIntervention.Size = new System.Drawing.Size(61, 17);
+            this.labelDateFinIntervention.Size = new System.Drawing.Size(80, 17);
             this.labelDateFinIntervention.TabIndex = 53;
-            this.labelDateFinIntervention.Text = "Date fin :";
+            this.labelDateFinIntervention.Text = "Date de fin :";
             // 
             // dateTimePickerFinIntervention
             // 
@@ -150,7 +150,7 @@
             // 
             this.labelMontant.AutoSize = true;
             this.labelMontant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMontant.Location = new System.Drawing.Point(57, 201);
+            this.labelMontant.Location = new System.Drawing.Point(73, 201);
             this.labelMontant.Name = "labelMontant";
             this.labelMontant.Size = new System.Drawing.Size(65, 17);
             this.labelMontant.TabIndex = 50;
@@ -160,11 +160,11 @@
             // 
             this.labelDateDebutIntervention.AutoSize = true;
             this.labelDateDebutIntervention.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebutIntervention.Location = new System.Drawing.Point(39, 123);
+            this.labelDateDebutIntervention.Location = new System.Drawing.Point(36, 123);
             this.labelDateDebutIntervention.Name = "labelDateDebutIntervention";
-            this.labelDateDebutIntervention.Size = new System.Drawing.Size(83, 17);
+            this.labelDateDebutIntervention.Size = new System.Drawing.Size(102, 17);
             this.labelDateDebutIntervention.TabIndex = 49;
-            this.labelDateDebutIntervention.Text = "Date début :";
+            this.labelDateDebutIntervention.Text = "Date de début :";
             // 
             // textBoxDesignationDepense
             // 
@@ -179,7 +179,7 @@
             // 
             this.labelDesignationDepense.AutoSize = true;
             this.labelDesignationDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDesignationDepense.Location = new System.Drawing.Point(37, 84);
+            this.labelDesignationDepense.Location = new System.Drawing.Point(53, 84);
             this.labelDesignationDepense.Name = "labelDesignationDepense";
             this.labelDesignationDepense.Size = new System.Drawing.Size(85, 17);
             this.labelDesignationDepense.TabIndex = 46;
@@ -207,11 +207,11 @@
             // 
             this.labelidDepense.AutoSize = true;
             this.labelidDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelidDepense.Location = new System.Drawing.Point(55, 234);
+            this.labelidDepense.Location = new System.Drawing.Point(71, 234);
             this.labelidDepense.Name = "labelidDepense";
             this.labelidDepense.Size = new System.Drawing.Size(67, 17);
             this.labelidDepense.TabIndex = 58;
-            this.labelidDepense.Text = "Depense :";
+            this.labelidDepense.Text = "Dépense :";
             // 
             // FormAjouterModifierIntervention
             // 

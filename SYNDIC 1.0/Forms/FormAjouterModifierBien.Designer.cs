@@ -168,9 +168,9 @@
             this.labelCharge.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCharge.Location = new System.Drawing.Point(57, 217);
             this.labelCharge.Name = "labelCharge";
-            this.labelCharge.Size = new System.Drawing.Size(105, 17);
+            this.labelCharge.Size = new System.Drawing.Size(110, 17);
             this.labelCharge.TabIndex = 10;
-            this.labelCharge.Text = "Charge de Bien :";
+            this.labelCharge.Text = "Charges de Bien :";
             // 
             // labelType
             // 
@@ -200,7 +200,7 @@
             this.labelProprietaire.Name = "labelProprietaire";
             this.labelProprietaire.Size = new System.Drawing.Size(131, 17);
             this.labelProprietaire.TabIndex = 16;
-            this.labelProprietaire.Text = "Proprietaire de Bien :";
+            this.labelProprietaire.Text = "Propriétaire de Bien :";
             // 
             // textBoxTitre
             // 

@@ -87,17 +87,17 @@
             this.labelBiens.Name = "labelBiens";
             this.labelBiens.Size = new System.Drawing.Size(103, 30);
             this.labelBiens.TabIndex = 0;
-            this.labelBiens.Text = "Societe";
+            this.labelBiens.Text = "Sociéte";
             // 
             // labelraison_sociale
             // 
             this.labelraison_sociale.AutoSize = true;
             this.labelraison_sociale.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelraison_sociale.Location = new System.Drawing.Point(73, 95);
+            this.labelraison_sociale.Location = new System.Drawing.Point(65, 94);
             this.labelraison_sociale.Name = "labelraison_sociale";
-            this.labelraison_sociale.Size = new System.Drawing.Size(92, 17);
+            this.labelraison_sociale.Size = new System.Drawing.Size(100, 17);
             this.labelraison_sociale.TabIndex = 67;
-            this.labelraison_sociale.Text = "Raison Social :";
+            this.labelraison_sociale.Text = "Raison Sociale :";
             // 
             // labelVille
             // 
@@ -127,7 +127,7 @@
             this.labeltel.Name = "labeltel";
             this.labeltel.Size = new System.Drawing.Size(76, 17);
             this.labeltel.TabIndex = 64;
-            this.labeltel.Text = "Telephone :";
+            this.labeltel.Text = "Téléphone :";
             // 
             // labelCharge
             // 
@@ -147,7 +147,7 @@
             this.labelprenom.Name = "labelprenom";
             this.labelprenom.Size = new System.Drawing.Size(131, 17);
             this.labelprenom.TabIndex = 61;
-            this.labelprenom.Text = "Prenom de Societe  :";
+            this.labelprenom.Text = "Prénom de Société  :";
             // 
             // labelNom
             // 
@@ -157,7 +157,7 @@
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(111, 17);
             this.labelNom.TabIndex = 60;
-            this.labelNom.Text = "Nom de Societe :";
+            this.labelNom.Text = "Nom de Société :";
             // 
             // labeladress
             // 
@@ -185,8 +185,10 @@
             this.buttonRaz.Location = new System.Drawing.Point(89, 35);
             this.buttonRaz.Name = "buttonRaz";
             this.buttonRaz.Size = new System.Drawing.Size(118, 23);
-            this.buttonRaz.TabIndex = 8;
-            this.buttonRaz.Text = "Raz";
+
+            this.buttonRaz.TabIndex = 2;
+            this.buttonRaz.Text = "Vider les champs";
+
             this.buttonRaz.UseVisualStyleBackColor = true;
             this.buttonRaz.Click += new System.EventHandler(this.buttonRaz_Click);
             // 
