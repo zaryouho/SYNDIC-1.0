@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using SYNDIC_1._0.Forms;
+using SYNDIC_1._0.Helper;
 
 namespace SYNDIC_1._0
 {
@@ -28,6 +29,7 @@ namespace SYNDIC_1._0
         intervention intervention;
         string operation;
         BindingSource bsDepInter;
+        string[] values = null;
         public FormAjouterModifierIntervention(string _operation, intervention _intervention)
         {
 
@@ -94,9 +96,10 @@ namespace SYNDIC_1._0
                     com.ExecuteNonQuery();
                     com = null;
 
-                    string[] oldValues = null;
+                    string[] oldValues = { "",""};
                     string[] newValues = { textBoxDesignationDepense.Text, dateTimePickerDebutIntervention.Text, dateTimePickerFinIntervention.Text, textBoxMontantIntervention.Text };
                     Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Intervention", oldValues, newValues);
+                    values = newValues;
 
                 }
                 else
@@ -112,6 +115,11 @@ namespace SYNDIC_1._0
                     SqlCommand com = new SqlCommand(sql, DBHelper.connection);
                     com.ExecuteNonQuery();
                     com = null;
+                    string[] oldValues = values;
+                    string[] newValues = { textBoxDesignationDepense.Text.Replace("'", "''") , dateTimePickerDebutIntervention.Value.ToShortDateString() ,
+                    dateTimePickerFinIntervention.Value.ToShortDateString(),textBoxMontantIntervention.Text.Replace(",", "."),
+                    comboBoxIdDepense.SelectedValue.ToString()};
+                    Log.makeLog(FormLogin.userId, DateTime.Now, "Modifier", "Intervention", oldValues, newValues);
 
                 }
                 this.Close();

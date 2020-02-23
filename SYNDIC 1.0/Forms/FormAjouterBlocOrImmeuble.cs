@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SYNDIC_1._0.Helper;
 
 namespace SYNDIC_1._0.Forms
 {
@@ -46,6 +47,7 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
+            string[] oldValues = { "", "" };
 
             if (titre.Equals(nameof(bloc)))
             {
@@ -56,6 +58,9 @@ namespace SYNDIC_1._0.Forms
                 b.id_Residence = src.id;
 
                 dc.blocs.InsertOnSubmit(b);
+                string[] newValues = { b.id.ToString(), b.nomBloc, b.id_Residence.ToString() };
+
+                Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Bloc", oldValues, newValues);
 
             }
 
@@ -67,6 +72,9 @@ namespace SYNDIC_1._0.Forms
                 i.id_bloc=int.Parse(comboBoxBloc.SelectedValue.ToString());
 
                 dc.immeubles.InsertOnSubmit(i);
+
+                string[] newValues = { i.id.ToString(), i.nom, i.nbrEtage.ToString(), i.id_bloc.ToString() };
+                Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", "Immeuble", oldValues, newValues);
 
             }
 

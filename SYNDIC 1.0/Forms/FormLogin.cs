@@ -133,10 +133,10 @@ namespace SYNDIC_1._0.Forms
                 {
                     connection.Open();
                 }
-                string query = "select * from utilisateur where login like '"+username+"' ";
+                string query = "select * from utilisateur where login like '% @login %' ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                   // command.Parameters.AddWithValue("@login", username);
+                    command.Parameters.AddWithValue("@login", username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         /*if (!reader.HasRows)
@@ -150,7 +150,7 @@ namespace SYNDIC_1._0.Forms
                             typeUtilisateur = reader.GetString(1);
                             string storedPassword = reader.GetString(3);
                             string storedSalt = reader.GetString(4);
-                            authentitace = Security.VerifyPassword(password, storedPassword, storedSalt);
+                            
                         }
                         if (authentitace)
                         {

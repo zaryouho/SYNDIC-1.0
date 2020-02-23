@@ -16,7 +16,7 @@ namespace SYNDIC_1._0.Forms
     {
         string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
         string login = string.Empty;
-        string passWord = string.Empty;
+        string password = string.Empty;
         string confirmedPassWord = string.Empty;
         bool update = false;
         
@@ -84,13 +84,13 @@ namespace SYNDIC_1._0.Forms
             }
 
             login = textBoxLogin.Text.Trim().Replace("'", "''").Replace("-","");
-            passWord = textBoxPassword.Text.Trim().Replace("'", "''");
+            password = textBoxPassword.Text.Trim().Replace("'", "''");
             confirmedPassWord = textBoxConfirmePassword.Text.Trim().Replace("'", "''");
 
-            string hash = Security.GenerathashandSalt(64, passWord).hash.ToString();
-            string salt = Security.GenerathashandSalt(64, passWord).salt.ToString();
+            string hash = Security.EncryptString(login, password)[0];
+            string salt = Security.EncryptString(login, password)[1];
             MessageBox.Show(hash.ToString() + "   " + salt.ToString());
-            if (passWord.Equals(confirmedPassWord) && isUnique(login))
+            if (password.Equals(confirmedPassWord) && isUnique(login))
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -123,8 +123,6 @@ namespace SYNDIC_1._0.Forms
 
                         }
 
-                        /*  if (result != -1)
-                          {*/
                         if (update)
                         {
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Modifer.ToString(), "utilisateur", "oldPassword", "newPassword");
@@ -136,12 +134,11 @@ namespace SYNDIC_1._0.Forms
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Ajouter.ToString(), "utilisateur", "oldPassword", "newPassword");
                             MessageBox.Show("L'utilisateur a été ajouté avec succés");
                         }
-                        //  }
                     }
                 }
             }
             else
-                MessageBox.Show("cette login existe déja !");
+                MessageBox.Show("ce login existe déja !");
 
             FormUtilisateurs_Load(sender, e);
         }
