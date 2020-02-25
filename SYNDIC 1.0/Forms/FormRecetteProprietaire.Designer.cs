@@ -93,11 +93,11 @@
             this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListDocs.ForeColor = System.Drawing.Color.White;
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListDocs.Location = new System.Drawing.Point(393, 26);
+            this.buttonListDocs.Location = new System.Drawing.Point(393, 12);
             this.buttonListDocs.Name = "buttonListDocs";
-            this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
+            this.buttonListDocs.Size = new System.Drawing.Size(195, 49);
             this.buttonListDocs.TabIndex = 1;
-            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.Text = "Liste Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 
@@ -117,11 +117,8 @@
             this.buttonImprimerRecette.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonImprimerRecette.Location = new System.Drawing.Point(732, 9);
             this.buttonImprimerRecette.Name = "buttonImprimerRecette";
-
-            this.buttonImprimerRecette.Size = new System.Drawing.Size(182, 35);
+            this.buttonImprimerRecette.Size = new System.Drawing.Size(56, 49);
             this.buttonImprimerRecette.TabIndex = 2;
-            this.buttonImprimerRecette.Text = "Imprimer Recette";
-
             this.buttonImprimerRecette.UseVisualStyleBackColor = false;
             this.buttonImprimerRecette.Click += new System.EventHandler(this.buttonImprimerRecette_Click);
             // 
@@ -289,10 +286,8 @@
             this.buttonAjouterRecette.Location = new System.Drawing.Point(269, 10);
             this.buttonAjouterRecette.Name = "buttonAjouterRecette";
             this.buttonAjouterRecette.Size = new System.Drawing.Size(260, 53);
-
             this.buttonAjouterRecette.TabIndex = 1;
-            this.buttonAjouterRecette.Text = "Ajouter Recette";
-
+            this.buttonAjouterRecette.Text = "Ajouter une recette";
             this.buttonAjouterRecette.UseVisualStyleBackColor = false;
             this.buttonAjouterRecette.Click += new System.EventHandler(this.buttonAjouterRecette_Click);
             // 
@@ -313,10 +308,8 @@
             this.buttonSupprimerRecette.Location = new System.Drawing.Point(535, 10);
             this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
             this.buttonSupprimerRecette.Size = new System.Drawing.Size(262, 53);
-
             this.buttonSupprimerRecette.TabIndex = 2;
-            this.buttonSupprimerRecette.Text = "Supprimer Recette";
-
+            this.buttonSupprimerRecette.Text = "Supprimer la recette";
             this.buttonSupprimerRecette.UseVisualStyleBackColor = false;
             this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
             // 

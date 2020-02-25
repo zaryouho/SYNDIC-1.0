@@ -423,10 +423,8 @@
             this.buttonSupprimerEcheance.Location = new System.Drawing.Point(146, 11);
             this.buttonSupprimerEcheance.Name = "buttonSupprimerEcheance";
             this.buttonSupprimerEcheance.Size = new System.Drawing.Size(195, 42);
-
             this.buttonSupprimerEcheance.TabIndex = 2;
-            this.buttonSupprimerEcheance.Text = "Supprimer Une Echéance";
-
+            this.buttonSupprimerEcheance.Text = "Supprimer l\'échéance";
             this.buttonSupprimerEcheance.UseVisualStyleBackColor = false;
             this.buttonSupprimerEcheance.Click += new System.EventHandler(this.buttonSupprimerEcheance_Click);
             // 
@@ -446,10 +444,8 @@
             this.buttonModifierEcheance.Location = new System.Drawing.Point(373, 11);
             this.buttonModifierEcheance.Name = "buttonModifierEcheance";
             this.buttonModifierEcheance.Size = new System.Drawing.Size(187, 42);
-
             this.buttonModifierEcheance.TabIndex = 0;
-            this.buttonModifierEcheance.Text = "Modifier Une Echéance";
-
+            this.buttonModifierEcheance.Text = "Modifier l\'échéance";
             this.buttonModifierEcheance.UseVisualStyleBackColor = false;
             this.buttonModifierEcheance.Click += new System.EventHandler(this.buttonModifierEcheance_Click);
             // 
@@ -469,10 +465,8 @@
             this.buttonAjouterEcheance.Location = new System.Drawing.Point(593, 11);
             this.buttonAjouterEcheance.Name = "buttonAjouterEcheance";
             this.buttonAjouterEcheance.Size = new System.Drawing.Size(187, 42);
-
             this.buttonAjouterEcheance.TabIndex = 1;
             this.buttonAjouterEcheance.Text = "Ajouter Une Echéance";
-
             this.buttonAjouterEcheance.UseVisualStyleBackColor = false;
             this.buttonAjouterEcheance.Click += new System.EventHandler(this.buttonAjouterEcheance_Click);
             // 

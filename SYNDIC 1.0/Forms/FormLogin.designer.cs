@@ -36,10 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.checkBoxRememberMe = new System.Windows.Forms.CheckBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkBoxShowHidePassword = new System.Windows.Forms.CheckBox();
             this.pictureBoxLogoholder = new System.Windows.Forms.PictureBox();
+            this.checkBoxRememberMe = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -87,11 +86,11 @@
             this.textBoxUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsername.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBoxUsername.Location = new System.Drawing.Point(75, 172);
+            this.textBoxUsername.Location = new System.Drawing.Point(65, 170);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(178, 18);
+            this.textBoxUsername.Size = new System.Drawing.Size(199, 25);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsername_KeyPress);
             // 
@@ -100,36 +99,36 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(71, 142);
+            this.label1.Location = new System.Drawing.Point(65, 142);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 21);
+            this.label1.Size = new System.Drawing.Size(59, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "User Name :";
+            this.label1.Text = "Login :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(71, 209);
+            this.label2.Location = new System.Drawing.Point(65, 206);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 21);
+            this.label2.Size = new System.Drawing.Size(123, 21);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Password :";
+            this.label2.Text = "Mot de passe :";
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBoxPassword.Location = new System.Drawing.Point(74, 240);
+            this.textBoxPassword.Location = new System.Drawing.Point(65, 232);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
-            this.textBoxPassword.Size = new System.Drawing.Size(178, 18);
+            this.textBoxPassword.Size = new System.Drawing.Size(199, 26);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsername_KeyPress);
             // 
@@ -138,50 +137,23 @@
             this.buttonLogin.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(74, 316);
+            this.buttonLogin.Location = new System.Drawing.Point(74, 377);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(178, 37);
             this.buttonLogin.TabIndex = 5;
-            this.buttonLogin.Text = "Login";
+            this.buttonLogin.Text = "Se connecter";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
-            // 
-            // checkBoxRememberMe
-            // 
-            this.checkBoxRememberMe.AutoSize = true;
-            this.checkBoxRememberMe.Location = new System.Drawing.Point(74, 275);
-            this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRememberMe.Name = "checkBoxRememberMe";
-            this.checkBoxRememberMe.Size = new System.Drawing.Size(94, 17);
-            this.checkBoxRememberMe.TabIndex = 3;
-            this.checkBoxRememberMe.Text = "Remember me";
-            this.checkBoxRememberMe.UseVisualStyleBackColor = true;
-            this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(122, 435);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(94, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot password ?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // checkBoxShowHidePassword
             // 
             this.checkBoxShowHidePassword.AutoSize = true;
-            this.checkBoxShowHidePassword.Location = new System.Drawing.Point(172, 275);
+            this.checkBoxShowHidePassword.Location = new System.Drawing.Point(155, 275);
             this.checkBoxShowHidePassword.Name = "checkBoxShowHidePassword";
-            this.checkBoxShowHidePassword.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxShowHidePassword.Size = new System.Drawing.Size(138, 17);
             this.checkBoxShowHidePassword.TabIndex = 4;
-            this.checkBoxShowHidePassword.Text = "Show password";
+            this.checkBoxShowHidePassword.Text = "afficher le mot de passe";
             this.checkBoxShowHidePassword.UseVisualStyleBackColor = true;
             this.checkBoxShowHidePassword.CheckedChanged += new System.EventHandler(this.checkBoxShowHidePassword_CheckedChanged);
             // 
@@ -197,6 +169,18 @@
             this.pictureBoxLogoholder.TabIndex = 1;
             this.pictureBoxLogoholder.TabStop = false;
             // 
+            // checkBoxRememberMe
+            // 
+            this.checkBoxRememberMe.AutoSize = true;
+            this.checkBoxRememberMe.Location = new System.Drawing.Point(74, 275);
+            this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRememberMe.Name = "checkBoxRememberMe";
+            this.checkBoxRememberMe.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxRememberMe.TabIndex = 3;
+            this.checkBoxRememberMe.Text = "Enregistrer";
+            this.checkBoxRememberMe.UseVisualStyleBackColor = true;
+            this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +188,6 @@
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(328, 485);
             this.Controls.Add(this.checkBoxShowHidePassword);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBoxRememberMe);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label2);
@@ -240,11 +223,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.CheckBox checkBoxRememberMe;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnMinimized;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.CheckBox checkBoxShowHidePassword;
+        private System.Windows.Forms.CheckBox checkBoxRememberMe;
     }
 }
 

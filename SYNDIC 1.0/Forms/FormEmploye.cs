@@ -61,7 +61,6 @@ namespace SYNDIC_1._0.Forms
         {
             buttonEmploye.BackColor = Color.Navy;
             buttonEmployeArchive.BackColor = Color.Blue;
-            buttonAjouterEmploye.BackColor = Color.Blue;
             FormEmploye_Load(sender, e);
         }
 
@@ -69,7 +68,6 @@ namespace SYNDIC_1._0.Forms
         {
             buttonEmploye.BackColor = Color.Blue;
             buttonEmployeArchive.BackColor = Color.Blue;
-            buttonAjouterEmploye.BackColor = Color.Navy;
             c = 'A';
 
             using (var FormAjouterModifierEmploye = new FormAjouterModifierEmploye(new employe(), c))
@@ -85,8 +83,7 @@ namespace SYNDIC_1._0.Forms
         {
             buttonEmploye.BackColor = Color.Blue;
             buttonEmployeArchive.BackColor = Color.Navy;
-            buttonAjouterEmploye.BackColor = Color.Blue;
-
+            
             var res = (from em in syndicDataContext.employes
                        join vil in syndicDataContext.villes on em.id_ville equals vil.id
                        where em.date_depart != null

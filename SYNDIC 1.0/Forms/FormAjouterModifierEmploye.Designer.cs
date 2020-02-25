@@ -322,7 +322,7 @@
             this.labelBiens.Name = "labelBiens";
             this.labelBiens.Size = new System.Drawing.Size(117, 30);
             this.labelBiens.TabIndex = 0;
-            this.labelBiens.Text = "Employe";
+            this.labelBiens.Text = "Employé";
             // 
             // radioButtonActifTrue
             // 

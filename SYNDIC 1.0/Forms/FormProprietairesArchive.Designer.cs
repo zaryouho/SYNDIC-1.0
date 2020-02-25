@@ -62,10 +62,12 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.buttonRechercher);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxrechercher);
+            this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainerListeProprietaireBody);
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainer1.Size = new System.Drawing.Size(784, 411);
             this.splitContainer1.SplitterDistance = 58;
             this.splitContainer1.TabIndex = 0;
@@ -103,10 +105,12 @@
             this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonNext);
             this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonprevious);
             this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonFirst);
+            this.splitContainerListeProprietaireBody.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // splitContainerListeProprietaireBody.Panel2
             // 
             this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.dataGridViewProprietaires);
+            this.splitContainerListeProprietaireBody.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainerListeProprietaireBody.Size = new System.Drawing.Size(784, 349);
             this.splitContainerListeProprietaireBody.SplitterDistance = 72;
             this.splitContainerListeProprietaireBody.TabIndex = 31;
@@ -204,6 +208,7 @@
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProprietairesArchive";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "FormProprietairesArchive";
             this.Load += new System.EventHandler(this.FormProprietairesArchive_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
