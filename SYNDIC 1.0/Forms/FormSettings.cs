@@ -25,7 +25,7 @@ namespace SYNDIC_1._0
         /// </summary>
         public void getDataBaseNames()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 if (ConnectionState.Open != connection.State)
@@ -65,7 +65,7 @@ namespace SYNDIC_1._0
         /// </summary>
         public void getServerNames()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 if (connection.State != ConnectionState.Open)
@@ -159,7 +159,7 @@ namespace SYNDIC_1._0
         }
         private string defaultBackupPath()
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[0].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
             {
                 if (ConnectionState.Open != connection.State)
                 {
@@ -190,8 +190,22 @@ namespace SYNDIC_1._0
         /// Prompt a FolderBrowserDialog to the user to select the backup folder
         /// </summary>
         /// <returns>Folder name string</returns>
-        private string backupPath()
+        private string backupPath(string operation)
         {
+            if (operation == "restore")
+            {
+                using (OpenFileDialog folder = new OpenFileDialog())
+                {
+                    folder.Title = "Selectioner un emplacement ";
+                    folder.Filter = "fichier BackUp|*.bak";
+                    if (folder.ShowDialog() == DialogResult.OK)
+                    {
+                        if(Path.GetExtension(folder.FileName)!="bak")
+                            return folder.FileName;
+                    }
+                    return null;
+                }
+            }
             using (FolderBrowserDialog folder = new FolderBrowserDialog() )
             {
                 folder.Description = "Selectioner un emplacement ";
@@ -263,17 +277,19 @@ namespace SYNDIC_1._0
         /// <param name="external"> <b>true<b> if the back up or restore location is an external drive else <b>false<b></param>
         private void backupandRestore(string operation,bool autoBackup,bool external)
         {
+            string databaseName = comboBoxDataBaseName.Text;
+
             string query = string.Empty;
             switch (operation)
             {
                 case "backup" :
                     {
-                        query = "use master back up database @databasename to disk = '@path'";
+                        query = "backup database "+databaseName + " to disk = ";
                         break;
                     }
                 case "restore":
                     {
-                        query = " use master restore database @databsename from disk ='@path'";
+                        query = "use master restore database " + databaseName + " from disk = ";
                         break;
                     }
             }
@@ -291,7 +307,10 @@ namespace SYNDIC_1._0
             string path = string.Empty;
             if (external)
             {
-                path = backupPath();
+                path = backupPath(operation);
+
+                if (operation != "restore")
+                    path += "\\";
                 if (string.IsNullOrWhiteSpace(path))
                 {
                     MessageBox.Show("Selectioner un ficher pour sauvgarder la base de donnee","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -302,13 +321,14 @@ namespace SYNDIC_1._0
 
             else if (!external)
             {
-                path = defaultBackupPath();
+                //    path = defaultBackupPath()+"\\";
+                //    path = @"C:\Program Files\Microsoft SQL Server\MSSQL12.BENZIAN\MSSQL\Backup";
             }
-            
-            string databaseName = comboBoxDataBaseName.SelectedText;
-            string fullPath = String.Format("{0}{1}{2}.bak", path, databaseName, DateTime.Now.ToLongTimeString().Replace(':', ' ').Replace('/',' '));
+            string fullPath = path;
+            if (operation=="backup")
+                fullPath = String.Format("{0}{1}{2}.bak", path, databaseName, DateTime.Now.ToString().Replace(':', ' ').Replace('/',' ')).Replace(" ","");
 
-            string connection = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string connection = ConfigurationManager.ConnectionStrings[1].ConnectionString;
             using (SqlConnection myConnection = new SqlConnection(connection))
             {
                 if (myConnection.State != ConnectionState.Open)
@@ -322,10 +342,11 @@ namespace SYNDIC_1._0
                         MessageBox.Show(ex.Message);
                     }
                 }
-            
+                query += "'"+fullPath+"'";
                 using (SqlCommand command = new SqlCommand(query, myConnection))
                 {
                     command.CommandText = query;
+
                     if (autoBackup)
                     {
                         command.Parameters.AddWithValue("@databasename", autoBackupDatabaseName);
@@ -334,7 +355,21 @@ namespace SYNDIC_1._0
                     {
                         command.Parameters.AddWithValue("@databsename", databaseName);
                     }
+
+
+
                     command.Parameters.AddWithValue("@path", fullPath);
+
+                    if (operation == "restore")
+                    {
+                        using (SqlCommand commandseq = new SqlCommand("alter database " + databaseName + " set single_user with rollback after 3600", myConnection))
+                        {
+                            commandseq.ExecuteNonQuery();
+                        }
+
+                    }
+
+
                     try
                     {
                         this.Cursor = Cursors.WaitCursor;
@@ -344,6 +379,14 @@ namespace SYNDIC_1._0
                         if (result != 0 && !autoBackup)
                         {
                             MessageBox.Show("Operation réussie","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        }
+
+                        if (operation == "restore")
+                        {
+                            using (SqlCommand commandseq = new SqlCommand("alter database " + databaseName + " set multi_user", myConnection))
+                            {
+                                commandseq.ExecuteNonQuery();
+                            }
                         }
                     }
                     catch (Exception ex)

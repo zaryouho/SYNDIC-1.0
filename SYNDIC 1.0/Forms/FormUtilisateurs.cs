@@ -14,7 +14,7 @@ namespace SYNDIC_1._0.Forms
 {
     public partial class FormUtilisateurs : Form
     {
-        string connectionString = ConfigurationManager.ConnectionStrings[3].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
         string login = string.Empty;
         string password = string.Empty;
         string confirmedPassWord = string.Empty;
@@ -36,7 +36,7 @@ namespace SYNDIC_1._0.Forms
         }
         private void fillDataGrid()
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[3].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
             {
                 if (connection.State != ConnectionState.Open)
                 {

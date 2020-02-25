@@ -110,7 +110,7 @@ namespace SYNDIC_1._0
                                 && ec.mois.Equals(j-2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
 
                                 select new { ec.paid }).SingleOrDefault();
-
+                
                     if (s.paid == true)
                         dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
                     else
@@ -162,35 +162,37 @@ namespace SYNDIC_1._0
 
             dataGridViewconsultations.AutoResizeColumns();
             dataGridViewconsultations.Columns[0].Visible = false;
-           
 
-            for (int i = 0; i < dataGridViewconsultations.Rows.Count; i++)
+            try
             {
-                dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1,i];
-
-                for (int j = 3; j < 15; j++)
+                for (int i = 0; i < dataGridViewconsultations.Rows.Count; i++)
                 {
+                    dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, i];
+
+                    for (int j = 3; j < 15; j++)
+                    {
 
 
-                    var src = (
-                                from b in dc.biens
-                                join ec in dc.echeances on b.id equals ec.id_bien
-                                where b.id.Equals(int.Parse(listBoxIdBien.SelectedValue.ToString()))
-                                && ec.mois.Equals(j - 2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
+                        var src = (
+                                    from b in dc.biens
+                                    join ec in dc.echeances on b.id equals ec.id_bien
+                                    where b.id.Equals(int.Parse(listBoxIdBien.SelectedValue.ToString()))
+                                    && ec.mois.Equals(j - 2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
 
-                                select new { ec.paid }).SingleOrDefault();
+                                    select new { ec.paid }).SingleOrDefault();
 
-                    if (src.paid == true)
-                        dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
-                    else
-                        dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
+                        if (src.paid == true)
+                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
+                        else
+                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
+
+                    }
+
+
+
 
                 }
-
-                
-                
-               
-            }
+            }catch(Exception ex) { }
             dataGridViewconsultations.Columns[1].Width = 40;
         }
         
