@@ -139,7 +139,7 @@ namespace SYNDIC_1._0
         {
             using (OpenFileDialog file = new OpenFileDialog())
             {
-                file.InitialDirectory = @"c:\ Program Files\Microsoft SQL Server\";
+                file.InitialDirectory = @"c:\ Program Files\Microsoft SQL Server\\MSSQL12.SQLEXPRESS\MSSQL\Backup";
                 file.Filter = "Backup Files (*.bak)|*.bak";
                 file.DefaultExt = "bak";
                 file.Title = "Fichier de restoration";
