@@ -135,7 +135,7 @@
             // buttonImprimer
             // 
             this.buttonImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonImprimer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonImprimer.BackColor = System.Drawing.Color.Transparent;
             this.buttonImprimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonImprimer.FlatAppearance.BorderSize = 0;
@@ -144,12 +144,12 @@
             this.buttonImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonImprimer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonImprimer.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimer.Image = global::SYNDIC_1._0.Properties.Resources.imprimer_icon_mini;
             this.buttonImprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImprimer.Location = new System.Drawing.Point(602, 75);
+            this.buttonImprimer.Location = new System.Drawing.Point(727, 7);
             this.buttonImprimer.Name = "buttonImprimer";
-            this.buttonImprimer.Size = new System.Drawing.Size(195, 35);
+            this.buttonImprimer.Size = new System.Drawing.Size(61, 59);
             this.buttonImprimer.TabIndex = 31;
-            this.buttonImprimer.Text = "Imprimer";
             this.buttonImprimer.UseVisualStyleBackColor = false;
             this.buttonImprimer.Click += new System.EventHandler(this.buttonImprimer_Click);
             // 
@@ -166,11 +166,11 @@
             this.buttonListDocs.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListDocs.ForeColor = System.Drawing.Color.White;
             this.buttonListDocs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListDocs.Location = new System.Drawing.Point(602, 7);
+            this.buttonListDocs.Location = new System.Drawing.Point(602, 75);
             this.buttonListDocs.Name = "buttonListDocs";
             this.buttonListDocs.Size = new System.Drawing.Size(195, 35);
             this.buttonListDocs.TabIndex = 30;
-            this.buttonListDocs.Text = "Listes Documents";
+            this.buttonListDocs.Text = "Liste Documents";
             this.buttonListDocs.UseVisualStyleBackColor = false;
             this.buttonListDocs.Click += new System.EventHandler(this.buttonListDocs_Click);
             // 

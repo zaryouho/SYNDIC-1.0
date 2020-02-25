@@ -168,11 +168,11 @@
             // 
             this.labelTele.AutoSize = true;
             this.labelTele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTele.Location = new System.Drawing.Point(113, 250);
+            this.labelTele.Location = new System.Drawing.Point(121, 250);
             this.labelTele.Name = "labelTele";
-            this.labelTele.Size = new System.Drawing.Size(38, 17);
+            this.labelTele.Size = new System.Drawing.Size(30, 17);
             this.labelTele.TabIndex = 25;
-            this.labelTele.Text = "Tele :";
+            this.labelTele.Text = "Tel :";
             // 
             // labelCharge
             // 

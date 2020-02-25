@@ -269,9 +269,7 @@
             this.comboBoxTypeDepense.Location = new System.Drawing.Point(6, 26);
             this.comboBoxTypeDepense.Name = "comboBoxTypeDepense";
             this.comboBoxTypeDepense.Size = new System.Drawing.Size(187, 25);
-
             this.comboBoxTypeDepense.TabIndex = 2;
-
             this.comboBoxTypeDepense.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeDepense_SelectedIndexChanged);
             // 
             // panel1
@@ -467,7 +465,7 @@
             this.buttonAfficherFactures.Name = "buttonAfficherFactures";
             this.buttonAfficherFactures.Size = new System.Drawing.Size(151, 53);
             this.buttonAfficherFactures.TabIndex = 3;
-            this.buttonAfficherFactures.Text = "Afficher Factures";
+            this.buttonAfficherFactures.Text = "Afficher la facture";
             this.buttonAfficherFactures.UseVisualStyleBackColor = false;
             this.buttonAfficherFactures.Click += new System.EventHandler(this.buttonAfficherFactures_Click);
             // 
@@ -487,10 +485,8 @@
             this.buttonAfficherInterventions.Location = new System.Drawing.Point(262, 8);
             this.buttonAfficherInterventions.Name = "buttonAfficherInterventions";
             this.buttonAfficherInterventions.Size = new System.Drawing.Size(151, 53);
-
             this.buttonAfficherInterventions.TabIndex = 2;
             this.buttonAfficherInterventions.Text = "Afficher Interventions";
-
             this.buttonAfficherInterventions.UseVisualStyleBackColor = false;
             this.buttonAfficherInterventions.Click += new System.EventHandler(this.buttonAfficherInterventions_Click);
             // 
@@ -510,10 +506,8 @@
             this.buttonAjouterDepense.Location = new System.Drawing.Point(51, 8);
             this.buttonAjouterDepense.Name = "buttonAjouterDepense";
             this.buttonAjouterDepense.Size = new System.Drawing.Size(198, 53);
-
             this.buttonAjouterDepense.TabIndex = 1;
             this.buttonAjouterDepense.Text = "Ajouter Dépense";
-
             this.buttonAjouterDepense.UseVisualStyleBackColor = false;
             this.buttonAjouterDepense.Click += new System.EventHandler(this.buttonAjouterDepense_Click);
             // 
@@ -533,10 +527,8 @@
             this.buttonModifierDepense.Location = new System.Drawing.Point(590, 8);
             this.buttonModifierDepense.Name = "buttonModifierDepense";
             this.buttonModifierDepense.Size = new System.Drawing.Size(205, 53);
-
             this.buttonModifierDepense.TabIndex = 0;
             this.buttonModifierDepense.Text = "Modifier Dépense";
-
             this.buttonModifierDepense.UseVisualStyleBackColor = false;
             this.buttonModifierDepense.Click += new System.EventHandler(this.buttonModifierDepense_Click);
             // 

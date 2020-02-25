@@ -111,24 +111,7 @@ namespace SYNDIC_1._0
             {
                 autoBackupDatabaseName = comboBoxDataBaseName.Items[0].ToString();
             }
-            
-            checkBoxAutoBackup.Checked = Properties.Settings.Default.Interval != 0 ? true : false ;
-
-            if (checkBoxAutoBackup.Checked)
-            {
-                switch (Properties.Settings.Default.Interval)
-                {
-                    case 1:
-                        radioButtonDailyBackup.Checked = true;
-                        break;
-                    case 7:
-                        radioButtonWeeklyBackup.Checked = true;
-                        break;
-                    case 30:
-                        radioButtonMonthlyBackup.Checked = true;
-                        break;
-                }
-            }           
+                 
         }
 
         /// <summary>
@@ -239,33 +222,7 @@ namespace SYNDIC_1._0
             backupandRestore("restore", false, true); 
         }
 
-        private void checkBoxAutoBackup_CheckedChanged(object sender, EventArgs e)
-        {
-            DateTime today = DateTime.Now;
-            int interval = 0;
-            
-            buttonRestoreFromExternalDrive.Enabled = checkBoxAutoBackup.Checked ? false : true;
-            buttonBackuptoExternalDrive.Enabled = checkBoxAutoBackup.Checked ? false : true;
-
-            while (checkBoxAutoBackup.Checked)
-            {
-                interval = radioButtonDailyBackup.Checked ? 1 : 0;
-                interval = radioButtonWeeklyBackup.Checked ? 7 : 0;
-                interval = radioButtonMonthlyBackup.Checked ? 30 : 0;
-
-                while (interval != 0)
-                {
-                    Properties.Settings.Default.Interval = interval;
-                    Properties.Settings.Default.Today = today;
-                    Properties.Settings.Default.Save();
-
-                    if (Properties.Settings.Default.Today.AddDays(Properties.Settings.Default.Interval) == DateTime.Now)
-                    {
-                        backupandRestore("backup", true, false);
-                    }
-                } 
-            }
-        }
+        
 
         /// <summary>
         /// Either backs up or restores the current database 
@@ -395,6 +352,11 @@ namespace SYNDIC_1._0
                     }
                 }
             }
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -63,10 +63,8 @@
             this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValider.Location = new System.Drawing.Point(64, 218);
             this.buttonValider.Name = "buttonValider";
-
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 4;
-
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
@@ -74,12 +72,10 @@
             // textBoxNom
             // 
             this.textBoxNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNom.Location = new System.Drawing.Point(180, 87);
+            this.textBoxNom.Location = new System.Drawing.Point(127, 93);
             this.textBoxNom.Name = "textBoxNom";
-
-            this.textBoxNom.Size = new System.Drawing.Size(182, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(182, 22);
             this.textBoxNom.TabIndex = 0;
-
             this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             this.textBoxNom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNom_KeyPress);
             // 
@@ -88,11 +84,9 @@
             this.buttonRaz.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRaz.Location = new System.Drawing.Point(230, 218);
             this.buttonRaz.Name = "buttonRaz";
-
             this.buttonRaz.Size = new System.Drawing.Size(75, 23);
             this.buttonRaz.TabIndex = 3;
             this.buttonRaz.Text = "RAZ";
-
             this.buttonRaz.UseVisualStyleBackColor = true;
             this.buttonRaz.Click += new System.EventHandler(this.buttonRaz_Click);
             // 
@@ -100,7 +94,7 @@
             // 
             this.labelNom.AutoSize = true;
             this.labelNom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNom.Location = new System.Drawing.Point(121, 87);
+            this.labelNom.Location = new System.Drawing.Point(68, 93);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(51, 20);
             this.labelNom.TabIndex = 19;
