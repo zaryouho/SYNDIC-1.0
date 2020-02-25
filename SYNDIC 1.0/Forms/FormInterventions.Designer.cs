@@ -288,7 +288,7 @@
             this.buttonModifierIntervention.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModifierIntervention.ForeColor = System.Drawing.Color.White;
             this.buttonModifierIntervention.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModifierIntervention.Location = new System.Drawing.Point(544, 14);
+            this.buttonModifierIntervention.Location = new System.Drawing.Point(543, 14);
             this.buttonModifierIntervention.Name = "buttonModifierIntervention";
             this.buttonModifierIntervention.Size = new System.Drawing.Size(242, 53);
             this.buttonModifierIntervention.TabIndex = 9;
