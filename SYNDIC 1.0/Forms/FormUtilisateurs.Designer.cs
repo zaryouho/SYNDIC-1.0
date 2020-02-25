@@ -124,11 +124,11 @@
             // 
             this.checkBoxShowPassword.AutoSize = true;
             this.checkBoxShowPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(334, 137);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(375, 137);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(148, 21);
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(170, 21);
             this.checkBoxShowPassword.TabIndex = 3;
-            this.checkBoxShowPassword.Text = "Affiche mot de pass ";
+            this.checkBoxShowPassword.Text = "Affiche le mot de passe ";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
             this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
@@ -136,11 +136,11 @@
             // 
             this.labelUserType.AutoSize = true;
             this.labelUserType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserType.Location = new System.Drawing.Point(67, 181);
+            this.labelUserType.Location = new System.Drawing.Point(88, 181);
             this.labelUserType.Name = "labelUserType";
-            this.labelUserType.Size = new System.Drawing.Size(102, 17);
+            this.labelUserType.Size = new System.Drawing.Size(112, 17);
             this.labelUserType.TabIndex = 10;
-            this.labelUserType.Text = "type utilisateur :";
+            this.labelUserType.Text = "type d\'utilisateur :";
             // 
             // comboBoxTypeUser
             // 
@@ -149,7 +149,7 @@
             this.comboBoxTypeUser.Items.AddRange(new object[] {
             "Admin",
             "Utilisateur"});
-            this.comboBoxTypeUser.Location = new System.Drawing.Point(175, 173);
+            this.comboBoxTypeUser.Location = new System.Drawing.Point(216, 178);
             this.comboBoxTypeUser.Name = "comboBoxTypeUser";
             this.comboBoxTypeUser.Size = new System.Drawing.Size(153, 25);
             this.comboBoxTypeUser.TabIndex = 4;
@@ -157,7 +157,7 @@
             // textBoxConfirmePassword
             // 
             this.textBoxConfirmePassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxConfirmePassword.Location = new System.Drawing.Point(175, 135);
+            this.textBoxConfirmePassword.Location = new System.Drawing.Point(216, 135);
             this.textBoxConfirmePassword.Name = "textBoxConfirmePassword";
             this.textBoxConfirmePassword.Size = new System.Drawing.Size(153, 22);
             this.textBoxConfirmePassword.TabIndex = 2;
@@ -167,16 +167,16 @@
             // 
             this.labelConfirme.AutoSize = true;
             this.labelConfirme.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConfirme.Location = new System.Drawing.Point(23, 138);
+            this.labelConfirme.Location = new System.Drawing.Point(32, 138);
             this.labelConfirme.Name = "labelConfirme";
-            this.labelConfirme.Size = new System.Drawing.Size(146, 17);
+            this.labelConfirme.Size = new System.Drawing.Size(168, 17);
             this.labelConfirme.TabIndex = 7;
-            this.labelConfirme.Text = "confirmer mot de pass :";
+            this.labelConfirme.Text = "confirmer le mot de passe :";
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(175, 93);
+            this.textBoxPassword.Location = new System.Drawing.Point(216, 93);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(153, 22);
             this.textBoxPassword.TabIndex = 1;
@@ -186,16 +186,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 96);
+            this.label2.Location = new System.Drawing.Point(106, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
+            this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "mot de pass :";
+            this.label2.Text = "mot de passe :";
             // 
             // textBoxLogin
             // 
             this.textBoxLogin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLogin.Location = new System.Drawing.Point(175, 54);
+            this.textBoxLogin.Location = new System.Drawing.Point(216, 54);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(153, 22);
             this.textBoxLogin.TabIndex = 0;
@@ -205,7 +205,7 @@
             // 
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogin.Location = new System.Drawing.Point(123, 54);
+            this.labelLogin.Location = new System.Drawing.Point(154, 54);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(46, 17);
             this.labelLogin.TabIndex = 3;
@@ -218,12 +218,10 @@
             this.buttonDeleteUser.ForeColor = System.Drawing.Color.White;
             this.buttonDeleteUser.Location = new System.Drawing.Point(356, 311);
             this.buttonDeleteUser.Name = "buttonDeleteUser";
-
             this.buttonDeleteUser.Size = new System.Drawing.Size(152, 58);
             this.buttonDeleteUser.TabIndex = 7;
-            this.buttonDeleteUser.Text = "Supprimer utilisateur";
+            this.buttonDeleteUser.Text = "Supprimer l\'utilisateur";
             this.buttonDeleteUser.UseVisualStyleBackColor = false;
-
             this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
             // 
             // buttonModifyUser
@@ -233,12 +231,10 @@
             this.buttonModifyUser.ForeColor = System.Drawing.Color.White;
             this.buttonModifyUser.Location = new System.Drawing.Point(180, 311);
             this.buttonModifyUser.Name = "buttonModifyUser";
-
             this.buttonModifyUser.Size = new System.Drawing.Size(152, 58);
             this.buttonModifyUser.TabIndex = 5;
-            this.buttonModifyUser.Text = "Modifier utilisateur";
+            this.buttonModifyUser.Text = "Modifier l\'utilisateur";
             this.buttonModifyUser.UseVisualStyleBackColor = false;
-
             this.buttonModifyUser.Click += new System.EventHandler(this.buttonModifyUser_Click);
             // 
             // buttonAddUser
