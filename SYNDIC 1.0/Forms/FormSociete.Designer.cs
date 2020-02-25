@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPSociete = new System.Windows.Forms.TableLayoutPanel();
             this.labelEmploye = new System.Windows.Forms.Label();
             this.labelCloseEmploye = new System.Windows.Forms.Label();
             this.tableLayoutPanelEmploye = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSociete = new System.Windows.Forms.Button();
             this.buttonSocieteArchive = new System.Windows.Forms.Button();
-            this.buttonAjouterSociete = new System.Windows.Forms.Button();
             this.panelIN = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.buttonRechercher = new System.Windows.Forms.Button();
@@ -96,7 +95,7 @@
             this.labelEmploye.Name = "labelEmploye";
             this.labelEmploye.Size = new System.Drawing.Size(260, 49);
             this.labelEmploye.TabIndex = 1;
-            this.labelEmploye.Text = "Les Societe";
+            this.labelEmploye.Text = "Les sociétés";
             this.labelEmploye.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelCloseEmploye
@@ -120,7 +119,6 @@
             this.tableLayoutPanelEmploye.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelEmploye.Controls.Add(this.buttonSociete, 0, 0);
             this.tableLayoutPanelEmploye.Controls.Add(this.buttonSocieteArchive, 2, 0);
-            this.tableLayoutPanelEmploye.Controls.Add(this.buttonAjouterSociete, 1, 0);
             this.tableLayoutPanelEmploye.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanelEmploye.Location = new System.Drawing.Point(0, 49);
             this.tableLayoutPanelEmploye.Name = "tableLayoutPanelEmploye";
@@ -146,10 +144,8 @@
             this.buttonSociete.Location = new System.Drawing.Point(3, 3);
             this.buttonSociete.Name = "buttonSociete";
             this.buttonSociete.Size = new System.Drawing.Size(260, 37);
-
             this.buttonSociete.TabIndex = 0;
-            this.buttonSociete.Text = "Societe";
-
+            this.buttonSociete.Text = "Société";
             this.buttonSociete.UseVisualStyleBackColor = false;
             this.buttonSociete.Click += new System.EventHandler(this.buttonSociete_Click);
             // 
@@ -169,35 +165,10 @@
             this.buttonSocieteArchive.Location = new System.Drawing.Point(535, 3);
             this.buttonSocieteArchive.Name = "buttonSocieteArchive";
             this.buttonSocieteArchive.Size = new System.Drawing.Size(262, 37);
-
             this.buttonSocieteArchive.TabIndex = 2;
-            this.buttonSocieteArchive.Text = "Societe  arch.";
-
+            this.buttonSocieteArchive.Text = "Sociétés  arch.";
             this.buttonSocieteArchive.UseVisualStyleBackColor = false;
             this.buttonSocieteArchive.Click += new System.EventHandler(this.buttonSocieteArchive_Click);
-            // 
-            // buttonAjouterSociete
-            // 
-            this.buttonAjouterSociete.BackColor = System.Drawing.Color.Blue;
-            this.buttonAjouterSociete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAjouterSociete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAjouterSociete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAjouterSociete.FlatAppearance.BorderSize = 0;
-            this.buttonAjouterSociete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterSociete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterSociete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAjouterSociete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterSociete.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterSociete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterSociete.Location = new System.Drawing.Point(269, 3);
-            this.buttonAjouterSociete.Name = "buttonAjouterSociete";
-            this.buttonAjouterSociete.Size = new System.Drawing.Size(260, 37);
-
-            this.buttonAjouterSociete.TabIndex = 1;
-            this.buttonAjouterSociete.Text = "Ajouter Societe";
-
-            this.buttonAjouterSociete.UseVisualStyleBackColor = false;
-            this.buttonAjouterSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
             // panelIN
             // 
@@ -324,40 +295,40 @@
             // 
             this.dataGridViewSociete.AllowUserToAddRows = false;
             this.dataGridViewSociete.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dataGridViewSociete.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewSociete.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewSociete.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewSociete.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSociete.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSociete.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewSociete.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSociete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSociete.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewSociete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewSociete.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewSociete.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewSociete.Name = "dataGridViewSociete";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSociete.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSociete.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewSociete.RowHeadersWidth = 25;
             this.dataGridViewSociete.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSociete.Size = new System.Drawing.Size(738, 258);
@@ -399,10 +370,8 @@
             this.buttonAjouterSSociete.Location = new System.Drawing.Point(3, 3);
             this.buttonAjouterSSociete.Name = "buttonAjouterSSociete";
             this.buttonAjouterSSociete.Size = new System.Drawing.Size(260, 49);
-
             this.buttonAjouterSSociete.TabIndex = 1;
-            this.buttonAjouterSSociete.Text = "Ajouter Societe";
-
+            this.buttonAjouterSSociete.Text = "Ajouter une société";
             this.buttonAjouterSSociete.UseVisualStyleBackColor = false;
             this.buttonAjouterSSociete.Click += new System.EventHandler(this.buttonAjouterSociete_Click);
             // 
@@ -424,10 +393,8 @@
             this.buttonSupprimerSociete.Location = new System.Drawing.Point(535, 3);
             this.buttonSupprimerSociete.Name = "buttonSupprimerSociete";
             this.buttonSupprimerSociete.Size = new System.Drawing.Size(262, 49);
-
             this.buttonSupprimerSociete.TabIndex = 2;
-            this.buttonSupprimerSociete.Text = "Supprimer Societe";
-
+            this.buttonSupprimerSociete.Text = "Supprimer la société";
             this.buttonSupprimerSociete.UseVisualStyleBackColor = false;
             this.buttonSupprimerSociete.Click += new System.EventHandler(this.buttonSupprimerSociete_Click);
             // 
@@ -449,10 +416,8 @@
             this.buttonModifierSociete.Location = new System.Drawing.Point(269, 3);
             this.buttonModifierSociete.Name = "buttonModifierSociete";
             this.buttonModifierSociete.Size = new System.Drawing.Size(260, 49);
-
             this.buttonModifierSociete.TabIndex = 0;
-            this.buttonModifierSociete.Text = "Modifier Societe";
-
+            this.buttonModifierSociete.Text = "Modifier la société";
             this.buttonModifierSociete.UseVisualStyleBackColor = false;
             this.buttonModifierSociete.Click += new System.EventHandler(this.buttonModifierSociete_Click);
             // 
@@ -496,7 +461,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEmploye;
         private System.Windows.Forms.Button buttonSociete;
         private System.Windows.Forms.Button buttonSocieteArchive;
-        private System.Windows.Forms.Button buttonAjouterSociete;
         private System.Windows.Forms.Panel panelIN;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEmployeBottom;
         private System.Windows.Forms.Button buttonAjouterSSociete;
