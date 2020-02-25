@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SYNDIC_1._0.Forms;
+using System.Configuration;
 
 namespace SYNDIC_1._0
 {
@@ -188,6 +189,8 @@ namespace SYNDIC_1._0
         private void frmMenuOfficiel_Load(object sender, EventArgs e)
         {
             FormLogin.userId = 22;
+
+            
             
         }
     }

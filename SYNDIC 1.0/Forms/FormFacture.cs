@@ -112,7 +112,7 @@ namespace SYNDIC_1._0
         private void buttonImprimer_Click(object sender, EventArgs e)
         {
             crystalR.Facture facture = new crystalR.Facture();
-            string filter = "{depense.id} = " + id_Depense;
+            string filter = "{ligne.id_depense} = " + id_Depense;
             Forms.FormImpression imprimer = new Forms.FormImpression(facture, filter);
             imprimer.ShowDialog();
         }
