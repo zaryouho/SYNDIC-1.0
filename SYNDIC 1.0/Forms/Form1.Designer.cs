@@ -89,7 +89,7 @@
             this.buttonSettings.ForeColor = System.Drawing.Color.White;
             this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
             this.buttonSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSettings.Location = new System.Drawing.Point(0, 528);
+            this.buttonSettings.Location = new System.Drawing.Point(0, 531);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(265, 45);
             this.buttonSettings.TabIndex = 10;
@@ -127,7 +127,7 @@
             this.buttonEmploye.ForeColor = System.Drawing.Color.White;
             this.buttonEmploye.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmploye.Image")));
             this.buttonEmploye.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEmploye.Location = new System.Drawing.Point(0, 430);
+            this.buttonEmploye.Location = new System.Drawing.Point(0, 380);
             this.buttonEmploye.Name = "buttonEmploye";
             this.buttonEmploye.Size = new System.Drawing.Size(265, 45);
             this.buttonEmploye.TabIndex = 8;
@@ -146,7 +146,7 @@
             this.buttonSociete.ForeColor = System.Drawing.Color.White;
             this.buttonSociete.Image = ((System.Drawing.Image)(resources.GetObject("buttonSociete.Image")));
             this.buttonSociete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSociete.Location = new System.Drawing.Point(0, 381);
+            this.buttonSociete.Location = new System.Drawing.Point(0, 331);
             this.buttonSociete.Name = "buttonSociete";
             this.buttonSociete.Size = new System.Drawing.Size(265, 45);
             this.buttonSociete.TabIndex = 7;
@@ -165,7 +165,7 @@
             this.buttonRapportsStatistiques.ForeColor = System.Drawing.Color.White;
             this.buttonRapportsStatistiques.Image = ((System.Drawing.Image)(resources.GetObject("buttonRapportsStatistiques.Image")));
             this.buttonRapportsStatistiques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRapportsStatistiques.Location = new System.Drawing.Point(0, 332);
+            this.buttonRapportsStatistiques.Location = new System.Drawing.Point(0, 282);
             this.buttonRapportsStatistiques.Name = "buttonRapportsStatistiques";
             this.buttonRapportsStatistiques.Size = new System.Drawing.Size(265, 45);
             this.buttonRapportsStatistiques.TabIndex = 6;
@@ -203,7 +203,7 @@
             this.buttonHistoriques.ForeColor = System.Drawing.Color.White;
             this.buttonHistoriques.Image = ((System.Drawing.Image)(resources.GetObject("buttonHistoriques.Image")));
             this.buttonHistoriques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHistoriques.Location = new System.Drawing.Point(0, 283);
+            this.buttonHistoriques.Location = new System.Drawing.Point(0, 430);
             this.buttonHistoriques.Name = "buttonHistoriques";
             this.buttonHistoriques.Size = new System.Drawing.Size(265, 45);
             this.buttonHistoriques.TabIndex = 5;

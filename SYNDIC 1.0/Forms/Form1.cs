@@ -180,7 +180,7 @@ namespace SYNDIC_1._0
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             if (flag != 10 || this.panelContainer.Controls.Count == 0)
-                OpenFormInPannel(new FormSettings());// to be replaced wit the settings form
+                OpenFormInPannel(new FormSettings());
 
 
             flag = 10;
@@ -188,10 +188,10 @@ namespace SYNDIC_1._0
 
         private void frmMenuOfficiel_Load(object sender, EventArgs e)
         {
-            FormLogin.userId = 22;
+            buttonSettings.Visible = FormLogin.typeUtilisateur.Equals("Admin");
+            buttonUsers.Visible = FormLogin.typeUtilisateur.Equals("Admin");
+            buttonHistoriques.Visible = FormLogin.typeUtilisateur.Equals("Admin");
 
-            
-            
         }
     }
 }
