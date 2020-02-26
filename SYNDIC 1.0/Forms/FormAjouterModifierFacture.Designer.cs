@@ -128,6 +128,7 @@
             // 
             // comboBoxProduit
             // 
+            this.comboBoxProduit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProduit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProduit.FormattingEnabled = true;
             this.comboBoxProduit.Location = new System.Drawing.Point(115, 86);

@@ -40,8 +40,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelAjouter = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelImeuble.SuspendLayout();
             this.panelContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCloseDocuments
@@ -61,7 +63,7 @@
             // 
             this.buttonValider.Enabled = false;
             this.buttonValider.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonValider.Location = new System.Drawing.Point(64, 218);
+            this.buttonValider.Location = new System.Drawing.Point(50, 3);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 4;
@@ -72,7 +74,7 @@
             // textBoxNom
             // 
             this.textBoxNom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNom.Location = new System.Drawing.Point(127, 93);
+            this.textBoxNom.Location = new System.Drawing.Point(180, 91);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(182, 22);
             this.textBoxNom.TabIndex = 0;
@@ -82,7 +84,7 @@
             // buttonRaz
             // 
             this.buttonRaz.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRaz.Location = new System.Drawing.Point(230, 218);
+            this.buttonRaz.Location = new System.Drawing.Point(266, 3);
             this.buttonRaz.Name = "buttonRaz";
             this.buttonRaz.Size = new System.Drawing.Size(75, 23);
             this.buttonRaz.TabIndex = 3;
@@ -94,7 +96,7 @@
             // 
             this.labelNom.AutoSize = true;
             this.labelNom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNom.Location = new System.Drawing.Point(68, 93);
+            this.labelNom.Location = new System.Drawing.Point(74, 91);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(51, 20);
             this.labelNom.TabIndex = 19;
@@ -157,17 +159,15 @@
             this.labelAjouter.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAjouter.Location = new System.Drawing.Point(149, 9);
             this.labelAjouter.Name = "labelAjouter";
-            this.labelAjouter.Size = new System.Drawing.Size(97, 30);
+            this.labelAjouter.Size = new System.Drawing.Size(0, 30);
             this.labelAjouter.TabIndex = 24;
-            this.labelAjouter.Text = "Ajouter";
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.panel1);
             this.panelContainer.Controls.Add(this.labelAjouter);
             this.panelContainer.Controls.Add(this.labelCloseDocuments);
-            this.panelContainer.Controls.Add(this.buttonValider);
             this.panelContainer.Controls.Add(this.textBoxNom);
-            this.panelContainer.Controls.Add(this.buttonRaz);
             this.panelContainer.Controls.Add(this.labelNom);
             this.panelContainer.Controls.Add(this.panelImeuble);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -175,6 +175,16 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(388, 252);
             this.panelContainer.TabIndex = 25;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonRaz);
+            this.panel1.Controls.Add(this.buttonValider);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 216);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(370, 36);
+            this.panel1.TabIndex = 25;
             // 
             // FormAjouterBlocOrImmeuble
             // 
@@ -191,6 +201,7 @@
             this.panelImeuble.PerformLayout();
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -209,5 +220,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelAjouter;
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Panel panel1;
     }
 }

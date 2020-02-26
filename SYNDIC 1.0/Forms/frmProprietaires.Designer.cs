@@ -32,7 +32,6 @@
             this.tableLayoutPanelProprietaires = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSsProprietaires = new System.Windows.Forms.Button();
             this.buttonSsProprietairesArchive = new System.Windows.Forms.Button();
-            this.buttonSsAjouterProprietaires = new System.Windows.Forms.Button();
             this.buttonSsProprietairesRecettes = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelProprietaires = new System.Windows.Forms.Label();
@@ -62,15 +61,14 @@
             // 
             // tableLayoutPanelProprietaires
             // 
-            this.tableLayoutPanelProprietaires.ColumnCount = 4;
+            this.tableLayoutPanelProprietaires.ColumnCount = 3;
             this.tableLayoutPanelProprietaires.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelProprietaires.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelProprietaires.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelProprietaires.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelProprietaires.Controls.Add(this.buttonSsProprietaires, 0, 0);
-            this.tableLayoutPanelProprietaires.Controls.Add(this.buttonSsProprietairesArchive, 2, 0);
-            this.tableLayoutPanelProprietaires.Controls.Add(this.buttonSsAjouterProprietaires, 1, 0);
             this.tableLayoutPanelProprietaires.Controls.Add(this.buttonSsProprietairesRecettes, 3, 0);
+            this.tableLayoutPanelProprietaires.Controls.Add(this.buttonSsProprietairesArchive, 1, 0);
             this.tableLayoutPanelProprietaires.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanelProprietaires.Location = new System.Drawing.Point(0, 49);
             this.tableLayoutPanelProprietaires.Name = "tableLayoutPanelProprietaires";
@@ -95,7 +93,7 @@
             this.buttonSsProprietaires.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSsProprietaires.Location = new System.Drawing.Point(3, 3);
             this.buttonSsProprietaires.Name = "buttonSsProprietaires";
-            this.buttonSsProprietaires.Size = new System.Drawing.Size(183, 37);
+            this.buttonSsProprietaires.Size = new System.Drawing.Size(247, 37);
             this.buttonSsProprietaires.TabIndex = 0;
             this.buttonSsProprietaires.Text = "Propriétaires";
             this.buttonSsProprietaires.UseVisualStyleBackColor = false;
@@ -114,34 +112,13 @@
             this.buttonSsProprietairesArchive.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSsProprietairesArchive.ForeColor = System.Drawing.Color.White;
             this.buttonSsProprietairesArchive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSsProprietairesArchive.Location = new System.Drawing.Point(381, 3);
+            this.buttonSsProprietairesArchive.Location = new System.Drawing.Point(256, 3);
             this.buttonSsProprietairesArchive.Name = "buttonSsProprietairesArchive";
-            this.buttonSsProprietairesArchive.Size = new System.Drawing.Size(183, 37);
+            this.buttonSsProprietairesArchive.Size = new System.Drawing.Size(247, 37);
             this.buttonSsProprietairesArchive.TabIndex = 2;
             this.buttonSsProprietairesArchive.Text = "Propriétaires arch.";
             this.buttonSsProprietairesArchive.UseVisualStyleBackColor = false;
             this.buttonSsProprietairesArchive.Click += new System.EventHandler(this.buttonSsProprietairesArchive_Click);
-            // 
-            // buttonSsAjouterProprietaires
-            // 
-            this.buttonSsAjouterProprietaires.BackColor = System.Drawing.Color.Blue;
-            this.buttonSsAjouterProprietaires.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSsAjouterProprietaires.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSsAjouterProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSsAjouterProprietaires.FlatAppearance.BorderSize = 0;
-            this.buttonSsAjouterProprietaires.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonSsAjouterProprietaires.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.buttonSsAjouterProprietaires.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSsAjouterProprietaires.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSsAjouterProprietaires.ForeColor = System.Drawing.Color.White;
-            this.buttonSsAjouterProprietaires.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSsAjouterProprietaires.Location = new System.Drawing.Point(192, 3);
-            this.buttonSsAjouterProprietaires.Name = "buttonSsAjouterProprietaires";
-            this.buttonSsAjouterProprietaires.Size = new System.Drawing.Size(183, 37);
-            this.buttonSsAjouterProprietaires.TabIndex = 1;
-            this.buttonSsAjouterProprietaires.Text = "Ajouter Propriétaire";
-            this.buttonSsAjouterProprietaires.UseVisualStyleBackColor = false;
-            this.buttonSsAjouterProprietaires.Click += new System.EventHandler(this.buttonSsAjouterProprietaires_Click);
             // 
             // buttonSsProprietairesRecettes
             // 
@@ -156,9 +133,9 @@
             this.buttonSsProprietairesRecettes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSsProprietairesRecettes.ForeColor = System.Drawing.Color.White;
             this.buttonSsProprietairesRecettes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSsProprietairesRecettes.Location = new System.Drawing.Point(570, 3);
+            this.buttonSsProprietairesRecettes.Location = new System.Drawing.Point(509, 3);
             this.buttonSsProprietairesRecettes.Name = "buttonSsProprietairesRecettes";
-            this.buttonSsProprietairesRecettes.Size = new System.Drawing.Size(186, 37);
+            this.buttonSsProprietairesRecettes.Size = new System.Drawing.Size(247, 37);
             this.buttonSsProprietairesRecettes.TabIndex = 3;
             this.buttonSsProprietairesRecettes.Text = "Recettes";
             this.buttonSsProprietairesRecettes.UseVisualStyleBackColor = false;
@@ -235,7 +212,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelProprietaires;
         private System.Windows.Forms.Button buttonSsProprietaires;
         private System.Windows.Forms.Button buttonSsProprietairesArchive;
-        private System.Windows.Forms.Button buttonSsAjouterProprietaires;
         private System.Windows.Forms.Button buttonSsProprietairesRecettes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelProprietaires;

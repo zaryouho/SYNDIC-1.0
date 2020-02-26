@@ -27,14 +27,14 @@ namespace SYNDIC_1._0.Forms
             {
                 panelImeuble.Visible = false;
                 labelAjouter.Text += " Bloc";
-                this.Height = 185;
+                this.Size = new Size(388, 185);
             }
 
             else
             {
                 panelImeuble.Visible = true;
                 labelAjouter.Text += " Immeuble";
-                this.Height = 255;
+                this.Size = new Size(388, 255);
 
                 var src = from b in dc.blocs
                           select b;

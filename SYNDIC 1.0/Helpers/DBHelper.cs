@@ -218,7 +218,7 @@ namespace SYNDIC_1._0
 			{
 				MessageBox.Show(ex.Message);
 			}
-		
+
 
 		}
 

@@ -99,6 +99,7 @@ namespace SYNDIC_1._0
             valider(false);
             bsType.AddNew();
             dataGridGestionType.CurrentRow.Cells[1].Value = idType;
+            
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
@@ -109,13 +110,14 @@ namespace SYNDIC_1._0
                 bsType.RemoveCurrent();
                 MessageBox.Show("la Suppression a été effectuée avec succès");
                 flag = true;
+               
             }
         }
 
         private void FormGestionTypes_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (flag)
-                DBHelper.syncroniser("type");
+                DBHelper.syncroniser("Type");
              
         }
     }

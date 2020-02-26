@@ -43,7 +43,7 @@ namespace SYNDIC_1._0.Forms
         {
             if (id_Proprietaire != -1 && operation.Equals("Ajouter"))
             {
-                MessageBox.Show(id_Proprietaire.ToString());
+             
                 labelHead.Text = "Ajouter une Recette";
                 DBHelper.remplir_dataset("select b.id,b.nom + ' ' + b.titre as BienNom,im.nom as ImNom from bien b inner join immeuble im on im.id = b.id_immeuble where id_proprietaire = " + id_Proprietaire.ToString(), "Bien_Prop");
                 DBHelper.remplir_dataset("select * from type where idTableType in (select id from tabletype where libelle like 'echeance')", "typeEcheance");
@@ -89,13 +89,13 @@ namespace SYNDIC_1._0.Forms
             {
                 int id_Cotisation;
                 decimal montantRecette = Convert.ToDecimal(textBoxMontant.Text);
-
+                
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString);
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 SqlCommand com;
                 string sql = "insert into cotisation(date_recette,montant,typeRecette,id_propietaire,numRecu) values ('"
-                    + dateTimePickerDateRecette.Value.ToString() + "',"
+                    + dateTimePickerDateRecette.Value.ToShortDateString() + "',"
                     + textBoxMontant.Text.Replace("'", "''") + ",'"
                     + comboBoxTypeRecette.SelectedValue.ToString() + "',"
                     + comboBoxNomProprietaire.SelectedValue.ToString() + ","
@@ -210,7 +210,15 @@ namespace SYNDIC_1._0.Forms
                         {
                             com.ExecuteNonQuery();
                             DBHelper.syncroniser(nameof(cotisation));
+                            if (MessageBox.Show("voulez vous ajouter des documents ", "----", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                using (var formGestionDocument = new FormGestionDocument("documentCotisation","where idrecette ="+id_Cotisation,id_Cotisation))
+                                {
+                                    formGestionDocument.ShowDialog();
+                                }
+                            }
                             this.Close();
+                      
                         }
                     }
                     catch (Exception ee)
@@ -278,16 +286,7 @@ namespace SYNDIC_1._0.Forms
             }
         }
 
-        private void buttonAjouterDocument_Click(object sender, EventArgs e)
-        {
-            /*SaveFileDialog save = new SaveFileDialog();
-            save.Title = "Saving File";
-            save.Filter = "Pdf Files| *.pdf";
-            if(save.ShowDialog() == DialogResult.OK)
-            {
-                string fileName = save.FileName;
-            }*/
-        }
+        
 
         private void textBoxNumRecu_KeyPress(object sender, KeyPressEventArgs e)
         {

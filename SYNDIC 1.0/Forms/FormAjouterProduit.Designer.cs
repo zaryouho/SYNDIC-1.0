@@ -49,6 +49,7 @@
             this.buttonSupprimer = new System.Windows.Forms.Button();
             this.buttonModifier = new System.Windows.Forms.Button();
             this.buttonAjouter = new System.Windows.Forms.Button();
+            this.buttonAjouterCategorie = new System.Windows.Forms.Button();
             this.panelHead.SuspendLayout();
             this.panelValid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProduits)).BeginInit();
@@ -140,6 +141,7 @@
             // 
             // panelInputs
             // 
+            this.panelInputs.Controls.Add(this.buttonAjouterCategorie);
             this.panelInputs.Controls.Add(this.textBoxIdProduit);
             this.panelInputs.Controls.Add(this.labelIdProduit);
             this.panelInputs.Controls.Add(this.labelProduit);
@@ -294,6 +296,19 @@
             this.buttonAjouter.UseVisualStyleBackColor = true;
             this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
             // 
+            // buttonAjouterCategorie
+            // 
+            this.buttonAjouterCategorie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonAjouterCategorie.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAjouterCategorie.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouterCategorie.Location = new System.Drawing.Point(393, 145);
+            this.buttonAjouterCategorie.Name = "buttonAjouterCategorie";
+            this.buttonAjouterCategorie.Size = new System.Drawing.Size(50, 25);
+            this.buttonAjouterCategorie.TabIndex = 79;
+            this.buttonAjouterCategorie.Text = "...";
+            this.buttonAjouterCategorie.UseVisualStyleBackColor = false;
+            this.buttonAjouterCategorie.Click += new System.EventHandler(this.buttonAjouterCategorie_Click);
+            // 
             // FormAjouterProduit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,5 +360,6 @@
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Button buttonAjouter;
         private System.Windows.Forms.TextBox textBoxCategorieProduit;
+        private System.Windows.Forms.Button buttonAjouterCategorie;
     }
 }
