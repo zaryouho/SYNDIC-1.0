@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.buttonRechercher = new System.Windows.Forms.Button();
             this.textBoxrechercher = new System.Windows.Forms.TextBox();
@@ -101,18 +102,18 @@
             // 
             // splitContainerListeProprietaireBody.Panel1
             // 
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonLast);
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonNext);
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonprevious);
-            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.buttonFirst);
+            this.splitContainerListeProprietaireBody.Panel1.Controls.Add(this.dataGridViewProprietaires);
             this.splitContainerListeProprietaireBody.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // splitContainerListeProprietaireBody.Panel2
             // 
-            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.dataGridViewProprietaires);
+            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.buttonFirst);
+            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.buttonLast);
+            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.buttonprevious);
+            this.splitContainerListeProprietaireBody.Panel2.Controls.Add(this.buttonNext);
             this.splitContainerListeProprietaireBody.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainerListeProprietaireBody.Size = new System.Drawing.Size(784, 349);
-            this.splitContainerListeProprietaireBody.SplitterDistance = 72;
+            this.splitContainerListeProprietaireBody.SplitterDistance = 703;
             this.splitContainerListeProprietaireBody.TabIndex = 31;
             // 
             // buttonLast
@@ -120,7 +121,7 @@
             this.buttonLast.FlatAppearance.BorderSize = 0;
             this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
-            this.buttonLast.Location = new System.Drawing.Point(18, 258);
+            this.buttonLast.Location = new System.Drawing.Point(18, 263);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(39, 39);
             this.buttonLast.TabIndex = 4;
@@ -131,7 +132,7 @@
             this.buttonNext.FlatAppearance.BorderSize = 0;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
-            this.buttonNext.Location = new System.Drawing.Point(18, 203);
+            this.buttonNext.Location = new System.Drawing.Point(18, 208);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(39, 39);
             this.buttonNext.TabIndex = 2;
@@ -142,7 +143,7 @@
             this.buttonprevious.FlatAppearance.BorderSize = 0;
             this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
-            this.buttonprevious.Location = new System.Drawing.Point(18, 96);
+            this.buttonprevious.Location = new System.Drawing.Point(18, 101);
             this.buttonprevious.Name = "buttonprevious";
             this.buttonprevious.Size = new System.Drawing.Size(39, 39);
             this.buttonprevious.TabIndex = 3;
@@ -153,7 +154,7 @@
             this.buttonFirst.FlatAppearance.BorderSize = 0;
             this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
-            this.buttonFirst.Location = new System.Drawing.Point(18, 41);
+            this.buttonFirst.Location = new System.Drawing.Point(18, 46);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(39, 39);
             this.buttonFirst.TabIndex = 5;
@@ -163,41 +164,44 @@
             // 
             this.dataGridViewProprietaires.AllowUserToAddRows = false;
             this.dataGridViewProprietaires.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dataGridViewProprietaires.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewProprietaires.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewProprietaires.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProprietaires.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewProprietaires.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewProprietaires.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProprietaires.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProprietaires.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewProprietaires.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProprietaires.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProprietaires.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewProprietaires.RowHeadersWidth = 25;
             this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProprietaires.Size = new System.Drawing.Size(708, 349);
-            this.dataGridViewProprietaires.TabIndex = 6;
+            this.dataGridViewProprietaires.Size = new System.Drawing.Size(703, 349);
+            this.dataGridViewProprietaires.TabIndex = 5;
             // 
             // FormProprietairesArchive
             // 
@@ -233,8 +237,8 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonprevious;
         private System.Windows.Forms.Button buttonFirst;
-        private System.Windows.Forms.DataGridView dataGridViewProprietaires;
         private System.Windows.Forms.Button buttonRechercher;
         private System.Windows.Forms.TextBox textBoxrechercher;
+        private System.Windows.Forms.DataGridView dataGridViewProprietaires;
     }
 }

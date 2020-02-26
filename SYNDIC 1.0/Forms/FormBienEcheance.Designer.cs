@@ -135,6 +135,7 @@
             // 
             // comboBoxImmeuble
             // 
+            this.comboBoxImmeuble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxImmeuble.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxImmeuble.FormattingEnabled = true;
             this.comboBoxImmeuble.Location = new System.Drawing.Point(210, 30);
@@ -155,6 +156,7 @@
             // comboBoxBloc
             // 
             this.comboBoxBloc.BackColor = System.Drawing.Color.White;
+            this.comboBoxBloc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBloc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBloc.FormattingEnabled = true;
             this.comboBoxBloc.Location = new System.Drawing.Point(17, 30);

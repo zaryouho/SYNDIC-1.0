@@ -131,10 +131,11 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 398);
             this.splitContainer1.SplitterDistance = 116;
             this.splitContainer1.TabIndex = 6;
+            this.splitContainer1.TabStop = false;
             // 
             // buttonImprimer
             // 
-            this.buttonImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonImprimer.BackColor = System.Drawing.Color.Transparent;
             this.buttonImprimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -176,9 +177,10 @@
             // 
             // labelnbrBien
             // 
+            this.labelnbrBien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelnbrBien.AutoSize = true;
             this.labelnbrBien.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnbrBien.Location = new System.Drawing.Point(289, 7);
+            this.labelnbrBien.Location = new System.Drawing.Point(289, 83);
             this.labelnbrBien.Name = "labelnbrBien";
             this.labelnbrBien.Size = new System.Drawing.Size(36, 20);
             this.labelnbrBien.TabIndex = 29;
@@ -186,9 +188,10 @@
             // 
             // labelnbrBloc
             // 
+            this.labelnbrBloc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelnbrBloc.AutoSize = true;
             this.labelnbrBloc.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnbrBloc.Location = new System.Drawing.Point(289, 83);
+            this.labelnbrBloc.Location = new System.Drawing.Point(289, 7);
             this.labelnbrBloc.Name = "labelnbrBloc";
             this.labelnbrBloc.Size = new System.Drawing.Size(54, 20);
             this.labelnbrBloc.TabIndex = 27;
@@ -196,6 +199,7 @@
             // 
             // labelnbrImmeuble
             // 
+            this.labelnbrImmeuble.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelnbrImmeuble.AutoSize = true;
             this.labelnbrImmeuble.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelnbrImmeuble.Location = new System.Drawing.Point(289, 45);
@@ -206,37 +210,43 @@
             // 
             // buttonAjouterBloc
             // 
+            this.buttonAjouterBloc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonAjouterBloc.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAjouterBloc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAjouterBloc.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterBloc.Location = new System.Drawing.Point(473, 0);
+            this.buttonAjouterBloc.Location = new System.Drawing.Point(514, 0);
             this.buttonAjouterBloc.Name = "buttonAjouterBloc";
             this.buttonAjouterBloc.Size = new System.Drawing.Size(55, 39);
             this.buttonAjouterBloc.TabIndex = 24;
             this.buttonAjouterBloc.Text = "...";
             this.buttonAjouterBloc.UseVisualStyleBackColor = false;
+            this.buttonAjouterBloc.Click += new System.EventHandler(this.buttonAjouterBloc_Click);
             // 
             // buttonAjouterImmeuble
             // 
+            this.buttonAjouterImmeuble.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonAjouterImmeuble.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAjouterImmeuble.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(473, 37);
+            this.buttonAjouterImmeuble.Location = new System.Drawing.Point(514, 37);
             this.buttonAjouterImmeuble.Name = "buttonAjouterImmeuble";
             this.buttonAjouterImmeuble.Size = new System.Drawing.Size(55, 39);
             this.buttonAjouterImmeuble.TabIndex = 25;
             this.buttonAjouterImmeuble.Text = "...";
             this.buttonAjouterImmeuble.UseVisualStyleBackColor = false;
+            this.buttonAjouterImmeuble.Click += new System.EventHandler(this.buttonAjouterImmeuble_Click);
             // 
             // buttonAjouterBien
             // 
+            this.buttonAjouterBien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonAjouterBien.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonAjouterBien.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterBien.Location = new System.Drawing.Point(473, 75);
+            this.buttonAjouterBien.Location = new System.Drawing.Point(514, 75);
             this.buttonAjouterBien.Name = "buttonAjouterBien";
             this.buttonAjouterBien.Size = new System.Drawing.Size(55, 39);
             this.buttonAjouterBien.TabIndex = 26;
             this.buttonAjouterBien.Text = "...";
             this.buttonAjouterBien.UseVisualStyleBackColor = false;
+            this.buttonAjouterBien.Click += new System.EventHandler(this.buttonAjouterBien_Click);
             // 
             // textBoxResidence
             // 
@@ -308,6 +318,7 @@
             this.comboBoxAnnee.Name = "comboBoxAnnee";
             this.comboBoxAnnee.Size = new System.Drawing.Size(167, 21);
             this.comboBoxAnnee.TabIndex = 5;
+            this.comboBoxAnnee.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnnee_SelectedIndexChanged);
             // 
             // label2
             // 

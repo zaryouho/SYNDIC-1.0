@@ -49,7 +49,6 @@
             this.comboBoxTypeRecette = new System.Windows.Forms.ComboBox();
             this.labelNomProprietaire = new System.Windows.Forms.Label();
             this.labelInfoRecette = new System.Windows.Forms.Label();
-            this.buttonAjouterDocument = new System.Windows.Forms.Button();
             this.textBoxNumRecu = new System.Windows.Forms.TextBox();
             this.textBoxMontant = new System.Windows.Forms.TextBox();
             this.dateTimePickerDateRecette = new System.Windows.Forms.DateTimePicker();
@@ -273,7 +272,6 @@
             this.panelRecetteInfo.Controls.Add(this.comboBoxTypeRecette);
             this.panelRecetteInfo.Controls.Add(this.labelNomProprietaire);
             this.panelRecetteInfo.Controls.Add(this.labelInfoRecette);
-            this.panelRecetteInfo.Controls.Add(this.buttonAjouterDocument);
             this.panelRecetteInfo.Controls.Add(this.textBoxNumRecu);
             this.panelRecetteInfo.Controls.Add(this.textBoxMontant);
             this.panelRecetteInfo.Controls.Add(this.dateTimePickerDateRecette);
@@ -326,29 +324,6 @@
             this.labelInfoRecette.Size = new System.Drawing.Size(158, 17);
             this.labelInfoRecette.TabIndex = 11;
             this.labelInfoRecette.Text = "Information de Recette";
-            // 
-            // buttonAjouterDocument
-            // 
-            this.buttonAjouterDocument.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjouterDocument.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAjouterDocument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAjouterDocument.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAjouterDocument.FlatAppearance.BorderSize = 0;
-            this.buttonAjouterDocument.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.buttonAjouterDocument.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.buttonAjouterDocument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAjouterDocument.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterDocument.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterDocument.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterDocument.Location = new System.Drawing.Point(37, 219);
-            this.buttonAjouterDocument.Name = "buttonAjouterDocument";
-            this.buttonAjouterDocument.Size = new System.Drawing.Size(290, 45);
-            this.buttonAjouterDocument.TabIndex = 10;
-            this.buttonAjouterDocument.Text = "Ajouter Document";
-            this.buttonAjouterDocument.UseVisualStyleBackColor = false;
-            this.buttonAjouterDocument.Click += new System.EventHandler(this.buttonAjouterDocument_Click);
             // 
             // textBoxNumRecu
             // 
@@ -463,7 +438,6 @@
         private System.Windows.Forms.ComboBox comboBoxTypeRecette;
         private System.Windows.Forms.Label labelNomProprietaire;
         private System.Windows.Forms.Label labelInfoRecette;
-        private System.Windows.Forms.Button buttonAjouterDocument;
         private System.Windows.Forms.TextBox textBoxNumRecu;
         private System.Windows.Forms.TextBox textBoxMontant;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateRecette;

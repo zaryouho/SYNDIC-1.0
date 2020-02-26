@@ -81,9 +81,7 @@
             // 
             // buttonListDocs
             // 
-            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonListDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonListDocs.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonListDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonListDocs.Cursor = System.Windows.Forms.Cursors.Hand;

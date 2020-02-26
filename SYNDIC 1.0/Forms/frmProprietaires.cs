@@ -55,7 +55,7 @@ namespace SYNDIC_1._0
         {
             buttonSsProprietaires.BackColor = Color.Navy;
             buttonSsProprietairesArchive.BackColor = Color.Blue;
-            buttonSsAjouterProprietaires.BackColor = Color.Blue;
+           
             buttonSsProprietairesRecettes.BackColor = Color.Blue;
             OpenFormInPannel(new FormListeProprietaire());
 
@@ -73,7 +73,7 @@ namespace SYNDIC_1._0
            
             buttonSsProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesArchive.BackColor = Color.Blue;
-            buttonSsAjouterProprietaires.BackColor = Color.Navy;
+           
             buttonSsProprietairesRecettes.BackColor = Color.Blue;
 
         }
@@ -82,7 +82,7 @@ namespace SYNDIC_1._0
         {
             buttonSsProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesArchive.BackColor = Color.Navy;
-            buttonSsAjouterProprietaires.BackColor = Color.Blue;
+          
             buttonSsProprietairesRecettes.BackColor = Color.Blue;
             OpenFormInPannel(new FormProprietairesArchive());
         }
@@ -91,7 +91,7 @@ namespace SYNDIC_1._0
         {
             buttonSsProprietaires.BackColor = Color.Blue;
             buttonSsProprietairesArchive.BackColor = Color.Blue;
-            buttonSsAjouterProprietaires.BackColor = Color.Blue;
+          
             buttonSsProprietairesRecettes.BackColor = Color.Navy;
             OpenFormInPannel(new FormRecetteProprietaire());
 

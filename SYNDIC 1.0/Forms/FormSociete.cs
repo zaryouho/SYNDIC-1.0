@@ -54,7 +54,7 @@ namespace SYNDIC_1._0.Forms
           
             buttonSociete.BackColor = Color.Navy;
             buttonSocieteArchive.BackColor = Color.Blue;
-            buttonAjouterSociete.BackColor = Color.Blue;
+           
             FormSociete_Load(sender, e);
         }
 
@@ -62,7 +62,7 @@ namespace SYNDIC_1._0.Forms
         {
             buttonSociete.BackColor = Color.Blue;
             buttonSocieteArchive.BackColor = Color.Blue;
-            buttonAjouterSociete.BackColor = Color.Navy;
+           
             K = 'A';
 
             using (var FormAjouterModifierSociete = new FormAjouterModifierSociete(new societe(), K))
@@ -78,7 +78,7 @@ namespace SYNDIC_1._0.Forms
         {
             buttonSociete.BackColor = Color.Blue;
             buttonSocieteArchive.BackColor = Color.Navy;
-            buttonAjouterSociete.BackColor = Color.Blue;
+          
             var src = from soc in syndicDataContext.societes
                       select soc;
             dataGridViewSociete.DataSource = src;

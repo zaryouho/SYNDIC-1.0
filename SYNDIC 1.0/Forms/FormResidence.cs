@@ -15,8 +15,8 @@ namespace SYNDIC_1._0
     {
 
         DataClassesSyndicDataContext dc = new DataClassesSyndicDataContext();
-
-        string[] months = { "Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Jui", "Aout", "Sep", "Oct", "Nov", "Déc" };
+        
+        
         
         public FormResidence()
         {
@@ -35,10 +35,9 @@ namespace SYNDIC_1._0
                        on r.id_ville equals v.id
                        select new { r.nom, r.adresse, r.codepostale, Ville = v.nom }).First();
 
-            textBoxResidence.Text+= "Résidence: " + src.nom+"\r\n";
-            textBoxResidence.Text += "Adresse: " + src.adresse +"\r\n";
-            textBoxResidence.Text += "Ville: " + src.Ville +"\r\n";
-            textBoxResidence.Text += "Code Postal: " + src.codepostale;
+            textBoxResidence.Text = "Résidence: " + src.nom+"\r\n"+ "Adresse: " + src.adresse + "\r\n"
+               + "Ville: " + src.Ville + "\r\n" + "Code Postal: " + src.codepostale;
+          
 
 
             var src1 = from b in dc.blocs
@@ -60,6 +59,8 @@ namespace SYNDIC_1._0
             comboBoxBloc.ValueMember = "id";
             comboBoxBloc.DataSource = src1;
 
+           
+
             var source = from b in dc.biens
                          join p in dc.proprietaires on b.id_proprietaire equals p.id
                          where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
@@ -74,8 +75,7 @@ namespace SYNDIC_1._0
                              Avr = "",
                              Mai = "",
                              Jun = "",
-                             Jui = ""
-                         ,
+                             Jui = "",
                              Aut = "",
                              Sep = "",
                              Oct = "",
@@ -92,9 +92,11 @@ namespace SYNDIC_1._0
             dataGridViewconsultations.Columns[0].Visible = false;
             dataGridViewconsultations.AutoResizeColumns();
 
-            comboBoxAnnee.SelectedIndex = 0;
 
+            if (comboBoxAnnee.SelectedIndex == -1)
+                comboBoxAnnee.SelectedIndex = 0;
 
+            
             for (int i = 0; i < dataGridViewconsultations.Rows.Count; i++)
             {
                 dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, i];
@@ -117,10 +119,11 @@ namespace SYNDIC_1._0
                         dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
                 }
 
-                //listBoxIdBien.SelectedIndex += 1;
+               
             }
 
             dataGridViewconsultations.Columns[1].Width = 40;
+            dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, 0];
 
 
         }
@@ -146,54 +149,72 @@ namespace SYNDIC_1._0
 
         private void comboBoxImmeuble_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBoxAnnee.SelectedIndex = 0;
+          
 
-            var source = from b in dc.biens
-                         join p in dc.proprietaires on b.id_proprietaire equals p.id
-                         where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
-                         select new { b.id,Bien = b.nom, Propriétaire = p.nom  , Jan= "",
-                             Fév = "", Mar = "", Avr = "", Mai = "", Jun = "", Jui = ""
-                         , Aut= "", Sep= ""  , Oct= "" , Nov= "" , Dec= "" };
+                var source = from b in dc.biens
+                             join p in dc.proprietaires on b.id_proprietaire equals p.id
+                             where b.id_immeuble.Equals(comboBoxImmeuble.SelectedValue)
+                             select new
+                             {
+                                 b.id,
+                                 Bien = b.nom,
+                                 Propriétaire = p.nom,
+                                 Jan = "",
+                                 Fév = "",
+                                 Mar = "",
+                                 Avr = "",
+                                 Mai = "",
+                                 Jun = "",
+                                 Jui = "",
+                                 Aut = "",
+                                 Sep = "",
+                                 Oct = "",
+                                 Nov = "",
+                                 Dec = ""
+                             };
 
-            dataGridViewconsultations.DataSource = source;
-            listBoxIdBien.DisplayMember = "id";
-            listBoxIdBien.ValueMember = "id";
-            listBoxIdBien.DataSource = source;
+                dataGridViewconsultations.DataSource = source;
+                listBoxIdBien.DisplayMember = "id";
+                listBoxIdBien.ValueMember = "id";
+                listBoxIdBien.DataSource = source;
 
-            dataGridViewconsultations.AutoResizeColumns();
-            dataGridViewconsultations.Columns[0].Visible = false;
+                dataGridViewconsultations.AutoResizeColumns();
+                dataGridViewconsultations.Columns[0].Visible = false;
 
-            try
-            {
-                for (int i = 0; i < dataGridViewconsultations.Rows.Count; i++)
+                try
                 {
-                    dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, i];
-
-                    for (int j = 3; j < 15; j++)
+                    for (int i = 0; i < dataGridViewconsultations.Rows.Count; i++)
                     {
+                        dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, i];
+
+                        for (int j = 3; j < 15; j++)
+                        {
 
 
-                        var src = (
-                                    from b in dc.biens
-                                    join ec in dc.echeances on b.id equals ec.id_bien
-                                    where b.id.Equals(int.Parse(listBoxIdBien.SelectedValue.ToString()))
-                                    && ec.mois.Equals(j - 2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
+                            var src = (
+                                        from b in dc.biens
+                                        join ec in dc.echeances on b.id equals ec.id_bien
+                                        where b.id.Equals(int.Parse(listBoxIdBien.SelectedValue.ToString()))
+                                        && ec.mois.Equals(j - 2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
 
-                                    select new { ec.paid }).SingleOrDefault();
+                                        select new { ec.paid }).SingleOrDefault();
 
-                        if (src.paid == true)
-                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
-                        else
-                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
+                            if (src.paid == true)
+                                dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
+                            else
+                                dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
+
+                        }
+
+
+
 
                     }
-
-
-
-
+              
                 }
-            }catch(Exception ex) { }
-            dataGridViewconsultations.Columns[1].Width = 40;
+                catch (Exception ex) { }
+                dataGridViewconsultations.Columns[1].Width = 40;
+            dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, 0];
         }
         
 
@@ -232,40 +253,21 @@ namespace SYNDIC_1._0
             printDocumentECbiens.Print();
         }
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+    
 
         private void buttonAjouterBien_Click(object sender, EventArgs e)
         {
+            using (var formModifierBien = new FormModifierBien("Ajouter",DateTime.Today))
+            {
+                formModifierBien.ShowDialog();
+            }
 
+            FormResidence_Load(sender, e);
         }
 
-        private void buttonAjouterImmeuble_Click_1(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void labelnbrBloc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelnbrImmeuble_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelnbrBien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAjouterBloc_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonListDocs_Click(object sender, EventArgs e)
         {
@@ -273,6 +275,43 @@ namespace SYNDIC_1._0
             {
                 formGestionDocument.ShowDialog();
             }
+        }
+
+        private void comboBoxAnnee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dataGridViewconsultations.Rows.Count; i++)
+                {
+                    dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, i];
+
+                    for (int j = 3; j < 15; j++)
+                    {
+
+
+                        var src = (
+                                    from b in dc.biens
+                                    join ec in dc.echeances on b.id equals ec.id_bien
+                                    where b.id.Equals(int.Parse(listBoxIdBien.SelectedValue.ToString()))
+                                    && ec.mois.Equals(j - 2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
+
+                                    select new { ec.paid }).SingleOrDefault();
+
+                        if (src.paid == true)
+                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
+                        else
+                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
+
+                    }
+
+
+
+
+                }
+
+            }
+            catch (Exception ex) { }
+            dataGridViewconsultations.Columns[1].Width = 40;
         }
     }
 

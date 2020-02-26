@@ -264,6 +264,7 @@
             // comboBoxTypeDepense
             // 
             this.comboBoxTypeDepense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBoxTypeDepense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypeDepense.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTypeDepense.FormattingEnabled = true;
             this.comboBoxTypeDepense.Location = new System.Drawing.Point(6, 26);

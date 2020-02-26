@@ -185,5 +185,20 @@ namespace SYNDIC_1._0
             if ((!char.IsDigit(e.KeyChar) && e.KeyChar != (char)(Keys.Back)))
                 e.Handled = true;
         }
+
+        private void buttonAjouterCategorie_Click(object sender, EventArgs e)
+        {
+            using (var formGestionTypes = new FormGestionTypes("categorie"))
+            {
+                formGestionTypes.ShowDialog();
+            }
+           // DBHelper.syncroniser("categorieProduit");
+            DBHelper.dataSet.Tables.Remove("categorieProduit");
+          
+            DBHelper.remplir_dataset("select libelleType from Type where idTableType in( select id from TableType where libelle like 'categorie' )", "categorieProduit");
+            bsCategorie = DBHelper.remplir_bindingsource("categorieProduit");
+            DBHelper.remplir_ListControl(comboBoxCategorie, bsCategorie, "libelleType", "libelleType");
+
+        }
     }
 }

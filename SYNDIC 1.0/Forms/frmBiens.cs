@@ -53,7 +53,7 @@ namespace SYNDIC_1._0
           
             buttonSsBiensListe.BackColor = Color.Navy;
             buttonSsBiensEcheances.BackColor = Color.Blue;
-            buttonSsBiensEchangeProprietaire.BackColor = Color.Blue;
+           
             OpenFormInPannel(new FormListeBien());
         }
 
@@ -62,7 +62,7 @@ namespace SYNDIC_1._0
           
             buttonSsBiensListe.BackColor = Color.Blue;
             buttonSsBiensEcheances.BackColor = Color.Blue;
-            buttonSsBiensEchangeProprietaire.BackColor = Color.Navy;
+          
         }
 
         private void buttonSsBiensEcheances_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace SYNDIC_1._0
            
             buttonSsBiensListe.BackColor = Color.Blue;
             buttonSsBiensEcheances.BackColor = Color.Navy;
-            buttonSsBiensEchangeProprietaire.BackColor = Color.Blue;
+          
             OpenFormInPannel(new FormBienEcheance());
             
         }
