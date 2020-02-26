@@ -31,8 +31,8 @@ namespace SYNDIC_1._0.Forms
         }
 
 
-        string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
-        string typeUtilisateur = string.Empty;
+        string connectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
+        public static string typeUtilisateur = string.Empty;
         public static int userId = -1;
         public bool authentitace = false;
         public FormLogin()
@@ -88,11 +88,11 @@ namespace SYNDIC_1._0.Forms
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to store sensitive information").Equals(DialogResult.Yes))
-            {
-                Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
-                Properties.Settings.Default.Save();
-            }
+            //if (MessageBox.Show("Are you sure you want to store sensitive information").Equals(DialogResult.Yes))
+            //{
+            //    Properties.Settings.Default.CheckBox = checkBoxRememberMe.Checked;
+            //    Properties.Settings.Default.Save();
+            //}
 
             Application.Exit();
         }
@@ -131,12 +131,19 @@ namespace SYNDIC_1._0.Forms
             {
                 if (connection.State != ConnectionState.Open)
                 {
-                    connection.Open();
+                    try
+                    {
+                        connection.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message,"Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
                 }
-                string query = "select * from utilisateur where login like '% @login %' ";
+                string query = "select * from utilisateur where login like '% "+username+" %' ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@login", username);
+                    //command.Parameters.AddWithValue("@login", username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         /*if (!reader.HasRows)
@@ -150,9 +157,8 @@ namespace SYNDIC_1._0.Forms
                             typeUtilisateur = reader.GetString(1);
                             string storedPassword = reader.GetString(3);
                             string storedSalt = reader.GetString(4);
-                            
                         }
-                        if (authentitace)
+                        if (authentitace)//<============ To be check 
                         {
                             // login successful
                             switch (typeUtilisateur)
@@ -177,7 +183,7 @@ namespace SYNDIC_1._0.Forms
                         }
                         if (!authentitace)
                         {
-                            MessageBox.Show("jrijri");
+                            MessageBox.Show("Verification Echouer","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
                     }
                 }

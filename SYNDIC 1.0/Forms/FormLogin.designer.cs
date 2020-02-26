@@ -86,11 +86,11 @@
             this.textBoxUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsername.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBoxUsername.Location = new System.Drawing.Point(65, 170);
+            this.textBoxUsername.Location = new System.Drawing.Point(56, 178);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(199, 25);
+            this.textBoxUsername.Size = new System.Drawing.Size(211, 25);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsername_KeyPress);
             // 
@@ -99,7 +99,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(65, 142);
+            this.label1.Location = new System.Drawing.Point(56, 150);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 21);
@@ -111,7 +111,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(65, 206);
+            this.label2.Location = new System.Drawing.Point(56, 214);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 21);
@@ -123,12 +123,12 @@
             this.textBoxPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBoxPassword.Location = new System.Drawing.Point(65, 232);
+            this.textBoxPassword.Location = new System.Drawing.Point(56, 240);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
-            this.textBoxPassword.Size = new System.Drawing.Size(199, 26);
+            this.textBoxPassword.Size = new System.Drawing.Size(211, 26);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsername_KeyPress);
             // 
@@ -137,10 +137,10 @@
             this.buttonLogin.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(74, 377);
+            this.buttonLogin.Location = new System.Drawing.Point(60, 386);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(178, 37);
+            this.buttonLogin.Size = new System.Drawing.Size(201, 37);
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Se connecter";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -149,7 +149,7 @@
             // checkBoxShowHidePassword
             // 
             this.checkBoxShowHidePassword.AutoSize = true;
-            this.checkBoxShowHidePassword.Location = new System.Drawing.Point(155, 275);
+            this.checkBoxShowHidePassword.Location = new System.Drawing.Point(135, 283);
             this.checkBoxShowHidePassword.Name = "checkBoxShowHidePassword";
             this.checkBoxShowHidePassword.Size = new System.Drawing.Size(138, 17);
             this.checkBoxShowHidePassword.TabIndex = 4;
@@ -161,10 +161,10 @@
             // 
             this.pictureBoxLogoholder.Image = global::SYNDIC_1._0.Properties.Resources.LOGOtest8;
             this.pictureBoxLogoholder.InitialImage = null;
-            this.pictureBoxLogoholder.Location = new System.Drawing.Point(65, 38);
+            this.pictureBoxLogoholder.Location = new System.Drawing.Point(54, 46);
             this.pictureBoxLogoholder.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogoholder.Name = "pictureBoxLogoholder";
-            this.pictureBoxLogoholder.Size = new System.Drawing.Size(199, 75);
+            this.pictureBoxLogoholder.Size = new System.Drawing.Size(213, 75);
             this.pictureBoxLogoholder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogoholder.TabIndex = 1;
             this.pictureBoxLogoholder.TabStop = false;
@@ -172,7 +172,7 @@
             // checkBoxRememberMe
             // 
             this.checkBoxRememberMe.AutoSize = true;
-            this.checkBoxRememberMe.Location = new System.Drawing.Point(74, 275);
+            this.checkBoxRememberMe.Location = new System.Drawing.Point(54, 283);
             this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRememberMe.Name = "checkBoxRememberMe";
             this.checkBoxRememberMe.Size = new System.Drawing.Size(76, 17);
