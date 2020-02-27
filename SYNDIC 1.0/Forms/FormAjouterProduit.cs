@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using SYNDIC_1._0.Forms;
-
+using SYNDIC_1._0.Helper;
 
 namespace SYNDIC_1._0
 {
@@ -29,7 +29,7 @@ namespace SYNDIC_1._0
         BindingSource bsProduit;
         BindingSource bsCategorie;
         string button;
-        string[] oldValues = {"","","","" };
+        string[] oldValues = {"",""};
 
         public FormAjouterProduit()
         {
@@ -85,7 +85,7 @@ namespace SYNDIC_1._0
 
                 if (button == "Ajouter") 
                 {
-                    string[] empty = { "", "", "", "" };
+                    string[] empty = { "", ""};
                     oldValues = empty;
                 
                 }
@@ -165,6 +165,8 @@ namespace SYNDIC_1._0
             {
                 bsProduit.RemoveCurrent();
                 DBHelper.syncroniser("produit");
+                string[] newValues = { "", "" };
+                Log.makeLog(FormLogin.userId, DateTime.Now, "Supprimer", "Produit", oldValues,newValues);
             }
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SYNDIC_1._0.Forms;
+using SYNDIC_1._0.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -196,7 +198,7 @@ namespace SYNDIC_1._0
         private void buttonSupprimerEcheance_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Voulez vous vraiment Ajouter cet Echeance ?" +
+            DialogResult result = MessageBox.Show("Voulez vous vraiment Supprimer cet Echeance ?" +
 
                 "Montant : " + dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString() +
                 "\nMontant Reçu :" + dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString() +
@@ -211,6 +213,11 @@ namespace SYNDIC_1._0
             {
                 bsEcheance.RemoveCurrent();
                 DBHelper.syncroniser("Echeance");
+
+                string[] oldValues = { dataGridViewBienEcheance.CurrentRow.Cells[3].Value.ToString(), dataGridViewBienEcheance.CurrentRow.Cells[4].Value.ToString(),
+                dataGridViewListeBien.CurrentRow.Cells[1].Value.ToString(),dataGridViewBienEcheance.CurrentRow.Cells[5].Value.ToString()};
+                string[] newValues = { "", "" };
+                Log.makeLog(FormLogin.userId, DateTime.Now, "Supprimer", "Echeance", oldValues, newValues);
             }
         }
 

@@ -149,11 +149,11 @@
             // checkBoxShowHidePassword
             // 
             this.checkBoxShowHidePassword.AutoSize = true;
-            this.checkBoxShowHidePassword.Location = new System.Drawing.Point(135, 283);
+            this.checkBoxShowHidePassword.Location = new System.Drawing.Point(89, 289);
             this.checkBoxShowHidePassword.Name = "checkBoxShowHidePassword";
-            this.checkBoxShowHidePassword.Size = new System.Drawing.Size(138, 17);
+            this.checkBoxShowHidePassword.Size = new System.Drawing.Size(139, 17);
             this.checkBoxShowHidePassword.TabIndex = 4;
-            this.checkBoxShowHidePassword.Text = "afficher le mot de passe";
+            this.checkBoxShowHidePassword.Text = "Afficher le mot de passe";
             this.checkBoxShowHidePassword.UseVisualStyleBackColor = true;
             this.checkBoxShowHidePassword.CheckedChanged += new System.EventHandler(this.checkBoxShowHidePassword_CheckedChanged);
             // 
@@ -172,12 +172,12 @@
             // checkBoxRememberMe
             // 
             this.checkBoxRememberMe.AutoSize = true;
-            this.checkBoxRememberMe.Location = new System.Drawing.Point(54, 283);
+            this.checkBoxRememberMe.Location = new System.Drawing.Point(89, 326);
             this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRememberMe.Name = "checkBoxRememberMe";
-            this.checkBoxRememberMe.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxRememberMe.Size = new System.Drawing.Size(153, 17);
             this.checkBoxRememberMe.TabIndex = 3;
-            this.checkBoxRememberMe.Text = "Enregistrer";
+            this.checkBoxRememberMe.Text = "Enregistrer le mot de passe";
             this.checkBoxRememberMe.UseVisualStyleBackColor = true;
             this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
             // 

@@ -37,17 +37,17 @@ namespace SYNDIC_1._0.Forms
         public bool authentitace = false;
         public FormLogin()
         {
-            Thread thread = new Thread(new ThreadStart(startForm));
-            thread.Start();
-            Thread.Sleep(4000); // duration in ms => 4 seconds
-            InitializeComponent();
-            thread.Abort();
+            //Thread thread = new Thread(new ThreadStart(startForm));
+            //thread.Start();
+            //Thread.Sleep(4000); // duration in ms => 4 seconds
+            //InitializeComponent();
+            //thread.Abort();
 
         }
-        public void startForm()
-        {
-            Application.Run(new FormSplachScreen());
-        }
+        //public void startForm()
+        //{
+        //    Application.Run(new FormSplachScreen());
+        //}
         
          #region DragingFrom
 
@@ -112,21 +112,21 @@ namespace SYNDIC_1._0.Forms
             string username = textBoxUsername.Text.Trim().ToLower().Replace("'", "''");
             string password = textBoxPassword.Text.Trim().ToLower().Replace("'", "''");
 
-            //if (!textBoxUsername.hasText() || !textBoxPassword.hasText())
-            //{
-            //    MessageBox.Show("type something");
-            //    if (textBoxUsername.hasText())
-            //    {
-            //        textBoxPassword.Select();
-            //        textBoxPassword.Focus();
-            //    }
-            //    if (textBoxPassword.hasText())
-            //    {
-            //        textBoxUsername.Select();
-            //        textBoxUsername.Focus();
-            //    }
-            //    return;
-            //}
+            if (username.Length == 0 || password.Length == 0)
+            {
+                MessageBox.Show("Rempisser les zone de text avant de continuer","Manque des donnees",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                if (username.Length != 0)
+                {
+                    textBoxPassword.Select();
+                    textBoxPassword.Focus();
+                }
+                if (password.Length != 0)
+                {
+                    textBoxUsername.Select();
+                    textBoxUsername.Focus();
+                }
+                return;
+            }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 if (connection.State != ConnectionState.Open)
@@ -143,14 +143,8 @@ namespace SYNDIC_1._0.Forms
                 string query = "select * from utilisateur where login like '% "+username+" %' ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    //command.Parameters.AddWithValue("@login", username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        /*if (!reader.HasRows)
-                        {
-                            MessageBox.Show("majebrochi");
-                            return;
-                        }*/
                         while (reader.Read())
                         {
                             userId = reader.GetInt32(0);

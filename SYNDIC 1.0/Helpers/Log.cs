@@ -9,7 +9,7 @@ namespace SYNDIC_1._0.Helper
 {
     public static class Log
     {
-        static string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString;
+        static string connectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
 
         public enum actions
         {
