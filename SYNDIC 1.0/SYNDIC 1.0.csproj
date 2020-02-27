@@ -76,13 +76,13 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="crystalR\ConvocationAssemblée.cs">
+    <Compile Include="Reports\ConvocationAssemblée.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConvocationAssemblée.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="crystalR\Reçu.cs">
+    <Compile Include="Reports\Reçu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reçu.rpt</DependentUpon>
@@ -93,7 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesSyndic.dbml</DependentUpon>
     </Compile>
-    <Compile Include="crystalR\Facture.cs">
+    <Compile Include="Reports\Facture.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Facture.rpt</DependentUpon>
@@ -327,15 +327,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>syndic2DataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="crystalR\ConvocationAssemblée.rpt">
+    <EmbeddedResource Include="Reports\ConvocationAssemblée.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ConvocationAssemblée.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="crystalR\Reçu.rpt">
+    <EmbeddedResource Include="Reports\Reçu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reçu.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="crystalR\Facture.rpt">
+    <EmbeddedResource Include="Reports\Facture.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Facture.cs</LastGenOutput>
     </EmbeddedResource>

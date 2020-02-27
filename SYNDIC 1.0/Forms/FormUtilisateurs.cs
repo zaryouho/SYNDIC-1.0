@@ -40,7 +40,14 @@ namespace SYNDIC_1._0.Forms
             {
                 if (connection.State != ConnectionState.Open)
                 {
-                    connection.Open();
+                    try
+                    {
+                        connection.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 dataGridViewUsers.Rows.Clear();
                 string query = "select typeUtilisateur,login,id from utilisateur";
@@ -76,10 +83,10 @@ namespace SYNDIC_1._0.Forms
         }
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
-            if (textBoxLogin.hasText() || textBoxPassword.hasText() || textBoxConfirmePassword.hasText())
+            if (textBoxLogin.Text.Length == 0 || textBoxPassword.Text.Length == 0 || textBoxConfirmePassword.Text.Length == 0)
             {
                 textBoxLogin.Focus();
-                MessageBox.Show("empty");
+                MessageBox.Show("Remplisser les zones de text puis continuer","Manque des donnes",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
 
@@ -89,7 +96,7 @@ namespace SYNDIC_1._0.Forms
 
             string hash = Security.EncryptString(login, password)[0];
             string salt = Security.EncryptString(login, password)[1];
-            MessageBox.Show(hash.ToString() + "   " + salt.ToString());
+            //MessageBox.Show(hash.ToString() + "   " + salt.ToString());
             if (password.Equals(confirmedPassWord) && isUnique(login))
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -111,6 +118,9 @@ namespace SYNDIC_1._0.Forms
                             command.Parameters.AddWithValue("@salt", salt);
                             command.Parameters.AddWithValue("@login", login);
                             command.ExecuteNonQuery();
+                            
+                            Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Modifer.ToString(), "utilisateur", "oldPassword", "newPassword");
+                            MessageBox.Show("L'utilisateur a été modifié avec succés");
                         }
                         if (!update)
                         {
@@ -121,24 +131,12 @@ namespace SYNDIC_1._0.Forms
                             command.Parameters.AddWithValue("@salt", salt);
                             command.ExecuteNonQuery();
 
-                        }
-
-                        if (update)
-                        {
-                            Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Modifer.ToString(), "utilisateur", "oldPassword", "newPassword");
-                            MessageBox.Show("L'utilisateur a été modifié avec succés");
-                        }
-                        else
-                        {
-                            
                             Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Ajouter.ToString(), "utilisateur", "oldPassword", "newPassword");
                             MessageBox.Show("L'utilisateur a été ajouté avec succés");
                         }
                     }
                 }
             }
-            else
-                MessageBox.Show("ce login existe déja !");
 
             FormUtilisateurs_Load(sender, e);
         }
@@ -150,9 +148,9 @@ namespace SYNDIC_1._0.Forms
                 dataGridViewUsers.Focus();
                 return;
             }
-            while (dataGridViewUsers.SelectedRows.Count != 0)
+            if (dataGridViewUsers.SelectedRows.Count != 0)
             {
-                if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet utilisateur ?", "Suppression...", MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+                if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet utilisateur ?", "Suppression...", MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2))
                 {
                     update = true;
                     buttonAddUser.PerformClick();
@@ -187,10 +185,8 @@ namespace SYNDIC_1._0.Forms
                         string[] oldValues = { currentLogin, dataGridViewUsers.CurrentRow.Cells[2].Value.ToString() };
                         string[] newValues = { "", "" };
 
-                        Helper.Log.makeLog(27, DateTime.Now, Helper.Log.actions.Supprimer.ToString(), "utilisateur", oldValues, newValues);
-                        MessageBox.Show("daz");
+                        Helper.Log.makeLog(FormLogin.userId, DateTime.Now, Helper.Log.actions.Supprimer.ToString(), "utilisateur", oldValues, newValues);
                         fillDataGrid();
-                        
                     }
                 }
             }

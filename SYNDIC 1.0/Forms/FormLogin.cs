@@ -162,7 +162,7 @@ namespace SYNDIC_1._0.Forms
                                         typeUtilisateur = "Admin";
                                         new frmMenuOfficiel().Show();
                                         this.Hide();
-                                        MessageBox.Show("Login was succesful. " + username + " !");
+                                        //MessageBox.Show("Login was succesful. " + username + " !");
                                         break;
                                     }
                                 case "Utilisateur":
@@ -170,7 +170,7 @@ namespace SYNDIC_1._0.Forms
                                         typeUtilisateur = "Utilisateur";
                                         new frmMenuOfficiel().Show();
                                         this.Hide();
-                                        MessageBox.Show("Login was succesful. " + username + " !");
+                                       // MessageBox.Show("Login was succesful. " + username + " !");
                                         break;
                                     }
                             }

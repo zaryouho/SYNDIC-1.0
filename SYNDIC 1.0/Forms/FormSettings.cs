@@ -267,7 +267,9 @@ namespace SYNDIC_1._0
                 path = backupPath(operation);
 
                 if (operation != "restore")
+                {
                     path += "\\";
+                }
                 if (string.IsNullOrWhiteSpace(path))
                 {
                     MessageBox.Show("Selectioner un ficher pour sauvgarder la base de donnee","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -282,8 +284,11 @@ namespace SYNDIC_1._0
                 //    path = @"C:\Program Files\Microsoft SQL Server\MSSQL12.BENZIAN\MSSQL\Backup";
             }
             string fullPath = path;
-            if (operation=="backup")
+            
+            if (operation == "backup")
+            {
                 fullPath = String.Format("{0}{1}{2}.bak", path, databaseName, DateTime.Now.ToString().Replace(':', ' ').Replace('/',' ')).Replace(" ","");
+            }
 
             string connection = ConfigurationManager.ConnectionStrings[1].ConnectionString;
             using (SqlConnection myConnection = new SqlConnection(connection))
@@ -312,8 +317,6 @@ namespace SYNDIC_1._0
                     {
                         command.Parameters.AddWithValue("@databsename", databaseName);
                     }
-
-
 
                     command.Parameters.AddWithValue("@path", fullPath);
 
@@ -357,6 +360,16 @@ namespace SYNDIC_1._0
         private void labelClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonBackuptoExternalDrive_Click_1(object sender, EventArgs e)
+        {
+            buttonBackuptoExternalDrive.PerformClick();
+        }
+
+        private void buttonRestoreFromExternalDrive_Click_1(object sender, EventArgs e)
+        {
+            buttonRestoreFromExternalDrive.PerformClick();
         }
     }
 }

@@ -128,7 +128,7 @@
             // labelFilterByDateTimePicker
             // 
             this.labelFilterByDateTimePicker.AutoSize = true;
-            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(372, 18);
+            this.labelFilterByDateTimePicker.Location = new System.Drawing.Point(372, 14);
             this.labelFilterByDateTimePicker.Name = "labelFilterByDateTimePicker";
             this.labelFilterByDateTimePicker.Size = new System.Drawing.Size(86, 17);
             this.labelFilterByDateTimePicker.TabIndex = 4;
@@ -142,7 +142,7 @@
             "Nom_Utilisateur",
             "Action",
             "Valeur"});
-            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 40);
+            this.comboBoxFilterItems.Location = new System.Drawing.Point(208, 36);
             this.comboBoxFilterItems.Name = "comboBoxFilterItems";
             this.comboBoxFilterItems.Size = new System.Drawing.Size(101, 25);
             this.comboBoxFilterItems.TabIndex = 1;
@@ -150,7 +150,7 @@
             // labelFilter
             // 
             this.labelFilter.AutoSize = true;
-            this.labelFilter.Location = new System.Drawing.Point(205, 18);
+            this.labelFilter.Location = new System.Drawing.Point(205, 15);
             this.labelFilter.Name = "labelFilter";
             this.labelFilter.Size = new System.Drawing.Size(70, 17);
             this.labelFilter.TabIndex = 2;
