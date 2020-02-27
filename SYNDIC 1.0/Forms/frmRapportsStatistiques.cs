@@ -13,9 +13,9 @@ namespace SYNDIC_1._0
 {
     public partial class frmRapportsStatistiques : Form
     {
-        int cotisation = 0;
-        int depence = 0;
-        int caisse = 0;
+        decimal cotisation = 0;
+        decimal depence = 0;
+        decimal caisse = 0;
 
         public frmRapportsStatistiques()
         {
@@ -39,20 +39,17 @@ namespace SYNDIC_1._0
                 {
                     command.Connection = connection;
                     command.CommandText = "select SUM(montant) from cotisation";
-                    cotisation = (int) command.ExecuteScalar();
+                    cotisation = (decimal) command.ExecuteScalar();
                     command.CommandText = "select SUM(montant) from depense ";
-                    depence = (int)command.ExecuteScalar();
+                    depence = (decimal)command.ExecuteScalar();
                 }
             }
             caisse = cotisation - depence;
 
-            chart1.Series["Cotisation"].Points.Clear();
             chart1.Series["Cotisation"].Points.AddXY("Cotisations", cotisation);
 
-            chart1.Series["Depence"].Points.Clear();
             chart1.Series["Depence"].Points.AddXY("Depences", depence);
 
-            chart1.Series["Caisse"].Points.Clear();
             chart1.Series["Caisse"].Points.AddXY("Caisse", caisse);
         }
     }
