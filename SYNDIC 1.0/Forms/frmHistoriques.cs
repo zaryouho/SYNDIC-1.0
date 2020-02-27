@@ -19,7 +19,7 @@ namespace SYNDIC_1._0.Forms
         }
 
         DataClassesSyndicDataContext dataContext = new DataClassesSyndicDataContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
+        string connectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
 
         private void frmHistoriques_Load(object sender, EventArgs e)
         {
@@ -80,7 +80,7 @@ namespace SYNDIC_1._0.Forms
                 }
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now)
+                    if (textBoxStrings.Text.Length != 0 || dateTimePickerHistorique.Value != DateTime.Now)
                     {
                         try
                         {
@@ -113,15 +113,38 @@ namespace SYNDIC_1._0.Forms
         {
             dataGridViewHistorique.Rows[0].Selected = true;
         }
-
         private void buttonToPrev_Click(object sender, EventArgs e)
         {
-
+            int rowIndex = dataGridViewHistorique.CurrentRow.Index;
+            if (rowIndex > 0)
+            {
+                if (rowIndex != 0 )
+                {
+                    dataGridViewHistorique.Rows[rowIndex].Selected = false;
+                    dataGridViewHistorique.Rows[--rowIndex].Selected = true;
+                }
+                else
+                {
+                    dataGridViewHistorique.Rows[0].Selected = true;
+                }
+            }
         }
 
         private void buttonToNext_Click(object sender, EventArgs e)
         {
-
+            int rowIndex = dataGridViewHistorique.CurrentRow.Index;
+            if (rowIndex < dataGridViewHistorique.Rows.Count)
+            {
+                if (rowIndex != dataGridViewHistorique.Rows.Count - 1)
+                {
+                    dataGridViewHistorique.Rows[rowIndex].Selected = false;
+                    dataGridViewHistorique.Rows[++rowIndex].Selected = true;
+                }
+                else
+                {
+                    dataGridViewHistorique.Rows[dataGridViewHistorique.Rows.Count - 1].Selected = true;
+                }
+            }
         }
 
         private void buttonToLast_Click(object sender, EventArgs e)
@@ -161,7 +184,8 @@ namespace SYNDIC_1._0.Forms
                                 this.Cursor = Cursors.Default;
                                 if (exe != 0)
                                 {
-                                    MessageBox.Show("item deleted successfully");
+                                    MessageBox.Show("La ligne a ete supprimes avec succes", "Suppression Effectuer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                     return;
                                 }
                             }
@@ -197,7 +221,7 @@ namespace SYNDIC_1._0.Forms
                                 this.Cursor = Cursors.Default;
                                 if (exe != 0)
                                 {
-                                    MessageBox.Show("items deleted successfully");
+                                    MessageBox.Show("Les donnees sont supprimes avec succes","Suppression Effectuer",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                     return;
                                 }
                             }
@@ -217,17 +241,17 @@ namespace SYNDIC_1._0.Forms
 
         private void frmHistoriques_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (dataGridViewHistorique.SelectedRows.Count != 0)
-            {
-                if (dataGridViewHistorique.Focused)
-                {
-                    buttonDelete.PerformClick();
-                }
-            }
-            if (textBoxStrings.hasText() || dateTimePickerHistorique.Value != DateTime.Now)
-            {
-                buttonSearchDataGridView_Click(sender, e);
-            }
+            //if (dataGridViewHistorique.SelectedRows.Count != 0)
+            //{
+            //    if (dataGridViewHistorique.Focused)
+            //    {
+            //        buttonDelete.PerformClick();
+            //    }
+            //}
+            //if (textBoxStrings.TextLength > 0 || dateTimePickerHistorique.Value != DateTime.Now)
+            //{
+            //    buttonSearchDataGridView_Click(sender, e);
+            //}
         }
 
        

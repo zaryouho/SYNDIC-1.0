@@ -72,6 +72,7 @@
             // btnClose
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::SYNDIC_1._0.Properties.Resources.icons8_Delete_32;
             this.btnClose.Location = new System.Drawing.Point(304, 2);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
