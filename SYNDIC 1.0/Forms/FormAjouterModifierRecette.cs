@@ -90,7 +90,7 @@ namespace SYNDIC_1._0.Forms
                 int id_Cotisation;
                 decimal montantRecette = Convert.ToDecimal(textBoxMontant.Text);
                 
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ConnectionString);
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString);
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 SqlCommand com;
@@ -142,7 +142,7 @@ namespace SYNDIC_1._0.Forms
 
                                 if (ech.montant <= montantRecette + ech.montant_reçu)
                                 {
-                                    MessageBox.Show("Montant recu <=  montantRecette + ech.montant_reçu ");
+                                   // MessageBox.Show("Montant recu <=  montantRecette + ech.montant_reçu ");
 
                                     montantRecette += Convert.ToDecimal(updateEcheance.montant_reçu);
                                     updateEcheance.montant_reçu = ech.montant;
@@ -151,7 +151,7 @@ namespace SYNDIC_1._0.Forms
                                 }
                                 else if (ech.montant > montantRecette + ech.montant_reçu)
                                 {
-                                    MessageBox.Show("Montant >  montantRecette + ech.montant_reçu ");
+                                   // MessageBox.Show("Montant >  montantRecette + ech.montant_reçu ");
 
                                     updateEcheance.montant_reçu += montantRecette;
                                     montantRecette = 0;
@@ -159,7 +159,7 @@ namespace SYNDIC_1._0.Forms
                             }
                             if (ech.montant_reçu == 0)
                             {
-                                MessageBox.Show("Montant recu == 0");
+                                //MessageBox.Show("Montant recu == 0");
 
                                 if (ech.montant <= montantRecette)
                                 {
