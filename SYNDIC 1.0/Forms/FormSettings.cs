@@ -319,14 +319,14 @@ namespace SYNDIC_1._0
 
                     if (operation == "restore")
                     {
-                        using (SqlCommand commandseq = new SqlCommand("alter database " + databaseName + " set single_user with rollback after 3600", myConnection))
+                        using (SqlCommand commandseq = new SqlCommand("use master alter database " + databaseName + " set single_user with rollback after 3600", myConnection))
                         {
                             commandseq.ExecuteNonQuery();
                         }
 
                     }
 
-
+                    MessageBox.Show(command.CommandText);
                     try
                     {
                         this.Cursor = Cursors.WaitCursor;

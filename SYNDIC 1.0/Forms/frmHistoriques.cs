@@ -17,7 +17,7 @@ namespace SYNDIC_1._0.Forms
         {
             InitializeComponent();
         }
-
+        int pos = 0;
         DataClassesSyndicDataContext dataContext = new DataClassesSyndicDataContext();
         string connectionString = ConfigurationManager.ConnectionStrings["SyndicConnectionStringReda"].ToString();
 
@@ -52,10 +52,11 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonSearchDataGridView_Click(object sender, EventArgs e)
         {
-            dateTimePickerHistorique.Enabled = !textBoxStrings.hasText();
-
+           // dateTimePickerHistorique.Enabled = !textBoxStrings.hasText();
+            
             if (!textBoxStrings.hasText() || dateTimePickerHistorique.Value == DateTime.Now)
             {
+                frmHistoriques_Load(sender, e);
                 textBoxStrings.Focus();
                 return;
             }
@@ -68,7 +69,7 @@ namespace SYNDIC_1._0.Forms
                 if(textBoxStrings.Text == "")
                    searchedString= "'"+dateTimePickerHistorique.Value.ToShortDateString()+"'";
 
-            string query = "select j.id,u.login,u.typeUtilisateur,date_action,action,table_action,anciennes_valeurs,nouvelles_valeurs from journal j  inner join utilisateur u on u.id = j.id_utilisateur  where "+filter +" = "+ searchedString;
+            string query = "select j.id,u.login,u.typeUtilisateur,date_action,action,table_action,anciennes_valeurs,nouvelles_valeurs from journal j  inner join utilisateur u on u.id = j.id_utilisateur  where " + filter +" = "+ searchedString;
 
             // we need to add inner join connexion c on j.id_utilisateur = c.id_utilisateur 
 
@@ -111,22 +112,28 @@ namespace SYNDIC_1._0.Forms
 
         private void buttonTofirst_Click(object sender, EventArgs e)
         {
-            dataGridViewHistorique.Rows[0].Selected = true;
+            pos = 0;
+            dataGridViewHistorique.CurrentCell = dataGridViewHistorique[0, pos];
         }
 
         private void buttonToPrev_Click(object sender, EventArgs e)
         {
-
+            if (pos > 0)
+                pos--;
+            dataGridViewHistorique.CurrentCell = dataGridViewHistorique[0, pos];
         }
 
         private void buttonToNext_Click(object sender, EventArgs e)
         {
-
+            if (pos < dataGridViewHistorique.RowCount - 1)
+                pos++;
+            dataGridViewHistorique.CurrentCell = dataGridViewHistorique[0, pos];
         }
 
         private void buttonToLast_Click(object sender, EventArgs e)
         {
-            dataGridViewHistorique.Rows[dataGridViewHistorique.Rows.Count - 1].Selected = true;
+            pos = dataGridViewHistorique.RowCount - 1;
+            dataGridViewHistorique.CurrentCell = dataGridViewHistorique[0, pos];
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

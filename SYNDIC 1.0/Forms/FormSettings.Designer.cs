@@ -102,6 +102,8 @@
             this.buttonRestoreFromExternalDrive.Size = new System.Drawing.Size(147, 94);
             this.buttonRestoreFromExternalDrive.TabIndex = 15;
             this.buttonRestoreFromExternalDrive.UseVisualStyleBackColor = true;
+            this.buttonRestoreFromExternalDrive.Visible = false;
+            this.buttonRestoreFromExternalDrive.Click += new System.EventHandler(this.buttonRestoreFromExternalDrive_Click);
             // 
             // buttonBackuptoExternalDrive
             // 
@@ -112,6 +114,7 @@
             this.buttonBackuptoExternalDrive.Size = new System.Drawing.Size(147, 93);
             this.buttonBackuptoExternalDrive.TabIndex = 14;
             this.buttonBackuptoExternalDrive.UseVisualStyleBackColor = true;
+            this.buttonBackuptoExternalDrive.Click += new System.EventHandler(this.buttonBackuptoExternalDrive_Click);
             // 
             // comboBoxDataBaseName
             // 

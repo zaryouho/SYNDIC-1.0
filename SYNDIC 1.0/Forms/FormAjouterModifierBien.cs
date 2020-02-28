@@ -34,9 +34,9 @@ namespace SYNDIC_1._0
         string operation;
         private BindingSource bsType;
         private string type;
-        private int id_immeuble; 
-
-        public FormModifierBien(string _operation, DateTime _dateAchat_current, BindingSource _bsBien = null, int _id_current = -1, string _type = "", int _id_immeuble = -1)
+        private int id_immeuble;
+        private int id_bien;
+        public FormModifierBien(string _operation, DateTime _dateAchat_current, BindingSource _bsBien = null, int _id_current = -1, string _type = "", int _id_immeuble = -1, int _id_bien = -1)
         {
             InitializeComponent();
             id_Proprietaire = _id_current;
@@ -45,6 +45,8 @@ namespace SYNDIC_1._0
             operation = _operation;
             type = _type;
             id_immeuble = _id_immeuble;
+            id_bien = _id_bien;
+            
         }
 
         private void enabled(bool v)
@@ -174,7 +176,7 @@ namespace SYNDIC_1._0
                         if (operation == "Modifier" && id_Proprietaire != Convert.ToInt32(textBoxIdProprietaire.Text))
                         {
                             var src = (from p in syndicDataContext.proprietaires
-                                       where p.id.Equals(Convert.ToInt32(comboBoxProprietaire.SelectedValue.ToString()))
+                                       where p.id.Equals(Convert.ToInt32(id_Proprietaire))
                                        select p).Single();
                             string[] oldValues = {src.id.ToString(),src.nom,src.prenom,src.adresse,src.code_postal.ToString(),
                             src.tel,src.email,src.Sexe,src.Titre.ToString(),src.CIN};
@@ -191,13 +193,18 @@ namespace SYNDIC_1._0
                             pa.adresse = src.adresse;
                             pa.prenom = src.prenom;
                             pa.nom = src.nom;
-                            pa.bien = int.Parse(textBoxNom.Text);
+                            pa.bien = id_bien;
                             pa.immeuble = int.Parse(textBoxIdImmeuble.Text);
                             pa.dateVente = dateTimePickerDateAchat.Value;
 
 
                             syndicDataContext.ProprietaireArchives.InsertOnSubmit(pa);
                             syndicDataContext.SubmitChanges();
+
+                            string querry = "update bien set id_proprietaire = " + comboBoxProprietaire.SelectedValue + ", dateAchat ='" + dateTimePickerDateAchat.Value.ToShortDateString() + "' where id = " + id_bien;
+                               
+                            SqlCommand Command = new SqlCommand(querry, DBHelper.connection);
+                            Command.ExecuteNonQuery();
                         }
                         else if (operation == "Ajouter")
                         {
@@ -213,7 +220,7 @@ namespace SYNDIC_1._0
                                 "')";
                             SqlCommand Command = new SqlCommand(querry, DBHelper.connection);
                             Command.ExecuteNonQuery();
-
+                            Command = null;
 
 
 
@@ -226,6 +233,7 @@ namespace SYNDIC_1._0
 
 
                         bsBien.EndEdit();
+                        
                         DBHelper.syncroniser("bien");
 
 

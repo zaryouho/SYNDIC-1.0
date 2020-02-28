@@ -29,7 +29,7 @@ namespace SYNDIC_1._0.Forms
         int id;
         BindingSource bsDocument;
 
-        public FormGestionDocument(string _table = "",string _condition ="",int _id = -1)
+        public FormGestionDocument(string _table = "", string _condition = "", int _id = -1)
         {
             InitializeComponent();
             table = _table;
@@ -40,8 +40,8 @@ namespace SYNDIC_1._0.Forms
         private void FormGestionDocument_Load(object sender, EventArgs e)
         {
             DBHelper.ouvrirConnection("SyndicConnectionStringReda");
-            DBHelper.remplir_dataset("select * from " + table+" "+condition, table);
-            
+            DBHelper.remplir_dataset("select * from " + table + " " + condition, table);
+
             bsDocument = DBHelper.remplir_bindingsource(table);
 
             DBHelper.remplir_Grille(dataGridViewListeDocuments, bsDocument);
@@ -73,26 +73,33 @@ namespace SYNDIC_1._0.Forms
                 save.Filter = "Pdf Files| *.pdf";
                 if (save.ShowDialog() == DialogResult.OK)
                 {
-                    var fileName = save.FileName;
 
+
+
+                    var fileName = save.FileName;
+                    var chemin = Application.StartupPath;
                     var d = DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
                     var n = new Random();
                     var i = n.Next().ToString();
 
                     var ext = Path.GetExtension(fileName);
 
-                    var newName = d + n + i + ext;
+                    var newName = d + i + ext;
 
-                    File.Copy(fileName, "documents/" + newName);
+                    if (!Directory.Exists(chemin + "\\documents"))
+                    {
+                        Directory.CreateDirectory(chemin + "\\documents");
+                    }
+                    File.Copy(fileName, chemin + "\\documents\\" + newName);
 
                     bsDocument.AddNew();
 
                     dataGridViewListeDocuments.CurrentRow.Cells[3].Value = id.ToString();
-                    dataGridViewListeDocuments.CurrentRow.Cells[2].Value = Application.StartupPath + "/documents/" + newName;
+                    dataGridViewListeDocuments.CurrentRow.Cells[2].Value = Application.StartupPath + "\\documents\\" + newName;
                     dataGridViewListeDocuments.CurrentRow.Cells[1].Value = Path.GetFileName(fileName);
 
-                    string[] newValues = { Path.GetFileName(fileName),id.ToString() };
-                
+                    string[] newValues = { Path.GetFileName(fileName), id.ToString() };
+
 
                     bsDocument.EndEdit();
 
@@ -101,10 +108,10 @@ namespace SYNDIC_1._0.Forms
                     if (DBHelper.dataSet.Tables.Contains(table))
                         DBHelper.dataSet.Tables.Remove(table);
 
-                     
+
 
                     string[] oldValues = { "", "" };
-                    Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", table ,oldValues , newValues);
+                    Helper.Log.makeLog(FormLogin.userId, DateTime.Now, "Ajouter", table, oldValues, newValues);
                     FormGestionDocument_Load(sender, e);
                 }
             }
@@ -135,7 +142,7 @@ namespace SYNDIC_1._0.Forms
         {
             try
             {
-                
+
                 var fichier = dataGridViewListeDocuments.CurrentRow.Cells[2].Value.ToString();
                 MessageBox.Show(fichier);
                 System.Diagnostics.Process.Start(@fichier);
@@ -153,7 +160,7 @@ namespace SYNDIC_1._0.Forms
             {
                 if (dataGridViewListeDocuments.CurrentRow.Index != -1)
                 {
-                    if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer ce document ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                    if (DialogResult.Yes == MessageBox.Show("Voulez vous vraiment supprimer cet Document ?", "Supprission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                     {
                         string[] newValues = { "", "" };
                         string[] oldValues = { dataGridViewListeDocuments.CurrentRow.Cells[0].ToString(), dataGridViewListeDocuments.CurrentRow.Cells[1].ToString(), dataGridViewListeDocuments.CurrentRow.Cells[2].ToString(), dataGridViewListeDocuments.CurrentRow.Cells[3].ToString() };

@@ -111,8 +111,9 @@ namespace SYNDIC_1._0
 
         private void buttonImprimer_Click(object sender, EventArgs e)
         {
-            crystalR.Facture facture = new crystalR.Facture();
-            string filter = "{ligne.id_depense} = " + id_Depense;
+            crystalR.CrystalReport1 facture = new crystalR.CrystalReport1();
+            string filter =  "{ligne.id_depense} = " + id_Depense;
+            facture.SetDatabaseLogon("sa", "Benzian1995*");
             Forms.FormImpression imprimer = new Forms.FormImpression(facture, filter);
             imprimer.ShowDialog();
         }

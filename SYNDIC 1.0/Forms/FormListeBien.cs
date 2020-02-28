@@ -120,8 +120,11 @@ namespace SYNDIC_1._0
         private void buttonModifierBien_Click(object sender, EventArgs e)
         {
             if (dataGridViewBien.Rows.Count > 0)
-                new FormModifierBien("Modifier", Convert.ToDateTime(dataGridViewBien.CurrentRow.Cells[9].Value.ToString()), bsBien, Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[7].Value.ToString()),dataGridViewBien.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[6].Value.ToString())).ShowDialog();
-
+            {
+                new FormModifierBien("Modifier", Convert.ToDateTime(dataGridViewBien.CurrentRow.Cells[9].Value.ToString()), bsBien, Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[7].Value.ToString()), dataGridViewBien.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[6].Value.ToString()), Convert.ToInt32(dataGridViewBien.CurrentRow.Cells[0].Value.ToString())).ShowDialog();
+                DBHelper.dataSet.Reset();
+                FormListeBien_Load(sender, e);
+            }
         }
 
         private void textBoxRechercher_KeyPress(object sender, KeyPressEventArgs e)
@@ -153,6 +156,12 @@ namespace SYNDIC_1._0
             new FormModifierBien("Ajouter", Convert.ToDateTime("01/01/1900"), bsBien).ShowDialog();
             DBHelper.dataSet.Reset();
             FormListeBien_Load(sender, e);
+        }
+
+        private void dataGridViewBien_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridViewBien.RowCount > 0)
+                buttonModifierBien_Click(sender, e);
         }
     }
 }

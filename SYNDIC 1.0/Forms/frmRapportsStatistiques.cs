@@ -13,9 +13,9 @@ namespace SYNDIC_1._0
 {
     public partial class frmRapportsStatistiques : Form
     {
-        int cotisation = 0;
-        int depence = 0;
-        int caisse = 0;
+        decimal[] cotisation;
+        decimal depence = 0;
+        decimal caisse = 0;
 
         public frmRapportsStatistiques()
         {
@@ -37,23 +37,33 @@ namespace SYNDIC_1._0
                 }
                 using (SqlCommand command = new SqlCommand())
                 {
-                    command.Connection = connection;
-                    command.CommandText = "select SUM(montant) from cotisation";
-                    cotisation = (int) command.ExecuteScalar();
-                    command.CommandText = "select SUM(montant) from depense ";
-                    depence = (int)command.ExecuteScalar();
+                    for (int i = 0; i < 12; i++) 
+                        {
+                        command.CommandText = "";
+                        command.Connection = connection;
+                        command.CommandText = "select SUM(montant) from cotisation where MONTH(date_recette) is not null and MONTH(date_recette) = "+(i+1);
+                        cotisation[i] = Convert.ToDecimal(command.ExecuteNonQuery());
+
+                        }
+                command.CommandText = "select SUM(montant) from depense ";
+                    depence = (decimal)command.ExecuteScalar();
                 }
             }
-            caisse = cotisation - depence;
+           // caisse = 1000 - depence;
 
             chart1.Series["Cotisation"].Points.Clear();
             chart1.Series["Cotisation"].Points.AddXY("Cotisations", cotisation);
 
-            chart1.Series["Depence"].Points.Clear();
-            chart1.Series["Depence"].Points.AddXY("Depences", depence);
+            //chart1.Series["Depense"].Points.Clear();
+            //chart1.Series["Depense"].Points.AddXY("Depences", depence);
 
-            chart1.Series["Caisse"].Points.Clear();
-            chart1.Series["Caisse"].Points.AddXY("Caisse", caisse);
+            //chart1.Series["Caisse"].Points.Clear();
+            //chart1.Series["Caisse"].Points.AddXY("Caisse", caisse);
+        }
+
+        private void labelCloseRapportsStatistiques_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

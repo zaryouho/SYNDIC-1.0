@@ -82,6 +82,12 @@
       <DependentUpon>ConvocationAssemblée.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="crystalR\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="crystalR\Reçu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -331,6 +337,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ConvocationAssemblée.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="crystalR\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="crystalR\Reçu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reçu.cs</LastGenOutput>
@@ -501,6 +511,7 @@
   <ItemGroup>
     <Content Include="Resources\1logo.jpg" />
     <Content Include="Resources\2LOGO.jpg" />
+    <None Include="Resources\réduire-la-fenêtre-40.png" />
     <None Include="Resources\restorePNG.png" />
     <None Include="Resources\residenceDone1.png" />
     <None Include="Resources\valider.png" />
@@ -513,6 +524,7 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\DeleteReddd.png" />
     <None Include="Resources\backupPNG.png" />
+    <None Include="Resources\fermer-la-fenêtre-40.png" />
     <Content Include="Resources\icon cerrar2.png" />
     <Content Include="Resources\icon minimizar.png" />
     <None Include="Resources\liste2.png" />

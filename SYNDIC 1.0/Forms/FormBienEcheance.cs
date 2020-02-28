@@ -244,8 +244,9 @@ namespace SYNDIC_1._0
 
         private void dataGridViewBienEcheance_DoubleClick(object sender, EventArgs e)
         {
-            if (comboBoxTypeEcheance.SelectedValue.ToString() != "Frais biens")
-                buttonModifierEcheance_Click(sender, e);
+            if(dataGridViewBienEcheance.RowCount>0)
+                if (dataGridViewBienEcheance.CurrentRow.Cells[6].Value.ToString() != "Frais biens")
+                    buttonModifierEcheance_Click(sender, e);
         }
     } 
 }

@@ -36,11 +36,11 @@
             this.buttonRechercher = new System.Windows.Forms.Button();
             this.textBoxrechercher = new System.Windows.Forms.TextBox();
             this.splitContainerListeProprietaireBody = new System.Windows.Forms.SplitContainer();
-            this.buttonLast = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonprevious = new System.Windows.Forms.Button();
-            this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridViewProprietaires = new System.Windows.Forms.DataGridView();
+            this.buttonFirst = new System.Windows.Forms.Button();
+            this.buttonLast = new System.Windows.Forms.Button();
+            this.buttonprevious = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -116,50 +116,6 @@
             this.splitContainerListeProprietaireBody.SplitterDistance = 703;
             this.splitContainerListeProprietaireBody.TabIndex = 31;
             // 
-            // buttonLast
-            // 
-            this.buttonLast.FlatAppearance.BorderSize = 0;
-            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
-            this.buttonLast.Location = new System.Drawing.Point(18, 263);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(39, 39);
-            this.buttonLast.TabIndex = 4;
-            this.buttonLast.UseVisualStyleBackColor = true;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.FlatAppearance.BorderSize = 0;
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
-            this.buttonNext.Location = new System.Drawing.Point(18, 208);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(39, 39);
-            this.buttonNext.TabIndex = 2;
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonprevious
-            // 
-            this.buttonprevious.FlatAppearance.BorderSize = 0;
-            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
-            this.buttonprevious.Location = new System.Drawing.Point(18, 101);
-            this.buttonprevious.Name = "buttonprevious";
-            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
-            this.buttonprevious.TabIndex = 3;
-            this.buttonprevious.UseVisualStyleBackColor = true;
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.FlatAppearance.BorderSize = 0;
-            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
-            this.buttonFirst.Location = new System.Drawing.Point(18, 46);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
-            this.buttonFirst.TabIndex = 5;
-            this.buttonFirst.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewProprietaires
             // 
             this.dataGridViewProprietaires.AllowUserToAddRows = false;
@@ -190,6 +146,8 @@
             this.dataGridViewProprietaires.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridViewProprietaires.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProprietaires.Name = "dataGridViewProprietaires";
+            this.dataGridViewProprietaires.ReadOnly = true;
+            this.dataGridViewProprietaires.RightToLeft = System.Windows.Forms.RightToLeft.No;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +160,50 @@
             this.dataGridViewProprietaires.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProprietaires.Size = new System.Drawing.Size(703, 349);
             this.dataGridViewProprietaires.TabIndex = 5;
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_2222;
+            this.buttonFirst.Location = new System.Drawing.Point(18, 46);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(39, 39);
+            this.buttonFirst.TabIndex = 5;
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_2;
+            this.buttonLast.Location = new System.Drawing.Point(18, 263);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(39, 39);
+            this.buttonLast.TabIndex = 4;
+            this.buttonLast.UseVisualStyleBackColor = true;
+            // 
+            // buttonprevious
+            // 
+            this.buttonprevious.FlatAppearance.BorderSize = 0;
+            this.buttonprevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonprevious.Image = global::SYNDIC_1._0.Properties.Resources.up_chevron_1111;
+            this.buttonprevious.Location = new System.Drawing.Point(18, 101);
+            this.buttonprevious.Name = "buttonprevious";
+            this.buttonprevious.Size = new System.Drawing.Size(39, 39);
+            this.buttonprevious.TabIndex = 3;
+            this.buttonprevious.UseVisualStyleBackColor = true;
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Image = global::SYNDIC_1._0.Properties.Resources.down_chevron_1;
+            this.buttonNext.Location = new System.Drawing.Point(18, 208);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 39);
+            this.buttonNext.TabIndex = 2;
+            this.buttonNext.UseVisualStyleBackColor = true;
             // 
             // FormProprietairesArchive
             // 

@@ -156,7 +156,7 @@ namespace SYNDIC_1._0.Forms
         private void buttonImprimerRecette_Click(object sender, EventArgs e)
         {
             crystalR.Reçu recu = new crystalR.Reçu();
-            recu.SetDatabaseLogon("sa", "123456");
+            recu.SetDatabaseLogon("sa", "Benzian1995*");
             string filter = "{cotisation.id} = " + dataGridViewRecette.CurrentRow.Cells[0].Value.ToString();
             FormImpression imprimer = new FormImpression(recu, filter);
             imprimer.ShowDialog();

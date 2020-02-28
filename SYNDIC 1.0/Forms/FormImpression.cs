@@ -24,7 +24,9 @@ namespace SYNDIC_1._0.Forms
         private void FormImpression_Load(object sender, EventArgs e)
         {
             crystalReportViewer.ReportSource = r;
-            crystalReportViewer.SelectionFormula = filter;
+            if(filter!="")
+                crystalReportViewer.SelectionFormula = filter;
+
         }
     }
 }

@@ -112,12 +112,18 @@ namespace SYNDIC_1._0
                                 && ec.mois.Equals(j-2) && ec.annee.Equals(int.Parse(comboBoxAnnee.Text.ToString()))
 
                                 select new { ec.paid }).SingleOrDefault();
-                
-                    if (s.paid == true)
-                        dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
-                    else
-                        dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
-                }
+
+                    try
+                    {
+                        if (s.paid == true)
+                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.Chocolate;
+                        else
+                            dataGridViewconsultations.Rows[i].Cells[j].Style.BackColor = Color.White;
+                    }
+                    catch(Exception ex) { };
+                    
+                    
+                    }
 
                
             }
@@ -212,9 +218,11 @@ namespace SYNDIC_1._0
                     }
               
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) 
+                {
+                }
                 dataGridViewconsultations.Columns[1].Width = 40;
-            dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, 0];
+                dataGridViewconsultations.CurrentCell = dataGridViewconsultations[1, 0];
         }
         
 
@@ -271,7 +279,7 @@ namespace SYNDIC_1._0
 
         private void buttonListDocs_Click(object sender, EventArgs e)
         {
-            using (var formGestionDocument = new FormGestionDocument(nameof(documentProprietaire), "where 0 = 0" , 1))
+            using (var formGestionDocument = new FormGestionDocument(nameof(documentResidence), "where 0 = 0" , 1))
             {
                 formGestionDocument.ShowDialog();
             }

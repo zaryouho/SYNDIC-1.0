@@ -40,7 +40,7 @@ namespace SYNDIC_1._0.Forms
             //Thread thread = new Thread(new ThreadStart(startForm));
             //thread.Start();
             //Thread.Sleep(4000); // duration in ms => 4 seconds
-            //InitializeComponent();
+            InitializeComponent();
             //thread.Abort();
 
         }
@@ -140,7 +140,7 @@ namespace SYNDIC_1._0.Forms
                         MessageBox.Show(ex.Message,"Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
-                string query = "select * from utilisateur where login like '% "+username+" %' ";
+                string query = "select * from utilisateur where login like '"+username+"' ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -151,7 +151,10 @@ namespace SYNDIC_1._0.Forms
                             typeUtilisateur = reader.GetString(1);
                             string storedPassword = reader.GetString(3);
                             string storedSalt = reader.GetString(4);
+                            if(password==storedPassword)
+                                authentitace = true;
                         }
+
                         if (authentitace)//<============ To be check 
                         {
                             // login successful

@@ -38,6 +38,8 @@ namespace SYNDIC_1._0
 
         private void btnSlideBar_Click(object sender, EventArgs e)
         {
+            
+
             if (MenuVertical.Width == 265)
                 MenuVertical.Width = 65;
             else
@@ -192,6 +194,8 @@ namespace SYNDIC_1._0
             buttonUsers.Visible = FormLogin.typeUtilisateur.Equals("Admin");
             buttonHistoriques.Visible = FormLogin.typeUtilisateur.Equals("Admin");
 
+            OpenFormInPannel(new frmBiens());
+            flag = 1;
         }
     }
 }
